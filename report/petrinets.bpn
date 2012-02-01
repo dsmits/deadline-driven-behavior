@@ -1,0 +1,2 @@
+pn2pdf --delete petrinets.bpn
+pn2pdf --delete petrinets.pre

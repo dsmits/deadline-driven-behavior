@@ -1,0 +1,22 @@
+This is pdfTeX, Version 3.1415926-1.40.10 (MiKTeX 2.8) (preloaded format=pdftex 2011.6.6)  6 JUN 2011 10:47
+entering extended mode
+**C:/Documents*and*Settings/smitsds/workspace/SIMOBSTest/doc/references.bib
+("C:/Documents and Settings/smitsds/workspace/SIMOBSTest/doc/references.bib"
+! Missing $ inserted.
+<inserted text> 
+                $
+<to be read again> 
+                   _
+l.72 @INPROCEEDINGS{Francik_
+                            characteranimation,
+? 
+! Emergency stop.
+<inserted text> 
+                $
+<to be read again> 
+                   _
+l.72 @INPROCEEDINGS{Francik_
+                            characteranimation,
+End of file on the terminal!
+
+!  ==> Fatal error occurred, no output PDF file produced!

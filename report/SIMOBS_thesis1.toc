@@ -1,0 +1,25 @@
+\contentsline {section}{\numberline {1}Introduction}{3}
+\contentsline {subsection}{\numberline {1.1}SIMOBS \& VR-Forces}{3}
+\contentsline {subsubsection}{\numberline {1.1.1}Research Question}{3}
+\contentsline {section}{\numberline {2}Related Work}{5}
+\contentsline {subsection}{\numberline {2.1}Group Interaction}{5}
+\contentsline {subsubsection}{\numberline {2.1.1}Global approaches}{6}
+\contentsline {subsubsection}{\numberline {2.1.2}Smaller Groups and Individual Approaches}{7}
+\contentsline {subsection}{\numberline {2.2}Interaction with Objects}{8}
+\contentsline {subsubsection}{\numberline {2.2.1}Mixed Approaches}{9}
+\contentsline {subsection}{\numberline {2.3}General Behavior Modeling}{10}
+\contentsline {subsubsection}{\numberline {2.3.1}Finite State Automata}{10}
+\contentsline {subsubsection}{\numberline {2.3.2}Petri Nets}{10}
+\contentsline {subsubsection}{\numberline {2.3.3}Advantages of Petri Nets over Finite State Automata}{11}
+\contentsline {subsection}{\numberline {2.4}Time Planning}{12}
+\contentsline {subsection}{\numberline {2.5}Which Techniques Can We Use?}{12}
+\contentsline {section}{\numberline {3}Method}{13}
+\contentsline {subsection}{\numberline {3.1}Global Needs Layer}{13}
+\contentsline {subsection}{\numberline {3.2}Local Needs Layer}{14}
+\contentsline {subsubsection}{\numberline {3.2.1}Converting Needs to Finite State Automata}{14}
+\contentsline {subsection}{\numberline {3.3}Pedestrian Layer}{14}
+\contentsline {subsubsection}{\numberline {3.3.1}Time Planning}{15}
+\contentsline {subsection}{\numberline {3.4}Assumptions}{15}
+\contentsline {subsection}{\numberline {3.5}Preparations}{16}
+\contentsline {section}{\numberline {4}Experiments}{17}
+\contentsline {subsection}{\numberline {4.1}The Dataset}{17}

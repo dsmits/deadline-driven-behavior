@@ -1,0 +1,47 @@
+\title{Planning}
+\author{
+        Djura Smits
+}
+\date{\today}
+
+\documentclass[11pt]{article}
+
+
+\begin{document}
+
+\maketitle
+
+\section{Things that have to be done}
+
+\subsection{Distinction Different Situation Nets}
+ Implement the distinction between situation nets that have multiple slots and nets with one slot that are newly instantiated for every pedestrian. This wouldn't be a large task, if it would be possible to simply newly instantiate or clone a petri net every time a new slot has to be created. Unfortunately, this gives some errors at the moment. They probably have something to do with the markings that are not copied entirely correctly but I'm not sure.
+
+\subsection{Debugging and Fixing}
+\begin{itemize}
+\item Some pedestrians seem to be unaffected by the situations. Figure out what the problem is.
+\item If a source transition is called, the next transition should be fired too, because when a source transition is fired, nothing actually happens. When these transitions are called now, the pedestrian will do the \emph{wander} action, so it looks like nothing is wrong, but it should actually not work this way.
+\item Update is not called when transition is fired.
+\end{itemize}
+
+\subsection{Time Management}
+Things needed:
+\begin{itemize}
+\item{Keeping track of the goal state}\\
+At the moment it seems that from the goal transition, pedestrians can still go back to do other actions. Probably some tokens are produced that shouldn't be produced.
+\item{Compute time estimate of how long a situation net is going to take}
+\end{itemize}
+
+\subsection{Needs}
+Some basics for needs have been created, mostly interfaces, but need a lot of work. Especially since they have been created when the simulation still used finite state automata instead of Petri nets. It probably will be best if the needs aspect of the implementation of the simulation is kept as simple as possible both due to time restrictions and the fact that it would probably be better if another approach was used such as subsumption.
+
+\subsection{Test Environment}
+Dependent on the amount of time left, the test environment can be more or less complex. The most simple form would be to take a map of rotterdam airport (or amsterdam central station), drawing situations over it, and to have dots move over this map to denote pedestrians.
+
+\subsection{Evaluation}
+Depending on the test environment, the evaluation has to be decided on.
+
+
+\subsection{Thesis}
+Most of the ideas are there, mostly needs some heavy tweaking, and the experiments have to be described. The conclusion and discussion and future work are also missing.
+
+\end{document}

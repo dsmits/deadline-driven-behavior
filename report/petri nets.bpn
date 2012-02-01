@@ -1,0 +1,3 @@
+pn2pdf petri*nets-fig1.pn
+pn2pdf --delete petri*nets.bpn
+pn2pdf --delete petri*nets.pre
