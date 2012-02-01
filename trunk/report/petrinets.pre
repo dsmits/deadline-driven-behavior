@@ -1,0 +1,13 @@
+\title{Petri Nets}
+\author{
+        Djura Smits
+}
+\date{\today}
+
+\documentclass[11pt]{article}
+
+\usepackage[colorinlistoftodos, bordercolor=white, backgroundcolor=cyan]{todonotes}
+\usepackage{pnets}
+\begin{document}
+
+\pagestyle{empty}
