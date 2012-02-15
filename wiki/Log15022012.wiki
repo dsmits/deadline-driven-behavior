@@ -1,0 +1,4 @@
+#summary One-sentence summary of this page.
+
+=Experiments today=
+How am I going to do the experiments? Since I vary the functions of the go-to-goal behavior at the moment, I should check the frequency of the firing of transitions to other situations.
