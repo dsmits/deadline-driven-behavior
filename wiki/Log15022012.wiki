@@ -1,4 +1,4 @@
-#Experiments on 15-2-2012
+# Experiments on 15-2-2012
 
 =Experiments today=
 How am I going to do the experiments? Since I vary the functions of the go-to-goal behavior at the moment, I should check the frequency of the firing of transitions to other situations.
