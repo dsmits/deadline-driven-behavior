@@ -39,6 +39,7 @@
 \contentsline {paragraph}{Checking in}{22}
 \contentsline {paragraph}{Lean Against Pillar}{22}
 \contentsline {subsection}{\numberline {4.3}Results}{22}
+\contentsline {section}{\numberline {5}Conclusion \& Discussion}{24}
 \contentsline {section}{\numberline {A}Appendix}{24}
 \contentsline {subsection}{\numberline {A.1}Implementing the Framework}{24}
 \contentsline {subsection}{\numberline {A.2}Extending PIPE2}{24}
