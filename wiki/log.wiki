@@ -1,5 +1,5 @@
-=log for 16-2-2012=
-I wanted to easily make the behavior more interesting and varied so added "stand still" behavior to the whole area, but the implementation now prevents infinite loops into certain behavior by making sure a behavior cannot be done multiple times when an agent is still in a certain situation area but is this what we want for the "standing still" situation?
+=Log for 16-2-2012=
+I wanted to easily make the behavior more interesting and varied so added "stand still" behavior to the whole area, but the implementation now prevents infinite loops into certain behavior by making sure a behavior cannot be done multiple times when an agent is still in a certain situation area but is this what we want for the "standing still" situation? Probably this implementation is still the best choice but it makes standing still more "artificial looking" because the areas in which the agents are able to stand still have to be manually placed.
 
 =Experiments on 15-2-2012=
 How am I going to do the experiments? Since I vary the functions of the go-to-goal behavior at the moment, I should check the frequency of the firing of transitions to other situations.
