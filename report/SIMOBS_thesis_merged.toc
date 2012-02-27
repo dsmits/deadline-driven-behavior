@@ -7,14 +7,14 @@
 \contentsline {subsubsection}{\numberline {2.2.1}Global approaches}{7}
 \contentsline {subsubsection}{\numberline {2.2.2}Smaller Groups and Individual Approaches}{8}
 \contentsline {subsection}{\numberline {2.3}Interaction with Objects}{9}
-\contentsline {subsubsection}{\numberline {2.3.1}Mixed Approaches}{10}
+\contentsline {subsubsection}{\numberline {2.3.1}Mixed Approaches}{9}
 \contentsline {subsection}{\numberline {2.4}Designing the Behavior Structure in the Environment}{10}
 \contentsline {subsection}{\numberline {2.5}General Behavior Modeling}{12}
 \contentsline {subsubsection}{\numberline {2.5.1}Finite State Automata}{12}
 \contentsline {subsubsection}{\numberline {2.5.2}Petri Nets}{12}
 \contentsline {subsubsection}{\numberline {2.5.3}Advantages of Petri Nets over Finite State Automata}{13}
 \contentsline {subsubsection}{\numberline {2.5.4}Are FSMs and Petri Nets interchangable?}{14}
-\contentsline {subsection}{\numberline {2.6}Time Planning}{15}
+\contentsline {subsection}{\numberline {2.6}Time Planning}{14}
 \contentsline {subsection}{\numberline {2.7}Which Techniques Can We Use?}{16}
 \contentsline {section}{\numberline {3}Method}{16}
 \contentsline {subsection}{\numberline {3.1}PIPE2}{17}
@@ -33,16 +33,16 @@
 \contentsline {subsubsection}{\numberline {4.1.7}Predictions for Behavior Using the Gaussian Function}{21}
 \contentsline {subsection}{\numberline {4.2}Qualitative Experiment}{21}
 \contentsline {subsubsection}{\numberline {4.2.1}The Dataset}{21}
-\contentsline {subsubsection}{\numberline {4.2.2}The Behaviors}{21}
-\contentsline {paragraph}{Going to the toilet}{21}
+\contentsline {subsubsection}{\numberline {4.2.2}The Behaviors}{22}
+\contentsline {paragraph}{Going to the toilet}{22}
 \contentsline {paragraph}{Standing in the queue for the check-in desk}{22}
 \contentsline {paragraph}{Checking in}{22}
 \contentsline {paragraph}{Lean Against Pillar}{22}
 \contentsline {subsection}{\numberline {4.3}Results}{22}
-\contentsline {section}{\numberline {5}Conclusion \& Discussion}{24}
+\contentsline {section}{\numberline {5}Conclusion \& Discussion}{22}
 \contentsline {section}{\numberline {A}Appendix}{24}
 \contentsline {subsection}{\numberline {A.1}Implementing the Framework}{24}
 \contentsline {subsection}{\numberline {A.2}Extending PIPE2}{24}
 \contentsline {subsubsection}{\numberline {A.2.1}Sources, Sinks, Slots}{24}
-\contentsline {subsubsection}{\numberline {A.2.2}Additional Modifications}{24}
-\contentsline {subsection}{\numberline {A.3}MASON}{24}
+\contentsline {subsubsection}{\numberline {A.2.2}Additional Modifications}{25}
+\contentsline {subsection}{\numberline {A.3}MASON}{25}

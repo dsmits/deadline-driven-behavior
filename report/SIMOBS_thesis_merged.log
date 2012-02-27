@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.1415926-1.40.10 (MiKTeX 2.8) (preloaded format=pdflatex 2010.5.29)  13 FEB 2012 13:21
+This is pdfTeX, Version 3.1415926-1.40.10 (MiKTeX 2.8) (preloaded format=pdflatex 2010.5.29)  23 FEB 2012 15:17
 entering extended mode
 **C:/Users/Compaq/Documents/vakken/afstudeerstage/svn_report/report/SIMOBS_thes
 is_merged.tex
@@ -410,7 +410,7 @@ Underfull \hbox (badness 10000) in paragraph at lines 102--103
 
  []
 
-[6] [7] [8]
+[6] [7]
 Missing character: There is no Ã in font cmr10!
 Missing character: There is no © in font cmr10!
 
@@ -419,7 +419,7 @@ Overfull \hbox (10.13031pt too wide) in paragraph at lines 115--117
 tions. Bcheiraz
  []
 
-[9] [10]
+[8] [9] [10]
 Underfull \hbox (badness 10000) in paragraph at lines 138--139
 
  []
@@ -472,12 +472,12 @@ Overfull \hbox (6.11438pt too wide) in paragraph at lines 305--305
 []\OT1/cmr/bx/n/10.95 Predictions for Be-hav-ior Us-ing the Gaus-sian Func-
  []
 
-
+[21]
 Underfull \hbox (badness 10000) in paragraph at lines 322--322
 [][]
  []
 
-[21] <rotterdamPedestrianNet.png, id=89, 256.96pt x 187.70125pt>
+<rotterdamPedestrianNet.png, id=89, 256.96pt x 187.70125pt>
 File: rotterdamPedestrianNet.png Graphic file (type png)
 
 <use rotterdamPedestrianNet.png>
@@ -488,17 +488,17 @@ File: twoPeopleToiletSituation.png Graphic file (type png)
 <pillarSituation.png, id=91, 342.27875pt x 259.97125pt>
 File: pillarSituation.png Graphic file (type png)
 
-<use pillarSituation.png> [22 <C:/Users/Compaq/Documents/vakken/afstudeerstage/
-svn_report/report/rotterdamPedestrianNet.png (PNG copy)>] [23 <C:/Users/Compaq/
+<use pillarSituation.png> [22] [23 <C:/Users/Compaq/Documents/vakken/afstudeers
+tage/svn_report/report/rotterdamPedestrianNet.png (PNG copy)> <C:/Users/Compaq/
 Documents/vakken/afstudeerstage/svn_report/report/twoPeopleToiletSituation.png 
-(PNG copy)> <C:/Users/Compaq/Documents/vakken/afstudeerstage/svn_report/report/
-pillarSituation.png (PNG copy)>]
+(PNG copy)>]
 (C:\Users\Compaq\Documents\vakken\afstudeerstage\svn_report\report\SIMOBS_thesi
-s_merged.bbl [24]
+s_merged.bbl [24 <C:/Users/Compaq/Documents/vakken/afstudeerstage/svn_report/re
+port/pillarSituation.png (PNG copy)>]
 Missing character: There is no ï in font cmti10!
 Missing character: There is no ¿ in font cmti10!
 Missing character: There is no ½ in font cmti10!
-) [25]
+ [25]) [26]
 (C:\Users\Compaq\Documents\vakken\afstudeerstage\svn_report\report\SIMOBS_thesi
 s_merged.aux)
 
@@ -508,7 +508,7 @@ LaTeX Warning: There were multiply-defined labels.
 Here is how much of TeX's memory you used:
  7871 strings out of 495285
  142528 string characters out of 3179875
- 191904 words of memory out of 3000000
+ 192296 words of memory out of 3000000
  10913 multiletter control sequences out of 15000+200000
  10705 words of font info for 37 fonts, out of 3000000 for 9000
  14 hyphenation exceptions out of 8191
@@ -527,9 +527,9 @@ TeX 2.8/fonts/type1/public/amsfonts/cm/cmsy10.pfb><C:/Program Files (x86)/MiKTe
 X 2.8/fonts/type1/public/amsfonts/cm/cmsy5.pfb><C:/Program Files (x86)/MiKTeX 2
 .8/fonts/type1/public/amsfonts/cm/cmsy7.pfb><C:/Program Files (x86)/MiKTeX 2.8/
 fonts/type1/public/amsfonts/cm/cmti10.pfb>
-Output written on SIMOBS_thesis_merged.pdf (25 pages, 301254 bytes).
+Output written on SIMOBS_thesis_merged.pdf (26 pages, 301775 bytes).
 PDF statistics:
- 149 PDF objects out of 1000 (max. 8388607)
+ 152 PDF objects out of 1000 (max. 8388607)
  0 named destinations out of 1000 (max. 500000)
  38 words of extra memory for PDF output out of 10000 (max. 10000000)
 
