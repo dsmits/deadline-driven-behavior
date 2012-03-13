@@ -1,4 +1,3 @@
 edges = -200:25:200;
-histo = histc(evaluation_log2sigmoid0to10x2Dstandstill, edges);
+histo = histc(sigmoid0to1, edges);
 bar(edges, histo);
-
