@@ -29,6 +29,21 @@ E.~W. Dijkstra.
 \newblock {\em Numerische Mathematik}, 1:269--271, 1959.
 \newblock 10.1007/BF01386390.
 
+\bibitem{Dijkstra00amulti-agent}
+J.~Dijkstra, H.~J.~P. Timmermans, and A.~J. Jessurun.
+\newblock A multi-agent cellular automata system for visualising simulated
+  pedestrian activity.
+\newblock In {\em in S. Bandini and T. Worsch (Eds.), Theoretical and Practical
+  Issues on Cellular Automata - Proceedings on the 4th International Conference
+  on Cellular Automata for research and Industry}, pages 29--36. Springer
+  Verlag, 2000.
+
+\bibitem{1241047}
+T.~Hamagami and H.~Hirata.
+\newblock Method of crowd simulation by using multiagent on cellular automata.
+\newblock In {\em Intelligent Agent Technology, 2003. IAT 2003. IEEE/WIC
+  International Conference on}, pages 46 -- 52, oct. 2003.
+
 \bibitem{citeulike1656038}
 Dirk Helbing, Illes Farkas, and Tamas Vicsek.
 \newblock {Simulating Dynamical Features of Escape Panic}.
@@ -51,6 +66,11 @@ Marcelo Kallmann and Daniel Thalmann.
 \newblock Modeling objects for interaction tasks.
 \newblock In {\em Proc. Eurographics Workshop on Animation and Simulation},
   pages 73--86, 1998.
+
+\bibitem{Moore:2011:VCS:2043174.2043192}
+Brian~E. Moore, Saad Ali, Ramin Mehran, and Mubarak Shah.
+\newblock Visual crowd surveillance through a hydrodynamics lens.
+\newblock {\em Commun. ACM}, 54(12):64--73, December 2011.
 
 \bibitem{Pelechano:2007:CIA:1272690.1272705}
 N.~Pelechano, J.~M. Allbeck, and N.~I. Badler.
