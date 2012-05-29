@@ -1,19 +1,30 @@
 import csv
 
-fileName = 'evaluation_log2sigmoid0to0.2.csv'
-situationName = 'twoPeopleToiletSituation.xml'
-newFileName = 'evaluation_log2sigmoid0to0.2-twoPeopleToiletSituation.csv'
-fileNameLength = len(situationName)
-print fileNameLength
+situationFileNames = ['pillarSituation.xml', 'standStillSituation.xml', 'twoPeopleToiletSituation.xml']
 
-f = open(fileName)
-newFile = open(newFileName, 'a')
-csvReader = csv.reader(f, delimiter=',', quotechar='"')
+fileName = 'evaluation_log2_gaussian0.5.csv'
+newFileNameBase = 'automaticresults2/evaluation_log2_gaussian0.5'
 
-for row in csvReader:
-	if row != []:
-		currentSituationName = row[1][-1*(fileNameLength):]
-		print currentSituationName
-		if currentSituationName == situationName:
-			number = row[0]
-			newFile.write(number + '\n')
+for situationName in situationFileNames:
+
+	#situationName = 'pillarSituation.xml'
+	newFileName = newFileNameBase + situationName + '.csv'
+	#newFileName = 'automaticresults2/evaluation_log2_linear0.2automated-pillarSituation.csv'
+	situationFileNameLength = len(situationName)
+	print situationFileNameLength
+
+	f = open(fileName)
+	newFile = open(newFileName, 'a')
+	csvReader = csv.reader(f, delimiter=',', quotechar='"')
+
+	for row in csvReader:
+		if row != []:
+			currentSituationName = row[1][-1*(situationFileNameLength):]
+			print currentSituationName
+			if currentSituationName == situationName:
+				number = row[0]
+				newFile.write(number + '\n')
+				
+
+				
+	print 'Written everything to: ' + newFileName
