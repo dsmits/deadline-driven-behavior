@@ -7,12 +7,11 @@
 \documentclass[11pt]{article}
 
 \usepackage[colorinlistoftodos, bordercolor=white, backgroundcolor=cyan]{todonotes}
-
+\graphicspath{{.}{../results}}
 
 \begin{document}
 \listoftodos
 \maketitle
-
 \abstract
 \tableofcontents
 \newpage
@@ -312,6 +311,8 @@ We chose to try a Gaussian function as well because of the following reasoning: 
 \subsubsection{Results for Gaussian Function}
 
 
+\subsubsection{What can we derive from these results?}
+From these results, we can see that not only does the changing of the goal probability function affect the time at which the agents decide when to move to the goal, but also the time at which other actions are executed. This shows that our framework is able to generate emergent behavior. When the probability of going to the goal is high, actions that take longer to finish have a very low frequency. 
 
 \subsection{Qualitative Experiment}
 Apart from quantitative analysis, we will also qualitatively judge the pedestrians' behavior. We will do this by comparing our modeled behavior with real-life behavior from recordings of Rotterdam airport. We have picked a couple of specific behaviors that we have modeled with our system.
@@ -341,6 +342,8 @@ Another recurring behavior we saw is that people lean against the pillars in the
 
 \begin{itemize}
 \item Results of quantitative experiment
+
+
 
 \item Results of qualitative experiment
 \end{itemize}
@@ -379,6 +382,9 @@ The results are different from what we expected, but logical nonetheless. We exp
 \subsection{Limits of the Deadline Driven Behavior Framework}
 Modeling pedestrian behavior with our method does have its limits. First of all, the movements of the agents are designed explicitly through linking together basic movements in the Petri nets. As a consequence, interaction with other agents is quite static, and not directly responsive to surrounding agents. Consequently, our method is not particularly suitable for situations in which the pedestrians have to move very close together, such as when a large amount of pedestrians has to move through a narrow space and have to move closer together or form a queue. When pedestrians move very close together, their behavior will become more uniform, and it would be more sensible to look at the group as a whole, and not as individuals. A more suitable approach would then for example be to look at crowds as particles in a liquid, like Moore, Ali, Mehran and Shah have done \cite{Moore:2011:VCS:2043174.2043192}. Their supposition is that people in crowds seem to move according to the flow, just like particles in a liquid.
 
+\subsection{Other things}
+\todo[inline]{find better subtitle}
+It is very well possible that the results found in our research are far from the optimal results we could have gotten with our framework.  Machine learning could be used to attain the optimal deadline driven behavior. However, this is beyond the scope of our research.
 
 
 \subsection{Future Work}
@@ -389,7 +395,7 @@ Ideally, a pedestrian's propensity to execute certain actions, such as eating, s
 
 \appendix
 
-\section{Appendix}
+\section{Appendix A: Implementation}
 In the appendix we will go into some of the details of implementation of the deadline driven behavior framework. We will also give some directions about how to use our implementation to simulate your own scenario, or to extend it yourself.
 
 
@@ -405,6 +411,30 @@ In order to facilitate transporting tokens between Petri nets, we created classe
 
 
 \subsection{MASON}
+
+\subsection{Connecting MASON and the Situations Framework}
+We deliberately divided our framework into two main modules. Because the situations framework has been implemented with the prospect of interfacing it with other simulations we decided to have the two main units communicate through socket connections. We have the situations side keep track of a thread pool. Every time a pedestrian from the MASON side connects to the situations side, a check is done whether this MASON pedestrian has connected to the Situations before. If this is not the case, another thread will be created to handle the connection to this new pedestrian.  Figure \ref{framework}  shows the global structure. Here you can see how the two interact. 
+\begin{itemize}
+\item Blabla thread pool
+\item blabla 1 kant is niet multithreaded maar whatever
+\item ...
+\end{itemize}
+
+
+\begin{figure}
+\centering
+\includegraphics[width=250pt]{./automaticResults/evaluation_log_linear0point2automatedpointcsv.png}
+%\caption{The global workings of our framework}
+\label{framework}
+\end{figure}
+
+\section{Appendix B: Results}
+\begin{figure}
+\centering
+\includegraphics[width=250pt]{framework}
+\caption{The global workings of our framework}
+\label{framework}
+\end{figure}
 
 
 
