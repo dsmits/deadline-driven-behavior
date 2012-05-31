@@ -7,6 +7,7 @@
 \documentclass[11pt]{article}
 
 \usepackage[colorinlistoftodos, bordercolor=white, backgroundcolor=cyan]{todonotes}
+
 \graphicspath{{.}{../results}}
 
 \begin{document}
@@ -292,7 +293,7 @@ A sigmoid function is an S-shaped curve that has a progression that accellerates
 
 
 \subsubsection{Linear Function}
-We first chose to use a sigmoid function, but it could be the case that the sophistication of this function is lost in practice. If this is the case, we might as well use the simpler linear function. We will use this function to check the necessity of the sigmoid function.
+We first chose to use a sigmoid function, because intuitively it felt like it would reflect real-life behavior best. However, it could be the case that the sophistication of this function is lost in practice. If this is the case, we might as well use the simpler linear function. We will use this function to check the necessity of the sigmoid function.
 
 \subsubsection{Predictions for Behavior Using the Linear Function}
 
@@ -340,15 +341,240 @@ Another recurring behavior we saw is that people lean against the pillars in the
 \subsection{Results}
 
 
-\begin{itemize}
-\item Results of quantitative experiment
 
 
+\begin{figure}
+\centering
+\includegraphics[width=250pt]{./automaticResults/evaluation_log_linear0point2automatedpointcsv.png}
+%\caption{The global workings of our framework}
+\label{framework}
+\end{figure}
 
-\item Results of qualitative experiment
-\end{itemize}
+\begin{figure}
+\centering
+\includegraphics[width=250pt]{./automaticResults/evaluation_log_linear0point5automatedpointcsv.png}
+%\caption{The global workings of our framework}
+\label{framework}
+\end{figure}
+
+\begin{figure}
+\centering
+\includegraphics[width=250pt]{./automaticResults/evaluation_log_linear1automatedpointcsv.png}
+%\caption{The global workings of our framework}
+\label{framework}
+\end{figure}
+
+\begin{figure}
+\centering
+\includegraphics[width=250pt]{./automaticResults/evaluation_log_sigmoid0point01automatedpointcsv.png}
+%\caption{The global workings of our framework}
+\label{framework}
+\end{figure}
+
+\begin{figure}
+\centering
+\includegraphics[width=250pt]{./automaticResults/evaluation_log_sigmoid0point1automatedpointcsv.png}
+%\caption{The global workings of our framework}
+\label{framework}
+\end{figure}
+
+\begin{figure}
+\centering
+\includegraphics[width=250pt]{./automaticResults/evaluation_log_sigmoid0point2automatedpointcsv.png}
+%\caption{The global workings of our framework}
+\label{framework}
+\end{figure}
+
+\begin{figure}
+\centering
+\includegraphics[width=250pt]{./automaticResults/evaluation_log_sigmoid0point5automatedpointcsv.png}
+%\caption{The global workings of our framework}
+\label{framework}
+\end{figure}
+\clearpage
 
 
+\subsection{Results 2}
+Below follow the results of the other actions, that is, the actions that are not directly connected to the goal probability. The results of these actions have to show that our framework is also capable of generating \emph{emergent} behavior. 
+
+\begin{figure}
+\centering
+\includegraphics[width=250pt]{./automaticResults2/evaluation_log2_gaussian0point01twoPeopleToiletSituationpointxmlpointcsv.png}
+%\caption{The global workings of our framework}
+\label{framework}
+\end{figure}
+
+\begin{figure}
+\centering
+\includegraphics[width=250pt]{./automaticResults2/evaluation_log2_gaussian0point2pillarSituationpointxmlpointcsv.png}
+%\caption{The global workings of our framework}
+\label{framework}
+\end{figure}
+
+\begin{figure}
+\centering
+\includegraphics[width=250pt]{./automaticResults2/evaluation_log2_gaussian0point2standStillSituationpointxmlpointcsv.png}
+%\caption{The global workings of our framework}
+\label{framework}
+\end{figure}
+
+\begin{figure}
+\centering
+\includegraphics[width=250pt]{./automaticResults2/evaluation_log2_gaussian0point2twoPeopleToiletSituationpointxmlpointcsv.png}
+%\caption{The global workings of our framework}
+\label{framework}
+\end{figure}
+
+\begin{figure}
+\centering
+\includegraphics[width=250pt]{./automaticResults2/evaluation_log2_gaussian0point5pillarSituationpointxmlpointcsv.png}
+%\caption{The global workings of our framework}
+\label{framework}
+\end{figure}
+
+\begin{figure}
+\centering
+\includegraphics[width=250pt]{./automaticResults2/evaluation_log2_gaussian0point5standStillSituationpointxmlpointcsv.png}
+%\caption{The global workings of our framework}
+\label{framework}
+\end{figure}
+
+\begin{figure}
+\centering
+\includegraphics[width=250pt]{./automaticResults2/evaluation_log2_gaussian0point5twoPeopleToiletSituationpointxmlpointcsv.png}
+%\caption{The global workings of our framework}
+\label{framework}
+\end{figure}
+
+\begin{figure}
+\centering
+\includegraphics[width=250pt]{./automaticResults2/evaluation_log2_linear0point01automated-pillarSituationpointcsv.png}
+%\caption{The global workings of our framework}
+\label{framework}
+\end{figure}
+\clearpage
+
+\begin{figure}
+\centering
+\includegraphics[width=250pt]{./automaticResults2/evaluation_log2_linear0point01automated-standStillSituationpointcsv.png}
+%\caption{The global workings of our framework}
+\label{framework}
+\end{figure}
+
+\begin{figure}
+\centering
+\includegraphics[width=250pt]{./automaticResults2/evaluation_log2_linear0point01automated-twoPeopleToiletSituationpointcsv.png}
+%\caption{The global workings of our framework}
+\label{framework}
+\end{figure}
+
+\begin{figure}
+\centering
+\includegraphics[width=250pt]{./automaticResults2/evaluation_log2_linear0point1automated-standStillSituationpointcsv.png}
+%\caption{The global workings of our framework}
+\label{framework}
+\end{figure}
+
+\begin{figure}
+\centering
+\includegraphics[width=250pt]{./automaticResults2/evaluation_log2_linear0point1automated-twoPeopleToiletSituationpointcsv.png}
+%\caption{The global workings of our framework}
+\label{framework}
+\end{figure}
+
+\begin{figure}
+\centering
+\includegraphics[width=250pt]{./automaticResults2/evaluation_log2_linear0point2automatedstandStillSituationpointxmlpointcsv.png}
+%\caption{The global workings of our framework}
+\label{framework}
+\end{figure}
+
+\begin{figure}
+\centering
+\includegraphics[width=250pt]{./automaticResults2/evaluation_log2_linear0point2automatedtwoPeopleToiletSituationpointxmlpointcsv.png}
+%\caption{The global workings of our framework}
+\label{framework}
+\end{figure}
+\clearpage
+
+\begin{figure}
+\centering
+\includegraphics[width=250pt]{./automaticResults2/evaluation_log2_linear0point5automatedtwoPeopleToiletSituationpointxmlpointcsv.png}
+%\caption{The global workings of our framework}
+\label{framework}
+\end{figure}
+
+\begin{figure}
+\centering
+\includegraphics[width=250pt]{./automaticResults2/evaluation_log2_linear1automatedtwoPeopleToiletSituationpointxmlpointcsv.png}
+%\caption{The global workings of our framework}
+\label{framework}
+\end{figure}
+
+\begin{figure}
+\centering
+\includegraphics[width=250pt]{./automaticResults2/evaluation_log2_sigmoid0point01automatedpillarSituationpointxmlpointcsv.png}
+%\caption{The global workings of our framework}
+\label{framework}
+\end{figure}
+
+\begin{figure}
+\centering
+\includegraphics[width=250pt]{./automaticResults2/evaluation_log2_sigmoid0point01automatedstandStillSituationpointxmlpointcsv.png}
+%\caption{The global workings of our framework}
+\label{framework}
+\end{figure}
+
+\begin{figure}
+\centering
+\includegraphics[width=250pt]{./automaticResults2/evaluation_log2_sigmoid0point01automatedtwoPeopleToiletSituationpointxmlpointcsv.png}
+%\caption{The global workings of our framework}
+\label{framework}
+\end{figure}
+
+\begin{figure}
+\centering
+\includegraphics[width=250pt]{./automaticResults2/evaluation_log2sigmoid0point1automatedpillarSituationpointxmlpointcsv.png}
+%\caption{The global workings of our framework}
+\label{framework}
+\end{figure}
+
+\begin{figure}
+\centering
+\includegraphics[width=250pt]{./automaticResults2/evaluation_log2sigmoid0point1automatedstandStillSituationpointxmlpointcsv.png}
+%\caption{The global workings of our framework}
+\label{framework}
+\end{figure}
+\clearpage
+
+\begin{figure}
+\centering
+\includegraphics[width=250pt]{./automaticResults2/evaluation_log2sigmoid0point1automatedtwoPeopleToiletSituationpointxmlpointcsv.png}
+%\caption{The global workings of our framework}
+\label{framework}
+\end{figure}
+
+\begin{figure}
+\centering
+\includegraphics[width=250pt]{./automaticResults2/evaluation_log2sigmoid0point5automatedpillarSituationpointxmlpointcsv.png}
+%\caption{The global workings of our framework}
+\label{framework}
+\end{figure}
+
+\begin{figure}
+\centering
+\includegraphics[width=250pt]{./automaticResults2/evaluation_log2sigmoid0point5automatedstandStillSituationpointxmlpointcsv.png}
+%\caption{The global workings of our framework}
+\label{framework}
+\end{figure}
+\clearpage
+
+\begin{figure}
+\centering
+\includegraphics[width=250pt]{./automaticResults2/evaluation_log2sigmoid0point5automatedtwoPeopleToiletSituationpointxmlpointcsv.png}
+%\caption{The global workings of our framework}
+\label{framework}
+\end{figure}
 
 \begin{figure}
 \centering
@@ -420,13 +646,6 @@ We deliberately divided our framework into two main modules. Because the situati
 \item ...
 \end{itemize}
 
-
-\begin{figure}
-\centering
-\includegraphics[width=250pt]{./automaticResults/evaluation_log_linear0point2automatedpointcsv.png}
-%\caption{The global workings of our framework}
-\label{framework}
-\end{figure}
 
 \section{Appendix B: Results}
 \begin{figure}

@@ -41,16 +41,16 @@
 \contentsline {paragraph}{Checking in}{22}
 \contentsline {paragraph}{Lean Against Pillar}{22}
 \contentsline {subsection}{\numberline {4.3}Results}{22}
-\contentsline {section}{\numberline {5}Conclusion \& Discussion}{22}
-\contentsline {subsection}{\numberline {5.1}Limits of the Deadline Driven Behavior Framework}{24}
-\contentsline {subsection}{\numberline {5.2}Other things}{24}
-\contentsline {subsection}{\numberline {5.3}Future Work}{25}
-\contentsline {subsubsection}{\numberline {5.3.1}Needs}{25}
-\contentsline {section}{\numberline {A}Appendix A: Implementation}{25}
-\contentsline {subsection}{\numberline {A.1}Implementing the Framework}{25}
-\contentsline {subsection}{\numberline {A.2}Extending PIPE2}{25}
-\contentsline {subsubsection}{\numberline {A.2.1}Sources, Sinks, Slots}{25}
-\contentsline {subsubsection}{\numberline {A.2.2}Additional Modifications}{26}
-\contentsline {subsection}{\numberline {A.3}MASON}{26}
-\contentsline {subsection}{\numberline {A.4}Connecting MASON and the Situations Framework}{26}
-\contentsline {section}{\numberline {B}Appendix B: Results}{26}
+\contentsline {section}{\numberline {5}Conclusion \& Discussion}{40}
+\contentsline {subsection}{\numberline {5.1}Limits of the Deadline Driven Behavior Framework}{40}
+\contentsline {subsection}{\numberline {5.2}Other things}{42}
+\contentsline {subsection}{\numberline {5.3}Future Work}{42}
+\contentsline {subsubsection}{\numberline {5.3.1}Needs}{42}
+\contentsline {section}{\numberline {A}Appendix A: Implementation}{43}
+\contentsline {subsection}{\numberline {A.1}Implementing the Framework}{43}
+\contentsline {subsection}{\numberline {A.2}Extending PIPE2}{43}
+\contentsline {subsubsection}{\numberline {A.2.1}Sources, Sinks, Slots}{43}
+\contentsline {subsubsection}{\numberline {A.2.2}Additional Modifications}{43}
+\contentsline {subsection}{\numberline {A.3}MASON}{43}
+\contentsline {subsection}{\numberline {A.4}Connecting MASON and the Situations Framework}{43}
+\contentsline {section}{\numberline {B}Appendix B: Results}{44}
