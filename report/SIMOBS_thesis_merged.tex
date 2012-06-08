@@ -7,6 +7,7 @@
 \documentclass[11pt]{article}
 
 \usepackage[colorinlistoftodos, bordercolor=white, backgroundcolor=cyan]{todonotes}
+\usepackage{booktabs}
 
 \graphicspath{{.}{../results}}
 
@@ -339,59 +340,70 @@ When the pedestrians reach the end of the queue situation, they will enter the c
 Another recurring behavior we saw is that people lean against the pillars in the hall. This is a type of idle behavior, a variation on the standing still behavior.
 
 \subsection{Results}
+Below you will find the results of the quantitative experiment, where we used a variety of functions to check whether emergent behavior occurs. 
 
-
+In figure \ref{evaluation_log_linear0point2automatedpointcsv}, you can see the results of choosing a linear function from 0 to 0.2 as the goal probability function. We can see here that the pedestrians reach their goal very early, that is, 100 \% of the pedestrians reach the goal so early, they could easily have used the remaining time to do a multitude of other activities. 
 
 
 \begin{figure}
 \centering
 \includegraphics[width=250pt]{./automaticResults/evaluation_log_linear0point2automatedpointcsv.png}
-%\caption{The global workings of our framework}
-\label{framework}
+\caption{evaluation\_log\_linear0point2automatedpointcsv}
+\label{evaluation_log_linear0point2automatedpointcsv}
 \end{figure}
+
+In figure \ref{evaluation_log_linear0point5automatedpointcsv} the same effect can be seen even more exaggerated. Again, we see that the linear probability function causes the pedestrians to arrive at their goal way too early.
 
 \begin{figure}
 \centering
 \includegraphics[width=250pt]{./automaticResults/evaluation_log_linear0point5automatedpointcsv.png}
-%\caption{The global workings of our framework}
-\label{framework}
+\caption{evaluation\_log\_linear0point5automatedpointcsv}
+\label{evaluation_log_linear0point5automatedpointcsv}
 \end{figure}
 
 \begin{figure}
 \centering
 \includegraphics[width=250pt]{./automaticResults/evaluation_log_linear1automatedpointcsv.png}
 %\caption{The global workings of our framework}
-\label{framework}
+\label{evaluation_log_linear1automatedpointcsv}
 \end{figure}
+
+In figure \ref{evaluation_log_sigmoid0point01automatedpointcsv} we see the results of using a sigmoid for goal probability function with a minimum \todo[inline]{find out how to describe, since those values only count in the limit or whatever} of 0 and a maximum of 0.01. Again we see that a maximum probability of 0.01 is low to have the pedestrians reach their goal in time. 
 
 \begin{figure}
 \centering
 \includegraphics[width=250pt]{./automaticResults/evaluation_log_sigmoid0point01automatedpointcsv.png}
-%\caption{The global workings of our framework}
-\label{framework}
+\caption{evaluation\_log\_sigmoid0point01automatedpointcsv}
+\label{evaluation_log_sigmoid0point01automatedpointcsv}
 \end{figure}
+
+
 
 \begin{figure}
 \centering
 \includegraphics[width=250pt]{./automaticResults/evaluation_log_sigmoid0point1automatedpointcsv.png}
 %\caption{The global workings of our framework}
-\label{framework}
+caption{evaluation\_log\_sigmoid0point1automatedpointcsv}
+\label{evaluation_log_sigmoid0point1automatedpointcsv}
 \end{figure}
 
 \begin{figure}
 \centering
 \includegraphics[width=250pt]{./automaticResults/evaluation_log_sigmoid0point2automatedpointcsv.png}
 %\caption{The global workings of our framework}
-\label{framework}
+\caption{evaluation\_log\_sigmoid0point2automatedpointcsv}
+\label{evaluation_log_sigmoid0point2automatedpointcsv}
 \end{figure}
 
 \begin{figure}
 \centering
 \includegraphics[width=250pt]{./automaticResults/evaluation_log_sigmoid0point5automatedpointcsv.png}
 %\caption{The global workings of our framework}
-\label{framework}
+\caption{evaluation\_log\_sigmoid0point5automatedpointcsv}
+\label{evaluation_log_sigmoid0point5automatedpointcsv}
 \end{figure}
-\clearpage
+
+We can only say more about the results if the frequencies are divided by the total number of pedestrians in the simulation at that moment. The curve we see in figure \ref{evaluation_log_sigmoid0point01automatedpointcsv}, \ref{evaluation_log_sigmoid0point1automatedpointcsv}, \ref{evaluation_log_sigmoid0point2automatedpointcsv}, and \ref{evaluation_log_sigmoid0point5automatedpointcsv} (though to a lesser extent) can be explained by a multitude of causes. First of all, it can be explained by the fact that the number of pedestrians in the simulation diminishes as they finish their goal action. It could also be caused by the probability function increasing, but in this case, that is highly unlikely, because that would result in data quite opposite to the results here. Lastly, it could be that at certain moments, there are more pedestrians already engaged in other multi-step activities.
 
 
 \subsection{Results 2}
@@ -401,56 +413,56 @@ Below follow the results of the other actions, that is, the actions that are not
 \centering
 \includegraphics[width=250pt]{./automaticResults2/evaluation_log2_gaussian0point01twoPeopleToiletSituationpointxmlpointcsv.png}
 %\caption{The global workings of our framework}
-\label{framework}
+\label{evaluation_log2_gaussian0point01twoPeopleToiletSituationpointxmlpointcsv}
 \end{figure}
 
 \begin{figure}
 \centering
 \includegraphics[width=250pt]{./automaticResults2/evaluation_log2_gaussian0point2pillarSituationpointxmlpointcsv.png}
 %\caption{The global workings of our framework}
-\label{framework}
+\label{evaluation_log2_gaussian0point2pillarSituationpointxmlpointcsv}
 \end{figure}
 
 \begin{figure}
 \centering
 \includegraphics[width=250pt]{./automaticResults2/evaluation_log2_gaussian0point2standStillSituationpointxmlpointcsv.png}
 %\caption{The global workings of our framework}
-\label{framework}
+\label{evaluation_log2_gaussian0point2standStillSituationpointxmlpointcsv}
 \end{figure}
 
 \begin{figure}
 \centering
 \includegraphics[width=250pt]{./automaticResults2/evaluation_log2_gaussian0point2twoPeopleToiletSituationpointxmlpointcsv.png}
 %\caption{The global workings of our framework}
-\label{framework}
+\label{evaluation_log2_gaussian0point2twoPeopleToiletSituationpointxmlpointcsv}
 \end{figure}
 
 \begin{figure}
 \centering
 \includegraphics[width=250pt]{./automaticResults2/evaluation_log2_gaussian0point5pillarSituationpointxmlpointcsv.png}
 %\caption{The global workings of our framework}
-\label{framework}
+\label{evaluation_log2_gaussian0point5pillarSituationpointxmlpointcsv}
 \end{figure}
 
 \begin{figure}
 \centering
 \includegraphics[width=250pt]{./automaticResults2/evaluation_log2_gaussian0point5standStillSituationpointxmlpointcsv.png}
 %\caption{The global workings of our framework}
-\label{framework}
+\label{evaluation_log2_gaussian0point5standStillSituationpointxmlpointcsv}
 \end{figure}
 
 \begin{figure}
 \centering
 \includegraphics[width=250pt]{./automaticResults2/evaluation_log2_gaussian0point5twoPeopleToiletSituationpointxmlpointcsv.png}
 %\caption{The global workings of our framework}
-\label{framework}
+\label{evaluation_log2_gaussian0point5twoPeopleToiletSituationpointxmlpointcsv}
 \end{figure}
 
 \begin{figure}
 \centering
 \includegraphics[width=250pt]{./automaticResults2/evaluation_log2_linear0point01automated-pillarSituationpointcsv.png}
 %\caption{The global workings of our framework}
-\label{framework}
+\label{evaluation_log2_linear0point01automated-pillarSituationpointcsv}
 \end{figure}
 \clearpage
 
@@ -458,42 +470,42 @@ Below follow the results of the other actions, that is, the actions that are not
 \centering
 \includegraphics[width=250pt]{./automaticResults2/evaluation_log2_linear0point01automated-standStillSituationpointcsv.png}
 %\caption{The global workings of our framework}
-\label{framework}
+\label{evaluation_log2_linear0point01automated-standStillSituationpointcsv}
 \end{figure}
 
 \begin{figure}
 \centering
 \includegraphics[width=250pt]{./automaticResults2/evaluation_log2_linear0point01automated-twoPeopleToiletSituationpointcsv.png}
 %\caption{The global workings of our framework}
-\label{framework}
+\label{evaluation_log2_linear0point01automated-twoPeopleToiletSituationpointcsv}
 \end{figure}
 
 \begin{figure}
 \centering
 \includegraphics[width=250pt]{./automaticResults2/evaluation_log2_linear0point1automated-standStillSituationpointcsv.png}
 %\caption{The global workings of our framework}
-\label{framework}
+\label{evaluation_log2_linear0point1automated-standStillSituationpointcsv}
 \end{figure}
 
 \begin{figure}
 \centering
 \includegraphics[width=250pt]{./automaticResults2/evaluation_log2_linear0point1automated-twoPeopleToiletSituationpointcsv.png}
 %\caption{The global workings of our framework}
-\label{framework}
+\label{evaluation_log2_linear0point1automated-twoPeopleToiletSituationpointcsv}
 \end{figure}
 
 \begin{figure}
 \centering
 \includegraphics[width=250pt]{./automaticResults2/evaluation_log2_linear0point2automatedstandStillSituationpointxmlpointcsv.png}
 %\caption{The global workings of our framework}
-\label{framework}
+\label{evaluation_log2_linear0point2automatedstandStillSituationpointxmlpointcsv}
 \end{figure}
 
 \begin{figure}
 \centering
 \includegraphics[width=250pt]{./automaticResults2/evaluation_log2_linear0point2automatedtwoPeopleToiletSituationpointxmlpointcsv.png}
 %\caption{The global workings of our framework}
-\label{framework}
+\label{evaluation_log2_linear0point2automatedtwoPeopleToiletSituationpointxmlpointcsv}
 \end{figure}
 \clearpage
 
@@ -501,49 +513,49 @@ Below follow the results of the other actions, that is, the actions that are not
 \centering
 \includegraphics[width=250pt]{./automaticResults2/evaluation_log2_linear0point5automatedtwoPeopleToiletSituationpointxmlpointcsv.png}
 %\caption{The global workings of our framework}
-\label{framework}
+\label{evaluation_log2_linear0point5automatedtwoPeopleToiletSituationpointxmlpointcsv}
 \end{figure}
 
 \begin{figure}
 \centering
 \includegraphics[width=250pt]{./automaticResults2/evaluation_log2_linear1automatedtwoPeopleToiletSituationpointxmlpointcsv.png}
 %\caption{The global workings of our framework}
-\label{framework}
+\label{evaluation_log2_linear1automatedtwoPeopleToiletSituationpointxmlpointcsv}
 \end{figure}
 
 \begin{figure}
 \centering
 \includegraphics[width=250pt]{./automaticResults2/evaluation_log2_sigmoid0point01automatedpillarSituationpointxmlpointcsv.png}
 %\caption{The global workings of our framework}
-\label{framework}
+\label{evaluation_log2_sigmoid0point01automatedpillarSituationpointxmlpointcsv}
 \end{figure}
 
 \begin{figure}
 \centering
 \includegraphics[width=250pt]{./automaticResults2/evaluation_log2_sigmoid0point01automatedstandStillSituationpointxmlpointcsv.png}
 %\caption{The global workings of our framework}
-\label{framework}
+\label{evaluation_log2_sigmoid0point01automatedstandStillSituationpointxmlpointcsv}
 \end{figure}
 
 \begin{figure}
 \centering
 \includegraphics[width=250pt]{./automaticResults2/evaluation_log2_sigmoid0point01automatedtwoPeopleToiletSituationpointxmlpointcsv.png}
 %\caption{The global workings of our framework}
-\label{framework}
+\label{evaluation_log2_sigmoid0point01automatedtwoPeopleToiletSituationpointxmlpointcsv}
 \end{figure}
 
 \begin{figure}
 \centering
 \includegraphics[width=250pt]{./automaticResults2/evaluation_log2sigmoid0point1automatedpillarSituationpointxmlpointcsv.png}
 %\caption{The global workings of our framework}
-\label{framework}
+\label{evaluation_log2sigmoid0point1automatedpillarSituationpointxmlpointcsv}
 \end{figure}
 
 \begin{figure}
 \centering
 \includegraphics[width=250pt]{./automaticResults2/evaluation_log2sigmoid0point1automatedstandStillSituationpointxmlpointcsv.png}
 %\caption{The global workings of our framework}
-\label{framework}
+\label{evaluation_log2sigmoid0point1automatedstandStillSituationpointxmlpointcsv}
 \end{figure}
 \clearpage
 
@@ -551,21 +563,21 @@ Below follow the results of the other actions, that is, the actions that are not
 \centering
 \includegraphics[width=250pt]{./automaticResults2/evaluation_log2sigmoid0point1automatedtwoPeopleToiletSituationpointxmlpointcsv.png}
 %\caption{The global workings of our framework}
-\label{framework}
+\label{evaluation_log2sigmoid0point1automatedtwoPeopleToiletSituationpointxmlpointcsv}
 \end{figure}
 
 \begin{figure}
 \centering
 \includegraphics[width=250pt]{./automaticResults2/evaluation_log2sigmoid0point5automatedpillarSituationpointxmlpointcsv.png}
 %\caption{The global workings of our framework}
-\label{framework}
+\label{evaluation_log2sigmoid0point5automatedpillarSituationpointxmlpointcsv}
 \end{figure}
 
 \begin{figure}
 \centering
 \includegraphics[width=250pt]{./automaticResults2/evaluation_log2sigmoid0point5automatedstandStillSituationpointxmlpointcsv.png}
 %\caption{The global workings of our framework}
-\label{framework}
+\label{evaluation_log2sigmoid0point5automatedstandStillSituationpointxmlpointcsv}
 \end{figure}
 \clearpage
 
@@ -573,7 +585,7 @@ Below follow the results of the other actions, that is, the actions that are not
 \centering
 \includegraphics[width=250pt]{./automaticResults2/evaluation_log2sigmoid0point5automatedtwoPeopleToiletSituationpointxmlpointcsv.png}
 %\caption{The global workings of our framework}
-\label{framework}
+\label{evaluation_log2sigmoid0point5automatedtwoPeopleToiletSituationpointxmlpointcsv}
 \end{figure}
 
 \begin{figure}
