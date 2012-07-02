@@ -276,6 +276,29 @@ The use of Dijkstra's algorithm does limit the use of our Petri nets though. For
 
 \section{Experiments}
 
+\todo[inline]{Write an introduction to the experiments}
+Allthough it can be difficult to decide whether a group of people walks around "realistically", we will certainly give it a try. We will attempt to test our framework in two different ways; first of all, we will assess our framework by doing a qualitative comparison with real-life footage of Rotterdam Airport. We have access to both camera footage and manually annotated locations of the visitors.
+
+\subsubsection{The Behaviors}
+
+\paragraph{Going to the toilet}
+In the videos, we observed that a typical behavior that manifests itself multiple times in the video material is that one person goes to the toilet, and another one waits until this person has come back. The Petri net used for this can be found in figure \ref{toiletsituation}.
+
+\paragraph{Standing in the queue for the check-in desk}
+One constant factor in the video material seemed to be the people lining up in front of the check-in desk. There are many ways to model this behavior with our framework.
+\todo{Mention other ways to model this}
+We decided to split this behavior in two situations. First of all, we have the check-in situation, which in our simulation comes down to standing in front of the check-in desk for a short period of time. The other half of this behavior is the queue situation. This is an area in the hall where people line up with the people in front of them. The situation area is chosen such that the pedestrians in it will together form an orderly line. This means that the situation should not be too broad.
+
+
+\paragraph{Checking in}
+When the pedestrians reach the end of the queue situation, they will enter the check-in situation, in which they will stand in front of the check-in desk for a little while, after which they are free to go again.
+
+\paragraph{Lean Against Pillar}
+Another recurring behavior we saw is that people lean against the pillars in the hall. This is a type of idle behavior, a variation on the standing still behavior.
+
+\paragraph{Wander}
+One crucial behavior is missing. How are the pedestrians going to reach the different situation areas? This is only possible if they already have a move to begin with, otherwise they are only going to stay in place. That is why we added the \emph{wander} behavior. This behavior lets the pedestrian turn a random amount of degrees between $-45\pi$ and $45\pi$ and walk a few steps in that direction.
+
 \subsection{Quantitative Experiment}
 It is very difficult to quantitatively establish whether lifelike behavior has been modeled. However, it is possible to check whether the mechanics of time planning work as predicted. In order to do this, we log the pedestrian's relative time when they arrive at their goal to check how much time they had left until their deadline. If the model works correctly, this time should roughly correlate to how the time probability function has been chosen. We will discuss the various functions we have used to model the probabilities over time.
 
@@ -322,22 +345,6 @@ Apart from quantitative analysis, we will also qualitatively judge the pedestria
 \subsubsection{The Dataset}
 We acquired manually annotated data indicating the tracks of the visitors of Rotterdam airport. \todo[inline]{Create reference to Ernst Bovenkamp}
 
-\subsubsection{The Behaviors}
-
-\paragraph{Going to the toilet}
-In the videos, we observed that a typical behavior that manifests itself multiple times in the video material is that one person goes to the toilet, and another one waits until this person has come back. The Petri net used for this can be found in figure \ref{toiletsituation}.
-
-\paragraph{Standing in the queue for the check-in desk}
-One constant factor in the video material seemed to be the people lining up in front of the check-in desk. There are many ways to model this behavior with our framework.
-\todo{Mention other ways to model this}
-We decided to split this behavior in two situations. First of all, we have the check-in situation, which in our simulation comes down to standing in front of the check-in desk for a short period of time. The other half of this behavior is the queue situation. This is an area in the hall where people line up with the people in front of them. The situation area is chosen such that the pedestrians in it will together form an orderly line. This means that the situation should not be too broad.
-
-
-\paragraph{Checking in}
-When the pedestrians reach the end of the queue situation, they will enter the check-in situation, in which they will stand in front of the check-in desk for a little while, after which they are free to go again.
-
-\paragraph{Lean Against Pillar}
-Another recurring behavior we saw is that people lean against the pillars in the hall. This is a type of idle behavior, a variation on the standing still behavior.
 
 \subsection{Results}
 Below you will find the results of the quantitative experiment, where we used a variety of functions to check whether emergent behavior occurs. 
