@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.1415926-1.40.10 (MiKTeX 2.8) (preloaded format=pdflatex 2010.5.29)  31 MAY 2012 14:19
+This is pdfTeX, Version 3.1415926-1.40.10 (MiKTeX 2.8) (preloaded format=pdflatex 2010.5.29)  29 JUN 2012 15:50
 entering extended mode
 **C:/Users/Compaq/Documents/vakken/afstudeerstage/svn_report/report/SIMOBS_thes
 is_merged.tex
@@ -327,131 +327,55 @@ LaTeX Info: Redefining \addtolength on input line 76.
 )
 \c@@todonotes@numberoftodonotes=\count112
 )
+("C:\Program Files (x86)\MiKTeX 2.8\tex\latex\booktabs\booktabs.sty"
+Package: booktabs 2005/04/14 v1.61803 publication quality tables
+\heavyrulewidth=\dimen150
+\lightrulewidth=\dimen151
+\cmidrulewidth=\dimen152
+\belowrulesep=\dimen153
+\belowbottomsep=\dimen154
+\aboverulesep=\dimen155
+\abovetopsep=\dimen156
+\cmidrulesep=\dimen157
+\cmidrulekern=\dimen158
+\defaultaddspace=\dimen159
+\@cmidla=\count113
+\@cmidlb=\count114
+\@aboverulesep=\dimen160
+\@belowrulesep=\dimen161
+\@thisruleclass=\count115
+\@lastruleclass=\count116
+\@thisrulewidth=\dimen162
+)
 (C:\Users\Compaq\Documents\vakken\afstudeerstage\svn_report\report\SIMOBS_thesi
 s_merged.aux
 
-LaTeX Warning: Label `framework' multiply defined.
-
-
-LaTeX Warning: Label `framework' multiply defined.
-
-
-LaTeX Warning: Label `framework' multiply defined.
-
-
-LaTeX Warning: Label `framework' multiply defined.
-
-
-LaTeX Warning: Label `framework' multiply defined.
-
-
-LaTeX Warning: Label `framework' multiply defined.
-
-
-LaTeX Warning: Label `framework' multiply defined.
-
-
-LaTeX Warning: Label `framework' multiply defined.
-
-
-LaTeX Warning: Label `framework' multiply defined.
-
-
-LaTeX Warning: Label `framework' multiply defined.
-
-
-LaTeX Warning: Label `framework' multiply defined.
-
-
-LaTeX Warning: Label `framework' multiply defined.
-
-
-LaTeX Warning: Label `framework' multiply defined.
-
-
-LaTeX Warning: Label `framework' multiply defined.
-
-
-LaTeX Warning: Label `framework' multiply defined.
-
-
-LaTeX Warning: Label `framework' multiply defined.
-
-
-LaTeX Warning: Label `framework' multiply defined.
-
-
-LaTeX Warning: Label `framework' multiply defined.
-
-
-LaTeX Warning: Label `framework' multiply defined.
-
-
-LaTeX Warning: Label `framework' multiply defined.
-
-
-LaTeX Warning: Label `framework' multiply defined.
-
-
-LaTeX Warning: Label `framework' multiply defined.
-
-
-LaTeX Warning: Label `framework' multiply defined.
-
-
-LaTeX Warning: Label `framework' multiply defined.
-
-
-LaTeX Warning: Label `framework' multiply defined.
-
-
-LaTeX Warning: Label `framework' multiply defined.
-
-
-LaTeX Warning: Label `framework' multiply defined.
-
-
-LaTeX Warning: Label `framework' multiply defined.
-
-
-LaTeX Warning: Label `framework' multiply defined.
-
-
-LaTeX Warning: Label `framework' multiply defined.
-
-
-LaTeX Warning: Label `framework' multiply defined.
-
-
 LaTeX Warning: Label `toiletsituation' multiply defined.
 
-
-LaTeX Warning: Label `framework' multiply defined.
-
 )
-LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 13.
-LaTeX Font Info:    ... okay on input line 13.
-LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 13.
-LaTeX Font Info:    ... okay on input line 13.
-LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 13.
-LaTeX Font Info:    ... okay on input line 13.
-LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 13.
-LaTeX Font Info:    ... okay on input line 13.
-LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 13.
-LaTeX Font Info:    ... okay on input line 13.
-LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 13.
-LaTeX Font Info:    ... okay on input line 13.
+LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 14.
+LaTeX Font Info:    ... okay on input line 14.
+LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 14.
+LaTeX Font Info:    ... okay on input line 14.
+LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 14.
+LaTeX Font Info:    ... okay on input line 14.
+LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 14.
+LaTeX Font Info:    ... okay on input line 14.
+LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 14.
+LaTeX Font Info:    ... okay on input line 14.
+LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 14.
+LaTeX Font Info:    ... okay on input line 14.
  ("C:\Program Files (x86)\MiKTeX 2.8\tex\context\base\supp-pdf.tex"
 [Loading MPS to PDF converter (version 2006.09.02).]
-\scratchcounter=\count113
-\scratchdimen=\dimen150
+\scratchcounter=\count117
+\scratchdimen=\dimen163
 \scratchbox=\box34
-\nofMPsegments=\count114
-\nofMParguments=\count115
+\nofMPsegments=\count118
+\nofMParguments=\count119
 \everyMPshowfont=\toks21
-\MPscratchCnt=\count116
-\MPscratchDim=\dimen151
-\MPnumerator=\count117
+\MPscratchCnt=\count120
+\MPscratchDim=\dimen164
+\MPnumerator=\count121
 \everyMPtoPDFconversion=\toks22
 )
 (C:\Users\Compaq\Documents\vakken\afstudeerstage\svn_report\report\SIMOBS_thesi
@@ -468,7 +392,7 @@ LaTeX Font Info:    External font `cmex10' loaded for size
 
 {C:/ProgramData/MiKTeX/2.8/pdftex/config/pdftex.map}]
 LaTeX Font Info:    External font `cmex10' loaded for size
-(Font)              <12> on input line 15.
+(Font)              <12> on input line 16.
 
 (C:\Users\Compaq\Documents\vakken\afstudeerstage\svn_report\report\SIMOBS_thesi
 s_merged.toc
@@ -477,32 +401,32 @@ LaTeX Font Info:    External font `cmex10' loaded for size
 LaTeX Font Info:    External font `cmex10' loaded for size
 (Font)              <5> on input line 2.
  [2]
-Overfull \hbox (1.69513pt too wide) in paragraph at lines 28--28
+Overfull \hbox (1.69513pt too wide) in paragraph at lines 34--34
  [][] []\OT1/cmr/m/n/10 Predictions for Be-hav-ior Us-ing the Sig-moid Func- 
  []
 
 
-Overfull \hbox (6.3201pt too wide) in paragraph at lines 33--33
+Overfull \hbox (6.3201pt too wide) in paragraph at lines 39--39
  [][] []\OT1/cmr/m/n/10 Predictions for Be-hav-ior Us-ing the Gaus-sian Func- 
  []
 
 )
 \tf@toc=\write5
  [3]
-Overfull \hbox (9.49146pt too wide) in paragraph at lines 32--33
+Overfull \hbox (9.49146pt too wide) in paragraph at lines 33--34
 []\OT1/cmr/m/n/10 It is a tool for gen-er-at-ing and ex-e-cut-ing bat-tle-field
  sce-nar-ios. SIMOBS
  []
 
 [4]
-LaTeX Font Info:    Try loading font information for OMS+cmr on input line 45.
+LaTeX Font Info:    Try loading font information for OMS+cmr on input line 46.
  ("C:\Program Files (x86)\MiKTeX 2.8\tex\latex\base\omscmr.fd"
 File: omscmr.fd 1999/05/25 v2.5h Standard LaTeX font definitions
 )
 LaTeX Font Info:    Font shape `OMS/cmr/m/n' in size <10> not available
-(Font)              Font shape `OMS/cmsy/m/n' tried instead on input line 45.
+(Font)              Font shape `OMS/cmsy/m/n' tried instead on input line 46.
  [5]
-Underfull \hbox (badness 10000) in paragraph at lines 102--103
+Underfull \hbox (badness 10000) in paragraph at lines 103--104
 
  []
 
@@ -510,127 +434,127 @@ Underfull \hbox (badness 10000) in paragraph at lines 102--103
 Missing character: There is no Ã in font cmr10!
 Missing character: There is no © in font cmr10!
 
-Overfull \hbox (10.13031pt too wide) in paragraph at lines 117--119
+Overfull \hbox (10.13031pt too wide) in paragraph at lines 118--120
 \OT1/cmr/m/n/10 what de-fined, but were only ex-pressed through spa-cial po-si-
 tions. Bcheiraz
  []
 
 [9] [10]
-Underfull \hbox (badness 10000) in paragraph at lines 140--141
+Underfull \hbox (badness 10000) in paragraph at lines 141--142
 
  []
 
 [11] [12]
-Overfull \hbox (98.97322pt too wide) in paragraph at lines 186--188
+Overfull \hbox (98.97322pt too wide) in paragraph at lines 187--189
 []\OT1/cmr/m/n/10 Quote from: http://www.ac.tuiasi.ro/pntool/help/ii36generaliz
 edstochasticpetrinets.htm:
  []
 
 [13]
-Underfull \hbox (badness 10000) in paragraph at lines 199--199
+Underfull \hbox (badness 10000) in paragraph at lines 200--200
 [][]
  []
 
 <restaurant.png, id=57, 683.55376pt x 465.74pt>
 File: restaurant.png Graphic file (type png)
  <use restaurant.png>
-Overfull \hbox (90.0pt too wide) in paragraph at lines 205--207
+Overfull \hbox (90.0pt too wide) in paragraph at lines 206--208
  [] 
  []
 
 [14] [15 <C:/Users/Compaq/Documents/vakken/afstudeerstage/svn_report/report/res
 taurant.png (PNG copy)>]
-Underfull \hbox (badness 10000) in paragraph at lines 222--222
+Underfull \hbox (badness 10000) in paragraph at lines 223--223
 [][]
  []
 
 [16]
-Underfull \hbox (badness 10000) in paragraph at lines 227--227
+Underfull \hbox (badness 10000) in paragraph at lines 228--228
 [][]
  []
 
 [17]
-Underfull \hbox (badness 10000) in paragraph at lines 260--262
+Underfull \hbox (badness 10000) in paragraph at lines 261--263
 
  []
 
 [18] [19]
-Overfull \hbox (0.62115pt too wide) in paragraph at lines 292--292
-[]\OT1/cmr/bx/n/10.95 Predictions for Be-hav-ior Us-ing the Sig-moid Func-
- []
-
-[20]
-Overfull \hbox (6.11438pt too wide) in paragraph at lines 309--309
-[]\OT1/cmr/bx/n/10.95 Predictions for Be-hav-ior Us-ing the Gaus-sian Func-
- []
-
-[21]
-Underfull \hbox (badness 10000) in paragraph at lines 331--331
+Underfull \hbox (badness 10000) in paragraph at lines 289--289
 [][]
  []
 
+[20]
+Overfull \hbox (0.62115pt too wide) in paragraph at lines 316--316
+[]\OT1/cmr/bx/n/10.95 Predictions for Be-hav-ior Us-ing the Sig-moid Func-
+ []
 
+[21]
+Overfull \hbox (6.11438pt too wide) in paragraph at lines 333--333
+[]\OT1/cmr/bx/n/10.95 Predictions for Be-hav-ior Us-ing the Gaus-sian Func-
+ []
+
+[22]
 <../results./automaticResults/evaluation_log_linear0point2automatedpointcsv.png
-, id=86, 422.32782pt x 316.18124pt>
+, id=89, 422.32782pt x 316.18124pt>
 File: ../results./automaticResults/evaluation_log_linear0point2automatedpointcs
 v.png Graphic file (type png)
 
 <use ../results./automaticResults/evaluation_log_linear0point2automatedpointcsv
 .png>
 <../results./automaticResults/evaluation_log_linear0point5automatedpointcsv.png
-, id=87, 422.32782pt x 316.18124pt>
+, id=90, 422.32782pt x 316.18124pt>
 File: ../results./automaticResults/evaluation_log_linear0point5automatedpointcs
 v.png Graphic file (type png)
 
 <use ../results./automaticResults/evaluation_log_linear0point5automatedpointcsv
 .png>
-<../results./automaticResults/evaluation_log_linear1automatedpointcsv.png, id=8
-8, 422.32782pt x 316.18124pt>
+<../results./automaticResults/evaluation_log_linear1automatedpointcsv.png, id=9
+1, 422.32782pt x 316.18124pt>
 File: ../results./automaticResults/evaluation_log_linear1automatedpointcsv.png 
 Graphic file (type png)
 
 <use ../results./automaticResults/evaluation_log_linear1automatedpointcsv.png>
 <../results./automaticResults/evaluation_log_sigmoid0point01automatedpointcsv.p
-ng, id=89, 422.32782pt x 316.18124pt>
+ng, id=92, 422.32782pt x 316.18124pt>
 File: ../results./automaticResults/evaluation_log_sigmoid0point01automatedpoint
 csv.png Graphic file (type png)
 
 <use ../results./automaticResults/evaluation_log_sigmoid0point01automatedpointc
 sv.png>
 <../results./automaticResults/evaluation_log_sigmoid0point1automatedpointcsv.pn
-g, id=90, 422.32782pt x 316.18124pt>
+g, id=93, 422.32782pt x 316.18124pt>
 File: ../results./automaticResults/evaluation_log_sigmoid0point1automatedpointc
 sv.png Graphic file (type png)
 
 <use ../results./automaticResults/evaluation_log_sigmoid0point1automatedpointcs
 v.png>
 <../results./automaticResults/evaluation_log_sigmoid0point2automatedpointcsv.pn
-g, id=91, 422.32782pt x 316.18124pt>
+g, id=94, 422.32782pt x 316.18124pt>
 File: ../results./automaticResults/evaluation_log_sigmoid0point2automatedpointc
 sv.png Graphic file (type png)
 
 <use ../results./automaticResults/evaluation_log_sigmoid0point2automatedpointcs
 v.png>
 <../results./automaticResults/evaluation_log_sigmoid0point5automatedpointcsv.pn
-g, id=92, 422.32782pt x 316.18124pt>
+g, id=95, 422.32782pt x 316.18124pt>
 File: ../results./automaticResults/evaluation_log_sigmoid0point5automatedpointc
 sv.png Graphic file (type png)
 
 <use ../results./automaticResults/evaluation_log_sigmoid0point5automatedpointcs
-v.png> [22] [23 <C:/Users/Compaq/Documents/vakken/afstudeerstage/svn_report/res
-ults./automaticResults/evaluation_log_linear0point2automatedpointcsv.png (PNG c
-opy)> <C:/Users/Compaq/Documents/vakken/afstudeerstage/svn_report/results./auto
-maticResults/evaluation_log_linear0point5automatedpointcsv.png (PNG copy)>]
-[24 <C:/Users/Compaq/Documents/vakken/afstudeerstage/svn_report/results./automa
-ticResults/evaluation_log_linear1automatedpointcsv.png (PNG copy)> <C:/Users/Co
-mpaq/Documents/vakken/afstudeerstage/svn_report/results./automaticResults/evalu
-ation_log_sigmoid0point01automatedpointcsv.png (PNG copy)>] [25 <C:/Users/Compa
+v.png> [23 <C:/Users/Compaq/Documents/vakken/afstudeerstage/svn_report/results.
+/automaticResults/evaluation_log_linear0point2automatedpointcsv.png (PNG copy)>
+] [24 <C:/Users/Compaq/Documents/vakken/afstudeerstage/svn_report/results./auto
+maticResults/evaluation_log_linear0point5automatedpointcsv.png (PNG copy)> <C:/
+Users/Compaq/Documents/vakken/afstudeerstage/svn_report/results./automaticResul
+ts/evaluation_log_linear1automatedpointcsv.png (PNG copy)>] [25 <C:/Users/Compa
 q/Documents/vakken/afstudeerstage/svn_report/results./automaticResults/evaluati
-on_log_sigmoid0point1automatedpointcsv.png (PNG copy)> <C:/Users/Compaq/Documen
-ts/vakken/afstudeerstage/svn_report/results./automaticResults/evaluation_log_si
-gmoid0point2automatedpointcsv.png (PNG copy)>] [26 <C:/Users/Compaq/Documents/v
-akken/afstudeerstage/svn_report/results./automaticResults/evaluation_log_sigmoi
-d0point5automatedpointcsv.png (PNG copy)>]
+on_log_sigmoid0point01automatedpointcsv.png (PNG copy)> <C:/Users/Compaq/Docume
+nts/vakken/afstudeerstage/svn_report/results./automaticResults/evaluation_log_s
+igmoid0point1automatedpointcsv.png (PNG copy)>] [26 <C:/Users/Compaq/Documents/
+vakken/afstudeerstage/svn_report/results./automaticResults/evaluation_log_sigmo
+id0point2automatedpointcsv.png (PNG copy)> <C:/Users/Compaq/Documents/vakken/af
+studeerstage/svn_report/results./automaticResults/evaluation_log_sigmoid0point5
+automatedpointcsv.png (PNG copy)>]
 <../results./automaticResults2/evaluation_log2_gaussian0point01twoPeopleToiletS
 ituationpointxmlpointcsv.png, id=109, 422.32782pt x 316.18124pt>
 File: ../results./automaticResults2/evaluation_log2_gaussian0point01twoPeopleTo
@@ -688,222 +612,221 @@ larSituationpointcsv.png Graphic file (type png)
 <use ../results./automaticResults2/evaluation_log2_linear0point01automated-pill
 arSituationpointcsv.png> [27 <C:/Users/Compaq/Documents/vakken/afstudeerstage/s
 vn_report/results./automaticResults2/evaluation_log2_gaussian0point01twoPeopleT
-oiletSituationpointxmlpointcsv.png (PNG copy)> <C:/Users/Compaq/Documents/vakke
-n/afstudeerstage/svn_report/results./automaticResults2/evaluation_log2_gaussian
-0point2pillarSituationpointxmlpointcsv.png (PNG copy)>] [28 <C:/Users/Compaq/Do
+oiletSituationpointxmlpointcsv.png (PNG copy)>] [28 <C:/Users/Compaq/Documents/
+vakken/afstudeerstage/svn_report/results./automaticResults2/evaluation_log2_gau
+ssian0point2pillarSituationpointxmlpointcsv.png (PNG copy)> <C:/Users/Compaq/Do
 cuments/vakken/afstudeerstage/svn_report/results./automaticResults2/evaluation_
-log2_gaussian0point2standStillSituationpointxmlpointcsv.png (PNG copy)> <C:/Use
-rs/Compaq/Documents/vakken/afstudeerstage/svn_report/results./automaticResults2
-/evaluation_log2_gaussian0point2twoPeopleToiletSituationpointxmlpointcsv.png (P
-NG copy)>] [29 <C:/Users/Compaq/Documents/vakken/afstudeerstage/svn_report/resu
-lts./automaticResults2/evaluation_log2_gaussian0point5pillarSituationpointxmlpo
-intcsv.png (PNG copy)> <C:/Users/Compaq/Documents/vakken/afstudeerstage/svn_rep
-ort/results./automaticResults2/evaluation_log2_gaussian0point5standStillSituati
-onpointxmlpointcsv.png (PNG copy)>] [30 <C:/Users/Compaq/Documents/vakken/afstu
-deerstage/svn_report/results./automaticResults2/evaluation_log2_gaussian0point5
-twoPeopleToiletSituationpointxmlpointcsv.png (PNG copy)> <C:/Users/Compaq/Docum
-ents/vakken/afstudeerstage/svn_report/results./automaticResults2/evaluation_log
-2_linear0point01automated-pillarSituationpointcsv.png (PNG copy)>]
+log2_gaussian0point2standStillSituationpointxmlpointcsv.png (PNG copy)>]
+[29 <C:/Users/Compaq/Documents/vakken/afstudeerstage/svn_report/results./automa
+ticResults2/evaluation_log2_gaussian0point2twoPeopleToiletSituationpointxmlpoin
+tcsv.png (PNG copy)> <C:/Users/Compaq/Documents/vakken/afstudeerstage/svn_repor
+t/results./automaticResults2/evaluation_log2_gaussian0point5pillarSituationpoin
+txmlpointcsv.png (PNG copy)>] [30 <C:/Users/Compaq/Documents/vakken/afstudeerst
+age/svn_report/results./automaticResults2/evaluation_log2_gaussian0point5standS
+tillSituationpointxmlpointcsv.png (PNG copy)> <C:/Users/Compaq/Documents/vakken
+/afstudeerstage/svn_report/results./automaticResults2/evaluation_log2_gaussian0
+point5twoPeopleToiletSituationpointxmlpointcsv.png (PNG copy)>] [31 <C:/Users/C
+ompaq/Documents/vakken/afstudeerstage/svn_report/results./automaticResults2/eva
+luation_log2_linear0point01automated-pillarSituationpointcsv.png (PNG copy)>]
 <../results./automaticResults2/evaluation_log2_linear0point01automated-standSti
-llSituationpointcsv.png, id=129, 422.32782pt x 316.18124pt>
+llSituationpointcsv.png, id=133, 422.32782pt x 316.18124pt>
 File: ../results./automaticResults2/evaluation_log2_linear0point01automated-sta
 ndStillSituationpointcsv.png Graphic file (type png)
 
 <use ../results./automaticResults2/evaluation_log2_linear0point01automated-stan
 dStillSituationpointcsv.png>
 <../results./automaticResults2/evaluation_log2_linear0point01automated-twoPeopl
-eToiletSituationpointcsv.png, id=130, 422.32782pt x 316.18124pt>
+eToiletSituationpointcsv.png, id=134, 422.32782pt x 316.18124pt>
 File: ../results./automaticResults2/evaluation_log2_linear0point01automated-two
 PeopleToiletSituationpointcsv.png Graphic file (type png)
 
 <use ../results./automaticResults2/evaluation_log2_linear0point01automated-twoP
 eopleToiletSituationpointcsv.png>
 <../results./automaticResults2/evaluation_log2_linear0point1automated-standStil
-lSituationpointcsv.png, id=131, 422.32782pt x 316.18124pt>
+lSituationpointcsv.png, id=135, 422.32782pt x 316.18124pt>
 File: ../results./automaticResults2/evaluation_log2_linear0point1automated-stan
 dStillSituationpointcsv.png Graphic file (type png)
 
 <use ../results./automaticResults2/evaluation_log2_linear0point1automated-stand
 StillSituationpointcsv.png>
 <../results./automaticResults2/evaluation_log2_linear0point1automated-twoPeople
-ToiletSituationpointcsv.png, id=132, 422.32782pt x 316.18124pt>
+ToiletSituationpointcsv.png, id=136, 422.32782pt x 316.18124pt>
 File: ../results./automaticResults2/evaluation_log2_linear0point1automated-twoP
 eopleToiletSituationpointcsv.png Graphic file (type png)
 
 <use ../results./automaticResults2/evaluation_log2_linear0point1automated-twoPe
 opleToiletSituationpointcsv.png>
 <../results./automaticResults2/evaluation_log2_linear0point2automatedstandStill
-Situationpointxmlpointcsv.png, id=133, 422.32782pt x 316.18124pt>
+Situationpointxmlpointcsv.png, id=137, 422.32782pt x 316.18124pt>
 File: ../results./automaticResults2/evaluation_log2_linear0point2automatedstand
 StillSituationpointxmlpointcsv.png Graphic file (type png)
 
 <use ../results./automaticResults2/evaluation_log2_linear0point2automatedstandS
 tillSituationpointxmlpointcsv.png>
 <../results./automaticResults2/evaluation_log2_linear0point2automatedtwoPeopleT
-oiletSituationpointxmlpointcsv.png, id=134, 422.32782pt x 316.18124pt>
+oiletSituationpointxmlpointcsv.png, id=138, 422.32782pt x 316.18124pt>
 File: ../results./automaticResults2/evaluation_log2_linear0point2automatedtwoPe
 opleToiletSituationpointxmlpointcsv.png Graphic file (type png)
 
 <use ../results./automaticResults2/evaluation_log2_linear0point2automatedtwoPeo
-pleToiletSituationpointxmlpointcsv.png> [31 <C:/Users/Compaq/Documents/vakken/a
+pleToiletSituationpointxmlpointcsv.png> [32 <C:/Users/Compaq/Documents/vakken/a
 fstudeerstage/svn_report/results./automaticResults2/evaluation_log2_linear0poin
 t01automated-standStillSituationpointcsv.png (PNG copy)> <C:/Users/Compaq/Docum
 ents/vakken/afstudeerstage/svn_report/results./automaticResults2/evaluation_log
 2_linear0point01automated-twoPeopleToiletSituationpointcsv.png (PNG copy)>]
-[32 <C:/Users/Compaq/Documents/vakken/afstudeerstage/svn_report/results./automa
+[33 <C:/Users/Compaq/Documents/vakken/afstudeerstage/svn_report/results./automa
 ticResults2/evaluation_log2_linear0point1automated-standStillSituationpointcsv.
 png (PNG copy)> <C:/Users/Compaq/Documents/vakken/afstudeerstage/svn_report/res
 ults./automaticResults2/evaluation_log2_linear0point1automated-twoPeopleToiletS
-ituationpointcsv.png (PNG copy)>] [33 <C:/Users/Compaq/Documents/vakken/afstude
+ituationpointcsv.png (PNG copy)>] [34 <C:/Users/Compaq/Documents/vakken/afstude
 erstage/svn_report/results./automaticResults2/evaluation_log2_linear0point2auto
 matedstandStillSituationpointxmlpointcsv.png (PNG copy)> <C:/Users/Compaq/Docum
 ents/vakken/afstudeerstage/svn_report/results./automaticResults2/evaluation_log
 2_linear0point2automatedtwoPeopleToiletSituationpointxmlpointcsv.png (PNG copy)
 >]
 <../results./automaticResults2/evaluation_log2_linear0point5automatedtwoPeopleT
-oiletSituationpointxmlpointcsv.png, id=145, 422.32782pt x 316.18124pt>
+oiletSituationpointxmlpointcsv.png, id=148, 422.32782pt x 316.18124pt>
 File: ../results./automaticResults2/evaluation_log2_linear0point5automatedtwoPe
 opleToiletSituationpointxmlpointcsv.png Graphic file (type png)
 
 <use ../results./automaticResults2/evaluation_log2_linear0point5automatedtwoPeo
 pleToiletSituationpointxmlpointcsv.png>
 <../results./automaticResults2/evaluation_log2_linear1automatedtwoPeopleToiletS
-ituationpointxmlpointcsv.png, id=146, 422.32782pt x 316.18124pt>
+ituationpointxmlpointcsv.png, id=149, 422.32782pt x 316.18124pt>
 File: ../results./automaticResults2/evaluation_log2_linear1automatedtwoPeopleTo
 iletSituationpointxmlpointcsv.png Graphic file (type png)
 
 <use ../results./automaticResults2/evaluation_log2_linear1automatedtwoPeopleToi
 letSituationpointxmlpointcsv.png>
 <../results./automaticResults2/evaluation_log2_sigmoid0point01automatedpillarSi
-tuationpointxmlpointcsv.png, id=147, 422.32782pt x 316.18124pt>
+tuationpointxmlpointcsv.png, id=150, 422.32782pt x 316.18124pt>
 File: ../results./automaticResults2/evaluation_log2_sigmoid0point01automatedpil
 larSituationpointxmlpointcsv.png Graphic file (type png)
 
 <use ../results./automaticResults2/evaluation_log2_sigmoid0point01automatedpill
 arSituationpointxmlpointcsv.png>
 <../results./automaticResults2/evaluation_log2_sigmoid0point01automatedstandSti
-llSituationpointxmlpointcsv.png, id=148, 422.32782pt x 316.18124pt>
+llSituationpointxmlpointcsv.png, id=151, 422.32782pt x 316.18124pt>
 File: ../results./automaticResults2/evaluation_log2_sigmoid0point01automatedsta
 ndStillSituationpointxmlpointcsv.png Graphic file (type png)
 
 <use ../results./automaticResults2/evaluation_log2_sigmoid0point01automatedstan
 dStillSituationpointxmlpointcsv.png>
 <../results./automaticResults2/evaluation_log2_sigmoid0point01automatedtwoPeopl
-eToiletSituationpointxmlpointcsv.png, id=149, 422.32782pt x 316.18124pt>
+eToiletSituationpointxmlpointcsv.png, id=152, 422.32782pt x 316.18124pt>
 File: ../results./automaticResults2/evaluation_log2_sigmoid0point01automatedtwo
 PeopleToiletSituationpointxmlpointcsv.png Graphic file (type png)
 
 <use ../results./automaticResults2/evaluation_log2_sigmoid0point01automatedtwoP
 eopleToiletSituationpointxmlpointcsv.png>
 <../results./automaticResults2/evaluation_log2sigmoid0point1automatedpillarSitu
-ationpointxmlpointcsv.png, id=150, 422.32782pt x 316.18124pt>
+ationpointxmlpointcsv.png, id=153, 422.32782pt x 316.18124pt>
 File: ../results./automaticResults2/evaluation_log2sigmoid0point1automatedpilla
 rSituationpointxmlpointcsv.png Graphic file (type png)
 
 <use ../results./automaticResults2/evaluation_log2sigmoid0point1automatedpillar
 Situationpointxmlpointcsv.png>
 <../results./automaticResults2/evaluation_log2sigmoid0point1automatedstandStill
-Situationpointxmlpointcsv.png, id=151, 422.32782pt x 316.18124pt>
+Situationpointxmlpointcsv.png, id=154, 422.32782pt x 316.18124pt>
 File: ../results./automaticResults2/evaluation_log2sigmoid0point1automatedstand
 StillSituationpointxmlpointcsv.png Graphic file (type png)
 
 <use ../results./automaticResults2/evaluation_log2sigmoid0point1automatedstandS
-tillSituationpointxmlpointcsv.png> [34 <C:/Users/Compaq/Documents/vakken/afstud
+tillSituationpointxmlpointcsv.png> [35 <C:/Users/Compaq/Documents/vakken/afstud
 eerstage/svn_report/results./automaticResults2/evaluation_log2_linear0point5aut
 omatedtwoPeopleToiletSituationpointxmlpointcsv.png (PNG copy)> <C:/Users/Compaq
 /Documents/vakken/afstudeerstage/svn_report/results./automaticResults2/evaluati
 on_log2_linear1automatedtwoPeopleToiletSituationpointxmlpointcsv.png (PNG copy)
->] [35 <C:/Users/Compaq/Documents/vakken/afstudeerstage/svn_report/results./aut
+>] [36 <C:/Users/Compaq/Documents/vakken/afstudeerstage/svn_report/results./aut
 omaticResults2/evaluation_log2_sigmoid0point01automatedpillarSituationpointxmlp
 ointcsv.png (PNG copy)> <C:/Users/Compaq/Documents/vakken/afstudeerstage/svn_re
 port/results./automaticResults2/evaluation_log2_sigmoid0point01automatedstandSt
-illSituationpointxmlpointcsv.png (PNG copy)>] [36 <C:/Users/Compaq/Documents/va
+illSituationpointxmlpointcsv.png (PNG copy)>] [37 <C:/Users/Compaq/Documents/va
 kken/afstudeerstage/svn_report/results./automaticResults2/evaluation_log2_sigmo
 id0point01automatedtwoPeopleToiletSituationpointxmlpointcsv.png (PNG copy)> <C:
 /Users/Compaq/Documents/vakken/afstudeerstage/svn_report/results./automaticResu
 lts2/evaluation_log2sigmoid0point1automatedpillarSituationpointxmlpointcsv.png 
-(PNG copy)>] [37 <C:/Users/Compaq/Documents/vakken/afstudeerstage/svn_report/re
+(PNG copy)>] [38 <C:/Users/Compaq/Documents/vakken/afstudeerstage/svn_report/re
 sults./automaticResults2/evaluation_log2sigmoid0point1automatedstandStillSituat
 ionpointxmlpointcsv.png (PNG copy)>]
 <../results./automaticResults2/evaluation_log2sigmoid0point1automatedtwoPeopleT
-oiletSituationpointxmlpointcsv.png, id=165, 422.32782pt x 316.18124pt>
+oiletSituationpointxmlpointcsv.png, id=168, 422.32782pt x 316.18124pt>
 File: ../results./automaticResults2/evaluation_log2sigmoid0point1automatedtwoPe
 opleToiletSituationpointxmlpointcsv.png Graphic file (type png)
 
 <use ../results./automaticResults2/evaluation_log2sigmoid0point1automatedtwoPeo
 pleToiletSituationpointxmlpointcsv.png>
 <../results./automaticResults2/evaluation_log2sigmoid0point5automatedpillarSitu
-ationpointxmlpointcsv.png, id=166, 422.32782pt x 316.18124pt>
+ationpointxmlpointcsv.png, id=169, 422.32782pt x 316.18124pt>
 File: ../results./automaticResults2/evaluation_log2sigmoid0point5automatedpilla
 rSituationpointxmlpointcsv.png Graphic file (type png)
 
 <use ../results./automaticResults2/evaluation_log2sigmoid0point5automatedpillar
 Situationpointxmlpointcsv.png>
 <../results./automaticResults2/evaluation_log2sigmoid0point5automatedstandStill
-Situationpointxmlpointcsv.png, id=167, 422.32782pt x 316.18124pt>
+Situationpointxmlpointcsv.png, id=170, 422.32782pt x 316.18124pt>
 File: ../results./automaticResults2/evaluation_log2sigmoid0point5automatedstand
 StillSituationpointxmlpointcsv.png Graphic file (type png)
 
 <use ../results./automaticResults2/evaluation_log2sigmoid0point5automatedstandS
-tillSituationpointxmlpointcsv.png> [38 <C:/Users/Compaq/Documents/vakken/afstud
+tillSituationpointxmlpointcsv.png> [39 <C:/Users/Compaq/Documents/vakken/afstud
 eerstage/svn_report/results./automaticResults2/evaluation_log2sigmoid0point1aut
 omatedtwoPeopleToiletSituationpointxmlpointcsv.png (PNG copy)> <C:/Users/Compaq
 /Documents/vakken/afstudeerstage/svn_report/results./automaticResults2/evaluati
 on_log2sigmoid0point5automatedpillarSituationpointxmlpointcsv.png (PNG copy)>]
-[39 <C:/Users/Compaq/Documents/vakken/afstudeerstage/svn_report/results./automa
+[40 <C:/Users/Compaq/Documents/vakken/afstudeerstage/svn_report/results./automa
 ticResults2/evaluation_log2sigmoid0point5automatedstandStillSituationpointxmlpo
 intcsv.png (PNG copy)>]
 <../results./automaticResults2/evaluation_log2sigmoid0point5automatedtwoPeopleT
-oiletSituationpointxmlpointcsv.png, id=174, 422.32782pt x 316.18124pt>
+oiletSituationpointxmlpointcsv.png, id=177, 422.32782pt x 316.18124pt>
 File: ../results./automaticResults2/evaluation_log2sigmoid0point5automatedtwoPe
 opleToiletSituationpointxmlpointcsv.png Graphic file (type png)
 
 <use ../results./automaticResults2/evaluation_log2sigmoid0point5automatedtwoPeo
 pleToiletSituationpointxmlpointcsv.png>
-<rotterdamPedestrianNet.png, id=175, 256.96pt x 187.70125pt>
+<rotterdamPedestrianNet.png, id=178, 256.96pt x 187.70125pt>
 File: rotterdamPedestrianNet.png Graphic file (type png)
 
 <use rotterdamPedestrianNet.png>
-<twoPeopleToiletSituation.png, id=176, 486.81876pt x 344.28625pt>
+<twoPeopleToiletSituation.png, id=179, 486.81876pt x 344.28625pt>
 File: twoPeopleToiletSituation.png Graphic file (type png)
 
 <use twoPeopleToiletSituation.png>
-<pillarSituation.png, id=177, 342.27875pt x 259.97125pt>
+<pillarSituation.png, id=180, 342.27875pt x 259.97125pt>
 File: pillarSituation.png Graphic file (type png)
 
-<use pillarSituation.png> [40
-
+<use pillarSituation.png> [41
 
 
 
 
  <C:/Users/Compaq/Documents/vakken/afstudeerstage/svn_report/results./automatic
 Results2/evaluation_log2sigmoid0point5automatedtwoPeopleToiletSituationpointxml
-pointcsv.png (PNG copy)>] [41 <C:/Users/Compaq/Documents/vakken/afstudeerstage/
+pointcsv.png (PNG copy)>] [42 <C:/Users/Compaq/Documents/vakken/afstudeerstage/
 svn_report/report/rotterdamPedestrianNet.png (PNG copy)> <C:/Users/Compaq/Docum
 ents/vakken/afstudeerstage/svn_report/report/twoPeopleToiletSituation.png (PNG 
-copy)>] [42 <C:/Users/Compaq/Documents/vakken/afstudeerstage/svn_report/report/
+copy)>] [43 <C:/Users/Compaq/Documents/vakken/afstudeerstage/svn_report/report/
 pillarSituation.png (PNG copy)>]
-Overfull \hbox (3.0042pt too wide) in paragraph at lines 644--644
+Overfull \hbox (3.0042pt too wide) in paragraph at lines 660--660
 []\OT1/cmr/bx/n/12 Connecting MA-SON and the Sit-u-a-tions Frame-
  []
 
 
-Overfull \hbox (1.22285pt too wide) in paragraph at lines 645--646
+Overfull \hbox (1.22285pt too wide) in paragraph at lines 661--662
 \OT1/cmr/m/n/10 cause the sit-u-a-tions frame-work has been im-ple-mented with 
 the prospect
  []
 
-[43] <framework.png, id=191, 597.73312pt x 303.38344pt>
+[44] <framework.png, id=194, 597.73312pt x 303.38344pt>
 File: framework.png Graphic file (type png)
  <use framework.png>
 (C:\Users\Compaq\Documents\vakken\afstudeerstage\svn_report\report\SIMOBS_thesi
-s_merged.bbl [44 <C:/Users/Compaq/Documents/vakken/afstudeerstage/svn_report/re
+s_merged.bbl [45 <C:/Users/Compaq/Documents/vakken/afstudeerstage/svn_report/re
 port/framework.png>]
 Missing character: There is no ï in font cmti10!
 Missing character: There is no ¿ in font cmti10!
 Missing character: There is no ½ in font cmti10!
- [45]) [46]
+ [46]) [47]
 (C:\Users\Compaq\Documents\vakken\afstudeerstage\svn_report\report\SIMOBS_thesi
 s_merged.aux)
 
@@ -911,10 +834,10 @@ LaTeX Warning: There were multiply-defined labels.
 
  ) 
 Here is how much of TeX's memory you used:
- 8042 strings out of 495285
- 158267 string characters out of 3179875
- 193555 words of memory out of 3000000
- 11046 multiletter control sequences out of 15000+200000
+ 8134 strings out of 495285
+ 161265 string characters out of 3179875
+ 194675 words of memory out of 3000000
+ 11134 multiletter control sequences out of 15000+200000
  10705 words of font info for 37 fonts, out of 3000000 for 9000
  14 hyphenation exceptions out of 8191
  54i,9n,78p,2190b,654s stack positions out of 5000i,500n,10000p,200000b,50000s
@@ -932,9 +855,9 @@ TeX 2.8/fonts/type1/public/amsfonts/cm/cmsy10.pfb><C:/Program Files (x86)/MiKTe
 X 2.8/fonts/type1/public/amsfonts/cm/cmsy5.pfb><C:/Program Files (x86)/MiKTeX 2
 .8/fonts/type1/public/amsfonts/cm/cmsy7.pfb><C:/Program Files (x86)/MiKTeX 2.8/
 fonts/type1/public/amsfonts/cm/cmti10.pfb>
-Output written on SIMOBS_thesis_merged.pdf (46 pages, 470459 bytes).
+Output written on SIMOBS_thesis_merged.pdf (47 pages, 475238 bytes).
 PDF statistics:
- 247 PDF objects out of 1000 (max. 8388607)
+ 250 PDF objects out of 1000 (max. 8388607)
  0 named destinations out of 1000 (max. 500000)
  198 words of extra memory for PDF output out of 10000 (max. 10000000)
 
