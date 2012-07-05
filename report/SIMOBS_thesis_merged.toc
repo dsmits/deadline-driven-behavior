@@ -23,34 +23,36 @@
 \contentsline {subsection}{\numberline {3.3}Assumptions}{18}
 \contentsline {subsection}{\numberline {3.4}Preparations}{19}
 \contentsline {section}{\numberline {4}Experiments}{20}
-\contentsline {subsection}{\numberline {4.1}Quantitative Experiment}{20}
-\contentsline {subsubsection}{\numberline {4.1.1}Sigmoid Function}{20}
-\contentsline {subsubsection}{\numberline {4.1.2}Predictions for Behavior Using the Sigmoid Function}{20}
-\contentsline {subsubsection}{\numberline {4.1.3}Linear Function}{20}
-\contentsline {subsubsection}{\numberline {4.1.4}Predictions for Behavior Using the Linear Function}{20}
-\contentsline {subsubsection}{\numberline {4.1.5}Results for Linear Function}{20}
-\contentsline {subsubsection}{\numberline {4.1.6}Gaussian Function}{21}
-\contentsline {subsubsection}{\numberline {4.1.7}Predictions for Behavior Using the Gaussian Function}{21}
-\contentsline {subsubsection}{\numberline {4.1.8}Results for Gaussian Function}{21}
-\contentsline {subsubsection}{\numberline {4.1.9}What can we derive from these results?}{21}
-\contentsline {subsection}{\numberline {4.2}Qualitative Experiment}{21}
-\contentsline {subsubsection}{\numberline {4.2.1}The Dataset}{21}
-\contentsline {subsubsection}{\numberline {4.2.2}The Behaviors}{22}
-\contentsline {paragraph}{Going to the toilet}{22}
-\contentsline {paragraph}{Standing in the queue for the check-in desk}{22}
-\contentsline {paragraph}{Checking in}{22}
-\contentsline {paragraph}{Lean Against Pillar}{22}
-\contentsline {subsection}{\numberline {4.3}Results}{22}
-\contentsline {section}{\numberline {5}Conclusion \& Discussion}{40}
-\contentsline {subsection}{\numberline {5.1}Limits of the Deadline Driven Behavior Framework}{40}
-\contentsline {subsection}{\numberline {5.2}Other things}{42}
-\contentsline {subsection}{\numberline {5.3}Future Work}{42}
-\contentsline {subsubsection}{\numberline {5.3.1}Needs}{42}
-\contentsline {section}{\numberline {A}Appendix A: Implementation}{43}
-\contentsline {subsection}{\numberline {A.1}Implementing the Framework}{43}
-\contentsline {subsection}{\numberline {A.2}Extending PIPE2}{43}
-\contentsline {subsubsection}{\numberline {A.2.1}Sources, Sinks, Slots}{43}
-\contentsline {subsubsection}{\numberline {A.2.2}Additional Modifications}{43}
-\contentsline {subsection}{\numberline {A.3}MASON}{43}
-\contentsline {subsection}{\numberline {A.4}Connecting MASON and the Situations Framework}{43}
-\contentsline {section}{\numberline {B}Appendix B: Results}{44}
+\contentsline {subsubsection}{\numberline {4.0.1}The Behaviors}{20}
+\contentsline {paragraph}{Going to the toilet}{20}
+\contentsline {paragraph}{Standing in the queue for the check-in desk}{20}
+\contentsline {paragraph}{Checking in}{20}
+\contentsline {paragraph}{Lean Against Pillar}{20}
+\contentsline {paragraph}{Wander}{20}
+\contentsline {subsection}{\numberline {4.1}Quantitative Experiment}{21}
+\contentsline {subsubsection}{\numberline {4.1.1}Sigmoid Function}{21}
+\contentsline {subsubsection}{\numberline {4.1.2}Predictions for Behavior Using the Sigmoid Function}{21}
+\contentsline {subsubsection}{\numberline {4.1.3}Linear Function}{21}
+\contentsline {subsubsection}{\numberline {4.1.4}Predictions for Behavior Using the Linear Function}{21}
+\contentsline {subsubsection}{\numberline {4.1.5}Results for Linear Function}{21}
+\contentsline {subsubsection}{\numberline {4.1.6}Gaussian Function}{22}
+\contentsline {subsubsection}{\numberline {4.1.7}Predictions for Behavior Using the Gaussian Function}{22}
+\contentsline {subsubsection}{\numberline {4.1.8}Results for Gaussian Function}{22}
+\contentsline {subsubsection}{\numberline {4.1.9}What can we derive from these results?}{22}
+\contentsline {subsection}{\numberline {4.2}Qualitative Experiment}{22}
+\contentsline {subsubsection}{\numberline {4.2.1}The Dataset}{22}
+\contentsline {subsection}{\numberline {4.3}Results}{23}
+\contentsline {subsection}{\numberline {4.4}Results 2}{27}
+\contentsline {section}{\numberline {5}Conclusion \& Discussion}{41}
+\contentsline {subsection}{\numberline {5.1}Limits of the Deadline Driven Behavior Framework}{41}
+\contentsline {subsection}{\numberline {5.2}Other things}{43}
+\contentsline {subsection}{\numberline {5.3}Future Work}{43}
+\contentsline {subsubsection}{\numberline {5.3.1}Needs}{43}
+\contentsline {section}{\numberline {A}Appendix A: Implementation}{44}
+\contentsline {subsection}{\numberline {A.1}Implementing the Framework}{44}
+\contentsline {subsection}{\numberline {A.2}Extending PIPE2}{44}
+\contentsline {subsubsection}{\numberline {A.2.1}Sources, Sinks, Slots}{44}
+\contentsline {subsubsection}{\numberline {A.2.2}Additional Modifications}{44}
+\contentsline {subsection}{\numberline {A.3}MASON}{44}
+\contentsline {subsection}{\numberline {A.4}Connecting MASON and the Situations Framework}{44}
+\contentsline {section}{\numberline {B}Appendix B: Results}{45}
