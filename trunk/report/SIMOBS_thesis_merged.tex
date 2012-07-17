@@ -5,11 +5,12 @@
 \date{\today}
 
 \documentclass[11pt]{book}
-\usepackage[labelfont={bf}, margin=1cm]{caption}  
+\usepackage[labelfont={bf}, margin=1cm]{caption}
 \usepackage{titling}
 
 \usepackage[colorinlistoftodos, bordercolor=white, backgroundcolor=cyan]{todonotes}
 \usepackage{booktabs}
+\usepackage{hyperref}
 
 \graphicspath{{.}{../results}}
 
@@ -19,12 +20,19 @@
  \chapter*{\centering Abstract}
 \addcontentsline{toc}{chapter}{Abstract}
 %\abstract
+\maketitle
+\newpage
+ \chapter*{\centering Acknowledgements}
+\addcontentsline{toc}{chapter}{Abstract}
+\maketitle
+I would like to thank my supervisors Philip Kerbush from TNO, and Arnoud Visser from the UvA. Furthermore, I would like to thank Ernst Bovenkamp for providing the data and videos from Rotterdam airport.
+\newpage
 \tableofcontents
 \newpage
 
 \section{Introduction}
 %\todo[inline]{Extend introduction}
-Ever since the horrible tragedies on 9/11, there has been an increased interest in reinforcing security in public environments. The recent advances in technology have increased the feasability of many different methods. An important approach in this area of interest is the automatic detection of suspicious behavior from camera images. The approaches in this area can vary, but one important aspect that they have in common, is the necessity of camera footage to be able to test the approaches. Since it can be extremely tedious to collect and annotate this data it would be very rewarding to be able to generate testing data on the fly. It is beyond the scope of our research to get into what suspicious behavior looks like, to we like to focus on the behaviour of "non-suspicious" people. We assume that, since so-called "normal" people greatly outnumber terrorists \todo{bold claim?}, these suspicious people could be added in later with ease. In other words, we would like to be able to quickly generate crowds of people doing normal, everyday behavior.\\ 
+Ever since the horrible tragedies on 9/11, there has been an increased interest in reinforcing security in public environments. The recent advances in technology have increased the feasibility of many different methods. An important approach in this area of interest is the automatic detection of suspicious behavior from camera images. The approaches in this area can vary, but one important aspect that they have in common, is the necessity of camera footage to be able to test the approaches. Since it can be extremely tedious to collect and annotate this data it would be very rewarding to be able to generate testing data on the fly. It is beyond the scope of our research to get into what suspicious behavior looks like, to we like to focus on the behavior of "non-suspicious" people. Assuming that so-called "normal" people greatly outnumber terrorists, these suspicious people could be added in later with ease. In other words, we would like to be able to quickly generate crowds of people doing normal, everyday behavior.\\
 Simulation of pedestrians is a widely studied subject. Many models have been created for the various characteristics that arise when multiple agents move around in the same area. Many uses can be thought of for pedestrian simulation. An important purpose for this could be for example to easily create a large amount of "normal" pedestrians (as opposed to "suspicious" pedestrians).  Suspicious pedestrians whose behavior is scripted by hand can then be placed in the environment to easily create artificial testing data for suspicious behavior detection algorithms and such. Furthermore, the addition of simulated virtual pedestrians can add realism to otherwise mostly empty battlefield scenarios.
 
 Another way to look at the behavior of groups of pedestrians is to explicitly specify how they behave when they enter a certain type of situation. In our approach, we would like to be able to specify behavior by drawing situations on an environment. For example, when a food stand is present in the area, we would like to be able to indicate that the agents that are placed in the neighborhood of that stand are able to do certain food-buying behavior.
@@ -36,7 +44,7 @@ We validated our model by mimicking certain behaviors found on Rotterdam airport
 %In many fields using simulation, the environments are empty except for the absolutely necessary parts of the simulation. However, the environment would look much more realistic if actual civilians would walk around. That is why SIMOBS was developed. SIMOBS is a plugin for the VR-Forces simulation application that makes it easy to quickly generate residential areas inhabited by families, and factories where these civilians go to work. However, at the moment these virtual pedestrians only walk from their houses to their work and back at fixed points in time. The purpose of this thesis is to extend this SIMOBS plugin to create more realistic behavior.
 
 \subsection{SIMOBS}
-SIMOBS is a plugin for the military simulation toolkit VR-forces \cite{vrforces}. \todo[inline, color=yellow]{Fix website reference.} It is a tool for generating and executing battlefield scenarios. SIMOBS is a plugin developed to quickly generate inhabitants of an area by drawing residential areas and plants on the map in VR-forces. The behavior of these inhabitants is determined by \emph{Daily Motion Patterns}, which specify where certain types of inhabitants need to go at specified times. This is the idea that forms the basis for our research.
+SIMOBS is a plugin for the military simulation toolkit VR-forces (\url{http://www.mak.com/products/vrforces.php} It is a tool for generating and executing battlefield scenarios. SIMOBS is a plugin developed to quickly generate inhabitants of an area by drawing residential areas and plants on the map in VR-forces. The behavior of these inhabitants is determined by \emph{Daily Motion Patterns}, which specify where certain types of inhabitants need to go at specified times. This is the idea that forms the basis for our research.
 
 
 %\todo[inline]{Tweak research question.}
@@ -220,7 +228,7 @@ The techniques focusing on smaller groups do show some potential. Since most peo
 Of all the possible existing techniques, the "situations" approach of Sung et al. seems the most appealing. However, it is not directly usable for our purposes. One downside to the situations approach (at least how it is described in the paper) is that state transitions are mainly low-level animations. However, it should be possible to adapt the state transitions to correspond to higher-level actions, such as change of goal. Path planning should then be delegated to another module. In this way, it is very likely that the state representation can be reduced from $s = \{t, \bf{p}, \theta, s^- \}$ to $s = \{t, \bf{p}, \theta\}$. The $s^-$ was used to remember which actions were taken previously, so that the pedestrian remembers which way it was walking. When the actual walking is delegated to another module, it seems unnecessary to keep $s^-$.
 
 \section{Method}
-In the upcoming sections will be described how we decided to implement our system. We decided to base our model around the situations framework. We chose this framework because it allows for probabilistic behavior, and puts emphasis on defining behavior through the environment. This framework will have to be extended to deal with time restrictions. We will do this by replacing the finite state machines with Petri nets. However, we wont work with finite state machines, since these offer too little functionality to enable us to work witlh time restrictions. That is why we do the behavior modeling a little bit differently in our system. Instead of modelling the system with finite state machines, we describe the system with Petri nets.  The toolkit we will use for this is \emph{Platform Independent Petri net Editor 2} (PIPE2). \todo{Create reference to website} In the next section we describe how we decided to use this toolkit.
+In the upcoming sections will be described how we decided to implement our system. We decided to base our model around the situations framework. We chose this framework because it allows for probabilistic behavior, and puts emphasis on defining behavior through the environment. This framework will have to be extended to deal with time restrictions. We will do this by replacing the finite state machines with Petri nets. However, we wont work with finite state machines, since these offer too little functionality to enable us to work with time restrictions. That is why we do the behavior modeling a little bit differently in our system. Instead of modeling the system with finite state machines, we describe the system with Petri nets.  The toolkit we will use for this is \emph{Platform Independent Petri net Editor 2} (PIPE2). \url{http://pipe2.sourceforge.net/} In the next section we describe how we decided to use this toolkit.
 
 \subsection{PIPE2}
 %\todo[inline]{Is this the place to discuss PIPE2 or should it be placed in the appendix?} Yes because having a toolkit to easily create those petri nets is pretty relevant.
@@ -250,14 +258,12 @@ Some drastic changes will be made in order to adapt the situations framework to 
 \subsubsection{Time Planning}
 The fact that we use Petri nets with timed transitions, instead of finite state automata does not necessarily mean our pedestrians are able to deal with time constraints. However, these Petri nets have helped making our problem representable. In order to use these stochastic Petri nets efficiently for making decisions based on time constraints, we have made a number of assumptions.\\
 First of all, we assume there are certain \emph{base places} from which it is always possible to reach the (time constrained) goal. Then, we will compute for every transition that will not take the pedestrian to its goal, how much time it takes to get back to the base state. Then we can check whether the goal place is still accessible from the base state when a certain transition has been taken. We use this information to modify the timed transition rate, so pedestrians are more likely to choose the actions that leave them more time to reach their goal.
-\todo[inline]{Define function $f$ based on experimenting with different functions. Also, check if it is still correct to refer to transition probabilities}
-As one may have noticed, this approach does not give a completely watertight solution to the planning problem. However, since we have to be able to model large crowds, we cannot create an overly complex planning system, since we would not be able to run the simulation real-time. Furthermore, we do not aim at finding an optimal solution to the planning problem, but rather the most lifelike behavior. In real life, people make errors in judgement, so creating pedestrians who can look ahead perfectly would not be realistic. It is impossible to make an exact definition of realism for our purposes, but what we try to do, is to copy certain specific behavior found in real-life footage.
-
+As one may have noticed, this approach does not give a completely watertight solution to the planning problem. However, since we have to be able to model large crowds, we cannot create an overly complex planning system, since we would not be able to run the simulation real-time. Furthermore, we do not aim at finding an optimal solution to the planning problem, but rather the most lifelike behavior. In real life, people make errors in judgement, so creating pedestrians who can look ahead perfectly would not be realistic. It is impossible to make an exact definition of realism for our purposes, but what we try to do, is to copy certain specific behavior found in real-life footage. In our experiments we will try different functions for computing the probability of going to the goal, and attempt to assess which function will be most suitable.
 
 
 
 \subsection{Assumptions}
-The method we propose is based on various assumptions which have to be clarified. An important assumption is that the environment the pedestrians have to walk in are designed in such a way that it helps creating realistic behavior. This means that situations have to be defined in such a way that pedestrians will walk into them and act in the appropriate way. In many cases, intuitively designed environments will cause the right behavior. For instance, in most train stations, the eating stands are placed in such a way that pedestrians will have to walk close to them in order to get to their destination.\\ \todo[inline]{Find some evidence that train stations are designed like this.}
+The method we propose is based on various assumptions which have to be clarified. An important assumption is that the environment the pedestrians have to walk in are designed in such a way that it helps creating realistic behavior. This means that situations have to be defined in such a way that pedestrians will walk into them and act in the appropriate way. This makes our framework probably limited to certain kinds of environments. When an environment does not contain many situation areas or if they are too far apart, it is very likely that the framework does not give a satisfactory result.
 Another assumption we make is that the pedestrians have to be at a certain place at a certain time. This makes the system more suitable for daily routine type situations rather than cases in which pedestrians are walking around without a proper goal. However, most situations can be described as having a deadline (e.g. eventually, most people have to go to bed), so this assumption is not necessarily very restrictive.\\
 Furthermore, we assume that the behavior of the pedestrians can be described as finite state automata,  and that these automata incorporate base states to which transitions loop back, and from which it is always possible to reach the goal state (given enough time is left). We need this assumption in order to create an efficient way of determining which actions can be done before the deadline. Otherwise we would have to search through the finite state automaton in order to find the various ways actions can be tied together.\\
 
@@ -276,7 +282,7 @@ The use of Dijkstra's algorithm does limit the use of our Petri nets though. For
 \section{Experiments}
 Allthough it can be difficult to decide whether a group of people walks around "realistically", we will certainly give it a try. We will attempt to test our framework in two different ways; first of all, we will assess our framework by doing a qualitative comparison with real-life footage of Rotterdam Airport. We have access to both camera footage and manually annotated locations of the visitors. Secondly, we will assess how the the different probability functions we choose for the go-to-goal action will affect the frequency of other actions. In other words, we will attempt to investigat whether our method leads to \emph{emergent}  behavior.
 
-\todo[inline]{Specify missing parameters} 
+\todo[inline]{Specify missing parameters}
 
 \subsubsection{The Behaviors}
 
@@ -285,7 +291,7 @@ In the videos, we observed that a typical behavior that manifests itself multipl
 
 \paragraph{Standing in the queue for the check-in desk}
 \todo[inline]{This paragraph should probably be removed since we dont use it any more}
-One constant factor in the video material seemed to be the people lining up in front of the check-in desk. There are many ways to model this behavior with our framework. 
+One constant factor in the video material seemed to be the people lining up in front of the check-in desk. There are many ways to model this behavior with our framework.
 \todo{Mention other ways to model this}
 We decided to split this behavior in two situations. First of all, we have the check-in situation, which in our simulation comes down to standing in front of the check-in desk for a short period of time. The other half of this behavior is the queue situation. This is an area in the hall where people line up with the people in front of them. The situation area is chosen such that the pedestrians in it will together form an orderly line. This means that the situation should not be too broad.
 
@@ -341,19 +347,19 @@ We chose to try a Gaussian function as well because of the following reasoning: 
 
 
 \subsubsection{What can we derive from these results?}
-From these results, we can see that not only does the changing of the goal probability function affect the time at which the agents decide when to move to the goal, but also the time at which other actions are executed. This shows that our framework is able to generate emergent behavior. When the probability of going to the goal is high, actions that take longer to finish have a very low frequency. 
+From these results, we can see that not only does the changing of the goal probability function affect the time at which the agents decide when to move to the goal, but also the time at which other actions are executed. This shows that our framework is able to generate emergent behavior. When the probability of going to the goal is high, actions that take longer to finish have a very low frequency.
 
 \subsection{Qualitative Experiment}
 Apart from quantitative analysis, we will also qualitatively judge the pedestrians' behavior. We will do this by comparing our modeled behavior with real-life behavior from recordings of Rotterdam airport. We have picked a couple of specific behaviors that we have modeled with our system.
 
 \subsubsection{The Dataset}
-We acquired manually annotated data indicating the tracks of the visitors of Rotterdam airport. \todo[inline]{Create reference to Ernst Bovenkamp}
+We acquired manually annotated data indicating the tracks of the visitors of Rotterdam airport. 
 
 
 \subsection{Results}
-Below you will find the results of the quantitative experiment, where we used a variety of functions to check whether emergent behavior occurs. 
+Below you will find the results of the quantitative experiment, where we used a variety of functions to check whether emergent behavior occurs.
 
-In figure \ref{evaluation_log_linear0point2automatedpointcsv}, you can see the results of choosing a linear function from 0 to 0.2 as the goal probability function. We can see here that the pedestrians reach their goal very early, that is, 100 \% of the pedestrians reach the goal so early, they could easily have used the remaining time to do a multitude of other activities. 
+In figure \ref{evaluation_log_linear0point2automatedpointcsv}, you can see the results of choosing a linear function from 0 to 0.2 as the goal probability function. We can see here that the pedestrians reach their goal very early, that is, 100 \% of the pedestrians reach the goal so early, they could easily have used the remaining time to do a multitude of other activities.
 
 \todo[inline]{Aggegrate graphs}
 \begin{figure}
@@ -379,7 +385,7 @@ In figure \ref{evaluation_log_linear0point5automatedpointcsv} the same effect ca
 \label{evaluation_log_linear1automatedpointcsv}
 \end{figure}
 
-In figure \ref{evaluation_log_sigmoid0point01automatedpointcsv} we see the results of using a sigmoid for goal probability function with a minimum \todo[inline]{find out how to describe, since those values only count in the limit or whatever} of 0 and a maximum of 0.01. Again we see that a maximum probability of 0.01 is low to have the pedestrians reach their goal in time. 
+In figure \ref{evaluation_log_sigmoid0point01automatedpointcsv} we see the results of using a sigmoid for goal probability function with a minimum \todo[inline]{find out how to describe, since those values only count in the limit or whatever} of 0 and a maximum of 0.01. Again we see that a maximum probability of 0.01 is low to have the pedestrians reach their goal in time.
 
 \begin{figure}
 \centering
@@ -418,7 +424,7 @@ We can only say more about the results if the frequencies are divided by the tot
 
 
 \subsection{Results 2}
-Below follow the results of the other actions, that is, the actions that are not directly connected to the goal probability. The results of these actions have to show that our framework is also capable of generating \emph{emergent} behavior. 
+Below follow the results of the other actions, that is, the actions that are not directly connected to the goal probability. The results of these actions have to show that our framework is also capable of generating \emph{emergent} behavior.
 
 \begin{figure}
 \centering
@@ -637,10 +643,10 @@ It is very well possible that the results found in our research are far from the
 
 
 \subsection{Future Work}
-There are several ways in which the deadline driven behavior framework can be extended. For example, currently, the probabilities for entering situations are only dependent on how close the agent is to the deadline. So, no matter what time of day it is, the pedestrians will always have the same probability to do a certain action. However, in real life, a person's probabilities for certain behavior is also largely dependent on their daily cycle. \todo[inline]{Needs a reference}
+There are several ways in which the deadline driven behavior framework can be extended. For example, currently, the probabilities for entering situations are only dependent on how close the agent is to the deadline. So, no matter what time of day it is, the pedestrians will always have the same probability to do a certain action. However, in real life, a person's probabilities for certain behavior is also largely dependent on their daily cycle.
 
 \subsubsection{Needs}
-Ideally, a pedestrian's propensity to execute certain actions, such as eating, should vary dependent on whether the individual has recently executed that action, and their daily cycle. In other words, we would like to introduce \emph{needs} to the framework. By introducing the concept of needs, we let the probabilities of the actions depend on an extra parameter. \todo[inline]{Stupid sentence} We can vary the needs according to the time of day and whether this need has been fulfilled recently.
+Ideally, a pedestrian's propensity to execute certain actions, such as eating, should vary dependent on whether the individual has recently executed that action, and their daily cycle. In other words, we would like to introduce \emph{needs} to the framework. By introducing the concept of needs, we would be better able to model the daily flow of people in a typical public area. We can vary the needs according to the time of day and whether this need has been fulfilled recently.
 
 \appendix
 
@@ -662,7 +668,7 @@ In order to facilitate transporting tokens between Petri nets, we created classe
 \subsection{MASON}
 
 \subsection{Connecting MASON and the Situations Framework}
-We deliberately divided our framework into two main modules. Because the situations framework has been implemented with the prospect of interfacing it with other simulations we decided to have the two main units communicate through socket connections. We have the situations side keep track of a thread pool. Every time a pedestrian from the MASON side connects to the situations side, a check is done whether this MASON pedestrian has connected to the Situations before. If this is not the case, another thread will be created to handle the connection to this new pedestrian.  Figure \ref{framework}  shows the global structure. Here you can see how the two interact. 
+We deliberately divided our framework into two main modules. Because the situations framework has been implemented with the prospect of interfacing it with other simulations we decided to have the two main units communicate through socket connections. We have the situations side keep track of a thread pool. Every time a pedestrian from the MASON side connects to the situations side, a check is done whether this MASON pedestrian has connected to the Situations before. If this is not the case, another thread will be created to handle the connection to this new pedestrian.  Figure \ref{framework}  shows the global structure. Here you can see how the two interact.
 \todo[inline]{Finish this part about MASON}
 \begin{itemize}
 \item Blabla thread pool
