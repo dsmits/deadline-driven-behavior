@@ -1,26 +1,11 @@
-\contentsline {todo}{{\color@box {}{yellow}{\leavevmode {\color {yellow}o}}\ Fix website reference.}}{4}
-\contentsline {todo}{{\color@box {}{cyan}{\leavevmode {\color {cyan}o}}\ Indicate tuples for every approach (as much as is possible).}}{6}
-\contentsline {todo}{{\color@box {}{cyan}{\leavevmode {\color {cyan}o}}\ Maybe sections have to be named differently, or previous reference has to be moved, the approach uses global effects, but also more individual models}}{7}
-\contentsline {todo}{{\color@box {}{cyan}{\leavevmode {\color {cyan}o}}\ This is not completely true, some panic approaches let the crowds explore, but probably had simpler navigation. Make the previous more nuanced}}{8}
-\contentsline {todo}{{\color@box {}{cyan}{\leavevmode {\color {cyan}o}}\ Maybe talk some more about cellular automata. But try to find a way that describes both articles.}}{8}
-\contentsline {todo}{{\color@box {}{cyan}{\leavevmode {\color {cyan}o}}\ Mention the ribbon they use for navigation}}{8}
-\contentsline {todo}{{\color@box {}{cyan}{\leavevmode {\color {cyan}o}}\ Clarify paper some more}}{9}
-\contentsline {todo}{{\color@box {}{cyan}{\leavevmode {\color {cyan}o}}\ Make sure the text fits better in the rest of the thesis}}{10}
-\contentsline {todo}{{\color@box {}{cyan}{\leavevmode {\color {cyan}o}}\ Voeg het volgende stukje toe}}{13}
-\contentsline {todo}{{\color@box {}{cyan}{\leavevmode {\color {cyan}o}}\ Fix reference to figure}}{14}
-\contentsline {todo}{{\color@box {}{cyan}{\leavevmode {\color {cyan}o}}\ Create reference to website}}{17}
-\contentsline {todo}{{\color@box {}{cyan}{\leavevmode {\color {cyan}o}}\ Is this the place to discuss PIPE2 or should it be placed in the appendix?}}{17}
-\contentsline {todo}{{\color@box {}{cyan}{\leavevmode {\color {cyan}o}}\ Name other reasons, since we don't use generalized stochastic petri nets any more}}{17}
-\contentsline {todo}{{\color@box {}{cyan}{\leavevmode {\color {cyan}o}}\ Name disadvantages? Most disadvantages only become clear after PIPE2 has been used for a while so choosing PIPE was mostly because there was not enough time to extensively study alternatives, but it shouldn't be put like that.}}{17}
-\contentsline {todo}{{\color@box {}{cyan}{\leavevmode {\color {cyan}o}}\ Extend introduction.}}{17}
-\contentsline {todo}{{\color@box {}{cyan}{\leavevmode {\color {cyan}o}}\ Define function $f$ based on experimenting with different functions. Also, check if it is still correct to refer to transition probabilities}}{18}
-\contentsline {todo}{{\color@box {}{cyan}{\leavevmode {\color {cyan}o}}\ Elaborate on why this is more lifelike}}{18}
-\contentsline {todo}{{\color@box {}{cyan}{\leavevmode {\color {cyan}o}}\ Find some evidence that train stations are designed like this.}}{18}
-\contentsline {todo}{{\color@box {}{cyan}{\leavevmode {\color {cyan}o}}\ Elaborate on "overly complex"}}{19}
-\contentsline {todo}{{\color@box {}{cyan}{\leavevmode {\color {cyan}o}}\ Write an introduction to the experiments}}{20}
-\contentsline {todo}{{\color@box {}{cyan}{\leavevmode {\color {cyan}o}}\ Mention other ways to model this}}{20}
-\contentsline {todo}{{\color@box {}{cyan}{\leavevmode {\color {cyan}o}}\ Create reference to Ernst Bovenkamp}}{22}
-\contentsline {todo}{{\color@box {}{cyan}{\leavevmode {\color {cyan}o}}\ find out how to describe, since those values only count in the limit or whatever}}{23}
-\contentsline {todo}{{\color@box {}{cyan}{\leavevmode {\color {cyan}o}}\ find better subtitle}}{43}
-\contentsline {todo}{{\color@box {}{cyan}{\leavevmode {\color {cyan}o}}\ Needs a reference}}{43}
-\contentsline {todo}{{\color@box {}{cyan}{\leavevmode {\color {cyan}o}}\ Stupid sentence}}{44}
+\contentsline {todo}{{\color@box {}{cyan}{\leavevmode {\color {cyan}o}}\ Maybe sections have to be named differently, or previous reference has to be moved, the approach uses global effects, but also more individual models}}{9}{section*.7}
+\contentsline {todo}{{\color@box {}{cyan}{\leavevmode {\color {cyan}o}}\ Make sure the text fits better in the rest of the thesis}}{12}{section*.10}
+\contentsline {todo}{{\color@box {}{cyan}{\leavevmode {\color {cyan}o}}\ Extend introduction.}}{19}{section*.16}
+\contentsline {todo}{{\color@box {}{cyan}{\leavevmode {\color {cyan}o}}\ Specify missing parameters}}{21}{section*.18}
+\contentsline {todo}{{\color@box {}{cyan}{\leavevmode {\color {cyan}o}}\ This paragraph should probably be removed since we dont use it any more}}{22}{section*.22}
+\contentsline {todo}{{\color@box {}{cyan}{\leavevmode {\color {cyan}o}}\ Mention other ways to model this}}{22}{section*.23}
+\contentsline {todo}{{\color@box {}{cyan}{\leavevmode {\color {cyan}o}}\ Aggegrate graphs}}{25}{section*.37}
+\contentsline {todo}{{\color@box {}{cyan}{\leavevmode {\color {cyan}o}}\ find out how to describe, since those values only count in the limit or whatever}}{25}{section*.41}
+\contentsline {todo}{{\color@box {}{cyan}{\leavevmode {\color {cyan}o}}\ find better subtitle}}{45}{section*.74}
+\contentsline {todo}{{\color@box {}{cyan}{\leavevmode {\color {cyan}o}}\ Finish this part about MASON}}{47}{section*.78}
+\contentsline {todo}{{\color@box {}{cyan}{\leavevmode {\color {cyan}o}}\ Check all references (figures, papers, etc.)}}{50}{section*.81}
