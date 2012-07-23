@@ -1,16 +1,17 @@
-\title{Deadline Driven Behavior in Intelligent Virtual Environments}
-\author{
-        Djura Smits
-}
-\date{\today}
-
 \documentclass[11pt]{book}
 \usepackage[labelfont={bf}, margin=1cm]{caption}
-\usepackage{titling}
+\usepackage{titling, titlepic}
 
 \usepackage[colorinlistoftodos, bordercolor=white, backgroundcolor=cyan]{todonotes}
 \usepackage{booktabs}
 \usepackage{hyperref}
+
+\title{Deadline Driven Behavior in Intelligent Virtual Environments}
+\author{ Djura Smits}
+\date{\today}
+\titlepic{\includegraphics[width=\textwidth]{rotterdamairportphoto.jpg}}
+
+
 
 \graphicspath{{.}{../results}}
 
@@ -32,13 +33,16 @@ I would like to thank my supervisors Philip Kerbush from TNO, and Arnoud Visser 
 
 \section{Introduction}
 %\todo[inline]{Extend introduction}
-Ever since the horrible tragedies on 9/11, there has been an increased interest in reinforcing security in public environments. The recent advances in technology have increased the feasibility of many different methods. An important approach in this area of interest is the automatic detection of suspicious behavior from camera images. The approaches in this area can vary, but one important aspect that they have in common, is the necessity of camera footage to be able to test the approaches. Since it can be extremely tedious to collect and annotate this data it would be very rewarding to be able to generate testing data on the fly. It is beyond the scope of our research to get into what suspicious behavior looks like, to we like to focus on the behavior of "non-suspicious" people. Assuming that so-called "normal" people greatly outnumber terrorists, these suspicious people could be added in later with ease. In other words, we would like to be able to quickly generate crowds of people doing normal, everyday behavior.\\
+For the last decade or so, there has been an increased interest in reinforcing security in public environments. The recent advances in technology have increased the feasibility of many different methods. An important approach in this area of interest is the automatic detection of suspicious behavior from camera images. The approaches in this area can vary, but one important aspect that they have in common, is the necessity of camera footage to be able to test the approaches. Since it can be extremely tedious to collect and annotate this data it would be very rewarding to be able to generate testing data on the fly. It is beyond the scope of our research to get into what suspicious behavior looks like, to we like to focus on the behavior of "non-suspicious" people. Assuming that so-called "normal" people greatly outnumber terrorists, these suspicious people could be added in later with ease. In other words, we would like to be able to quickly generate crowds of people doing normal, everyday behavior.\\
 Simulation of pedestrians is a widely studied subject. Many models have been created for the various characteristics that arise when multiple agents move around in the same area. Many uses can be thought of for pedestrian simulation. An important purpose for this could be for example to easily create a large amount of "normal" pedestrians (as opposed to "suspicious" pedestrians).  Suspicious pedestrians whose behavior is scripted by hand can then be placed in the environment to easily create artificial testing data for suspicious behavior detection algorithms and such. Furthermore, the addition of simulated virtual pedestrians can add realism to otherwise mostly empty battlefield scenarios.
 
 Another way to look at the behavior of groups of pedestrians is to explicitly specify how they behave when they enter a certain type of situation. In our approach, we would like to be able to specify behavior by drawing situations on an environment. For example, when a food stand is present in the area, we would like to be able to indicate that the agents that are placed in the neighborhood of that stand are able to do certain food-buying behavior.
 
 An additional requirement is that we would like to indicate a certain \emph{deadline} for an agent which is the time at which its goal is not reachable any more. This approach results in roughly two types of behavior, \emph{hurried} and \emph{relaxed}. When the deadline approaches, less and less actions are likely to be done, since actions that take much time would result in not reaching the goal in time.\\
-We validated our model by mimicking certain behaviors found on Rotterdam airport. We chose Rotterdam airport because time restrictions are very prevalent in a departure hall like the one on Rotterdam airport.
+We validated our model by mimicking certain behaviors found on Rotterdam airport. We chose Rotterdam airport because time restrictions are very prevalent in a departure hall like the one on Rotterdam airport. 
+
+So, to summarize, we would like to create a system that enables a user to easily place large amounts of more or less realistically behaving people in an environment. These people should behave in a way appropriate for the environment. Furthermore, the behavior should be guided by the fact that every pedestrian has a fixed deadline for when he has to do his final activity. Ideally, this will lead to a distinction between hurried and relaxed behavior, depending on whether the deadline is near or still far away. In order to facilitate defining the behavior, we will create a tool to easily design these behaviors as Petri nets. 
+\todo[inline]{Describe the promise for the utopia of my research}
 
 
 %In many fields using simulation, the environments are empty except for the absolutely necessary parts of the simulation. However, the environment would look much more realistic if actual civilians would walk around. That is why SIMOBS was developed. SIMOBS is a plugin for the VR-Forces simulation application that makes it easy to quickly generate residential areas inhabited by families, and factories where these civilians go to work. However, at the moment these virtual pedestrians only walk from their houses to their work and back at fixed points in time. The purpose of this thesis is to extend this SIMOBS plugin to create more realistic behavior.
@@ -280,7 +284,7 @@ The use of Dijkstra's algorithm does limit the use of our Petri nets though. For
 
 
 \section{Experiments}
-Allthough it can be difficult to decide whether a group of people walks around "realistically", we will certainly give it a try. We will attempt to test our framework in two different ways; first of all, we will assess our framework by doing a qualitative comparison with real-life footage of Rotterdam Airport. We have access to both camera footage and manually annotated locations of the visitors. Secondly, we will assess how the the different probability functions we choose for the go-to-goal action will affect the frequency of other actions. In other words, we will attempt to investigat whether our method leads to \emph{emergent}  behavior.
+Allthough it can be difficult to decide whether a group of people walks around "realistically", we will certainly give it a try. We will attempt to test our framework in two different ways; first of all, we will assess our framework by doing a qualitative comparison with real-life footage of Rotterdam Airport. We have access to both camera footage and manually annotated locations of the visitors. Secondly, we will assess how the the different probability functions we choose for the go-to-goal action will affect the frequency of other actions. In other words, we will attempt to investigate whether our method leads to \emph{emergent}  behavior.
 
 \todo[inline]{Specify missing parameters}
 
@@ -289,11 +293,11 @@ Allthough it can be difficult to decide whether a group of people walks around "
 \paragraph{Going to the toilet}
 In the videos, we observed that a typical behavior that manifests itself multiple times in the video material is that one person goes to the toilet, and another one waits until this person has come back. The Petri net used for this can be found in figure \ref{toiletsituation}.
 
-\paragraph{Standing in the queue for the check-in desk}
-\todo[inline]{This paragraph should probably be removed since we dont use it any more}
-One constant factor in the video material seemed to be the people lining up in front of the check-in desk. There are many ways to model this behavior with our framework.
-\todo{Mention other ways to model this}
-We decided to split this behavior in two situations. First of all, we have the check-in situation, which in our simulation comes down to standing in front of the check-in desk for a short period of time. The other half of this behavior is the queue situation. This is an area in the hall where people line up with the people in front of them. The situation area is chosen such that the pedestrians in it will together form an orderly line. This means that the situation should not be too broad.
+%\paragraph{Standing in the queue for the check-in desk}
+%\todo[inline]{This paragraph should probably be removed since we dont use it any more}
+%One constant factor in the video material seemed to be the people lining up in front of the check-in desk. There are many ways to %model this behavior with our framework.
+%\todo{Mention other ways to model this}
+%We decided to split this behavior in two situations. First of all, we have the check-in situation, which in our simulation comes down %to standing in front of the check-in desk for a short period of time. The other half of this behavior is the queue situation. This is an %area in the hall where people line up with the people in front of them. The situation area is chosen such that the pedestrians in it %will together form an orderly line. This means that the situation should not be too broad.
 
 
 \paragraph{Checking in}
@@ -310,10 +314,11 @@ It is very difficult to quantitatively establish whether lifelike behavior has b
 
 \subsubsection{Sigmoid Function}
 A sigmoid function is an S-shaped curve that has a progression that accellerates and approaches a climax over time. This function can be found in many natural processes, such as learning curves. This function closely resembles how we reason that the behavior will shift when a pedestrian approaches a deadline.
-A sigmoid function is defined as follows:
+Our sigmoid function is defined as follows:
 \begin{equation}
-P(t) = \frac{1}{1+e^{-t}}
+P(t) = \eta \frac{1}{1+e^{-\omega(t-t_0)}}
 \end{equation}
+In our experiments, we chose $t_0=100$ and $\omega=100$, so that the middle of the curve lies in the middle of the 200-timestep period which the pedestrians have to reach their deadline. We chose $\omega$ to be 100 as well to scale the function to fit in the 200 timestep interval. For $\eta$, we varied this between 0 and 1.
 % When the deadline is far away, it does not matter much whether the pedestrian goes straight to its goal or does something else. Even if time shifts a little, it still does not matter much. However, when the pedestrian moves on
 
 %\begin{figure}
@@ -323,16 +328,20 @@ P(t) = \frac{1}{1+e^{-t}}
 %\label{sigmoid-example}
 %\end{figure}
 
-\subsubsection{Predictions for Behavior Using the Sigmoid Function}
-
-
 \subsubsection{Linear Function}
-We first chose to use a sigmoid function, because intuitively it felt like it would reflect real-life behavior best. However, it could be the case that the sophistication of this function is lost in practice. If this is the case, we might as well use the simpler linear function. We will use this function to check the necessity of the sigmoid function.
+We first chose to use a sigmoid function, because intuitively it felt like it would reflect real-life behavior best. However, it could be the case that the sophistication of this function is lost in practice. If this is the case, we might as well use the simpler linear function. We will use this function to check the necessity of the sigmoid function. Our linear function was of the following form:
+\begin{center}
+If $0 \leq t \leq n$: $P(t) = at + b$\\
+If $t<0$: $P(t) = P(0)$\\
+If $t<n$: $P(t) = P(n)$
+\end{center}
+However, we do not specify these parameters directly. What matters the most to us, is the value at the start of the linear function($t=0$, and at the end(t=n). Consequently, we compute $a$ and $b$ as follows:
+\begin{center}
+$a = \frac{endValue - startValue}{endX}$\\
+$b = startValue$
+\end{center}
 
-\subsubsection{Predictions for Behavior Using the Linear Function}
 
-\subsubsection{Results for Linear Function}
-It turns out a linear function gives significantly different behavior than a sigmoid function. Because there is a constant rise in the probability of walking to the goal, the pedestrians reach the goal very early, since there is a chance to go there every step, and this chance steadily increases. So all pedestrians have reached the goal long before the deadline. This is because the cumulative probability of the pedestrian going to the goal is very high very early.
 
 \subsubsection{Gaussian Function}
 We also used a Gaussian function to model the behavior. A Gaussian function is defined as follows:
@@ -340,8 +349,14 @@ We also used a Gaussian function to model the behavior. A Gaussian function is d
 Where real constants $a, b, c > 0 $. A Gaussian distribution (or normal distribution) is a continuous probability distribution with a bell-shaped probability density function which have a mean and variance as parameters.
 
 
-\subsubsection{Predictions for Behavior Using the Gaussian Function}
+
 We chose to try a Gaussian function as well because of the following reasoning: A pedestrian might not care about going to it's goal until it is approximately the time of the deadline. With this we mean that going to the goal is a priority \emph{around} the time of the deadline, and will also decline when the deadline has passed for a while, and the pedestrian hasn't reached its goal yet. With this reasoning, the "go-to-goal" behavior frequency should increase when approaching the deadline, and should peak \emph{just} before the deadline, and declines thereafter.
+
+\subsubsection{Results for Sigmoid Function}
+
+
+\subsubsection{Results for Linear Function}
+It turns out a linear function gives significantly different behavior than a sigmoid function. Because there is a constant rise in the probability of walking to the goal, the pedestrians reach the goal very early, since there is a chance to go there every step, and this chance steadily increases. So all pedestrians have reached the goal long before the deadline. This is because the cumulative probability of the pedestrian going to the goal is very high very early.
 
 \subsubsection{Results for Gaussian Function}
 
@@ -644,6 +659,8 @@ It is very well possible that the results found in our research are far from the
 
 \subsection{Future Work}
 There are several ways in which the deadline driven behavior framework can be extended. For example, currently, the probabilities for entering situations are only dependent on how close the agent is to the deadline. So, no matter what time of day it is, the pedestrians will always have the same probability to do a certain action. However, in real life, a person's probabilities for certain behavior is also largely dependent on their daily cycle.
+
+\subsubsection{Finding the optimal parameters}
 
 \subsubsection{Needs}
 Ideally, a pedestrian's propensity to execute certain actions, such as eating, should vary dependent on whether the individual has recently executed that action, and their daily cycle. In other words, we would like to introduce \emph{needs} to the framework. By introducing the concept of needs, we would be better able to model the daily flow of people in a typical public area. We can vary the needs according to the time of day and whether this need has been fulfilled recently.
