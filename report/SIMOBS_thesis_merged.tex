@@ -5,6 +5,7 @@
 \usepackage[colorinlistoftodos, bordercolor=white, backgroundcolor=cyan]{todonotes}
 \usepackage{booktabs}
 \usepackage{hyperref}
+\usepackage{algpseudocode, algorithm}
 
 \begin{document}
 
@@ -102,7 +103,7 @@ June 24th, 2010
 %\abstract
 %\newpage
 \section{Acknowledgements}
-I would like to thank my supervisors Philip Kerbush from TNO, and Arnoud Visser from the UvA. Furthermore, I would like to thank Ernst Bovenkamp for providing the data and videos from Rotterdam airport. I would also like to thank my friends and family for the support, and my classmates, some of whom I've enjoyed working with for many years.
+I would like to thank my supervisors Philip Kerbush from TNO, and Arnoud Visser from the UvA. Furthermore, I would like to thank Ernst Bovenkamp for providing the data and videos from Rotterdam airport. I would also like to thank my friends and family for the support, and my classmates, many of whom I've enjoyed working with for many years.
 \newpage
 \tableofcontents
 \newpage
@@ -322,7 +323,7 @@ In the upcoming sections will be described how we decided to implement our syste
 %\todo[inline]{Is this the place to discuss PIPE2 or should it be placed in the appendix?} Yes because having a toolkit to easily create those petri nets is pretty relevant.
 PIPE2 is a tool written in Java to create and analyse petri nets. We chose this toolkit for a number of reasons. First of all, PIPE2 is written in Java, which makes it easier to integrate with our system. Secondly, this toolkit promised a number of Petri net extensions, the most important of which is the capability to create \emph{Generalized Stochastic Petri nets}. Generalized stochastic Petri nets is an extension that adds timed transitions to the modeling language.
 %\todo{Name other reasons, since we don't use generalized stochastic petri nets any more}
-Unfortunately, at a later time it seemed that the generalized stochastic petrinets did not behave as described in the specifications, so we decided to stick with modified, basic, untimed petri nets. Lastly, the PIPE2 toolkit has a clear, simple gui which can be used to create and modify Petri nets. This has been the main reason we chose this gui, because we wanted to create tools for easy modeling of behavior. It should be minimal effort to place large amounts of agents in a environment.
+Unfortunately, at a later time it seemed that the generalized stochastic petrinets did not behave as described in the specifications, so we decided to stick with modified, basic, untimed petri nets. Lastly, the PIPE2 toolkit has a clear, simple gui which can be used to create and modify Petri nets. This has been the main reason we chose this gui, because we wanted to create tools for easy modeling of behavior. It should require minimal effort to place large amounts of agents in a environment.
 %\todo[inline]{Name disadvantages? Most disadvantages only become clear after PIPE2 has been used for a while so choosing PIPE was mostly because there was not enough time to extensively study alternatives, but it shouldn't be put like that.}
 
 
@@ -343,13 +344,6 @@ Some drastic changes will be made in order to adapt the situations framework to 
 %\todo[inline]{Refine following text}
 %The general gist is that we use the idea of Beauquiers probabilistic timed automata \cite{Beauquier03}. Which means we %assign clocks to transitions and a transition is only accepted when the clock condition holds, and we use probabilistic %transitions, but we wont use the whole MDP problem solving part.
 
-\subsection{Time Planning}
-The fact that we use Petri nets with timed transitions, instead of finite state automata does not necessarily mean our pedestrians are able to deal with time constraints. However, these Petri nets have helped making our problem representable. In order to use these stochastic Petri nets efficiently for making decisions based on time constraints, we have made a number of assumptions.\\
-First of all, we assume there are certain \emph{base places} from which it is always possible to reach the (time constrained) goal. Then, we will compute for every transition that will not take the pedestrian to its goal, how much time it takes to get back to the base state. Then we can check whether the goal place is still accessible from the base state when a certain transition has been taken. We use this information to modify the timed transition rate, so pedestrians are more likely to choose the actions that leave them more time to reach their goal.
-As one may have noticed, this approach does not give a completely watertight solution to the planning problem. However, since we have to be able to model large crowds, we cannot create an overly complex planning system, since we would not be able to run the simulation real-time. Furthermore, we do not aim at finding an optimal solution to the planning problem, but rather the most lifelike behavior. In real life, people make errors in judgement, so creating pedestrians who can look ahead perfectly would not be realistic. It is impossible to make an exact definition of realism for our purposes, but what we try to do, is to copy certain specific behavior found in real-life footage. In our experiments we will try different functions for computing the probability of going to the goal, and attempt to assess which function will be most suitable.
-
-
-
 \section{Assumptions}
 The method we propose is based on various assumptions which have to be clarified. An important assumption is that the environment the pedestrians have to walk in are designed in such a way that it helps creating realistic behavior. This means that situations have to be defined in such a way that pedestrians will walk into them and act in the appropriate way. This makes our framework probably limited to certain kinds of environments. When an environment does not contain many situation areas or if they are too far apart, it is very likely that the framework does not give a satisfactory result.
 Another assumption we make is that the pedestrians have to be at a certain place at a certain time. This makes the system more suitable for daily routine type situations rather than cases in which pedestrians are walking around without a proper goal. However, most situations can be described as having a deadline (e.g. eventually, most people have to go to bed), so this assumption is not necessarily very restrictive.\\
@@ -361,9 +355,43 @@ However, it is possible to do some computations before running the simulation, a
 
 The use of Dijkstra's algorithm does limit the use of our Petri nets though. For our simple implementation of Dijkstra's algorithm to be effective, we cannot use the Petri nets' more advanced features such as colored tokens.
 
-\begin{itemize}
-\item Write about problems with dijksta and petri nets, such as multiple tokens/slots, and colored tokens etc.
-\end{itemize}
+\todo[inline]{Write about problems with dijksta and petri nets, such as multiple tokens/slots, and colored tokens etc.}
+
+\section{Time Planning \& Decision Mechanism}
+The fact that we use Petri nets with timed transitions instead of finite state automata does not necessarily mean our pedestrians are able to deal with time constraints. However, these Petri nets have helped making our problem representable. In order to use these stochastic Petri nets efficiently for making decisions based on time constraints, we have made a number of assumptions.\\
+First of all, we assume there are certain \emph{base places} from which it is always possible to reach the (time constrained) goal. Then, we will compute for every transition that will not take the pedestrian to its goal, how much time it takes to get back to the base state. Then we can check whether the goal place is still accessible from the base state when a certain transition has been taken. We use this information to modify the timed transition rate, so pedestrians are more likely to choose the actions that leave them more time to reach their goal.
+As one may have noticed, this approach does not give a completely watertight solution to the planning problem. However, since we have to be able to model large crowds, we cannot create an overly complex planning system, since we would not be able to run the simulation real-time. Furthermore, we do not aim at finding an optimal solution to the planning problem, but rather the most lifelike behavior. In real life, people make errors in judgement, so creating pedestrians who can look ahead perfectly would not be realistic. It is impossible to make an exact definition of realism for our purposes, but what we try to do, is to copy certain specific behavior found in real-life footage. In our experiments we will try different functions for computing the probability of going to the goal, and attempt to assess which function will be most suitable.
+\todo[inline]{About the most important part of the thesis, so has to be extended}
+\todo[inline]{Include Pictures}
+No matter which probability function we use, we use the same sequence (algorithm \ref{decisionmechanism}) of steps to choose a behavior from the current time for a individual pedestrian.
+
+\todo[inline]{Check if it's the right way around (afteller of opteller)} 
+\todo[inline]{Improve structure}
+\begin{algorithm}
+\caption{The behavior decision mechanism}
+\label{decisionmechanism}
+\begin{algorithmic}
+\State $t_d \gets $ deadline time - current time 
+\For{Every connected situation}
+\State $t_e \gets $ estimated time for situation
+\State $t_{new} \gets t_d - t_e$
+\State Probability rate $\gets \phi(t_new)$
+\EndFor
+\State normalize(probability rates)
+\State select one transition according to the computed probabilities
+\end{algorithmic}
+\end{algorithm}
+
+Figure \ref{petrinetexample} gives an example of how the pedestrian petrinet is connected to the situations. It also shows the estimation created by the Dijkstra preprocessing algorithm that makes a guess at how much time it takes to complete the situation behavior.
+
+\begin{figure}
+\centering
+\includegraphics[width=350pt]{example}
+\caption{Example structure}
+\label{petrinetexample}
+\end{figure}
+
+
 
 
 
@@ -736,10 +764,8 @@ The results are different from what we expected, but logical nonetheless. We exp
 \subsection{Limits of the Deadline Driven Behavior Framework}
 Modeling pedestrian behavior with our method does have its limits. First of all, the movements of the agents are designed explicitly through linking together basic movements in the Petri nets. As a consequence, interaction with other agents is quite static, and not directly responsive to surrounding agents. Consequently, our method is not particularly suitable for situations in which the pedestrians have to move very close together, such as when a large amount of pedestrians has to move through a narrow space and have to move closer together or form a queue. When pedestrians move very close together, their behavior will become more uniform, and it would be more sensible to look at the group as a whole, and not as individuals. A more suitable approach would then for example be to look at crowds as particles in a liquid, like Moore, Ali, Mehran and Shah have done \cite{Moore:2011:VCS:2043174.2043192}. Their supposition is that people in crowds seem to move according to the flow, just like particles in a liquid.
 
-\subsection{Other things}
-\todo[inline]{find better subtitle}
+\subsection{Optimisation}
 It is very well possible that the results found in our research are far from the optimal results we could have gotten with our framework.  Machine learning could be used to attain the optimal deadline driven behavior. However, this is beyond the scope of our research.
-
 
 \subsection{Future Work}
 There are several ways in which the deadline driven behavior framework can be extended. For example, currently, the probabilities for entering situations are only dependent on how close the agent is to the deadline. So, no matter what time of day it is, the pedestrians will always have the same probability to do a certain action. However, in real life, a person's probabilities for certain behavior is also largely dependent on their daily cycle.
