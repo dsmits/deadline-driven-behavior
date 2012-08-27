@@ -400,9 +400,9 @@ Allthough it can be difficult to decide whether a group of people walks around "
 
 \todo[inline]{Specify missing parameters}
 
-\subsubsection{The Behaviors}
+\subsection{The Behaviors}
 
-\paragraph{Going to the toilet}
+\subsubsection{Going to the toilet}
 In the videos, we observed that a typical behavior that manifests itself multiple times in the video material is that one person goes to the toilet, and another one waits until this person has come back. The Petri net used for this can be found in figure \ref{toiletsituation}.
 
 %\paragraph{Standing in the queue for the check-in desk}
@@ -412,19 +412,19 @@ In the videos, we observed that a typical behavior that manifests itself multipl
 %We decided to split this behavior in two situations. First of all, we have the check-in situation, which in our simulation comes down %to standing in front of the check-in desk for a short period of time. The other half of this behavior is the queue situation. This is an %area in the hall where people line up with the people in front of them. The situation area is chosen such that the pedestrians in it %will together form an orderly line. This means that the situation should not be too broad.
 
 
-\paragraph{Checking in}
+\subsubsection{Checking in}
 When the pedestrians reach the end of the queue situation, they will enter the check-in situation, in which they will stand in front of the check-in desk for a little while, after which they are free to go again.
 
-\paragraph{Lean Against Pillar}
+\subsubsection{Lean Against Pillar}
 Another recurring behavior we saw is that people lean against the pillars in the hall. This is a type of idle behavior, a variation on the standing still behavior.
 
-\paragraph{Wander}
+\subsubsection{Wander}
 One crucial behavior is missing. How are the pedestrians going to reach the different situation areas? This is only possible if they already have a move to begin with, otherwise they are only going to stay in place. That is why we added the \emph{wander} behavior. This behavior lets the pedestrian turn a random amount of degrees between $-45\pi$ and $45\pi$ and walk a few steps in that direction.
 
-\subsection{Quantitative Experiment}
+\section{Quantitative Experiment}
 It is very difficult to quantitatively establish whether lifelike behavior has been modeled. However, it is possible to check whether the mechanics of time planning work as predicted. In order to do this, we log the pedestrian's relative time when they arrive at their goal to check how much time they had left until their deadline. If the model works correctly, this time should roughly correlate to how the time probability function has been chosen. We will discuss the various functions we have used to model the probabilities over time.
 
-\subsubsection{Sigmoid Function}
+\subsection{Sigmoid Function}
 A sigmoid function is an S-shaped curve that has a progression that accellerates and approaches a climax over time. This function can be found in many natural processes, such as learning curves. This function closely resembles how we reason that the behavior will shift when a pedestrian approaches a deadline.
 Our sigmoid function is defined as follows:
 \begin{equation}
@@ -440,7 +440,7 @@ In our experiments, we chose $t_0=100$ and $\omega=100$, so that the middle of t
 %\label{sigmoid-example}
 %\end{figure}
 
-\subsubsection{Linear Function}
+\subsection{Linear Function}
 We first chose to use a sigmoid function, because intuitively it felt like it would reflect real-life behavior best. However, it could be the case that the sophistication of this function is lost in practice. If this is the case, we might as well use the simpler linear function. We will use this function to check the necessity of the sigmoid function. Our linear function was of the following form:
 \begin{center}
 If $0 \leq t \leq n$: $P(t) = at + b$\\
@@ -455,7 +455,7 @@ $b = startValue$
 
 
 
-\subsubsection{Gaussian Function}
+\subsection{Gaussian Function}
 We also used a Gaussian function to model the behavior. A Gaussian function is defined as follows:
 \begin{equation}f(x) = ae^{- \frac{(x-b)^2}{2c^2}}\end{equation}
 Where real constants $a, b, c > 0 $. A Gaussian distribution (or normal distribution) is a continuous probability distribution with a bell-shaped probability density function which have a mean and variance as parameters.
@@ -464,22 +464,22 @@ Where real constants $a, b, c > 0 $. A Gaussian distribution (or normal distribu
 
 We chose to try a Gaussian function as well because of the following reasoning: A pedestrian might not care about going to it's goal until it is approximately the time of the deadline. With this we mean that going to the goal is a priority \emph{around} the time of the deadline, and will also decline when the deadline has passed for a while, and the pedestrian hasn't reached its goal yet. With this reasoning, the "go-to-goal" behavior frequency should increase when approaching the deadline, and should peak \emph{just} before the deadline, and declines thereafter.
 
-\subsubsection{Results for Sigmoid Function}
+\subsection{Results for Sigmoid Function}
 
 
-\subsubsection{Results for Linear Function}
+\subsection{Results for Linear Function}
 It turns out a linear function gives significantly different behavior than a sigmoid function. Because there is a constant rise in the probability of walking to the goal, the pedestrians reach the goal very early, since there is a chance to go there every step, and this chance steadily increases. So all pedestrians have reached the goal long before the deadline. This is because the cumulative probability of the pedestrian going to the goal is very high very early.
 
-\subsubsection{Results for Gaussian Function}
+\subsection{Results for Gaussian Function}
 
 
-\subsubsection{What can we derive from these results?}
+\subsection{What can we derive from these results?}
 From these results, we can see that not only does the changing of the goal probability function affect the time at which the agents decide when to move to the goal, but also the time at which other actions are executed. This shows that our framework is able to generate emergent behavior. When the probability of going to the goal is high, actions that take longer to finish have a very low frequency.
 
-\subsection{Qualitative Experiment}
+\section{Qualitative Experiment}
 Apart from quantitative analysis, we will also qualitatively judge the pedestrians' behavior. We will do this by comparing our modeled behavior with real-life behavior from recordings of Rotterdam airport. We have picked a couple of specific behaviors that we have modeled with our system.
 
-\subsubsection{The Dataset}
+\subsection{The Dataset}
 We acquired manually annotated data indicating the tracks of the visitors of Rotterdam airport. 
 
 

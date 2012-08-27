@@ -20,37 +20,37 @@
 \contentsline {chapter}{\numberline {3}Method}{23}{chapter.3}
 \contentsline {section}{\numberline {3.1}PIPE2}{23}{section.3.1}
 \contentsline {section}{\numberline {3.2}Pedestrian Layer}{24}{section.3.2}
-\contentsline {subsection}{\numberline {3.2.1}Time Planning}{24}{subsection.3.2.1}
-\contentsline {section}{\numberline {3.3}Assumptions}{25}{section.3.3}
+\contentsline {section}{\numberline {3.3}Assumptions}{24}{section.3.3}
 \contentsline {section}{\numberline {3.4}Preparations}{25}{section.3.4}
-\contentsline {chapter}{\numberline {4}Experiments}{27}{chapter.4}
-\contentsline {subsubsection}{The Behaviors}{27}{section*.12}
-\contentsline {paragraph}{Going to the toilet}{27}{section*.13}
-\contentsline {paragraph}{Checking in}{27}{section*.14}
-\contentsline {paragraph}{Lean Against Pillar}{27}{section*.15}
-\contentsline {paragraph}{Wander}{28}{section*.16}
-\contentsline {subsection}{\numberline {4.0.1}Quantitative Experiment}{28}{subsection.4.0.1}
-\contentsline {subsubsection}{Sigmoid Function}{28}{section*.17}
-\contentsline {subsubsection}{Linear Function}{28}{section*.18}
-\contentsline {subsubsection}{Gaussian Function}{29}{section*.19}
-\contentsline {subsubsection}{Results for Sigmoid Function}{29}{section*.20}
-\contentsline {subsubsection}{Results for Linear Function}{29}{section*.21}
-\contentsline {subsubsection}{Results for Gaussian Function}{30}{section*.22}
-\contentsline {subsubsection}{What can we derive from these results?}{30}{section*.23}
-\contentsline {subsection}{\numberline {4.0.2}Qualitative Experiment}{30}{subsection.4.0.2}
-\contentsline {subsubsection}{The Dataset}{30}{section*.24}
-\contentsline {subsection}{\numberline {4.0.3}Results}{30}{subsection.4.0.3}
-\contentsline {subsection}{\numberline {4.0.4}Results 2}{32}{subsection.4.0.4}
-\contentsline {chapter}{\numberline {5}Conclusion \& Discussion}{51}{chapter.5}
-\contentsline {subsection}{\numberline {5.0.5}Limits of the Deadline Driven Behavior Framework}{51}{subsection.5.0.5}
-\contentsline {subsection}{\numberline {5.0.6}Other things}{51}{subsection.5.0.6}
-\contentsline {subsection}{\numberline {5.0.7}Future Work}{52}{subsection.5.0.7}
-\contentsline {subsubsection}{Finding the optimal parameters}{52}{section*.63}
-\contentsline {subsubsection}{Needs}{52}{section*.64}
-\contentsline {chapter}{\numberline {A}Appendix A: Implementation}{53}{appendix.A}
-\contentsline {section}{\numberline {A.1}Implementing the Framework}{53}{section.A.1}
-\contentsline {subsection}{\numberline {A.1.1}Sources, Sinks, Slots}{53}{subsection.A.1.1}
-\contentsline {subsection}{\numberline {A.1.2}Additional Modifications}{54}{subsection.A.1.2}
-\contentsline {section}{\numberline {A.2}MASON}{54}{section.A.2}
-\contentsline {section}{\numberline {A.3}Connecting MASON and the Situations Framework}{54}{section.A.3}
-\contentsline {chapter}{\numberline {B}Appendix B: Results}{55}{appendix.B}
+\contentsline {section}{\numberline {3.5}Time Planning \& Decision Mechanism}{25}{section.3.5}
+\contentsline {chapter}{\numberline {4}Experiments}{29}{chapter.4}
+\contentsline {subsection}{\numberline {4.0.1}The Behaviors}{29}{subsection.4.0.1}
+\contentsline {subsubsection}{Going to the toilet}{29}{section*.18}
+\contentsline {subsubsection}{Checking in}{29}{section*.19}
+\contentsline {subsubsection}{Lean Against Pillar}{30}{section*.20}
+\contentsline {subsubsection}{Wander}{30}{section*.21}
+\contentsline {section}{\numberline {4.1}Quantitative Experiment}{30}{section.4.1}
+\contentsline {subsection}{\numberline {4.1.1}Sigmoid Function}{30}{subsection.4.1.1}
+\contentsline {subsection}{\numberline {4.1.2}Linear Function}{31}{subsection.4.1.2}
+\contentsline {subsection}{\numberline {4.1.3}Gaussian Function}{31}{subsection.4.1.3}
+\contentsline {subsection}{\numberline {4.1.4}Results for Sigmoid Function}{32}{subsection.4.1.4}
+\contentsline {subsection}{\numberline {4.1.5}Results for Linear Function}{32}{subsection.4.1.5}
+\contentsline {subsection}{\numberline {4.1.6}Results for Gaussian Function}{32}{subsection.4.1.6}
+\contentsline {subsection}{\numberline {4.1.7}What can we derive from these results?}{32}{subsection.4.1.7}
+\contentsline {section}{\numberline {4.2}Qualitative Experiment}{32}{section.4.2}
+\contentsline {subsection}{\numberline {4.2.1}The Dataset}{32}{subsection.4.2.1}
+\contentsline {subsection}{\numberline {4.2.2}Results}{32}{subsection.4.2.2}
+\contentsline {subsection}{\numberline {4.2.3}Results 2}{37}{subsection.4.2.3}
+\contentsline {chapter}{\numberline {5}Conclusion \& Discussion}{53}{chapter.5}
+\contentsline {subsection}{\numberline {5.0.4}Limits of the Deadline Driven Behavior Framework}{53}{subsection.5.0.4}
+\contentsline {subsection}{\numberline {5.0.5}Optimisation}{53}{subsection.5.0.5}
+\contentsline {subsection}{\numberline {5.0.6}Future Work}{54}{subsection.5.0.6}
+\contentsline {subsubsection}{Finding the optimal parameters}{54}{section*.59}
+\contentsline {subsubsection}{Needs}{54}{section*.60}
+\contentsline {chapter}{\numberline {A}Appendix A: Implementation}{55}{appendix.A}
+\contentsline {section}{\numberline {A.1}Implementing the Framework}{55}{section.A.1}
+\contentsline {subsection}{\numberline {A.1.1}Sources, Sinks, Slots}{55}{subsection.A.1.1}
+\contentsline {subsection}{\numberline {A.1.2}Additional Modifications}{56}{subsection.A.1.2}
+\contentsline {section}{\numberline {A.2}MASON}{56}{section.A.2}
+\contentsline {section}{\numberline {A.3}Connecting MASON and the Situations Framework}{56}{section.A.3}
+\contentsline {chapter}{\numberline {B}Appendix B: Results}{57}{appendix.B}
