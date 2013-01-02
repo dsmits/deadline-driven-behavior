@@ -422,6 +422,7 @@ Another recurring behavior we saw is that people lean against the pillars in the
 One crucial behavior is missing. How are the pedestrians going to reach the different situation areas? This is only possible if they already have a move to begin with, otherwise they are only going to stay in place. That is why we added the \emph{wander} behavior. This behavior lets the pedestrian turn a random amount of degrees between $-45\pi$ and $45\pi$ and walk a few steps in that direction.
 
 \section{Quantitative Experiment}
+\todo[inline]{Statistics?}
 It is very difficult to quantitatively establish whether lifelike behavior has been modeled. However, it is possible to check whether the mechanics of time planning work as predicted. In order to do this, we log the pedestrian's relative time when they arrive at their goal to check how much time they had left until their deadline. If the model works correctly, this time should roughly correlate to how the time probability function has been chosen. We will discuss the various functions we have used to model the probabilities over time.
 
 \subsection{Sigmoid Function}
@@ -464,6 +465,21 @@ Where real constants $a, b, c > 0 $. A Gaussian distribution (or normal distribu
 
 We chose to try a Gaussian function as well because of the following reasoning: A pedestrian might not care about going to it's goal until it is approximately the time of the deadline. With this we mean that going to the goal is a priority \emph{around} the time of the deadline, and will also decline when the deadline has passed for a while, and the pedestrian hasn't reached its goal yet. With this reasoning, the "go-to-goal" behavior frequency should increase when approaching the deadline, and should peak \emph{just} before the deadline, and declines thereafter.
 
+\section{Qualitative Experiment}
+Apart from quantitative analysis, we will also qualitatively judge the pedestrians' behavior. We will do this by comparing our modeled behavior with real-life behavior from recordings of Rotterdam airport. We have picked a couple of specific behaviors that we have modeled with our system.
+
+\subsection{The Dataset}
+We acquired manually annotated data indicating the tracks of the visitors of Rotterdam airport. 
+
+
+
+
+%\todo[inline]{The following is only a rough draft}
+%It is very difficult to determine whether one has been successful at modeling lifelike behavior. What we are going to do is %study footage of real-life behavior at Rotterdam Airport, and pick out various behavioral patterns. Then, we are going to %model these patterns with our system.
+
+
+\section{Results}
+
 \subsection{Results for Sigmoid Function}
 
 
@@ -472,31 +488,29 @@ It turns out a linear function gives significantly different behavior than a sig
 
 \subsection{Results for Gaussian Function}
 
-
-\subsection{What can we derive from these results?}
-From these results, we can see that not only does the changing of the goal probability function affect the time at which the agents decide when to move to the goal, but also the time at which other actions are executed. This shows that our framework is able to generate emergent behavior. When the probability of going to the goal is high, actions that take longer to finish have a very low frequency.
-
-\section{Qualitative Experiment}
-Apart from quantitative analysis, we will also qualitatively judge the pedestrians' behavior. We will do this by comparing our modeled behavior with real-life behavior from recordings of Rotterdam airport. We have picked a couple of specific behaviors that we have modeled with our system.
-
-\subsection{The Dataset}
-We acquired manually annotated data indicating the tracks of the visitors of Rotterdam airport. 
-
-
 \subsection{Results}
 Below you will find the results of the quantitative experiment, where we used a variety of functions to check whether emergent behavior occurs.
 
-In figure \ref{result_toilet_linear_1_05_02_01_001}, you can see the results of choosing a linear function from 0 to 0.2 as the goal probability function. We can see here that the pedestrians reach their goal very early, that is, 100 \% of the pedestrians reach the goal so early, they could easily have used the remaining time to do a multitude of other activities.
+In figure \ref{result_toilet_linear_1_05_02_01_001}, you can see the results of choosing a linear function where the maximum is 0.001, 0.01, 0.02, 0.05 and 1.0 respectively as the goal probability function. We can see here that the pedestrians reach their goal very early, that is, 100 \% of the pedestrians reach the goal so early, they could easily have used the remaining time to do a multitude of other activities.
 
 \todo[inline]{Aggegrate graphs}
 \begin{figure}
 \centering
-\includegraphics[width=250pt]{/allautomaticresults/result_toilet_linear_1_05_02_01_001.png}
-\caption{result_toilet_linear_1_05_02_01_001}
+\includegraphics[width=280pt]{"/allautomaticresults/result_toilet_linear_1_05_02_01_001"}
+\caption{Blue: max = 1\\ green: max. = 0.5\\ red: max. = 0.2\\ turqooize: max. = 0.1\\ purple: max. = 0.01}
 \label{result_toilet_linear_1_05_02_01_001}
 \end{figure}
 
-In figure \ref{evaluation_log_linear0point5automatedpointcsv} the same effect can be seen even more exaggerated. Again, we see that the linear probability function causes the pedestrians to arrive at their goal way too early.
+In figure \ref{evaluation_log_linear0point5automatedpointcsv} the same effect can be seen even more exaggerated. Again, we see that the linear probability function causes the pedestrians to arrive at their goal far too early.
+
+\todo[inline]{Aggegrate graphs}
+\begin{figure}
+\centering
+\includegraphics[width=280pt]{"/allautomaticresults/result_toilet_linear_1_05_02_01_001"}
+\caption{Blue: max = 1\\ green: max. = 0.5\\ red: max. = 0.2\\ turqooize: max. = 0.1\\ purple: max. = 0.01}
+\label{result_toilet_linear_1_05_02_01_001}
+\end{figure}
+
 
 \begin{figure}
 \centering
@@ -511,6 +525,8 @@ In figure \ref{evaluation_log_linear0point5automatedpointcsv} the same effect ca
 %\caption{The global workings of our framework}
 \label{evaluation_log_linear1automatedpointcsv}
 \end{figure}
+
+
 
 In figure \ref{evaluation_log_sigmoid0point01automatedpointcsv} we see the results of using a sigmoid for goal probability function with a minimum \todo[inline]{find out how to describe, since those values only count in the limit or whatever} of 0 and a maximum of 0.01. Again we see that a maximum probability of 0.01 is low to have the pedestrians reach their goal in time.
 
@@ -552,6 +568,8 @@ We can only say more about the results if the frequencies are divided by the tot
 
 \subsection{Results 2}
 Below follow the results of the other actions, that is, the actions that are not directly connected to the goal probability. The results of these actions have to show that our framework is also capable of generating \emph{emergent} behavior.
+
+\todo[inline]{Merge results that were accidentally separated}
 
 \begin{figure}
 \centering
@@ -754,8 +772,10 @@ Below follow the results of the other actions, that is, the actions that are not
 \end{figure}
 
 
-%\todo[inline]{The following is only a rough draft}
-%It is very difficult to determine whether one has been successful at modeling lifelike behavior. What we are going to do is %study footage of real-life behavior at Rotterdam Airport, and pick out various behavioral patterns. Then, we are going to %model these patterns with our system.
+
+\subsection{What can we derive from these results?}
+From these results, we can see that not only does the changing of the goal probability function affect the time at which the agents decide when to move to the goal, but also the time at which other actions are executed. This shows that our framework is able to generate emergent behavior. When the probability of going to the goal is high, actions that take longer to finish have a very low frequency.
+
 
 \chapter{Conclusion \& Discussion}
 The results are different from what we expected, but logical nonetheless. We expected the sigmoid function to have the ideal curve to reflect the behavior of the pedestrians in Rotterdam airport but
