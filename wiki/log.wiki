@@ -1,3 +1,12 @@
+=Log for 3-9-2013=
+Today I am going to start on my thesis again after a long time. Today I'm just doing some minor things, and read my thesis again. I am considering rewriting my code to make it less sloppy and buggy. Maybe I have to search for better Petri net software.
+
+
+
+
+
+
+
 =Log for 16-2-2012=
 I wanted to easily make the behavior more interesting and varied so added "stand still" behavior to the whole area, but the implementation now prevents infinite loops into certain behavior by making sure a behavior cannot be done multiple times when an agent is still in a certain situation area but is this what we want for the "standing still" situation? Probably this implementation is still the best choice but it makes standing still more "artificial looking" because the areas in which the agents are able to stand still have to be manually placed.
 
