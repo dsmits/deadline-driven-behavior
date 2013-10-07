@@ -6,7 +6,6 @@
 \usepackage{booktabs}
 \usepackage{hyperref}
 \usepackage{algpseudocode, algorithm}
-
 \begin{document}
 
 \begin{center}
@@ -111,7 +110,7 @@ I would like to thank my supervisors Philip Kerbush from TNO, and Arnoud Visser 
 \chapter{Introduction}
 %\todo[inline]{Extend introduction}
 %\todo{How to place pedestrian simulation in the whole spectrum of AI related studies?}
-Artificial intelligence is the branch of computer science that aims to create intelligence in machines. The range of methods to attempt this is endless. One of the many subfields in AI is aimed at reproducing human behavior. The problem of recreating human behavior can be tackled from many different angles. For example, one could attempt to get an understanding of the workings of the human mind, and try to imitate this in a computer program. Another approach would be to treat the human brain as a black box, and mainly focus on recreating external behavior. In this approach it does not matter whether the inner workings of this computer program are simular to that of an actual human being. The disadvantage of this approach is that it does not help you learning how the human mind works. However, when used for practical purposes, approaching the problem like this is favorable, since it is more likely to run real-time and take up less resources. In our research, we are attempting to recreate a specific kind of human behavior. Namely, the kind of behavior that one would encounter in a public environment.\\
+Artificial intelligence is the branch of computer science that aims to create intelligence in machines. The range of methods to attempt this is endless. One of the many subfields in AI is aimed at reproducing human behavior. The problem of recreating human behavior can be tackled from many different perspectives. For example, one could attempt to get an understanding of the workings of the human mind, and try to imitate this in a computer program. Another approach would be to treat the human brain as a black box, and mainly focus on recreating external behavior. In this approach it does not matter whether the inner workings of this computer program are simular to that of an actual human being. The disadvantage of this approach is that it does not help you learning how the human mind works. However, when used for practical purposes, approaching the problem like this is favorable, since it is more likely to run real-time and take up less resources. In our research, we are attempting to recreate a specific kind of human behavior. Namely, the kind of behavior that one would encounter in a public environment.\\
 \begin{figure}[h]
 \begin{center}
 \includegraphics[width=200pt]{pedestrians.jpg}
@@ -119,8 +118,8 @@ Artificial intelligence is the branch of computer science that aims to create in
 \end{center}
 \caption{People going about their everyday business}
 \end{figure}
-For the last decade or so, there has been an increased interest in reinforcing security in public environments. The recent advances in technology have increased the feasibility of many different methods. An important approach in this area of interest is the automatic detection of suspicious behavior from camera images. The approaches in this area can vary, but one important aspect that they have in common, is the necessity of camera footage to be able to test the approaches. Since it can be extremely tedious to collect and annotate this data it would be very rewarding to be able to generate testing data on the fly. It is beyond the scope of our research to get into what suspicious behavior looks like, to we like to focus on the behavior of "non-suspicious" people. Assuming that so-called "normal" people greatly outnumber terrorists, these suspicious people could be added in later with ease. In other words, we would like to be able to quickly generate crowds of people doing normal, everyday behavior.\\
-Simulation of pedestrians is a widely studied subject. Many models have been created for the various characteristics that arise when multiple agents move around in the same area. Many uses can be thought of for pedestrian simulation. An important purpose for this could be for example to easily create a large amount of "normal" pedestrians (as opposed to "suspicious" pedestrians).  Suspicious pedestrians whose behavior is scripted by hand can then be placed in the environment to easily create artificial testing data for suspicious behavior detection algorithms and such. Furthermore, the addition of simulated virtual pedestrians can add realism to otherwise mostly empty battlefield scenarios.\\
+For the last decade or so, there has been an increased interest in reinforcing security in public environments. The recent advances in technology have increased the feasibility of many different methods. An important approach in this area of interest is the automatic detection of suspicious behavior from camera images. The approaches in this area can vary, but one important aspect that they have in common, is the necessity of camera footage to be able to test the approaches. Since it can be extremely tedious to collect and annotate this data it would be very rewarding to be able to generate testing data on the fly. It is beyond the scope of our research to get into what suspicious behavior looks like, so we like to focus on the behavior of "non-suspicious" people. Assuming that so-called "normal" people greatly outnumber terrorists, these suspicious people could be added in later with ease. In other words, we would like to be able to quickly generate crowds of people doing normal, everyday behavior.\\
+Simulation of pedestrians is a widely studied subject. Many models have been created for the various characteristics that arise when multiple agents move around in the same area. Many uses can be thought of for pedestrian simulation. An important purpose for this could be for example to easily create a large amount of "normal" pedestrians (as opposed to "suspicious" pedestrians).  Suspicious pedestrians whose behavior is scripted by hand can then be placed in the environment to easily create artificial testing data for suspicious behavior detection algorithms and the like. Furthermore, the addition of simulated virtual pedestrians can add realism to otherwise mostly empty battlefield scenarios.\\
 Another way to look at the behavior of groups of pedestrians is to explicitly specify how they behave when they enter a certain type of situation. In our approach, we would like to be able to specify behavior by drawing situations on an environment. For example, when a food stand is present in the area, we would like to be able to indicate that the agents that are placed in the neighborhood of that stand are able to do certain food-buying behavior.
 
 An additional requirement is that we would like to indicate a certain \emph{deadline} for an agent which is the time at which its goal is not reachable any more. This approach results in roughly two types of behavior, \emph{hurried} and \emph{relaxed}. When the deadline approaches, less and less actions are likely to be done, since actions that take much time would result in not reaching the goal in time.\\
@@ -164,8 +163,8 @@ In situations such as departure halls, people have a destination (e.g. airplane,
 %\item \emph{What kind of freedoms/restrictions do distributed systems give us?}\\
 %As a consequence of using a distributed system we can delegate certain tasks to other units. On the other hand, our model also %needs to be compatible with the other units in the distributed system.
 
-\item \emph{Is it possible to quickly generate these virtual pedestrians without much tweaking for each environment?}\\
-We aim at creating pedestrians that can be used in many different environments without much additional scripting. Is it possible to do this and still have varied behavior between environments?
+\item \emph{Is it possible to quickly generate these virtual pedestrians without much tweaking for each environment?}
+//We aim at creating pedestrians that can be used in many different environments without much additional scripting. Is it possible to do this and still have varied behavior between environments?
 %\item How can the simulation be efficient without sacrificing too much realism?
 \end{itemize}
 
@@ -203,7 +202,7 @@ We aim at creating pedestrians that can be used in many different environments w
 %\todo[inline]{Indicate tuples for every approach (as much as is possible).}
 When studying existing methods for modeling pedestrian behavior, the amount of available literature is quite overwhelming. This is not surprising as a large part of AI research focuses on the imitation of human behavior. However, not all means of simulating pedestrian behavior are developed for the same purpose. What we would like to have in our system, is a method to design behavior in an environment in the same way that other objects in the environment are designed. That is, it should be possible to spatially place the behaviors in the environment. However, this does not limit our search much since it only divides our desired result into two layers; namely the overall structure of different behaviors placed in the environment, and the definition of these different behaviors. When we approach the subject as \emph{designing behavior in an environment}, the search becomes much more narrow and directed.
 
-\section{Designing the Situational Behaviors}
+\section{Designing the Situation-Dependent Behaviors}
 In our research, we can divide the subject of "behavior" in two layers.  First of all, we have the layer in which individual behaviors are described. However, this information is embedded in a framework that describes how these individual behaviors vary spatially. Let us start with focussing on these individual behaviors. This field knows many approaches. First of all, the focus can lie on the group as a whole. The different members of the group are then often viewed as particles that influence the other group members near them with attracting and repulsive forces. Other approaches view crowds as a group of individuals, and the members are given some kind of simplified psychological model. The motivation behind this simplified model is that this will lead to complex behavior when many of these simple units are put together in a large crowd. This effect is known as \emph{emergence}.\\
 
 \section{Group Interaction}
@@ -239,6 +238,7 @@ Several other methods also have the potential to be extended to incorporate seve
 \section{Designing the Behavior Structure in the Environment}
 The approaches that fall under the previously mentioned categories generally focus on the general movement of crowds of pedestrians. However, when we want truly realistic behavior in a regular public environment, these methods do not suffice, because they miss interactions with objects in the environment. There are a few approaches that focus more on environment-dependent behavior, such as interaction with objects or situation-dependent actions.
 The obvious solution is to extend the knowledge of the pedestrians with instructions about how to interact with these objects. This has been succesfully done for instance by Shao and Terzopoulos \cite{A_autonomouspedestrians}. They used an extensive psychological model to determine the behavior of the individuals. This led to a simulation in which the behavior looks very realistic, even when one invidual is followed for a long period of time. The downside to this method is that the behavioral model for the pedestrians have to be specifically crafted for the environment, which will be very time consuming.
+\todo[inline]{Fix duplicate text}
 
 We will now look at the behavior on the meta-level. A few methods have been developed to enable a user to design environment related behavior. The most obvious solution to specifying the behavior of pedestrians environment-dependently, is to craft a new script for the pedestrians for every new environment. However, this method is very inefficient when we make use of a larger set of environments. Therefore, we would like to be able to place the same pedestrians in different environments without creating a new script every time.  One method that deals with this problem uses so-called \emph{smart objects} in order to efficiently create behavior-rich environments. The main feature that makes the smart-objects method so efficient is that the information of how to interact with an object is completely contained within the object itself, and not in the agents. That is why the agents' behavior can easily be enriched by adding new smart objects in the environment.
 
@@ -363,7 +363,14 @@ First of all, we assume there are certain \emph{base places} from which it is al
 As one may have noticed, this approach does not give a completely watertight solution to the planning problem. However, since we have to be able to model large crowds, we cannot create an overly complex planning system, since we would not be able to run the simulation real-time. Furthermore, we do not aim at finding an optimal solution to the planning problem, but rather the most lifelike behavior. In real life, people make errors in judgement, so creating pedestrians who can look ahead perfectly would not be realistic. It is impossible to make an exact definition of realism for our purposes, but what we try to do, is to copy certain specific behavior found in real-life footage. In our experiments we will try different functions for computing the probability of going to the goal, and attempt to assess which function will be most suitable.
 \todo[inline]{About the most important part of the thesis, so has to be extended}
 \todo[inline]{Include Pictures}
-No matter which probability function we use, we use the same sequence (algorithm \ref{decisionmechanism}) of steps to choose a behavior from the current time for a individual pedestrian.
+
+\todo[inline]{Maybe put the explanation of the difference between actions aan behaviors at an earlier place?}
+Before we continue it might be necessary to explain what is meant when we talk about behaviors and actions. These two terms are not interchangable. With \emph{actions} we indicate movement of a pedestrian that is described in a single transition in a petrinet. \emph{Behaviors} on the other hand, indicate the whole set of actions that are encompassed within a whole situation. Another way a behavior can be viewed is the whole sequence of actions that take place when a token of a pedestrians Petri net leaves the base place until it comes back again.
+
+\subsection{The Basic Algorithm}
+Though the probabilities of the various behaviours a pedestrian can have is dependent on what kind of distribution we are going to use, the underlying mechanism will always be as described in algorithm \ref{decisionmechanism}. This algorithm is used to choose one of the various behaviours that are currently available to a pedestrian.\\
+First of all, we subtract the current time from the deadline time of the pedestrian.  Before we go any further, it is important to understand how we keep track of the time. \todo[inline]{Achterhaal of iedere pedestrian een persoonlijke time heeft of dat er een algemene timer is. Ik ga voorlopig uit van een persoonlijke timer ook beslissen of het volgende detail misschien meer een implementatiedingetje is.} Every pedestrian has its own timer which in our system is implemented to increment by one at every timestep of our simulation engine. When we have computed $t_d$, we know how much time the pedestrian has left to reach its goal.\\
+Next, the algorithm computes for every situation how much time is left would the pedestrian choose and execute this behavior. This remaining time is then used to compute the probability rate of the pedestrian deciding to choose this behavior. The probability rate is computed with the function $\phi$, and can have various distributions. In the section \todo[inline]{Make nice reference to the section} \emph{Experiments} we will try out various options for $\phi$ to see which will give the most realistic behavior. When the probability rates for all the behaviors have been computed, they are normalized, and based on the resulting probabilities, one of the behaviors is randomly chosen.
 
 \todo[inline]{Check if it's the right way around (afteller of opteller)} 
 \todo[inline]{Improve structure}
@@ -382,6 +389,8 @@ No matter which probability function we use, we use the same sequence (algorithm
 \end{algorithmic}
 \end{algorithm}
 
+\subsection{Examples}
+\todo[inline]{Check if the title of this subsection is ok}
 Figure \ref{petrinetexample} gives an example of how the pedestrian petrinet is connected to the situations. It also shows the estimation created by the Dijkstra preprocessing algorithm that makes a guess at how much time it takes to complete the situation behavior.
 
 \begin{figure}
@@ -419,7 +428,7 @@ When the pedestrians reach the end of the queue situation, they will enter the c
 Another recurring behavior we saw is that people lean against the pillars in the hall. This is a type of idle behavior, a variation on the standing still behavior.
 
 \subsubsection{Wander}
-One crucial behavior is missing. How are the pedestrians going to reach the different situation areas? This is only possible if they already have a move to begin with, otherwise they are only going to stay in place. That is why we added the \emph{wander} behavior. This behavior lets the pedestrian turn a random amount of degrees between $-45\pi$ and $45\pi$ and walk a few steps in that direction.
+One crucial behavior is missing. How are the pedestrians going to reach the different situation areas? This is only possible if they already have a move to begin with, otherwise they are only going to stay in place. That is why we added the \emph{wander} behavior. This behavior lets the pedestrian turn a random amount of degrees between $-\frac{1}{4}\pi$ and $\frac{1}{4}\pi$ and walk a few steps in that direction.
 
 \section{Quantitative Experiment}
 \todo[inline]{Statistics?}
@@ -592,6 +601,7 @@ Below follow the results of the other actions, that is, the actions that are not
 \label{evaluation_log2_gaussian0point2standStillSituationpointxmlpointcsv}
 \end{figure}
 
+\todo[inline]{This graph was probably made for the toilet situation that is now saved as twopeopletoiletsituation.xml, but the design of the petrinet is possibly flawed, and could maybe better be replaced by twopeopletoiletsituation2.xml. What also possibly is missing is that the pedestrian could maybe come back after having gone to the toilet.}
 \begin{figure}
 \centering
 \includegraphics[width=250pt]{./automaticResults2/evaluation_log2_gaussian0point2twoPeopleToiletSituationpointxmlpointcsv.png}
@@ -768,7 +778,7 @@ Below follow the results of the other actions, that is, the actions that are not
 \centering
 \includegraphics[width=250pt]{pillarSituation}
 \caption{Behavior model for the pillar situation}
-\label{toiletsituation}
+\label{pillarsituation}
 \end{figure}
 
 
@@ -784,7 +794,7 @@ The results are different from what we expected, but logical nonetheless. We exp
 \subsection{Limits of the Deadline Driven Behavior Framework}
 Modeling pedestrian behavior with our method does have its limits. First of all, the movements of the agents are designed explicitly through linking together basic movements in the Petri nets. As a consequence, interaction with other agents is quite static, and not directly responsive to surrounding agents. Consequently, our method is not particularly suitable for situations in which the pedestrians have to move very close together, such as when a large amount of pedestrians has to move through a narrow space and have to move closer together or form a queue. When pedestrians move very close together, their behavior will become more uniform, and it would be more sensible to look at the group as a whole, and not as individuals. A more suitable approach would then for example be to look at crowds as particles in a liquid, like Moore, Ali, Mehran and Shah have done \cite{Moore:2011:VCS:2043174.2043192}. Their supposition is that people in crowds seem to move according to the flow, just like particles in a liquid.
 
-\subsection{Optimisation}
+\subsection{Optimization}
 It is very well possible that the results found in our research are far from the optimal results we could have gotten with our framework.  Machine learning could be used to attain the optimal deadline driven behavior. However, this is beyond the scope of our research.
 
 \subsection{Future Work}

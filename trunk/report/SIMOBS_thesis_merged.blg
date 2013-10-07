@@ -1,10 +1,53 @@
-This is BibTeX, Version 0.99cThe top-level auxiliary file: SIMOBS_thesis_merged.aux
+This is BibTeX, Version 0.99d (TeX Live 2012/Debian)
+Capacity: max_strings=35307, hash_size=35307, hash_prime=30011
+The top-level auxiliary file: SIMOBS_thesis_merged.aux
 The style file: plain.bst
 Database file #1: references.bib
-I was expecting a `,' or a `}'---line 296 of file references.bib
+I was expecting a `,' or a `}'---line 591 of file references.bib
  :   
  :   title = {VR-Forces - The Complete CGF Toolkit},
 (Error may have been on previous line)
 I'm skipping whatever remains of this entry
 Warning--empty booktitle in leaderfollower
+You've used 18 entries,
+            2118 wiz_defined-function locations,
+            625 strings with 7688 characters,
+and the built_in function-call counts, 6823 in all, are:
+= -- 683
+> -- 276
+< -- 10
++ -- 111
+- -- 90
+* -- 422
+:= -- 1049
+add.period$ -- 56
+call.type$ -- 18
+change.case$ -- 99
+chr.to.int$ -- 0
+cite$ -- 19
+duplicate$ -- 296
+empty$ -- 576
+format.name$ -- 90
+if$ -- 1512
+int.to.chr$ -- 0
+int.to.str$ -- 18
+missing$ -- 16
+newline$ -- 92
+num.names$ -- 36
+pop$ -- 124
+preamble$ -- 1
+purify$ -- 81
+quote$ -- 0
+skip$ -- 238
+stack$ -- 0
+substring$ -- 434
+swap$ -- 100
+text.length$ -- 10
+text.prefix$ -- 0
+top$ -- 0
+type$ -- 72
+warning$ -- 1
+while$ -- 72
+width$ -- 20
+write$ -- 201
 (There was 1 error message)
