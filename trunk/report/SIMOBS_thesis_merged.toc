@@ -1,59 +1,59 @@
-\contentsline {section}{\numberline {0.1}Acknowledgements}{4}{section.0.1}
-\contentsline {chapter}{\numberline {1}Introduction}{7}{chapter.1}
-\contentsline {section}{\numberline {1.1}SIMOBS}{9}{section.1.1}
-\contentsline {section}{\numberline {1.2}Research Question}{9}{section.1.2}
-\contentsline {chapter}{\numberline {2}Related Work}{11}{chapter.2}
-\contentsline {section}{\numberline {2.1}Designing the Situation-Dependent Behaviors}{11}{section.2.1}
-\contentsline {section}{\numberline {2.2}Group Interaction}{12}{section.2.2}
-\contentsline {subsection}{\numberline {2.2.1}Global approaches}{12}{subsection.2.2.1}
-\contentsline {subsection}{\numberline {2.2.2}Smaller Groups and Individual Approaches}{13}{subsection.2.2.2}
-\contentsline {section}{\numberline {2.3}Interaction with Objects}{14}{section.2.3}
-\contentsline {subsection}{\numberline {2.3.1}Mixed Approaches}{15}{subsection.2.3.1}
-\contentsline {section}{\numberline {2.4}Designing the Behavior Structure in the Environment}{15}{section.2.4}
-\contentsline {section}{\numberline {2.5}General Behavior Modeling}{17}{section.2.5}
-\contentsline {subsubsection}{Finite State Automata}{17}{section*.9}
-\contentsline {subsection}{\numberline {2.5.1}Petri Nets}{17}{subsection.2.5.1}
-\contentsline {subsection}{\numberline {2.5.2}Advantages of Petri Nets over Finite State Automata}{19}{subsection.2.5.2}
-\contentsline {subsection}{\numberline {2.5.3}Are FSMs and Petri Nets interchangable?}{19}{subsection.2.5.3}
-\contentsline {section}{\numberline {2.6}Time Planning}{20}{section.2.6}
-\contentsline {section}{\numberline {2.7}Which Techniques Can We Use?}{20}{section.2.7}
-\contentsline {chapter}{\numberline {3}Method}{23}{chapter.3}
-\contentsline {section}{\numberline {3.1}PIPE2}{23}{section.3.1}
-\contentsline {section}{\numberline {3.2}Pedestrian Layer}{24}{section.3.2}
-\contentsline {section}{\numberline {3.3}Assumptions}{24}{section.3.3}
-\contentsline {section}{\numberline {3.4}Preparations}{25}{section.3.4}
-\contentsline {section}{\numberline {3.5}Time Planning \& Decision Mechanism}{25}{section.3.5}
-\contentsline {subsection}{\numberline {3.5.1}The Basic Algorithm}{26}{subsection.3.5.1}
-\contentsline {subsection}{\numberline {3.5.2}Examples}{27}{subsection.3.5.2}
-\contentsline {chapter}{\numberline {4}Experiments}{29}{chapter.4}
-\contentsline {subsection}{\numberline {4.0.3}The Behaviors}{29}{subsection.4.0.3}
-\contentsline {subsubsection}{Going to the toilet}{29}{section*.22}
-\contentsline {subsubsection}{Checking in}{29}{section*.23}
-\contentsline {subsubsection}{Lean Against Pillar}{30}{section*.24}
-\contentsline {subsubsection}{Wander}{30}{section*.25}
-\contentsline {section}{\numberline {4.1}Quantitative Experiment}{30}{section.4.1}
-\contentsline {subsection}{\numberline {4.1.1}Sigmoid Function}{30}{subsection.4.1.1}
-\contentsline {subsection}{\numberline {4.1.2}Linear Function}{31}{subsection.4.1.2}
-\contentsline {subsection}{\numberline {4.1.3}Gaussian Function}{31}{subsection.4.1.3}
-\contentsline {section}{\numberline {4.2}Qualitative Experiment}{32}{section.4.2}
-\contentsline {subsection}{\numberline {4.2.1}The Dataset}{32}{subsection.4.2.1}
-\contentsline {section}{\numberline {4.3}Results}{32}{section.4.3}
-\contentsline {subsection}{\numberline {4.3.1}Results for Sigmoid Function}{32}{subsection.4.3.1}
-\contentsline {subsection}{\numberline {4.3.2}Results for Linear Function}{32}{subsection.4.3.2}
-\contentsline {subsection}{\numberline {4.3.3}Results for Gaussian Function}{32}{subsection.4.3.3}
-\contentsline {subsection}{\numberline {4.3.4}Results}{32}{subsection.4.3.4}
-\contentsline {subsection}{\numberline {4.3.5}Results 2}{38}{subsection.4.3.5}
-\contentsline {subsection}{\numberline {4.3.6}What can we derive from these results?}{52}{subsection.4.3.6}
-\contentsline {chapter}{\numberline {5}Conclusion \& Discussion}{57}{chapter.5}
-\contentsline {subsection}{\numberline {5.0.7}Limits of the Deadline Driven Behavior Framework}{57}{subsection.5.0.7}
-\contentsline {subsection}{\numberline {5.0.8}Optimization}{57}{subsection.5.0.8}
-\contentsline {subsection}{\numberline {5.0.9}Future Work}{58}{subsection.5.0.9}
-\contentsline {subsubsection}{Finding the optimal parameters}{58}{section*.68}
-\contentsline {subsubsection}{Needs}{58}{section*.69}
-\contentsline {chapter}{\numberline {A}Appendix A: Implementation}{59}{appendix.A}
-\contentsline {section}{\numberline {A.1}Implementing the Framework}{59}{section.A.1}
-\contentsline {subsection}{\numberline {A.1.1}Sources, Sinks, Slots}{59}{subsection.A.1.1}
-\contentsline {subsection}{\numberline {A.1.2}Additional Modifications}{60}{subsection.A.1.2}
-\contentsline {section}{\numberline {A.2}MASON}{60}{section.A.2}
-\contentsline {section}{\numberline {A.3}Connecting MASON and the Situations Framework}{60}{section.A.3}
-\contentsline {chapter}{\numberline {B}Appendix B: Results}{61}{appendix.B}
+\contentsline {section}{\numberline {0.1}Acknowledgements}{5}{section.0.1}
+\contentsline {chapter}{\numberline {1}Introduction}{9}{chapter.1}
+\contentsline {section}{\numberline {1.1}SIMOBS}{11}{section.1.1}
+\contentsline {section}{\numberline {1.2}Research Question}{11}{section.1.2}
+\contentsline {chapter}{\numberline {2}Related Work}{13}{chapter.2}
+\contentsline {section}{\numberline {2.1}Designing the Situation-Dependent Behaviors}{13}{section.2.1}
+\contentsline {section}{\numberline {2.2}Group Interaction}{14}{section.2.2}
+\contentsline {subsection}{\numberline {2.2.1}Global approaches}{14}{subsection.2.2.1}
+\contentsline {subsection}{\numberline {2.2.2}Smaller Groups and Individual Approaches}{15}{subsection.2.2.2}
+\contentsline {section}{\numberline {2.3}Interaction with Objects}{16}{section.2.3}
+\contentsline {subsection}{\numberline {2.3.1}Mixed Approaches}{17}{subsection.2.3.1}
+\contentsline {section}{\numberline {2.4}Designing the Behavior Structure in the Environment}{17}{section.2.4}
+\contentsline {section}{\numberline {2.5}General Behavior Modeling}{19}{section.2.5}
+\contentsline {subsubsection}{Finite State Machines}{19}{section*.9}
+\contentsline {subsection}{\numberline {2.5.1}Petri Nets}{20}{subsection.2.5.1}
+\contentsline {subsection}{\numberline {2.5.2}Advantages of Petri Nets over Finite State Automata}{21}{subsection.2.5.2}
+\contentsline {subsection}{\numberline {2.5.3}Are FSMs and Petri Nets interchangable?}{22}{subsection.2.5.3}
+\contentsline {section}{\numberline {2.6}Time Planning}{22}{section.2.6}
+\contentsline {section}{\numberline {2.7}Which Techniques Can We Use?}{24}{section.2.7}
+\contentsline {chapter}{\numberline {3}Method}{25}{chapter.3}
+\contentsline {section}{\numberline {3.1}PIPE2}{25}{section.3.1}
+\contentsline {section}{\numberline {3.2}Pedestrian Layer}{26}{section.3.2}
+\contentsline {section}{\numberline {3.3}Assumptions}{26}{section.3.3}
+\contentsline {section}{\numberline {3.4}Preparations}{27}{section.3.4}
+\contentsline {section}{\numberline {3.5}Time Planning \& Decision Mechanism}{27}{section.3.5}
+\contentsline {subsection}{\numberline {3.5.1}The Basic Algorithm}{28}{subsection.3.5.1}
+\contentsline {subsection}{\numberline {3.5.2}Examples}{29}{subsection.3.5.2}
+\contentsline {chapter}{\numberline {4}Experiments}{31}{chapter.4}
+\contentsline {subsection}{\numberline {4.0.3}The Behaviors}{31}{subsection.4.0.3}
+\contentsline {subsubsection}{Going to the toilet}{31}{section*.24}
+\contentsline {subsubsection}{Checking in}{31}{section*.25}
+\contentsline {subsubsection}{Lean Against Pillar}{32}{section*.26}
+\contentsline {subsubsection}{Wander}{32}{section*.27}
+\contentsline {section}{\numberline {4.1}Quantitative Experiment}{32}{section.4.1}
+\contentsline {subsection}{\numberline {4.1.1}Sigmoid Function}{32}{subsection.4.1.1}
+\contentsline {subsection}{\numberline {4.1.2}Linear Function}{33}{subsection.4.1.2}
+\contentsline {subsection}{\numberline {4.1.3}Gaussian Function}{33}{subsection.4.1.3}
+\contentsline {section}{\numberline {4.2}Qualitative Experiment}{34}{section.4.2}
+\contentsline {subsection}{\numberline {4.2.1}The Dataset}{34}{subsection.4.2.1}
+\contentsline {section}{\numberline {4.3}Results}{34}{section.4.3}
+\contentsline {subsection}{\numberline {4.3.1}Results for Sigmoid Function}{34}{subsection.4.3.1}
+\contentsline {subsection}{\numberline {4.3.2}Results for Linear Function}{34}{subsection.4.3.2}
+\contentsline {subsection}{\numberline {4.3.3}Results for Gaussian Function}{34}{subsection.4.3.3}
+\contentsline {subsection}{\numberline {4.3.4}Results}{34}{subsection.4.3.4}
+\contentsline {subsection}{\numberline {4.3.5}Results 2}{40}{subsection.4.3.5}
+\contentsline {subsection}{\numberline {4.3.6}What can we derive from these results?}{54}{subsection.4.3.6}
+\contentsline {chapter}{\numberline {5}Conclusion \& Discussion}{59}{chapter.5}
+\contentsline {subsection}{\numberline {5.0.7}Limits of the Deadline Driven Behavior Framework}{59}{subsection.5.0.7}
+\contentsline {subsection}{\numberline {5.0.8}Optimization}{59}{subsection.5.0.8}
+\contentsline {subsection}{\numberline {5.0.9}Future Work}{60}{subsection.5.0.9}
+\contentsline {subsubsection}{Finding the optimal parameters}{60}{section*.70}
+\contentsline {subsubsection}{Needs}{60}{section*.71}
+\contentsline {chapter}{\numberline {A}Appendix A: Implementation}{61}{appendix.A}
+\contentsline {section}{\numberline {A.1}Implementing the Framework}{61}{section.A.1}
+\contentsline {subsection}{\numberline {A.1.1}Sources, Sinks, Slots}{61}{subsection.A.1.1}
+\contentsline {subsection}{\numberline {A.1.2}Additional Modifications}{62}{subsection.A.1.2}
+\contentsline {section}{\numberline {A.2}MASON}{62}{section.A.2}
+\contentsline {section}{\numberline {A.3}Connecting MASON and the Situations Framework}{62}{section.A.3}
+\contentsline {chapter}{\numberline {B}Appendix B: Results}{63}{appendix.B}
