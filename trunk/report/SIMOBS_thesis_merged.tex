@@ -4,7 +4,7 @@
 
 \usepackage[colorinlistoftodos, bordercolor=white, backgroundcolor=cyan]{todonotes}
 \usepackage{booktabs}
-\usepackage{hyperref}
+\usepackage{hyperref, comment}
 \usepackage{algpseudocode, algorithm}
 \begin{document}
 
@@ -108,7 +108,7 @@ I would like to thank my supervisors Philip Kerbush from TNO, and Arnoud Visser 
 \newpage
 
 \chapter{Introduction}
-%\todo[inline]{Extend introduction}
+%\todo[inline]{introduction}
 %\todo{How to place pedestrian simulation in the whole spectrum of AI related studies?}
 Artificial intelligence is the branch of computer science that aims to create intelligence in machines. The range of methods to attempt this is endless. One of the many subfields in AI is aimed at reproducing human behavior. The problem of recreating human behavior can be tackled from many different perspectives. For example, one could attempt to get an understanding of the workings of the human mind, and try to imitate this in a computer program. Another approach would be to treat the human brain as a black box, and mainly focus on recreating external behavior. In this approach it does not matter whether the inner workings of this computer program are simular to that of an actual human being. The disadvantage of this approach is that it does not help you learning how the human mind works. However, when used for practical purposes, approaching the problem like this is favorable, since it is more likely to run real-time and take up less resources. In our research, we are attempting to recreate a specific kind of human behavior. Namely, the kind of behavior that one would encounter in a public environment.\\
 \begin{figure}[h]
@@ -230,7 +230,7 @@ It would be easier to generate the virtual human agents if the environment would
 \subsection{Mixed Approaches}
 The distinction between larger and smaller groups is not black and white, as can be seen in the work of Braun et al. \cite{10.1109CASA.2003.1199317}, who generalized the model of Helbing, and introduced additional features for creating group behaviors, such as family members, dependence level, altruism level, and desired speed of the agent.\\
 Farenc et al. even devised a hierarchical framework that incorporates a number of different models managing the crowd on different levels (crowd behavior, group specification, group behavior, and individual behavior). A framework such as this is very suitable for incorporating multiple crowd behavior techniques. While a single method of the previously mentioned techniques might not generate a satisfactory result, a hierarchic combination of several methods might be able to do the job.\\
-Several other methods also have the potential to be extended to incorporate several other methods. For instance, it is very likely that the "situations" framework can be adapted to deal with higher level states, instead of the low-level animation-oriented states that are used now. It will then probably be possible to let situations incorporate certain effects (eg. a repulsive force) instead of simple animations. These effects could be one (or parts) of the previously mentioned other models.
+Several other methods also have the potential to be extended to incorporate several other methods. For instance, it is very likely that the "situations" framework of Sung et al. can be adapted to deal with higher level states, instead of the low-level animation-oriented states that are used now. It will then probably be possible to let situations incorporate certain effects (eg. a repulsive force) instead of simple animations. These effects could be one (or parts) of the previously mentioned other models.
 \todo[inline]{Make sure the text fits better in the rest of the thesis}
 
 
@@ -243,11 +243,6 @@ The obvious solution is to extend the knowledge of the pedestrians with instruct
 We will now look at the behavior on the meta-level. A few methods have been developed to enable a user to design environment related behavior. The most obvious solution to specifying the behavior of pedestrians environment-dependently, is to craft a new script for the pedestrians for every new environment. However, this method is very inefficient when we make use of a larger set of environments. Therefore, we would like to be able to place the same pedestrians in different environments without creating a new script every time.  One method that deals with this problem uses so-called \emph{smart objects} in order to efficiently create behavior-rich environments. The main feature that makes the smart-objects method so efficient is that the information of how to interact with an object is completely contained within the object itself, and not in the agents. That is why the agents' behavior can easily be enriched by adding new smart objects in the environment.
 
 In the most basic approach, these smart objects take complete control of the agents for a short period of time and let them interact with the object. The big advantage of this method is that the information for interacting with a specific object does not need to be stored in the pedestrians, but is stored in the objects themselves. This way, additional behavior can be added to a pedestrian by simply placing a new object in the environment.  The object also keeps track about how many agents can interact with it at the same time and if the interaction should be the same for all agents. For instance, an elevator modeled as a smart object will make the first agent interacting with it press the button, but not the next agents that approach this object. By using smart objects, the internal model of the pedestrians can be kept very simple, because they do not need to remember specific information about how to interact with the objects. Furthermore, this means that the pedestrians do not have to be specifically designed for the current simulation environment, because the environment will tell them how to act. In the most basic approach to smart objects, the agents lose all their autonomy when they approach a smart object. A lot of research has been built upon the idea of smart objects. For instance, Kallmann, de Sevin and Thalmann have extended this model to have agents that have their own motivations and needs \cite{Kallmann00constructingvirtual}. This model uses five main motivation types: eat, drink, rest, work, and go to toilet. These motivations control the action through a hierarchical decision graph. Information about which objects fulfill these different needs are added to the smart objects.\\
-
-
-
-
-
 
 Another slightly different approach is the use of a situation based control structure (Sung, Gleicher and Chenny \cite{Sung04scalablebehaviors}). A situation is an area in the environment that requires the pedestrians to act in a certain way. The behavior of a pedestrian is described by a finite state machine in which a state is defined as follows:
  \[s = \{t, \bf{p}, \theta, s^- \}\]
@@ -351,7 +346,7 @@ Another assumption we make is that the pedestrians have to be at a certain place
 Furthermore, we assume that the behavior of the pedestrians can be described as finite state automata,  and that these automata incorporate base states to which transitions loop back, and from which it is always possible to reach the goal state (given enough time is left). We need this assumption in order to create an efficient way of determining which actions can be done before the deadline. Otherwise we would have to search through the finite state automaton in order to find the various ways actions can be tied together.\\
 
 \section{Preparations}
-Because the proposed system needs to run real-time, we refrain from overly complex systems that take too much computation power.
+Because the proposed system needs to run real-time, we refrain from overly complex systems that take too much computing power.
 However, it is possible to do some computations before running the simulation, and save this for use during the simulation. An important application is the calculation of the distance in time between all the places in a Petri net and the goal place. This distance can easily be computed using the \emph{Dijkstra shortest path algorithm} \cite{dijkstra}. Dijkstra's algorithm is a graph search algorithm that can produce a shortest path tree for a single source, for a graph with nonnegative edges. In our system we can use this to compute the time from any place to the goal place (the source). This can be very useful when we would like to compute an estimate of how long a pedestrian will be stuck to the behavior of a certain situation. However, it will never be more than an estimate, since it is possible to design Petri nets with (possibly) infinite loops. But since the Petri nets are probabilistic, it will never be possible to give an exact prediction of the time it takes to execute a certain behavior.
 
 The use of Dijkstra's algorithm does limit the use of our Petri nets though. For our simple implementation of Dijkstra's algorithm to be effective, we cannot use the Petri nets' more advanced features such as colored tokens.
@@ -366,12 +361,13 @@ As one may have noticed, this approach does not give a completely watertight sol
 \todo[inline]{Include Pictures}
 
 \todo[inline]{Maybe put the explanation of the difference between actions aan behaviors at an earlier place?}
-Before we continue it might be necessary to explain what is meant when we talk about behaviors and actions. These two terms are not interchangable. With \emph{actions} we indicate movement of a pedestrian that is described in a single transition in a petrinet. \emph{Behaviors} on the other hand, indicate the whole set of actions that are encompassed within a whole situation. Another way a behavior can be viewed is the whole sequence of actions that take place when a token of a pedestrians Petri net leaves the base place until it comes back again.
+Before we continue it might be necessary to explain what is meant when we talk about behaviors and actions. These two terms are not interchangable. With \emph{actions} we indicate movement of a pedestrian that is described in a single transition in a petrinet. \emph{Behaviors} on the other hand, indicate the whole set of actions that are encompassed within a whole situation. Another way a behavior can be viewed is the whole sequence of actions that take place when a token of a pedestrians Petri net leaves the base place until it comes back again. \\
+For example, a pedestrian might have entered the region of the toilet situation. A new \emph{behavior}, namely the Petri net corresponding to the toilet situation, is then attached to the pedestrian. A pedestrian might then decide to fire the transition that produces a token in this newly attached Petri net, thus making the pedestrian execute the behavior corresponding to the toilet situation. This Petri net consists of several transitions, corresponding to various \emph{actions}, such as walking to the toilet.
 
 \subsection{The Basic Algorithm}
-Though the probabilities of the various behaviours a pedestrian can have is dependent on what kind of distribution we are going to use, the underlying mechanism will always be as described in algorithm \ref{decisionmechanism}. This algorithm is used to choose one of the various behaviours that are currently available to a pedestrian.\\
+Though the probabilities of the various behaviours a pedestrian can have is dependent on what kind of distribution we are going to use, the underlying mechanism will always be as described in algorithm \ref{decisionmechanism}. This algorithm is used to choose one of the various behaviors that are currently available to a pedestrian at a certain timestep. Once it is chosen, this behavior will be executed be executed in the following timesteps. This algorithm is only run for the pedestrians whose token is currently in the base place. When the token is in another place, the decision about which transition to choose follows the basic Petri net rules.\\
 First of all, we subtract the current time from the deadline time of the pedestrian.  Before we go any further, it is important to understand how we keep track of the time. \todo[inline]{Achterhaal of iedere pedestrian een persoonlijke time heeft of dat er een algemene timer is. Ik ga voorlopig uit van een persoonlijke timer ook beslissen of het volgende detail misschien meer een implementatiedingetje is.} Every pedestrian has its own timer which in our system is implemented to increment by one at every timestep of our simulation engine. When we have computed $t_d$, we know how much time the pedestrian has left to reach its goal.\\
-Next, the algorithm computes for every situation how much time is left would the pedestrian choose and execute this behavior. This remaining time is then used to compute the probability rate of the pedestrian deciding to choose this behavior. The probability rate is computed with the function $\phi$, and can have various distributions. In the section \todo[inline]{Make nice reference to the section} \emph{Experiments} we will try out various options for $\phi$ to see which will give the most realistic behavior. When the probability rates for all the behaviors have been computed, they are normalized, and based on the resulting probabilities, one of the behaviors is randomly chosen.
+Next, the algorithm computes for every situation how much time is left would the pedestrian choose and execute this behavior. This remaining time is then used to compute the probability rate of the pedestrian deciding to choose this behavior. The probability rate is computed with the function $\phi$, and can have various distributions. In chapter \ref{chap:experiments} (\emph{Experiments}) we will try out various options for $\phi$ to see which will give the most realistic behavior. When the probability rates for all the behaviors have been computed, they are normalized, and based on the resulting probabilities, one of the behaviors is randomly chosen.
 
 \todo[inline]{Check if it's the right way around (afteller of opteller)} 
 \todo[inline]{Improve structure}
@@ -392,7 +388,7 @@ Next, the algorithm computes for every situation how much time is left would the
 
 \subsection{Examples}
 \todo[inline]{Check if the title of this subsection is ok}
-Figure \ref{petrinetexample} gives an example of how the pedestrian petrinet is connected to the situations. It also shows the estimation created by the Dijkstra preprocessing algorithm that makes a guess at how much time it takes to complete the situation behavior.
+Figure \ref{petrinetexample} gives an example of how the pedestrian petrinet is connected to the situations. It also shows the estimation created by the Dijkstra preprocessing algorithm that makes a guess at how much time it takes to complete the situation behavior. This is the value that will be used when computing the time at which the token of a pedestrian will move back to its base place.
 
 \begin{figure}
 \centering
@@ -406,6 +402,7 @@ Figure \ref{petrinetexample} gives an example of how the pedestrian petrinet is 
 
 
 \chapter{Experiments}
+\label{chap:experiments}
 Allthough it can be difficult to decide whether a group of people walks around "realistically", we will certainly give it a try. We will attempt to test our framework in two different ways; first of all, we will assess our framework by doing a qualitative comparison with real-life footage of Rotterdam Airport. We have access to both camera footage and manually annotated locations of the visitors. Secondly, we will assess how the the different probability functions we choose for the go-to-goal action will affect the frequency of other actions. In other words, we will attempt to investigate whether our method leads to \emph{emergent}  behavior.
 
 \todo[inline]{Specify missing parameters}
