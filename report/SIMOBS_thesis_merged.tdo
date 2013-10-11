@@ -1,25 +1,24 @@
 \contentsline {todo}{{\color@box {}{cyan}{\leavevmode {\color {cyan}o}}\ Change}}{1}{section*.1}
-\contentsline {todo}{{\color@box {}{cyan}{\leavevmode {\color {cyan}o}}\ Describe the promise for the utopia of my research}}{11}{section*.5}
-\contentsline {todo}{{\color@box {}{cyan}{\leavevmode {\color {cyan}o}}\ Maybe sections have to be named differently, or previous reference has to be moved, the approach uses global effects, but also more individual models}}{14}{section*.6}
-\contentsline {todo}{{\color@box {}{cyan}{\leavevmode {\color {cyan}o}}\ Make sure the text fits better in the rest of the thesis}}{17}{section*.7}
-\contentsline {todo}{{\color@box {}{cyan}{\leavevmode {\color {cyan}o}}\ Fix duplicate text}}{18}{section*.8}
-\contentsline {todo}{{\color@box {}{cyan}{\leavevmode {\color {cyan}o}}\ Check whether I understood correctly}}{21}{section*.10}
-\contentsline {todo}{{\color@box {}{cyan}{\leavevmode {\color {cyan}o}}\ Extend introduction.}}{26}{section*.12}
-\contentsline {todo}{{\color@box {}{cyan}{\leavevmode {\color {cyan}o}}\ Write about problems with dijksta and petri nets, such as multiple tokens/slots, and colored tokens etc.}}{27}{section*.13}
-\contentsline {todo}{{\color@box {}{cyan}{\leavevmode {\color {cyan}o}}\ About the most important part of the thesis, so has to be extended}}{28}{section*.14}
-\contentsline {todo}{{\color@box {}{cyan}{\leavevmode {\color {cyan}o}}\ Include Pictures}}{28}{section*.15}
-\contentsline {todo}{{\color@box {}{cyan}{\leavevmode {\color {cyan}o}}\ Maybe put the explanation of the difference between actions aan behaviors at an earlier place?}}{28}{section*.16}
-\contentsline {todo}{{\color@box {}{cyan}{\leavevmode {\color {cyan}o}}\ Achterhaal of iedere pedestrian een persoonlijke time heeft of dat er een algemene timer is. Ik ga voorlopig uit van een persoonlijke timer ook beslissen of het volgende detail misschien meer een implementatiedingetje is.}}{28}{section*.17}
-\contentsline {todo}{{\color@box {}{cyan}{\leavevmode {\color {cyan}o}}\ Make nice reference to the section}}{29}{section*.18}
-\contentsline {todo}{{\color@box {}{cyan}{\leavevmode {\color {cyan}o}}\ Check if it's the right way around (afteller of opteller)}}{29}{section*.19}
-\contentsline {todo}{{\color@box {}{cyan}{\leavevmode {\color {cyan}o}}\ Improve structure}}{29}{section*.20}
-\contentsline {todo}{{\color@box {}{cyan}{\leavevmode {\color {cyan}o}}\ Check if the title of this subsection is ok}}{29}{section*.21}
-\contentsline {todo}{{\color@box {}{cyan}{\leavevmode {\color {cyan}o}}\ Specify missing parameters}}{31}{section*.23}
-\contentsline {todo}{{\color@box {}{cyan}{\leavevmode {\color {cyan}o}}\ Statistics?}}{32}{section*.28}
-\contentsline {todo}{{\color@box {}{cyan}{\leavevmode {\color {cyan}o}}\ Aggegrate graphs}}{34}{section*.29}
-\contentsline {todo}{{\color@box {}{cyan}{\leavevmode {\color {cyan}o}}\ Aggegrate graphs}}{34}{section*.31}
-\contentsline {todo}{{\color@box {}{cyan}{\leavevmode {\color {cyan}o}}\ find out how to describe, since those values only count in the limit or whatever}}{36}{section*.35}
-\contentsline {todo}{{\color@box {}{cyan}{\leavevmode {\color {cyan}o}}\ Merge results that were accidentally separated}}{40}{section*.40}
-\contentsline {todo}{{\color@box {}{cyan}{\leavevmode {\color {cyan}o}}\ This graph was probably made for the toilet situation that is now saved as twopeopletoiletsituation.xml, but the design of the petrinet is possibly flawed, and could maybe better be replaced by twopeopletoiletsituation2.xml. What also possibly is missing is that the pedestrian could maybe come back after having gone to the toilet.}}{40}{section*.44}
-\contentsline {todo}{{\color@box {}{cyan}{\leavevmode {\color {cyan}o}}\ Finish this part about MASON}}{62}{section*.72}
-\contentsline {todo}{{\color@box {}{cyan}{\leavevmode {\color {cyan}o}}\ Check all references (figures, papers, etc.)}}{67}{section*.75}
+\contentsline {todo}{{\color@box {}{cyan}{\leavevmode {\color {cyan}o}}\ Describe the promise for the utopia of my research}}{9}{section*.5}
+\contentsline {todo}{{\color@box {}{cyan}{\leavevmode {\color {cyan}o}}\ Maybe sections have to be named differently, or previous reference has to be moved, the approach uses global effects, but also more individual models}}{12}{section*.6}
+\contentsline {todo}{{\color@box {}{cyan}{\leavevmode {\color {cyan}o}}\ Make sure the text fits better in the rest of the thesis}}{15}{section*.7}
+\contentsline {todo}{{\color@box {}{cyan}{\leavevmode {\color {cyan}o}}\ Fix duplicate text}}{16}{section*.8}
+\contentsline {todo}{{\color@box {}{cyan}{\leavevmode {\color {cyan}o}}\ Check whether I understood correctly}}{19}{section*.10}
+\contentsline {todo}{{\color@box {}{cyan}{\leavevmode {\color {cyan}o}}\ Extend introduction.}}{24}{section*.12}
+\contentsline {todo}{{\color@box {}{cyan}{\leavevmode {\color {cyan}o}}\ Write about problems with dijksta and petri nets, such as multiple tokens/slots, and colored tokens etc.}}{25}{section*.13}
+\contentsline {todo}{{\color@box {}{cyan}{\leavevmode {\color {cyan}o}}\ About the most important part of the thesis, so has to be extended}}{26}{section*.14}
+\contentsline {todo}{{\color@box {}{cyan}{\leavevmode {\color {cyan}o}}\ Include Pictures}}{26}{section*.15}
+\contentsline {todo}{{\color@box {}{cyan}{\leavevmode {\color {cyan}o}}\ Maybe put the explanation of the difference between actions aan behaviors at an earlier place?}}{26}{section*.16}
+\contentsline {todo}{{\color@box {}{cyan}{\leavevmode {\color {cyan}o}}\ Achterhaal of iedere pedestrian een persoonlijke time heeft of dat er een algemene timer is. Ik ga voorlopig uit van een persoonlijke timer ook beslissen of het volgende detail misschien meer een implementatiedingetje is.}}{27}{section*.17}
+\contentsline {todo}{{\color@box {}{cyan}{\leavevmode {\color {cyan}o}}\ Check if it's the right way around (afteller of opteller)}}{27}{section*.18}
+\contentsline {todo}{{\color@box {}{cyan}{\leavevmode {\color {cyan}o}}\ Improve structure}}{27}{section*.19}
+\contentsline {todo}{{\color@box {}{cyan}{\leavevmode {\color {cyan}o}}\ Check if the title of this subsection is ok}}{28}{section*.20}
+\contentsline {todo}{{\color@box {}{cyan}{\leavevmode {\color {cyan}o}}\ Specify missing parameters}}{29}{section*.22}
+\contentsline {todo}{{\color@box {}{cyan}{\leavevmode {\color {cyan}o}}\ Statistics?}}{30}{section*.27}
+\contentsline {todo}{{\color@box {}{cyan}{\leavevmode {\color {cyan}o}}\ Aggegrate graphs}}{32}{section*.28}
+\contentsline {todo}{{\color@box {}{cyan}{\leavevmode {\color {cyan}o}}\ Aggegrate graphs}}{32}{section*.30}
+\contentsline {todo}{{\color@box {}{cyan}{\leavevmode {\color {cyan}o}}\ find out how to describe, since those values only count in the limit or whatever}}{34}{section*.34}
+\contentsline {todo}{{\color@box {}{cyan}{\leavevmode {\color {cyan}o}}\ Merge results that were accidentally separated}}{38}{section*.39}
+\contentsline {todo}{{\color@box {}{cyan}{\leavevmode {\color {cyan}o}}\ This graph was probably made for the toilet situation that is now saved as twopeopletoiletsituation.xml, but the design of the petrinet is possibly flawed, and could maybe better be replaced by twopeopletoiletsituation2.xml. What also possibly is missing is that the pedestrian could maybe come back after having gone to the toilet.}}{38}{section*.43}
+\contentsline {todo}{{\color@box {}{cyan}{\leavevmode {\color {cyan}o}}\ Finish this part about MASON}}{60}{section*.71}
+\contentsline {todo}{{\color@box {}{cyan}{\leavevmode {\color {cyan}o}}\ Check all references (figures, papers, etc.)}}{65}{section*.74}

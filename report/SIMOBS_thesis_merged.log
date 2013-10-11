@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.1415926-2.4-1.40.13 (TeX Live 2012/Debian) (format=pdflatex 2013.9.3)  9 OCT 2013 15:45
+This is pdfTeX, Version 3.1415926-2.4-1.40.13 (TeX Live 2012/Debian) (format=pdflatex 2013.9.3)  11 OCT 2013 12:21
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -525,11 +525,7 @@ Package: float 2001/11/08 v1.3d Float enhancements (AL)
 \@float@every@algorithm=\toks28
 \c@algorithm=\count136
 )
-(./SIMOBS_thesis_merged.aux
-
-LaTeX Warning: Label `result_toilet_linear_1_05_02_01_001' multiply defined.
-
-)
+(./SIMOBS_thesis_merged.aux)
 \openout1 = `SIMOBS_thesis_merged.aux'.
 
 LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 9.
@@ -550,7 +546,8 @@ Package caption Info: Begin \AtBeginDocument code.
 Package caption Info: float package is loaded.
 Package caption Info: hyperref package is loaded.
 Package caption Info: End \AtBeginDocument code.
- (/usr/share/texlive/texmf-dist/tex/context/base/supp-pdf.mkii
+
+(/usr/share/texlive/texmf-dist/tex/context/base/supp-pdf.mkii
 [Loading MPS to PDF converter (version 2006.09.02).]
 \scratchcounter=\count137
 \scratchdimen=\dimen172
@@ -610,27 +607,21 @@ Underfull \hbox (badness 10000) in paragraph at lines 73--73
 ] [2
 
 ]
-(./SIMOBS_thesis_merged.tdo
-LaTeX Font Info:    External font `cmex10' loaded for size
-(Font)              <10.95> on input line 1.
-LaTeX Font Info:    External font `cmex10' loaded for size
-(Font)              <8> on input line 1.
-LaTeX Font Info:    External font `cmex10' loaded for size
-(Font)              <6> on input line 1.
- [3])
+(./SIMOBS_thesis_merged.tdo)
 \tf@tdo=\write5
 \openout5 = `SIMOBS_thesis_merged.tdo'.
 
- [4] [5] [6
-
-] (./SIMOBS_thesis_merged.toc
-[7])
+ [3] [4] (./SIMOBS_thesis_merged.toc)
 \tf@toc=\write6
 \openout6 = `SIMOBS_thesis_merged.toc'.
 
- [8]
+ [5
+
+] [6
+
+]
 Chapter 1.
-<pedestrians.jpg, id=374, 602.25pt x 401.5pt>
+<pedestrians.jpg, id=120, 602.25pt x 401.5pt>
 File: pedestrians.jpg Graphic file (type jpg)
  <use pedestrians.jpg>
 Package pdftex.def Info: pedestrians.jpg used on input line 116.
@@ -642,37 +633,107 @@ LaTeX Warning: `h' float specifier changed to `ht'.
 
 Underfull \vbox (badness 6078) has occurred while \output is active []
 
- [9
-
-]
-[10 <./pedestrians.jpg>]
+ [7]
+[8 <./pedestrians.jpg>]
+LaTeX Font Info:    External font `cmex10' loaded for size
+(Font)              <10.95> on input line 135.
+LaTeX Font Info:    External font `cmex10' loaded for size
+(Font)              <8> on input line 135.
+LaTeX Font Info:    External font `cmex10' loaded for size
+(Font)              <6> on input line 135.
 LaTeX Font Info:    Try loading font information for OMS+cmr on input line 148.
 
-
-(/usr/share/texlive/texmf-dist/tex/latex/base/omscmr.fd
+ (/usr/share/texlive/texmf-dist/tex/latex/base/omscmr.fd
 File: omscmr.fd 1999/05/25 v2.5h Standard LaTeX font definitions
 )
 LaTeX Font Info:    Font shape `OMS/cmr/m/n' in size <10.95> not available
 (Font)              Font shape `OMS/cmsy/m/n' tried instead on input line 148.
- [11] [12]
+ [9] [10]
 Chapter 2.
 
 Underfull \hbox (badness 10000) in paragraph at lines 206--207
 
  []
 
-[13
+[11
 
-] [14]
+]
+
+LaTeX Warning: Citation `Reynolds87flocks' on page 12 undefined on input line 2
+09.
+
+
+LaTeX Warning: Citation `citeulike1080090' on page 12 undefined on input line 2
+12.
+
+
+LaTeX Warning: Citation `citeulike1656038' on page 12 undefined on input line 2
+12.
+
+
+LaTeX Warning: Citation `Pelechano:2007:CIA:1272690.1272705' on page 12 undefin
+ed on input line 213.
+
+
+LaTeX Warning: Citation `Bayazit02bettergroup' on page 12 undefined on input li
+ne 214.
+
+[12]
+
+LaTeX Warning: Citation `Dijkstra00amulti-agent' on page 13 undefined on input 
+line 216.
+
+
+LaTeX Warning: Citation `1241047' on page 13 undefined on input line 216.
+
+
+LaTeX Warning: Citation `leaderfollower' on page 13 undefined on input line 221
+.
+
+
+LaTeX Warning: Citation `Hostetler02strollingdown' on page 13 undefined on inpu
+t line 221.
+
+
+LaTeX Warning: Citation `10.1109MCG.2009.69' on page 13 undefined on input line
+ 221.
+
 Missing character: There is no Ã in font cmr10!
 Missing character: There is no © in font cmr10!
- [15] [16]
+
+LaTeX Warning: Citation `Becheiraz:1996:MNC:791215.791499' on page 13 undefined
+ on input line 222.
+
+[13]
+
+LaTeX Warning: Citation `A_autonomouspedestrians' on page 14 undefined on input
+ line 226.
+
+
+LaTeX Warning: Citation `Kallmann98modelingobjects' on page 14 undefined on inp
+ut line 227.
+
+[14]
+
+LaTeX Warning: Citation `10.1109CASA.2003.1199317' on page 15 undefined on inpu
+t line 231.
+
+
+LaTeX Warning: Citation `A_autonomouspedestrians' on page 15 undefined on input
+ line 240.
+
+
 Overfull \hbox (26.79175pt too wide) has occurred while \output is active
 \OT1/cmr/m/sl/10.95 2.4.  DESIGNING THE BEHAVIOR STRUCTURE IN THE ENVIRONMENT \
-OT1/cmr/m/n/10.95 17
+OT1/cmr/m/n/10.95 15
  []
 
-[17]
+[15]
+
+LaTeX Warning: Citation `Kallmann00constructingvirtual' on page 16 undefined on
+ input line 245.
+
+
 Underfull \hbox (badness 10000) in paragraph at lines 245--246
 
  []
@@ -680,21 +741,30 @@ Underfull \hbox (badness 10000) in paragraph at lines 245--246
 
 Underfull \vbox (badness 2205) has occurred while \output is active []
 
- [18]
-[19] [20]
+ [16]
+
+LaTeX Warning: Citation `Sung04scalablebehaviors' on page 17 undefined on input
+ line 252.
+
+[17]
+
+LaTeX Warning: Citation `KÃ¶hler03modellingsocial' on page 18 undefined on inpu
+t line 287.
+
+[18]
 
 Package caption Warning: \label without proper \caption on input line 305.
 See the caption package documentation for explanation.
 
 
-LaTeX Warning: Reference `restaurantnet' on page 21 undefined on input line 298
+LaTeX Warning: Reference `restaurantnet' on page 19 undefined on input line 298
 .
 
 
 Underfull \vbox (badness 2205) has occurred while \output is active []
 
- [21]
-<restaurant.png, id=478, 683.55376pt x 465.74pt>
+ [19]
+<restaurant.png, id=196, 683.55376pt x 465.74pt>
 File: restaurant.png Graphic file (type png)
  <use restaurant.png>
 Package pdftex.def Info: restaurant.png used on input line 304.
@@ -704,500 +774,549 @@ Overfull \hbox (90.0pt too wide) in paragraph at lines 304--306
  [] 
  []
 
-[22] [23 <./restaurant.png (PNG copy)>] [24]
+[20] [21 <./restaurant.png (PNG copy)>] [22]
 Chapter 3.
-[25
+[23
 
 ]
 Underfull \hbox (badness 10000) in paragraph at lines 349--352
 
  []
 
-[26] [27]
-Underfull \vbox (badness 10000) has occurred while \output is active []
 
- [28]
+LaTeX Warning: Citation `dijkstra' on page 24 undefined on input line 355.
+
+[24] [25]
+
+LaTeX Warning: Reference `decisionmechanism' on page 26 undefined on input line
+ 373.
+
+[26]
+
+LaTeX Warning: Reference `chap:experiments' on page 27 undefined on input line 
+375.
+
 Package hyperref Info: bookmark level for unknown algorithm defaults to 0 on in
-put line 379.
+put line 380.
 
-<example.png, id=515, 592.2125pt x 476.78125pt>
+Underfull \vbox (badness 1394) has occurred while \output is active []
+
+ [27]
+
+LaTeX Warning: Reference `petrinetexample' on page 28 undefined on input line 3
+96.
+
+<example.png, id=245, 592.2125pt x 476.78125pt>
 File: example.png Graphic file (type png)
  <use example.png>
-Package pdftex.def Info: example.png used on input line 399.
+Package pdftex.def Info: example.png used on input line 400.
 (pdftex.def)             Requested size: 350.0pt x 281.78592pt.
- [29] [30 <./example.png>]
+ [28 <./example.png>]
 Chapter 4.
 
 Package hyperref Warning: Difference (2) between bookmark levels is greater 
-(hyperref)                than one, level fixed on input line 413.
+(hyperref)                than one, level fixed on input line 415.
 
-[31
 
-] [32] [33]
-<."/allautomaticresults/result_toilet_linear_1_05_02_01_001".png, id=550, 422.3
+LaTeX Warning: Reference `toiletsituation' on page 29 undefined on input line 4
+18.
+
+[29
+
+] [30] [31]
+
+LaTeX Warning: Reference `result_toilet_linear_1_05_02_01_001' on page 32 undef
+ined on input line 506.
+
+
+<."/allautomaticresults/result_toilet_linear_1_05_02_01_001".png, id=284, 422.3
 2782pt x 316.18124pt>
 File: ."/allautomaticresults/result_toilet_linear_1_05_02_01_001".png Graphic f
 ile (type png)
 
 <use ."/allautomaticresults/result_toilet_linear_1_05_02_01_001".png>
 Package pdftex.def Info: ."/allautomaticresults/result_toilet_linear_1_05_02_01
-_001".png used on input line 509.
+_001".png used on input line 511.
 (pdftex.def)             Requested size: 280.0pt x 209.63069pt.
+
+
+LaTeX Warning: Reference `evaluation_log_linear0point5automatedpointcsv' on pag
+e 32 undefined on input line 516.
+
 File: ."/allautomaticresults/result_toilet_linear_1_05_02_01_001".png Graphic f
 ile (type png)
-
 <use ."/allautomaticresults/result_toilet_linear_1_05_02_01_001".png>
 Package pdftex.def Info: ."/allautomaticresults/result_toilet_linear_1_05_02_01
-_001".png used on input line 519.
+_001".png used on input line 521.
 (pdftex.def)             Requested size: 280.0pt x 209.63069pt.
- [34]
-[35 <./allautomaticresults/result_toilet_linear_1_05_02_01_001.png (PNG copy)>]
+ [32]
+[33 <./allautomaticresults/result_toilet_linear_1_05_02_01_001.png (PNG copy)>]
 
-<./automaticResults/evaluation_log_linear0point5automatedpointcsv.png, id=564, 
+<./automaticResults/evaluation_log_linear0point5automatedpointcsv.png, id=303, 
 422.32782pt x 316.18124pt>
 File: ./automaticResults/evaluation_log_linear0point5automatedpointcsv.png Grap
 hic file (type png)
 
 <use ./automaticResults/evaluation_log_linear0point5automatedpointcsv.png>
 Package pdftex.def Info: ./automaticResults/evaluation_log_linear0point5automat
-edpointcsv.png used on input line 527.
+edpointcsv.png used on input line 529.
 (pdftex.def)             Requested size: 250.0pt x 187.16768pt.
 
-<./automaticResults/evaluation_log_linear1automatedpointcsv.png, id=565, 422.32
+<./automaticResults/evaluation_log_linear1automatedpointcsv.png, id=304, 422.32
 782pt x 316.18124pt>
 File: ./automaticResults/evaluation_log_linear1automatedpointcsv.png Graphic fi
 le (type png)
 
 <use ./automaticResults/evaluation_log_linear1automatedpointcsv.png>
 Package pdftex.def Info: ./automaticResults/evaluation_log_linear1automatedpoin
-tcsv.png used on input line 534.
+tcsv.png used on input line 536.
 (pdftex.def)             Requested size: 250.0pt x 187.16768pt.
 
-<./automaticResults/evaluation_log_sigmoid0point01automatedpointcsv.png, id=567
+
+LaTeX Warning: Reference `evaluation_log_sigmoid0point01automatedpointcsv' on p
+age 34 undefined on input line 543.
+
+
+<./automaticResults/evaluation_log_sigmoid0point01automatedpointcsv.png, id=305
 , 422.32782pt x 316.18124pt>
 File: ./automaticResults/evaluation_log_sigmoid0point01automatedpointcsv.png Gr
 aphic file (type png)
 
 <use ./automaticResults/evaluation_log_sigmoid0point01automatedpointcsv.png>
 Package pdftex.def Info: ./automaticResults/evaluation_log_sigmoid0point01autom
-atedpointcsv.png used on input line 545.
+atedpointcsv.png used on input line 547.
 (pdftex.def)             Requested size: 250.0pt x 187.16768pt.
 
-<./automaticResults/evaluation_log_sigmoid0point1automatedpointcsv.png, id=568,
+<./automaticResults/evaluation_log_sigmoid0point1automatedpointcsv.png, id=306,
  422.32782pt x 316.18124pt>
 File: ./automaticResults/evaluation_log_sigmoid0point1automatedpointcsv.png Gra
 phic file (type png)
 
 <use ./automaticResults/evaluation_log_sigmoid0point1automatedpointcsv.png>
 Package pdftex.def Info: ./automaticResults/evaluation_log_sigmoid0point1automa
-tedpointcsv.png used on input line 554.
+tedpointcsv.png used on input line 556.
 (pdftex.def)             Requested size: 250.0pt x 187.16768pt.
 
-<./automaticResults/evaluation_log_sigmoid0point2automatedpointcsv.png, id=569,
+<./automaticResults/evaluation_log_sigmoid0point2automatedpointcsv.png, id=307,
  422.32782pt x 316.18124pt>
 File: ./automaticResults/evaluation_log_sigmoid0point2automatedpointcsv.png Gra
 phic file (type png)
 
 <use ./automaticResults/evaluation_log_sigmoid0point2automatedpointcsv.png>
 Package pdftex.def Info: ./automaticResults/evaluation_log_sigmoid0point2automa
-tedpointcsv.png used on input line 562.
+tedpointcsv.png used on input line 564.
 (pdftex.def)             Requested size: 250.0pt x 187.16768pt.
 
-<./automaticResults/evaluation_log_sigmoid0point5automatedpointcsv.png, id=570,
+<./automaticResults/evaluation_log_sigmoid0point5automatedpointcsv.png, id=308,
  422.32782pt x 316.18124pt>
 File: ./automaticResults/evaluation_log_sigmoid0point5automatedpointcsv.png Gra
 phic file (type png)
 
 <use ./automaticResults/evaluation_log_sigmoid0point5automatedpointcsv.png>
 Package pdftex.def Info: ./automaticResults/evaluation_log_sigmoid0point5automa
-tedpointcsv.png used on input line 570.
+tedpointcsv.png used on input line 572.
 (pdftex.def)             Requested size: 250.0pt x 187.16768pt.
 
 
-Package caption Warning: \label without proper \caption on input line 557.
-See the caption package documentation for explanation.
+LaTeX Warning: Reference `evaluation_log_sigmoid0point01automatedpointcsv' on p
+age 34 undefined on input line 578.
 
 
 LaTeX Warning: Reference `evaluation_log_sigmoid0point1automatedpointcsv' on pa
-ge 36 undefined on input line 576.
+ge 34 undefined on input line 578.
 
-[36] [37 <./automaticResults/evaluation_log_linear0point5automatedpointcsv.png 
+
+LaTeX Warning: Reference `evaluation_log_sigmoid0point2automatedpointcsv' on pa
+ge 34 undefined on input line 578.
+
+
+LaTeX Warning: Reference `evaluation_log_sigmoid0point5automatedpointcsv' on pa
+ge 34 undefined on input line 578.
+
+[34] [35 <./automaticResults/evaluation_log_linear0point5automatedpointcsv.png 
 (PNG copy)> <./automaticResults/evaluation_log_linear1automatedpointcsv.png (PN
-G copy)>] [38 <./automaticResults/evaluation_log_sigmoid0point01automatedpointc
+G copy)>] [36 <./automaticResults/evaluation_log_sigmoid0point01automatedpointc
 sv.png (PNG copy)> <./automaticResults/evaluation_log_sigmoid0point1automatedpo
-intcsv.png (PNG copy)>] [39 <./automaticResults/evaluation_log_sigmoid0point2au
+intcsv.png (PNG copy)>] [37 <./automaticResults/evaluation_log_sigmoid0point2au
 tomatedpointcsv.png (PNG copy)> <./automaticResults/evaluation_log_sigmoid0poin
 t5automatedpointcsv.png (PNG copy)>]
 <./automaticResults2/evaluation_log2_gaussian0point01twoPeopleToiletSituationpo
-intxmlpointcsv.png, id=597, 422.32782pt x 316.18124pt>
+intxmlpointcsv.png, id=334, 422.32782pt x 316.18124pt>
 File: ./automaticResults2/evaluation_log2_gaussian0point01twoPeopleToiletSituat
 ionpointxmlpointcsv.png Graphic file (type png)
 
 <use ./automaticResults2/evaluation_log2_gaussian0point01twoPeopleToiletSituati
 onpointxmlpointcsv.png>
 Package pdftex.def Info: ./automaticResults2/evaluation_log2_gaussian0point01tw
-oPeopleToiletSituationpointxmlpointcsv.png used on input line 586.
+oPeopleToiletSituationpointxmlpointcsv.png used on input line 588.
 (pdftex.def)             Requested size: 250.0pt x 187.16768pt.
 
 <./automaticResults2/evaluation_log2_gaussian0point2pillarSituationpointxmlpoin
-tcsv.png, id=598, 422.32782pt x 316.18124pt>
+tcsv.png, id=335, 422.32782pt x 316.18124pt>
 File: ./automaticResults2/evaluation_log2_gaussian0point2pillarSituationpointxm
 lpointcsv.png Graphic file (type png)
 
 <use ./automaticResults2/evaluation_log2_gaussian0point2pillarSituationpointxml
 pointcsv.png>
 Package pdftex.def Info: ./automaticResults2/evaluation_log2_gaussian0point2pil
-larSituationpointxmlpointcsv.png used on input line 593.
+larSituationpointxmlpointcsv.png used on input line 595.
 (pdftex.def)             Requested size: 250.0pt x 187.16768pt.
 
 <./automaticResults2/evaluation_log2_gaussian0point2standStillSituationpointxml
-pointcsv.png, id=599, 422.32782pt x 316.18124pt>
+pointcsv.png, id=336, 422.32782pt x 316.18124pt>
 File: ./automaticResults2/evaluation_log2_gaussian0point2standStillSituationpoi
 ntxmlpointcsv.png Graphic file (type png)
 
 <use ./automaticResults2/evaluation_log2_gaussian0point2standStillSituationpoin
 txmlpointcsv.png>
 Package pdftex.def Info: ./automaticResults2/evaluation_log2_gaussian0point2sta
-ndStillSituationpointxmlpointcsv.png used on input line 600.
+ndStillSituationpointxmlpointcsv.png used on input line 602.
 (pdftex.def)             Requested size: 250.0pt x 187.16768pt.
 
 <./automaticResults2/evaluation_log2_gaussian0point2twoPeopleToiletSituationpoi
-ntxmlpointcsv.png, id=600, 422.32782pt x 316.18124pt>
+ntxmlpointcsv.png, id=337, 422.32782pt x 316.18124pt>
 File: ./automaticResults2/evaluation_log2_gaussian0point2twoPeopleToiletSituati
 onpointxmlpointcsv.png Graphic file (type png)
 
 <use ./automaticResults2/evaluation_log2_gaussian0point2twoPeopleToiletSituatio
 npointxmlpointcsv.png>
 Package pdftex.def Info: ./automaticResults2/evaluation_log2_gaussian0point2two
-PeopleToiletSituationpointxmlpointcsv.png used on input line 608.
+PeopleToiletSituationpointxmlpointcsv.png used on input line 610.
 (pdftex.def)             Requested size: 250.0pt x 187.16768pt.
 
 <./automaticResults2/evaluation_log2_gaussian0point5pillarSituationpointxmlpoin
-tcsv.png, id=601, 422.32782pt x 316.18124pt>
+tcsv.png, id=338, 422.32782pt x 316.18124pt>
 File: ./automaticResults2/evaluation_log2_gaussian0point5pillarSituationpointxm
 lpointcsv.png Graphic file (type png)
 
 <use ./automaticResults2/evaluation_log2_gaussian0point5pillarSituationpointxml
 pointcsv.png>
 Package pdftex.def Info: ./automaticResults2/evaluation_log2_gaussian0point5pil
-larSituationpointxmlpointcsv.png used on input line 615.
+larSituationpointxmlpointcsv.png used on input line 617.
 (pdftex.def)             Requested size: 250.0pt x 187.16768pt.
 
 <./automaticResults2/evaluation_log2_gaussian0point5standStillSituationpointxml
-pointcsv.png, id=602, 422.32782pt x 316.18124pt>
+pointcsv.png, id=339, 422.32782pt x 316.18124pt>
 File: ./automaticResults2/evaluation_log2_gaussian0point5standStillSituationpoi
 ntxmlpointcsv.png Graphic file (type png)
 
 <use ./automaticResults2/evaluation_log2_gaussian0point5standStillSituationpoin
 txmlpointcsv.png>
 Package pdftex.def Info: ./automaticResults2/evaluation_log2_gaussian0point5sta
-ndStillSituationpointxmlpointcsv.png used on input line 622.
+ndStillSituationpointxmlpointcsv.png used on input line 624.
 (pdftex.def)             Requested size: 250.0pt x 187.16768pt.
 
 <./automaticResults2/evaluation_log2_gaussian0point5twoPeopleToiletSituationpoi
-ntxmlpointcsv.png, id=603, 422.32782pt x 316.18124pt>
+ntxmlpointcsv.png, id=340, 422.32782pt x 316.18124pt>
 File: ./automaticResults2/evaluation_log2_gaussian0point5twoPeopleToiletSituati
 onpointxmlpointcsv.png Graphic file (type png)
 
 <use ./automaticResults2/evaluation_log2_gaussian0point5twoPeopleToiletSituatio
 npointxmlpointcsv.png>
 Package pdftex.def Info: ./automaticResults2/evaluation_log2_gaussian0point5two
-PeopleToiletSituationpointxmlpointcsv.png used on input line 629.
+PeopleToiletSituationpointxmlpointcsv.png used on input line 631.
 (pdftex.def)             Requested size: 250.0pt x 187.16768pt.
 
 <./automaticResults2/evaluation_log2_linear0point01automated-pillarSituationpoi
-ntcsv.png, id=604, 422.32782pt x 316.18124pt>
+ntcsv.png, id=341, 422.32782pt x 316.18124pt>
 File: ./automaticResults2/evaluation_log2_linear0point01automated-pillarSituati
 onpointcsv.png Graphic file (type png)
 
 <use ./automaticResults2/evaluation_log2_linear0point01automated-pillarSituatio
 npointcsv.png>
 Package pdftex.def Info: ./automaticResults2/evaluation_log2_linear0point01auto
-mated-pillarSituationpointcsv.png used on input line 636.
+mated-pillarSituationpointcsv.png used on input line 638.
 (pdftex.def)             Requested size: 250.0pt x 187.16768pt.
- [40 <./automaticResults2/evaluation_log2_gaussian0point01twoPeopleToiletSituat
-ionpointxmlpointcsv.png (PNG copy)>] [41 <./automaticResults2/evaluation_log2_g
+ [38 <./automaticResults2/evaluation_log2_gaussian0point01twoPeopleToiletSituat
+ionpointxmlpointcsv.png (PNG copy)>] [39 <./automaticResults2/evaluation_log2_g
 aussian0point2pillarSituationpointxmlpointcsv.png (PNG copy)> <./automaticResul
 ts2/evaluation_log2_gaussian0point2standStillSituationpointxmlpointcsv.png (PNG
- copy)>] [42 <./automaticResults2/evaluation_log2_gaussian0point2twoPeopleToile
+ copy)>] [40 <./automaticResults2/evaluation_log2_gaussian0point2twoPeopleToile
 tSituationpointxmlpointcsv.png (PNG copy)> <./automaticResults2/evaluation_log2
 _gaussian0point5pillarSituationpointxmlpointcsv.png (PNG copy)>]
-[43 <./automaticResults2/evaluation_log2_gaussian0point5standStillSituationpoin
+[41 <./automaticResults2/evaluation_log2_gaussian0point5standStillSituationpoin
 txmlpointcsv.png (PNG copy)> <./automaticResults2/evaluation_log2_gaussian0poin
-t5twoPeopleToiletSituationpointxmlpointcsv.png (PNG copy)>] [44 <./automaticRes
+t5twoPeopleToiletSituationpointxmlpointcsv.png (PNG copy)>] [42 <./automaticRes
 ults2/evaluation_log2_linear0point01automated-pillarSituationpointcsv.png (PNG 
 copy)>]
 <./automaticResults2/evaluation_log2_linear0point01automated-standStillSituatio
-npointcsv.png, id=634, 422.32782pt x 316.18124pt>
+npointcsv.png, id=373, 422.32782pt x 316.18124pt>
 File: ./automaticResults2/evaluation_log2_linear0point01automated-standStillSit
 uationpointcsv.png Graphic file (type png)
 
 <use ./automaticResults2/evaluation_log2_linear0point01automated-standStillSitu
 ationpointcsv.png>
 Package pdftex.def Info: ./automaticResults2/evaluation_log2_linear0point01auto
-mated-standStillSituationpointcsv.png used on input line 644.
+mated-standStillSituationpointcsv.png used on input line 646.
 (pdftex.def)             Requested size: 250.0pt x 187.16768pt.
 
 <./automaticResults2/evaluation_log2_linear0point01automated-twoPeopleToiletSit
-uationpointcsv.png, id=635, 422.32782pt x 316.18124pt>
+uationpointcsv.png, id=374, 422.32782pt x 316.18124pt>
 File: ./automaticResults2/evaluation_log2_linear0point01automated-twoPeopleToil
 etSituationpointcsv.png Graphic file (type png)
 
 <use ./automaticResults2/evaluation_log2_linear0point01automated-twoPeopleToile
 tSituationpointcsv.png>
 Package pdftex.def Info: ./automaticResults2/evaluation_log2_linear0point01auto
-mated-twoPeopleToiletSituationpointcsv.png used on input line 651.
+mated-twoPeopleToiletSituationpointcsv.png used on input line 653.
 (pdftex.def)             Requested size: 250.0pt x 187.16768pt.
 
 <./automaticResults2/evaluation_log2_linear0point1automated-standStillSituation
-pointcsv.png, id=636, 422.32782pt x 316.18124pt>
+pointcsv.png, id=375, 422.32782pt x 316.18124pt>
 File: ./automaticResults2/evaluation_log2_linear0point1automated-standStillSitu
 ationpointcsv.png Graphic file (type png)
 
 <use ./automaticResults2/evaluation_log2_linear0point1automated-standStillSitua
 tionpointcsv.png>
 Package pdftex.def Info: ./automaticResults2/evaluation_log2_linear0point1autom
-ated-standStillSituationpointcsv.png used on input line 658.
+ated-standStillSituationpointcsv.png used on input line 660.
 (pdftex.def)             Requested size: 250.0pt x 187.16768pt.
 
 <./automaticResults2/evaluation_log2_linear0point1automated-twoPeopleToiletSitu
-ationpointcsv.png, id=637, 422.32782pt x 316.18124pt>
+ationpointcsv.png, id=376, 422.32782pt x 316.18124pt>
 File: ./automaticResults2/evaluation_log2_linear0point1automated-twoPeopleToile
 tSituationpointcsv.png Graphic file (type png)
 
 <use ./automaticResults2/evaluation_log2_linear0point1automated-twoPeopleToilet
 Situationpointcsv.png>
 Package pdftex.def Info: ./automaticResults2/evaluation_log2_linear0point1autom
-ated-twoPeopleToiletSituationpointcsv.png used on input line 665.
+ated-twoPeopleToiletSituationpointcsv.png used on input line 667.
 (pdftex.def)             Requested size: 250.0pt x 187.16768pt.
 
 <./automaticResults2/evaluation_log2_linear0point2automatedstandStillSituationp
-ointxmlpointcsv.png, id=638, 422.32782pt x 316.18124pt>
+ointxmlpointcsv.png, id=377, 422.32782pt x 316.18124pt>
 File: ./automaticResults2/evaluation_log2_linear0point2automatedstandStillSitua
 tionpointxmlpointcsv.png Graphic file (type png)
 
 <use ./automaticResults2/evaluation_log2_linear0point2automatedstandStillSituat
 ionpointxmlpointcsv.png>
 Package pdftex.def Info: ./automaticResults2/evaluation_log2_linear0point2autom
-atedstandStillSituationpointxmlpointcsv.png used on input line 672.
+atedstandStillSituationpointxmlpointcsv.png used on input line 674.
 (pdftex.def)             Requested size: 250.0pt x 187.16768pt.
 
 <./automaticResults2/evaluation_log2_linear0point2automatedtwoPeopleToiletSitua
-tionpointxmlpointcsv.png, id=639, 422.32782pt x 316.18124pt>
+tionpointxmlpointcsv.png, id=378, 422.32782pt x 316.18124pt>
 File: ./automaticResults2/evaluation_log2_linear0point2automatedtwoPeopleToilet
 Situationpointxmlpointcsv.png Graphic file (type png)
 
 <use ./automaticResults2/evaluation_log2_linear0point2automatedtwoPeopleToiletS
 ituationpointxmlpointcsv.png>
 Package pdftex.def Info: ./automaticResults2/evaluation_log2_linear0point2autom
-atedtwoPeopleToiletSituationpointxmlpointcsv.png used on input line 679.
+atedtwoPeopleToiletSituationpointxmlpointcsv.png used on input line 681.
 (pdftex.def)             Requested size: 250.0pt x 187.16768pt.
- [45 <./automaticResults2/evaluation_log2_linear0point01automated-standStillSit
+ [43 <./automaticResults2/evaluation_log2_linear0point01automated-standStillSit
 uationpointcsv.png (PNG copy)> <./automaticResults2/evaluation_log2_linear0poin
-t01automated-twoPeopleToiletSituationpointcsv.png (PNG copy)>] [46 <./automatic
+t01automated-twoPeopleToiletSituationpointcsv.png (PNG copy)>] [44 <./automatic
 Results2/evaluation_log2_linear0point1automated-standStillSituationpointcsv.png
  (PNG copy)> <./automaticResults2/evaluation_log2_linear0point1automated-twoPeo
 pleToiletSituationpointcsv.png (PNG copy)>]
-[47 <./automaticResults2/evaluation_log2_linear0point2automatedstandStillSituat
+[45 <./automaticResults2/evaluation_log2_linear0point2automatedstandStillSituat
 ionpointxmlpointcsv.png (PNG copy)> <./automaticResults2/evaluation_log2_linear
 0point2automatedtwoPeopleToiletSituationpointxmlpointcsv.png (PNG copy)>]
 <./automaticResults2/evaluation_log2_linear0point5automatedtwoPeopleToiletSitua
-tionpointxmlpointcsv.png, id=658, 422.32782pt x 316.18124pt>
+tionpointxmlpointcsv.png, id=398, 422.32782pt x 316.18124pt>
 File: ./automaticResults2/evaluation_log2_linear0point5automatedtwoPeopleToilet
 Situationpointxmlpointcsv.png Graphic file (type png)
 
 <use ./automaticResults2/evaluation_log2_linear0point5automatedtwoPeopleToiletS
 ituationpointxmlpointcsv.png>
 Package pdftex.def Info: ./automaticResults2/evaluation_log2_linear0point5autom
-atedtwoPeopleToiletSituationpointxmlpointcsv.png used on input line 687.
+atedtwoPeopleToiletSituationpointxmlpointcsv.png used on input line 689.
 (pdftex.def)             Requested size: 250.0pt x 187.16768pt.
 
 <./automaticResults2/evaluation_log2_linear1automatedtwoPeopleToiletSituationpo
-intxmlpointcsv.png, id=659, 422.32782pt x 316.18124pt>
+intxmlpointcsv.png, id=399, 422.32782pt x 316.18124pt>
 File: ./automaticResults2/evaluation_log2_linear1automatedtwoPeopleToiletSituat
 ionpointxmlpointcsv.png Graphic file (type png)
 
 <use ./automaticResults2/evaluation_log2_linear1automatedtwoPeopleToiletSituati
 onpointxmlpointcsv.png>
 Package pdftex.def Info: ./automaticResults2/evaluation_log2_linear1automatedtw
-oPeopleToiletSituationpointxmlpointcsv.png used on input line 694.
+oPeopleToiletSituationpointxmlpointcsv.png used on input line 696.
 (pdftex.def)             Requested size: 250.0pt x 187.16768pt.
 
 <./automaticResults2/evaluation_log2_sigmoid0point01automatedpillarSituationpoi
-ntxmlpointcsv.png, id=660, 422.32782pt x 316.18124pt>
+ntxmlpointcsv.png, id=400, 422.32782pt x 316.18124pt>
 File: ./automaticResults2/evaluation_log2_sigmoid0point01automatedpillarSituati
 onpointxmlpointcsv.png Graphic file (type png)
 
 <use ./automaticResults2/evaluation_log2_sigmoid0point01automatedpillarSituatio
 npointxmlpointcsv.png>
 Package pdftex.def Info: ./automaticResults2/evaluation_log2_sigmoid0point01aut
-omatedpillarSituationpointxmlpointcsv.png used on input line 701.
+omatedpillarSituationpointxmlpointcsv.png used on input line 703.
 (pdftex.def)             Requested size: 250.0pt x 187.16768pt.
 
 <./automaticResults2/evaluation_log2_sigmoid0point01automatedstandStillSituatio
-npointxmlpointcsv.png, id=661, 422.32782pt x 316.18124pt>
+npointxmlpointcsv.png, id=401, 422.32782pt x 316.18124pt>
 File: ./automaticResults2/evaluation_log2_sigmoid0point01automatedstandStillSit
 uationpointxmlpointcsv.png Graphic file (type png)
 
 <use ./automaticResults2/evaluation_log2_sigmoid0point01automatedstandStillSitu
 ationpointxmlpointcsv.png>
 Package pdftex.def Info: ./automaticResults2/evaluation_log2_sigmoid0point01aut
-omatedstandStillSituationpointxmlpointcsv.png used on input line 708.
+omatedstandStillSituationpointxmlpointcsv.png used on input line 710.
 (pdftex.def)             Requested size: 250.0pt x 187.16768pt.
 
 <./automaticResults2/evaluation_log2_sigmoid0point01automatedtwoPeopleToiletSit
-uationpointxmlpointcsv.png, id=662, 422.32782pt x 316.18124pt>
+uationpointxmlpointcsv.png, id=402, 422.32782pt x 316.18124pt>
 File: ./automaticResults2/evaluation_log2_sigmoid0point01automatedtwoPeopleToil
 etSituationpointxmlpointcsv.png Graphic file (type png)
 
 <use ./automaticResults2/evaluation_log2_sigmoid0point01automatedtwoPeopleToile
 tSituationpointxmlpointcsv.png>
 Package pdftex.def Info: ./automaticResults2/evaluation_log2_sigmoid0point01aut
-omatedtwoPeopleToiletSituationpointxmlpointcsv.png used on input line 715.
+omatedtwoPeopleToiletSituationpointxmlpointcsv.png used on input line 717.
 (pdftex.def)             Requested size: 250.0pt x 187.16768pt.
 
 <./automaticResults2/evaluation_log2sigmoid0point1automatedpillarSituationpoint
-xmlpointcsv.png, id=663, 422.32782pt x 316.18124pt>
+xmlpointcsv.png, id=403, 422.32782pt x 316.18124pt>
 File: ./automaticResults2/evaluation_log2sigmoid0point1automatedpillarSituation
 pointxmlpointcsv.png Graphic file (type png)
 
 <use ./automaticResults2/evaluation_log2sigmoid0point1automatedpillarSituationp
 ointxmlpointcsv.png>
 Package pdftex.def Info: ./automaticResults2/evaluation_log2sigmoid0point1autom
-atedpillarSituationpointxmlpointcsv.png used on input line 722.
+atedpillarSituationpointxmlpointcsv.png used on input line 724.
 (pdftex.def)             Requested size: 250.0pt x 187.16768pt.
 
 <./automaticResults2/evaluation_log2sigmoid0point1automatedstandStillSituationp
-ointxmlpointcsv.png, id=664, 422.32782pt x 316.18124pt>
+ointxmlpointcsv.png, id=404, 422.32782pt x 316.18124pt>
 File: ./automaticResults2/evaluation_log2sigmoid0point1automatedstandStillSitua
 tionpointxmlpointcsv.png Graphic file (type png)
 
 <use ./automaticResults2/evaluation_log2sigmoid0point1automatedstandStillSituat
 ionpointxmlpointcsv.png>
 Package pdftex.def Info: ./automaticResults2/evaluation_log2sigmoid0point1autom
-atedstandStillSituationpointxmlpointcsv.png used on input line 729.
+atedstandStillSituationpointxmlpointcsv.png used on input line 731.
 (pdftex.def)             Requested size: 250.0pt x 187.16768pt.
- [48 <./automaticResults2/evaluation_log2_linear0point5automatedtwoPeopleToilet
+ [46 <./automaticResults2/evaluation_log2_linear0point5automatedtwoPeopleToilet
 Situationpointxmlpointcsv.png (PNG copy)> <./automaticResults2/evaluation_log2_
-linear1automatedtwoPeopleToiletSituationpointxmlpointcsv.png (PNG copy)>] [49 <
+linear1automatedtwoPeopleToiletSituationpointxmlpointcsv.png (PNG copy)>] [47 <
 ./automaticResults2/evaluation_log2_sigmoid0point01automatedpillarSituationpoin
 txmlpointcsv.png (PNG copy)> <./automaticResults2/evaluation_log2_sigmoid0point
-01automatedstandStillSituationpointxmlpointcsv.png (PNG copy)>] [50 <./automati
+01automatedstandStillSituationpointxmlpointcsv.png (PNG copy)>] [48 <./automati
 cResults2/evaluation_log2_sigmoid0point01automatedtwoPeopleToiletSituationpoint
 xmlpointcsv.png (PNG copy)> <./automaticResults2/evaluation_log2sigmoid0point1a
-utomatedpillarSituationpointxmlpointcsv.png (PNG copy)>] [51 <./automaticResult
+utomatedpillarSituationpointxmlpointcsv.png (PNG copy)>] [49 <./automaticResult
 s2/evaluation_log2sigmoid0point1automatedstandStillSituationpointxmlpointcsv.pn
 g (PNG copy)>]
 <./automaticResults2/evaluation_log2sigmoid0point1automatedtwoPeopleToiletSitua
-tionpointxmlpointcsv.png, id=689, 422.32782pt x 316.18124pt>
+tionpointxmlpointcsv.png, id=429, 422.32782pt x 316.18124pt>
 File: ./automaticResults2/evaluation_log2sigmoid0point1automatedtwoPeopleToilet
 Situationpointxmlpointcsv.png Graphic file (type png)
 
 <use ./automaticResults2/evaluation_log2sigmoid0point1automatedtwoPeopleToiletS
 ituationpointxmlpointcsv.png>
 Package pdftex.def Info: ./automaticResults2/evaluation_log2sigmoid0point1autom
-atedtwoPeopleToiletSituationpointxmlpointcsv.png used on input line 737.
+atedtwoPeopleToiletSituationpointxmlpointcsv.png used on input line 739.
 (pdftex.def)             Requested size: 250.0pt x 187.16768pt.
 
 <./automaticResults2/evaluation_log2sigmoid0point5automatedpillarSituationpoint
-xmlpointcsv.png, id=690, 422.32782pt x 316.18124pt>
+xmlpointcsv.png, id=430, 422.32782pt x 316.18124pt>
 File: ./automaticResults2/evaluation_log2sigmoid0point5automatedpillarSituation
 pointxmlpointcsv.png Graphic file (type png)
 
 <use ./automaticResults2/evaluation_log2sigmoid0point5automatedpillarSituationp
 ointxmlpointcsv.png>
 Package pdftex.def Info: ./automaticResults2/evaluation_log2sigmoid0point5autom
-atedpillarSituationpointxmlpointcsv.png used on input line 744.
+atedpillarSituationpointxmlpointcsv.png used on input line 746.
 (pdftex.def)             Requested size: 250.0pt x 187.16768pt.
 
 <./automaticResults2/evaluation_log2sigmoid0point5automatedstandStillSituationp
-ointxmlpointcsv.png, id=691, 422.32782pt x 316.18124pt>
+ointxmlpointcsv.png, id=431, 422.32782pt x 316.18124pt>
 File: ./automaticResults2/evaluation_log2sigmoid0point5automatedstandStillSitua
 tionpointxmlpointcsv.png Graphic file (type png)
 
 <use ./automaticResults2/evaluation_log2sigmoid0point5automatedstandStillSituat
 ionpointxmlpointcsv.png>
 Package pdftex.def Info: ./automaticResults2/evaluation_log2sigmoid0point5autom
-atedstandStillSituationpointxmlpointcsv.png used on input line 751.
+atedstandStillSituationpointxmlpointcsv.png used on input line 753.
 (pdftex.def)             Requested size: 250.0pt x 187.16768pt.
- [52 <./automaticResults2/evaluation_log2sigmoid0point1automatedtwoPeopleToilet
+ [50 <./automaticResults2/evaluation_log2sigmoid0point1automatedtwoPeopleToilet
 Situationpointxmlpointcsv.png (PNG copy)> <./automaticResults2/evaluation_log2s
-igmoid0point5automatedpillarSituationpointxmlpointcsv.png (PNG copy)>] [53 <./a
+igmoid0point5automatedpillarSituationpointxmlpointcsv.png (PNG copy)>] [51 <./a
 utomaticResults2/evaluation_log2sigmoid0point5automatedstandStillSituationpoint
 xmlpointcsv.png (PNG copy)>]
 <./automaticResults2/evaluation_log2sigmoid0point5automatedtwoPeopleToiletSitua
-tionpointxmlpointcsv.png, id=703, 422.32782pt x 316.18124pt>
+tionpointxmlpointcsv.png, id=444, 422.32782pt x 316.18124pt>
 File: ./automaticResults2/evaluation_log2sigmoid0point5automatedtwoPeopleToilet
 Situationpointxmlpointcsv.png Graphic file (type png)
 
 <use ./automaticResults2/evaluation_log2sigmoid0point5automatedtwoPeopleToiletS
 ituationpointxmlpointcsv.png>
 Package pdftex.def Info: ./automaticResults2/evaluation_log2sigmoid0point5autom
-atedtwoPeopleToiletSituationpointxmlpointcsv.png used on input line 759.
+atedtwoPeopleToiletSituationpointxmlpointcsv.png used on input line 761.
 (pdftex.def)             Requested size: 250.0pt x 187.16768pt.
 
-<rotterdamPedestrianNet.png, id=704, 256.96pt x 187.70125pt>
+<rotterdamPedestrianNet.png, id=445, 256.96pt x 187.70125pt>
 File: rotterdamPedestrianNet.png Graphic file (type png)
 
 <use rotterdamPedestrianNet.png>
-Package pdftex.def Info: rotterdamPedestrianNet.png used on input line 766.
+Package pdftex.def Info: rotterdamPedestrianNet.png used on input line 768.
 (pdftex.def)             Requested size: 200.0pt x 146.09706pt.
 
-<twoPeopleToiletSituation.png, id=705, 702.625pt x 657.45625pt>
+<twoPeopleToiletSituation.png, id=446, 702.625pt x 657.45625pt>
 File: twoPeopleToiletSituation.png Graphic file (type png)
 
 <use twoPeopleToiletSituation.png>
-Package pdftex.def Info: twoPeopleToiletSituation.png used on input line 773.
+Package pdftex.def Info: twoPeopleToiletSituation.png used on input line 775.
 (pdftex.def)             Requested size: 350.0pt x 327.51344pt.
 
-<pillarSituation.png, id=706, 342.27875pt x 259.97125pt>
+<pillarSituation.png, id=447, 342.27875pt x 259.97125pt>
 File: pillarSituation.png Graphic file (type png)
 
 <use pillarSituation.png>
-Package pdftex.def Info: pillarSituation.png used on input line 780.
+Package pdftex.def Info: pillarSituation.png used on input line 782.
 (pdftex.def)             Requested size: 250.0pt x 189.8885pt.
- [54
+ [52
 
 
 
 
  <./automaticResults2/evaluation_log2sigmoid0point5automatedtwoPeopleToiletSitu
-ationpointxmlpointcsv.png (PNG copy)>] [55 <./rotterdamPedestrianNet.png>] [56 
+ationpointxmlpointcsv.png (PNG copy)>] [53 <./rotterdamPedestrianNet.png>] [54 
 <./twoPeopleToiletSituation.png (PNG copy)>]
-[57 <./pillarSituation.png>] [58
+[55 <./pillarSituation.png>] [56
 
 ]
 Chapter 5.
 
 Package hyperref Warning: Difference (2) between bookmark levels is greater 
-(hyperref)                than one, level fixed on input line 795.
+(hyperref)                than one, level fixed on input line 797.
 
-[59] [60]
+
+LaTeX Warning: Citation `Moore:2011:VCS:2043174.2043192' on page 57 undefined o
+n input line 798.
+
+[57] [58]
 Appendix A.
 
-Overfull \hbox (9.90446pt too wide) in paragraph at lines 828--828
+Overfull \hbox (9.90446pt too wide) in paragraph at lines 830--830
 []\OT1/cmr/bx/n/14.4 Connecting MA-SON and the Sit-u-a-tions Frame-
  []
 
 
+LaTeX Warning: Reference `framework' on page 59 undefined on input line 831.
+
+
 Underfull \vbox (badness 2343) has occurred while \output is active []
 
- [61
+ [59
 
 ]
-[62]
+[60]
 Appendix B.
-<framework.png, id=755, 597.73312pt x 303.38344pt>
+<framework.png, id=503, 597.73312pt x 303.38344pt>
 File: framework.png Graphic file (type png)
  <use framework.png>
-Package pdftex.def Info: framework.png used on input line 841.
+Package pdftex.def Info: framework.png used on input line 843.
 (pdftex.def)             Requested size: 250.0pt x 126.8878pt.
 
-(./SIMOBS_thesis_merged.bbl [63
+(./SIMOBS_thesis_merged.bbl [61
 
- <./framework.png>] [64
+ <./framework.png>] [62
 
-] [65]
+] [63]
 Missing character: There is no ï in font cmti10!
 Missing character: There is no ¿ in font cmti10!
 Missing character: There is no ½ in font cmti10!
@@ -1211,52 +1330,55 @@ Missing character: There is no â in font cmti10!
 Missing character: There is no € in font cmti10!
 Missing character: There is no ™ in font cmti10!
 )
-Package atveryend Info: Empty hook `BeforeClearDocument' on input line 853.
- [66] [67]
-Package atveryend Info: Empty hook `AfterLastShipout' on input line 853.
+Package atveryend Info: Empty hook `BeforeClearDocument' on input line 855.
+ [64] [65]
+Package atveryend Info: Empty hook `AfterLastShipout' on input line 855.
  (./SIMOBS_thesis_merged.aux)
-Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 853.
-Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 853.
-Package rerunfilecheck Info: File `SIMOBS_thesis_merged.out' has not changed.
-(rerunfilecheck)             Checksum: E13BA2AAE8E8A19E0751C93D9473108E;3615.
+Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 855.
+Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 855.
 
+
+Package rerunfilecheck Warning: File `SIMOBS_thesis_merged.out' has changed.
+(rerunfilecheck)                Rerun to get outlines right
+(rerunfilecheck)                or use package `bookmark'.
+
+Package rerunfilecheck Info: Checksums for `SIMOBS_thesis_merged.out':
+(rerunfilecheck)             Before: 237FF01EC75C049B1D109CA0B8D16786;1379
+(rerunfilecheck)             After:  E13BA2AAE8E8A19E0751C93D9473108E;3615.
 
 LaTeX Warning: There were undefined references.
 
 
-LaTeX Warning: There were multiply-defined labels.
+LaTeX Warning: Label(s) may have changed. Rerun to get cross-references right.
 
-Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 853.
+Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 855.
  ) 
 Here is how much of TeX's memory you used:
- 15995 strings out of 493485
- 297889 string characters out of 3143527
- 350637 words of memory out of 3000000
- 18769 multiletter control sequences out of 15000+200000
+ 15959 strings out of 493485
+ 297343 string characters out of 3143527
+ 342774 words of memory out of 3000000
+ 18737 multiletter control sequences out of 15000+200000
  10597 words of font info for 37 fonts, out of 3000000 for 9000
  957 hyphenation exceptions out of 8191
  63i,9n,78p,2214b,829s stack positions out of 5000i,500n,10000p,200000b,50000s
-pdfTeX warning (dest): name{algorithm.1} has been referenced but does not exi
-st, replaced by a fixed one
-
-</usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx10.pfb></usr/
-share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx12.pfb></usr/share/
-texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi10.pfb></usr/share/texliv
-e/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi6.pfb></usr/share/texlive/texmf
--dist/fonts/type1/public/amsfonts/cm/cmmi8.pfb></usr/share/texlive/texmf-dist/f
-onts/type1/public/amsfonts/cm/cmr10.pfb></usr/share/texlive/texmf-dist/fonts/ty
-pe1/public/amsfonts/cm/cmr17.pfb></usr/share/texlive/texmf-dist/fonts/type1/pub
-lic/amsfonts/cm/cmr6.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsf
-onts/cm/cmr8.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/
-cmsl10.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy10
-.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy6.pfb></
-usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy8.pfb></usr/sha
-re/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmti10.pfb></usr/share/tex
-live/texmf-dist/fonts/type1/public/amsfonts/cm/cmtt10.pfb>
-Output written on SIMOBS_thesis_merged.pdf (67 pages, 592653 bytes).
+</usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx10.pfb></us
+r/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx12.pfb></usr/shar
+e/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi10.pfb></usr/share/texl
+ive/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi6.pfb></usr/share/texlive/tex
+mf-dist/fonts/type1/public/amsfonts/cm/cmmi8.pfb></usr/share/texlive/texmf-dist
+/fonts/type1/public/amsfonts/cm/cmr10.pfb></usr/share/texlive/texmf-dist/fonts/
+type1/public/amsfonts/cm/cmr17.pfb></usr/share/texlive/texmf-dist/fonts/type1/p
+ublic/amsfonts/cm/cmr6.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/am
+sfonts/cm/cmr8.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/c
+m/cmsl10.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy
+10.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy6.pfb>
+</usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy8.pfb></usr/s
+hare/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmti10.pfb></usr/share/t
+exlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmtt10.pfb>
+Output written on SIMOBS_thesis_merged.pdf (65 pages, 580920 bytes).
 PDF statistics:
- 879 PDF objects out of 1000 (max. 8388607)
- 748 compressed objects within 8 object streams
- 219 named destinations out of 1000 (max. 500000)
- 624 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 645 PDF objects out of 1000 (max. 8388607)
+ 518 compressed objects within 6 object streams
+ 215 named destinations out of 1000 (max. 500000)
+ 368 words of extra memory for PDF output out of 10000 (max. 10000000)
 
