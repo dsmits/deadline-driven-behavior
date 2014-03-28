@@ -1,6 +1,13 @@
 =Log for 28-3-2014=
 Last time I started wordking too early again on my thesis. A few weeks again I tried again with more success.
-At the moment I'm trying to decide what experiments to use and how to display my results so that I answer my research questions.
+At the moment I'm trying to decide what experiments to use and how to display my results so that I answer my research questions. I'm considering adding another subquestion that points out the importance of emergent behavior. Probably something along the lines of:
+Is it possible to have emergent behavior such as variety in hurried and relaxed behavior result from setting a certain deadline?
+This question needs to be tweaked.
+
+Maybe if I do this I can categorize actions as either hurried or relaxed, and show how time influences the frequency of actions from these two categories.
+Or maybe I can rate actions on how much time they take and put that in a graph. The x axis will be time left until the deadline and the y axis will be the average number of steps the chosen actions take at that moment or interval.
+
+----
 
 =Log for 3-9-2013=
 Today I am going to start on my thesis again after a long time. Today I'm just doing some minor things, and read my thesis again. I am considering rewriting my code to make it less sloppy and buggy. Maybe I have to search for better Petri net software.
