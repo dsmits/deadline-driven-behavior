@@ -1,3 +1,7 @@
+=Log for 28-3-2014=
+Last time I started wordking too early again on my thesis. A few weeks again I tried again with more success.
+At the moment I'm trying to decide what experiments to use and how to display my results so that I answer my research questions.
+
 =Log for 3-9-2013=
 Today I am going to start on my thesis again after a long time. Today I'm just doing some minor things, and read my thesis again. I am considering rewriting my code to make it less sloppy and buggy. Maybe I have to search for better Petri net software.
 
