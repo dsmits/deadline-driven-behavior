@@ -5,6 +5,8 @@ However, I don't know yet whether I can implement the logging of the actions in 
 
 I just realize that if I keep track of which agent is performing the action, which is probably easier to find, it is not important to register the time at every log entry, because every pedestrian executes an action at every single timestep. I'm still in doubt though if this is the right way to analyze hurried or relaxed behavior but I'll see if it leads to useful graphs.
 
+I started on writing the code for logging the actions but since I'm unable to concentrate any more I will continue this friday.
+
 =Log for 31-3-2014=
 I forgot to say an important point in my previous log. I only just noticed that my research questions don't mention anything about emergent behavior, even though that is an important aspect of my research. I think it would be better to add a subquestion in which I say something about emergence, or is it too late to add something like that?
 Since my supervisor is not available this week I will work on running a few experiments in the meantime and see if I can make a nice graph showing the effect of time on hurried and relaxed behavior.
