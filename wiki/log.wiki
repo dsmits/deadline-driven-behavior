@@ -1,4 +1,7 @@
 =Log for 2-4-2014=
+Today I will look at what is the best way to log the actions. In this log it is probably not possible to retrieve from which situation this action comes from, but hopefully this still gives enough information about the influence of time on the ratio of hurried behavior or actions vs relaxed behavior.
+In this log I want to register the time at which the action is taken, or alternatively how much time is left until the deadline, whichever is more convenient to log. Secondly, I want the name of the action that is taken at that time. For this I will use the classname of the current IMasonAction implementation.
+However, I don't know yet whether I can implement the logging of the actions in the implementations of the IMasonAction interface which seems the most conventient to me at the moment, or whether I have to do this somewhere else.
 
 =Log for 31-3-2014=
 I forgot to say an important point in my previous log. I only just noticed that my research questions don't mention anything about emergent behavior, even though that is an important aspect of my research. I think it would be better to add a subquestion in which I say something about emergence, or is it too late to add something like that?
