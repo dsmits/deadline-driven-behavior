@@ -1,3 +1,6 @@
+=Log for 4-4-2014=
+Today I finished writing the code to log the pedestrians' actions at every step. Now I have to tweak the parameters so that the pedestrians walk around for a reasonable time before going to their goal, run the simulation, analyse that run and see if I can find some interesting results.
+
 =Log for 2-4-2014=
 Today I will look at what is the best way to log the actions. In this log it is probably not possible to retrieve from which situation this action comes from, but hopefully this still gives enough information about the influence of time on the ratio of hurried behavior or actions vs relaxed behavior.
 In this log I want to register the time at which the action is taken, or alternatively how much time is left until the deadline, whichever is more convenient to log. Secondly, I want the name of the action that is taken at that time. For this I will use the classname of the current IMasonAction implementation.
