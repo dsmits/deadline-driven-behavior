@@ -6,10 +6,10 @@ Also, I notice the twopeopletoilet behavior does not work as planned. The pedest
 On a second run, it seems that the gototoilet pedestrians get stuck in their Petri net and remain idle far after all the other pedestrians have gone to their goal.
 In short, there are now a couple of things in the code that I think need to be fixed:
   * More varied behavior to distinguish between hurried and relaxed
-  * Pedestrians doing gototoilet behavior get stuck in petri net.
+  * Pedestrians doing twopeopletoilet behavior get stuck in petri net.
   * One pedestrian does not wait long enough for the other in the gototoilet situation.
 
-Though I can probably go on without fixing the last issue.
+Though I can probably go on without fixing the last issue. Today I will start on debugging the twopeopletoilet behavior and I will probably continue doing that on monday.
 
 
 =Log for 4-4-2014=
