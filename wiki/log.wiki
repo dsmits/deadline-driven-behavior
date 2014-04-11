@@ -1,3 +1,11 @@
+=Log for 11-4-2014=
+In order to distinguish between hurried and relaxed behavior I will have to add running and slow walking varieties of the current actions. I will have to see if it is worth the time it takes to implement that.
+
+Also, I notice the gototoilet behavior does not work as planned. The pedestrian that waits for the other one does not wait long enough. Is this a mistake in the Petri net?  Do I use an old Petri net for this or is this because of how the actions in the multi agent simulator are implemented? Probably the second. A way to improve this would be to have the pedestrian that goes to the toilet go back to his friend. However, this will require a lot of extra coding.
+
+On a second run, it seems that the gototoilet pedestrians get stuck in their Petri net and remain idle far after all the other pedestrians have gone to their goal.
+
+
 =Log for 4-4-2014=
 Today I finished writing the code to log the pedestrians' actions at every step. Now I have to tweak the parameters so that the pedestrians walk around for a reasonable time before going to their goal, run the simulation, analyse that run and see if I can find some interesting results.
 
