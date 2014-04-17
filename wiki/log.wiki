@@ -1,3 +1,10 @@
+=Log for 17-4-2014=
+I fixed the twopeopletoiletsituation. The pedestrians got stuck because a while ago I "fixed" the Petri net to make it more elegant. As a result of that, the Petri net had lost the guarantee that both sink transitions would always fire. It was possible that one sink transition fired twice and the other one wouldn't fire. I fixed this again.
+Furthermore, in the past I added some extra places and transitions so that the Petri net would wait until the pedestrians had finished their actions before it would fire the sink transitions. In future implementations something has to be done about this in the code instead of in the Petri nets, but for now I'll keep it like this.
+
+I also started working on some distinct hurried and relaxed behavior. For now I only modified the wander action so the pedestrians can wander both fast and slowly. I still have to incorporate these actions into the pedestrians' Petri nets. I will do that next time. Maybe I can then do an experiment focused only on these two actions and see if the ratio of fast vs. slow wandering changes over time.
+Next time I will work on this.
+
 =Log for 11-4-2014=
 In order to distinguish between hurried and relaxed behavior I will have to add running and slow walking varieties of the current actions. I will have to see if it is worth the time it takes to implement that.
 
