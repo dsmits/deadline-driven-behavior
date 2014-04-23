@@ -1,6 +1,8 @@
 =Log for 23-4-2014=
 I wanted to add the _fast wander_ and _slow wander_ actions to the base pedestrian Petri net, but realized that my system maybe only estimates how long behavior takes when they are in a separate situation Petri net. So I am probably going to create two new situations for the two actions that will have the size of the entire environment.
 
+I notice that in situations.xml there are several properties that I set for every situation. One of them is estimated time. I have to find out whether I use this or if I use the estimated time computed with Dijkstra's algorithm.
+
 =Log for 17-4-2014=
 I fixed the twopeopletoiletsituation. The pedestrians got stuck because a while ago I "fixed" the Petri net to make it more elegant. As a result of that, the Petri net had lost the guarantee that both sink transitions would always fire. It was possible that one sink transition fired twice and the other one wouldn't fire. I fixed this again.
 Furthermore, in the past I added some extra places and transitions so that the Petri net would wait until the pedestrians had finished their actions before it would fire the sink transitions. In future implementations something has to be done about this in the code instead of in the Petri nets, but for now I'll keep it like this.
