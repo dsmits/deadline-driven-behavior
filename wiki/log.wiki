@@ -1,3 +1,15 @@
+=Log for 25-4-2014=
+Found the mistake. The new Petri nets looked like this:
+
+https://deadline-driven-behavior.googlecode.com/svn/trunk/google%20code/slowWanderSituation.png
+
+instead of this:
+
+https://deadline-driven-behavior.googlecode.com/svn/trunk/google%20code/slowWanderSituation2.png
+
+Also found out that I'm having some svn troubles but I'm probably not going to fix that.
+
+
 =Log for 23-4-2014=
 I wanted to add the _fast wander_ and _slow wander_ actions to the base pedestrian Petri net, but realized that my system maybe only estimates how long behavior takes when they are in a separate situation Petri net. So I am probably going to create two new situations for the two actions that will have the size of the entire environment.
 
