@@ -1,3 +1,6 @@
+= Log for 1-5-2014=
+I created a script to count how much every action is taken at every timestep. I can't really find interesting information yet. The frequency of slow wander is not significantly different form fast wander in this configuration. I will have to see if this can be changed by tweaking the parameters or this is due to some mistake I made.
+
 =Log for 25-4-2014=
 Found the mistake. The new Petri nets looked like this:
 
