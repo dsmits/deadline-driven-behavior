@@ -3,6 +3,7 @@ Slow and fast wander are executed when I check the log, but in the gui I only se
 
 I will try to work around this by creating multiple smaller situations for the slow and fast wander Petri nets. Hopefully this doesn't slow down the system too much, otherwise I will have to try to remove the precaution I put in earlier and check whether the pedestrians get stuck in a loop or if this doesn't happen anymore.
 
+For now I'm working on a script to quickly generate the xml for defining the multiple slowwander and fastwander situations. I will continue working on that wednesday when I hopefully have more concentration.
 
 
 = Log for 1-5-2014=
