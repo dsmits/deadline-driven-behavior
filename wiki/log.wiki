@@ -1,3 +1,8 @@
+=12-5-2014=
+Slow and fast wander are executed when I check the log, but in the gui I only see the regular wander behavior. This is because fast and slow wander are only executed at the very beginning of the simulation. I will have to figure out why this is. It might be that I did this on purpose because the pedestrians got stuck in a loop and repeated a situation over and over again. Is it safe to remove this precaution or is it better to add the Petri nets in another way? Maybe I can create a grid of fast wander and slow wander situations instead of two big ones. This is probably the easiest way to overcome this. I might have to make a note of this in my thesis, or maybe just in the appendix.
+
+
+
 = Log for 1-5-2014=
 I created a script to count how much every action is taken at every timestep. I can't really find interesting information yet. The frequency of slow wander is not significantly different form fast wander in this configuration. I will have to see if this can be changed by tweaking the parameters or this is due to some mistake I made. I will look at that tomorrow.
 
