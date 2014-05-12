@@ -1,5 +1,7 @@
 =12-5-2014=
-Slow and fast wander are executed when I check the log, but in the gui I only see the regular wander behavior. This is because fast and slow wander are only executed at the very beginning of the simulation. I will have to figure out why this is. It might be that I did this on purpose because the pedestrians got stuck in a loop and repeated a situation over and over again. Is it safe to remove this precaution or is it better to add the Petri nets in another way? Maybe I can create a grid of fast wander and slow wander situations instead of two big ones. This is probably the easiest way to overcome this. I might have to make a note of this in my thesis, or maybe just in the appendix.
+Slow and fast wander are executed when I check the log, but in the gui I only see the regular wander behavior. This is because fast and slow wander are only executed at the very beginning of the simulation. This is probably because I took a precaution to prevent the pedestrians from getting stuck in a loop by disconnecting them from a Petri net when they are finished with it, even though they are still in the situation. Maybe when the parameters are tweaked right this precaution isn't necessary but I'll leave it in for now.
+
+I will try to work around this by creating multiple smaller situations for the slow and fast wander Petri nets. Hopefully this doesn't slow down the system too much, otherwise I will have to try to remove the precaution I put in earlier and check whether the pedestrians get stuck in a loop or if this doesn't happen anymore.
 
 
 
