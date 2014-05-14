@@ -1,6 +1,8 @@
 =14-5-2014=
 I generated the xml for defining the multiple areas for slowwander and fastwander. Even though the environment contains a new situation on every 20 by 20 square, which results in 625 new situations (the area of the environment is 500x500 in total, the unit in which the size is defined is a bit difficult), it does not slow down the system much more, because only petri nets are fired that are at that moment attached to a pedestrian. Now the pedestrians are executing slowwander and fastwander throughout the simulation, and not just at the very beginning.
 
+Now I have to tweak the parameters of the probabilities for go-to-goal and the other actions in such a way that there is a more or less gradually growing frequency of go-to-goal actions and see how the frequency of fastwander and slow wander changes over time.
+
 =12-5-2014=
 Slow and fast wander are executed when I check the log, but in the gui I only see the regular wander behavior. This is because fast and slow wander are only executed at the very beginning of the simulation. This is probably because I took a precaution to prevent the pedestrians from getting stuck in a loop by disconnecting them from a Petri net when they are finished with it, even though they are still in the situation. Maybe when the parameters are tweaked right this precaution isn't necessary but I'll leave it in for now.
 
