@@ -1,3 +1,10 @@
+=16-5-2014=
+I plotted the results of the frequency of the different actions.
+
+https://deadline-driven-behavior.googlecode.com/svn/trunk/google%20code/first%20plot%20sigmoid%200001.png
+
+The wander action seems to dominate the plot too much to really be able to say something about the other actions. I expect with the current parameters that there won't be much difference anyway between hurried and relaxed behavior.
+
 =14-5-2014=
 I generated the xml for defining the multiple areas for slowwander and fastwander. Even though the environment contains a new situation on every 20 by 20 square, which results in 625 new situations (the area of the environment is 500x500 in total, the unit in which the size is defined is a bit difficult), it does not slow down the system much more, because only petri nets are fired that are at that moment attached to a pedestrian. Now the pedestrians are executing slowwander and fastwander throughout the simulation, and not just at the very beginning.
 
