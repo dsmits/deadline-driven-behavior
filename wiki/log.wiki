@@ -7,7 +7,7 @@ The wander action seems to dominate the plot too much to really be able to say s
 I expect with the current parameters that there won't be much difference anyway between hurried and relaxed behavior.
 
 Maybe I can create a scenario where there is no goal action and see if I can make the simulation so that there will be more hurried behavior towards the end of the run and more relaxed behavior in the beginning. I will back up my code before I do that.
-I plan on modifying this monday.
+I plan on modifying this monday. At some point in the near future however, I will have to accept the results I have, even if they're not what I want them to be, and finish the rest of my thesis. I also have to look at the rest of my research questions and see if I can generate results that answer those.
 
 =14-5-2014=
 I generated the xml for defining the multiple areas for slowwander and fastwander. Even though the environment contains a new situation on every 20 by 20 square, which results in 625 new situations (the area of the environment is 500x500 in total, the unit in which the size is defined is a bit difficult), it does not slow down the system much more, because only petri nets are fired that are at that moment attached to a pedestrian. Now the pedestrians are executing slowwander and fastwander throughout the simulation, and not just at the very beginning.
