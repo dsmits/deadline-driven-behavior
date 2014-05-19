@@ -1,3 +1,8 @@
+=19-5-2014=
+Maybe I have to check my Dijkstra path planning, because I don't know how it works any more. I understand Dijkstra's algorithm, but I can't really find in my code how I determine the distance between places.
+
+I also decided that I will probably have to remove the wander action from the basic Pedestrian Petri net, because I think it might not be included in the calculations when deciding an action based on how much time there is left.
+
 =16-5-2014=
 I plotted the results of the frequency of the different actions.
 
