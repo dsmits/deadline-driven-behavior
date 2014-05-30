@@ -1,3 +1,9 @@
+=30-5-2014=
+I have been working on my thesis but haven't logged much because I was busy debugging and hadn't found the mistakes yet.
+
+Todo:
+I use "rate", a property that belongs to timed transitions to indicate the likelihood of a transition firing. However, as I found out a while ago, timed transitions do not really work in the implementations of petri nets that I use. I hacked around that but in the code  I still do something with rate. I calculate rate based on how much time there is left and how long a situation takes but I think I should change my formula. I will write out what I have and what I think it should be next week. Today I will look at other bugs.
+
 =19-5-2014=
 Maybe I have to check my Dijkstra path planning, because I don't know how it works any more. I understand Dijkstra's algorithm, but I can't really find in my code how I determine the distance between places.
 
