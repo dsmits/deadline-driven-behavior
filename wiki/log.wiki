@@ -1,3 +1,6 @@
+=2-6-2014=
+I notice that when I preprocess the situations and compute how much time these behaviors will cost, in the end I take the largest amount of time computed. With this I mean that there are often multiple ways to go from the start of a Petri-net to the end (in our case, from source to sink), and when I am done computing these paths, I take the largest one to be the estimate of time that will be spent in this situation. When there are loops in the Petri-net, the result would in theory be infinity but in this implementation it is just a very large value. It is very likely that this will result in the situation never being chosen. I have to decide what kind of value I have to use now. Will I use the shortest path? Or maybe the median? For now I will use the shortest path.
+
 =30-5-2014=
 I have been working on my thesis but haven't logged much because I was busy debugging and hadn't found the mistakes yet.
 
