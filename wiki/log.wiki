@@ -1,5 +1,9 @@
 DISCLAIMER: The things that I write here are mainly to arrange my own thoughts and might not always be understandable for other people.
 
+=4-6-2014=
+I get the feeling that there are some redundant calculations in the code. I reduced the method computeSituationTransitionRate so that it only computes the time that is left to the deadline. 
+Friday I will check if that is the right thing to do and how this computed "rate" is used in other parts of the code. If that looks alright I will remove the goal transition in the Petri-net of the pedestrians and run the simulation while logging which actions are taken at every step. Then I can check how the ratio between hurried and relaxed behavior changes over time.
+
 =2-6-2014=
 I notice that when I preprocess the situations and compute how much time these behaviors will cost, in the end I take the largest amount of time computed. With this I mean that there are often multiple ways to go from the start of a Petri-net to the end (in our case, from source to sink), and when I am done computing these paths, I take the largest one to be the estimate of time that will be spent in this situation. When there are loops in the Petri-net, the result would in theory be infinity but in this implementation it is just a very large value. It is very likely that this will result in the situation never being chosen. I have to decide what kind of value I have to use now. Will I use the shortest path? Or maybe the median? For now I will use the shortest path.
 
