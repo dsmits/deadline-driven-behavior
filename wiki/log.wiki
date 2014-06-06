@@ -1,5 +1,9 @@
 DISCLAIMER: The things that I write here are mainly to arrange my own thoughts and might not always be understandable for other people.
 
+=6-6-2014=
+I checked how the probabilities are computed. I modified the sigmoid function that takes as input how much time is left and outputs a likelihood that a certain transition will be fired.
+Next time I will remove the goal transition and tweak around the parameters a little bit. Then I will plot the results from the hurried/relaxed behavior log to see if the program does what I want it to do.
+
 =4-6-2014=
 I get the feeling that there are some redundant calculations in the code. I reduced the method computeSituationTransitionRate so that it only computes the time that is left to the deadline. 
 Friday I will check if that is the right thing to do and how this computed "rate" is used in other parts of the code. If that looks alright I will remove the goal transition in the Petri-net of the pedestrians and run the simulation while logging which actions are taken at every step. Then I can check how the ratio between hurried and relaxed behavior changes over time.
