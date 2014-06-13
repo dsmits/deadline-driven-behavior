@@ -4,6 +4,7 @@ DISCLAIMER: The things that I write here are mainly to arrange my own thoughts a
 Today I generated results with the parameters tweaked a little different. This time I'm using the linear function. First the pedestrians only remained idle, this was because the linear function was the wrong way around. Then I had to fix the python script that restructures the results.
 
 Then I finally made a plot:
+
 http://deadline-driven-behavior.googlecode.com/svn/trunk/google%20code/linear%20function%20plot.png
 
 It doesn't look right at all? Why is slow wander so dominant? I zoomed in in the next plot:
