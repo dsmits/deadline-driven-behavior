@@ -11,9 +11,9 @@ It doesn't look right at all? Why is slow wander so dominant? I zoomed in in the
 http://deadline-driven-behavior.googlecode.com/svn/trunk/google%20code/linear%20function%20plot%20zoomed%20in.png
 
 I would expect fastwander and slowwander to be exactly the other way around. I will figure out why this is next week. Some possible explanations:
-* I got the legend or something else in matlab wrong
-* Likelihoods aren't computed correctly
-* Python script messes something up
+  * I got the legend or something else in matlab wrong
+  * Likelihoods aren't computed correctly
+  * Python script messes something up
 
 
 =6-6-2014=
