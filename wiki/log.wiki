@@ -14,6 +14,9 @@ Maybe I should try out the previous run again, the results might not be as shitt
 Update:
 I ran the simulation with the parameters modified according to this reasoning, and now the only actions that were being taken are slow wander and idle. I will have to dive into the code again to figure out why this is.
 
+Another update:
+I discovered that I was quite confused when I "fixed" computeSituationTransitionRate in TimePlanningTools. I believe that this method is only called at the beginning of the simulation. Still, I thought that I should incorporate how much time there is still left in the computation. This is actually impossible. Now I fixed the method so that it only returns situation.getEstimatedTime(). This method computes an estimation of how much time a Petri-net will cost.
+
 
 =13-6-2014=
 Today I generated results with the parameters tweaked a little different. This time I'm using the linear function. First the pedestrians only remained idle, this was because the linear function was the wrong way around. Then I had to fix the python script that restructures the results.
