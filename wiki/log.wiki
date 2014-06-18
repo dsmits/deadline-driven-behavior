@@ -11,6 +11,9 @@ Which is still not what I want it to be, but it might be fixable by tweaking the
 
 Maybe I should try out the previous run again, the results might not be as shitty as I thought they were. I also just noticed that the probability function I used was the wrong way around. The probability functions get as input how much time there is still left until the deadline. That is something that _decreases_ as time _increases_. The functions don't get the current time as input, they get _the time that is still left_ after a pedestrian has gone through certain behavior defined by the Petri-net. So, I want the probability of non-goal actions to _increase_ as the time left _increases_.
 
+Update:
+I ran the simulation with the parameters modified according to this reasoning, and now the only actions that were being taken are slow wander and idle. I will have to dive into the code again to figure out why this is.
+
 
 =13-6-2014=
 Today I generated results with the parameters tweaked a little different. This time I'm using the linear function. First the pedestrians only remained idle, this was because the linear function was the wrong way around. Then I had to fix the python script that restructures the results.
