@@ -1,5 +1,8 @@
 DISCLAIMER: The things that I write here are mainly to arrange my own thoughts and might not always be understandable for other people.
 
+=18-6-2014=
+I'm suspecting I plotted the graph wrong in matlab. When I open the csv file with the results that I want to plot, matlab automatically selects only the second, third and fourth column. GoToToilet is in the first column, but only contains zeros for the first few steps, which is I guess why matlab thinks that I don't want to use that column.
+
 =13-6-2014=
 Today I generated results with the parameters tweaked a little different. This time I'm using the linear function. First the pedestrians only remained idle, this was because the linear function was the wrong way around. Then I had to fix the python script that restructures the results.
 
