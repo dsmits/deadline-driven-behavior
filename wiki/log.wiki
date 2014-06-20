@@ -1,9 +1,9 @@
 DISCLAIMER: The things that I write here are mainly to arrange my own thoughts and might not always be understandable for other people.
 
 =18-6-2014=
-I'm suspecting I plotted the graph wrong in matlab. When I open the csv file with the results that I want to plot, matlab automatically selects only the second, third and fourth column. GoToToilet is in the first column, but only contains zeros for the first few steps, which is I guess why matlab thinks that I don't want to use that column.
+I suspected I plotted the graph wrong in matlab. Turns out that when I open the csv file with the results that I want to plot, matlab automatically selects only the second, third and fourth column. GoToToilet is in the first column, but only contains zeros for the first few steps, which is I guess why matlab thinks that I don't want to use that column.
 
-The zoomed in plot now looks like this:
+Fixed this, and the zoomed in plot now looks like this:
 
 http://deadline-driven-behavior.googlecode.com/svn/trunk/google%20code/fixed%20linear%20function%20plot.png
 
