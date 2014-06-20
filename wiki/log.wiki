@@ -1,5 +1,16 @@
 DISCLAIMER: The things that I write here are mainly to arrange my own thoughts and might not always be understandable for other people.
 
+=20-6-2014=
+Today I will try to find out why it is that when I fixed the parameters last time, the pedestrians will only execute slow and fast wander once and then remain idle.
+
+I just discovered that the clock that keeps track of the current number of steps being taken does not work correctly. When the gui indicates that 192 steps have been taken, the clock value is only 50 steps. This might be because of the way I think I keep track of the number of steps. I remember doing that by keeping track of the pedestrians that need a transition to be fired. When I come across a pedestrian that I've seen before, the counter of the clock goes up. I will need a different way to keep track of the time.
+
+One possible way that might fix this is to give every pedestrian its own clock, instead of making one clock that is used by every pedestrian. Because the actual time in steps is kept track of at the multi agent simulation side and the clock is on the situations and Petri net side, and they only communicate through sockets, it is quit difficult to also communicate when the multi agent simulation has increased its amount of steps.
+
+Next time I have to dive into how exactly increasing the steps works and if my problem is solved by giving every pedestrian its own clock.
+
+I should start looking at SituationManager line 441.
+
 =18-6-2014=
 I suspected I plotted the graph wrong in matlab. Turns out that when I open the csv file with the results that I want to plot, matlab automatically selects only the second, third and fourth column. GoToToilet is in the first column, but only contains zeros for the first few steps, which is I guess why matlab thinks that I don't want to use that column.
 
