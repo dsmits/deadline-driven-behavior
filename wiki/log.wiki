@@ -1,5 +1,8 @@
 DISCLAIMER: The things that I write here are mainly to arrange my own thoughts and might not always be understandable for other people.
 
+=23-6-2014=
+I'm looking further into how I should fix that the clock does not give the correct amount of steps. I thought of two ways to fix this. The first one is to signal from the multi agent simulation to the Petri net side of the simulationwhen the clock should increase. However,all agents talk individually over sockets to the Petri net side. I did it this way so the system could be multithreaded. Because it works this way signalling that is time to for the next step in the situations is quite difficult or even impossible. Probably giving every pedestrian its own clock is a better option.
+
 =20-6-2014=
 Today I will try to find out why it is that when I fixed the parameters last time, the pedestrians will only execute slow and fast wander once and then remain idle.
 
