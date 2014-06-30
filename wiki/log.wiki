@@ -1,5 +1,10 @@
 DISCLAIMER: The things that I write here are mainly to arrange my own thoughts and might not always be understandable for other people.
 
+=30-6-2014=
+I thought I could fix my protobuf problem by installing the latest version, but all things protobuf related are not compatible with each other because some things are still using the old version and other things the new one. I'm just realizing though that I could probably have fixed that by compiling both .proto files I made instead of just one, but the old protobuf version is installing at the moment so I guess I'll just keep using that one.
+
+Update: I now have compiled the proto files with the latest protoc version. I still get errors about the protobuf classes though when I try to run my simulations. I don't have energy to fix this today, so it will have to wait until wednesday.
+
 =27-6-2014=
 I figured out why the clock is not in sync. The multiagent system only talks to the situation side when a pedestrian is done executing an action.
 I have to make sure that every step, a message is being sent. If I can then revert to having a single clock for all pedestrians remains to be seen. I have to keep in mind though that if I keep using separate clocks, that I have to make sure the situations have accurate clocks as well. This could be done as proposed last time, by having a situation take on the clock of the pedestrian that enters it first, or connects with it first.
