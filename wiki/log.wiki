@@ -1,5 +1,8 @@
 DISCLAIMER: The things that I write here are mainly to arrange my own thoughts and might not always be understandable for other people.
 
+=2-7-2014=
+Fixed the issues with conflicting versions of protoc. Now I have to make sure that the situations side of the simulation does something with the new information it gets sent. It should not update any Petri nets, but simply update the clock of the current pedestrian. This should be done somewhere in the method step() in PedestrianManager or in a method that is called by step().
+
 =30-6-2014=
 I thought I could fix my protobuf problem by installing the latest version, but all things protobuf related are not compatible with each other because some things are still using the old version and other things the new one. I'm just realizing though that I could probably have fixed that by compiling both .proto files I made instead of just one, but the old protobuf version is installing at the moment so I guess I'll just keep using that one.
 
