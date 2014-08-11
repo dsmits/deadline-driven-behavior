@@ -1,0 +1,1 @@
+SituationManager manages the connections between the Petri nets of the pedestrians and situations. It also contains methods to remove or add connections.
