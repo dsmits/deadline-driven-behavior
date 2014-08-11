@@ -1,5 +1,12 @@
 DISCLAIMER: The things that I write here are mainly to arrange my own thoughts and might not always be understandable for other people.
 
+=11-8-2014=
+Took a break from my thesis for 4 weeks. Need some time to get into the code again. I did fix the logging of the Petri nets in the method disconnectNets of the SituationManager class so I can see again what the situation and pedestrian petri nets look like before and after disconnecting.
+
+I think I might have to figure out again how I differentiate between Petri nets with multiple pedestrians and ones for only a single pedestrian. The latter type should be completely deleted after the Pedestrian has gone back to its own Petri net. Maybe I do this but I can't remember. This does not have a priority though because I think it works alright the way it is.
+
+I see that in the course of the first 25 steps, pedestrians slowly get rid of all their connections to other Petri nets. Maybe this is because they do not move around enough to acquire new Petri nets. Maybe I have to decrease the size of the fastWander and SlowWander situations or increase the distance the pedestrians walk for every action.
+
 =11-7-2014=
 I'm checking out getRandomTransition() in PedestrianSimDatalayer and notice that at step 74, the only enabled transitions are the source transitions. This could mean the token does not return to the pedestrian datalayer after slow or fast wander. This is weird, because they seem to come back after the first couple of actions. When I see the pedestrians do their first slow and fast wander. The token seems to never have left the base pedestrian net, or it has returned instantly. After these first actions. The token seems permanently lost.
 Hopefully I will fix this problem next monday.
