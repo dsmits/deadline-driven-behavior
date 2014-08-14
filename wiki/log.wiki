@@ -8,6 +8,9 @@ I'm also considering modifying slow and fast wander so that at the start of the 
 Update:
 I've been working on modifying slow wander the way I described before, but I realize that dimensions of 20 by 20 is pretty big considering that in slow wander, a pedestrian only moves 0.6 <distanceunit> per step. Decreasing the size of the slow and fast wander situations will probably still be necessary. On the one hand, this is annoying. On the other hand, I realize now that it is quite difficult for a pedestrian to move out of their initial slow- and fast wander situations, so the cause of the "faulty" behavior I try to fix is pretty logical, and not due to some obscure bug.
 
+Another update:
+I modified both the slowwander and the fastwander action. Now the pedestrians move over the entire area instead of sticking mostly in one place. However, I still have the problem of the pedestrians becoming idle after about one slow and one fast wander, so the problem wasn't that the slow and fast wander situations weren't small enough. I will try to figure out what the problem is tomorrow.
+
 =11-8-2014=
 Took a break from my thesis for 4 weeks. Need some time to get into the code again. I did fix the logging of the Petri nets in the method disconnectNets of the SituationManager class so I can see again what the situation and pedestrian petri nets look like before and after disconnecting.
 
