@@ -1,9 +1,12 @@
 DISCLAIMER: The things that I write here are mainly to arrange my own thoughts and might not always be understandable for other people.
 
 =14-8-2014=
-First I wanted to fix the problem mentioned in the previous post by making the slow and fast wander situations even smaller. However, this will make starting up the simulation slower and my text editors have trouble processing the large amount of xml that I have generated. This feels like a sign that I should try something else. I am going to modify the slow and fast wander actions so that a larger amount of space will be crossed. Preferably they have to cross at least 20 pixels or so, because that is how long and wide the squares are of the slow and fast wander situations. Ideally, slow and fast wander should cross the same amount of space, only the former should do it in more steps than the latter.
+First I wanted to fix the problem mentioned in the previous post by making the slow and fast wander situations even smaller. However, this will make starting up the simulation slower and my text editors have trouble processing the large amount of xml that I have generated. This feels like a sign that I should try something else. I am going to modify the slow and fast wander actions so that a larger amount of space will be crossed. Preferably they have to cross at least 20 <distanceunit> or so, because that is how long and wide the squares are of the slow and fast wander situations. Ideally, slow and fast wander should cross the same amount of space, only the former should do it in more steps than the latter.
 
 I'm also considering modifying slow and fast wander so that at the start of the action, a direction is chosen that the pedestrian will wander in, and then he will only diverge from that direction very minimally. Now a new direction is chosen at every step.
+
+Update:
+I've been working on modifying slow wander the way I described before, but I realize that dimensions of 20 by 20 is pretty big considering that in slow wander, a pedestrian only moves 0.6 <distanceunit> per step. Decreasing the size of the slow and fast wander situations will probably still be necessary. On the one hand, this is annoying. On the other hand, I realize now that it is quite difficult for a pedestrian to move out of their initial slow- and fast wander situations, so the cause of the "faulty" behavior I try to fix is pretty logical, and not due to some obscure bug.
 
 =11-8-2014=
 Took a break from my thesis for 4 weeks. Need some time to get into the code again. I did fix the logging of the Petri nets in the method disconnectNets of the SituationManager class so I can see again what the situation and pedestrian petri nets look like before and after disconnecting.
