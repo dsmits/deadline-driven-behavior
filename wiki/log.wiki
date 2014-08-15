@@ -7,6 +7,8 @@ Now I will try to find the problem by continuing on the observations I made at 1
 I can't catch this mistake right now. What might be suspicious is that I tried to put a breakpoint at disconnectNets in SituationManager that only breaks when the simulation is past 60 steps. Even at step 173 this method isn't called. Maybe the pedestrians stay too much in the same place. I also noticed that it took the pedestrians a lot longer than previously to get into their idle state. 
 Maybe making the situations smaller might still be a solution so I'm doing that next. I notice it helps to use a different editor to modify situations.xml than the one in eclipse.
 
+Update: I modified situations.xml. The pedestrians become idle even sooner. 
+
 =14-8-2014=
 First I wanted to fix the problem mentioned in the previous post by making the slow and fast wander situations even smaller. However, this will make starting up the simulation slower and my text editors have trouble processing the large amount of xml that I have generated. This feels like a sign that I should try something else. I am going to modify the slow and fast wander actions so that a larger amount of space will be crossed. Preferably they have to cross at least 20 distanceunit or so, because that is how long and wide the squares are of the slow and fast wander situations. Ideally, slow and fast wander should cross the same amount of space, only the former should do it in more steps than the latter.
 
