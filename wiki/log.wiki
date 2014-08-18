@@ -3,6 +3,11 @@ DISCLAIMER: The things that I write here are mainly to arrange my own thoughts a
 =18-8-2014=
 It seems that the connections to various slow and fast wander Petri nets slowly disappear until maybe only the connection to the toilet situation is left. I am going to look into all the pieces of code where a Petri net is disconnected. This happens in the removeOldSituations method and transportToken in SituationManager.
 
+I'm wondering if I should modify when a Petri net should be disconnected. Apparently it is an issue with shared situations that pedestrians get stuck in a loop when the Petri net is not disconnected when the pedestrian's token gets transported back to its original Petri net. Maybe I should only disconnect shared situations when Pedestrians are finished with them. Then the non-shared situations will only be disconnected when the Pedestrians move out of the situation area. When the probabilities are set correctly, Pedestrians should not get stuck. First, I have to find out again how I differentiate between Petri nets that are shared and ones that are only connected to one pedestrian.
+
+Update:
+I see that Datalayers are wrapped in a Situation instance. The situation instance knows what type of situation it is. I don't know yet how I can get the situation instance when I only have the datalayer but I will look at that wednesday.
+
 =15-8-2014=
 I still hoped that the problem of the pedestrians becoming idle was because they don't move out of their situation, or otherwise because they end up in a place with no situations. I re-enabled the drawing of the situation squares. However, this does not work properly any more so it seems. After that I decreased the distance again that slow and fast wander cross to make sure they don't move out of the main area too much. Pedestrians still remained idle after the first couple of actions.
 
