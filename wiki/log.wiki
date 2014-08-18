@@ -1,5 +1,8 @@
 DISCLAIMER: The things that I write here are mainly to arrange my own thoughts and might not always be understandable for other people.
 
+=18-8-2014=
+It seems that the connections to various slow and fast wander Petri nets slowly disappear until maybe only the connection to the toilet situation is left. I am going to look into all the pieces of code where a Petri net is disconnected. This happens in the removeOldSituations method and transportToken in SituationManager.
+
 =15-8-2014=
 I still hoped that the problem of the pedestrians becoming idle was because they don't move out of their situation, or otherwise because they end up in a place with no situations. I re-enabled the drawing of the situation squares. However, this does not work properly any more so it seems. After that I decreased the distance again that slow and fast wander cross to make sure they don't move out of the main area too much. Pedestrians still remained idle after the first couple of actions.
 
