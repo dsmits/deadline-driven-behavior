@@ -3,6 +3,9 @@ DISCLAIMER: The things that I write here are mainly to arrange my own thoughts a
 =21-8-2014=
 I fixed the problem of the pedestrians going idle. They now remain active through the whole simulation. Now another problem that I encounter is that pedestrians now only take one step when doing slow or fast wander instead of multiple steps, before going back to their own Petri net. I notice that actions are not reinitialized when they are executed a second time. Consequently, the step counter does not go back to its initial value and decreases more and more below zero. The nicest way to fix this would be to reinitialize the actions every time a pedestrian starts one, but this will be too much hassle to do, because it goes against the current structure of the PedestrianAgent code. I will just set the steps counter of the action back at its initial value when an action is finished.
 
+Update:
+I think I now solved all issues with pedestrians remaining idle and actions that don't take long enough. Tomorrow I am going back to checking the probabilities of slow and fast wander over time and seeing if I can tweak the parameters so that there will be relaxed behavior (slow wandering) first, and more hurried behavior (fast wandering) as more time passes.
+
 =18-8-2014=
 It seems that the connections to various slow and fast wander Petri nets slowly disappear until maybe only the connection to the toilet situation is left. I am going to look into all the pieces of code where a Petri net is disconnected. This happens in the removeOldSituations method and transportToken in SituationManager.
 
