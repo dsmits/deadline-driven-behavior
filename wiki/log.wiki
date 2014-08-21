@@ -1,5 +1,8 @@
 DISCLAIMER: The things that I write here are mainly to arrange my own thoughts and might not always be understandable for other people.
 
+=21-8-2014=
+I fixed the problem of the pedestrians going idle. They now remain active through the whole simulation. Now another problem that I encounter is that pedestrians now only take one step when doing slow or fast wander instead of multiple steps, before going back to their own Petri net.
+
 =18-8-2014=
 It seems that the connections to various slow and fast wander Petri nets slowly disappear until maybe only the connection to the toilet situation is left. I am going to look into all the pieces of code where a Petri net is disconnected. This happens in the removeOldSituations method and transportToken in SituationManager.
 
