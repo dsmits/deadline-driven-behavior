@@ -1,5 +1,10 @@
 DISCLAIMER: The things that I write here are mainly to arrange my own thoughts and might not always be understandable for other people.
 
+=28-8-2014=
+Made another graph to see if the pedestrians act correctly. Unfortunately this is not the case. Interpreting the graph, I would say they act even the wrong way around, doing more slowWander as time passes, and decreasing fastWander. It could also be purely random. Tomorrow I will try to find out why this is. Maybe I should build in something to more easily follow the probabilities of the behaviors.
+
+https://deadline-driven-behavior.googlecode.com/svn/trunk/google%20code/12:40:06%2028-08-2014.png
+
 =21-8-2014=
 I fixed the problem of the pedestrians going idle. They now remain active through the whole simulation. Now another problem that I encounter is that pedestrians now only take one step when doing slow or fast wander instead of multiple steps, before going back to their own Petri net. I notice that actions are not reinitialized when they are executed a second time. Consequently, the step counter does not go back to its initial value and decreases more and more below zero. The nicest way to fix this would be to reinitialize the actions every time a pedestrian starts one, but this will be too much hassle to do, because it goes against the current structure of the PedestrianAgent code. I will just set the steps counter of the action back at its initial value when an action is finished.
 
