@@ -1,5 +1,13 @@
 DISCLAIMER: The things that I write here are mainly to arrange my own thoughts and might not always be understandable for other people.
 
+=29-8-2014=
+Ran the simulation with 50 pedestrians. The resulting graph is a little bit more to my liking. It is possible that the legend of the previous graph was not correct, and that could be why the results were as they are.
+
+https://deadline-driven-behavior.googlecode.com/svn-history/r135/trunk/google%20code/11:30:56%2029-08-2014.png
+
+Now that I have a little bit of reassurance that the probabilities are computed correctly I have a little more confidence that I can tweak the parameters so that fast wander and slow wander decrease to 0 (but slow wander decreases earlier) next monday.
+
+
 =28-8-2014=
 Made another graph to see if the pedestrians act correctly. Unfortunately this is not the case. Interpreting the graph, I would say they act even the wrong way around, doing more slowWander as time passes, and decreasing fastWander. It could also be purely random. Tomorrow I will try to find out why this is. Maybe I should build in something to more easily follow the probabilities of the behaviors.
 
