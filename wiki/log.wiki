@@ -3,7 +3,7 @@ DISCLAIMER: The things that I write here are mainly to arrange my own thoughts a
 =29-8-2014=
 Ran the simulation with 50 pedestrians. The resulting graph is a little bit more to my liking. It is possible that the legend of the previous graph was not correct, and that could be why the results were as they are.
 
-https://deadline-driven-behavior.googlecode.com/svn-history/r135/trunk/google%20code/11:30:56%2029-08-2014.png
+https://deadline-driven-behavior.googlecode.com/svn/trunk/google%20code/11:30:56%2029-08-2014.png
 
 Now that I have a little bit of reassurance that the probabilities are computed correctly I have a little more confidence that I can tweak the parameters so that fast wander and slow wander decrease to 0 (but slow wander decreases earlier) next monday.
 
