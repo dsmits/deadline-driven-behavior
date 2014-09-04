@@ -1,5 +1,7 @@
 DISCLAIMER: The things that I write here are mainly to arrange my own thoughts and might not always be understandable for other people.
 
+=4-9-2014=
+Last week I accidentally formatted my hard drive, so I lost the progress of the last few weeks. Fortunately, I probably managed to recover the java code, but I still have to put them back in the right place and give them the proper file names. That is the reason that today I am going to arrange my files so that I can commit my code again to svn. At some point in time I started working with 2 copies of my files, one was checked out from svn, and the other one copied from my pc at tno (I did have my reasons though). I will work on merging these two versions so I can commit my code again.
 =29-8-2014=
 Ran the simulation with 50 pedestrians. The resulting graph is a little bit more to my liking. It is possible that the legend of the previous graph was not correct, and that could be why the results were as they are.
 
