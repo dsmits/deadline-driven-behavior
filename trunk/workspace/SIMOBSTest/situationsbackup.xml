@@ -1,0 +1,113 @@
+<situationManager>
+	<background>Rotterdam_airport/PlattegrondRotterdamAirport.png</background>
+	<situations>
+		<!-- <situation> <id>infoDeskSituation</id> <petriNetFile>petrinets/rotterdam/infoDeskSituation.xml</petriNetFile> 
+			<situationArea> <x1>2</x1> <y1>0</y1> <x2>30</x2> <y2>8</y2> </situationArea> 
+			Maybe the type should be clear from the petri net file, such as from the 
+			names of the transitions, but it is easier now to define it here TODO: fix 
+			shortcuts. There is no clear difference between multi and single situations. 
+			<situationType>exclusive</situationType> <estimatedTime>10</estimatedTime> 
+			</situation> --><!-- <situation> <id>pillarSituation</id> <petriNetFile>petrinets/rotterdam/pillarSituation.xml</petriNetFile> 
+			<situationArea> <x1>4</x1> <y1>4</y1> <x2>6</x2> <y2>6</y2> </situationArea> 
+			<situationType>exclusive</situationType> <estimatedTime>4</estimatedTime> 
+			</situation> -->
+		<situation>
+			<id>pillarSituation</id>
+			<petriNetFile>petrinets/rotterdam/pillarSituation.xml</petriNetFile>
+			<situationArea>
+				<x1>10</x1>
+				<y1>9</y1>
+				<x2>11</x2>
+				<y2>10</y2>
+			</situationArea>
+			<situationType>exclusive</situationType>
+
+			<estimatedTime>4</estimatedTime>
+
+		</situation>
+
+		<situation>
+			<id>toiletSituation</id>
+			<petriNetFile>petrinets/rotterdam/twoPeopleToiletSituation.xml</petriNetFile>
+			<situationArea>
+				<!--<x1>0</x1> <y1>10</y1> <x2>20</x2> <y2>20</y2> -->
+				<x1>0</x1>
+				<y1>0</y1>
+				<x2>100</x2>
+				<y2>100</y2>
+			</situationArea>
+			<situationType>shared</situationType>
+			<estimatedTime>4</estimatedTime>
+		</situation>
+
+
+
+		<!-- <situation> <id>queueSituation</id> <petriNetFile>petrinets/rotterdam/queueSituation.xml</petriNetFile> 
+			<situationArea> <x1>35</x1> <y1>11</y1> <x2>37</x2> <y2>18</y2> </situationArea> 
+			<situationType>exclusive</situationType> <estimatedTime>4</estimatedTime> 
+			</situation> -->
+
+		<situation>
+			<id>StandStill1</id>
+			<petriNetFile>petrinets/rotterdam/standStillSituation.xml</petriNetFile>
+
+			<situationArea>
+				<x1>0</x1>
+				<y1>3</y1>
+				<x2>100</x2>
+				<y2>4</y2>
+			</situationArea>
+
+			<situationType>exclusive</situationType>
+			<estimatedTime>5</estimatedTime>
+		</situation>
+		
+				<situation>
+			<id>fastWander</id>
+			<petriNetFile>petrinets/rotterdam/fastWanderSituation.xml</petriNetFile>
+
+			<situationArea>
+				<x1>0</x1>
+				<y1>0</y1>
+				<x2>500</x2>
+				<y2>500</y2>
+			</situationArea>
+
+			<situationType>exclusive</situationType>
+			<estimatedTime>5</estimatedTime>
+		</situation>
+		
+						<situation>
+			<id>slowWander</id>
+			<petriNetFile>petrinets/rotterdam/slowWanderSituation.xml</petriNetFile>
+
+			<situationArea>
+				<x1>0</x1>
+				<y1>0</y1>
+				<x2>500</x2>
+				<y2>500</y2>
+			</situationArea>
+
+			<situationType>exclusive</situationType>
+			<estimatedTime>5</estimatedTime>
+		</situation>
+
+	<!--	<situation>
+			<id>StandStill2</id>
+			<petriNetFile>petrinets/situationNet.xml</petriNetFile>
+
+<situationArea> <x1>0</x1> <y1>0</y1> <x2>150</x2> <y2>300</y2> </situationArea> 
+				<situationType>multi</situationType> <need> <className>needs</className> 
+				</need> <estimatedTime>5</estimatedTime> </situation> -->
+	</situations>
+	<serverConfig>
+		<port>3333</port>
+	</serverConfig>
+	<area>
+		<size>
+			<width>500</width>
+			<height>500</height>
+		</size>
+	</area>
+
+</situationManager>

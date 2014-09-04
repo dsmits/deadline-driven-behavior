@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<projectDescription>
+	<name>SIMOBSTest</name>
+	<comment></comment>
+	<projects>
+	</projects>
+	<buildSpec>
+		<buildCommand>
+			<name>org.eclipse.jdt.core.javabuilder</name>
+			<arguments>
+			</arguments>
+		</buildCommand>
+	</buildSpec>
+	<natures>
+		<nature>org.eclipse.jdt.core.javanature</nature>
+	</natures>
+	<linkedResources>
+		<link>
+			<name>1.5.1</name>
+			<type>2</type>
+			<location>/home/djura/C::/Program Files/Java/Java3D/1.5.1</location>
+		</link>
+		<link>
+			<name>java</name>
+			<type>2</type>
+			<location>/home/djura/C::/Users/Compaq/Documents/vakken/afstudeerstage/workspace/googleprotocolbuffer/GoogleProtoBuffer/protobuf-2.4.0a/java/src/main/java</location>
+		</link>
+		<link>
+			<name>mason</name>
+			<type>2</type>
+			<location>/home/djura/vakken/afstudeerstage/workspace/mason</location>
+		</link>
+	</linkedResources>
+</projectDescription>

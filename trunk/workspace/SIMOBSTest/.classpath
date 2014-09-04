@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<classpath>
+	<classpathentry kind="src" path="src"/>
+	<classpathentry excluding="sim/app/balls3d/|sim/app/celegans/|sim/app/crowd3d/|sim/app/heatbugs3d/|sim/app/mousetraps3d/|sim/app/particles3d/|sim/app/pso3d/|sim/app/tutorial6/|sim/app/tutorial7/|sim/app/woims3d/|sim/display3d/|sim/portrayal3d/|sim/portrayal3d/continuous/|sim/portrayal3d/grid/|sim/portrayal3d/grid/quad/|sim/portrayal3d/inspector/|sim/portrayal3d/network/|sim/portrayal3d/simple/" kind="src" path="mason"/>
+	<classpathentry kind="src" path="java"/>
+	<classpathentry kind="src" path="pipe3"/>
+	<classpathentry kind="con" path="org.eclipse.jdt.launching.JRE_CONTAINER/org.eclipse.jdt.internal.debug.ui.launcher.StandardVMType/JavaSE-1.6"/>
+	<classpathentry kind="lib" path="libs/itext-1.2.jar"/>
+	<classpathentry kind="lib" path="libs/jcommon-1.0.0.jar"/>
+	<classpathentry kind="lib" path="libs/jfreechart-1.0.1.jar"/>
+	<classpathentry kind="lib" path="libs/jmf.jar"/>
+	<classpathentry kind="lib" path="libs/guava-r09.jar"/>
+	<classpathentry kind="lib" path="libs/javacsv.jar"/>
+	<classpathentry kind="lib" path="libs/jpowergraph-0.2-common.jar"/>
+	<classpathentry kind="lib" path="libs/jpowergraph-0.2-swing.jar"/>
+	<classpathentry kind="lib" path="libs/poi-3.7-20101029.jar"/>
+	<classpathentry kind="lib" path="libs/powerswing-0.3.jar"/>
+	<classpathentry kind="lib" path="libs/protobuf.jar"/>
+	<classpathentry kind="output" path="bin"/>
+</classpath>
