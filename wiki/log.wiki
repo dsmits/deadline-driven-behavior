@@ -1,7 +1,7 @@
 DISCLAIMER: The things that I write here are mainly to arrange my own thoughts and might not always be understandable for other people.
 
 =8-9-2014=
-Still working on putting the latest version of the code back. I fixed AbstactMasonAction and Fast- and SlowWanderMasonAction. Now I have to fix the other actions and the code with which I can find if a petri net is shared or exclusive, and make sure that only shared Petri nets are disconnected.
+Still working on putting the latest version of the code back. I fixed AbstactMasonAction and Fast- and SlowWanderMasonAction. Now I have to fix the other actions and the code with which I can find if a petri net is shared or exclusive, and make sure that only shared Petri nets are disconnected when the pedestrians are finished with the behavior.
 
 =4-9-2014=
 Last week I accidentally formatted my hard drive, so I lost the progress of the last few weeks. Fortunately, I probably managed to recover the java code, but I still have to put them back in the right place and give them the proper file names. That is the reason that today I am going to arrange my files so that I can commit my code again to svn. At some point in time I started working with 2 copies of my files, one was checked out from svn, and the other one copied from my pc at tno (I did have my reasons though). I will work on merging these two versions so I can commit my code again.
