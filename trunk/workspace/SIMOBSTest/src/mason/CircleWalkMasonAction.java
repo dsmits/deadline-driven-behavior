@@ -14,13 +14,18 @@ public class CircleWalkMasonAction extends AbstractBaseMasonAction{
 	double rotation;
 	
 	public CircleWalkMasonAction(){
+		init();
+	}
+	
+	public void init(){
 		active = false;
 		steps = 0;
 		speed = DEFAULT_SPEED;
 		rotation = DEFAULT_ROTATION;
 	}
 
-	public void act(Continuous2D agents, PedestrianAgent agent) {
+	public void act(PedestrianSimState state, PedestrianAgent agent) {
+		Continuous2D agents = state.agents;
 		System.out.println("Executing circlewalk\n\n");
 		if(steps > STEP_NUMBER){
 			active = false;
@@ -38,9 +43,9 @@ public class CircleWalkMasonAction extends AbstractBaseMasonAction{
 		
 	}
 	
-	private Double2D getRelativeLocation(double rotation, double speed){
-		return new Double2D(Math.cos(rotation) * speed, Math.sin(rotation) * speed);
-	}
+//	private Double2D getRelativeLocation(double rotation, double speed){
+//		return new Double2D(Math.cos(rotation) * speed, Math.sin(rotation) * speed);
+//	}
 	
 
 

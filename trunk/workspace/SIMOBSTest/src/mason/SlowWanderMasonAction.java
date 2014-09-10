@@ -7,19 +7,24 @@ import sim.util.Double2D;
 
 public class SlowWanderMasonAction extends AbstractBaseMasonAction {
 
-    boolean active;
+    //boolean active;
     Random random;
     double speed;
     int steps;
-    static final int INITIAL_STEPS = 30;
+    static final int INITIAL_STEPS = 20;
     double maxRotation = 0.125 * Math.PI;
 
     public SlowWanderMasonAction() {
-        random = new Random();
+        init();
+    }
+    
+    @Override
+	public void init() {
+    	random = new Random();
         speed = 0.6;
         steps = INITIAL_STEPS;
-        active = true;
-    }
+        finished = false;		
+	}
 
     public void act(PedestrianSimState state, PedestrianAgent agent) {
     	double previousOrientation = agent.orientation2D();
@@ -29,17 +34,30 @@ public class SlowWanderMasonAction extends AbstractBaseMasonAction {
         }
     	steps--;
         if(steps < 0){
-        	active = false;
+        	init();
+        	finished = true;
         }
         
     	Continuous2D agents = getAgents(state);
         
         double currentX = agent.getLocation().getX();
         double currentY = agent.getLocation().getY();
+        
+        double newOrientation;
+        
+        if(withinBounds(currentX, currentY)){
 
-        double newOrientation = previousOrientation + (2 * maxRotation * random.nextDouble())
-                - maxRotation;
-        newOrientation = limitOrientation(newOrientation, previousOrientation);
+			newOrientation = previousOrientation + (2 * maxRotation * random.nextDouble())
+					- maxRotation;
+			//newOrientation = limitOrientation(newOrientation, previousOrientation);
+		}else{
+			double middleX = MAX_X_COORDINATE/2;
+			double middleY = MAX_Y_COORDINATE/2;
+			double relativeX = middleX - currentX;
+			double relativeY = middleY - currentY;
+			newOrientation = Math.atan(relativeY/relativeX);
+			
+		}
 
         System.out.println("New orientation: " + newOrientation / Math.PI);
 
@@ -73,7 +91,9 @@ public class SlowWanderMasonAction extends AbstractBaseMasonAction {
 
     @Override
     public boolean isFinished() {
-        return !active;
+        return finished;
     }
+
+	
 
 }
