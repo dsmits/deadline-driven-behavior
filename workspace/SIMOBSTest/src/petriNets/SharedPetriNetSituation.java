@@ -8,7 +8,7 @@ public class SharedPetriNetSituation extends AbstractBaseSituation {
 
     public SharedPetriNetSituation(String situationId, String fileName) {
         super(situationId);
-        this.dataLayer = new SituationDataLayer(null, fileName);
+        this.dataLayer = new SituationDataLayer(null, fileName, true);
     }
 
     public SharedPetriNetSituation(String situationId, SituationDataLayer dataLayer) {

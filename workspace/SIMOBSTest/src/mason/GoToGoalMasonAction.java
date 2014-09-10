@@ -10,7 +10,11 @@ public class GoToGoalMasonAction extends AbstractBaseMasonAction {
     private double speed;
 
     public GoToGoalMasonAction() {
-        speed = DEFAULT_SPEED;
+    	init();
+    }
+    
+    public void init(){
+    	   speed = DEFAULT_SPEED;
     }
 
     @Override

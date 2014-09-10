@@ -25,6 +25,11 @@ public class SituationDataLayer extends PedestrianSimDataLayer {
 	private LinkedList<Slot> availableSlots;
 	private int estimatedTime;
 	private HashMap<Slot, Integer> estimatedTimes;
+	private boolean isShared;
+
+	public boolean isShared() {
+		return isShared;
+	}
 
 	/*
 	 * private boolean multiPetriNet;
@@ -33,15 +38,17 @@ public class SituationDataLayer extends PedestrianSimDataLayer {
 	 * 
 	 * public boolean isMultiPetriNet() { return multiPetriNet; }
 	 */
-	public SituationDataLayer(IClock clock, File pnmlFile) {
+	public SituationDataLayer(IClock clock, File pnmlFile, boolean isShared) {
 		super(clock, pnmlFile);
+		this.isShared = isShared;
 		situationId = pnmlFile.getName();
 		// this.multiPetriNet = multiPetrinet;
 		init();
 	}
 
-	public SituationDataLayer(IClock clock, String pnmlFileName) {
+	public SituationDataLayer(IClock clock, String pnmlFileName, boolean isShared) {
 		super(clock, new File(pnmlFileName));
+		this.isShared = isShared;
 		situationId = pnmlFileName;
 		// this.multiPetriNet = multiPetrinet;
 		init();

@@ -8,7 +8,7 @@ public class ExclusivePetriNetSituation extends AbstractBaseSituation {
 
     public ExclusivePetriNetSituation(String situationId, String fileName) {
         super(situationId);
-        this.dataLayer = new SituationDataLayer(null, fileName);
+        this.dataLayer = new SituationDataLayer(null, fileName, false);
     }
 
     public ExclusivePetriNetSituation(String situationId, SituationDataLayer dataLayer) {
@@ -21,7 +21,7 @@ public class ExclusivePetriNetSituation extends AbstractBaseSituation {
 
         // System.out.println("URI: " + dataLayer.getURI());
         SituationDataLayer situationDataLayer = new SituationDataLayer(dataLayer.clock,
-                dataLayer.getFullURI());
+                dataLayer.getFullURI(), false);
         
         // (SituationDataLayer) dataLayer.clone();
         
