@@ -3,6 +3,12 @@ package mason;
 
 public interface IMasonAction {
 
+	/**
+	 * Init sets all parameters that should be set at the start of the execution of the action.
+	 * 
+	 */
+	public void init();
+	
     /**
      * This method does the actual execution of the action. The list of agents and the current agent
      * which has to execute the action are given so the environment can be modified.

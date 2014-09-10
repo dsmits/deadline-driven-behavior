@@ -46,8 +46,9 @@ import time.StepClock;
 import time.TimePlanningTools;
 
 /**
- * @author djura
- * SituationManager manages the connections between the Petri nets of the pedestrians and situations. It also contains methods to remove or add connections.
+ * @author djura SituationManager manages the connections between the Petri nets
+ *         of the pedestrians and situations. It also contains methods to remove
+ *         or add connections.
  */
 public class SituationManager implements IPedestrianSimManager, Observer {
 
@@ -182,7 +183,7 @@ public class SituationManager implements IPedestrianSimManager, Observer {
 				situationArea = getSituationArea((Element) currentSituationNode);
 				exclusivePetrinet = isExclusivePetriNet((Element) currentSituationNode);
 				currentPetriNet = new SituationDataLayer(clock,
-						petriNetFileName);
+						petriNetFileName, !exclusivePetrinet);
 				if (exclusivePetrinet) {
 					currentSituation = new ExclusivePetriNetSituation(
 							situationId, currentPetriNet);
@@ -314,10 +315,10 @@ public class SituationManager implements IPedestrianSimManager, Observer {
 		// the slots and find the right one.
 		PedestrianSimDataLayer attachedPetriNet = connection
 				.getAttachedPetriNet(transition.getSlot());
-		PedestrianSimDataLayer getCurrentPetriNet = connection
+		PedestrianSimDataLayer currentPetriNet = connection
 				.getPetriNetOfSlot(transition.getSlot());
 		System.out.println("Transporting token to: " + attachedPetriNet);
-		log(attachedPetriNet, getCurrentPetriNet);
+		log(attachedPetriNet, currentPetriNet);
 		SourceTransition attachedSource = connection.getAttachedSlot(
 				transition.getSlot()).getSituationSource();
 		// attachedSource.setEnabled(true);
@@ -332,7 +333,11 @@ public class SituationManager implements IPedestrianSimManager, Observer {
 		// Disconnect nets when pedestrian comes out of situation, so he doesn't
 		// get stuck in a loop.
 		// Especially an issue with shared situations
-		if (attachedPetriNet instanceof PedestrianDataLayer) {
+
+		// connection.getSituationSlot().getDataLayer().get
+
+		if (attachedPetriNet instanceof PedestrianDataLayer
+				&& ((SituationDataLayer) currentPetriNet).isShared()) {
 			disconnectNets((PedestrianDataLayer) attachedPetriNet,
 					(SituationDataLayer) connection
 							.getPetriNetOfSlot(transition.getSlot()));
@@ -562,21 +567,24 @@ public class SituationManager implements IPedestrianSimManager, Observer {
 				// if (!situationDataLayer.isMultiPetriNet()) {
 				DataLayerWriter writer1 = new DataLayerWriter(
 						pedestrianDataLayer);
-				writer1.savePNML(new File("petrinets/testNetBefore.xml"));
+				// Saving Petri nets is nice for debugging but takes a shitload
+				// of time if done every time for every pedestrian.
+				// writer1.savePNML(new File("petrinets/testNetBefore.xml"));
 				DataLayerWriter writer2 = new DataLayerWriter(
 						situationDataLayer);
-				writer2.savePNML(new File(
-						"petrinets/situationTestNetBefore.xml"));
+				// writer2.savePNML(new File(
+				// "petrinets/situationTestNetBefore.xml"));
 
 				situationDataLayer.removeSlot(connection.getSituationSlot());
 				pedestrianDataLayer.removeSlot(connection.getPedestrianSlot());
 
 				DataLayerWriter writer3 = new DataLayerWriter(
 						pedestrianDataLayer);
-				writer3.savePNML(new File("petrinets/testNetAfter.xml"));
+				// writer3.savePNML(new File("petrinets/testNetAfter.xml"));
 				DataLayerWriter writer4 = new DataLayerWriter(
 						situationDataLayer);
-				writer4.savePNML(new File("petrinets/situationTestNetAfter.xml"));
+				// writer4.savePNML(new
+				// File("petrinets/situationTestNetAfter.xml"));
 				// }
 				connection.getSituationSlot().clearBrain();
 				// TODO: Quick fix

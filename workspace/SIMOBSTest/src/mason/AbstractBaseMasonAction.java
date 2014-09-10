@@ -13,7 +13,8 @@ public abstract class AbstractBaseMasonAction implements IMasonAction {
     protected double maxRotation = 0.25 * Math.PI;
     protected static final double DEFAULT_SPEED = 0.5;
     private static final String LOG_FILE_PATH = "actionlog.csv";
-    
+    protected static final double MAX_X_COORDINATE = 500;
+    protected static final double MAX_Y_COORDINATE = 500;
     
 
     public AbstractBaseMasonAction() {
@@ -22,8 +23,11 @@ public abstract class AbstractBaseMasonAction implements IMasonAction {
 
     @Override
     public boolean isFinished() {
-        // TODO Auto-generated method stub
-        return false;
+        return finished;
+    }
+    
+    public void setFinished(boolean finished){
+    	this.finished = finished;
     }
 
     protected double limitOrientation(double orientation, double previousOrientation) {
@@ -50,6 +54,10 @@ public abstract class AbstractBaseMasonAction implements IMasonAction {
 
     public String toString() {
         return this.getClass().getSimpleName();
+    }
+    
+    protected boolean withinBounds(double x, double y){
+    	return x > 0 && x < MAX_X_COORDINATE && y > 0 && y < MAX_Y_COORDINATE;
     }
     
     
