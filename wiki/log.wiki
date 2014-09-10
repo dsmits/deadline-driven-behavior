@@ -1,7 +1,9 @@
 DISCLAIMER: The things that I write here are mainly to arrange my own thoughts and might not always be understandable for other people.
 
 =10-9-2014=
-Today I put the last recovered files back. I was also thinking, maybe I should extend Petri nets for certain behavior where you have to go somewhere (e.g.the toilet behavior) so that the pedestrian can either run or walk slowly to its destination.
+I thought I put all the right files back, but now actions are only executed for one step it seems. I will try to fix this friday. Because I can't remember all the classes I have modified in the last couple of weeks I might have missed one. I'm only selectively putting back files because it is too much work to do for every file, because multiple files containing the same classes have been recoverd from my formatted hard drive and for every class I need to find out which is the latest one.
+
+ I was also thinking, maybe I should extend Petri nets for certain behavior where you have to go somewhere (e.g.the toilet behavior) so that the pedestrian can either run or walk slowly to its destination.
 
 =8-9-2014=
 Still working on putting the latest version of the code back. I fixed AbstactMasonAction and Fast- and SlowWanderMasonAction. Now I have to fix the other actions and the code with which I can find if a petri net is shared or exclusive, and make sure that only shared Petri nets are disconnected when the pedestrians are finished with the behavior.
