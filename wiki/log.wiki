@@ -1,5 +1,8 @@
 DISCLAIMER: The things that I write here are mainly to arrange my own thoughts and might not always be understandable for other people.
 
+=22-9-2014=
+Code is still not back to normal. I have trouble concentrating today so that does not really help. It seems that only one time an action is communicated from the Petri net side to the other side. After that, the action seems to always be null. Maybe not all the code about syncing the clocks is not the latest version? I have put breakpoints at the relevant pieces of code. Hopefully I have more concentration on Wednesday so I can fix this.
+
 =10-9-2014=
 I thought I put all the right files back, but now actions are only executed for one step it seems. I will try to fix this friday. Because I can't remember all the classes I have modified in the last couple of weeks I might have missed one. I'm only selectively putting back files because it is too much work to do for every file, because multiple files containing the same classes have been recoverd from my formatted hard drive and for every class I need to find out which is the latest one.
 
