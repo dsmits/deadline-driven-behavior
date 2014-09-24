@@ -1,5 +1,8 @@
 DISCLAIMER: The things that I write here are mainly to arrange my own thoughts and might not always be understandable for other people.
 
+=24-9-2014=
+Managed to get the code working again. Friday I will see if I can tweak the parameters to get a nicer graph.
+
 =22-9-2014=
 Code is still not back to normal. I have trouble concentrating today so that does not really help. It seems that only one time an action is communicated from the Petri net side to the other side. After that, the action seems to always be null. Maybe not all the code about syncing the clocks is not the latest version? I have put breakpoints at the relevant pieces of code. Hopefully I have more concentration on Wednesday so I can fix this.
 
