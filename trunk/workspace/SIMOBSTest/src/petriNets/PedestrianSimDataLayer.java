@@ -602,7 +602,8 @@ public class PedestrianSimDataLayer extends DataLayer {
 		step();
 		int maxTries = 5;
 		int tries = 0;
-
+		
+		//TODO: Could be waaay more efficient.
 		Transition randomTransition = getRandomTransition();
 		while ((randomTransition instanceof SourceTransition)
 				&& tries < maxTries) {

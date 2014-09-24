@@ -192,7 +192,7 @@ public class PedestrianAgent extends SimplePortrayal2D implements Steppable,
 
 			// Read response from server
 			Action action = ActionMessage.Action.parseDelimitedFrom(in);
-			setCurrentAction(getMasonAction(action));
+			//setCurrentAction(getMasonAction(action));
 			// pedestrianSimSocket.close();
 
 		} catch (IOException e) {

@@ -164,7 +164,7 @@ public class PedestrianSim implements Runnable {
                  * pedestrianManager .updateSituations(observation.getPedestrianId(),
                  * currentSituations);
                  */
-                
+                // Should only be done when needNewAction is true I think?
                 Action action = buildAction(pedestrianManager.step(observation));
                 if (action.getAction() != "wander") {
                     System.out.println("CurrentAction: " + action);

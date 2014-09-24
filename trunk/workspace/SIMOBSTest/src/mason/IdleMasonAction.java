@@ -13,7 +13,11 @@ public class IdleMasonAction extends AbstractBaseMasonAction {
     double rotation;
 
     public IdleMasonAction() {
-        active = false;
+        init();
+    }
+    
+    public void init(){
+    	finished = true;
         steps = 0;
         speed = DEFAULT_SPEED;
         rotation = DEFAULT_ROTATION;
@@ -23,19 +27,19 @@ public class IdleMasonAction extends AbstractBaseMasonAction {
         Continuous2D agents = state.agents;
         System.out.println("Executing standing still");
         System.out.println("Location of agent: " + agents.getObjectLocation(agent));
-        if (steps > STEP_NUMBER) {
-            active = false;
-            steps = 0;
-        } else {
-            active = true;
-            steps++;
-        }
+//        if (steps > STEP_NUMBER) {
+//            active = false;
+//            steps = 0;
+//        } else {
+//            active = true;
+//            steps++;
+//        }
 
     }
 
     @Override
     public boolean isFinished() {
-        return !active;
+        return finished;
     }
 
 }

@@ -62,14 +62,14 @@ public abstract class AbstractBasePedestrianBrain implements IPedestrianBrain {
 		// return transition.getAction();
 		log();
 		//clock.step();
-		/*
-		try {
-			dataLayerLogger
-					.log("Last executed transitions: " + lastTransitions);
-		} catch (IOException e) {
-			// TODO Auto-generated catch block
-			e.printStackTrace();
-		}*/
+		
+//		try {
+//			dataLayerLogger
+//					.log("Last executed transitions: " + lastTransitions);
+//		} catch (IOException e) {
+//			// TODO Auto-generated catch block
+//			e.printStackTrace();
+		
 		Transition lastActionTransition = chooseLastActionTransition();
 
 		clearLastTransitions();

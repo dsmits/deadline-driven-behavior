@@ -30,6 +30,7 @@ public class FastWanderMasonAction extends AbstractBaseMasonAction {
     public void act(PedestrianSimState state, PedestrianAgent agent) {
     	double previousOrientation = agent.orientation2D();
     	if(steps == INITIAL_STEPS){
+    		finished = false;
         	//Choose initial direction
         	previousOrientation = random.nextDouble() * 2 * Math.PI;
         }
