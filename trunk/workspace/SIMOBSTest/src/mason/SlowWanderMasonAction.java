@@ -21,7 +21,7 @@ public class SlowWanderMasonAction extends AbstractBaseMasonAction {
     @Override
 	public void init() {
     	random = new Random();
-        speed = 0.6;
+        speed = 0.3;
         steps = INITIAL_STEPS;
         finished = false;		
 	}

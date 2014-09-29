@@ -12,7 +12,7 @@ public class FastWanderMasonAction extends AbstractBaseMasonAction {
     Random random;
     double speed;
     int steps;
-    static final int INITIAL_STEPS = 20;
+    static final int INITIAL_STEPS = 10;
     double maxRotation = 0.125 * Math.PI;
 
     public FastWanderMasonAction() {

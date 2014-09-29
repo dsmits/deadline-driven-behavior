@@ -134,7 +134,7 @@ public class PedestrianSimDataLayer extends DataLayer {
 		/*
 		 * Time probability for non-goal actions should go from low to high, because this function gets as input how much time there is still left. When there is little time left, the probability of doing non-goal actions should be lower. 
 		 */
-		init(clock, goalTime, new Linear(0.5, 1, 200), new Constant(0));
+		init(clock, goalTime, new Linear(0, 1, 200), new Constant(0));
 		//init(clock, goalTime, new Constant(1), new Gaussian(0, 10, 0.2));
 
 		//init(clock, goalTime, new Constant(1), new Linear(0, 1, 200));
