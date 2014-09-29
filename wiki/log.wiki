@@ -1,5 +1,12 @@
 DISCLAIMER: The things that I write here are mainly to arrange my own thoughts and might not always be understandable for other people.
 
+=29-9-2014=
+Generated a graph again.
+
+https://deadline-driven-behavior.googlecode.com/svn/trunk/google%20code/linear0to1.png
+
+This can't be right. No way around 150 pedestrians are idle the entire time. I actually know for sure, since there were only 100 pedestrians in the simulation. I will check my scripts for generating the graphs this wednesday.
+
 =24-9-2014=
 Managed to get the code working again. Friday I will see if I can tweak the parameters to get a nicer graph.
 
