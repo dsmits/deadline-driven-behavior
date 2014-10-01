@@ -12,6 +12,8 @@ https://deadline-driven-behavior.googlecode.com/svn/trunk/hulpscriptjes/goodresu
 
 Yessssssss!
 
+It is remarkable that more pedestrians are doing slow wander than fast wander first, but slow wander decreases sooner than fast wander. I can't explain that at the moment. It is a nice effect that the slow version of wander is preferred when there is still time left.
+
 =29-9-2014=
 Generated a graph again.
 
