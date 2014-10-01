@@ -1,7 +1,7 @@
 DISCLAIMER: The things that I write here are mainly to arrange my own thoughts and might not always be understandable for other people.
 
 =1-10-2014=
-I'm checking the script that counts the actions at every timestep and I notice that more than 200 actions are logged for every pedestrian, even though I stopped the simulation at maybe a few steps more than 200. It seems that this is the reason that the number of idle actions is so ridiculously high. I'm suspecting it has something to do with the transitioning of tokens between Petri nets. When a sink transition is fired at one side, the source transition is fired at the other. This happens in the same timestep, but maybe every firing is logged as an action?
+I'm checking the script that counts the actions at every timestep and I notice that more than 200 actions are logged for every pedestrian, even though I stopped the simulation at maybe a few steps more than 200. It seems that this is the reason that the number of idle actions is so ridiculously high. Could it be that I forgot to delete the previous log, so the new data was appended to the data of an earlier simulation?
 
 =29-9-2014=
 Generated a graph again.
