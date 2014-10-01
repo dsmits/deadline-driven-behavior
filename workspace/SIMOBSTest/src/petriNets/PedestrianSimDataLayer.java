@@ -399,10 +399,10 @@ public class PedestrianSimDataLayer extends DataLayer {
 				|| (lastFiredTransition != null && lastFiredTransition
 				.getName().startsWith("sink"))) {
 			message = UpdateMessage.SINK_FIRED;
-			writeToFile(new File("petriNets/sinkHasFired.xml"));
+			//writeToFile(new File("petriNets/sinkHasFired.xml"));
 		} else {
 			message = UpdateMessage.SINK_NOT_FIRED;
-			writeToFile(new File("petriNets/sinkHasNotFired.xml"));
+			//writeToFile(new File("petriNets/sinkHasNotFired.xml"));
 		}
 
 		notifyObservers(message);
