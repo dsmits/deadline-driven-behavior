@@ -6,6 +6,12 @@ I'm checking the script that counts the actions at every timestep and I notice t
 Update:
 Turns out I was using the wrong action log. I recently moved my files around to make it all work with svn again but I was still reading the action log from the old directory.
 
+I plotted the right graph, and it is how it should be for a linear probability function that goes from 0 to 1.
+
+https://deadline-driven-behavior.googlecode.com/svn/trunk/hulpscriptjes/goodresults/linear0to1_100agents.png
+
+Yessssssss!
+
 =29-9-2014=
 Generated a graph again.
 
