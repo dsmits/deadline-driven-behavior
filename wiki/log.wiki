@@ -3,6 +3,9 @@ DISCLAIMER: The things that I write here are mainly to arrange my own thoughts a
 =1-10-2014=
 I'm checking the script that counts the actions at every timestep and I notice that more than 200 actions are logged for every pedestrian, even though I stopped the simulation at maybe a few steps more than 200. It seems that this is the reason that the number of idle actions is so ridiculously high. Could it be that I forgot to delete the previous log, so the new data was appended to the data of an earlier simulation?
 
+Update:
+Turns out I was using the wrong action log. I recently moved my files around to make it all work with svn again but I was still reading the action log from the old directory.
+
 =29-9-2014=
 Generated a graph again.
 
