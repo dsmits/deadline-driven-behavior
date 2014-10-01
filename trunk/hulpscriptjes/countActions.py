@@ -1,8 +1,9 @@
 
 
 import csv
+import sets
 
-csvFile = open('/home/djura/vakken/afstudeerstage/workspace/SIMOBSTest/actionlog.csv', 'rb')
+csvFile = open('/home/djura/vakken/svn_afstudeerstage/deadline-driven-behavior/workspace/SIMOBSTest/actionlog.csv', 'rb')
 actionReader = csv.reader(csvFile, delimiter=',')
 
 # pedestrianActions will be a dictionary with as key the name of the pedestrian and as value the list of actions taken. This list will be chronological.
@@ -17,6 +18,8 @@ for row in actionReader:
         pedestrianActions[pedestrian] = []
     pedestrianActions[pedestrian].append(action)
     
+print len(pedestrianActions.keys())
+
     
 # Now the actions are sorted chronologically for every pedestrian, I can count for every timestep how much every action is executed.
 # I need a list of dicts, in which the key is the name of the move, and the value how many pedestrians are executing it. Every element in the list represents a timestep. Probably this could have been done simultaneously in the previous for loop but this is less confusing.
@@ -41,11 +44,11 @@ for pedestrian in pedestrianActions:
 print actionsPerTimestep[2]
 
 csvResult = open('results.csv','wb')
-writer = csv.DictWriter(csvResult, fieldnames=list(keydict.keys()), extrasaction='ignore')
+writer = csv.DictWriter(csvResult, fieldnames=list(keydict), extrasaction='ignore')
 
 writer.writerow(keydict)
 
 for time in actionsPerTimestep:
     writer.writerow(time)
     
-print keydict.keys
+print keydict
