@@ -1,11 +1,14 @@
 DISCLAIMER: The things that I write here are mainly to arrange my own thoughts and might not always be understandable for other people.
 
-3-10-2014=
+=3-10-2014=
 Generating more graphs today. First one is this one:
 
 https://deadline-driven-behavior.googlecode.com/svn/trunk/hulpscriptjes/goodresults/linear0to0.5_100agents.png
 
 Slowwander still has the preference. Thinking I should make a graph using multiple runs but I think I will do these graphs first, will be a lot of trouble to make graphs again for multiple runs, I have to think about what would be the most efficient way to do that. 
+
+Another graph:
+https://deadline-driven-behavior.googlecode.com/svn/trunk/hulpscriptjes/goodresults/linear0to0.1_100agents.png
 
 =1-10-2014=
 I'm checking the script that counts the actions at every timestep and I notice that more than 200 actions are logged for every pedestrian, even though I stopped the simulation at maybe a few steps more than 200. It seems that this is the reason that the number of idle actions is so ridiculously high. Could it be that I forgot to delete the previous log, so the new data was appended to the data of an earlier simulation?
