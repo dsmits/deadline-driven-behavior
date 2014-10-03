@@ -10,6 +10,14 @@ Slowwander still has the preference. Thinking I should make a graph using multip
 Another graph:
 https://deadline-driven-behavior.googlecode.com/svn/trunk/hulpscriptjes/goodresults/linear0to0.1_100agents.png
 
+There's not much difference with the previous graphs so I don't know if I should put them all in the thesis.
+
+Here's the first sigmoid one.
+
+https://deadline-driven-behavior.googlecode.com/svn/trunk/hulpscriptjes/goodresults/sigmoidnotmultiplied_100agents.png
+
+Since the sigmoid is neither multiplied in the x nor y direction it has a very sudden transition.
+
 =1-10-2014=
 I'm checking the script that counts the actions at every timestep and I notice that more than 200 actions are logged for every pedestrian, even though I stopped the simulation at maybe a few steps more than 200. It seems that this is the reason that the number of idle actions is so ridiculously high. Could it be that I forgot to delete the previous log, so the new data was appended to the data of an earlier simulation?
 
