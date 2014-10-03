@@ -18,6 +18,8 @@ https://deadline-driven-behavior.googlecode.com/svn/trunk/hulpscriptjes/goodresu
 
 Since the sigmoid is neither multiplied in the x nor y direction it has a very sudden transition.
 
+Next time I'll continue with generating graphs for the sigmoid probability function.
+
 =1-10-2014=
 I'm checking the script that counts the actions at every timestep and I notice that more than 200 actions are logged for every pedestrian, even though I stopped the simulation at maybe a few steps more than 200. It seems that this is the reason that the number of idle actions is so ridiculously high. Could it be that I forgot to delete the previous log, so the new data was appended to the data of an earlier simulation?
 
