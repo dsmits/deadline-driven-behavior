@@ -1,5 +1,11 @@
 DISCLAIMER: The things that I write here are mainly to arrange my own thoughts and might not always be understandable for other people.
 
+=6-10-2014=
+Today I first plotted a plot for the sigmoid probability function with x multiplied by 10. If I had checked a plot for the sigmoid function before running the simulation I would have known this would have been way too much. There is not much influence of the sigmoid function going on here. 
+
+https://deadline-driven-behavior.googlecode.com/svn/trunk/hulpscriptjes/goodresults/sigmoid%20xtimes100.png
+
+Btw, I should remember to add plots of the probability functions themselves in my thesis.
 =3-10-2014=
 Generating more graphs today. First one is this one:
 
