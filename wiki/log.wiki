@@ -1,7 +1,11 @@
 DISCLAIMER: The things that I write here are mainly to arrange my own thoughts and might not always be understandable for other people.
 
 =8-10-2014=
+More graphs:
 
+https://deadline-driven-behavior.googlecode.com/svn/trunk/hulpscriptjes/goodresults/sigmoid%20xtimes10.png
+
+https://deadline-driven-behavior.googlecode.com/svn/trunk/hulpscriptjes/goodresults/sigmoid%20xtimes20.png
 
 =6-10-2014=
 Today I first plotted a plot for the sigmoid probability function with x multiplied by 100. If I had checked a plot for the sigmoid function before running the simulation I would have known this would have been way too much. There is not much influence of the sigmoid function going on here. 
