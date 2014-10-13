@@ -1,7 +1,7 @@
 DISCLAIMER: The things that I write here are mainly to arrange my own thoughts and might not always be understandable for other people.
 
 =13-10-2014=
-Today I'm writing about my new experiments and results in my [https://deadline-driven-behavior.googlecode.com/svn/trunk/report/simobs_thesis_final.pdf thesis].
+Today I'm writing about my new experiments and results in my [https://deadline-driven-behavior.googlecode.com/svn/trunk/report/simobs_thesis_final.pdf thesis]. This thursday I'm going to talk with my supervisor again. Maybe I can then discuss what I should do with my old experiments. My old experiments are run on old code so the system behaves a little differently now. There is valuable information in there though, because without the old experiments I would never have observed how much influence the goal probability/behavior has on the system, so I would never have decided to do the experiments without it. What's also an option is that I get rid of the old graphs and do the experiments again in the new way but with the goal behavior added again. Maybe that is the best solution.
 
 
 =8-10-2014=
