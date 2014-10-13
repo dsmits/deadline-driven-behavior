@@ -25,8 +25,8 @@ public class IdleMasonAction extends AbstractBaseMasonAction {
 
     public void act(PedestrianSimState state, PedestrianAgent agent) {
         Continuous2D agents = state.agents;
-        System.out.println("Executing standing still");
-        System.out.println("Location of agent: " + agents.getObjectLocation(agent));
+//        System.out.println("Executing standing still");
+//        System.out.println("Location of agent: " + agents.getObjectLocation(agent));
 //        if (steps > STEP_NUMBER) {
 //            active = false;
 //            steps = 0;
