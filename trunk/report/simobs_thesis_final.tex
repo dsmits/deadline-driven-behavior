@@ -405,12 +405,14 @@ Figure \ref{petrinetexample} gives an example of how the pedestrian petrinet is 
 
 
 \chapter{Experiments}
+\todo[inline]{A lot needs to change here, maybe remove the old experiments with the graphs completely}
 \label{chap:experiments}
 Allthough it can be difficult to decide whether a group of people walks around "realistically", we will certainly give it a try. We will attempt to test our framework in two different ways; first of all, we will assess our framework by doing a qualitative comparison with real-life footage of Rotterdam Airport. We have access to both camera footage and manually annotated locations of the visitors. Secondly, we will assess how the the different probability functions we choose for the go-to-goal action will affect the frequency of other actions. In other words, we will attempt to investigate whether our method leads to \emph{emergent}  behavior.
 
 \todo[inline]{Specify missing parameters}
 
 \subsection{The Behaviors}
+\todo[inline]{Are all behaviors still in use?}
 
 \subsubsection{Going to the toilet}
 In the videos, we observed that a typical behavior that manifests itself multiple times in the video material is that one person goes to the toilet, and another one waits until this person has come back. The Petri net used for this can be found in figure \ref{toiletsituation}.
@@ -487,19 +489,32 @@ We acquired manually annotated data indicating the tracks of the visitors of Rot
 %\todo[inline]{The following is only a rough draft}
 %It is very difficult to determine whether one has been successful at modeling lifelike behavior. What we are going to do is %study footage of real-life behavior at Rotterdam Airport, and pick out various behavioral patterns. Then, we are going to %model these patterns with our system.
 
+\section{New Quantitative Experiment}
+Because of newly discovered limits to our system that become clear in our results \ref{chap:results}, we decided to add new quantitative experiments. It turn out that with our previous quantitative experiments, the cumulative probability for going to the goal becomes so high in quite a few steps, that it is difficult to see any effect of our system on hurried and relaxed behavior. Very soon in most of our simulations, the number of pedestrians that have already reached to goal becomes so high that nothing valuable can be said of the other behaviors. That is why we have decided to run experiments where we have removed the behavior of going to the goal. We did this by simply removing the connection from the base place of the pedestrian to the gotogoal transition, as can be seen in figure \ref{fig:second_rotterdampedestriannet}.
+\todo[inline]{In the process of fixing the code, we also got rid of all the basic wander behavior in the basic pedestrian Petri net. Should I modify the previous experiments or just say that we changed that for the last experiment?}
+We also replaced the "wander" behavior
 
-\section{Results}
+\begin{figure}
+\centering
+\includegraphics[width=150pt]{"rotterdamPedestrianNet_secondexperiment"}
+\caption{The pedestrian Petri Net for the second quantitative experiment.}
+\label{fig:second_rotterdampedestriannet}
+\end{figure}
 
 
-\subsection{Results for Sigmoid Function}
+\chapter{Results}
+\label{chap:results}
 
 
-\subsection{Results for Linear Function}
+\section{Results for Sigmoid Function}
+
+
+\section{Results for Linear Function}
 It turns out a linear function gives significantly different behavior than a sigmoid function. Because there is a constant rise in the probability of walking to the goal, the pedestrians reach the goal very early, since there is a chance to go there every step, and this chance steadily increases. So all pedestrians have reached the goal long before the deadline. This is because the cumulative probability of the pedestrian going to the goal is very high very early.
 
-\subsection{Results for Gaussian Function}
+\section{Results for Gaussian Function}
 
-\subsection{Results}
+\section{Results}
 Below you will find the results of the quantitative experiment, where we used a variety of functions to check whether emergent behavior occurs.
 
 In figure \ref{result_toilet_linear_1_05_02_01_001}, you can see the results of choosing a linear function where the maximum is 0.001, 0.01, 0.02, 0.05 and 1.0 respectively as the goal probability function. We can see here that the pedestrians reach their goal very early, that is, 100 \% of the pedestrians reach the goal so early, they could easily have used the remaining time to do a multitude of other activities.
@@ -578,7 +593,7 @@ caption{evaluation\_log\_sigmoid0point1automatedpointcsv}
 We can only say more about the results if the frequencies are divided by the total number of pedestrians in the simulation at that moment. The curve we see in figure \ref{evaluation_log_sigmoid0point01automatedpointcsv}, \ref{evaluation_log_sigmoid0point1automatedpointcsv}, \ref{evaluation_log_sigmoid0point2automatedpointcsv}, and \ref{evaluation_log_sigmoid0point5automatedpointcsv} (though to a lesser extent) can be explained by a multitude of causes. First of all, it can be explained by the fact that the number of pedestrians in the simulation diminishes as they finish their goal action. It could also be caused by the probability function increasing, but in this case, that is highly unlikely, because that would result in data quite opposite to the results here. Lastly, it could be that at certain moments, there are more pedestrians already engaged in other multi-step activities.
 
 
-\subsection{Results 2}
+\section{Results 2}
 Below follow the results of the other actions, that is, the actions that are not directly connected to the goal probability. The results of these actions have to show that our framework is also capable of generating \emph{emergent} behavior.
 
 \todo[inline]{Merge results that were accidentally separated}
@@ -786,7 +801,7 @@ Below follow the results of the other actions, that is, the actions that are not
 
 
 
-\subsection{What can we derive from these results?}
+\section{What can we derive from these results?}
 From these results, we can see that not only does the changing of the goal probability function affect the time at which the agents decide when to move to the goal, but also the time at which other actions are executed. This shows that our framework is able to generate emergent behavior. When the probability of going to the goal is high, actions that take longer to finish have a very low frequency.
 
 
