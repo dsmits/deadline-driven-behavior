@@ -13,7 +13,7 @@ public abstract class AbstractBaseSituation implements ISituation {
     protected int estimatedTime;
 
     public AbstractBaseSituation(String situationId) {
-        System.out.println("Initializing " + this.getClass().getName() + "...");
+//        System.out.println("Initializing " + this.getClass().getName() + "...");
         // states = new ArrayList<IPedestrianState>();
         // transitions = new ArrayList<IPedestrianTransition>();
         this.situationId = situationId;

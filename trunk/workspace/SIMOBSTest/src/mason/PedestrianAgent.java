@@ -63,7 +63,7 @@ public class PedestrianAgent extends SimplePortrayal2D implements Steppable,
 
 	public PedestrianAgent(double orientation, SimState state) {
 		this.state = state;
-		System.out.println("Initializing pedestrian agent");
+//		System.out.println("Initializing pedestrian agent");
 		this.orientation = orientation;
 		brain = new RandomBrain();
 		currentAction = DEFAULT_ACTION;
@@ -116,8 +116,8 @@ public class PedestrianAgent extends SimplePortrayal2D implements Steppable,
 		// if(currentLocation == null){
 		currentLocation = sim.agents.getObjectLocation(this);
 		// }
-		System.out.println("Field dimensions: " + sim.agents.getDimensions());
-		System.out.println("Current location: " + currentLocation);
+//		System.out.println("Field dimensions: " + sim.agents.getDimensions());
+//		System.out.println("Current location: " + currentLocation);
 
 		if (getCurrentAction() == null || getCurrentAction().isFinished()) {
 			action = retrieveNewAction();
@@ -132,7 +132,7 @@ public class PedestrianAgent extends SimplePortrayal2D implements Steppable,
 			masonAction = getCurrentAction();
 		}
 		if (masonAction == null) {
-			System.out.println("MasonAction is null");
+//			System.out.println("MasonAction is null");
 		}
 		executeAction(masonAction, state, sim.agents);
 		log(masonAction.toString());
@@ -219,7 +219,7 @@ public class PedestrianAgent extends SimplePortrayal2D implements Steppable,
 
 	private void executeAction(IMasonAction action, SimState state,
 			Continuous2D agents) {
-		System.out.println("Executing action: " + action);
+//		System.out.println("Executing action: " + action);
 
 		// IMasonAction iMasonAction = actions.get(action.getAction());
 		action.act((PedestrianSimState) state, this);

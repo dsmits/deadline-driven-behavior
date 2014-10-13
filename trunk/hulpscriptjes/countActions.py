@@ -2,8 +2,11 @@
 
 import csv
 import sets
+import os
 
-csvFile = open('/home/djura/vakken/svn_afstudeerstage/deadline-driven-behavior/workspace/SIMOBSTest/actionlog.csv', 'rb')
+logpath = '/home/djura/vakken/svn_afstudeerstage/deadline-driven-behavior/workspace/SIMOBSTest/actionlog.csv'
+
+csvFile = open(logpath, 'rb')
 actionReader = csv.reader(csvFile, delimiter=',')
 
 # pedestrianActions will be a dictionary with as key the name of the pedestrian and as value the list of actions taken. This list will be chronological.
@@ -51,4 +54,9 @@ writer.writerow(keydict)
 for time in actionsPerTimestep:
     writer.writerow(time)
     
-print keydict
+for key in list(keydict):
+  print '\'',
+  print key,
+  print '\', ',
+  
+os.remove(logpath)

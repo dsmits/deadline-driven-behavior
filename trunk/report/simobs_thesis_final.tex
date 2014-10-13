@@ -3,7 +3,7 @@
 \usepackage{titling, titlepic}
 
 \usepackage[colorinlistoftodos, bordercolor=white, backgroundcolor=cyan]{todonotes}
-\usepackage{booktabs}
+\usepackage{booktabs, subcaption}
 \usepackage{hyperref, comment}
 \usepackage{algpseudocode, algorithm}
 \begin{document}
@@ -492,7 +492,22 @@ We acquired manually annotated data indicating the tracks of the visitors of Rot
 \section{New Quantitative Experiment}
 Because of newly discovered limits to our system that become clear in our results \ref{chap:results}, we decided to add new quantitative experiments. It turn out that with our previous quantitative experiments, the cumulative probability for going to the goal becomes so high in quite a few steps, that it is difficult to see any effect of our system on hurried and relaxed behavior. Very soon in most of our simulations, the number of pedestrians that have already reached to goal becomes so high that nothing valuable can be said of the other behaviors. That is why we have decided to run experiments where we have removed the behavior of going to the goal. We did this by simply removing the connection from the base place of the pedestrian to the gotogoal transition, as can be seen in figure \ref{fig:second_rotterdampedestriannet}.
 \todo[inline]{In the process of fixing the code, we also got rid of all the basic wander behavior in the basic pedestrian Petri net. Should I modify the previous experiments or just say that we changed that for the last experiment?}
-We also replaced the "wander" behavior
+We also replaced the "wander" behavior by two other behaviors signifying hurried and relaxed behavior, called \emph{fastwander} and {slowwander}. We use these two behaviors to try to get a clear distinction between hurried and relaxed, and see how the number of pedestrians doing one or the other changes over time. The petri nets for these behaviors look exactly the same, as can be seen in figure \ref{fig:newSituations}. The difference between these Petri nets is in the weight of the slowwander:1 and fastwander:1 transitions. These are 20 versus 10 respectively. This weight is used in the system to compute the amount of time that a certain behavior will take. The reason that these are 20 and 10 is that we programmed the slowwander behavior in such a way that the pedestrian will walk roughly in one direction for 20 timesteps. Fastwander makes the pedestrian walk faster than slow wander, and for a shorter period of time, namely 10 timesteps.
+
+We added the slowwander and fastwander situations in small blocks to the simulation, in such a way that the entire simulation area is covered with both situations. The reason that we did not make two big situations, is that when a token of a pedestrian leaves a situation, it is disconnected from it. \todo[inline]{This is not entirely true any more, I think it only counts for shared situations, maybe I can try to run the simulation again with only two big blocks of fastwander and slowwander situations and see if it behaves the same. It would save a lot of time with the loading of the situations in the beginning.}
+
+The experiment run as follows. At every timestep, every pedestrian logs what action it is currently doing. This log is then rearranged into a table where we have for every timestep, for every action the amount of pedestrians that are currently executing it. The results are then displayed in a graph. The results can be found in the next chapter in section \ref{sec:secondquantitativeexperimentresults}.
+
+For this experiment, the following actions can be executed:
+\begin{itemize}
+\item \emph{fastwander}
+\item \emph{slowwander}
+\item \emph{gototoilet} and \emph{waitforfriend} (these both belong to the gototoilet situation)
+\item \emph{gotonearestpillar} and \emph{leanagainstpillar} that are both part of the leanagainstpillar situation \todo[inline]{I just modified leanagainstpillar so it actually takes a few steps, otherwise it's hardly noticable. Should I rerun the experiments, or maybe just don't mention this behavior because it is not important?}|
+\item \emph{standstill}
+\item \emph{idle}
+\end{itemize}
+The last action is a special one. This action is mentioned in none of the Petri nets. It is still executed though. When the multiagent simulation part of the system communicates with the situations part that a pedestrian has finished its action an needs a new one, the appropriate transitions are fired, and their names are sent back to the multiagent simulation module. Sometimes, a transition is received that does not have an associated action. This transition could be necessary to put the Petri net in a certain "mental" state but does not reflect anything that can be demonstrated in a visible action. \todo[inline]{Pictures to explain?} When the system does not have an associated action for a transition it defaults to the "idle" action. Another situation in which this idle behavior can happen that will be important in these experiments, is when there are no transitions left anymore to fire. This can be for example when all transitions have gotten a probability of 0 for firing.
 
 \begin{figure}
 \centering
@@ -500,6 +515,24 @@ We also replaced the "wander" behavior
 \caption{The pedestrian Petri Net for the second quantitative experiment.}
 \label{fig:second_rotterdampedestriannet}
 \end{figure}
+
+\begin{figure}
+        \centering
+        \begin{subfigure}[b]{0.5\textwidth}
+                \includegraphics[width=\textwidth]{fastWanderSituation}
+                \caption{"Fast wander" behavior.}
+                \label{fig:fastWanderPetrinet}
+        \end{subfigure}%
+        ~ %add desired spacing between images, e. g. ~, \quad, \qquad, \hfill etc.
+          %(or a blank line to force the subfigure onto a new line)
+        \begin{subfigure}[b]{0.5\textwidth}
+                \includegraphics[width=\textwidth]{slowWanderSituation}
+                \caption{"Slow wander" behavior.}
+                \label{fig:slowWanderPetrinet}
+        \end{subfigure}
+        \caption{Petri nets of the new behaviors}\label{fig:newSituations}
+\end{figure}
+
 
 
 \chapter{Results}
@@ -598,212 +631,280 @@ Below follow the results of the other actions, that is, the actions that are not
 
 \todo[inline]{Merge results that were accidentally separated}
 
-\begin{figure}
-\centering
-\includegraphics[width=250pt]{./automaticResults2/evaluation_log2_gaussian0point01twoPeopleToiletSituationpointxmlpointcsv.png}
-%\caption{The global workings of our framework}
-\label{evaluation_log2_gaussian0point01twoPeopleToiletSituationpointxmlpointcsv}
-\end{figure}
-
-\begin{figure}
-\centering
-\includegraphics[width=250pt]{./automaticResults2/evaluation_log2_gaussian0point2pillarSituationpointxmlpointcsv.png}
-%\caption{The global workings of our framework}
-\label{evaluation_log2_gaussian0point2pillarSituationpointxmlpointcsv}
-\end{figure}
-
-\begin{figure}
-\centering
-\includegraphics[width=250pt]{./automaticResults2/evaluation_log2_gaussian0point2standStillSituationpointxmlpointcsv.png}
-%\caption{The global workings of our framework}
-\label{evaluation_log2_gaussian0point2standStillSituationpointxmlpointcsv}
-\end{figure}
-
-\todo[inline]{This graph was probably made for the toilet situation that is now saved as twopeopletoiletsituation.xml, but the design of the petrinet is possibly flawed, and could maybe better be replaced by twopeopletoiletsituation2.xml. What also possibly is missing is that the pedestrian could maybe come back after having gone to the toilet.}
-\begin{figure}
-\centering
-\includegraphics[width=250pt]{./automaticResults2/evaluation_log2_gaussian0point2twoPeopleToiletSituationpointxmlpointcsv.png}
-%\caption{The global workings of our framework}
-\label{evaluation_log2_gaussian0point2twoPeopleToiletSituationpointxmlpointcsv}
-\end{figure}
-
-\begin{figure}
-\centering
-\includegraphics[width=250pt]{./automaticResults2/evaluation_log2_gaussian0point5pillarSituationpointxmlpointcsv.png}
-%\caption{The global workings of our framework}
-\label{evaluation_log2_gaussian0point5pillarSituationpointxmlpointcsv}
-\end{figure}
-
-\begin{figure}
-\centering
-\includegraphics[width=250pt]{./automaticResults2/evaluation_log2_gaussian0point5standStillSituationpointxmlpointcsv.png}
-%\caption{The global workings of our framework}
-\label{evaluation_log2_gaussian0point5standStillSituationpointxmlpointcsv}
-\end{figure}
-
-\begin{figure}
-\centering
-\includegraphics[width=250pt]{./automaticResults2/evaluation_log2_gaussian0point5twoPeopleToiletSituationpointxmlpointcsv.png}
-%\caption{The global workings of our framework}
-\label{evaluation_log2_gaussian0point5twoPeopleToiletSituationpointxmlpointcsv}
-\end{figure}
-
-\begin{figure}
-\centering
-\includegraphics[width=250pt]{./automaticResults2/evaluation_log2_linear0point01automated-pillarSituationpointcsv.png}
-%\caption{The global workings of our framework}
-\label{evaluation_log2_linear0point01automated-pillarSituationpointcsv}
-\end{figure}
-\clearpage
-
-\begin{figure}
-\centering
-\includegraphics[width=250pt]{./automaticResults2/evaluation_log2_linear0point01automated-standStillSituationpointcsv.png}
-%\caption{The global workings of our framework}
-\label{evaluation_log2_linear0point01automated-standStillSituationpointcsv}
-\end{figure}
-
-\begin{figure}
-\centering
-\includegraphics[width=250pt]{./automaticResults2/evaluation_log2_linear0point01automated-twoPeopleToiletSituationpointcsv.png}
-%\caption{The global workings of our framework}
-\label{evaluation_log2_linear0point01automated-twoPeopleToiletSituationpointcsv}
-\end{figure}
-
-\begin{figure}
-\centering
-\includegraphics[width=250pt]{./automaticResults2/evaluation_log2_linear0point1automated-standStillSituationpointcsv.png}
-%\caption{The global workings of our framework}
-\label{evaluation_log2_linear0point1automated-standStillSituationpointcsv}
-\end{figure}
-
-\begin{figure}
-\centering
-\includegraphics[width=250pt]{./automaticResults2/evaluation_log2_linear0point1automated-twoPeopleToiletSituationpointcsv.png}
-%\caption{The global workings of our framework}
-\label{evaluation_log2_linear0point1automated-twoPeopleToiletSituationpointcsv}
-\end{figure}
-
-\begin{figure}
-\centering
-\includegraphics[width=250pt]{./automaticResults2/evaluation_log2_linear0point2automatedstandStillSituationpointxmlpointcsv.png}
-%\caption{The global workings of our framework}
-\label{evaluation_log2_linear0point2automatedstandStillSituationpointxmlpointcsv}
-\end{figure}
-
-\begin{figure}
-\centering
-\includegraphics[width=250pt]{./automaticResults2/evaluation_log2_linear0point2automatedtwoPeopleToiletSituationpointxmlpointcsv.png}
-%\caption{The global workings of our framework}
-\label{evaluation_log2_linear0point2automatedtwoPeopleToiletSituationpointxmlpointcsv}
-\end{figure}
-\clearpage
-
-\begin{figure}
-\centering
-\includegraphics[width=250pt]{./automaticResults2/evaluation_log2_linear0point5automatedtwoPeopleToiletSituationpointxmlpointcsv.png}
-%\caption{The global workings of our framework}
-\label{evaluation_log2_linear0point5automatedtwoPeopleToiletSituationpointxmlpointcsv}
-\end{figure}
-
-\begin{figure}
-\centering
-\includegraphics[width=250pt]{./automaticResults2/evaluation_log2_linear1automatedtwoPeopleToiletSituationpointxmlpointcsv.png}
-%\caption{The global workings of our framework}
-\label{evaluation_log2_linear1automatedtwoPeopleToiletSituationpointxmlpointcsv}
-\end{figure}
-
-\begin{figure}
-\centering
-\includegraphics[width=250pt]{./automaticResults2/evaluation_log2_sigmoid0point01automatedpillarSituationpointxmlpointcsv.png}
-%\caption{The global workings of our framework}
-\label{evaluation_log2_sigmoid0point01automatedpillarSituationpointxmlpointcsv}
-\end{figure}
-
-\begin{figure}
-\centering
-\includegraphics[width=250pt]{./automaticResults2/evaluation_log2_sigmoid0point01automatedstandStillSituationpointxmlpointcsv.png}
-%\caption{The global workings of our framework}
-\label{evaluation_log2_sigmoid0point01automatedstandStillSituationpointxmlpointcsv}
-\end{figure}
-
-\begin{figure}
-\centering
-\includegraphics[width=250pt]{./automaticResults2/evaluation_log2_sigmoid0point01automatedtwoPeopleToiletSituationpointxmlpointcsv.png}
-%\caption{The global workings of our framework}
-\label{evaluation_log2_sigmoid0point01automatedtwoPeopleToiletSituationpointxmlpointcsv}
-\end{figure}
-
-\begin{figure}
-\centering
-\includegraphics[width=250pt]{./automaticResults2/evaluation_log2sigmoid0point1automatedpillarSituationpointxmlpointcsv.png}
-%\caption{The global workings of our framework}
-\label{evaluation_log2sigmoid0point1automatedpillarSituationpointxmlpointcsv}
-\end{figure}
-
-\begin{figure}
-\centering
-\includegraphics[width=250pt]{./automaticResults2/evaluation_log2sigmoid0point1automatedstandStillSituationpointxmlpointcsv.png}
-%\caption{The global workings of our framework}
-\label{evaluation_log2sigmoid0point1automatedstandStillSituationpointxmlpointcsv}
-\end{figure}
-\clearpage
-
-\begin{figure}
-\centering
-\includegraphics[width=250pt]{./automaticResults2/evaluation_log2sigmoid0point1automatedtwoPeopleToiletSituationpointxmlpointcsv.png}
-%\caption{The global workings of our framework}
-\label{evaluation_log2sigmoid0point1automatedtwoPeopleToiletSituationpointxmlpointcsv}
-\end{figure}
-
-\begin{figure}
-\centering
-\includegraphics[width=250pt]{./automaticResults2/evaluation_log2sigmoid0point5automatedpillarSituationpointxmlpointcsv.png}
-%\caption{The global workings of our framework}
-\label{evaluation_log2sigmoid0point5automatedpillarSituationpointxmlpointcsv}
-\end{figure}
-
-\begin{figure}
-\centering
-\includegraphics[width=250pt]{./automaticResults2/evaluation_log2sigmoid0point5automatedstandStillSituationpointxmlpointcsv.png}
-%\caption{The global workings of our framework}
-\label{evaluation_log2sigmoid0point5automatedstandStillSituationpointxmlpointcsv}
-\end{figure}
-\clearpage
-
-\begin{figure}
-\centering
-\includegraphics[width=250pt]{./automaticResults2/evaluation_log2sigmoid0point5automatedtwoPeopleToiletSituationpointxmlpointcsv.png}
-%\caption{The global workings of our framework}
-\label{evaluation_log2sigmoid0point5automatedtwoPeopleToiletSituationpointxmlpointcsv}
-\end{figure}
-
-\begin{figure}
-\centering
-\includegraphics[width=200pt]{rotterdamPedestrianNet}
-\caption{The basic petrinet for the pedestrian model for Rotterdam airport}
-\label{basicnet}
-\end{figure}
-
-\begin{figure}
-\centering
-\includegraphics[width=350pt]{twoPeopleToiletSituation}
-\caption{Behavior model for the toilet situation}
-\label{toiletsituation}
-\end{figure}
-
-\begin{figure}
-\centering
-\includegraphics[width=250pt]{pillarSituation}
-\caption{Behavior model for the pillar situation}
-\label{pillarsituation}
-\end{figure}
-
+%\begin{figure}
+%\centering
+%\includegraphics[width=250pt]{./automaticResults2/evaluation_log2_gaussian0point01twoPeopleToiletSituationpointxmlpointcsv.png}
+%%\caption{The global workings of our framework}
+%\label{evaluation_log2_gaussian0point01twoPeopleToiletSituationpointxmlpointcsv}
+%\end{figure}
+%
+%\begin{figure}
+%\centering
+%\includegraphics[width=250pt]{./automaticResults2/evaluation_log2_gaussian0point2pillarSituationpointxmlpointcsv.png}
+%%\caption{The global workings of our framework}
+%\label{evaluation_log2_gaussian0point2pillarSituationpointxmlpointcsv}
+%\end{figure}
+%
+%\begin{figure}
+%\centering
+%\includegraphics[width=250pt]{./automaticResults2/evaluation_log2_gaussian0point2standStillSituationpointxmlpointcsv.png}
+%%\caption{The global workings of our framework}
+%\label{evaluation_log2_gaussian0point2standStillSituationpointxmlpointcsv}
+%\end{figure}
+%
+%\todo[inline]{This graph was probably made for the toilet situation that is now saved as twopeopletoiletsituation.xml, but the design of the petrinet is possibly flawed, and could maybe better be replaced by twopeopletoiletsituation2.xml. What also possibly is missing is that the pedestrian could maybe come back after having gone to the toilet.}
+%\begin{figure}
+%\centering
+%\includegraphics[width=250pt]{./automaticResults2/evaluation_log2_gaussian0point2twoPeopleToiletSituationpointxmlpointcsv.png}
+%%\caption{The global workings of our framework}
+%\label{evaluation_log2_gaussian0point2twoPeopleToiletSituationpointxmlpointcsv}
+%\end{figure}
+%
+%\begin{figure}
+%\centering
+%\includegraphics[width=250pt]{./automaticResults2/evaluation_log2_gaussian0point5pillarSituationpointxmlpointcsv.png}
+%%\caption{The global workings of our framework}
+%\label{evaluation_log2_gaussian0point5pillarSituationpointxmlpointcsv}
+%\end{figure}
+%
+%\begin{figure}
+%\centering
+%\includegraphics[width=250pt]{./automaticResults2/evaluation_log2_gaussian0point5standStillSituationpointxmlpointcsv.png}
+%%\caption{The global workings of our framework}
+%\label{evaluation_log2_gaussian0point5standStillSituationpointxmlpointcsv}
+%\end{figure}
+%
+%\begin{figure}
+%\centering
+%\includegraphics[width=250pt]{./automaticResults2/evaluation_log2_gaussian0point5twoPeopleToiletSituationpointxmlpointcsv.png}
+%%\caption{The global workings of our framework}
+%\label{evaluation_log2_gaussian0point5twoPeopleToiletSituationpointxmlpointcsv}
+%\end{figure}
+%
+%\begin{figure}
+%\centering
+%\includegraphics[width=250pt]{./automaticResults2/evaluation_log2_linear0point01automated-pillarSituationpointcsv.png}
+%%\caption{The global workings of our framework}
+%\label{evaluation_log2_linear0point01automated-pillarSituationpointcsv}
+%\end{figure}
+%\clearpage
+%
+%\begin{figure}
+%\centering
+%\includegraphics[width=250pt]{./automaticResults2/evaluation_log2_linear0point01automated-standStillSituationpointcsv.png}
+%%\caption{The global workings of our framework}
+%\label{evaluation_log2_linear0point01automated-standStillSituationpointcsv}
+%\end{figure}
+%
+%\begin{figure}
+%\centering
+%\includegraphics[width=250pt]{./automaticResults2/evaluation_log2_linear0point01automated-twoPeopleToiletSituationpointcsv.png}
+%%\caption{The global workings of our framework}
+%\label{evaluation_log2_linear0point01automated-twoPeopleToiletSituationpointcsv}
+%\end{figure}
+%
+%\begin{figure}
+%\centering
+%\includegraphics[width=250pt]{./automaticResults2/evaluation_log2_linear0point1automated-standStillSituationpointcsv.png}
+%%\caption{The global workings of our framework}
+%\label{evaluation_log2_linear0point1automated-standStillSituationpointcsv}
+%\end{figure}
+%
+%\begin{figure}
+%\centering
+%\includegraphics[width=250pt]{./automaticResults2/evaluation_log2_linear0point1automated-twoPeopleToiletSituationpointcsv.png}
+%%\caption{The global workings of our framework}
+%\label{evaluation_log2_linear0point1automated-twoPeopleToiletSituationpointcsv}
+%\end{figure}
+%
+%\begin{figure}
+%\centering
+%\includegraphics[width=250pt]{./automaticResults2/evaluation_log2_linear0point2automatedstandStillSituationpointxmlpointcsv.png}
+%%\caption{The global workings of our framework}
+%\label{evaluation_log2_linear0point2automatedstandStillSituationpointxmlpointcsv}
+%\end{figure}
+%
+%\begin{figure}
+%\centering
+%\includegraphics[width=250pt]{./automaticResults2/evaluation_log2_linear0point2automatedtwoPeopleToiletSituationpointxmlpointcsv.png}
+%%\caption{The global workings of our framework}
+%\label{evaluation_log2_linear0point2automatedtwoPeopleToiletSituationpointxmlpointcsv}
+%\end{figure}
+%\clearpage
+%
+%\begin{figure}
+%\centering
+%\includegraphics[width=250pt]{./automaticResults2/evaluation_log2_linear0point5automatedtwoPeopleToiletSituationpointxmlpointcsv.png}
+%%\caption{The global workings of our framework}
+%\label{evaluation_log2_linear0point5automatedtwoPeopleToiletSituationpointxmlpointcsv}
+%\end{figure}
+%
+%\begin{figure}
+%\centering
+%\includegraphics[width=250pt]{./automaticResults2/evaluation_log2_linear1automatedtwoPeopleToiletSituationpointxmlpointcsv.png}
+%%\caption{The global workings of our framework}
+%\label{evaluation_log2_linear1automatedtwoPeopleToiletSituationpointxmlpointcsv}
+%\end{figure}
+%
+%\begin{figure}
+%\centering
+%\includegraphics[width=250pt]{./automaticResults2/evaluation_log2_sigmoid0point01automatedpillarSituationpointxmlpointcsv.png}
+%%\caption{The global workings of our framework}
+%\label{evaluation_log2_sigmoid0point01automatedpillarSituationpointxmlpointcsv}
+%\end{figure}
+%
+%\begin{figure}
+%\centering
+%\includegraphics[width=250pt]{./automaticResults2/evaluation_log2_sigmoid0point01automatedstandStillSituationpointxmlpointcsv.png}
+%%\caption{The global workings of our framework}
+%\label{evaluation_log2_sigmoid0point01automatedstandStillSituationpointxmlpointcsv}
+%\end{figure}
+%
+%\begin{figure}
+%\centering
+%\includegraphics[width=250pt]{./automaticResults2/evaluation_log2_sigmoid0point01automatedtwoPeopleToiletSituationpointxmlpointcsv.png}
+%%\caption{The global workings of our framework}
+%\label{evaluation_log2_sigmoid0point01automatedtwoPeopleToiletSituationpointxmlpointcsv}
+%\end{figure}
+%
+%\begin{figure}
+%\centering
+%\includegraphics[width=250pt]{./automaticResults2/evaluation_log2sigmoid0point1automatedpillarSituationpointxmlpointcsv.png}
+%%\caption{The global workings of our framework}
+%\label{evaluation_log2sigmoid0point1automatedpillarSituationpointxmlpointcsv}
+%\end{figure}
+%
+%\begin{figure}
+%\centering
+%\includegraphics[width=250pt]{./automaticResults2/evaluation_log2sigmoid0point1automatedstandStillSituationpointxmlpointcsv.png}
+%%\caption{The global workings of our framework}
+%\label{evaluation_log2sigmoid0point1automatedstandStillSituationpointxmlpointcsv}
+%\end{figure}
+%\clearpage
+%
+%\begin{figure}
+%\centering
+%\includegraphics[width=250pt]{./automaticResults2/evaluation_log2sigmoid0point1automatedtwoPeopleToiletSituationpointxmlpointcsv.png}
+%%\caption{The global workings of our framework}
+%\label{evaluation_log2sigmoid0point1automatedtwoPeopleToiletSituationpointxmlpointcsv}
+%\end{figure}
+%
+%\begin{figure}
+%\centering
+%\includegraphics[width=250pt]{./automaticResults2/evaluation_log2sigmoid0point5automatedpillarSituationpointxmlpointcsv.png}
+%%\caption{The global workings of our framework}
+%\label{evaluation_log2sigmoid0point5automatedpillarSituationpointxmlpointcsv}
+%\end{figure}
+%
+%\begin{figure}
+%\centering
+%\includegraphics[width=250pt]{./automaticResults2/evaluation_log2sigmoid0point5automatedstandStillSituationpointxmlpointcsv.png}
+%%\caption{The global workings of our framework}
+%\label{evaluation_log2sigmoid0point5automatedstandStillSituationpointxmlpointcsv}
+%\end{figure}
+%\clearpage
+%
+%\begin{figure}
+%\centering
+%\includegraphics[width=250pt]{./automaticResults2/evaluation_log2sigmoid0point5automatedtwoPeopleToiletSituationpointxmlpointcsv.png}
+%%\caption{The global workings of our framework}
+%\label{evaluation_log2sigmoid0point5automatedtwoPeopleToiletSituationpointxmlpointcsv}
+%\end{figure}
+%
+%\begin{figure}
+%\centering
+%\includegraphics[width=200pt]{rotterdamPedestrianNet}
+%\caption{The basic petrinet for the pedestrian model for Rotterdam airport}
+%\label{basicnet}
+%\end{figure}
+%
+%\begin{figure}
+%\centering
+%\includegraphics[width=350pt]{twoPeopleToiletSituation}
+%\caption{Behavior model for the toilet situation}
+%\label{toiletsituation}
+%\end{figure}
+%
+%\begin{figure}
+%\centering
+%\includegraphics[width=250pt]{pillarSituation}
+%\caption{Behavior model for the pillar situation}
+%\label{pillarsituation}
+%\end{figure}
+\todo[inline]{At this place there were previously a lot of graphs that I now commented out. Decide what to do with them. I shouldn´t put them in my thesis in this form.}
 
 
 \section{What can we derive from these results?}
 From these results, we can see that not only does the changing of the goal probability function affect the time at which the agents decide when to move to the goal, but also the time at which other actions are executed. This shows that our framework is able to generate emergent behavior. When the probability of going to the goal is high, actions that take longer to finish have a very low frequency.
 
+\section{Results of the Second Quantitative experiments}
+\label{sec:secondquantitativeexperimentresults}
+\todo[inline]{Maybe the pictures are better next to eachother or something.}
+\todo[inline]{Check if I have to experiment with more parameters, e.g. with the Gaussian function}
+\todo[inline]{Maybe regenerate the graphs so the text is larger, or find a different solution so the graphs can be more nicely positioned}
+
+\begin{figure}
+\centering
+\includegraphics[width=1.3\textwidth]{/home/djura/vakken/svn_afstudeerstage/deadline-driven-behavior/hulpscriptjes/goodresults/constant1_cropped}
+\caption{constant1}
+\label{fig:constant1}
+\end{figure}
+
+\begin{figure}
+\centering
+\includegraphics[width=1.5\textwidth]{/home/djura/vakken/svn_afstudeerstage/deadline-driven-behavior/hulpscriptjes/goodresults/linear0to1_100agents.png}
+\caption{linear0to1 100agents}
+\label{fig:linear0to1_100agents}
+\end{figure}
+
+\begin{figure}
+\centering
+\includegraphics[width=1.5\textwidth]{/home/djura/vakken/svn_afstudeerstage/deadline-driven-behavior/hulpscriptjes/goodresults/linear0to05_100agents.png}
+\caption{linear0to 0.5 100agents}
+\label{fig:linear0to0.5_100agents}
+\end{figure}
+
+\begin{figure}
+\centering
+\includegraphics[width=1.5\textwidth]{/home/djura/vakken/svn_afstudeerstage/deadline-driven-behavior/hulpscriptjes/goodresults/linear0to01_100agents.png}
+\caption{linear0to0.1 100agents}
+\label{fig:linear0to1_100agents}
+\end{figure}
+
+\begin{figure}
+\centering
+\includegraphics[width=1.5\textwidth]{/home/djura/vakken/svn_afstudeerstage/deadline-driven-behavior/hulpscriptjes/goodresults/sigmoidnotmultiplied_100agents.png}
+\caption{sigmoidnotmultiplied 100agents (but shifted to the right}
+\label{fig:sigmoidnotmultiplied_100agents}
+\end{figure}
+
+\begin{figure}
+\centering
+\includegraphics[width=1.5\textwidth]{/home/djura/vakken/svn_afstudeerstage/deadline-driven-behavior/hulpscriptjes/goodresults/sigmoid xtimes20.png}
+\caption{sigmoid xtimes20}
+\label{fig:sigmoid xtimes20}
+\end{figure}
+
+\begin{figure}
+\centering
+\includegraphics[width=1.5\textwidth]{/home/djura/vakken/svn_afstudeerstage/deadline-driven-behavior/hulpscriptjes/goodresults/sigmoid xtimes100.png}
+\caption{sigmoid xtimes100}
+\label{fig:sigmoid xtimes100}
+\end{figure}
+
+\begin{figure}
+\centering
+\includegraphics[width=1.5\textwidth]{/home/djura/vakken/svn_afstudeerstage/deadline-driven-behavior/hulpscriptjes/goodresults/sigmoid xtimes100.png}
+\caption{sigmoid xtimes20}
+\label{fig:sigmoid xtimes20}
+\end{figure}
+
+\begin{figure}
+\centering
+\includegraphics[width=1.5\textwidth]{/home/djura/vakken/svn_afstudeerstage/deadline-driven-behavior/hulpscriptjes/goodresults/gaussian_mean200_sigma50_100_max1.png}
+\caption{gaussian mean200 sigma50 100 max1}
+\label{fig:gaussian_mean200_sigma50_100_max1}
+\end{figure}
 
 \chapter{Conclusion \& Discussion}
 The results are different from what we expected, but logical nonetheless. We expected the sigmoid function to have the ideal curve to reflect the behavior of the pedestrians in Rotterdam airport but

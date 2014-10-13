@@ -68,7 +68,7 @@ public class PedestrianManager {
         }
 
         IPedestrianBrain pedestrianBrain = pedestrians.get(id);
-        System.out.println("Pedestrian size: " + pedestrians.size());
+//        System.out.println("Pedestrian size: " + pedestrians.size());
 
         // Modify pedestrianBrain behavior so it reflects the latest situations.
         situationManager.updateSituations(pedestrianBrain, observation.getLocationX(),

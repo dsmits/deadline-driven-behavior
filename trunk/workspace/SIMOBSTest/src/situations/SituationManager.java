@@ -217,7 +217,7 @@ public class SituationManager implements IPedestrianSimManager, Observer {
 	private String getSituationPetriNet(Element currentSituationNode) {
 		Element className = (Element) currentSituationNode
 				.getElementsByTagName("petriNetFile").item(0);
-		System.out.println("petriNetFile: " + className.getTextContent());
+//		System.out.println("petriNetFile: " + className.getTextContent());
 		return className.getTextContent();
 	}
 
@@ -243,19 +243,19 @@ public class SituationManager implements IPedestrianSimManager, Observer {
 	private String getSituationId(Element currentSituationNode) {
 		Element situationId = (Element) currentSituationNode
 				.getElementsByTagName("id").item(0);
-		System.out.println("SituationId: " + situationId.getTextContent());
+//		System.out.println("SituationId: " + situationId.getTextContent());
 		return situationId.getTextContent();
 	}
 
 	private String getSituationName(Element currentSituationNode) {
 		Element className = (Element) currentSituationNode
 				.getElementsByTagName("className").item(0);
-		System.out.println("ClassName: " + className.getTextContent());
+//		System.out.println("ClassName: " + className.getTextContent());
 		return className.getTextContent();
 	}
 
 	public List<ISituation> getSituations(double locationX, double locationY) {
-		System.out.println("locationX: " + locationX + " locationY: "
+//		System.out.println("locationX: " + locationX + " locationY: "
 				+ locationY);
 		List<ISituation> situations = this.situations.get(locationX, locationY);
 		/*
@@ -307,7 +307,7 @@ public class SituationManager implements IPedestrianSimManager, Observer {
 	private void transportToken(SinkTransition transition) {
 
 		SlotConnection connection = connections.get(transition.getSlot());
-		System.out.println("Connection: " + connection);
+//		System.out.println("Connection: " + connection);
 
 		// SourceTransition attachedSource = transition.getAttachedSource();
 		// TODO: Very crappy way to get the attached petri net. Should be
@@ -317,7 +317,7 @@ public class SituationManager implements IPedestrianSimManager, Observer {
 				.getAttachedPetriNet(transition.getSlot());
 		PedestrianSimDataLayer currentPetriNet = connection
 				.getPetriNetOfSlot(transition.getSlot());
-		System.out.println("Transporting token to: " + attachedPetriNet);
+//		System.out.println("Transporting token to: " + attachedPetriNet);
 		log(attachedPetriNet, currentPetriNet);
 		SourceTransition attachedSource = connection.getAttachedSlot(
 				transition.getSlot()).getSituationSource();
@@ -812,7 +812,7 @@ public class SituationManager implements IPedestrianSimManager, Observer {
 	public static void main(String args[]) {
 		SituationManager manager = new SituationManager(
 				getConfigDocument("situations.xml"), new StepClock());
-		System.out.println("Situations: " + manager.getSituations(250, 50));
+//		System.out.println("Situations: " + manager.getSituations(250, 50));
 
 	}
 

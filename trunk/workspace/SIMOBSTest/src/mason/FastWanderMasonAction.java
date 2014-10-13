@@ -61,7 +61,7 @@ public class FastWanderMasonAction extends AbstractBaseMasonAction {
 			
 		}
 
-        System.out.println("New orientation: " + newOrientation / Math.PI);
+//        System.out.println("New orientation: " + newOrientation / Math.PI);
 
         Double2D shift = getRelativeLocation(newOrientation, speed);
         Double2D newLocation = new Double2D(currentX + shift.getX(), currentY + shift.getY());

@@ -149,7 +149,7 @@ public abstract class AbstractBasePedestrianBrain implements IPedestrianBrain {
 			e.printStackTrace();
 			transitionActionName = "noTransitionAction";
 		}
-		System.out.println("TransitionActionName: " + transitionActionName);
+//		System.out.println("TransitionActionName: " + transitionActionName);
 		return transitionActionName;
 
 	}
