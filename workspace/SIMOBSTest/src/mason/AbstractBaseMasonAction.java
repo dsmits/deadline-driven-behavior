@@ -13,8 +13,8 @@ public abstract class AbstractBaseMasonAction implements IMasonAction {
     protected double maxRotation = 0.25 * Math.PI;
     protected static final double DEFAULT_SPEED = 0.5;
     private static final String LOG_FILE_PATH = "actionlog.csv";
-    protected static final double MAX_X_COORDINATE = 500;
-    protected static final double MAX_Y_COORDINATE = 500;
+    protected static final double MAX_X_COORDINATE = 100;
+    protected static final double MAX_Y_COORDINATE = 100;
     
 
     public AbstractBaseMasonAction() {
