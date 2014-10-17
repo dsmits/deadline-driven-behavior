@@ -1,5 +1,19 @@
 DISCLAIMER: The things that I write here are mainly to arrange my own thoughts and might not always be understandable for other people.
 
+=17-10-2014=
+I just started running the simulation with only two big areas for fastwander and slowwander and the pedestrians keep moving and don't go idle after a few steps. Now the simulation is loaded in about 2 seconds instead of a couple of minutes, so I'm definitely keeping it this way. Today I am going to run the simulation with the goal action included again.
+
+I realize that when I put the goal action in again, there is another variable to vary. I'm gonna start with the linear function for non-goal actions and a constant for goal actions at 1 and then at 0.1.
+
+I notice that it takes a long time for some pedestrians to reach the goal, because they are so far away from it. Maybe I should modify the estimation of how long it takes to reach the goal? I should find out where I can find that. Another option is to make the area smaller where the pedestrians walk around.
+
+These are the new graphs I made today:
+
+https://deadline-driven-behavior.googlecode.com/svn/trunk/hulpscriptjes/goodresults/linear0to1goal1.png
+
+https://deadline-driven-behavior.googlecode.com/svn/trunk/hulpscriptjes/goodresults/linear0to1goal01.png
+
+
 =13-10-2014=
 Today I'm writing about my new experiments and results in my [https://deadline-driven-behavior.googlecode.com/svn/trunk/report/simobs_thesis_final.pdf thesis]. This thursday I'm going to talk with my supervisor again. Maybe I can then discuss what I should do with my old experiments. My old experiments are run on old code so the system behaves a little differently now. There is valuable information in there though, because without the old experiments I would never have observed how much influence the goal probability/behavior has on the system, so I would never have decided to do the experiments without it. What's also an option is that I get rid of the old graphs and do the experiments again in the new way but with the goal behavior added again. Maybe that is the best solution.
 
