@@ -8,6 +8,8 @@ I have to run a few more simulations. I think I get enough variety when I do the
     * With Gaussian(200, 50, 1)
   * Goal action Sigmoid at nice parameter
     * Same non-goal action parameters as before
+  *Goal action as Gaussian with nice parameters, one or two
+    * Non-goal same as before
 
 
 I think I won't put every graph in the main thesis part, because it is so much, so a part will be put in the appendix.
