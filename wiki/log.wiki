@@ -4,10 +4,13 @@ DISCLAIMER: The things that I write here are mainly to arrange my own thoughts a
 I have to run a few more simulations. I think I get enough variety when I do the following:
   * Goal action constant 1
     * With non-goal actions linear 0 to 1
-    * Non goal-sigmoid at nice parameter that I have to figure out
+    * Non goal-sigmoid at nice parameter that I have to figure out.
+    * With Gaussian(200, 50, 1)
+  * Goal action Sigmoid at nice parameter
+    * Same non-goal action parameters as before
 
 
-
+I think I won't put every graph in the main thesis part, because it is so much, so a part will be put in the appendix.
 
 I will also have to clarify why I chose these parameters.
 Also, I still have to run another simulation with goal action at 0 and sigmoid with some nicer parameters.
