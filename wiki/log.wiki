@@ -10,7 +10,7 @@ I have to run a few more simulations. I think I get enough variety when I do the
     * Same non-goal action functions as before.
   * Goal action Sigmoid at nice parameter
     * Same non-goal as before
-  *Goal action as Gaussian with nice parameters, one or two
+  * Goal action as Gaussian with nice parameters, one or two
     * Same non-goal as before
 
 
