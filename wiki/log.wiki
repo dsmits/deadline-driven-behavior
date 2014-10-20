@@ -39,7 +39,7 @@ https://deadline-driven-behavior.googlecode.com/svn-history/r197/trunk/hulpscrip
 
 https://deadline-driven-behavior.googlecode.com/svn-history/r197/trunk/hulpscriptjes/goodresults/sigmoid100_0_10_1_goal1to0.png
 
-https://deadline-driven-behavior.googlecode.com/svn-history/r197/trunk/hulpscriptjes/sigmoid xtimes100.png
+https://deadline-driven-behavior.googlecode.com/svn-history/r197/trunk/hulpscriptjes/sigmoid%20xtimes100.png
 
 =17-10-2014=
 I just started running the simulation with only two big areas for fastwander and slowwander and the pedestrians keep moving and don't go idle after a few steps. Now the simulation is loaded in about 2 seconds instead of a couple of minutes, so I'm definitely keeping it this way. Today I am going to run the simulation with the goal action included again.
