@@ -1,11 +1,11 @@
 DISCLAIMER: The things that I write here are mainly to arrange my own thoughts and might not always be understandable for other people.
 
 =20-10-2014=
-I have to run a few more simulations. I think I get enough variety when I do the following:
+I have to run a few more simulations. I think I get enough variety when I do the following (I've checked the ones I have done):
   * Goal action linear 1 to 0
-    * With non-goal actions linear 0 to 1
+    * ~~With non-goal actions linear 0 to 1~~
     * Non goal-sigmoid at nice parameter that I have to figure out.
-    * With Gaussian(200, 50, 1)
+    * ~~With Gaussian(200, 50, 1)~~
   * Goal action linear 0.1 to 0
     * Same non-goal action functions as before.
   * Goal action Sigmoid at nice parameter
