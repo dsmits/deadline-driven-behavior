@@ -27,6 +27,20 @@ Also, I still have to run another simulation with goal action at 0 and sigmoid w
 
 When I have these graphs, I should start finishing up the result section. After that, add to the conclusion section and, most importantly, *DON'T LOSE SIGHT OF THE RESEARCH QUESTIONS!*
 
+The graphs:
+
+https://deadline-driven-behavior.googlecode.com/svn-history/r197/trunk/hulpscriptjes/goodresults/gaussian200_50_1_goal01to0.png
+
+https://deadline-driven-behavior.googlecode.com/svn-history/r197/trunk/hulpscriptjes/goodresults/gaussian200_50_1_goal1to0.png
+
+https://deadline-driven-behavior.googlecode.com/svn-history/r197/trunk/hulpscriptjes/goodresults/linear0to1_goal01to0.png
+
+https://deadline-driven-behavior.googlecode.com/svn-history/r197/trunk/hulpscriptjes/goodresults/linear0to1goal1to0.png
+
+https://deadline-driven-behavior.googlecode.com/svn-history/r197/trunk/hulpscriptjes/goodresults/sigmoid100_0_10_1_goal1to0.png
+
+https://deadline-driven-behavior.googlecode.com/svn-history/r197/trunk/hulpscriptjes/sigmoid xtimes100.png
+
 =17-10-2014=
 I just started running the simulation with only two big areas for fastwander and slowwander and the pedestrians keep moving and don't go idle after a few steps. Now the simulation is loaded in about 2 seconds instead of a couple of minutes, so I'm definitely keeping it this way. Today I am going to run the simulation with the goal action included again.
 
