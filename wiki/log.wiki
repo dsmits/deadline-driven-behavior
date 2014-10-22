@@ -1,5 +1,16 @@
 DISCLAIMER: The things that I write here are mainly to arrange my own thoughts and might not always be understandable for other people.
 
+=22-10-2014=
+The graphs of today:
+
+https://deadline-driven-behavior.googlecode.com/svn/trunk/hulpscriptjes/goodresults/linear0to1_goalsigmoid_100_0_10_01.png
+
+https://deadline-driven-behavior.googlecode.com/svn/trunk/hulpscriptjes/goodresults/sigmoid100_0_10_1_goalsigmoid100_0_10_-1.png
+
+https://deadline-driven-behavior.googlecode.com/svn/trunk/hulpscriptjes/goodresults/sigmoid_100_0_10_1_goal_100_0_10_01.png
+
+https://deadline-driven-behavior.googlecode.com/svn/trunk/hulpscriptjes/goodresults/sigmoid_100_0_10_1goal01to0.png
+
 =20-10-2014=
 I have to run a few more simulations. I think I get enough variety when I do the following (I've checked the ones I have done):
   * Goal action linear 1 to 0
@@ -8,11 +19,11 @@ I have to run a few more simulations. I think I get enough variety when I do the
     * ~~With Gaussian(200, 50, 1)~~
   * Goal action linear 0.1 to 0
     * ~~With non-goal actions linear 0 to 1~~
-    * Non goal-sigmoid at nice parameter that I have to figure out.
+    * ~~Non goal-sigmoid with parameters (100,0,10,1)~~
     * ~~With Gaussian(200, 50, 1)~~
-  * Goal action Sigmoid at nice parameter
-    * With non-goal actions linear 0 to 1
-    * Non goal-sigmoid at nice parameter that I have to figure out.
+  * Goal action Sigmoid at nice parameter (100,0,10,-1)
+    * ~~With non-goal actions linear 0 to 1~~
+    * ~~Non goal-sigmoid with parameters (100,0,10,1)~~
     * With Gaussian(200, 50, 1)
   * Goal action as Gaussian with nice parameters, one or two
     * With non-goal actions linear 0 to 1
