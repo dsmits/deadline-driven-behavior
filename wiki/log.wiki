@@ -11,7 +11,7 @@ I also just realize that the parameters for the sigmoid goal utility function (1
 
 The proper graphs I did today:
 
-https://code.google.com/p/deadline-driven-behavior/source/browse/trunk/hulpscriptjes/goodresults/gaussian200_50_1_goalsigmoid_100_0_-1_1.png?spec=svn206&r=206
+https://deadline-driven-behavior.googlecode.com/svn-history/r206/trunk/hulpscriptjes/goodresults/gaussian200_50_1_goalsigmoid_100_0_-1_1.png
 
 https://code.google.com/p/deadline-driven-behavior/source/browse/trunk/hulpscriptjes/goodresults/linear0_1_200_goalsigmoid_100_0_-10_1.png
 
