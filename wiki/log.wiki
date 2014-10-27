@@ -13,9 +13,9 @@ The proper graphs I did today:
 
 https://deadline-driven-behavior.googlecode.com/svn-history/r206/trunk/hulpscriptjes/goodresults/gaussian200_50_1_goalsigmoid_100_0_-1_1.png
 
-https://code.google.com/p/deadline-driven-behavior/source/browse/trunk/hulpscriptjes/goodresults/linear0_1_200_goalsigmoid_100_0_-10_1.png
+https://deadline-driven-behavior.googlecode.com/svn-history/r206/trunk/hulpscriptjes/goodresults/linear0_1_200_goalsigmoid_100_0_-10_1.png
 
-https://code.google.com/p/deadline-driven-behavior/source/browse/trunk/hulpscriptjes/goodresults/sigmoid100_0_10_1_goalsigmoid100_0_-10_1.png	
+https://deadline-driven-behavior.googlecode.com/svn-history/r206/trunk/hulpscriptjes/goodresults/sigmoid100_0_10_1_goalsigmoid100_0_-10_1.png	
 
 =22-10-2014=
 The graphs of today:
