@@ -9,8 +9,13 @@ I just realize that I shouldn't have used these parameters for a Gaussian goal p
 
 I also just realize that the parameters for the sigmoid goal utility function (100,0,10,-1) are wrong. In this way all values are below zero. This also means I have to redo two other plots. The parameters should have been (100,0,-10,1)
 
+The proper graphs I did today:
 
+https://code.google.com/p/deadline-driven-behavior/source/browse/trunk/hulpscriptjes/goodresults/gaussian200_50_1_goalsigmoid_100_0_-1_1.png?spec=svn206&r=206
 
+https://code.google.com/p/deadline-driven-behavior/source/browse/trunk/hulpscriptjes/goodresults/linear0_1_200_goalsigmoid_100_0_-10_1.png
+
+https://code.google.com/p/deadline-driven-behavior/source/browse/trunk/hulpscriptjes/goodresults/sigmoid100_0_10_1_goalsigmoid100_0_-10_1.png	
 
 =22-10-2014=
 The graphs of today:
