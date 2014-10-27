@@ -1,5 +1,17 @@
 DISCLAIMER: The things that I write here are mainly to arrange my own thoughts and might not always be understandable for other people.
 
+=27-10-2014=
+Just plotted with init(clock, goalTime, new Gaussian(200, 50, 1), new Sigmoid(100,0,10,-1));
+
+https://deadline-driven-behavior.googlecode.com/svn/trunk/hulpscriptjes/goodresults/gaussian_200_50_1_goalsigmoid_100_0_10_-1.png
+
+I just realize that I shouldn't have used these parameters for a Gaussian goal probability function. The mean of the Gaussian should be 0. I see that I misread the todo list.
+
+I also just realize that the parameters for the sigmoid goal utility function (100,0,10,-1) are wrong. In this way all values are below zero. This also means I have to redo two other plots. The parameters should have been (100,0,-10,1)
+
+
+
+
 =22-10-2014=
 The graphs of today:
 
@@ -21,9 +33,9 @@ I have to run a few more simulations. I think I get enough variety when I do the
     * ~~With non-goal actions linear 0 to 1~~
     * ~~Non goal-sigmoid with parameters (100,0,10,1)~~
     * ~~With Gaussian(200, 50, 1)~~
-  * Goal action Sigmoid at nice parameter (100,0,10,-1)
-    * ~~With non-goal actions linear 0 to 1~~
-    * ~~Non goal-sigmoid with parameters (100,0,10,1)~~
+  * Goal action Sigmoid at nice parameter (100,0,-10,1)
+    * With non-goal actions linear 0 to 1
+    * Non goal-sigmoid with parameters (100,0,10,1)
     * With Gaussian(200, 50, 1)
   * Goal action as Gaussian with nice parameters, one or two
     * With non-goal actions linear 0 to 1
