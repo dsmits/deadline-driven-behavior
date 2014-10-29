@@ -13,7 +13,11 @@ Now I will have to work on finishing the results section. To do this, I am going
 
 https://deadline-driven-behavior.googlecode.com/svn-history/r206/trunk/hulpscriptjes/goodresults/linear0_1_200_goalsigmoid_100_0_-10_1.png
 
-I'm suspecting that I forgot to modify the legend because 
+This graph looks exactly the same as: 
+
+https://deadline-driven-behavior.googlecode.com/svn-history/r206/trunk/hulpscriptjes/goodresults/gaussian200_50_1_goalsigmoid_100_0_-1_1.png
+
+Only the legend is different. What's going on here? I'll find out friday and finish off today with some text in the results section about the results in general.
 
 
 =27-10-2014=
