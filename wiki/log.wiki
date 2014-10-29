@@ -9,7 +9,11 @@ https://deadline-driven-behavior.googlecode.com/svn-history/r211/trunk/hulpscrip
 
 https://deadline-driven-behavior.googlecode.com/svn-history/r211/trunk/hulpscriptjes/goodresults/sigmoid100_0_10_1_goalgaussian0_50_1.png
 
-Now I will have to work on finishing the results section.
+Now I will have to work on finishing the results section. To do this, I am going through the results images of the experiments where the goal action is included and came across a graph that needs to be double checked:
+
+https://deadline-driven-behavior.googlecode.com/svn-history/r206/trunk/hulpscriptjes/goodresults/linear0_1_200_goalsigmoid_100_0_-10_1.png
+
+I'm suspecting that I forgot to modify the legend because 
 
 
 =27-10-2014=
