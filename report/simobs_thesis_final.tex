@@ -3,7 +3,7 @@
 \usepackage{titling, titlepic}
 
 \usepackage[colorinlistoftodos, bordercolor=white, backgroundcolor=cyan]{todonotes}
-\usepackage{booktabs, subcaption}
+\usepackage{booktabs, caption, subcaption}
 \usepackage{hyperref, comment}
 \usepackage{algpseudocode, algorithm}
 \begin{document}
@@ -461,10 +461,11 @@ If $0 \leq t \leq n$: $P(t) = at + b$\\
 If $t<0$: $P(t) = P(0)$\\
 If $t<n$: $P(t) = P(n)$
 \end{center}
-However, we do not specify these parameters directly. What matters the most to us, is the value at the start of the linear function($t=0$, and at the end(t=n). Consequently, we compute $a$ and $b$ as follows:
+However, we do not specify these parameters directly. What matters the most to us, is the value at the start of the linear utility function, $U$ at \todo[inline]{Name t differently}$t=0$, which we call $U_0$ and the value of $U$ at the end where $t=n$, which we call $U_n$. Consequently, we compute $a$ and $b$ as follows:
+\todo[inline]{Check whether I'm consequent in the indication of the parameters and if it is correct to call the x axis $n$}
 \begin{center}
-$a = \frac{endValue - startValue}{endX}$\\
-$b = startValue$
+$a = \frac{U_n - U_0}{n}$\\
+$b = U_0$
 \end{center}
 
 
@@ -540,19 +541,50 @@ The last action is a special one. This action is mentioned in none of the Petri 
 \chapter{Results}
 \label{chap:results}
 \section{Results of the First Quantitative Experiment}
-Firstly we are going to discuss the results of the first quantitative experiment. We can see that in general, we have chosen the right parameters to make the pedestrians reach their goal in time.
+Firstly we are going to discuss the results of the first quantitative experiment. One thing that is noticable in all results is that there are periods in which the number of pedestrians, especially in slow and fast wander, is steady, after which the number drops drastically. After a few steps the number goes up again. In sync with this behavior the number of pedestrians remaining idle stays low, and increases when the other behaviors drop. This is easily explained. Slow and fast wander are behaviors that exist of a single action. When this action has been executed, which takes a few steps, the token of the pedestrian moves out of the attached Petri net into its base place. In order to move this token, a slot and sink transition have to be fired. These transitions do not have an associated action. When there is no action available for the pedestrian, it executes the idle behavior. Especially at the start, this effect is very prominent. This is because all pedestrians start the simulation at exactly the same moment. All pedestrians executing the same actions or actions that take the same amount of time stay synchronous. After a few dozens of steps, the behavior has varied more and the pedestrians are not as synchronous any more in going back to the idle "action".
+
+Another thing that we can notice is that there are more or less four actions that dominate simulation, namely \emph{slow wander}, \emph{fast wander}, \emph{go to goal}, and \emph{idle action}.
+\todo[inline]{What happened to lean against pillar?} Behavior like going to the toilet and waiting for their friend (which are both part of the same going to the toilet behavior and Petri-net) are only done by one or two pedestrians at a time. This is completely as expected. The go-to-toilet situation is shared, which means that one Petri-net is attached to multiple pedestrian Petri-nets. The more dominant actions belong to situations that are not shared and are instantiated for every pedestrian that enters it. That means that the shared Petri nets are only instantiated once for every situation, while the ones that aren't shared are instantiated many times.
+
+In figure \ref{fig:linear0to1goal1to0}, \ref{fig:sigmoid100_0_10_1_goal1to0} and \ref{fig:gaussian200_50_1_goal1to0} we see the results for having a linear goal utility function that decreases from 1 to 0 and the utility function for other behavior varying. Figure \ref{fig:linear0to1goal1to0} and \ref{fig:sigmoid100_0_10_1_goal1to0} look very similar. The simulation starts out with a large preference for slow wander behavior, which decreases while fast wander increases. After about 70 steps however, the gotogoal action starts to dominate the simulation, increasing at a fast pace. This makes the other actions decrease rapidly until pedestrians are either idle (because they have already reached their goal) or still going to their goal. When we look at figure \ref{fig:gaussian200_50_1_goal1to0} we see that almost all pedestrians go to the goal in the first dozen of steps. Fast wander and slow wander become completely overshadowed. We conclude from these observations that the chosen goal utility function is not suitable for our purposes. The probability of going to the goal becomes too high too soon, so that even early in the simulation there is no possibility any more for the pedestrians to do other behavior. 
+
+ 
+\todo[inline]{Describe utility functions in captions formally}
+
+
+\begin{figure}[b]
+\centering            
+\includegraphics[width=\textwidth]{/home/djura/vakken/svn_afstudeerstage/deadline-driven-behavior/hulpscriptjes/goodresults/linear0to1goal1to0.png}
+\caption{Goal utility linear with $U_0=1$ and $U_n = 0$. Other behavior utility linear with  $U_0=0$ and $U_n=1$.}
+\label{fig:linear0to1goal1to0}
+\end{figure}
+
+\begin{figure}[b]
+\includegraphics[width=\textwidth]{/home/djura/vakken/svn_afstudeerstage/deadline-driven-behavior/hulpscriptjes/goodresults/sigmoid100_0_10_1_goal1to0.png}
+\caption{Goal utility linear with $U_0=1$ and $U_n = 0$. Other behavior utility function sigmoid100 0 10 1 goal1to0}
+\label{fig:sigmoid100_0_10_1_goal1to0}
+\end{figure}
+
+\begin{figure}[b]
+\includegraphics[width=\textwidth]{/home/djura/vakken/svn_afstudeerstage/deadline-driven-behavior/hulpscriptjes/goodresults/gaussian200_50_1_goal1to0.png}
+\caption{gaussian200 50 1 goal1to0}
+\label{fig:gaussian200_50_1_goal1to0}
+\end{figure}
+
+
+
+
+
+
+
+
 
 One problem with these results however is that the number of pedestrians going to their goal goes up very fast from a certain point in time, regardless of the exact shape of the utility function. Consequently it is quite difficult to see if relaxed and hurried behavior actually emerges from our framework. That was why we decided to do the second quantitative experiment that we described in the previous chapter (\ref{sec:quantitativeexp2}).
 
 
 %Pictures \ref{fig:gaussian200_50_1_goal01to0} \ref{fig:gaussian200_50_1_goal1to0} \ref{fig:gaussian200_50_1_goalgaussian0_50_1} \ref{fig:gaussian200_50_1_goalsigmoid_100_0_-1_1} \ref{fig:linear0_1_200_goalgaussian_0_50_1} \ref{fig:linear0_1_200_goalsigmoid_100_0_-10_1} \ref{fig:linear0to1_goal01to0} \ref{fig:linear0to1_goalsigmoid_100_0_10_01} \ref{fig:linear0to1goal01} \ref{fig:linear0to1goal01} \ref{fig:linear0to1goal1to0} \ref{fig:linear0to1goal1} \ref{fig:sigmoid100_0_10_1_goal1to0} \ref{fig:sigmoid100_0_10_1_goalgaussian0_50_1} \ref{fig:sigmoid100_0_10_1_goalsigmoid100_0_-10_1} \ref{fig:sigmoid100_0_10_1_goalsigmoid100_0_10_-1} \ref{fig:sigmoid_100_0_10_1_goal_100_0_10_01} \ref{fig:sigmoid_100_0_10_1_goal_100_0_10_01}.
 
-\begin{figure}[h]
-\centering
-\includegraphics[width=1.5\textwidth]{/home/djura/vakken/svn_afstudeerstage/deadline-driven-behavior/hulpscriptjes/goodresults/linear0to1goal1.png}
-\caption{linear0to1goal1}
-\label{fig:linear0to1goal1}
-\end{figure}
+
 
 \begin{figure}[h]
 \centering
@@ -561,19 +593,8 @@ One problem with these results however is that the number of pedestrians going t
 \label{fig:linear0to1goal01}
 \end{figure}
 
-\begin{figure}[h]
-\centering
-\includegraphics[width=1.5\textwidth]{/home/djura/vakken/svn_afstudeerstage/deadline-driven-behavior/hulpscriptjes/goodresults/linear0to1goal1to0.png}
-\caption{linear0to1goal1to0}
-\label{fig:linear0to1goal1to0}
-\end{figure}
 
-\begin{figure}[h]
-\centering
-\includegraphics[width=1.5\textwidth]{/home/djura/vakken/svn_afstudeerstage/deadline-driven-behavior/hulpscriptjes/goodresults/gaussian200_50_1_goal1to0.png}
-\caption{gaussian200 50 1 goal1to0}
-\label{fig:gaussian200_50_1_goal1to0}
-\end{figure}
+
 
 \begin{figure}[h]
 \centering
@@ -591,12 +612,7 @@ One problem with these results however is that the number of pedestrians going t
 \label{fig:linear0to1_goal01to0}
 \end{figure}
 
-\begin{figure}[h]
-\centering
-\includegraphics[width=1.5\textwidth]{/home/djura/vakken/svn_afstudeerstage/deadline-driven-behavior/hulpscriptjes/goodresults/sigmoid100_0_10_1_goal1to0.png}
-\caption{sigmoid100 0 10 1 goal1to0}
-\label{fig:sigmoid100_0_10_1_goal1to0}
-\end{figure}
+
 
 \begin{figure}[h]
 \centering
