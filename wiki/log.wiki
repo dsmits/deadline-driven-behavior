@@ -6,6 +6,10 @@ Today I'm going to try to finish the results section. First I will make sure the
 
 Update: Just decided that I can't put the graphs three in a row, they would become unreadable.
 
+Some things to discuss with my supervisor:
+  * I call the x axis in my graphs t, but this is probably confusing, should I call it something else? It represents the time that is left, but that is the exact opposite of the time elapsed.
+  * I try to finish the results section today but I think I won't be able to do anything about the "qualitative" experiment. I'm not sure yet what I should do about that experiment. Maybe I can form a plan tomorrow.
+
 
 =29-10-2014=
 Just generated the last 3 graphs:
