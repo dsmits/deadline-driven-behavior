@@ -4,6 +4,8 @@ DISCLAIMER: The things that I write here are mainly to arrange my own thoughts a
 
 Today I'm going to try to finish the results section. First I will make sure the graphs are in the right position. I'm going to make subfigures and group the graphs like I did in the to-do list last week. Then I will show the two graphs with the constant goal utility function.
 
+Update: Just decided that I can't put the graphs three in a row, they would become unreadable.
+
 
 =29-10-2014=
 Just generated the last 3 graphs:
