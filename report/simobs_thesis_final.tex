@@ -442,8 +442,9 @@ It is very difficult to quantitatively establish whether lifelike behavior has b
 A sigmoid function is an S-shaped curve that has a progression that accellerates and approaches a climax over time. This function can be found in many natural processes, such as learning curves. This function closely resembles how we reason that the behavior will shift when a pedestrian approaches a deadline.
 Our sigmoid function is defined as follows:
 \begin{equation}
-P(t) = \eta \frac{1}{1+e^{-\omega(t-t_0)}}
+U(t) = \eta \frac{1}{1+e^{-\omega(t-t_0)}}
 \end{equation}
+\todo[inline]{Check if the following parameters are still true}
 In our experiments, we chose $t_0=100$ and $\omega=100$, so that the middle of the curve lies in the middle of the 200-timestep period which the pedestrians have to reach their deadline. We chose $\omega$ to be 100 as well to scale the function to fit in the 200 timestep interval. For $\eta$, we varied this between 0 and 1.
 % When the deadline is far away, it does not matter much whether the pedestrian goes straight to its goal or does something else. Even if time shifts a little, it still does not matter much. However, when the pedestrian moves on
 
@@ -541,6 +542,7 @@ The last action is a special one. This action is mentioned in none of the Petri 
 \chapter{Results}
 \label{chap:results}
 \section{Results of the First Quantitative Experiment}
+\label{sec:firstquantitative}
 Firstly we are going to discuss the results of the first quantitative experiment. One thing that is noticable in all results is that there are periods in which the number of pedestrians, especially in slow and fast wander, is steady, after which the number drops drastically. After a few steps the number goes up again. In sync with this behavior the number of pedestrians remaining idle stays low, and increases when the other behaviors drop. This is easily explained. Slow and fast wander are behaviors that exist of a single action. When this action has been executed, which takes a few steps, the token of the pedestrian moves out of the attached Petri net into its base place. In order to move this token, a slot and sink transition have to be fired. These transitions do not have an associated action. When there is no action available for the pedestrian, it executes the idle behavior. Especially at the start, this effect is very prominent. This is because all pedestrians start the simulation at exactly the same moment. All pedestrians executing the same actions or actions that take the same amount of time stay synchronous. After a few dozens of steps, the behavior has varied more and the pedestrians are not as synchronous any more in going back to the idle "action".
 
 Another thing that we can notice is that there are more or less four actions that dominate simulation, namely \emph{slow wander}, \emph{fast wander}, \emph{go to goal}, and \emph{idle action}.
@@ -599,8 +601,7 @@ In figures \ref{fig:linear0to1_goal01to0}, \ref{fig:sigmoid_100_0_10_1goal01to0}
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
-In figure \ref{fig:linear0_1_200_goalsigmoid_100_0_-10_1}, \ref{fig:sigmoid100_0_10_1_goalsigmoid100_0_-10_1} and \ref{fig:gaussian200_50_1_goalsigmoid_100_0_-10_1 are the results for the experiments with a sigmoid goal utility function where 
-%Find out formal parameters sigmoid next time
+In figure \ref{fig:linear0_1_200_goalsigmoid_100_0_-10_1}, \ref{fig:sigmoid100_0_10_1_goalsigmoid100_0_-10_1} and \ref{fig:gaussian200_50_1_goalsigmoid_100_0_-10_1} are the results for the experiments with a sigmoid goal utility function where $t_0=100$, $\beta=1$, $\omega=-10$ and $\eta=1$. The effects are more or less the same as for the previous results. Again, the sigmoid goal utility function causes the pedestrians to go to the goal very soon, eliminating the possibility to do other behavior very soon in the simulation.
 
 \begin{figure}
 \centering
@@ -624,49 +625,41 @@ In figure \ref{fig:linear0_1_200_goalsigmoid_100_0_-10_1}, \ref{fig:sigmoid100_0
 \label{fig:gaussian200_50_1_goalsigmoid_100_0_-10_1}
 \end{figure}
 
-
-
-\clearpage
-
-
-One problem we have with these results is that the number of pedestrians going to their goal goes up very fast from a certain point in time, regardless of the exact shape of the utility function. Consequently it is quite difficult to see if relaxed and hurried behavior actually emerges from our framework. That was why we decided to do the second quantitative experiment that we described in the previous chapter (\ref{sec:quantitativeexp2}). The results can be found in section \ref{sec:secondquantitativeexperimentresults}.
-
-
-%Pictures \ref{fig:gaussian200_50_1_goal01to0} \ref{fig:gaussian200_50_1_goal1to0} \ref{fig:gaussian200_50_1_goalgaussian0_50_1} \ref{fig:gaussian200_50_1_goalsigmoid_100_0_-1_1} \ref{fig:linear0_1_200_goalgaussian_0_50_1} \ref{fig:linear0_1_200_goalsigmoid_100_0_-10_1} \ref{fig:linear0to1_goal01to0} \ref{fig:linear0to1_goalsigmoid_100_0_10_01} \ref{fig:linear0to1goal01} \ref{fig:linear0to1goal01} \ref{fig:linear0to1goal1to0} \ref{fig:linear0to1goal1} \ref{fig:sigmoid100_0_10_1_goal1to0} \ref{fig:sigmoid100_0_10_1_goalgaussian0_50_1} \ref{fig:sigmoid100_0_10_1_goalsigmoid100_0_-10_1} \ref{fig:sigmoid100_0_10_1_goalsigmoid100_0_10_-1} \ref{fig:sigmoid_100_0_10_1_goal_100_0_10_01} \ref{fig:sigmoid_100_0_10_1_goal_100_0_10_01}.
-
+The results for a Gaussian goal probability function are shown in figure \ref{fig:sigmoid100_0_10_1_goalgaussian0_50_1}, \ref{fig:linear0_1_200_goalgaussian_0_50_1} and \ref{fig:gaussian200_50_1_goalgaussian0_50_1}. We see that in general, the pedestrians seem to wait longer before they go to their goals. This also causes more pedestrians to be too late, because they still are on their way to the goal when the deadline passes. This is very likely due to the fact that the estimation of going to the goal is too low for some pedestrians, because the area they move in is larger than I took into account when estimating the time needed to go to the goal. \todo[inline]{Rerun these experiments with a more limited moving area?}.
 
 
 \begin{figure}[h]
 \centering
-\includegraphics[width=1.5\textwidth]{/home/djura/vakken/svn_afstudeerstage/deadline-driven-behavior/hulpscriptjes/goodresults/linear0to1goal01.png}
-\caption{linear0to1goal01}
-\label{fig:linear0to1goal01}
-\end{figure}
-
-
-
-
-
-\begin{figure}[h]
-\centering
-\includegraphics[width=1.5\textwidth]{/home/djura/vakken/svn_afstudeerstage/deadline-driven-behavior/hulpscriptjes/goodresults/sigmoid100_0_10_1_goalgaussian0_50_1.png}
+\includegraphics[width=\textwidth]{/home/djura/vakken/svn_afstudeerstage/deadline-driven-behavior/hulpscriptjes/goodresults/sigmoid100_0_10_1_goalgaussian0_50_1.png}
 \caption{sigmoid100 0 10 1 goalgaussian0 50 1}
 \label{fig:sigmoid100_0_10_1_goalgaussian0_50_1}
 \end{figure}
 
 \begin{figure}[h]
 \centering
-\includegraphics[width=1.5\textwidth]{/home/djura/vakken/svn_afstudeerstage/deadline-driven-behavior/hulpscriptjes/goodresults/linear0_1_200_goalgaussian_0_50_1.png}
+\includegraphics[width=\textwidth]{/home/djura/vakken/svn_afstudeerstage/deadline-driven-behavior/hulpscriptjes/goodresults/linear0_1_200_goalgaussian_0_50_1.png}
 \caption{linear0 1 200 goalgaussian 0 50 1}
 \label{fig:linear0_1_200_goalgaussian_0_50_1}
 \end{figure}
 
 \begin{figure}[h]
 \centering
-\includegraphics[width=1.5\textwidth]{/home/djura/vakken/svn_afstudeerstage/deadline-driven-behavior/hulpscriptjes/goodresults/gaussian200_50_1_goalgaussian0_50_1.png}
+\includegraphics[width=\textwidth]{/home/djura/vakken/svn_afstudeerstage/deadline-driven-behavior/hulpscriptjes/goodresults/gaussian200_50_1_goalgaussian0_50_1.png}
 \caption{gaussian200 50 1 goalgaussian0 50 1}
 \label{fig:gaussian200_50_1_goalgaussian0_50_1}
 \end{figure}
+
+One problem we have with these results is that the number of pedestrians going to their goal goes up very fast from a certain point in time, regardless of the exact shape of the utility function. Consequently it is quite difficult to see if relaxed and hurried behavior actually emerges from our framework. This problem will be discussed in further detail in section \ref{chap:conclusiondiscusssion}. This was why we decided to do the second quantitative experiment that we described in the previous chapter (\ref{sec:quantitativeexp2}). The results can be found in section \ref{sec:secondquantitativeexperimentresults}.
+
+\todo[inline]{What should I do with figure \ref{fig:linear0to1goal01}?}
+
+\begin{figure}[h]
+\centering
+\includegraphics[width=\textwidth]{/home/djura/vakken/svn_afstudeerstage/deadline-driven-behavior/hulpscriptjes/goodresults/linear0to1goal01.png}
+\caption{linear0to1goal01}
+\label{fig:linear0to1goal01}
+\end{figure}
+
 
 \clearpage
 
@@ -971,84 +964,94 @@ One problem we have with these results is that the number of pedestrians going t
 %%\caption{Behavior model for the pillar situation}
 %%\label{pillarsituation}
 %%\end{figure}
+
+\section{Result of the Qualitative Experiment}
 \todo[inline]{At this place there was previously a lot of stuff that I now commented out. Decide what to do with it. I shouldn´t put the missing graphs in my thesis in this form. Check if there is still useful stuff in there.}
 
 
-\section{What can we derive from these results?}
-From these results, we can see that not only does the changing of the goal probability function affect the time at which the agents decide when to move to the goal, but also the time at which other actions are executed. This shows that our framework is able to generate emergent behavior. When the probability of going to the goal is high, actions that take longer to finish have a very low frequency.
+%\section{What can we derive from these results?}
+%From these results, we can see that not only does the changing of the goal probability function affect the time at which the agents decide when to %move to the goal, but also the time at which other actions are executed. This shows that our framework is able to generate emergent behavior. When %the probability of going to the goal is high, actions that take longer to finish have a very low frequency.
 
 \section{Results of the Second Quantitative experiments}
 \label{sec:secondquantitativeexperimentresults}
-\todo[inline]{Maybe the pictures are better next to eachother or something.}
 \todo[inline]{Check if I have to experiment with more parameters, e.g. with the Gaussian function}
 \todo[inline]{Maybe regenerate the graphs so the text is larger, or find a different solution so the graphs can be more nicely positioned}
+In the first experiment, the go-to-goal behavior was so dominant that it was difficult judge other emergent behavior. The following results will give a clearer view of whether hurried and relaxed behavior can emerge from our framework.
 
-
+First of all, we have figure \ref{fig:constant1} where the $U=1$ for all $t$. We see the typical phases that we saw in section \ref{sec:firstquantitative} where most pedestrians execute slow- or fast wander for a while, after which the frequency of idle behavior goes up for a few steps. We can also see a few pedestrians doing the go-to-toilet and the accompanying wait-for-friend action. The frequencies of the actions deviate more or less around the same value through the whole simulation.
 
 \begin{figure}
 \centering
-\includegraphics[width=1.3\textwidth]{/home/djura/vakken/svn_afstudeerstage/deadline-driven-behavior/hulpscriptjes/goodresults/constant1_cropped}
+\includegraphics[width=\textwidth]{/home/djura/vakken/svn_afstudeerstage/deadline-driven-behavior/hulpscriptjes/goodresults/constant1_cropped}
 \caption{constant1}
 \label{fig:constant1}
 \end{figure}
 
+Next, we have the results for the utility functions that do decrease when time runs out. It is very clear that eliminating the goal gives the pedestrians the freedom to do different kinds of behavior. We see that the slow wander action has the preference most of the time, except when time has almost run out. Slow wander then decreases while fast wander increases, until even this less time consuming action takes too much time, and the pedestrians become idle. This preference of relaxed behavior (slow wander) until that takes to long to catch a deadline and transitioning to hurried behavior (fast wander) is exactly what we wanted to show with our framework.
+
+We see that using a linear function with a lower maximum value gives the same effect as a linear function that has 1 as highest value (fig \ref{fig:linear0to1_100agents}, \ref{fig:linear0to0.5_100agents} and \ref{fig:linear0to1_100agents}. \todo[inline]{explain}
+
+\todo[inline]{Do we need all these graphs?}
+
 \begin{figure}
 \centering
-\includegraphics[width=1.5\textwidth]{/home/djura/vakken/svn_afstudeerstage/deadline-driven-behavior/hulpscriptjes/goodresults/linear0to1_100agents.png}
+\includegraphics[width=\textwidth]{/home/djura/vakken/svn_afstudeerstage/deadline-driven-behavior/hulpscriptjes/goodresults/linear0to1_100agents.png}
 \caption{linear0to1 100agents}
 \label{fig:linear0to1_100agents}
 \end{figure}
 
+
 \begin{figure}
 \centering
-\includegraphics[width=1.5\textwidth]{/home/djura/vakken/svn_afstudeerstage/deadline-driven-behavior/hulpscriptjes/goodresults/linear0to05_100agents.png}
+\includegraphics[width=\textwidth]{/home/djura/vakken/svn_afstudeerstage/deadline-driven-behavior/hulpscriptjes/goodresults/linear0to05_100agents.png}
 \caption{linear0to 0.5 100agents}
 \label{fig:linear0to0.5_100agents}
 \end{figure}
 
 \begin{figure}
 \centering
-\includegraphics[width=1.5\textwidth]{/home/djura/vakken/svn_afstudeerstage/deadline-driven-behavior/hulpscriptjes/goodresults/linear0to01_100agents.png}
+\includegraphics[width=\textwidth]{/home/djura/vakken/svn_afstudeerstage/deadline-driven-behavior/hulpscriptjes/goodresults/linear0to01_100agents.png}
 \caption{linear0to0.1 100agents}
 \label{fig:linear0to1_100agents}
 \end{figure}
 
 \begin{figure}
 \centering
-\includegraphics[width=1.5\textwidth]{/home/djura/vakken/svn_afstudeerstage/deadline-driven-behavior/hulpscriptjes/goodresults/sigmoidnotmultiplied_100agents.png}
+\includegraphics[width=\textwidth]{/home/djura/vakken/svn_afstudeerstage/deadline-driven-behavior/hulpscriptjes/goodresults/sigmoidnotmultiplied_100agents.png}
 \caption{sigmoidnotmultiplied 100agents (but shifted to the right}
 \label{fig:sigmoidnotmultiplied_100agents}
 \end{figure}
 
 \begin{figure}
 \centering
-\includegraphics[width=1.5\textwidth]{/home/djura/vakken/svn_afstudeerstage/deadline-driven-behavior/hulpscriptjes/goodresults/sigmoid xtimes20.png}
+\includegraphics[width=\textwidth]{/home/djura/vakken/svn_afstudeerstage/deadline-driven-behavior/hulpscriptjes/goodresults/sigmoid xtimes20.png}
 \caption{sigmoid xtimes20}
 \label{fig:sigmoid xtimes20}
 \end{figure}
 
 \begin{figure}
 \centering
-\includegraphics[width=1.5\textwidth]{/home/djura/vakken/svn_afstudeerstage/deadline-driven-behavior/hulpscriptjes/goodresults/sigmoid xtimes100.png}
+\includegraphics[width=\textwidth]{/home/djura/vakken/svn_afstudeerstage/deadline-driven-behavior/hulpscriptjes/goodresults/sigmoid xtimes100.png}
 \caption{sigmoid xtimes100}
 \label{fig:sigmoid xtimes100}
 \end{figure}
 
 \begin{figure}
 \centering
-\includegraphics[width=1.5\textwidth]{/home/djura/vakken/svn_afstudeerstage/deadline-driven-behavior/hulpscriptjes/goodresults/sigmoid xtimes100.png}
+\includegraphics[width=\textwidth]{/home/djura/vakken/svn_afstudeerstage/deadline-driven-behavior/hulpscriptjes/goodresults/sigmoid xtimes100.png}
 \caption{sigmoid xtimes20}
 \label{fig:sigmoid xtimes20}
 \end{figure}
 
 \begin{figure}
 \centering
-\includegraphics[width=1.5\textwidth]{/home/djura/vakken/svn_afstudeerstage/deadline-driven-behavior/hulpscriptjes/goodresults/gaussian_mean200_sigma50_100_max1.png}
+\includegraphics[width=\textwidth]{/home/djura/vakken/svn_afstudeerstage/deadline-driven-behavior/hulpscriptjes/goodresults/gaussian_mean200_sigma50_100_max1.png}
 \caption{gaussian mean200 sigma50 100 max1}
 \label{fig:gaussian_mean200_sigma50_100_max1}
 \end{figure}
 
 \chapter{Conclusion \& Discussion}
+\label{chap:conclusiondiscusssion}
 The results are different from what we expected, but logical nonetheless. We expected the sigmoid function to have the ideal curve to reflect the behavior of the pedestrians in Rotterdam airport but
 
 
