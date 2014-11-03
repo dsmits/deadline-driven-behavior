@@ -3,7 +3,7 @@ DISCLAIMER: The things that I write here are mainly to arrange my own thoughts a
 =3-11-2014=
 At the moment I'm describing the results of the second quantitative experiment, but I'm having a little trouble over deciding which graphs are important to show and which aren't. What am I trying to prove with these graphs?
 
-[https://deadline-driven-behavior.googlecode.com/svn-history/r222/trunk/report/simobs_results.pdf results section]
+[https://deadline-driven-behavior.googlecode.com/svn-history/r222/trunk/report/simobs_results.pdf Results section]
 
 =1-11-2014=
 
