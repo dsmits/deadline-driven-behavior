@@ -1,5 +1,10 @@
 DISCLAIMER: The things that I write here are mainly to arrange my own thoughts and might not always be understandable for other people.
 
+=3-11-2014=
+At the moment I'm describing the results of the second quantitative experiment, but I'm having a little trouble over deciding which graphs are important to show and which aren't. What am I trying to prove with these graphs?
+
+[https://deadline-driven-behavior.googlecode.com/svn-history/r222/trunk/report/simobs_results.pdf results section]
+
 =1-11-2014=
 
 Today I'm going to try to finish the results section. First I will make sure the graphs are in the right position. I'm going to make subfigures and group the graphs like I did in the to-do list last week. Then I will show the two graphs with the constant goal utility function.
