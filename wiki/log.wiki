@@ -5,6 +5,8 @@ Finished most of [https://deadline-driven-behavior.googlecode.com/svn-history/r2
 
 [https://deadline-driven-behavior.googlecode.com/svn-history/r226/trunk/report/simobs_thesis_final.pdf complete thesis]
 
+I thought I had written about it before but it turns out I still have to write about the "qualitative" experiment. I think my supervisor would prefer if I would search for actual labeled data from an airport and use that to compare with my simulated behavior. Because I don't have much time left I think I'm just going to list the behaviors I found in the footage and as results show the Petri nets I made.
+
 
 =3-11-2014=
 At the moment I'm describing the results of the second quantitative experiment, but I'm having a little trouble over deciding which graphs are important to show and which aren't. What am I trying to prove with these graphs?
