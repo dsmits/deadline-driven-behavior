@@ -413,7 +413,7 @@ Allthough it can be difficult to decide whether a group of people walks around "
 \todo[inline]{Specify missing parameters}
 
 \section{Qualitative Experiment}
-First of all, we will see if it is possible to recreate real-life behavior in Rotterdam airport with our framework. In order to do this, we have observed footage from the security cameras at Rotterdam airport. From these observations we have established a list of behaviors that are recurrent in Rotterdam airport.
+First of all, we will see if it is possible to recreate real-life behavior in Rotterdam airport with our framework. In order to do this, we have observed footage from the security cameras at Rotterdam airport. From these observations we have established a couple of specific behaviors that are recurrent in Rotterdam airport.
 
 \subsection{The Behaviors}
 \todo[inline]{The behaviors described below are not described in a way appropriate for the qualitative experiment.}
@@ -540,12 +540,37 @@ The last action is a special one. This action is mentioned in none of the Petri 
 
 \section{Results of the Qualitative Experiment}
 \label{sec:qualitativeresults}
-Apart from quantitative analysis, we will also qualitatively judge the pedestrians' behavior. We will do this by comparing our modeled behavior with real-life behavior from recordings of Rotterdam airport. We have picked a couple of specific behaviors that we have modeled with our system.
+We managed to recreate the behavior in the Petri nets in figure \ref{fig:pillarpetrinet}, \ref{fig:standstillpetrinet}, \ref{fig:gototoiletpetrinet} and \ref{fig:wanderpetrinet}. As can be seen, the ¨standing still¨ behavior in figure \ref{fig:standstillpetrinet} was easiest to recreate, closely followed by the "wandering" behavior in figure \ref{fig:wanderpetrinet} and "leaning against a pillar" behavior. The exact appearance in the simulation mostly depends on the implementation of the actions indicated in the places of the Petri nets. Whether there will be e.g. collision detection or other lower-level functionality depends on which kind of multiagent simulation is used. The "go-to-toilet" behavior in figure \ref{fig:gototoiletpetrinet} is the most interesting, because this Petri net can actually be shared between two pedestrians. We see that this fairly complicates the structure of the Petri net. In comparison to the other Petri nets, there are relatively more places here that do not map to an actual action. These places are necessary to make sure that one pedestrian does not move forward to its next action too soon. This will cause the pedestrians to have more "idle" actions between their other actions than there would be with the simpler behavior. This is not a problem though, because the pedestrians will not remain idle longer than one or two timesteps.
 
-\subsection{The Dataset}
-We acquired manually annotated data indicating the tracks of the visitors of Rotterdam airport. 
+\todo[inline]{Check gototoilet Petri one last time to see if there aren't any redundant places/transitions}
 
+\begin{figure}
+\centering            
+\includegraphics[width=0.7\textwidth]{/home/djura/vakken/svn_afstudeerstage/deadline-driven-behavior/report/petrinet_pictures/pillarSituation.png}
+\caption{Going to the nearest pillar and leaning against it.}
+\label{fig:pillarpetrinet}
+\end{figure}
 
+\begin{figure}
+\centering            
+\includegraphics[width=0.4\textwidth]{/home/djura/vakken/svn_afstudeerstage/deadline-driven-behavior/report/petrinet_pictures/standStillSituation.png}
+\caption{Pedestrian standing still.}
+\label{fig:standstillpetrinet}
+\end{figure}
+
+\begin{figure}
+\centering            
+\includegraphics[width=\textwidth]{/home/djura/vakken/svn_afstudeerstage/deadline-driven-behavior/report/petrinet_pictures/twoPeopleToiletSituation.png}
+\caption{One person going to the toilet and one person waiting for the other.}
+\label{fig:gototoiletpetrinet}
+\end{figure}
+
+\begin{figure}
+\centering            
+\includegraphics[width=0.5\textwidth]{/home/djura/vakken/svn_afstudeerstage/deadline-driven-behavior/report/petrinet_pictures/wanderSituation.png}
+\caption{Random wandering around}
+\label{fig:wanderpetrinet}
+\end{figure}
 
 
 %\todo[inline]{The following is only a rough draft}
