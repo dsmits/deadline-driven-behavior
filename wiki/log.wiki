@@ -1,11 +1,11 @@
 DISCLAIMER: The things that I write here are mainly to arrange my own thoughts and might not always be understandable for other people.
 
 =5-11-2014=
-I think I finished the [https://deadline-driven-behavior.googlecode.com/svn-history/r232/trunk/report/simobs_results.pdf results section]
+I think I finished the [https://deadline-driven-behavior.googlecode.com/svn-history/r232/trunk/report/simobs_results.pdf results section].
 
 [https://deadline-driven-behavior.googlecode.com/svn-history/r232/trunk/report/simobs_thesis_final.pdf Complete thesis]
 
-I think I will work on the qualitative experiment in the "Experiments" section next time.
+I think I will work on the qualitative experiment in the "Experiments" section next time. I will also read through the results section to see if there's something missing.
 
 
 =3-11-2014=
