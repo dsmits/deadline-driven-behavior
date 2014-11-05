@@ -136,8 +136,8 @@ public class PedestrianSimDataLayer extends DataLayer {
 		 */
 		//init(clock, goalTime, new Linear(0, 1, 200), new Linear(0.1,0,200));
 		//init(clock, goalTime, new Sigmoid(100, 0, 10, 1), new Linear(0.11,0,200));
-		init(clock, goalTime, new Gaussian(200, 50, 1), new Gaussian(0,50,1));
-		//init(clock, goalTime, new Constant(1), new Constant(0));
+		//init(clock, goalTime, new Gaussian(200, 50, 1), new Gaussian(0,50,1));
+		init(clock, goalTime, new Sigmoid(100,0,10,1), new Constant(0));
 		/* This is a good one
 		init(clock, goalTime, new Sigmoid(clock.getTime()+goalTime.getTime()/2, 0, 20, 1), new Constant(0));
 		*/
