@@ -3,7 +3,7 @@ DISCLAIMER: The things that I write here are mainly to arrange my own thoughts a
 =5-11-2014=
 Finished most of [https://deadline-driven-behavior.googlecode.com/svn-history/r226/trunk/report/simobs_results.pdf results]
 
-[https://deadline-driven-behavior.googlecode.com/svn-history/r226/trunk/report/simobs_thesis_final.pdf complete thesis]
+[https://deadline-driven-behavior.googlecode.com/svn-history/r229/trunk/report/simobs_thesis_final.pdf complete thesis]
 
 I thought I had written about it before but it turns out I still have to write about the "qualitative" experiment. I think my supervisor would prefer if I would search for actual labeled data from an airport and use that to compare with my simulated behavior. Because I don't have much time left I think I'm just going to list the behaviors I found in the footage and as results show the Petri nets I made.
 
