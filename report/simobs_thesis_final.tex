@@ -413,14 +413,15 @@ Allthough it can be difficult to decide whether a group of people walks around "
 \todo[inline]{Specify missing parameters}
 
 \section{Qualitative Experiment}
-\todo[inline]{Where has this experiment gone? Is it enough to point out certain behaviors in the annotated data and imitate those in the simulation?}
-First of all, we will see if it is possible to recreate real-life behavior in Rotterdam airport with our framework. In order to do this, we have observed footage from the security cameras 
+First of all, we will see if it is possible to recreate real-life behavior in Rotterdam airport with our framework. In order to do this, we have observed footage from the security cameras at Rotterdam airport. From these observations we have established a list of behaviors that are recurrent in Rotterdam airport.
 
 \subsection{The Behaviors}
-\todo[inline]{Are all behaviors still in use?}
+\todo[inline]{The behaviors described below are not described in a way appropriate for the qualitative experiment.}
 
 \subsubsection{Going to the toilet}
 In the videos, we observed that a typical behavior that manifests itself multiple times in the video material is that one person goes to the toilet, and another one waits until this person has come back. The Petri net used for this can be found in figure \ref{toiletsituation}.
+
+\todo[inline]{I removed the "checking in" behavior because it was difficult to implement. Maybe if I have some time left I will give it another try because it is quite important behavior for an airport}
 
 %\paragraph{Standing in the queue for the check-in desk}
 %\todo[inline]{This paragraph should probably be removed since we dont use it any more}
@@ -436,6 +437,7 @@ In the videos, we observed that a typical behavior that manifests itself multipl
 Another recurring behavior we saw is that people lean against the pillars in the hall. This is a type of idle behavior, a variation on the standing still behavior.
 
 \subsubsection{Wandering}
+
 One crucial behavior is missing. How are the pedestrians going to reach the different situation areas? This is only possible if they already have a move to begin with, otherwise they are only going to stay in place. That is why we added the \emph{fastWander} and \emph{slowWander} behavior. This behavior lets the pedestrian turn a random amount of degrees between $-\frac{1}{4}\pi$ and $\frac{1}{4}\pi$ and walk a few steps in that direction. Of course, fastWander makes the pedestrian move faster than slowWander, and takes less time. Another important reason we have added these two behaviors is that we can use them to see more clearly if relaxed or hurried behavior is favored differently over time.
 
 \section{Quantitative Experiment}
