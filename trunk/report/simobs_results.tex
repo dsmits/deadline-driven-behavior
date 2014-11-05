@@ -11,6 +11,22 @@
 
 \chapter{Results}
 \label{chap:results}
+
+\section{Results of the Qualitative Experiment}
+\label{sec:qualitativeresults}
+Apart from quantitative analysis, we will also qualitatively judge the pedestrians' behavior. We will do this by comparing our modeled behavior with real-life behavior from recordings of Rotterdam airport. We have picked a couple of specific behaviors that we have modeled with our system.
+
+\subsection{The Dataset}
+We acquired manually annotated data indicating the tracks of the visitors of Rotterdam airport. 
+
+
+
+
+%\todo[inline]{The following is only a rough draft}
+%It is very difficult to determine whether one has been successful at modeling lifelike behavior. What we are going to do is %study footage of real-life behavior at Rotterdam Airport, and pick out various behavioral patterns. Then, we are going to %model these patterns with our system.
+
+
+
 \section{Results of the First Quantitative Experiment}
 \label{sec:firstquantitative}
 Firstly we are going to discuss the results of the first quantitative experiment. One thing that is noticable in all results is that there are periods in which the number of pedestrians, especially in slow and fast wander, is steady, after which the number drops drastically. After a few steps the number goes up again. In sync with this behavior the number of pedestrians remaining idle stays low, and increases when the other behaviors drop. This is easily explained. Slow and fast wander are behaviors that exist of a single action. When this action has been executed, which takes a few steps, the token of the pedestrian moves out of the attached Petri net into its base place. In order to move this token, a slot and sink transition have to be fired. These transitions do not have an associated action. When there is no action available for the pedestrian, it executes the idle behavior. Especially at the start, this effect is very prominent. This is because all pedestrians start the simulation at exactly the same moment. All pedestrians executing the same actions or actions that take the same amount of time stay synchronous. After a few dozens of steps, the behavior has varied more and the pedestrians are not as synchronous any more in going back to the idle "action".
@@ -435,12 +451,9 @@ One problem we have with these results is that the number of pedestrians going t
 %%\label{pillarsituation}
 %%\end{figure}
 
-\section{Result of the Qualitative Experiment}
+
 \todo[inline]{At this place there was previously a lot of stuff that I now commented out. Decide what to do with it. I shouldn´t put the missing graphs in my thesis in this form. Check if there is still useful stuff in there.}
 
-
-%\section{What can we derive from these results?}
-%From these results, we can see that not only does the changing of the goal probability function affect the time at which the agents decide when to %move to the goal, but also the time at which other actions are executed. This shows that our framework is able to generate emergent behavior. When %the probability of going to the goal is high, actions that take longer to finish have a very low frequency.
 
 \section{Results of the Second Quantitative experiments}
 \label{sec:secondquantitativeexperimentresults}

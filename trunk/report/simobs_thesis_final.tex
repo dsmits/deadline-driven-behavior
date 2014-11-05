@@ -480,17 +480,7 @@ Where real constants $a, b, c > 0 $. A Gaussian distribution (or normal distribu
 
 We chose to try a Gaussian function as well because of the following reasoning: A pedestrian might not care about going to it's goal until it is approximately the time of the deadline. With this we mean that going to the goal is a priority \emph{around} the time of the deadline, and will also decline when the deadline has passed for a while, and the pedestrian hasn't reached its goal yet. With this reasoning, the "go-to-goal" behavior frequency should increase when approaching the deadline, and should peak \emph{just} before the deadline, and declines thereafter.
 
-\section{Qualitative Experiment}
-Apart from quantitative analysis, we will also qualitatively judge the pedestrians' behavior. We will do this by comparing our modeled behavior with real-life behavior from recordings of Rotterdam airport. We have picked a couple of specific behaviors that we have modeled with our system.
 
-\subsection{The Dataset}
-We acquired manually annotated data indicating the tracks of the visitors of Rotterdam airport. 
-
-
-
-
-%\todo[inline]{The following is only a rough draft}
-%It is very difficult to determine whether one has been successful at modeling lifelike behavior. What we are going to do is %study footage of real-life behavior at Rotterdam Airport, and pick out various behavioral patterns. Then, we are going to %model these patterns with our system.
 
 \section{New Quantitative Experiment}
 \label{sec:quantitativeexp2}
@@ -541,6 +531,22 @@ The last action is a special one. This action is mentioned in none of the Petri 
 
 \chapter{Results}
 \label{chap:results}
+
+\section{Results of the Qualitative Experiment}
+\label{sec:qualitativeresults}
+Apart from quantitative analysis, we will also qualitatively judge the pedestrians' behavior. We will do this by comparing our modeled behavior with real-life behavior from recordings of Rotterdam airport. We have picked a couple of specific behaviors that we have modeled with our system.
+
+\subsection{The Dataset}
+We acquired manually annotated data indicating the tracks of the visitors of Rotterdam airport. 
+
+
+
+
+%\todo[inline]{The following is only a rough draft}
+%It is very difficult to determine whether one has been successful at modeling lifelike behavior. What we are going to do is %study footage of real-life behavior at Rotterdam Airport, and pick out various behavioral patterns. Then, we are going to %model these patterns with our system.
+
+
+
 \section{Results of the First Quantitative Experiment}
 \label{sec:firstquantitative}
 Firstly we are going to discuss the results of the first quantitative experiment. One thing that is noticable in all results is that there are periods in which the number of pedestrians, especially in slow and fast wander, is steady, after which the number drops drastically. After a few steps the number goes up again. In sync with this behavior the number of pedestrians remaining idle stays low, and increases when the other behaviors drop. This is easily explained. Slow and fast wander are behaviors that exist of a single action. When this action has been executed, which takes a few steps, the token of the pedestrian moves out of the attached Petri net into its base place. In order to move this token, a slot and sink transition have to be fired. These transitions do not have an associated action. When there is no action available for the pedestrian, it executes the idle behavior. Especially at the start, this effect is very prominent. This is because all pedestrians start the simulation at exactly the same moment. All pedestrians executing the same actions or actions that take the same amount of time stay synchronous. After a few dozens of steps, the behavior has varied more and the pedestrians are not as synchronous any more in going back to the idle "action".
