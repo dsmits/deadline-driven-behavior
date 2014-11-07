@@ -315,7 +315,19 @@ Of all the possible existing techniques, the "situations" approach of Sung et al
 
 \chapter{Method}
 \todo[inline]{Check whole thesis on occurrence of "probability" function and replace it with "utility function" where necessary}
-In the upcoming sections will be described how we decided to implement our system. We decided to base our model around the situations framework. We chose this framework because it allows for probabilistic behavior, and puts emphasis on defining behavior through the environment. This framework will have to be extended to deal with time restrictions. However, we won't work with finite state machines, since these offer too little functionality to enable us to work with time restrictions. That is why we do the behavior modeling a little bit differently in our system. Instead of modeling the system with finite state machines, we describe the system with Petri nets.  The toolkit we will use for this is \emph{Platform Independent Petri net Editor 2} (PIPE2). \url{http://pipe2.sourceforge.net/} In the next section we describe how we decided to use this toolkit.
+In the upcoming sections will be described how we decided to implement our system. We decided to base our model around the situations framework. We chose this framework because it allows for probabilistic behavior, and puts emphasis on defining behavior through the environment. This framework will have to be extended to deal with time restrictions. However, we won't work with finite state machines, since these offer too little functionality to enable us to work with time restrictions. Furthermore, FSMs are not suitable for describing interactions between multiple agents. That is why we do the behavior modeling a little bit differently in our system. Instead of modeling the system with finite state machines, we describe the system with Petri nets.  The toolkit we will use for this is \emph{Platform Independent Petri net Editor 2} (PIPE2). \url{http://pipe2.sourceforge.net/} In the next section we describe how we decided to use this toolkit.
+
+In our method, a number of concepts will be mentioned that have a vary specific meaning within our research. These concepts might sometimes be easy to be confused with each other.
+\todo[inline]{Decide if this is the appropriate place to introduce these concepts}
+\begin{itemize}
+\item \emph{situation}\\
+In our research, the term situation is used to indicate an area in a scene where a specific behavior is appropriate.
+\item behavior\\
+A behavior is a group of consecutive actions. A situation can 
+
+\item Petri-net
+\item action
+\end{itemize}
 
 \section{PIPE2}
 %\todo[inline]{Is this the place to discuss PIPE2 or should it be placed in the appendix?} Yes because having a toolkit to easily create those petri nets is pretty relevant.
@@ -453,7 +465,7 @@ It will be difficult to assess whether our framework simulates ¨real-life¨ in 
 \todo[inline]{Check which parts of the first quantitative experiment are still relevant now the experiments have changed.}
 It is very difficult to quantitatively establish whether lifelike behavior has been modeled. However, it is possible to check whether the mechanics of time planning work as predicted. In order to do this, we log for every step in time, for every pedestrian, which action he is doing at the moment. This information will be plotted in a graph that shows the frequency of every action at every step in time. The deadline of going to the goal will be 200 steps in our simulation. We chose this value because \todo[inline]{Say something about the numbers of steps for the behaviors and stuff}
 
-We will try different utility functions for the go-to-goal and non-goal behavior to see how this influences the simulation.
+We will try different utility functions for the go-to-goal and non-goal behavior to see how this influences the simulation. 
 
 \subsection{Sigmoid Function}
 A sigmoid function is an S-shaped curve that has a progression that accellerates and approaches a climax over time. This function can be found in many natural processes, such as learning curves. This function closely resembles how we reason that the behavior will shift when a pedestrian approaches a deadline.
