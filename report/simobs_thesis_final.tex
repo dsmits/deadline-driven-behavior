@@ -314,6 +314,7 @@ The techniques focusing on smaller groups do show some potential. Since most peo
 Of all the possible existing techniques, the "situations" approach of Sung et al. seems the most appealing. However, it is not directly usable for our purposes. One downside to the situations approach (at least how it is described in the paper) is that state transitions are mainly low-level animations. However, it should be possible to adapt the state transitions to correspond to higher-level actions, such as change of goal. Path planning should then be delegated to another module. In this way, it is very likely that the state representation can be reduced from $s = \{t, \bf{p}, \theta, s^- \}$ to $s = \{t, \bf{p}, \theta\}$. The $s^-$ was used to remember which actions were taken previously, so that the pedestrian remembers which way it was walking. When the actual walking is delegated to another module, it seems unnecessary to keep $s^-$.
 
 \chapter{Method}
+\todo[inline]{Check whole thesis on occurrence of "probability" function and replace it with "utility function" where necessary}
 In the upcoming sections will be described how we decided to implement our system. We decided to base our model around the situations framework. We chose this framework because it allows for probabilistic behavior, and puts emphasis on defining behavior through the environment. This framework will have to be extended to deal with time restrictions. However, we won't work with finite state machines, since these offer too little functionality to enable us to work with time restrictions. That is why we do the behavior modeling a little bit differently in our system. Instead of modeling the system with finite state machines, we describe the system with Petri nets.  The toolkit we will use for this is \emph{Platform Independent Petri net Editor 2} (PIPE2). \url{http://pipe2.sourceforge.net/} In the next section we describe how we decided to use this toolkit.
 
 \section{PIPE2}
@@ -405,23 +406,37 @@ Figure \ref{petrinetexample} gives an example of how the pedestrian petrinet is 
 
 
 \chapter{Experiments}
-\todo[inline]{Redo experiments with new method done in latest experiment.}
-\todo[inline]{Add pictures of the Petri nets}
 \label{chap:experiments}
-Allthough it can be difficult to decide whether a group of people walks around "realistically", we will certainly give it a try. We will attempt to test our framework in two different ways; first of all, we will assess our framework by doing a qualitative comparison with real-life footage of Rotterdam Airport. We have access to both camera footage and manually annotated locations of the visitors. Secondly, we will assess how the the different probability functions we choose for the go-to-goal action will affect the frequency of other actions. In other words, we will attempt to investigate whether our method leads to \emph{emergent}  behavior.
+\todo[inline]{Add pictures of the Petri nets}
+\todo[inline]{Make sure introduction lines up with research questions}
+Although it can be difficult to decide whether a group of people walks around "realistically", we will certainly give it a try. We will attempt to test our framework in two different ways; first of all, we will assess our framework by doing a qualitative comparison with real-life footage of Rotterdam Airport. We have access to both camera footage and manually tracked locations of the visitors.
+\todo[inline]{Check whether I still use the manually tracked locations, otherwise I shouldn't mention it.}
+Secondly, we will assess how the the different utility functions we choose for the go-to-goal action will affect the frequency of other actions. In other words, we will attempt to investigate whether our method leads to \emph{emergent} behavior.
 
 \todo[inline]{Specify missing parameters}
 
 \section{Qualitative Experiment}
-First of all, we will see if it is possible to recreate real-life behavior in Rotterdam airport with our framework. In order to do this, we have observed footage from the security cameras at Rotterdam airport. From these observations we have established a couple of specific behaviors that are recurrent in Rotterdam airport.
+First of all, we will see if it is possible to recreate real-life behavior in Rotterdam airport with our framework. In order to do this, we have observed footage from the security cameras at Rotterdam airport. From these observations we have established a couple of specific behaviors that are recurrent in Rotterdam airport:
 
-\subsection{The Behaviors}
-\todo[inline]{The behaviors described below are not described in a way appropriate for the qualitative experiment.}
-
-\subsubsection{Going to the toilet}
-In the videos, we observed that a typical behavior that manifests itself multiple times in the video material is that one person goes to the toilet, and another one waits until this person has come back. The Petri net used for this can be found in figure \ref{toiletsituation}.
-
+\begin{itemize}
+\item \emph{Going to the toilet.}
+\\In the videos, we observed that a typical behavior that manifests itself multiple times in the video material is that one person goes to the toilet, and another one waits until this person has come back. After that, they move on to do something else. This will probably be the behavior in our simulation that will take the largest amount of time.
+\todo[inline]{If I have time I could modify the implementation of this behavior so that the pedestrian actually goes back to his friend after going to the toilet, or at least to the place where he came from}
 \todo[inline]{I removed the "checking in" behavior because it was difficult to implement. Maybe if I have some time left I will give it another try because it is quite important behavior for an airport}
+
+\item \emph{Leaning against a pillar.}
+\\Another recurring behavior we saw is that people lean against the pillars in the hall. 
+
+\item \emph{Wandering}\\
+People also wandered around randomly.
+\end{itemize}
+\todo[inline]{If I introduce the behavior here I can't talk about them yet in the method. Check if I do this}
+
+It will be difficult to assess whether our framework simulates ¨real-life¨ in some way or another, but we can find out whether it is possible to describe the behaviors we found in real life in Petri-nets.
+\todo[inline]{What are our criteria for success?}
+
+%One crucial behavior is missing. How are the pedestrians going to reach the different situation areas? This is only possible if they already have a move to begin with, otherwise they are only going to stay in place. That is why we added the \emph{fastWander} and \emph{slowWander} behavior. This behavior lets the pedestrian turn a random amount of degrees between $-\frac{1}{4}\pi$ and $\frac{1}{4}\pi$ and walk a few steps in that direction. Of course, fastWander makes the pedestrian move faster than slowWander, and takes less time. Another important reason we have added these two behaviors is that we can use them to see more clearly if relaxed or hurried behavior is favored differently over time.
+
 
 %\paragraph{Standing in the queue for the check-in desk}
 %\todo[inline]{This paragraph should probably be removed since we dont use it any more}
@@ -433,16 +448,12 @@ In the videos, we observed that a typical behavior that manifests itself multipl
 %\subsubsection{Checking in}
 %When the pedestrians reach the end of the queue situation, they will enter the check-in situation, in which they will stand in front of the check-in desk for a little while, after which they are free to go again.
 
-\subsubsection{Lean Against Pillar}
-Another recurring behavior we saw is that people lean against the pillars in the hall. This is a type of idle behavior, a variation on the standing still behavior.
-
-\subsubsection{Wandering}
-
-One crucial behavior is missing. How are the pedestrians going to reach the different situation areas? This is only possible if they already have a move to begin with, otherwise they are only going to stay in place. That is why we added the \emph{fastWander} and \emph{slowWander} behavior. This behavior lets the pedestrian turn a random amount of degrees between $-\frac{1}{4}\pi$ and $\frac{1}{4}\pi$ and walk a few steps in that direction. Of course, fastWander makes the pedestrian move faster than slowWander, and takes less time. Another important reason we have added these two behaviors is that we can use them to see more clearly if relaxed or hurried behavior is favored differently over time.
 
 \section{Quantitative Experiment}
 \todo[inline]{Check which parts of the first quantitative experiment are still relevant now the experiments have changed.}
-It is very difficult to quantitatively establish whether lifelike behavior has been modeled. However, it is possible to check whether the mechanics of time planning work as predicted. In order to do this, we log for every step 
+It is very difficult to quantitatively establish whether lifelike behavior has been modeled. However, it is possible to check whether the mechanics of time planning work as predicted. In order to do this, we log for every step in time, for every pedestrian, which action he is doing at the moment. This information will be plotted in a graph that shows the frequency of every action at every step in time. The deadline of going to the goal will be 200 steps in our simulation. We chose this value because \todo[inline]{Say something about the numbers of steps for the behaviors and stuff}
+
+We will try different utility functions for the go-to-goal and non-goal behavior to see how this influences the simulation.
 
 \subsection{Sigmoid Function}
 A sigmoid function is an S-shaped curve that has a progression that accellerates and approaches a climax over time. This function can be found in many natural processes, such as learning curves. This function closely resembles how we reason that the behavior will shift when a pedestrian approaches a deadline.
@@ -698,7 +709,7 @@ One problem we have with these results is that the number of pedestrians going t
 \end{figure}
 
 
-\clearpage
+
 
 
 %\section{Results for Sigmoid Function}
@@ -1004,7 +1015,7 @@ One problem we have with these results is that the number of pedestrians going t
 
 
 \todo[inline]{At this place there was previously a lot of stuff that I now commented out. Decide what to do with it. I shouldn´t put the missing graphs in my thesis in this form. Check if there is still useful stuff in there.}
-
+\clearpage
 
 \section{Results of the Second Quantitative experiments}
 \label{sec:secondquantitativeexperimentresults}
