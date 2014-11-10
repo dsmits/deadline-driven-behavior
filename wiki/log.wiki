@@ -1,5 +1,8 @@
 DISCLAIMER: The things that I write here are mainly to arrange my own thoughts and might not always be understandable for other people.
 
+=10-11-2014=
+Among other things I'm fixing the captions for the graphs in quantitative results. I was also thinking I have to add a good reason why I chose the utility functions that I have. I will probably not get to this today anymore, so that's for wednesday.
+
 =7-11-2014=
 Today I'm working on the "qualitative experiment" section in the experiments chapter. I do have some trouble though with thinking of the right criteria for deciding whether the experiment is a success.
 
