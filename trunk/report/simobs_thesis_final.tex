@@ -161,12 +161,16 @@ If it were feasible to model the complete human brain, we would probably get the
 \item \emph{How do we let the pedestrians make decisions based on time left to reach the destination?}\\
 In situations such as departure halls, people have a destination (e.g. airplane, train) that is only available for a limited amount of time. Some actions might take a very short amount of time, some may need more. How do we let these pedestrians decide between the different options?
 
+\item \emph{Is it possible to have emergent behavior based on time restrictions?}\\
+Ideally, our model should lead to behavior that we have not expressly implemented in our system. In the context of time restrictions, we would like the pedestrians to have hurried or relaxed behavior based on the amount of time they have left to reach their goal.
+
 %\item \emph{What kind of freedoms/restrictions do distributed systems give us?}\\
 %As a consequence of using a distributed system we can delegate certain tasks to other units. On the other hand, our model also %needs to be compatible with the other units in the distributed system.
 
 \item \emph{Is it possible to quickly generate these virtual pedestrians without much tweaking for each environment?}
-//We aim at creating pedestrians that can be used in many different environments without much additional scripting. Is it possible to do this and still have varied behavior between environments?
+\\We aim at creating pedestrians that can be used in many different environments without much additional scripting. Is it possible to do this and still have varied behavior between environments?
 %\item How can the simulation be efficient without sacrificing too much realism?
+
 \end{itemize}
 
 %How do we create an \emph{intelligent virtual environment} framework so that \emph{realistic}, real-time acting virtual pedestrians can be generated \emph{quickly}, working with VR-forces and \emph{daily motion patterns}?
@@ -320,13 +324,14 @@ In the upcoming sections will be described how we decided to implement our syste
 In our method, a number of concepts will be mentioned that have a vary specific meaning within our research. These concepts might sometimes be easy to be confused with each other.
 \todo[inline]{Decide if this is the appropriate place to introduce these concepts}
 \begin{itemize}
-\item \emph{situation}\\
-In our research, the term situation is used to indicate an area in a scene where a specific behavior is appropriate.
-\item behavior\\
-A behavior is a group of consecutive actions. A situation can 
-
-\item Petri-net
-\item action
+\item \emph{Situation}\\
+In our research, the term situation is used to indicate an area in a scene where a specific behavior is appliccable. For example, a situation could be the area around a drinks machine.
+\item \emph{Behavior}\\
+A behavior is a group of consecutive actions. In our framework a situation (as previously described) always has a accompanying behavior. The behavior for the drinks machine situation would be going up to the machine and buying a drink.
+\item \emph{Action}\\
+Actions are the building blocks in which a behavior is described.
+\item \emph{Petri-net}\\
+Petri-nets are the modelling language in which we describe our behaviors.
 \end{itemize}
 
 \section{PIPE2}
@@ -444,7 +449,7 @@ People also wandered around randomly.
 \end{itemize}
 \todo[inline]{If I introduce the behavior here I can't talk about them yet in the method. Check if I do this}
 
-It will be difficult to assess whether our framework simulates ¨real-life¨ in some way or another, but we can find out whether it is possible to describe the behaviors we found in real life in Petri-nets.
+It will be difficult to assess whether our framework simulates ¨real-life¨ in some way or another, but we can find out whether it is possible to describe the behaviors we found in real life in Petri-nets. We will show if our framework can do this.
 \todo[inline]{What are our criteria for success?}
 
 %One crucial behavior is missing. How are the pedestrians going to reach the different situation areas? This is only possible if they already have a move to begin with, otherwise they are only going to stay in place. That is why we added the \emph{fastWander} and \emph{slowWander} behavior. This behavior lets the pedestrian turn a random amount of degrees between $-\frac{1}{4}\pi$ and $\frac{1}{4}\pi$ and walk a few steps in that direction. Of course, fastWander makes the pedestrian move faster than slowWander, and takes less time. Another important reason we have added these two behaviors is that we can use them to see more clearly if relaxed or hurried behavior is favored differently over time.
@@ -471,7 +476,7 @@ We will try different utility functions for the go-to-goal and non-goal behavior
 A sigmoid function is an S-shaped curve that has a progression that accellerates and approaches a climax over time. This function can be found in many natural processes, such as learning curves. This function closely resembles how we reason that the behavior will shift when a pedestrian approaches a deadline.
 Our sigmoid function is defined as follows:
 \begin{equation}
-U(t) = \eta \frac{1}{1+e^{-\omega(t-t_0)}}
+U(t) = \eta \frac{1}{1+e^{-\omega(t-t_0)}} + \beta
 \end{equation}
 \todo[inline]{Check if the following parameters are still true}
 In our experiments, we chose $t_0=100$ and $\omega=100$, so that the middle of the curve lies in the middle of the 200-timestep period which the pedestrians have to reach their deadline. We chose $\omega$ to be 100 as well to scale the function to fit in the 200 timestep interval. For $\eta$, we varied this between 0 and 1.
@@ -502,11 +507,11 @@ $b = U_0$
 
 \subsection{Gaussian Function}
 We also used a Gaussian function to model the behavior. A Gaussian function is defined as follows:
-\begin{equation}f(x) = ae^{- \frac{(x-b)^2}{2c^2}}\end{equation}
-Where real constants $a, b, c > 0 $. A Gaussian distribution (or normal distribution) is a continuous probability distribution with a bell-shaped probability density function which have a mean and variance as parameters.
-
-
-
+%\begin{equation}f(x) = ae^{- \frac{(x-b)^2}{2c^2}}\end{equation}
+\begin{equation}\frac{1}{\sigma \sqrt{2 \pi}} e^{- \frac{(x - \mu)^2}{2\sigma^2}}
+\end{equation}
+%Where real constants $a, b, c > 0 $. 
+A Gaussian distribution (or normal distribution) is a continuous probability distribution with a bell-shaped probability density function which have a mean ($\mu$ and variance ($\sigma^2$) as parameters.
 We chose to try a Gaussian function as well because of the following reasoning: A pedestrian might not care about going to it's goal until it is approximately the time of the deadline. With this we mean that going to the goal is a priority \emph{around} the time of the deadline, and will also decline when the deadline has passed for a while, and the pedestrian hasn't reached its goal yet. With this reasoning, the "go-to-goal" behavior frequency should increase when approaching the deadline, and should peak \emph{just} before the deadline, and declines thereafter.
 
 
@@ -623,13 +628,13 @@ In figure \ref{fig:linear0to1goal1to0}, \ref{fig:sigmoid100_0_10_1_goal1to0} and
 
 \begin{figure}[b]
 \includegraphics[width=\textwidth]{/home/djura/vakken/svn_afstudeerstage/deadline-driven-behavior/hulpscriptjes/goodresults/sigmoid100_0_10_1_goal1to0.png}
-\caption{Goal utility linear with $U_0=1$ and $U_n = 0$. Other behavior utility function sigmoid100 0 10 1 goal1to0}
+\caption{Goal utility linear with $U_0=1$ and $U_n = 0$. Other behavior utility sigmoid with $t_0=100$ $\beta=0$ $\omega=10$ $\eta=1$}
 \label{fig:sigmoid100_0_10_1_goal1to0}
 \end{figure}
 
 \begin{figure}[b]
 \includegraphics[width=\textwidth]{/home/djura/vakken/svn_afstudeerstage/deadline-driven-behavior/hulpscriptjes/goodresults/gaussian200_50_1_goal1to0.png}
-\caption{gaussian200 50 1 goal1to0}
+\caption{Goal utility linear with $U_0=1$ and $U_n = 0$. Other behavior utility gaussian with $\mu=200$ and $\sigma=50$.}
 \label{fig:gaussian200_50_1_goal1to0}
 \end{figure}
 
@@ -641,21 +646,21 @@ In figures \ref{fig:linear0to1_goal01to0}, \ref{fig:sigmoid_100_0_10_1goal01to0}
 \begin{figure}
 \centering
 \includegraphics[width=\textwidth]{/home/djura/vakken/svn_afstudeerstage/deadline-driven-behavior/hulpscriptjes/goodresults/linear0to1_goal01to0.png}
-\caption{linear0to1 goal01to0}
+\caption{Goal utility linear with $U_0=0.1$ and $U_n=0$. Other utility linear with $U_0=0$ and $U_n=1$}
 \label{fig:linear0to1_goal01to0}
 \end{figure}
 
 \begin{figure}
 \centering
 \includegraphics[width=\textwidth]{/home/djura/vakken/svn_afstudeerstage/deadline-driven-behavior/hulpscriptjes/goodresults/sigmoid_100_0_10_1goal01to0.png}
-\caption{sigmoid 100 0 10 1 goal01to0}
+\caption{Goal utility linear with $U_0=0.1$ and $U_n=0$. Other utility sigmoid with $t_0=100$ $\beta=0$ $\omega=10$ $\eta=1$.}
 \label{fig:sigmoid_100_0_10_1goal01to0}
 \end{figure}
 
 \begin{figure}
 \centering
 \includegraphics[width=\textwidth]{/home/djura/vakken/svn_afstudeerstage/deadline-driven-behavior/hulpscriptjes/goodresults/gaussian200_50_1_goal01to0.png}
-\caption{gaussian200 50 1 goal01to0}
+\caption{Goal utility linear with $U_0=0.1$ and $U_n=0$. Other utility gaussian with $\mu=200$ and $\sigma=50$.}
 \label{fig:gaussian200_50_1_goal01to0}
 \end{figure}
 
@@ -666,7 +671,7 @@ In figure \ref{fig:linear0_1_200_goalsigmoid_100_0_-10_1}, \ref{fig:sigmoid100_0
 \begin{figure}
 \centering
 \includegraphics[width=\textwidth]{/home/djura/vakken/svn_afstudeerstage/deadline-driven-behavior/hulpscriptjes/goodresults/linear0_1_200_goalsigmoid_100_0_-10_1.png}
-\caption{linear0 1 200 goalsigmoid 100 0 -10 1}
+\caption{Goal utility sigmoid with $t_0=100$ $\beta=0$ $\omega=-10$ $\eta=1$. Other utility linear with $U_0=0$ and $U_n=1$}
 \label{fig:linear0_1_200_goalsigmoid_100_0_-10_1}
 \end{figure}
 
@@ -674,14 +679,14 @@ In figure \ref{fig:linear0_1_200_goalsigmoid_100_0_-10_1}, \ref{fig:sigmoid100_0
 \begin{figure}
 \centering
 \includegraphics[width=\textwidth]{/home/djura/vakken/svn_afstudeerstage/deadline-driven-behavior/hulpscriptjes/goodresults/sigmoid100_0_10_1_goalsigmoid100_0_-10_1.png}
-\caption{sigmoid100 0 10 1 goalsigmoid100 0 -10 1}
+\caption{Goal utility sigmoid with $t_0=100$ $\beta=0$ $\omega=-10$ $\eta=1$. Other utility sigmoid with $t_0=100$ $\beta=0$ $\omega=10$ $\eta=1$.}
 \label{fig:sigmoid100_0_10_1_goalsigmoid100_0_-10_1}
 \end{figure}
 
 \begin{figure}
 \centering
 \includegraphics[width=\textwidth]{/home/djura/vakken/svn_afstudeerstage/deadline-driven-behavior/hulpscriptjes/goodresults/gaussian200_50_1_goalsigmoid_100_0_-1_1.png}
-\caption{gaussian200 50 1 goalsigmoid 100 0 -10 1}
+\caption{Goal utility sigmoid with $t_0=100$ $\beta=0$ $\omega=-10$ $\eta=1$. Other utility gaussian with $\mu=200$ and $\sigma=50$.}
 \label{fig:gaussian200_50_1_goalsigmoid_100_0_-10_1}
 \end{figure}
 
@@ -691,21 +696,21 @@ The results for a Gaussian goal probability function are shown in figure \ref{fi
 \begin{figure}[h]
 \centering
 \includegraphics[width=\textwidth]{/home/djura/vakken/svn_afstudeerstage/deadline-driven-behavior/hulpscriptjes/goodresults/sigmoid100_0_10_1_goalgaussian0_50_1.png}
-\caption{sigmoid100 0 10 1 goalgaussian0 50 1}
+\caption{Goal utility gaussian with $\mu=0$ and $\sigma=50$. Other utility sigmoid with $t_0=100$ $\beta=0$ $\omega=10$ $\eta=1$.}
 \label{fig:sigmoid100_0_10_1_goalgaussian0_50_1}
 \end{figure}
 
 \begin{figure}[h]
 \centering
 \includegraphics[width=\textwidth]{/home/djura/vakken/svn_afstudeerstage/deadline-driven-behavior/hulpscriptjes/goodresults/linear0_1_200_goalgaussian_0_50_1.png}
-\caption{linear0 1 200 goalgaussian 0 50 1}
+\caption{Goal utility gaussian with $\mu=0$ and $\sigma=50$. Other utility linear with $U_0=0$ and $U_n=1$}
 \label{fig:linear0_1_200_goalgaussian_0_50_1}
 \end{figure}
 
 \begin{figure}[h]
 \centering
 \includegraphics[width=\textwidth]{/home/djura/vakken/svn_afstudeerstage/deadline-driven-behavior/hulpscriptjes/goodresults/gaussian200_50_1_goalgaussian0_50_1.png}
-\caption{gaussian200 50 1 goalgaussian0 50 1}
+\caption{Goal utility gaussian with $\mu=0$ and $\sigma=50$. Other utility gaussian with $\mu=200$ and $\sigma=50$.}
 \label{fig:gaussian200_50_1_goalgaussian0_50_1}
 \end{figure}
 
@@ -1039,7 +1044,7 @@ First of all, we have figure \ref{fig:constant1} where the $U=1$ for all $t$. We
 \begin{figure}
 \centering
 \includegraphics[width=\textwidth]{/home/djura/vakken/svn_afstudeerstage/deadline-driven-behavior/hulpscriptjes/goodresults/constant1_cropped}
-\caption{constant1}
+\caption{Non goal utility is constant with $U=1$}
 \label{fig:constant1}
 \end{figure}
 
@@ -1052,7 +1057,7 @@ In figure \ref{fig:sigmoid100_0_10_1} we very clearly the influence of the shape
 \begin{figure}
 \centering
 \includegraphics[width=\textwidth]{/home/djura/vakken/svn_afstudeerstage/deadline-driven-behavior/hulpscriptjes/goodresults/linear0to1_100agents.png}
-\caption{linear0to1 100agents}
+\caption{Non-goal utility linear with $U_0=0$ and $U_n=1$.}
 \label{fig:linear0to1_100agents}
 \end{figure}
 
@@ -1060,28 +1065,28 @@ In figure \ref{fig:sigmoid100_0_10_1} we very clearly the influence of the shape
 \begin{figure}
 \centering
 \includegraphics[width=\textwidth]{/home/djura/vakken/svn_afstudeerstage/deadline-driven-behavior/hulpscriptjes/goodresults/linear0to05_100agents.png}
-\caption{linear0to 0.5 100agents}
+\caption{Non-goal utility linear with $U_0 = 0$ and $U_n=0.5$.}
 \label{fig:linear0to0.5_100agents}
 \end{figure}
 
 \begin{figure}
 \centering
 \includegraphics[width=\textwidth]{/home/djura/vakken/svn_afstudeerstage/deadline-driven-behavior/hulpscriptjes/goodresults/linear0to01_100agents.png}
-\caption{linear0to0.1 100agents}
+\caption{Non-goal utility linear with $U_0=0$ and $U_n=0.1$.}
 \label{fig:linear0to01_100agents}
 \end{figure}
 
 \begin{figure}
 \centering
 \includegraphics[width=\textwidth]{/home/djura/vakken/svn_afstudeerstage/deadline-driven-behavior/hulpscriptjes/goodresults/sigmoid100_0_10_1.png}
-\caption{sigmoid(100,0,10,1)}
+\caption{Non-goal utility sigmoid with $t_0=100$ $\beta=0$ $\omega=10$ $\eta=1$.}
 \label{fig:sigmoid100_0_10_1}
 \end{figure}
 
 \begin{figure}
 \centering
 \includegraphics[width=\textwidth]{/home/djura/vakken/svn_afstudeerstage/deadline-driven-behavior/hulpscriptjes/goodresults/gaussian_mean200_sigma50_100_max1.png}
-\caption{gaussian mean200 sigma50 100 max1}
+\caption{Non-goal utility gaussian with $\mu=200$ and $\sigma=50$.}
 \label{fig:gaussian_mean200_sigma50_100_max1}
 \end{figure}
 
