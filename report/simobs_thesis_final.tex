@@ -321,6 +321,8 @@ Of all the possible existing techniques, the "situations" approach of Sung et al
 \todo[inline]{Check whole thesis on occurrence of "probability" function and replace it with "utility function" where necessary}
 In the upcoming sections will be described how we decided to implement our system. We decided to base our model around the situations framework. We chose this framework because it allows for probabilistic behavior, and puts emphasis on defining behavior through the environment. This framework will have to be extended to deal with time restrictions. However, we won't work with finite state machines, since these offer too little functionality to enable us to work with time restrictions. Furthermore, FSMs are not suitable for describing interactions between multiple agents. That is why we do the behavior modeling a little bit differently in our system. Instead of modeling the system with finite state machines, we describe the system with Petri nets.  The toolkit we will use for this is \emph{Platform Independent Petri net Editor 2} (PIPE2). \url{http://pipe2.sourceforge.net/} In the next section we describe how we decided to use this toolkit.
 
+In short, this chapter will describe how we combined the situations framework with Petri nets instead of finite state machines, and added a mechanism with which we compute a "utility" measure for behavior.
+
 In our method, a number of concepts will be mentioned that have a vary specific meaning within our research. These concepts might sometimes be easy to be confused with each other.
 \todo[inline]{Decide if this is the appropriate place to introduce these concepts}
 \begin{itemize}
@@ -334,6 +336,9 @@ Actions are the building blocks in which a behavior is described.
 Petri-nets are the modelling language in which we describe our behaviors.
 \end{itemize}
 
+
+
+\todo[inline]{Extend introduction.}
 \section{PIPE2}
 %\todo[inline]{Is this the place to discuss PIPE2 or should it be placed in the appendix?} Yes because having a toolkit to easily create those petri nets is pretty relevant.
 PIPE2 is a tool written in Java to create and analyse petri nets. We chose this toolkit for a number of reasons. First of all, PIPE2 is written in Java, which makes it easier to integrate with our system. Secondly, this toolkit promised a number of Petri net extensions, the most important of which is the capability to create \emph{Generalized Stochastic Petri nets}. Generalized stochastic Petri nets is an extension that adds timed transitions to the modeling language.
@@ -343,7 +348,7 @@ Unfortunately, at a later time it seemed that the generalized stochastic petrine
 
 
 %This can be done by replacing the regular probabilistic finite state automata with probabilistic \emph{timed} state automata. Furthermore, we will be building an additional layer on the situations framework which will deal with with the \emph{needs} of the pedestrians. The list of needs a pedestrian will have will be dependent on which needs are defined in the situations in the environment. If, for instance, the environment contains a "food stand" situation, in which is specified that it defines the "hunger" need, pedestrians will act on this need. Whereas when the pedestrians are placed in an environment where for instance no food stands exist, and the "hunger" need cannot be fulfilled, pedestrians will not have this need at all.
- \todo[inline]{Extend introduction.}
+
 
 \section{Pedestrian Layer}
 Some drastic changes will be made in order to adapt the situations framework to our needs. Instead of using regular finite state automata, we use Petri nets so that environments in which time constraints are important (e.g. train stations, airports, etc. ) can be properly dealt with.
@@ -468,9 +473,8 @@ It will be difficult to assess whether our framework simulates ¨real-life¨ in 
 
 \section{Quantitative Experiment}
 \todo[inline]{Check which parts of the first quantitative experiment are still relevant now the experiments have changed.}
-It is very difficult to quantitatively establish whether lifelike behavior has been modeled. However, it is possible to check whether the mechanics of time planning work as predicted. In order to do this, we log for every step in time, for every pedestrian, which action he is doing at the moment. This information will be plotted in a graph that shows the frequency of every action at every step in time. The deadline of going to the goal will be 200 steps in our simulation. We chose this value because \todo[inline]{Say something about the numbers of steps for the behaviors and stuff}
-
-We will try different utility functions for the go-to-goal and non-goal behavior to see how this influences the simulation. 
+It is very difficult to quantitatively establish whether lifelike behavior has been modeled. However, it is possible to check whether the mechanics of time planning work as predicted. In order to do this, we log for every step in time, for every pedestrian, which action he is doing at the moment. This information will be plotted in a graph that shows the frequency of every action at every step in time. The deadline of going to the goal will be 200 steps in our simulation. We chose this value because our behavior takes up to roughly 40 steps (but most behavior takes 20 steps or less) and this leaves enough room for the pedestrians to decide on multiple behaviors while "relaxed" before time starts running out and they have to start hurrying.
+We will try different utility functions for the go-to-goal and non-goal behavior to see how this influences the simulation. The parameters for these function have been decided on beforehand. We based our decision on what parameters would give a significant but gradual increase in the course of this timeframe and give the maximum utility on either $t=0$ or $t=200$, the first when the function is used as utility measure for go-to-goal behavior, the latter when applied to non-goal behavior.
 
 \subsection{Sigmoid Function}
 A sigmoid function is an S-shaped curve that has a progression that accellerates and approaches a climax over time. This function can be found in many natural processes, such as learning curves. This function closely resembles how we reason that the behavior will shift when a pedestrian approaches a deadline.
@@ -496,7 +500,7 @@ If $0 \leq t \leq n$: $P(t) = at + b$\\
 If $t<0$: $P(t) = P(0)$\\
 If $t<n$: $P(t) = P(n)$
 \end{center}
-However, we do not specify these parameters directly. What matters the most to us, is the value at the start of the linear utility function, $U$ at \todo[inline]{Name t differently}$t=0$, which we call $U_0$ and the value of $U$ at the end where $t=n$, which we call $U_n$. Consequently, we compute $a$ and $b$ as follows:
+However, we do not specify these parameters directly. What matters the most to us, is the value at the start of the linear utility function, $U$ at \todo[inline]{Name t differently, too confusing}$t=0$, which we call $U_0$ and the value of $U$ at the end where $t=n$, which we call $U_n$. Consequently, we compute $a$ and $b$ as follows:
 \todo[inline]{Check whether I'm consequent in the indication of the parameters and if it is correct to call the x axis $n$}
 \begin{center}
 $a = \frac{U_n - U_0}{n}$\\
@@ -522,8 +526,7 @@ We chose to try a Gaussian function as well because of the following reasoning: 
 Because of newly discovered limits to our system that become clear in our results \ref{chap:results}, we decided to add new quantitative experiments. It turn out that with our previous quantitative experiments, the cumulative probability for going to the goal becomes so high in quite a few steps, that it is difficult to see any effect of our system on hurried and relaxed behavior. Very soon in most of our simulations, the number of pedestrians that have already reached to goal becomes so high that nothing valuable can be said of the other behaviors. That is why we have decided to run experiments where we have removed the behavior of going to the goal. We did this by simply removing the connection from the base place of the pedestrian to the gotogoal transition, as can be seen in figure \ref{fig:second_rotterdampedestriannet}.
 We also replaced the "wander" behavior by two other behaviors signifying hurried and relaxed behavior, called \emph{fastwander} and {slowwander}. We use these two behaviors to try to get a clear distinction between hurried and relaxed, and see how the number of pedestrians doing one or the other changes over time. The petri nets for these behaviors look exactly the same, as can be seen in figure \ref{fig:newSituations}. The difference between these Petri nets is in the weight of the slowwander:1 and fastwander:1 transitions. These are 20 versus 10 respectively. This weight is used in the system to compute the amount of time that a certain behavior will take. The reason that these are 20 and 10 is that we programmed the slowwander behavior in such a way that the pedestrian will walk roughly in one direction for 20 timesteps. Fastwander makes the pedestrian walk faster than slow wander, and for a shorter period of time, namely 10 timesteps.
 
-We added the slowwander and fastwander situations in small blocks to the simulation, in such a way that the entire simulation area is covered with both situations. The reason that we did not make two big situations, is that when a token of a pedestrian leaves a situation, it is disconnected from it. \todo[inline]{This is not entirely true any more, I think it only counts for shared situations, maybe I can try to run the simulation again with only two big blocks of fastwander and slowwander situations and see if it behaves the same. It would save a lot of time with the loading of the situations in the beginning.}
-
+We added slowwander and fastwander situation areas, both encompassing the entire scene.
 The experiment run as follows. At every timestep, every pedestrian logs what action it is currently doing. This log is then rearranged into a table where we have for every timestep, for every action the amount of pedestrians that are currently executing it. The results are then displayed in a graph. The results can be found in the next chapter in section \ref{sec:secondquantitativeexperimentresults}.
 
 For this experiment, the following actions can be executed:
