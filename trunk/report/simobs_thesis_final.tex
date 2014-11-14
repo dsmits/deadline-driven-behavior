@@ -322,7 +322,7 @@ In the upcoming sections will be described how we decided to implement our syste
 
 In short, this chapter will describe how we combined the situations framework with Petri nets instead of finite state machines, and added a mechanism with which we compute a "utility" measure for behavior.
 
-In our method, a number of concepts will be mentioned that have a vary specific meaning within our research. These concepts might sometimes be easy to be confused with each other.
+In our method, a number of concepts will be mentioned that have a vary specific meaning within our research. These concepts might sometimes be easily confused with each other.
 \todo[inline]{Decide if this is the appropriate place to introduce these concepts}
 \begin{itemize}
 \item \emph{Situation}\\
@@ -335,26 +335,44 @@ Actions are the building blocks in which a behavior is described.
 Petri-nets are the modelling language in which we describe our behaviors.
 \end{itemize}
 
-It is important to keep in mind the difference between behaviors and actions when covered in my theses. These two terms are not interchangable. With \emph{actions} we indicate movement of a pedestrian that is described in a single transition in a petrinet. \emph{Behaviors} on the other hand, indicate the whole set of actions that are encompassed within a whole situation. Another way a behavior can be viewed is the whole sequence of actions that take place when a token of a pedestrians Petri net leaves the base place until it comes back again. \\
+It is important to keep in mind the difference between behaviors and actions when covered in my theses. These two terms are not interchangable. With \emph{actions} we indicate movement of a pedestrian that is described in a single transition in a Petri-net. \emph{Behaviors} on the other hand, indicate the whole set of actions that are encompassed within a whole situation. Another way a behavior can be viewed is the whole sequence of actions that take place when a token of a pedestrians Petri net leaves the base place until it comes back again. \\
 For example, a pedestrian might have entered the region of the toilet situation. A new \emph{behavior}, namely the Petri net corresponding to the toilet situation, is then attached to the pedestrian. A pedestrian might then decide to fire the transition that produces a token in this newly attached Petri net, thus making the pedestrian execute the behavior corresponding to the toilet situation. This Petri net consists of several transitions, corresponding to various \emph{actions}, such as walking to the toilet.
 
 
 \todo[inline]{Extend introduction.}
-\section{PIPE2}
-%\todo[inline]{Is this the place to discuss PIPE2 or should it be placed in the appendix?} Yes because having a toolkit to easily create those petri nets is pretty relevant.
-PIPE2 is a tool written in Java to create and analyse petri nets. We chose this toolkit for a number of reasons. First of all, PIPE2 is written in Java, which makes it easier to integrate with our system. Secondly, this toolkit promised a number of Petri net extensions, the most important of which is the capability to create \emph{Generalized Stochastic Petri nets}. Generalized stochastic Petri nets is an extension that adds timed transitions to the modeling language.
+\section{Petri-nets}
+\todo[inline]{Something is said about this in ¨pedestrian layer¨ but I think this title is more appropriate}
+Our method of designing behavior for large groups of pedestrians is largely based on the situation framework by Sung et al., but the finite state machines are replaced by Petri nets.
+
+Stuff I should mention here:
+\todo[inline]{Write this out but check if this is already mentioned in other parts of the method}
+\begin{itemize}
+\item brief introduction about what kind of basic petri nets we use exactly
+\item what did we change?
+\item Such as: probability in basic pedestrian net
+\item How did we attach the basic net and the others?
+\item Restrictions we put on petri nets
+\item Sources and sinks (important, not just implementation but also big factor in actual behavior)
+\end{itemize}
+
+
+
+\subsection{PIPE2}
+%\todo[inline]{Is this the place to discuss PIPE2 or should it be placed in the appendix?} Here because having a toolkit to easily create those petri nets is pretty relevant.
+PIPE2 is a tool written in Java to create and analyse petri nets. We chose this toolkit for a number of reasons. First of all, PIPE2 is written in Java, which makes it easier to integrate with our system. Secondly, this toolkit promised a number of Petri net extensions, the most important of which is the capability to create \emph{Generalized Stochastic Petri nets}. Generalized stochastic Petri nets is an extension that adds timed transitions to the modeling language. Most importantly, PIPE2 provides a clear and simple GUI with which Petri-nets can be designed. This is very important because the design of the behavior in our method should be fast and easy. It should require minimal effort to place large amounts of agents in a environment.
 %\todo{Name other reasons, since we don't use generalized stochastic petri nets any more}
-Unfortunately, at a later time it seemed that the generalized stochastic petrinets did not behave as described in the specifications, so we decided to stick with modified, basic, untimed petri nets. Lastly, the PIPE2 toolkit has a clear, simple gui which can be used to create and modify Petri nets. This has been the main reason we chose this gui, because we wanted to create tools for easy modeling of behavior. It should require minimal effort to place large amounts of agents in a environment.
+Unfortunately, at a later time it seemed that the generalized stochastic petrinets that we planned to use did not behave as described in the specifications, so we decided to use modified, basic, untimed petri nets.  
 %\todo[inline]{Name disadvantages? Most disadvantages only become clear after PIPE2 has been used for a while so choosing PIPE was mostly because there was not enough time to extensively study alternatives, but it shouldn't be put like that.}
+
 
 
 %This can be done by replacing the regular probabilistic finite state automata with probabilistic \emph{timed} state automata. Furthermore, we will be building an additional layer on the situations framework which will deal with with the \emph{needs} of the pedestrians. The list of needs a pedestrian will have will be dependent on which needs are defined in the situations in the environment. If, for instance, the environment contains a "food stand" situation, in which is specified that it defines the "hunger" need, pedestrians will act on this need. Whereas when the pedestrians are placed in an environment where for instance no food stands exist, and the "hunger" need cannot be fulfilled, pedestrians will not have this need at all.
 
 
-\section{Pedestrian Layer}
-Some drastic changes will be made in order to adapt the situations framework to our needs. Instead of using regular finite state automata, we use Petri nets so that environments in which time constraints are important (e.g. train stations, airports, etc. ) can be properly dealt with.
+%\section{Pedestrian Layer}
+%Some drastic changes will be made in order to adapt the situations framework to our needs. Instead of using regular finite state automata, we use Petri nets so that environments in which time constraints are important (e.g. train stations, airports, etc. ) can be properly dealt with.
 
-\todo[inline]{Commented out quite some text because PIPE3 did not work as promised. Replace this text by text that does describe how we actually used the Petri nets. Maybe some of the text is still usable? Also, check if this text shouldn't be further down below, or maybe it is already there.}
+\todo[inline]{Commented out quite some text because PIPE2 did not work as promised. Replace this text by text that does describe how we actually used the Petri nets. Maybe some of the text is still usable? Also, check if this text shouldn't be further down below, or maybe it is already there.}
 
 %\subsubsection{Probabilistic Timed State Automata}
 %In the approach of Sung et al., regular probabilistic finite state automata are used. However, this is not sufficient when dealing with time-constrained goals. This is why we use a system called probabilistic timed automata. Probabilistic timed automata are an extension to B\"{u}chi automata which in turn are an extension to finite state automata. B\"{u}chi automata extend finite state automata to infinite inputs. Probabilistic timed automata use the acceptance conditions used in B\"{u}chi automata and extend these by using clocks, which can be incremented or reset. These clocks can be incorporated in the acceptance conditions, so that %transitions can be restricted based on time.
@@ -367,10 +385,11 @@ Some drastic changes will be made in order to adapt the situations framework to 
 %\todo[inline]{Refine following text}
 %The general gist is that we use the idea of Beauquiers probabilistic timed automata \cite{Beauquier03}. Which means we %assign clocks to transitions and a transition is only accepted when the clock condition holds, and we use probabilistic %transitions, but we wont use the whole MDP problem solving part.
 
-\section{Assumptions}
+\section{Restrictions}
+\todo[inline]{Maybe put more at beginning?( Or at end of method)}
 The method we propose is based on various assumptions which have to be clarified. An important assumption is that the environment the pedestrians have to walk in are designed in such a way that it helps creating realistic behavior. This means that situations have to be defined in such a way that pedestrians will walk into them and act in the appropriate way. This makes our framework probably limited to certain kinds of environments. When an environment does not contain many situation areas or if they are too far apart, it is very likely that the framework does not give a satisfactory result.
 Another assumption we make is that the pedestrians have to be at a certain place at a certain time. This makes the system more suitable for daily routine type situations rather than cases in which pedestrians are walking around without a proper goal. However, most situations can be described as having a deadline (e.g. eventually, most people have to go to bed), so this assumption is not necessarily very restrictive.\\
-Furthermore, we assume that the behavior of the pedestrians can be described in Petri nets, and that these models incorporate base places to which all ¨paths" eventually loop back, and from which it is always possible to reach the "goal place" (given enough time is left) We need this assumption in order to create an efficient way of determining which actions can be done before the deadline. \\
+Furthermore, we assume that the behavior of the pedestrians can be described in Petri nets, and that these models incorporate \emph{base places} to which all ¨paths" eventually loop back, and from which it is always possible to reach the "goal place" (given enough time is left) We need this assumption in order to create an efficient way of determining which actions can be done before the deadline. \\
 
 \section{Preparations}
 Because the proposed system needs to run real-time, we refrain from overly complex systems that take too much computing power.
@@ -1119,7 +1138,7 @@ In the appendix we will go into some of the details of implementation of the dea
 \section{Implementing the Framework}
 
 
-section{Extending PIPE2}
+\section{Extending PIPE2}
 
 \subsection{Sources, Sinks, Slots}
 In order to facilitate transporting tokens between Petri nets, we created classes of transitions with added functionality to keep track of how these nets are connected. These transitions are called \emph{sinks} and \emph{sources}. A source is a transition that has no incoming connections, only outgoing, with the result that this kind of transition produces new tokens without consuming any, increasing the total amount of tokens in the Petri net. A sink is exactly the opposite: it only consumes tokens and does not produce, effectively decreasing the amount of tokens in the network. Subsequently, we can use these special classes of transitions to transport tokens from one net to another. In order to keep track of how the nets are connected, we pair a sink with every source transition. These pairs are put together in a class called \emph{Slot}.
