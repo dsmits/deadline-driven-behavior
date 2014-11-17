@@ -1,5 +1,8 @@
 DISCLAIMER: The things that I write here are mainly to arrange my own thoughts and might not always be understandable for other people.
 
+=17-11-2014=
+Added stuff about Petri nets in the methods chapter. Trying to make something consistent out of my method remains a challenge. Wednesday I will make a step-by-step description of the system using a example scene.
+
 =12-11-2014=
 I have included a reason for the utility functions. Today I'm scanning through the thesis, checking which "to-dos" are most important and fixing those. Next time I should really start on finishing up my conclusion and discussion. Also, I feel that the method section is still quite short. Have I said everything or are there still parts missing? I've also printed another article on Petri nets, maybe it will enable me to give some more in-depth information.
 
