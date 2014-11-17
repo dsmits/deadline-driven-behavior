@@ -666,7 +666,7 @@ public class PedestrianSimDataLayer extends DataLayer {
 
 	private double getProbability(IClock currentTime, IClock goalTime,
 			Transition transition,
-			ITimeProbabilityFunction iTimeProbabilityFunction) {
+			ITimeProbabilityFunction iTimeProbabilityFunction) {		
 		double duration = transition.getRate();
 		double timeLeft = goalTime.getTime() - currentTime.getTime() - duration;
 
