@@ -1,0 +1,48 @@
+This is BibTeX, Version 0.99d (TeX Live 2012/Debian)
+Capacity: max_strings=35307, hash_size=35307, hash_prime=30011
+The top-level auxiliary file: simobs_thesis_final.aux
+The style file: plain.bst
+Database file #1: references.bib
+Warning--empty booktitle in leaderfollower
+You've used 19 entries,
+            2118 wiz_defined-function locations,
+            630 strings with 7902 characters,
+and the built_in function-call counts, 7126 in all, are:
+= -- 708
+> -- 294
+< -- 10
++ -- 118
+- -- 96
+* -- 440
+:= -- 1100
+add.period$ -- 59
+call.type$ -- 19
+change.case$ -- 105
+chr.to.int$ -- 0
+cite$ -- 20
+duplicate$ -- 310
+empty$ -- 604
+format.name$ -- 96
+if$ -- 1576
+int.to.chr$ -- 0
+int.to.str$ -- 19
+missing$ -- 17
+newline$ -- 97
+num.names$ -- 38
+pop$ -- 134
+preamble$ -- 1
+purify$ -- 86
+quote$ -- 0
+skip$ -- 245
+stack$ -- 0
+substring$ -- 439
+swap$ -- 102
+text.length$ -- 10
+text.prefix$ -- 0
+top$ -- 0
+type$ -- 76
+warning$ -- 1
+while$ -- 74
+width$ -- 21
+write$ -- 211
+(There was 1 warning)

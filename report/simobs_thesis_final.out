@@ -1,0 +1,49 @@
+\BOOKMARK [1][-]{section.0.1}{Acknowledgements}{}% 1
+\BOOKMARK [0][-]{chapter.1}{Introduction}{}% 2
+\BOOKMARK [1][-]{section.1.1}{SIMOBS}{chapter.1}% 3
+\BOOKMARK [1][-]{section.1.2}{Research Question}{chapter.1}% 4
+\BOOKMARK [0][-]{chapter.2}{Related Work}{}% 5
+\BOOKMARK [1][-]{section.2.1}{Designing the Situation-Dependent Behaviors}{chapter.2}% 6
+\BOOKMARK [1][-]{section.2.2}{Group Interaction}{chapter.2}% 7
+\BOOKMARK [2][-]{subsection.2.2.1}{Global approaches}{section.2.2}% 8
+\BOOKMARK [2][-]{subsection.2.2.2}{Smaller Groups and Individual Approaches}{section.2.2}% 9
+\BOOKMARK [1][-]{section.2.3}{Interaction with Objects}{chapter.2}% 10
+\BOOKMARK [2][-]{subsection.2.3.1}{Mixed Approaches}{section.2.3}% 11
+\BOOKMARK [1][-]{section.2.4}{Designing the Behavior Structure in the Environment}{chapter.2}% 12
+\BOOKMARK [1][-]{section.2.5}{General Behavior Modeling}{chapter.2}% 13
+\BOOKMARK [2][-]{subsection.2.5.1}{Petri Nets}{section.2.5}% 14
+\BOOKMARK [2][-]{subsection.2.5.2}{Advantages of Petri Nets over Finite State Automata}{section.2.5}% 15
+\BOOKMARK [2][-]{subsection.2.5.3}{Are FSMs and Petri Nets interchangable?}{section.2.5}% 16
+\BOOKMARK [1][-]{section.2.6}{Time Planning}{chapter.2}% 17
+\BOOKMARK [1][-]{section.2.7}{Which Techniques Can We Use?}{chapter.2}% 18
+\BOOKMARK [0][-]{chapter.3}{Method}{}% 19
+\BOOKMARK [1][-]{section.3.1}{Petri-nets}{chapter.3}% 20
+\BOOKMARK [1][-]{section.3.2}{Restrictions and Assumptions}{chapter.3}% 21
+\BOOKMARK [1][-]{section.3.3}{Preparations}{chapter.3}% 22
+\BOOKMARK [1][-]{section.3.4}{Time Planning \046 Decision Mechanism}{chapter.3}% 23
+\BOOKMARK [2][-]{subsection.3.4.1}{The Basic Algorithm}{section.3.4}% 24
+\BOOKMARK [1][-]{section.3.5}{Rotterdam Airport}{chapter.3}% 25
+\BOOKMARK [1][-]{section.3.6}{Examples}{chapter.3}% 26
+\BOOKMARK [0][-]{chapter.4}{Experiments}{}% 27
+\BOOKMARK [1][-]{section.4.1}{Qualitative Experiment}{chapter.4}% 28
+\BOOKMARK [1][-]{section.4.2}{Quantitative Experiment}{chapter.4}% 29
+\BOOKMARK [2][-]{subsection.4.2.1}{Sigmoid Function}{section.4.2}% 30
+\BOOKMARK [2][-]{subsection.4.2.2}{Linear Function}{section.4.2}% 31
+\BOOKMARK [2][-]{subsection.4.2.3}{Gaussian Function}{section.4.2}% 32
+\BOOKMARK [1][-]{section.4.3}{New Quantitative Experiment}{chapter.4}% 33
+\BOOKMARK [0][-]{chapter.5}{Results}{}% 34
+\BOOKMARK [1][-]{section.5.1}{Results of the Qualitative Experiment}{chapter.5}% 35
+\BOOKMARK [1][-]{section.5.2}{Results of the First Quantitative Experiment}{chapter.5}% 36
+\BOOKMARK [1][-]{section.5.3}{Results of the Second Quantitative Experiment}{chapter.5}% 37
+\BOOKMARK [0][-]{chapter.6}{Conclusion \046 Discussion}{}% 38
+\BOOKMARK [1][-]{subsection.6.0.1}{Limits of the Deadline Driven Behavior Framework}{chapter.6}% 39
+\BOOKMARK [2][-]{subsection.6.0.2}{Optimization}{subsection.6.0.1}% 40
+\BOOKMARK [2][-]{subsection.6.0.3}{Future Work}{subsection.6.0.1}% 41
+\BOOKMARK [0][-]{appendix.A}{Appendix A: Implementation}{}% 42
+\BOOKMARK [1][-]{section.A.1}{Implementing the Framework}{appendix.A}% 43
+\BOOKMARK [1][-]{section.A.2}{Extending PIPE2}{appendix.A}% 44
+\BOOKMARK [2][-]{subsection.A.2.1}{Sources, Sinks, Slots}{section.A.2}% 45
+\BOOKMARK [2][-]{subsection.A.2.2}{Additional Modifications}{section.A.2}% 46
+\BOOKMARK [1][-]{section.A.3}{MASON}{appendix.A}% 47
+\BOOKMARK [1][-]{section.A.4}{Connecting MASON and the Situations Framework}{appendix.A}% 48
+\BOOKMARK [0][-]{appendix.B}{Appendix B: Results}{}% 49

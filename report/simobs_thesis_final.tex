@@ -1,7 +1,7 @@
 \documentclass[11pt]{book}
 \usepackage[labelfont={bf}, margin=1cm]{caption}
 \usepackage{titling, titlepic}
-
+\usepackage{multirow}
 \usepackage[colorinlistoftodos, bordercolor=white, backgroundcolor=cyan]{todonotes}
 \usepackage{booktabs, caption, subcaption}
 \usepackage{hyperref, comment}
@@ -33,7 +33,7 @@ Djura S. Smits
 Master's thesis\\
 % [CHANGE] Whether your Bachelor thesis is 6 ECTS (regular) or 9 ECTS (Honours
 % programme).
-Credits: 12 EC
+Credits: 48 EC
 
 \vspace{0.5cm}
 
@@ -444,7 +444,57 @@ Next, the algorithm computes for every situation how much time is left would the
 \end{algorithm}
 \end{figure}
 
-\subsection{Examples}
+\section{Rotterdam Airport}
+In our research, we focus on behavior found at Rotterdam airport. In order to know what the behavior at this location looks like, we have observed footage from the security cameras at Rotterdam airport. From these observations we have established a couple of specific behaviors that are recurrent in Rotterdam airport.
+\todo[inline]{How often do these behaviors occur?}
+
+\begin{itemize}
+\item \emph{Going to the toilet.}
+\\In the videos, we observed that a typical behavior that manifests itself multiple times in the video material is that one person goes to the toilet, and another one waits until this person has come back. After that, they move on to do something else. The Petri-net can be found in figure
+\todo[inline]{If I have time I could modify the implementation of this behavior so that the pedestrian actually goes back to his friend after going to the toilet, or at least to the place where he came from}
+\todo[inline]{I removed the "checking in" behavior because it was difficult to implement. Maybe if I have some time left I will give it another try because it is quite important behavior for an airport}
+
+\item \emph{Leaning against a pillar.}
+\\Another recurring behavior we saw is that people lean against the pillars in the hall. 
+
+\item \emph{Wandering}\\
+People also wandered around randomly.
+\end{itemize}
+\todo[inline]{If I introduce the behavior here I can't talk about them yet in the method. Check if I do this}
+
+We managed to recreate the behavior in the Petri nets in figure \ref{fig:pillarpetrinet}, \ref{fig:standstillpetrinet}, \ref{fig:gototoiletpetrinet} and \ref{fig:wanderpetrinet}. As can be seen, the ¨standing still¨ behavior in figure \ref{fig:standstillpetrinet} was easiest to recreate, closely followed by the "wandering" behavior in figure \ref{fig:wanderpetrinet} and "leaning against a pillar" behavior. The exact appearance in the simulation mostly depends on the implementation of the actions indicated in the places of the Petri nets. Whether there will be e.g. collision detection or other lower-level functionality depends on which kind of multiagent simulation is used. The "go-to-toilet" behavior in figure \ref{fig:gototoiletpetrinet} is the most interesting, because this Petri net can actually be shared between two pedestrians. We see that this fairly complicates the structure of the Petri net. In comparison to the other Petri nets, there are relatively more places here that do not map to an actual action. These places are necessary to make sure that one pedestrian does not move forward to its next action too soon. This will cause the pedestrians to have more "idle" actions between their other actions than there would be with the simpler behavior. This is not a problem though, because the pedestrians will not remain idle longer than one or two timesteps.
+
+\todo[inline]{Check gototoilet Petri one last time to see if there aren't any redundant places/transitions}
+
+\begin{figure}
+\centering            
+\includegraphics[width=0.7\textwidth]{/home/djura/vakken/svn_afstudeerstage/deadline-driven-behavior/report/petrinet_pictures/pillarSituation.png}
+\caption{Going to the nearest pillar and leaning against it.}
+\label{fig:pillarpetrinet}
+\end{figure}
+
+\begin{figure}
+\centering            
+\includegraphics[width=0.4\textwidth]{/home/djura/vakken/svn_afstudeerstage/deadline-driven-behavior/report/petrinet_pictures/standStillSituation.png}
+\caption{Pedestrian standing still.}
+\label{fig:standstillpetrinet}
+\end{figure}
+
+\begin{figure}
+\centering            
+\includegraphics[width=\textwidth]{/home/djura/vakken/svn_afstudeerstage/deadline-driven-behavior/report/petrinet_pictures/twoPeopleToiletSituation.png}
+\caption{One person going to the toilet and one person waiting for the other.}
+\label{fig:gototoiletpetrinet}
+\end{figure}
+
+\begin{figure}
+\centering            
+\includegraphics[width=0.5\textwidth]{/home/djura/vakken/svn_afstudeerstage/deadline-driven-behavior/report/petrinet_pictures/wanderSituation.png}
+\caption{Random wandering around}
+\label{fig:wanderpetrinet}
+\end{figure}
+
+\section{Examples}
 \todo[inline]{Check if the title of this subsection is ok}
 Figure \ref{petrinetexample} gives an example of how the pedestrian petrinet is connected to the situations. It also shows the estimation created by the Dijkstra preprocessing algorithm that makes a guess at how much time it takes to complete the situation behavior. This is the value that will be used when computing the time at which the token of a pedestrian will move back to its base place.
 
@@ -477,7 +527,7 @@ People also wandered around randomly.
 \todo[inline]{If I introduce the behavior here I can't talk about them yet in the method. Check if I do this}
 
 It will be difficult to assess whether our framework simulates ¨real-life¨ in some way or another, but we can find out whether it is possible to describe the behaviors we found in real life in Petri-nets. We will show if our framework can do this.
-\todo[inline]{What are our criteria for success?}
+\todo[inline]{Experiment has to be changed. In experiments, give indication of how often the behaviors take place, how often do they take place in simulation? Also look at trajectories of these behaviors and compare with trajectories of simulation.}
 
 %One crucial behavior is missing. How are the pedestrians going to reach the different situation areas? This is only possible if they already have a move to begin with, otherwise they are only going to stay in place. That is why we added the \emph{fastWander} and \emph{slowWander} behavior. This behavior lets the pedestrian turn a random amount of degrees between $-\frac{1}{4}\pi$ and $\frac{1}{4}\pi$ and walk a few steps in that direction. Of course, fastWander makes the pedestrian move faster than slowWander, and takes less time. Another important reason we have added these two behaviors is that we can use them to see more clearly if relaxed or hurried behavior is favored differently over time.
 
@@ -545,7 +595,7 @@ We chose to try a Gaussian function as well because of the following reasoning: 
 \section{New Quantitative Experiment}
 \label{sec:quantitativeexp2}
 \todo[inline]{Part of this text can be moved to the first quantitative experiment, because that experiment now also includes slow and fast wander}
-Because of newly discovered limits to our system that become clear in our results \ref{chap:results}, we decided to add new quantitative experiments. It turn out that with our previous quantitative experiments, the cumulative probability for going to the goal becomes so high in quite a few steps, that it is difficult to see any effect of our system on hurried and relaxed behavior. Very soon in most of our simulations, the number of pedestrians that have already reached to goal becomes so high that nothing valuable can be said of the other behaviors. That is why we have decided to run experiments where we have removed the behavior of going to the goal. We did this by simply removing the connection from the base place of the pedestrian to the gotogoal transition, as can be seen in figure \ref{fig:second_rotterdampedestriannet}.
+Because of newly discovered limits to our system that become clear in our results \ref{chap:results}, we decided to add new quantitative experiments. It turn out that with our previous quantitative experiments, the cumulative probability for going to the goal becomes so high in quite a few steps, that it is difficult to see any effect of our system on hurried and relaxed behavior. Very soon in most of our simulations, the number of pedestrians that have already reached to goal becomes so high that nothing valuable can be said of the other behaviors. That is why we have decided to run experiments where we have removed the behavior of going to the goal. We did this by simply removing the connection from the base place of the pedestrian to the gotogoal transition.
 We also replaced the "wander" behavior by two other behaviors signifying hurried and relaxed behavior, called \emph{fastwander} and {slowwander}. We use these two behaviors to try to get a clear distinction between hurried and relaxed, and see how the number of pedestrians doing one or the other changes over time. The petri nets for these behaviors look exactly the same, as can be seen in figure \ref{fig:newSituations}. The difference between these Petri nets is in the weight of the slowwander:1 and fastwander:1 transitions. These are 20 versus 10 respectively. This weight is used in the system to compute the amount of time that a certain behavior will take. The reason that these are 20 and 10 is that we programmed the slowwander behavior in such a way that the pedestrian will walk roughly in one direction for 20 timesteps. Fastwander makes the pedestrian walk faster than slow wander, and for a shorter period of time, namely 10 timesteps. We added slowwander and fastwander situation areas, both encompassing the entire scene.
 
 The experiment run as follows. At every timestep, every pedestrian logs what action it is currently doing. This log is then rearranged into a table where we have for every timestep, for every action the amount of pedestrians that are currently executing it. The results are then displayed in a graph. The results can be found in the next chapter in section \ref{sec:secondquantitativeexperimentresults}.
@@ -559,14 +609,14 @@ For this experiment, the following actions can be executed:
 \item \emph{standstill}
 \item \emph{idle}
 \end{itemize}
-The last action is a special one. This action is mentioned in none of the Petri nets. It is still executed though. When the multiagent simulation part of the system communicates with the situations part that a pedestrian has finished its action an needs a new one, the appropriate transitions are fired, and their names are sent back to the multiagent simulation module. Sometimes, a transition is received that does not have an associated action. This transition could be necessary to put the Petri net in a certain "mental" state but does not reflect anything that can be demonstrated in a visible action. \todo[inline]{Pictures to explain?} When the system does not have an associated action for a transition it defaults to the "idle" action. Another situation in which this idle behavior can happen that will be important in these experiments, is when there are no transitions left anymore to fire. This can be for example when all transitions have gotten a probability of 0 for firing.
+The last action is the default action when nothing else can be executed. It is executed when a fired transition does not have an associated action. Another situation in which this idle behavior can happen that will be important in these experiments, is when there are no transitions left anymore to fire. This can be for example when all transitions have gotten a probability of 0 for firing.
 
-\begin{figure}
-\centering
-\includegraphics[width=150pt]{"rotterdamPedestrianNet_secondexperiment"}
-\caption{The pedestrian Petri Net for the second quantitative experiment.}
-\label{fig:second_rotterdampedestriannet}
-\end{figure}
+%\begin{figure}
+%\centering
+%\includegraphics[width=150pt]{"rotterdamPedestrianNet_secondexperiment"}
+%\caption{The pedestrian Petri Net for the second quantitative experiment.}
+%\label{fig:second_rotterdampedestriannet}
+%\end{figure}
 
 \begin{figure}
         \centering
@@ -585,45 +635,15 @@ The last action is a special one. This action is mentioned in none of the Petri 
         \caption{Petri nets of the new behaviors}\label{fig:newSituations}
 \end{figure}
 
-
+\todo[inline]{Show the difference between the pictures in \ref{fig:fastWanderPetrinet} and \ref{fig:slowWanderPetrinet}, color the upper transitions red and show they have a different rate.}
 
 \chapter{Results}
 \label{chap:results}
 
 \section{Results of the Qualitative Experiment}
 \label{sec:qualitativeresults}
-We managed to recreate the behavior in the Petri nets in figure \ref{fig:pillarpetrinet}, \ref{fig:standstillpetrinet}, \ref{fig:gototoiletpetrinet} and \ref{fig:wanderpetrinet}. As can be seen, the ¨standing still¨ behavior in figure \ref{fig:standstillpetrinet} was easiest to recreate, closely followed by the "wandering" behavior in figure \ref{fig:wanderpetrinet} and "leaning against a pillar" behavior. The exact appearance in the simulation mostly depends on the implementation of the actions indicated in the places of the Petri nets. Whether there will be e.g. collision detection or other lower-level functionality depends on which kind of multiagent simulation is used. The "go-to-toilet" behavior in figure \ref{fig:gototoiletpetrinet} is the most interesting, because this Petri net can actually be shared between two pedestrians. We see that this fairly complicates the structure of the Petri net. In comparison to the other Petri nets, there are relatively more places here that do not map to an actual action. These places are necessary to make sure that one pedestrian does not move forward to its next action too soon. This will cause the pedestrians to have more "idle" actions between their other actions than there would be with the simpler behavior. This is not a problem though, because the pedestrians will not remain idle longer than one or two timesteps.
-
-\todo[inline]{Check gototoilet Petri one last time to see if there aren't any redundant places/transitions}
-
-\begin{figure}
-\centering            
-\includegraphics[width=0.7\textwidth]{/home/djura/vakken/svn_afstudeerstage/deadline-driven-behavior/report/petrinet_pictures/pillarSituation.png}
-\caption{Going to the nearest pillar and leaning against it.}
-\label{fig:pillarpetrinet}
-\end{figure}
-
-\begin{figure}
-\centering            
-\includegraphics[width=0.4\textwidth]{/home/djura/vakken/svn_afstudeerstage/deadline-driven-behavior/report/petrinet_pictures/standStillSituation.png}
-\caption{Pedestrian standing still.}
-\label{fig:standstillpetrinet}
-\end{figure}
-
-\begin{figure}
-\centering            
-\includegraphics[width=\textwidth]{/home/djura/vakken/svn_afstudeerstage/deadline-driven-behavior/report/petrinet_pictures/twoPeopleToiletSituation.png}
-\caption{One person going to the toilet and one person waiting for the other.}
-\label{fig:gototoiletpetrinet}
-\end{figure}
-
-\begin{figure}
-\centering            
-\includegraphics[width=0.5\textwidth]{/home/djura/vakken/svn_afstudeerstage/deadline-driven-behavior/report/petrinet_pictures/wanderSituation.png}
-\caption{Random wandering around}
-\label{fig:wanderpetrinet}
-\end{figure}
-
+\todo[inline]{Rewrite results of qualitative experiment}
+\todo[inline]{Show GUI! how do the pedestrians walk?}
 
 %\todo[inline]{The following is only a rough draft}
 %It is very difficult to determine whether one has been successful at modeling lifelike behavior. What we are going to do is %study footage of real-life behavior at Rotterdam Airport, and pick out various behavioral patterns. Then, we are going to %model these patterns with our system.
@@ -637,7 +657,7 @@ Firstly we are going to discuss the results of the first quantitative experiment
 Another thing that we can notice is that there are more or less four actions that dominate simulation, namely \emph{slow wander}, \emph{fast wander}, \emph{go to goal}, and \emph{idle action}.
 \todo[inline]{What happened to lean against pillar?} Behavior like going to the toilet and waiting for their friend (which are both part of the same going to the toilet behavior and Petri-net) are only done by one or two pedestrians at a time. This is completely as expected. The go-to-toilet situation is shared, which means that one Petri-net is attached to multiple pedestrian Petri-nets. The more dominant actions belong to situations that are not shared and are instantiated for every pedestrian that enters it. That means that the shared Petri nets are only instantiated once for every situation, while the ones that aren't shared are instantiated many times.
 
-In figure \ref{fig:linear0to1goal1to0}, \ref{fig:sigmoid100_0_10_1_goal1to0} and \ref{fig:gaussian200_50_1_goal1to0} we see the results for having a linear goal utility function that decreases from 1 to 0 and the utility function for other behavior varying. Figure \ref{fig:linear0to1goal1to0} and \ref{fig:sigmoid100_0_10_1_goal1to0} look very similar. The simulation starts out with a large preference for slow wander behavior, which decreases while fast wander increases. After about 70 steps however, the gotogoal action starts to dominate the simulation, increasing at a fast pace. This makes the other actions decrease rapidly until pedestrians are either idle (because they have already reached their goal) or still going to their goal. When we look at figure \ref{fig:gaussian200_50_1_goal1to0} we see that almost all pedestrians go to the goal in the first dozen of steps. Fast wander and slow wander become completely overshadowed.
+In figure \ref{fig:linear0to1goal1to0}, \ref{fig:sigmoid100_0_10_1_goal1to0} and \ref{fig:Gaussian200_50_1_goal1to0} we see the results for having a linear goal utility function that decreases from 1 to 0 and the utility function for other behavior varying. Figure \ref{fig:linear0to1goal1to0} and \ref{fig:sigmoid100_0_10_1_goal1to0} look very similar. The simulation starts out with a large preference for slow wander behavior, which decreases while fast wander increases. After about 70 steps however, the gotogoal action starts to dominate the simulation, increasing at a fast pace. This makes the other actions decrease rapidly until pedestrians are either idle (because they have already reached their goal) or still going to their goal. When we look at figure \ref{fig:Gaussian200_50_1_goal1to0} we see that almost all pedestrians go to the goal in the first dozen of steps. Fast wander and slow wander become completely overshadowed.
 
 
 \begin{figure}[b]
@@ -655,14 +675,14 @@ In figure \ref{fig:linear0to1goal1to0}, \ref{fig:sigmoid100_0_10_1_goal1to0} and
 
 \begin{figure}[b]
 \includegraphics[width=\textwidth]{/home/djura/vakken/svn_afstudeerstage/deadline-driven-behavior/hulpscriptjes/goodresults/gaussian200_50_1_goal1to0.png}
-\caption{Goal utility linear with $U_0=1$ and $U_n = 0$. Other behavior utility gaussian with $\mu=200$ and $\sigma=50$.}
-\label{fig:gaussian200_50_1_goal1to0}
+\caption{Goal utility linear with $U_0=1$ and $U_n = 0$. Other behavior utility Gaussian with $\mu=200$ and $\sigma=50$.}
+\label{fig:Gaussian200_50_1_goal1to0}
 \end{figure}
 
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
-In figures \ref{fig:linear0to1_goal01to0}, \ref{fig:sigmoid_100_0_10_1goal01to0} and \ref{fig:gaussian200_50_1_goal01to0} we see the results for the experiments with the goal utility function with $U_0=0.1$ and $U_n=0$. We varied the utility function of the other behavior the same as before. For some reason, the go-to-toilet and wait-for-friend actions are not present in this simulation. They have been replaced by the stand-still action. We would have expected to see more variation in actions now the utility of the go-to-goal behavior has been lowered. Instead, the time-consuming go-to-toilet behavior has been replaced by the less demanding stand-still behavior.
+In figures \ref{fig:linear0to1_goal01to0}, \ref{fig:sigmoid_100_0_10_1goal01to0} and \ref{fig:Gaussian200_50_1_goal01to0} we see the results for the experiments with the goal utility function with $U_0=0.1$ and $U_n=0$. We varied the utility function of the other behavior the same as before. For some reason, the go-to-toilet and wait-for-friend actions are not present in this simulation. They have been replaced by the stand-still action. We would have expected to see more variation in actions now the utility of the go-to-goal behavior has been lowered. Instead, the time-consuming go-to-toilet behavior has been replaced by the less demanding stand-still behavior.
 
 \begin{figure}
 \centering
@@ -681,7 +701,7 @@ In figures \ref{fig:linear0to1_goal01to0}, \ref{fig:sigmoid_100_0_10_1goal01to0}
 \begin{figure}
 \centering
 \includegraphics[width=\textwidth]{/home/djura/vakken/svn_afstudeerstage/deadline-driven-behavior/hulpscriptjes/goodresults/gaussian200_50_1_goal01to0.png}
-\caption{Goal utility linear with $U_0=0.1$ and $U_n=0$. Other utility gaussian with $\mu=200$ and $\sigma=50$.}
+\caption{Goal utility linear with $U_0=0.1$ and $U_n=0$. Other utility Gaussian with $\mu=200$ and $\sigma=50$.}
 \label{fig:gaussian200_50_1_goal01to0}
 \end{figure}
 
@@ -707,36 +727,74 @@ In figure \ref{fig:linear0_1_200_goalsigmoid_100_0_-10_1}, \ref{fig:sigmoid100_0
 \begin{figure}
 \centering
 \includegraphics[width=\textwidth]{/home/djura/vakken/svn_afstudeerstage/deadline-driven-behavior/hulpscriptjes/goodresults/gaussian200_50_1_goalsigmoid_100_0_-1_1.png}
-\caption{Goal utility sigmoid with $t_0=100$ $\beta=0$ $\omega=-10$ $\eta=1$. Other utility gaussian with $\mu=200$ and $\sigma=50$.}
+\caption{Goal utility sigmoid with $t_0=100$ $\beta=0$ $\omega=-10$ $\eta=1$. Other utility Gaussian with $\mu=200$ and $\sigma=50$.}
 \label{fig:gaussian200_50_1_goalsigmoid_100_0_-10_1}
 \end{figure}
 
-The results for a Gaussian goal probability function are shown in figure \ref{fig:sigmoid100_0_10_1_goalgaussian0_50_1}, \ref{fig:linear0_1_200_goalgaussian_0_50_1} and \ref{fig:gaussian200_50_1_goalgaussian0_50_1}. We see that in general, the pedestrians seem to wait longer before they go to their goals. This also causes more pedestrians to be too late, because they still are on their way to the goal when the deadline passes. This is very likely due to the fact that the estimation of going to the goal is too low for some pedestrians, because the area they move in is larger than I took into account when estimating the time needed to go to the goal. \todo[inline]{Rerun these experiments with a more limited moving area?}.
-
-
-\begin{figure}[h]
-\centering
-\includegraphics[width=\textwidth]{/home/djura/vakken/svn_afstudeerstage/deadline-driven-behavior/hulpscriptjes/goodresults/sigmoid100_0_10_1_goalgaussian0_50_1.png}
-\caption{Goal utility gaussian with $\mu=0$ and $\sigma=50$. Other utility sigmoid with $t_0=100$ $\beta=0$ $\omega=10$ $\eta=1$.}
-\label{fig:sigmoid100_0_10_1_goalgaussian0_50_1}
-\end{figure}
+The results for a Gaussian goal probability function are shown in figure \ref{fig:sigmoid100_0_10_1_goalgaussian0_50_1}, \ref{fig:linear0_1_200_goalgaussian_0_50_1} and \ref{fig:gaussian200_50_1_goalgaussian0_50_1}. We see that in general, the pedestrians seem to wait longer before they go to their goals. This also causes more pedestrians to be too late, because they still are on their way to the goal when the deadline passes. This is very likely due to the fact that the estimation of going to the goal is too low for some pedestrians, because the area they move in is larger than I took into account when estimating the time needed to go to the goal. \todo[inline]{Rerun these experiments with a more limited moving area?}
 
 \begin{figure}[h]
 \centering
 \includegraphics[width=\textwidth]{/home/djura/vakken/svn_afstudeerstage/deadline-driven-behavior/hulpscriptjes/goodresults/linear0_1_200_goalgaussian_0_50_1.png}
-\caption{Goal utility gaussian with $\mu=0$ and $\sigma=50$. Other utility linear with $U_0=0$ and $U_n=1$}
+\caption{Goal utility Gaussian with $\mu=0$ and $\sigma=50$. Other utility linear with $U_0=0$ and $U_n=1$}
 \label{fig:linear0_1_200_goalgaussian_0_50_1}
 \end{figure}
 
 \begin{figure}[h]
 \centering
+\includegraphics[width=\textwidth]{/home/djura/vakken/svn_afstudeerstage/deadline-driven-behavior/hulpscriptjes/goodresults/sigmoid100_0_10_1_goalgaussian0_50_1.png}
+\caption{Goal utility Gaussian with $\mu=0$ and $\sigma=50$. Other utility sigmoid with $t_0=100$ $\beta=0$ $\omega=10$ $\eta=1$.}
+\label{fig:sigmoid100_0_10_1_goalgaussian0_50_1}
+\end{figure}
+
+\begin{figure}[h]
+\centering
 \includegraphics[width=\textwidth]{/home/djura/vakken/svn_afstudeerstage/deadline-driven-behavior/hulpscriptjes/goodresults/gaussian200_50_1_goalgaussian0_50_1.png}
-\caption{Goal utility gaussian with $\mu=0$ and $\sigma=50$. Other utility gaussian with $\mu=200$ and $\sigma=50$.}
+\caption{Goal utility Gaussian with $\mu=0$ and $\sigma=50$. Other utility Gaussian with $\mu=200$ and $\sigma=50$.}
 \label{fig:gaussian200_50_1_goalgaussian0_50_1}
 \end{figure}
 
+\todo[inline]{Start with positive}
 One problem we have with these results is that the number of pedestrians going to their goal goes up very fast from a certain point in time, regardless of the exact shape of the utility function. Consequently it is quite difficult to see if relaxed and hurried behavior actually emerges from our framework. This problem will be discussed in further detail in section \ref{chap:conclusiondiscusssion}. This was why we decided to do the second quantitative experiment that we described in the previous chapter (\ref{sec:quantitativeexp2}). The results can be found in section \ref{sec:secondquantitativeexperimentresults}.
+\todo[inline]{Make sure the utility functions are explained better/clarified. Otherwise it is very confusing that their effect in time is more or less the mirrored version of the way they are defined.}
 
+From these results we can make a table in which we judge the utility functions on two important aspects: change from relaxed to hurried behavior (table \ref{tab:judgegoalhurry}) and deadline-drivenness (do they reach the goal in time?).
+
+\begin{table}
+\centering
+\begin{tabular}{|c|c|c|c|c|c|}
+\hline
+ & \multicolumn{5}{c|}{Goal}\\
+ \hline
+ & & Linear & Linear to 0.1 & Sigmoid & Gaussian\\
+ \hline
+ \multirow{3}{*}{Non-goal} & L & -- & + & -- & + --\\
+ & S & -- & + -- & -- & + --\\
+ & G & -- -- & -- -- & -- -- & --\\
+ \hline
+\end{tabular}
+\caption{Utility functions judged by change from relaxed to hurried behavior}
+\label{tab:judgegoalhurry}
+\end{table}
+
+\begin{table}
+\centering
+\begin{tabular}{|c|c|c|c|c|c|}
+\hline
+• & • & \multicolumn{4}{c|}{Goal} \\ 
+\hline 
+ & • & L & L to 0.1 & S & G \\ 
+\hline 
+\multirow{3}{*}{Non-goal} & L & + & -- -- & + -- (or sufficient) & -- \\ 
+ & S & ++ & -- & + & ++ \\ 
+ & G & $>>$ & $>>$ & ++ & + \\ 
+\hline 
+\end{tabular} 
+\caption{Utility functions judged by if the pedestrians reach the deadline soon enough.}
+\label{tab:judgegoaldeadline}
+\end{table}
+
+\todo[inline]{Make table \ref{tab:judgegoalhurry} and \ref{tab:judgegoaldeadline} prettier.}
 \todo[inline]{What should I do with figure \ref{fig:linear0to1goal01}?}
 
 \begin{figure}[h]
@@ -844,52 +902,52 @@ One problem we have with these results is that the number of pedestrians going t
 %
 %%\begin{figure}
 %%\centering
-%%\includegraphics[width=250pt]{./automaticResults2/evaluation_log2_gaussian0point01twoPeopleToiletSituationpointxmlpointcsv.png}
+%%\includegraphics[width=250pt]{./automaticResults2/evaluation_log2_Gaussian0point01twoPeopleToiletSituationpointxmlpointcsv.png}
 %%%\caption{The global workings of our framework}
-%%\label{evaluation_log2_gaussian0point01twoPeopleToiletSituationpointxmlpointcsv}
+%%\label{evaluation_log2_Gaussian0point01twoPeopleToiletSituationpointxmlpointcsv}
 %%\end{figure}
 %%
 %%\begin{figure}
 %%\centering
-%%\includegraphics[width=250pt]{./automaticResults2/evaluation_log2_gaussian0point2pillarSituationpointxmlpointcsv.png}
+%%\includegraphics[width=250pt]{./automaticResults2/evaluation_log2_Gaussian0point2pillarSituationpointxmlpointcsv.png}
 %%%\caption{The global workings of our framework}
-%%\label{evaluation_log2_gaussian0point2pillarSituationpointxmlpointcsv}
+%%\label{evaluation_log2_Gaussian0point2pillarSituationpointxmlpointcsv}
 %%\end{figure}
 %%
 %%\begin{figure}
 %%\centering
-%%\includegraphics[width=250pt]{./automaticResults2/evaluation_log2_gaussian0point2standStillSituationpointxmlpointcsv.png}
+%%\includegraphics[width=250pt]{./automaticResults2/evaluation_log2_Gaussian0point2standStillSituationpointxmlpointcsv.png}
 %%%\caption{The global workings of our framework}
-%%\label{evaluation_log2_gaussian0point2standStillSituationpointxmlpointcsv}
+%%\label{evaluation_log2_Gaussian0point2standStillSituationpointxmlpointcsv}
 %%\end{figure}
 %%
 %%\todo[inline]{This graph was probably made for the toilet situation that is now saved as twopeopletoiletsituation.xml, but the design of the petrinet is possibly flawed, and could maybe better be replaced by twopeopletoiletsituation2.xml. What also possibly is missing is that the pedestrian could maybe come back after having gone to the toilet.}
 %%\begin{figure}
 %%\centering
-%%\includegraphics[width=250pt]{./automaticResults2/evaluation_log2_gaussian0point2twoPeopleToiletSituationpointxmlpointcsv.png}
+%%\includegraphics[width=250pt]{./automaticResults2/evaluation_log2_Gaussian0point2twoPeopleToiletSituationpointxmlpointcsv.png}
 %%%\caption{The global workings of our framework}
-%%\label{evaluation_log2_gaussian0point2twoPeopleToiletSituationpointxmlpointcsv}
+%%\label{evaluation_log2_Gaussian0point2twoPeopleToiletSituationpointxmlpointcsv}
 %%\end{figure}
 %%
 %%\begin{figure}
 %%\centering
-%%\includegraphics[width=250pt]{./automaticResults2/evaluation_log2_gaussian0point5pillarSituationpointxmlpointcsv.png}
+%%\includegraphics[width=250pt]{./automaticResults2/evaluation_log2_Gaussian0point5pillarSituationpointxmlpointcsv.png}
 %%%\caption{The global workings of our framework}
-%%\label{evaluation_log2_gaussian0point5pillarSituationpointxmlpointcsv}
+%%\label{evaluation_log2_Gaussian0point5pillarSituationpointxmlpointcsv}
 %%\end{figure}
 %%
 %%\begin{figure}
 %%\centering
-%%\includegraphics[width=250pt]{./automaticResults2/evaluation_log2_gaussian0point5standStillSituationpointxmlpointcsv.png}
+%%\includegraphics[width=250pt]{./automaticResults2/evaluation_log2_Gaussian0point5standStillSituationpointxmlpointcsv.png}
 %%%\caption{The global workings of our framework}
-%%\label{evaluation_log2_gaussian0point5standStillSituationpointxmlpointcsv}
+%%\label{evaluation_log2_Gaussian0point5standStillSituationpointxmlpointcsv}
 %%\end{figure}
 %%
 %%\begin{figure}
 %%\centering
-%%\includegraphics[width=250pt]{./automaticResults2/evaluation_log2_gaussian0point5twoPeopleToiletSituationpointxmlpointcsv.png}
+%%\includegraphics[width=250pt]{./automaticResults2/evaluation_log2_Gaussian0point5twoPeopleToiletSituationpointxmlpointcsv.png}
 %%%\caption{The global workings of our framework}
-%%\label{evaluation_log2_gaussian0point5twoPeopleToiletSituationpointxmlpointcsv}
+%%\label{evaluation_log2_Gaussian0point5twoPeopleToiletSituationpointxmlpointcsv}
 %%\end{figure}
 %%
 %%\begin{figure}
@@ -1055,7 +1113,7 @@ One problem we have with these results is that the number of pedestrians going t
 \todo[inline]{At this place there was previously a lot of stuff that I now commented out. Decide what to do with it. I shouldn´t put the missing graphs in my thesis in this form. Check if there is still useful stuff in there.}
 \clearpage
 
-\section{Results of the Second Quantitative experiments}
+\section{Results of the Second Quantitative Experiment}
 \label{sec:secondquantitativeexperimentresults}
 In the first experiment, the go-to-goal behavior was so dominant that it was difficult judge other emergent behavior. The following results will give a clearer view of whether hurried and relaxed behavior can emerge from our framework.
 
@@ -1106,8 +1164,8 @@ In figure \ref{fig:sigmoid100_0_10_1} we very clearly the influence of the shape
 \begin{figure}
 \centering
 \includegraphics[width=\textwidth]{/home/djura/vakken/svn_afstudeerstage/deadline-driven-behavior/hulpscriptjes/goodresults/gaussian_mean200_sigma50_100_max1.png}
-\caption{Non-goal utility gaussian with $\mu=200$ and $\sigma=50$.}
-\label{fig:gaussian_mean200_sigma50_100_max1}
+\caption{Non-goal utility Gaussian with $\mu=200$ and $\sigma=50$.}
+\label{fig:Gaussian_mean200_sigma50_100_max1}
 \end{figure}
 
 \chapter{Conclusion \& Discussion}
