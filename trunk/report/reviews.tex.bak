@@ -1,0 +1,27 @@
+\title{Reviews voor obscure Koreaanse conferentie}
+\author{
+        Djura Smits
+}
+\date{\today}
+
+\documentclass[11pt]{article}
+
+\usepackage[colorinlistoftodos, bordercolor=white, backgroundcolor=cyan]{todonotes}
+
+
+\begin{document}
+\maketitle
+
+\section{Review 1}
+The reviewer is interested in the objective of the manuscript. However, he feels difficulty to evaluate the results obtained by the proposed model. Although the authors carried out qualitative evaluation, the observed behaviors seemed ??re-programmed??one in the petri-net. The reviewer thinks we need emergence of unexpected (not explicitly programmed) behaviors in order to evaluate the model qualitatively. The reviewer thinks we need quantitative evaluation to utilize the proposed model for real applications.
+
+The reviewer questions the difficulty to generate petri-nets. A petri-net must represent layout of facilities of an airport, relations among persons, and constraint such that time to check-in, waiting time for a queue, capacities of restaurants, etc. Please mention calculation costs to generate petri-nets to carry out a simulation.
+
+\section{Review 2}
+This paper is interesting. How is it possible to evaluate the proposed model in this paper? It seems that similar behaviors of pedestranians can be demonstrated by using other methodologies such as behavior-based modelling. Maybe it is preferable to write about the specification of the simulator at the beginning of this paper.
+
+\section{Dus, wat moet er gebeuren?}
+Beschrijf de experimenten duidelijk. Belangrijk dat ik de resultaten van de experimenten verwerk. 
+Verder willen ze specificaties hebben van de simulator, die is crap, maar ja toch maar naar verwijzen en zo.
+
+\end{document}

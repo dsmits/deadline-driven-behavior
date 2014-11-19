@@ -1,0 +1,112 @@
+\begin{thebibliography}{10}
+
+\bibitem{A_autonomouspedestrians}
+Wei~Shao A and Demetri~Terzopoulos B.
+\newblock Autonomous pedestrians.
+
+\bibitem{Bayazit02bettergroup}
+O.~Burchan Bayazit, Jyh ming Lien, and Nancy~M. Amato.
+\newblock Better group behaviors in complex environments using global roadmaps.
+\newblock In {\em In Artif. Life}, pages 362--370, 2002.
+
+\bibitem{Becheiraz:1996:MNC:791215.791499}
+P.~Becheiraz and D.~Thalmann.
+\newblock A model of nonverbal communication and interpersonal relationship
+  between virtual actors.
+\newblock In {\em Proceedings of the Computer Animation}, CA '96, pages 58--,
+  Washington, DC, USA, 1996. IEEE Computer Society.
+
+\bibitem{10.1109CASA.2003.1199317}
+Adriana Braun, Soraia~R. Musse, Luiz P.~L. de~Oliveira, and Bardo E.~J.
+  Bodmann.
+\newblock Modeling individual behaviors in crowd simulation.
+\newblock {\em Computer Animation and Social Agents, International Conference
+  on}, 0:143, 2003.
+
+\bibitem{dijkstra}
+E.~W. Dijkstra.
+\newblock A note on two problems in connexion with graphs.
+\newblock {\em Numerische Mathematik}, 1:269--271, 1959.
+\newblock 10.1007/BF01386390.
+
+\bibitem{Dijkstra00amulti-agent}
+J.~Dijkstra, H.~J.~P. Timmermans, and A.~J. Jessurun.
+\newblock A multi-agent cellular automata system for visualising simulated
+  pedestrian activity.
+\newblock In {\em in S. Bandini and T. Worsch (Eds.), Theoretical and Practical
+  Issues on Cellular Automata - Proceedings on the 4th International Conference
+  on Cellular Automata for research and Industry}, pages 29--36. Springer
+  Verlag, 2000.
+
+\bibitem{1241047}
+T.~Hamagami and H.~Hirata.
+\newblock Method of crowd simulation by using multiagent on cellular automata.
+\newblock In {\em Intelligent Agent Technology, 2003. IAT 2003. IEEE/WIC
+  International Conference on}, pages 46 -- 52, oct. 2003.
+
+\bibitem{citeulike1656038}
+Dirk Helbing, Illes Farkas, and Tamas Vicsek.
+\newblock {Simulating Dynamical Features of Escape Panic}.
+\newblock {\em Nature}, 407:487--490, September 2000.
+
+\bibitem{Hostetler02strollingdown}
+Terry~R. Hostetler and Joseph~K. Kearney.
+\newblock Strolling down the avenue with a few close friends.
+\newblock In {\em In Third Irish Workshop on Computer Graphics}, pages 7--14,
+  2002.
+
+\bibitem{Kallmann00constructingvirtual}
+Marcelo Kallmann, Etienne~De Sevin, and Daniel Thalmann.
+\newblock Constructing virtual human life simulations.
+\newblock In {\em Proceedings of the Avatars�2000 workshop}, pages 240--247,
+  2000.
+
+\bibitem{Kallmann98modelingobjects}
+Marcelo Kallmann and Daniel Thalmann.
+\newblock Modeling objects for interaction tasks.
+\newblock In {\em Proc. Eurographics Workshop on Animation and Simulation},
+  pages 73--86, 1998.
+
+\bibitem{Köhler03modellingsocial}
+Michael Kohler, Marcel Martens, and Heiko Rolke.
+\newblock Modelling social behaviour with petri net based multi-agent systems.
+\newblock In {\em IN: PROCEEDINGS OF THE WORKSHOP MASHO’03 AT THE KI}, 2003.
+
+\bibitem{Moore:2011:VCS:2043174.2043192}
+Brian~E. Moore, Saad Ali, Ramin Mehran, and Mubarak Shah.
+\newblock Visual crowd surveillance through a hydrodynamics lens.
+\newblock {\em Commun. ACM}, 54(12):64--73, December 2011.
+
+\bibitem{Pelechano:2007:CIA:1272690.1272705}
+N.~Pelechano, J.~M. Allbeck, and N.~I. Badler.
+\newblock Controlling individual agents in high-density crowd simulation.
+\newblock In {\em Proceedings of the 2007 ACM SIGGRAPH/Eurographics symposium
+  on Computer animation}, SCA '07, pages 99--108, Aire-la-Ville, Switzerland,
+  Switzerland, 2007. Eurographics Association.
+
+\bibitem{citeulike1080090}
+Nuria Pelechano, Kevin O'brien, Barry Silverman, and Norman Badler.
+\newblock {Crowd Simulation Incorporating Agent Psychological Models, Roles and
+  Communication}.
+\newblock In {\em 1st Int'l Workshop on Crowd Simulation}, pages 21--30, 2005.
+
+\bibitem{10.1109MCG.2009.69}
+Christopher Peters and Cathy Ennis.
+\newblock Modeling groups of plausible virtual pedestrians.
+\newblock {\em IEEE Computer Graphics and Applications}, 29:54--63, 2009.
+
+\bibitem{Reynolds87flocks}
+Craig~W. Reynolds.
+\newblock Flocks, herds, and schools: A distributed behavioral model.
+\newblock In {\em Computer Graphics}, pages 25--34, 1987.
+
+\bibitem{Sung04scalablebehaviors}
+Mankyu Sung, Michael Gleicher, and Stephen Chenney.
+\newblock Scalable behaviors for crowd simulation, 2004.
+
+\bibitem{leaderfollower}
+Shih-I~Chang Tsai-Yen~Li, Ying-Jiun~Jeng.
+\newblock Simulating virtual human crowds with a leader-follower model.
+\newblock IEEE Computer Society, 2001.
+
+\end{thebibliography}
