@@ -1,5 +1,8 @@
 DISCLAIMER: The things that I write here are mainly to arrange my own thoughts and might not always be understandable for other people.
 
+=19-11-2014=
+I had a meeting with my supervisor yesterday. We discussed a lot of things that will be too much to name here. One important point that we decided on is that the qualitative experiment should be different. The design of the Petri nets can go back to the method, and then the qualitative experiment can be studying the tracked data, plotting trajectories of the pedestrians doing the selected behavior and compare those to the trajectories of the designed behavior.
+
 =17-11-2014=
 Added stuff about Petri nets in the methods chapter. Trying to make something consistent out of my method remains a challenge. Wednesday I will make a step-by-step description of the system using a example scene.
 
