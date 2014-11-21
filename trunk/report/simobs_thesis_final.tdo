@@ -28,17 +28,16 @@
 \contentsline {todo}{{\color@box {}{cyan}{\leavevmode {\color {cyan}o}}\ If I introduce the behavior here I can't talk about them yet in the method. Check if I do this}}{36}{section*.35}
 \contentsline {todo}{{\color@box {}{cyan}{\leavevmode {\color {cyan}o}}\ Check gototoilet Petri one last time to see if there aren't any redundant places/transitions}}{36}{section*.36}
 \contentsline {todo}{{\color@box {}{cyan}{\leavevmode {\color {cyan}o}}\ Check if the title of this subsection is ok}}{36}{section*.41}
-\contentsline {todo}{{\color@box {}{cyan}{\leavevmode {\color {cyan}o}}\ Add pictures of the Petri nets}}{41}{section*.42}
-\contentsline {todo}{{\color@box {}{cyan}{\leavevmode {\color {cyan}o}}\ Make sure introduction lines up with research questions}}{41}{section*.43}
-\contentsline {todo}{{\color@box {}{cyan}{\leavevmode {\color {cyan}o}}\ Check whether I still use the manually tracked locations, otherwise I shouldn't mention it.}}{41}{section*.44}
-\contentsline {todo}{{\color@box {}{cyan}{\leavevmode {\color {cyan}o}}\ Specify missing parameters}}{41}{section*.45}
-\contentsline {todo}{{\color@box {}{cyan}{\leavevmode {\color {cyan}o}}\ If I have time I could modify the implementation of this behavior so that the pedestrian actually goes back to his friend after going to the toilet, or at least to the place where he came from}}{42}{section*.46}
-\contentsline {todo}{{\color@box {}{cyan}{\leavevmode {\color {cyan}o}}\ I removed the "checking in" behavior because it was difficult to implement. Maybe if I have some time left I will give it another try because it is quite important behavior for an airport}}{42}{section*.47}
-\contentsline {todo}{{\color@box {}{cyan}{\leavevmode {\color {cyan}o}}\ If I introduce the behavior here I can't talk about them yet in the method. Check if I do this}}{42}{section*.48}
-\contentsline {todo}{{\color@box {}{cyan}{\leavevmode {\color {cyan}o}}\ Experiment has to be changed. In experiments, give indication of how often the behaviors take place, how often do they take place in simulation? Also look at trajectories of these behaviors and compare with trajectories of simulation.}}{42}{section*.49}
-\contentsline {todo}{{\color@box {}{cyan}{\leavevmode {\color {cyan}o}}\ Check which parts of the first quantitative experiment are still relevant now the experiments have changed.}}{42}{section*.50}
-\contentsline {todo}{{\color@box {}{cyan}{\leavevmode {\color {cyan}o}}\ Check if the following parameters are still true}}{43}{section*.51}
-\contentsline {todo}{{\color@box {}{cyan}{\leavevmode {\color {cyan}o}}\ Name t differently, too confusing}}{44}{section*.52}
+\contentsline {todo}{{\color@box {}{cyan}{\leavevmode {\color {cyan}o}}\ Add pictures of the Petri nets}}{41}{section*.43}
+\contentsline {todo}{{\color@box {}{cyan}{\leavevmode {\color {cyan}o}}\ Make sure introduction lines up with research questions}}{41}{section*.44}
+\contentsline {todo}{{\color@box {}{cyan}{\leavevmode {\color {cyan}o}}\ Check whether I still use the manually tracked locations, otherwise I shouldn't mention it.}}{41}{section*.45}
+\contentsline {todo}{{\color@box {}{cyan}{\leavevmode {\color {cyan}o}}\ Specify missing parameters}}{41}{section*.46}
+\contentsline {todo}{{\color@box {}{cyan}{\leavevmode {\color {cyan}o}}\ If I have time I could modify the implementation of this behavior so that the pedestrian actually goes back to his friend after going to the toilet, or at least to the place where he came from}}{42}{section*.47}
+\contentsline {todo}{{\color@box {}{cyan}{\leavevmode {\color {cyan}o}}\ I removed the "checking in" behavior because it was difficult to implement. Maybe if I have some time left I will give it another try because it is quite important behavior for an airport}}{42}{section*.48}
+\contentsline {todo}{{\color@box {}{cyan}{\leavevmode {\color {cyan}o}}\ If I introduce the behavior here I can't talk about them yet in the method. Check if I do this}}{42}{section*.49}
+\contentsline {todo}{{\color@box {}{cyan}{\leavevmode {\color {cyan}o}}\ Experiment has to be changed. In experiments, give indication of how often the behaviors take place, how often do they take place in simulation? Also look at trajectories of these behaviors and compare with trajectories of simulation.}}{42}{section*.50}
+\contentsline {todo}{{\color@box {}{cyan}{\leavevmode {\color {cyan}o}}\ Check which parts of the first quantitative experiment are still relevant now the experiments have changed.}}{42}{section*.51}
+\contentsline {todo}{{\color@box {}{cyan}{\leavevmode {\color {cyan}o}}\ Check if the following parameters are still true}}{43}{section*.52}
 \contentsline {todo}{{\color@box {}{cyan}{\leavevmode {\color {cyan}o}}\ Check whether I'm consequent in the indication of the parameters and if it is correct to call the x axis $n$}}{44}{section*.53}
 \contentsline {todo}{{\color@box {}{cyan}{\leavevmode {\color {cyan}o}}\ Part of this text can be moved to the first quantitative experiment, because that experiment now also includes slow and fast wander}}{44}{section*.54}
 \contentsline {todo}{{\color@box {}{cyan}{\leavevmode {\color {cyan}o}}\ I just modified leanagainstpillar so it actually takes a few steps, otherwise it's hardly noticable. Should I rerun the experiments, or maybe just don't mention this behavior because it is not important?}}{45}{section*.55}
@@ -47,7 +46,7 @@
 \contentsline {todo}{{\color@box {}{cyan}{\leavevmode {\color {cyan}o}}\ Show GUI! how do the pedestrians walk?}}{47}{section*.59}
 \contentsline {todo}{{\color@box {}{cyan}{\leavevmode {\color {cyan}o}}\ What happened to lean against pillar?}}{48}{section*.60}
 \contentsline {todo}{{\color@box {}{cyan}{\leavevmode {\color {cyan}o}}\ Make table \ref {tab:judgegoalhurry} and \ref {tab:judgegoaldeadline} prettier.}}{56}{section*.75}
-\contentsline {todo}{{\color@box {}{cyan}{\leavevmode {\color {cyan}o}}\ Start with positive}}{56}{section*.76}
+\contentsline {todo}{{\color@box {}{cyan}{\leavevmode {\color {cyan}o}}\ Include subsections?}}{56}{section*.76}
 \contentsline {todo}{{\color@box {}{cyan}{\leavevmode {\color {cyan}o}}\ Make sure the utility functions are explained better/clarified. Otherwise it is very confusing that their effect in time is more or less the mirrored version of the way they are defined.}}{57}{section*.77}
 \contentsline {todo}{{\color@box {}{cyan}{\leavevmode {\color {cyan}o}}\ At this place there was previously a lot of stuff that I now commented out. Decide what to do with it. I shouldn´t put the missing graphs in my thesis in this form. Check if there is still useful stuff in there.}}{57}{section*.78}
 \contentsline {todo}{{\color@box {}{cyan}{\leavevmode {\color {cyan}o}}\ Put \ref {fig:linear0to0.5_100agents} and \ref {fig:linear0to01_100agents} in appendix instead of here. They don't add anything.}}{59}{section*.80}
