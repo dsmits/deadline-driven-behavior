@@ -24,7 +24,7 @@
 \contentsline {section}{\numberline {3.4}Time Planning \& Decision Mechanism}{33}{section.3.4}
 \contentsline {subsection}{\numberline {3.4.1}The Basic Algorithm}{34}{subsection.3.4.1}
 \contentsline {section}{\numberline {3.5}Rotterdam Airport}{35}{section.3.5}
-\contentsline {section}{\numberline {3.6}Examples}{36}{section.3.6}
+\contentsline {section}{\numberline {3.6}Example}{36}{section.3.6}
 \contentsline {chapter}{\numberline {4}Experiments}{41}{chapter.4}
 \contentsline {section}{\numberline {4.1}Qualitative Experiment}{41}{section.4.1}
 \contentsline {section}{\numberline {4.2}Quantitative Experiment}{42}{section.4.2}

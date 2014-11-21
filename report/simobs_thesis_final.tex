@@ -435,8 +435,8 @@ Next, the algorithm computes for every situation how much time is left would the
 \State $t_d \gets $ deadline time - current time 
 \For{Every connected situation}
 \State $t_e \gets $ estimated time for situation
-\State $t_{new} \gets t_d - t_e$
-\State Probability rate $\gets \phi(t_new)$
+\State $\tau \gets t_d - t_e$
+\State Probability rate $\gets \phi(\tau))$
 \EndFor
 \State normalize(probability rates)
 \State select one transition according to the computed probabilities
@@ -494,10 +494,28 @@ We managed to recreate the behavior in the Petri nets in figure \ref{fig:pillarp
 \label{fig:wanderpetrinet}
 \end{figure}
 
-\section{Examples}
+\section{Example}
 \todo[inline]{Check if the title of this subsection is ok}
 Figure \ref{petrinetexample} gives an example of how the pedestrian petrinet is connected to the situations. It also shows the estimation created by the Dijkstra preprocessing algorithm that makes a guess at how much time it takes to complete the situation behavior. This is the value that will be used when computing the time at which the token of a pedestrian will move back to its base place.
 
+In order to give a clear insight into how our method is used in practice we will give a small example. Let us say that we need to simulate only one person, who has to wait in a room. At a certain point in time (let us say 100 steps), he has to advance through a door. There are a few objects in this room with which he can interact. \ref{fig:roomwithagent} and \ref{fig:roomwithagentsituations}
+
+\begin{figure}
+\centering
+\begin{subfigure}[b]{0.5\textwidth}
+\centering
+\includegraphics[width=.4\textwidth]{/home/djura/vakken/svn_afstudeerstage/deadline-driven-behavior/report/room_with_agent.png}
+\caption{Room with agent}
+\label{fig:roomwithagent}
+\end{subfigure}%
+\begin{subfigure}[b]{0.5\textwidth}
+\centering            
+\includegraphics[width=.4\textwidth]{/home/djura/vakken/svn_afstudeerstage/deadline-driven-behavior/report/room_with_agent_and_situations.png}
+\caption{Room with agent and situation areas.}
+\label{fig:roomwithagentsituations}
+\end{subfigure}
+\caption{A hypothetical room that could be simulated.}
+\end{figure}
 
 \chapter{Experiments}
 \label{chap:experiments}
@@ -552,10 +570,10 @@ We will try different utility functions for the go-to-goal and non-goal behavior
 A sigmoid function is an S-shaped curve that has a progression that accellerates and approaches a climax over time. This function can be found in many natural processes, such as learning curves. This function closely resembles how we reason that the behavior will shift when a pedestrian approaches a deadline.
 Our sigmoid function is defined as follows:
 \begin{equation}
-U(t) = \eta \frac{1}{1+e^{-\omega(t-t_0)}} + \beta
+U(\tau) = \eta \frac{1}{1+e^{-\omega(\tau-\tau_0)}} + \beta
 \end{equation}
 \todo[inline]{Check if the following parameters are still true}
-In our experiments, we chose $t_0=100$ and $\omega=100$, so that the middle of the curve lies in the middle of the 200-timestep period which the pedestrians have to reach their deadline. We chose $\omega$ to be 100 as well to scale the function to fit in the 200 timestep interval. For $\eta$, we varied this between 0 and 1.
+In our experiments, we chose $\tau_0=100$ and $\omega=100$, so that the middle of the curve lies in the middle of the 200-timestep period which the pedestrians have to reach their deadline. We chose $\omega$ to be 100 as well to scale the function to fit in the 200 timestep interval. For $\eta$, we varied this between 0 and 1.
 % When the deadline is far away, it does not matter much whether the pedestrian goes straight to its goal or does something else. Even if time shifts a little, it still does not matter much. However, when the pedestrian moves on
 
 %\begin{figure}
@@ -568,11 +586,11 @@ In our experiments, we chose $t_0=100$ and $\omega=100$, so that the middle of t
 \subsection{Linear Function}
 We first chose to use a sigmoid function, because intuitively it felt like it would reflect real-life behavior best. However, it could be the case that the sophistication of this function is lost in practice. If this is the case, we might as well use the simpler linear function. We will use this function to check the necessity of the sigmoid function. Our linear function was of the following form:
 \begin{center}
-If $0 \leq t \leq n$: $P(t) = at + b$\\
-If $t<0$: $P(t) = P(0)$\\
-If $t<n$: $P(t) = P(n)$
+If $0 \leq \tau \leq n$: $P(\tau) = a\tau + b$\\
+If $\tau<0$: $P(\tau) = P(0)$\\
+If $\tau<n$: $P(\tau) = P(n)$
 \end{center}
-However, we do not specify these parameters directly. What matters the most to us, is the value at the start of the linear utility function, $U$ at \todo[inline]{Name t differently, too confusing}$t=0$, which we call $U_0$ and the value of $U$ at the end where $t=n$, which we call $U_n$. Consequently, we compute $a$ and $b$ as follows:
+However, we do not specify these parameters directly. What matters the most to us, is the value at the start of the linear utility function, $U$ at $\tau=0$, which we call $U_0$ and the value of $U$ at the end where $\tau=n$, which we call $U_n$. Consequently, we compute $a$ and $b$ as follows:
 \todo[inline]{Check whether I'm consequent in the indication of the parameters and if it is correct to call the x axis $n$}
 \begin{center}
 $a = \frac{U_n - U_0}{n}$\\
@@ -582,9 +600,9 @@ $b = U_0$
 
 
 \subsection{Gaussian Function}
-We also used a Gaussian function to model the behavior. A Gaussian function is defined as follows:
+We also used a Gaussian function to model the behavior, defined as follows:
 %\begin{equation}f(x) = ae^{- \frac{(x-b)^2}{2c^2}}\end{equation}
-\begin{equation}\frac{1}{\sigma \sqrt{2 \pi}} e^{- \frac{(x - \mu)^2}{2\sigma^2}}
+\begin{equation}f(\tau)\frac{1}{\sigma \sqrt{2 \pi}} e^{- \frac{(\tau - \mu)^2}{2\sigma^2}}
 \end{equation}
 %Where real constants $a, b, c > 0 $. 
 A Gaussian distribution (or normal distribution) is a continuous probability distribution with a bell-shaped probability density function which have a mean ($\mu$ and variance ($\sigma^2$) as parameters.
@@ -779,9 +797,9 @@ When looking at the tables, there is only one combination of utility functions t
 \centering
 \begin{tabular}{|c|c|c|c|c|c|}
 \hline
-• & • & \multicolumn{4}{c|}{Goal} \\ 
+ &  & \multicolumn{4}{c|}{Goal} \\ 
 \hline 
- & • & L & L to 0.1 & S & G \\ 
+ &  & L & L to 0.1 & S & G \\ 
 \hline 
 \multirow{3}{*}{Non-goal} & L & + & -- -- & s & -- \\ 
  & S & ++ & -- & + & ++ \\ 
@@ -803,8 +821,8 @@ When looking at the tables, there is only one combination of utility functions t
 %\end{figure}
 
 
-\todo[inline]{Start with positive}
-One problem we have with these results is that the number of pedestrians going to their goal goes up very fast from a certain point in time, regardless of the exact shape of the utility function. Consequently it is quite difficult to see if relaxed and hurried behavior actually emerges from our framework. This problem will be discussed in further detail in section \ref{chap:conclusiondiscusssion}. This was why we decided to do the second quantitative experiment that we described in the previous chapter (\ref{sec:quantitativeexp2}). The results can be found in section \ref{sec:secondquantitativeexperimentresults}.
+\todo[inline]{Include subsections?}
+In short, a number of combinations of utility functions perform well on one of the two criteria, and the combination of a Gaussian goal utility function with a sigmoid non-goal utility performs at least sufficiently on both. We do notice that the goal utility function does start to have a large influence after only a few dozen of steps in most simulations. This way it is possible that the goal utility function "sabotages" the development of a nice transition from hurried to relaxed behavior (we will also talk about this in chapter \ref{chap:conclusiondiscusssion}). This was actually why we decided to do the second quantitative experiment that we described in the previous chapter (\ref{sec:quantitativeexp2}). The results can be found in section \ref{sec:secondquantitativeexperimentresults}.
 \todo[inline]{Make sure the utility functions are explained better/clarified. Otherwise it is very confusing that their effect in time is more or less the mirrored version of the way they are defined.}
 
 
