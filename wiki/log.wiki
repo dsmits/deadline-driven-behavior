@@ -5,6 +5,12 @@ Last tuesday my supervisor suggested I add some tables in which we judge the dif
 
 I think the most important things that I can do next is modifying the method section, where an step-by-step example should be added, and modifying the first quantitative experiment. I don't feel like doing the latter so I'll start with the method section.
 
+Among other things I added these nice pictures:
+
+https://deadline-driven-behavior.googlecode.com/svn-history/r253/trunk/report/room_with_agent.png
+
+https://deadline-driven-behavior.googlecode.com/svn-history/r253/trunk/report/room_with_agent_and_situations.png 
+
 =19-11-2014=
 I had a meeting with my supervisor yesterday. We discussed a lot of things that will be too much to name here. One important point that we decided on is that the qualitative experiment should be different. The design of the Petri nets can go back to the method, and then the qualitative experiment can be studying the tracked data, plotting trajectories of the pedestrians doing the selected behavior and compare those to the trajectories of the designed behavior.
 
