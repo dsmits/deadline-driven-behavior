@@ -1,5 +1,10 @@
 DISCLAIMER: The things that I write here are mainly to arrange my own thoughts and might not always be understandable for other people.
 
+=21-11-2014=
+Last tuesday my supervisor suggested I add some tables in which we judge the different combinations of utility functions in the results section of the quantitative experiments. I added the tables and descriptions today.
+
+I think the most important things that I can do next is modifying the method section, where an step-by-step example should be added, and modifying the first quantitative experiment. I don't feel like doing the latter so I'll start with the method section.
+
 =19-11-2014=
 I had a meeting with my supervisor yesterday. We discussed a lot of things that will be too much to name here. One important point that we decided on is that the qualitative experiment should be different. The design of the Petri nets can go back to the method, and then the qualitative experiment can be studying the tracked data, plotting trajectories of the pedestrians doing the selected behavior and compare those to the trajectories of the designed behavior.
 
