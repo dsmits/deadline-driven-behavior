@@ -340,6 +340,8 @@ A behavior is a group of consecutive actions. In our framework a situation (as p
 Actions are the building blocks in which a behavior is described.
 \item \emph{Petri-net}\\
 Petri-nets are the modelling language in which we describe our behaviors.
+\item \emph{Steps or Timesteps}\\
+Lengths of time are expressed in timesteps. The reason for this is that this is that our multiagent simulation uses this measure of simulation time. If a different simulation would have been used, the system could have been easily adapted to deal with the time indications that would be used there.
 
 \end{itemize}
 
@@ -466,56 +468,81 @@ We managed to recreate the behavior in the Petri nets in figure \ref{fig:pillarp
 
 \todo[inline]{Check gototoilet Petri one last time to see if there aren't any redundant places/transitions}
 
-\begin{figure}
+\begin{figure}[[h!]
 \centering            
 \includegraphics[width=0.7\textwidth]{/home/djura/vakken/svn_afstudeerstage/deadline-driven-behavior/report/petrinet_pictures/pillarSituation.png}
 \caption{Going to the nearest pillar and leaning against it.}
 \label{fig:pillarpetrinet}
 \end{figure}
 
-\begin{figure}
+\begin{figure}[h!]
 \centering            
 \includegraphics[width=0.4\textwidth]{/home/djura/vakken/svn_afstudeerstage/deadline-driven-behavior/report/petrinet_pictures/standStillSituation.png}
 \caption{Pedestrian standing still.}
 \label{fig:standstillpetrinet}
 \end{figure}
 
-\begin{figure}
+\begin{figure}[h!]
 \centering            
 \includegraphics[width=\textwidth]{/home/djura/vakken/svn_afstudeerstage/deadline-driven-behavior/report/petrinet_pictures/twoPeopleToiletSituation.png}
 \caption{One person going to the toilet and one person waiting for the other.}
 \label{fig:gototoiletpetrinet}
 \end{figure}
 
-\begin{figure}
+\begin{figure}[h!]
 \centering            
 \includegraphics[width=0.5\textwidth]{/home/djura/vakken/svn_afstudeerstage/deadline-driven-behavior/report/petrinet_pictures/wanderSituation.png}
 \caption{Random wandering around}
 \label{fig:wanderpetrinet}
 \end{figure}
+\clearpage
 
 \section{Example}
-\todo[inline]{Check if the title of this subsection is ok}
+\todo[inline]{This first paragraph should be removed or placed somewhere else.}
 Figure \ref{petrinetexample} gives an example of how the pedestrian petrinet is connected to the situations. It also shows the estimation created by the Dijkstra preprocessing algorithm that makes a guess at how much time it takes to complete the situation behavior. This is the value that will be used when computing the time at which the token of a pedestrian will move back to its base place.
 
-In order to give a clear insight into how our method is used in practice we will give a small example. Let us say that we need to simulate only one person, who has to wait in a room. At a certain point in time (let us say 100 steps), he has to advance through a door. There are a few objects in this room with which he can interact. \ref{fig:roomwithagent} and \ref{fig:roomwithagentsituations}
+In order to give a clear insight into how our method is used in practice we will give a small example. Let us say that we need to simulate only one person, who has to wait in a room. At a certain point in time (let us say 100 steps), he has to advance through a door. There are a few objects in this room with which he can interact. In figure  \ref{fig:roomwithagent} we see a schematic representation of this room. The red circle in the middle is the agent, the rectangle on the lower left side is a bench and on the upper left side we can see a door going out of this room. our agent can do a couple of things in this room. First of all, he can wander around the room. In our representation it is possible to decide to do this standing in any position in this room. Another possibility is to sit on the bench. For the purpose of this example it is only possible for the agent to decide to do this when in close proximity of the bench. In figure \ref{fig:roomwithagentsituations} the situation areas for these two behaviors can be seen. Our agent is not planning to stay in this room forever though. He wants to leave the room before 100 (time) steps, so leaving the room will be our go-to-goal"gotogoal" action.
 
 \begin{figure}
 \centering
 \begin{subfigure}[b]{0.5\textwidth}
 \centering
-\includegraphics[width=.4\textwidth]{/home/djura/vakken/svn_afstudeerstage/deadline-driven-behavior/report/room_with_agent.png}
+\includegraphics[width=\textwidth]{/home/djura/vakken/svn_afstudeerstage/deadline-driven-behavior/report/room_with_agent.png}
 \caption{Room with agent}
 \label{fig:roomwithagent}
 \end{subfigure}%
 \begin{subfigure}[b]{0.5\textwidth}
 \centering            
-\includegraphics[width=.4\textwidth]{/home/djura/vakken/svn_afstudeerstage/deadline-driven-behavior/report/room_with_agent_and_situations.png}
+\includegraphics[width=\textwidth]{/home/djura/vakken/svn_afstudeerstage/deadline-driven-behavior/report/room_with_agent_and_situations.png}
 \caption{Room with agent and situation areas.}
 \label{fig:roomwithagentsituations}
 \end{subfigure}
 \caption{A hypothetical room that could be simulated.}
 \end{figure}
+
+The high level behavior is described in Petri nets. Our pedestrian comes with only a very basic Petri net, with its only transition being the gotogoal transition.
+
+\begin{figure}[h!]
+\centering            
+\includegraphics[width=0.5\textwidth]{/home/djura/vakken/svn_afstudeerstage/deadline-driven-behavior/report/petrinet_pictures/examplePedestrianNet.png}
+\caption{Our agent's basic pedestrian Petri net.}
+\label{fig:exampleAgentnet}
+\end{figure} 
+\begin{figure}[h!]
+\centering            
+\includegraphics[width=.5\textwidth]{/home/djura/vakken/svn_afstudeerstage/deadline-driven-behavior/report/petrinet_pictures/sitOnBenchExample.png}
+\caption{The Petri net of the bench situation.}
+\label{fig:benchSituationNet}
+\end{figure} 
+\begin{figure}[h!]
+\centering            
+\includegraphics[width=.5\textwidth]{/home/djura/vakken/svn_afstudeerstage/deadline-driven-behavior/report/petrinet_pictures/wanderExample.png}
+\caption{The Petri net of the wander situation.}
+\label{fig:benchSituationNet}
+\end{figure}
+
+
+
 
 \chapter{Experiments}
 \label{chap:experiments}
