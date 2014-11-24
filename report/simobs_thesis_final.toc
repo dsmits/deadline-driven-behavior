@@ -20,33 +20,33 @@
 \contentsline {chapter}{\numberline {3}Method}{27}{chapter.3}
 \contentsline {section}{\numberline {3.1}Petri-nets}{29}{section.3.1}
 \contentsline {section}{\numberline {3.2}Restrictions and Assumptions}{32}{section.3.2}
-\contentsline {section}{\numberline {3.3}Preparations}{32}{section.3.3}
+\contentsline {section}{\numberline {3.3}Preparations}{33}{section.3.3}
 \contentsline {section}{\numberline {3.4}Time Planning \& Decision Mechanism}{33}{section.3.4}
 \contentsline {subsection}{\numberline {3.4.1}The Basic Algorithm}{34}{subsection.3.4.1}
 \contentsline {section}{\numberline {3.5}Rotterdam Airport}{35}{section.3.5}
-\contentsline {section}{\numberline {3.6}Example}{36}{section.3.6}
-\contentsline {chapter}{\numberline {4}Experiments}{41}{chapter.4}
-\contentsline {section}{\numberline {4.1}Qualitative Experiment}{41}{section.4.1}
-\contentsline {section}{\numberline {4.2}Quantitative Experiment}{42}{section.4.2}
-\contentsline {subsection}{\numberline {4.2.1}Sigmoid Function}{43}{subsection.4.2.1}
-\contentsline {subsection}{\numberline {4.2.2}Linear Function}{43}{subsection.4.2.2}
-\contentsline {subsection}{\numberline {4.2.3}Gaussian Function}{44}{subsection.4.2.3}
-\contentsline {section}{\numberline {4.3}New Quantitative Experiment}{44}{section.4.3}
-\contentsline {chapter}{\numberline {5}Results}{47}{chapter.5}
-\contentsline {section}{\numberline {5.1}Results of the Qualitative Experiment}{47}{section.5.1}
-\contentsline {section}{\numberline {5.2}Results of the First Quantitative Experiment}{47}{section.5.2}
-\contentsline {section}{\numberline {5.3}Results of the Second Quantitative Experiment}{58}{section.5.3}
-\contentsline {chapter}{\numberline {6}Conclusion \& Discussion}{63}{chapter.6}
-\contentsline {subsection}{\numberline {6.0.1}Limits of the Deadline Driven Behavior Framework}{63}{subsection.6.0.1}
-\contentsline {subsection}{\numberline {6.0.2}Optimization}{64}{subsection.6.0.2}
-\contentsline {subsection}{\numberline {6.0.3}Future Work}{64}{subsection.6.0.3}
-\contentsline {subsubsection}{Finding the optimal parameters}{64}{section*.89}
-\contentsline {subsubsection}{Needs}{64}{section*.90}
-\contentsline {chapter}{\numberline {A}Appendix A: Implementation}{65}{appendix.A}
-\contentsline {section}{\numberline {A.1}Implementing the Framework}{65}{section.A.1}
-\contentsline {section}{\numberline {A.2}Extending PIPE2}{65}{section.A.2}
-\contentsline {subsection}{\numberline {A.2.1}Sources, Sinks, Slots}{65}{subsection.A.2.1}
-\contentsline {subsection}{\numberline {A.2.2}Additional Modifications}{66}{subsection.A.2.2}
-\contentsline {section}{\numberline {A.3}MASON}{66}{section.A.3}
-\contentsline {section}{\numberline {A.4}Connecting MASON and the Situations Framework}{66}{section.A.4}
-\contentsline {chapter}{\numberline {B}Appendix B: Results}{67}{appendix.B}
+\contentsline {section}{\numberline {3.6}Example}{39}{section.3.6}
+\contentsline {chapter}{\numberline {4}Experiments}{43}{chapter.4}
+\contentsline {section}{\numberline {4.1}Qualitative Experiment}{43}{section.4.1}
+\contentsline {section}{\numberline {4.2}Quantitative Experiment}{44}{section.4.2}
+\contentsline {subsection}{\numberline {4.2.1}Sigmoid Function}{45}{subsection.4.2.1}
+\contentsline {subsection}{\numberline {4.2.2}Linear Function}{45}{subsection.4.2.2}
+\contentsline {subsection}{\numberline {4.2.3}Gaussian Function}{46}{subsection.4.2.3}
+\contentsline {section}{\numberline {4.3}New Quantitative Experiment}{46}{section.4.3}
+\contentsline {chapter}{\numberline {5}Results}{49}{chapter.5}
+\contentsline {section}{\numberline {5.1}Results of the Qualitative Experiment}{49}{section.5.1}
+\contentsline {section}{\numberline {5.2}Results of the First Quantitative Experiment}{49}{section.5.2}
+\contentsline {section}{\numberline {5.3}Results of the Second Quantitative Experiment}{60}{section.5.3}
+\contentsline {chapter}{\numberline {6}Conclusion \& Discussion}{65}{chapter.6}
+\contentsline {subsection}{\numberline {6.0.1}Limits of the Deadline Driven Behavior Framework}{65}{subsection.6.0.1}
+\contentsline {subsection}{\numberline {6.0.2}Optimization}{66}{subsection.6.0.2}
+\contentsline {subsection}{\numberline {6.0.3}Future Work}{66}{subsection.6.0.3}
+\contentsline {subsubsection}{Finding the optimal parameters}{66}{section*.92}
+\contentsline {subsubsection}{Needs}{66}{section*.93}
+\contentsline {chapter}{\numberline {A}Appendix A: Implementation}{67}{appendix.A}
+\contentsline {section}{\numberline {A.1}Implementing the Framework}{67}{section.A.1}
+\contentsline {section}{\numberline {A.2}Extending PIPE2}{67}{section.A.2}
+\contentsline {subsection}{\numberline {A.2.1}Sources, Sinks, Slots}{67}{subsection.A.2.1}
+\contentsline {subsection}{\numberline {A.2.2}Additional Modifications}{68}{subsection.A.2.2}
+\contentsline {section}{\numberline {A.3}MASON}{68}{section.A.3}
+\contentsline {section}{\numberline {A.4}Connecting MASON and the Situations Framework}{68}{section.A.4}
+\contentsline {chapter}{\numberline {B}Appendix B: Results}{69}{appendix.B}

@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.1415926-2.5-1.40.14 (TeX Live 2013/Debian) (format=pdflatex 2014.10.19)  21 NOV 2014 14:06
+This is pdfTeX, Version 3.1415926-2.5-1.40.14 (TeX Live 2013/Debian) (format=pdflatex 2014.10.19)  24 NOV 2014 12:19
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -516,7 +516,11 @@ Document Style - pseudocode environments for use with the `algorithmicx' style
 \c@algorithm=\count137
 \Blockindent=\skip53
 \algorithmindent=\skip54
-) (./simobs_thesis_final.aux)
+) (./simobs_thesis_final.aux
+
+LaTeX Warning: Label `fig:benchSituationNet' multiply defined.
+
+)
 \openout1 = `simobs_thesis_final.aux'.
 
 LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 9.
@@ -536,8 +540,7 @@ LaTeX Font Info:    ... okay on input line 9.
 Package caption Info: Begin \AtBeginDocument code.
 Package caption Info: hyperref package is loaded.
 Package caption Info: End \AtBeginDocument code.
-
-(/usr/share/texlive/texmf-dist/tex/context/base/supp-pdf.mkii
+ (/usr/share/texlive/texmf-dist/tex/context/base/supp-pdf.mkii
 [Loading MPS to PDF converter (version 2006.09.02).]
 \scratchcounter=\count138
 \scratchdimen=\dimen175
@@ -716,16 +719,20 @@ Chapter 3.
 File: example.png Graphic file (type png)
 
 <use example.png>
-Package pdftex.def Info: example.png used on input line 366.
+Package pdftex.def Info: example.png used on input line 368.
 (pdftex.def)             Requested size: 350.0pt x 281.78592pt.
 
-Underfull \vbox (badness 6364) has occurred while \output is active []
+Underfull \vbox (badness 3108) has occurred while \output is active []
 
  [30]
 [31 <./example.png>]
 Missing character: There is no Â in font cmr10!
 Missing character: There is no ¨ in font cmr10!
- [32] [33] [34] [35]
+
+Underfull \vbox (badness 1728) has occurred while \output is active []
+
+ [32]
+[33] [34] [35]
 Missing character: There is no Â in font cmr10!
 Missing character: There is no ¨ in font cmr10!
 Missing character: There is no Â in font cmr10!
@@ -739,8 +746,12 @@ rinet_pictures/pillarSituation.png Graphic file (type png)
 <use /home/djura/vakken/svn_afstudeerstage/deadline-driven-behavior/report/petr
 inet_pictures/pillarSituation.png>
 Package pdftex.def Info: /home/djura/vakken/svn_afstudeerstage/deadline-driven-
-behavior/report/petrinet_pictures/pillarSituation.png used on input line 471.
+behavior/report/petrinet_pictures/pillarSituation.png used on input line 473.
 (pdftex.def)             Requested size: 251.9989pt x 180.48776pt.
+
+
+LaTeX Warning: `!h' float specifier changed to `!ht'.
+
 
 </home/djura/vakken/svn_afstudeerstage/deadline-driven-behavior/report/petrinet
 _pictures/standStillSituation.png, id=649, 235.88126pt x 250.9375pt>
@@ -750,9 +761,13 @@ rinet_pictures/standStillSituation.png Graphic file (type png)
 <use /home/djura/vakken/svn_afstudeerstage/deadline-driven-behavior/report/petr
 inet_pictures/standStillSituation.png>
 Package pdftex.def Info: /home/djura/vakken/svn_afstudeerstage/deadline-driven-
-behavior/report/petrinet_pictures/standStillSituation.png used on input line 47
-8.
+behavior/report/petrinet_pictures/standStillSituation.png used on input line 48
+0.
 (pdftex.def)             Requested size: 143.9978pt x 153.19034pt.
+
+
+LaTeX Warning: `!h' float specifier changed to `!ht'.
+
 
 </home/djura/vakken/svn_afstudeerstage/deadline-driven-behavior/report/petrinet
 _pictures/twoPeopleToiletSituation.png, id=650, 722.7pt x 444.66125pt>
@@ -763,8 +778,12 @@ rinet_pictures/twoPeopleToiletSituation.png Graphic file (type png)
 inet_pictures/twoPeopleToiletSituation.png>
 Package pdftex.def Info: /home/djura/vakken/svn_afstudeerstage/deadline-driven-
 behavior/report/petrinet_pictures/twoPeopleToiletSituation.png used on input li
-ne 485.
+ne 487.
 (pdftex.def)             Requested size: 360.0pt x 221.5023pt.
+
+
+LaTeX Warning: `!h' float specifier changed to `!ht'.
+
 
 </home/djura/vakken/svn_afstudeerstage/deadline-driven-behavior/report/petrinet
 _pictures/wanderSituation.png, id=651, 301.125pt x 218.8175pt>
@@ -774,15 +793,19 @@ rinet_pictures/wanderSituation.png Graphic file (type png)
 <use /home/djura/vakken/svn_afstudeerstage/deadline-driven-behavior/report/petr
 inet_pictures/wanderSituation.png>
 Package pdftex.def Info: /home/djura/vakken/svn_afstudeerstage/deadline-driven-
-behavior/report/petrinet_pictures/wanderSituation.png used on input line 492.
+behavior/report/petrinet_pictures/wanderSituation.png used on input line 494.
 (pdftex.def)             Requested size: 180.0pt x 130.80403pt.
- [36] [37 </home/djura/vakken/svn_afstudeerstage/deadline-driven-behavior/repor
-t/petrinet_pictures/pillarSituation.png (PNG copy)> </home/djura/vakken/svn_afs
-tudeerstage/deadline-driven-behavior/report/petrinet_pictures/standStillSituati
-on.png (PNG copy)>] [38 </home/djura/vakken/svn_afstudeerstage/deadline-driven-
-behavior/report/petrinet_pictures/twoPeopleToiletSituation.png (PNG copy)> </ho
-me/djura/vakken/svn_afstudeerstage/deadline-driven-behavior/report/petrinet_pic
-tures/wanderSituation.png (PNG copy)>]
+
+
+LaTeX Warning: `!h' float specifier changed to `!ht'.
+
+[36] [37 </home/djura/vakken/svn_afstudeerstage/deadline-driven-behavior/report
+/petrinet_pictures/pillarSituation.png (PNG copy)> </home/djura/vakken/svn_afst
+udeerstage/deadline-driven-behavior/report/petrinet_pictures/standStillSituatio
+n.png (PNG copy)>] [38 </home/djura/vakken/svn_afstudeerstage/deadline-driven-b
+ehavior/report/petrinet_pictures/twoPeopleToiletSituation.png (PNG copy)> </hom
+e/djura/vakken/svn_afstudeerstage/deadline-driven-behavior/report/petrinet_pict
+ures/wanderSituation.png (PNG copy)>]
 </home/djura/vakken/svn_afstudeerstage/deadline-driven-behavior/report/room_wit
 h_agent.png, id=672, 803.0pt x 803.0pt>
 File: /home/djura/vakken/svn_afstudeerstage/deadline-driven-behavior/report/roo
@@ -791,8 +814,8 @@ m_with_agent.png Graphic file (type png)
 <use /home/djura/vakken/svn_afstudeerstage/deadline-driven-behavior/report/room
 _with_agent.png>
 Package pdftex.def Info: /home/djura/vakken/svn_afstudeerstage/deadline-driven-
-behavior/report/room_with_agent.png used on input line 507.
-(pdftex.def)             Requested size: 71.9989pt x 71.99731pt.
+behavior/report/room_with_agent.png used on input line 510.
+(pdftex.def)             Requested size: 180.0pt x 179.9933pt.
 
 </home/djura/vakken/svn_afstudeerstage/deadline-driven-behavior/report/room_wit
 h_agent_and_situations.png, id=673, 803.0pt x 803.0pt>
@@ -802,55 +825,108 @@ m_with_agent_and_situations.png Graphic file (type png)
 <use /home/djura/vakken/svn_afstudeerstage/deadline-driven-behavior/report/room
 _with_agent_and_situations.png>
 Package pdftex.def Info: /home/djura/vakken/svn_afstudeerstage/deadline-driven-
-behavior/report/room_with_agent_and_situations.png used on input line 513.
-(pdftex.def)             Requested size: 71.9989pt x 71.99731pt.
- [39 </home/djura/vakken/svn_afstudeerstage/deadline-driven-behavior/report/roo
-m_with_agent.png> </home/djura/vakken/svn_afstudeerstage/deadline-driven-behavi
-or/report/room_with_agent_and_situations.png>]
-[40
+behavior/report/room_with_agent_and_situations.png used on input line 516.
+(pdftex.def)             Requested size: 180.0pt x 179.9933pt.
+
+</home/djura/vakken/svn_afstudeerstage/deadline-driven-behavior/report/petrinet
+_pictures/examplePedestrianNet.png, id=675, 205.76875pt x 160.6pt>
+File: /home/djura/vakken/svn_afstudeerstage/deadline-driven-behavior/report/pet
+rinet_pictures/examplePedestrianNet.png Graphic file (type png)
+
+<use /home/djura/vakken/svn_afstudeerstage/deadline-driven-behavior/report/petr
+inet_pictures/examplePedestrianNet.png>
+Package pdftex.def Info: /home/djura/vakken/svn_afstudeerstage/deadline-driven-
+behavior/report/petrinet_pictures/examplePedestrianNet.png used on input line 5
+27.
+(pdftex.def)             Requested size: 180.0pt x 140.48788pt.
+
+
+LaTeX Warning: `!h' float specifier changed to `!ht'.
+
+
+</home/djura/vakken/svn_afstudeerstage/deadline-driven-behavior/report/petrinet
+_pictures/sitOnBenchExample.png, id=676, 296.10625pt x 279.0425pt>
+File: /home/djura/vakken/svn_afstudeerstage/deadline-driven-behavior/report/pet
+rinet_pictures/sitOnBenchExample.png Graphic file (type png)
+
+<use /home/djura/vakken/svn_afstudeerstage/deadline-driven-behavior/report/petr
+inet_pictures/sitOnBenchExample.png>
+Package pdftex.def Info: /home/djura/vakken/svn_afstudeerstage/deadline-driven-
+behavior/report/petrinet_pictures/sitOnBenchExample.png used on input line 533.
+
+(pdftex.def)             Requested size: 180.0pt x 169.63234pt.
+
+
+LaTeX Warning: `!h' float specifier changed to `!ht'.
+
+
+</home/djura/vakken/svn_afstudeerstage/deadline-driven-behavior/report/petrinet
+_pictures/wanderExample.png, id=677, 296.10625pt x 220.825pt>
+File: /home/djura/vakken/svn_afstudeerstage/deadline-driven-behavior/report/pet
+rinet_pictures/wanderExample.png Graphic file (type png)
+
+<use /home/djura/vakken/svn_afstudeerstage/deadline-driven-behavior/report/petr
+inet_pictures/wanderExample.png>
+Package pdftex.def Info: /home/djura/vakken/svn_afstudeerstage/deadline-driven-
+behavior/report/petrinet_pictures/wanderExample.png used on input line 539.
+(pdftex.def)             Requested size: 180.0pt x 134.24141pt.
+
+
+LaTeX Warning: `!h' float specifier changed to `!ht'.
+
+[39
+
+] [40 </home/djura/vakken/svn_afstudeerstage/deadline-driven-behavior/report/ro
+om_with_agent.png> </home/djura/vakken/svn_afstudeerstage/deadline-driven-behav
+ior/report/room_with_agent_and_situations.png> </home/djura/vakken/svn_afstudee
+rstage/deadline-driven-behavior/report/petrinet_pictures/examplePedestrianNet.p
+ng>] [41 </home/djura/vakken/svn_afstudeerstage/deadline-driven-behavior/report
+/petrinet_pictures/sitOnBenchExample.png> </home/djura/vakken/svn_afstudeerstag
+e/deadline-driven-behavior/report/petrinet_pictures/wanderExample.png>]
+[42
 
 ]
 Chapter 4.
-[41]
+[43]
 Missing character: There is no Â in font cmr10!
 Missing character: There is no ¨ in font cmr10!
 Missing character: There is no Â in font cmr10!
 Missing character: There is no ¨ in font cmr10!
- [42] [43] [44] [45]
-<fastWanderSituation.png, id=715, 281.05pt x 220.825pt>
+ [44] [45] [46] [47]
+<fastWanderSituation.png, id=732, 281.05pt x 220.825pt>
 File: fastWanderSituation.png Graphic file (type png)
 
 <use fastWanderSituation.png>
-Package pdftex.def Info: fastWanderSituation.png used on input line 642.
+Package pdftex.def Info: fastWanderSituation.png used on input line 669.
 (pdftex.def)             Requested size: 180.0pt x 141.42859pt.
 
-<slowWanderSituation.png, id=716, 296.10625pt x 220.825pt>
+<slowWanderSituation.png, id=733, 296.10625pt x 220.825pt>
 File: slowWanderSituation.png Graphic file (type png)
 
 <use slowWanderSituation.png>
-Package pdftex.def Info: slowWanderSituation.png used on input line 649.
+Package pdftex.def Info: slowWanderSituation.png used on input line 676.
 (pdftex.def)             Requested size: 180.0pt x 134.24141pt.
 
-Overfull \hbox (4.86667pt too wide) in paragraph at lines 641--653
+Overfull \hbox (4.86667pt too wide) in paragraph at lines 668--680
  [][]  [] 
  []
 
-[46 <./fastWanderSituation.png (PNG copy)> <./slowWanderSituation.png (PNG copy
+[48 <./fastWanderSituation.png (PNG copy)> <./slowWanderSituation.png (PNG copy
 )>]
 Chapter 5.
-[47
+[49
 
 ]
 </home/djura/vakken/svn_afstudeerstage/deadline-driven-behavior/hulpscriptjes/g
-oodresults/linear0to1goal1to0.png, id=733, 1064.778pt x 645.612pt>
+oodresults/linear0to1goal1to0.png, id=751, 1064.778pt x 645.612pt>
 File: /home/djura/vakken/svn_afstudeerstage/deadline-driven-behavior/hulpscript
 jes/goodresults/linear0to1goal1to0.png Graphic file (type png)
 
 <use /home/djura/vakken/svn_afstudeerstage/deadline-driven-behavior/hulpscriptj
 es/goodresults/linear0to1goal1to0.png>
 Package pdftex.def Info: /home/djura/vakken/svn_afstudeerstage/deadline-driven-
-behavior/hulpscriptjes/goodresults/linear0to1goal1to0.png used on input line 68
-3.
+behavior/hulpscriptjes/goodresults/linear0to1goal1to0.png used on input line 71
+0.
 (pdftex.def)             Requested size: 360.0pt x 218.28362pt.
 
 
@@ -858,7 +934,7 @@ LaTeX Warning: `!h' float specifier changed to `!ht'.
 
 
 </home/djura/vakken/svn_afstudeerstage/deadline-driven-behavior/hulpscriptjes/g
-oodresults/sigmoid100_0_10_1_goal1to0.png, id=734, 1069.596pt x 645.612pt>
+oodresults/sigmoid100_0_10_1_goal1to0.png, id=752, 1069.596pt x 645.612pt>
 File: /home/djura/vakken/svn_afstudeerstage/deadline-driven-behavior/hulpscript
 jes/goodresults/sigmoid100_0_10_1_goal1to0.png Graphic file (type png)
 
@@ -866,7 +942,7 @@ jes/goodresults/sigmoid100_0_10_1_goal1to0.png Graphic file (type png)
 es/goodresults/sigmoid100_0_10_1_goal1to0.png>
 Package pdftex.def Info: /home/djura/vakken/svn_afstudeerstage/deadline-driven-
 behavior/hulpscriptjes/goodresults/sigmoid100_0_10_1_goal1to0.png used on input
- line 689.
+ line 716.
 (pdftex.def)             Requested size: 360.0pt x 217.2985pt.
 
 
@@ -874,7 +950,7 @@ LaTeX Warning: `!h' float specifier changed to `!ht'.
 
 
 </home/djura/vakken/svn_afstudeerstage/deadline-driven-behavior/hulpscriptjes/g
-oodresults/gaussian200_50_1_goal1to0.png, id=735, 1069.596pt x 645.612pt>
+oodresults/gaussian200_50_1_goal1to0.png, id=753, 1069.596pt x 645.612pt>
 File: /home/djura/vakken/svn_afstudeerstage/deadline-driven-behavior/hulpscript
 jes/goodresults/gaussian200_50_1_goal1to0.png Graphic file (type png)
 
@@ -882,7 +958,7 @@ jes/goodresults/gaussian200_50_1_goal1to0.png Graphic file (type png)
 es/goodresults/gaussian200_50_1_goal1to0.png>
 Package pdftex.def Info: /home/djura/vakken/svn_afstudeerstage/deadline-driven-
 behavior/hulpscriptjes/goodresults/gaussian200_50_1_goal1to0.png used on input 
-line 695.
+line 722.
 (pdftex.def)             Requested size: 360.0pt x 217.2985pt.
 
 
@@ -890,7 +966,7 @@ LaTeX Warning: `!h' float specifier changed to `!ht'.
 
 
 </home/djura/vakken/svn_afstudeerstage/deadline-driven-behavior/hulpscriptjes/g
-oodresults/linear0to1_goal01to0.png, id=739, 1064.778pt x 645.612pt>
+oodresults/linear0to1_goal01to0.png, id=757, 1064.778pt x 645.612pt>
 File: /home/djura/vakken/svn_afstudeerstage/deadline-driven-behavior/hulpscript
 jes/goodresults/linear0to1_goal01to0.png Graphic file (type png)
 
@@ -898,7 +974,7 @@ jes/goodresults/linear0to1_goal01to0.png Graphic file (type png)
 es/goodresults/linear0to1_goal01to0.png>
 Package pdftex.def Info: /home/djura/vakken/svn_afstudeerstage/deadline-driven-
 behavior/hulpscriptjes/goodresults/linear0to1_goal01to0.png used on input line 
-706.
+733.
 (pdftex.def)             Requested size: 360.0pt x 218.28362pt.
 
 
@@ -906,7 +982,7 @@ LaTeX Warning: `!h' float specifier changed to `!ht'.
 
 
 </home/djura/vakken/svn_afstudeerstage/deadline-driven-behavior/hulpscriptjes/g
-oodresults/sigmoid_100_0_10_1goal01to0.png, id=740, 868.846pt x 460.922pt>
+oodresults/sigmoid_100_0_10_1goal01to0.png, id=758, 868.846pt x 460.922pt>
 File: /home/djura/vakken/svn_afstudeerstage/deadline-driven-behavior/hulpscript
 jes/goodresults/sigmoid_100_0_10_1goal01to0.png Graphic file (type png)
 
@@ -914,7 +990,7 @@ jes/goodresults/sigmoid_100_0_10_1goal01to0.png Graphic file (type png)
 es/goodresults/sigmoid_100_0_10_1goal01to0.png>
 Package pdftex.def Info: /home/djura/vakken/svn_afstudeerstage/deadline-driven-
 behavior/hulpscriptjes/goodresults/sigmoid_100_0_10_1goal01to0.png used on inpu
-t line 713.
+t line 740.
 (pdftex.def)             Requested size: 360.0pt x 190.97664pt.
 
 
@@ -922,7 +998,7 @@ LaTeX Warning: `!h' float specifier changed to `!ht'.
 
 
 </home/djura/vakken/svn_afstudeerstage/deadline-driven-behavior/hulpscriptjes/g
-oodresults/gaussian200_50_1_goal01to0.png, id=741, 1069.596pt x 645.612pt>
+oodresults/gaussian200_50_1_goal01to0.png, id=759, 1069.596pt x 645.612pt>
 File: /home/djura/vakken/svn_afstudeerstage/deadline-driven-behavior/hulpscript
 jes/goodresults/gaussian200_50_1_goal01to0.png Graphic file (type png)
 
@@ -930,25 +1006,25 @@ jes/goodresults/gaussian200_50_1_goal01to0.png Graphic file (type png)
 es/goodresults/gaussian200_50_1_goal01to0.png>
 Package pdftex.def Info: /home/djura/vakken/svn_afstudeerstage/deadline-driven-
 behavior/hulpscriptjes/goodresults/gaussian200_50_1_goal01to0.png used on input
- line 720.
+ line 747.
 (pdftex.def)             Requested size: 360.0pt x 217.2985pt.
 
 
 LaTeX Warning: `!h' float specifier changed to `!ht'.
 
-[48] [49 </home/djura/vakken/svn_afstudeerstage/deadline-driven-behavior/hulpsc
+[50] [51 </home/djura/vakken/svn_afstudeerstage/deadline-driven-behavior/hulpsc
 riptjes/goodresults/linear0to1goal1to0.png (PNG copy)> </home/djura/vakken/svn_
 afstudeerstage/deadline-driven-behavior/hulpscriptjes/goodresults/sigmoid100_0_
-10_1_goal1to0.png (PNG copy)>] [50 </home/djura/vakken/svn_afstudeerstage/deadl
+10_1_goal1to0.png (PNG copy)>] [52 </home/djura/vakken/svn_afstudeerstage/deadl
 ine-driven-behavior/hulpscriptjes/goodresults/gaussian200_50_1_goal1to0.png (PN
 G copy)> </home/djura/vakken/svn_afstudeerstage/deadline-driven-behavior/hulpsc
-riptjes/goodresults/linear0to1_goal01to0.png (PNG copy)>] [51 </home/djura/vakk
+riptjes/goodresults/linear0to1_goal01to0.png (PNG copy)>] [53 </home/djura/vakk
 en/svn_afstudeerstage/deadline-driven-behavior/hulpscriptjes/goodresults/sigmoi
 d_100_0_10_1goal01to0.png (PNG copy)> </home/djura/vakken/svn_afstudeerstage/de
 adline-driven-behavior/hulpscriptjes/goodresults/gaussian200_50_1_goal01to0.png
  (PNG copy)>]
 </home/djura/vakken/svn_afstudeerstage/deadline-driven-behavior/hulpscriptjes/g
-oodresults/linear0_1_200_goalsigmoid_100_0_-10_1.png, id=768, 1064.778pt x 646.
+oodresults/linear0_1_200_goalsigmoid_100_0_-10_1.png, id=785, 1064.778pt x 646.
 415pt>
 File: /home/djura/vakken/svn_afstudeerstage/deadline-driven-behavior/hulpscript
 jes/goodresults/linear0_1_200_goalsigmoid_100_0_-10_1.png Graphic file (type pn
@@ -958,11 +1034,11 @@ g)
 es/goodresults/linear0_1_200_goalsigmoid_100_0_-10_1.png>
 Package pdftex.def Info: /home/djura/vakken/svn_afstudeerstage/deadline-driven-
 behavior/hulpscriptjes/goodresults/linear0_1_200_goalsigmoid_100_0_-10_1.png us
-ed on input line 732.
+ed on input line 759.
 (pdftex.def)             Requested size: 360.0pt x 218.55511pt.
 
 </home/djura/vakken/svn_afstudeerstage/deadline-driven-behavior/hulpscriptjes/g
-oodresults/sigmoid100_0_10_1_goalsigmoid100_0_-10_1.png, id=769, 873.664pt x 46
+oodresults/sigmoid100_0_10_1_goalsigmoid100_0_-10_1.png, id=786, 873.664pt x 46
 1.725pt>
 File: /home/djura/vakken/svn_afstudeerstage/deadline-driven-behavior/hulpscript
 jes/goodresults/sigmoid100_0_10_1_goalsigmoid100_0_-10_1.png Graphic file (type
@@ -972,7 +1048,7 @@ jes/goodresults/sigmoid100_0_10_1_goalsigmoid100_0_-10_1.png Graphic file (type
 es/goodresults/sigmoid100_0_10_1_goalsigmoid100_0_-10_1.png>
 Package pdftex.def Info: /home/djura/vakken/svn_afstudeerstage/deadline-driven-
 behavior/hulpscriptjes/goodresults/sigmoid100_0_10_1_goalsigmoid100_0_-10_1.png
- used on input line 740.
+ used on input line 767.
 (pdftex.def)             Requested size: 360.0pt x 190.25255pt.
 
 
@@ -980,7 +1056,7 @@ LaTeX Warning: `!h' float specifier changed to `!ht'.
 
 
 </home/djura/vakken/svn_afstudeerstage/deadline-driven-behavior/hulpscriptjes/g
-oodresults/gaussian200_50_1_goalsigmoid_100_0_-1_1.png, id=770, 873.664pt x 461
+oodresults/gaussian200_50_1_goalsigmoid_100_0_-1_1.png, id=787, 873.664pt x 461
 .725pt>
 File: /home/djura/vakken/svn_afstudeerstage/deadline-driven-behavior/hulpscript
 jes/goodresults/gaussian200_50_1_goalsigmoid_100_0_-1_1.png Graphic file (type 
@@ -990,7 +1066,7 @@ png)
 es/goodresults/gaussian200_50_1_goalsigmoid_100_0_-1_1.png>
 Package pdftex.def Info: /home/djura/vakken/svn_afstudeerstage/deadline-driven-
 behavior/hulpscriptjes/goodresults/gaussian200_50_1_goalsigmoid_100_0_-1_1.png 
-used on input line 747.
+used on input line 774.
 (pdftex.def)             Requested size: 360.0pt x 190.25255pt.
 
 
@@ -998,7 +1074,7 @@ LaTeX Warning: `!h' float specifier changed to `!ht'.
 
 
 </home/djura/vakken/svn_afstudeerstage/deadline-driven-behavior/hulpscriptjes/g
-oodresults/linear0_1_200_goalgaussian_0_50_1.png, id=774, 873.664pt x 461.725pt
+oodresults/linear0_1_200_goalgaussian_0_50_1.png, id=791, 873.664pt x 461.725pt
 >
 File: /home/djura/vakken/svn_afstudeerstage/deadline-driven-behavior/hulpscript
 jes/goodresults/linear0_1_200_goalgaussian_0_50_1.png Graphic file (type png)
@@ -1007,7 +1083,7 @@ jes/goodresults/linear0_1_200_goalgaussian_0_50_1.png Graphic file (type png)
 es/goodresults/linear0_1_200_goalgaussian_0_50_1.png>
 Package pdftex.def Info: /home/djura/vakken/svn_afstudeerstage/deadline-driven-
 behavior/hulpscriptjes/goodresults/linear0_1_200_goalgaussian_0_50_1.png used o
-n input line 756.
+n input line 783.
 (pdftex.def)             Requested size: 360.0pt x 190.25255pt.
 
 
@@ -1015,7 +1091,7 @@ LaTeX Warning: `h' float specifier changed to `ht'.
 
 
 </home/djura/vakken/svn_afstudeerstage/deadline-driven-behavior/hulpscriptjes/g
-oodresults/sigmoid100_0_10_1_goalgaussian0_50_1.png, id=775, 873.664pt x 461.72
+oodresults/sigmoid100_0_10_1_goalgaussian0_50_1.png, id=792, 873.664pt x 461.72
 5pt>
 File: /home/djura/vakken/svn_afstudeerstage/deadline-driven-behavior/hulpscript
 jes/goodresults/sigmoid100_0_10_1_goalgaussian0_50_1.png Graphic file (type png
@@ -1025,7 +1101,7 @@ jes/goodresults/sigmoid100_0_10_1_goalgaussian0_50_1.png Graphic file (type png
 es/goodresults/sigmoid100_0_10_1_goalgaussian0_50_1.png>
 Package pdftex.def Info: /home/djura/vakken/svn_afstudeerstage/deadline-driven-
 behavior/hulpscriptjes/goodresults/sigmoid100_0_10_1_goalgaussian0_50_1.png use
-d on input line 763.
+d on input line 790.
 (pdftex.def)             Requested size: 360.0pt x 190.25255pt.
 
 
@@ -1033,7 +1109,7 @@ LaTeX Warning: `h' float specifier changed to `ht'.
 
 
 </home/djura/vakken/svn_afstudeerstage/deadline-driven-behavior/hulpscriptjes/g
-oodresults/gaussian200_50_1_goalgaussian0_50_1.png, id=776, 868.846pt x 461.725
+oodresults/gaussian200_50_1_goalgaussian0_50_1.png, id=793, 868.846pt x 461.725
 pt>
 File: /home/djura/vakken/svn_afstudeerstage/deadline-driven-behavior/hulpscript
 jes/goodresults/gaussian200_50_1_goalgaussian0_50_1.png Graphic file (type png)
@@ -1043,56 +1119,56 @@ jes/goodresults/gaussian200_50_1_goalgaussian0_50_1.png Graphic file (type png)
 es/goodresults/gaussian200_50_1_goalgaussian0_50_1.png>
 Package pdftex.def Info: /home/djura/vakken/svn_afstudeerstage/deadline-driven-
 behavior/hulpscriptjes/goodresults/gaussian200_50_1_goalgaussian0_50_1.png used
- on input line 770.
+ on input line 797.
 (pdftex.def)             Requested size: 360.0pt x 191.30936pt.
 
 
 LaTeX Warning: `h' float specifier changed to `ht'.
 
-[52
+[54
 
  </home/djura/vakken/svn_afstudeerstage/deadline-driven-behavior/hulpscriptjes/
-goodresults/linear0_1_200_goalsigmoid_100_0_-10_1.png (PNG copy)>] [53 </home/d
+goodresults/linear0_1_200_goalsigmoid_100_0_-10_1.png (PNG copy)>] [55 </home/d
 jura/vakken/svn_afstudeerstage/deadline-driven-behavior/hulpscriptjes/goodresul
 ts/sigmoid100_0_10_1_goalsigmoid100_0_-10_1.png (PNG copy)> </home/djura/vakken
 /svn_afstudeerstage/deadline-driven-behavior/hulpscriptjes/goodresults/gaussian
-200_50_1_goalsigmoid_100_0_-1_1.png (PNG copy)>] [54 </home/djura/vakken/svn_af
+200_50_1_goalsigmoid_100_0_-1_1.png (PNG copy)>] [56 </home/djura/vakken/svn_af
 studeerstage/deadline-driven-behavior/hulpscriptjes/goodresults/linear0_1_200_g
 oalgaussian_0_50_1.png (PNG copy)> </home/djura/vakken/svn_afstudeerstage/deadl
 ine-driven-behavior/hulpscriptjes/goodresults/sigmoid100_0_10_1_goalgaussian0_5
-0_1.png (PNG copy)>] [55 </home/djura/vakken/svn_afstudeerstage/deadline-driven
+0_1.png (PNG copy)>] [57 </home/djura/vakken/svn_afstudeerstage/deadline-driven
 -behavior/hulpscriptjes/goodresults/gaussian200_50_1_goalgaussian0_50_1.png (PN
-G copy)>] [56
+G copy)>] [58
 
 ]
 Missing character: There is no Â in font cmr10!
 Missing character: There is no ´ in font cmr10!
- [57]
-Overfull \hbox (4.12956pt too wide) in paragraph at lines 859--859
+ [59]
+Overfull \hbox (4.12956pt too wide) in paragraph at lines 886--886
 []\OT1/cmr/bx/n/14.4 Results of the Sec-ond Quan-ti-ta-tive Ex-per-i-ment 
  []
 
 
 </home/djura/vakken/svn_afstudeerstage/deadline-driven-behavior/hulpscriptjes/g
-oodresults/constant1_cropped.png, id=819, 868.846pt x 460.922pt>
+oodresults/constant1_cropped.png, id=836, 868.846pt x 460.922pt>
 File: /home/djura/vakken/svn_afstudeerstage/deadline-driven-behavior/hulpscript
 jes/goodresults/constant1_cropped.png Graphic file (type png)
 
 <use /home/djura/vakken/svn_afstudeerstage/deadline-driven-behavior/hulpscriptj
 es/goodresults/constant1_cropped.png>
 Package pdftex.def Info: /home/djura/vakken/svn_afstudeerstage/deadline-driven-
-behavior/hulpscriptjes/goodresults/constant1_cropped.png used on input line 867
+behavior/hulpscriptjes/goodresults/constant1_cropped.png used on input line 894
 .
 (pdftex.def)             Requested size: 360.0pt x 190.97664pt.
 
 Underfull \vbox (badness 1038) has occurred while \output is active []
 
- [58
+ [60
 
  </home/djura/vakken/svn_afstudeerstage/deadline-driven-behavior/hulpscriptjes/
 goodresults/constant1_cropped.png (PNG copy)>]
 </home/djura/vakken/svn_afstudeerstage/deadline-driven-behavior/hulpscriptjes/g
-oodresults/linear0to1_100agents.png, id=831, 873.664pt x 460.922pt>
+oodresults/linear0to1_100agents.png, id=848, 873.664pt x 460.922pt>
 File: /home/djura/vakken/svn_afstudeerstage/deadline-driven-behavior/hulpscript
 jes/goodresults/linear0to1_100agents.png Graphic file (type png)
 
@@ -1100,11 +1176,11 @@ jes/goodresults/linear0to1_100agents.png Graphic file (type png)
 es/goodresults/linear0to1_100agents.png>
 Package pdftex.def Info: /home/djura/vakken/svn_afstudeerstage/deadline-driven-
 behavior/hulpscriptjes/goodresults/linear0to1_100agents.png used on input line 
-881.
+908.
 (pdftex.def)             Requested size: 360.0pt x 189.92168pt.
 
 </home/djura/vakken/svn_afstudeerstage/deadline-driven-behavior/hulpscriptjes/g
-oodresults/linear0to05_100agents.png, id=832, 873.664pt x 460.922pt>
+oodresults/linear0to05_100agents.png, id=849, 873.664pt x 460.922pt>
 File: /home/djura/vakken/svn_afstudeerstage/deadline-driven-behavior/hulpscript
 jes/goodresults/linear0to05_100agents.png Graphic file (type png)
 
@@ -1112,11 +1188,11 @@ jes/goodresults/linear0to05_100agents.png Graphic file (type png)
 es/goodresults/linear0to05_100agents.png>
 Package pdftex.def Info: /home/djura/vakken/svn_afstudeerstage/deadline-driven-
 behavior/hulpscriptjes/goodresults/linear0to05_100agents.png used on input line
- 889.
+ 916.
 (pdftex.def)             Requested size: 360.0pt x 189.92168pt.
 
 </home/djura/vakken/svn_afstudeerstage/deadline-driven-behavior/hulpscriptjes/g
-oodresults/linear0to01_100agents.png, id=833, 868.846pt x 460.922pt>
+oodresults/linear0to01_100agents.png, id=850, 868.846pt x 460.922pt>
 File: /home/djura/vakken/svn_afstudeerstage/deadline-driven-behavior/hulpscript
 jes/goodresults/linear0to01_100agents.png Graphic file (type png)
 
@@ -1124,23 +1200,23 @@ jes/goodresults/linear0to01_100agents.png Graphic file (type png)
 es/goodresults/linear0to01_100agents.png>
 Package pdftex.def Info: /home/djura/vakken/svn_afstudeerstage/deadline-driven-
 behavior/hulpscriptjes/goodresults/linear0to01_100agents.png used on input line
- 896.
+ 923.
 (pdftex.def)             Requested size: 360.0pt x 190.97664pt.
 
 </home/djura/vakken/svn_afstudeerstage/deadline-driven-behavior/hulpscriptjes/g
-oodresults/sigmoid100_0_10_1.png, id=834, 868.846pt x 461.725pt>
+oodresults/sigmoid100_0_10_1.png, id=851, 868.846pt x 461.725pt>
 File: /home/djura/vakken/svn_afstudeerstage/deadline-driven-behavior/hulpscript
 jes/goodresults/sigmoid100_0_10_1.png Graphic file (type png)
 
 <use /home/djura/vakken/svn_afstudeerstage/deadline-driven-behavior/hulpscriptj
 es/goodresults/sigmoid100_0_10_1.png>
 Package pdftex.def Info: /home/djura/vakken/svn_afstudeerstage/deadline-driven-
-behavior/hulpscriptjes/goodresults/sigmoid100_0_10_1.png used on input line 903
+behavior/hulpscriptjes/goodresults/sigmoid100_0_10_1.png used on input line 930
 .
 (pdftex.def)             Requested size: 360.0pt x 191.30936pt.
 
 </home/djura/vakken/svn_afstudeerstage/deadline-driven-behavior/hulpscriptjes/g
-oodresults/gaussian_mean200_sigma50_100_max1.png, id=835, 868.846pt x 460.922pt
+oodresults/gaussian_mean200_sigma50_100_max1.png, id=852, 868.846pt x 460.922pt
 >
 File: /home/djura/vakken/svn_afstudeerstage/deadline-driven-behavior/hulpscript
 jes/goodresults/gaussian_mean200_sigma50_100_max1.png Graphic file (type png)
@@ -1149,50 +1225,50 @@ jes/goodresults/gaussian_mean200_sigma50_100_max1.png Graphic file (type png)
 es/goodresults/gaussian_mean200_sigma50_100_max1.png>
 Package pdftex.def Info: /home/djura/vakken/svn_afstudeerstage/deadline-driven-
 behavior/hulpscriptjes/goodresults/gaussian_mean200_sigma50_100_max1.png used o
-n input line 910.
+n input line 937.
 (pdftex.def)             Requested size: 360.0pt x 190.97664pt.
- [59 </home/djura/vakken/svn_afstudeerstage/deadline-driven-behavior/hulpscript
-jes/goodresults/linear0to1_100agents.png (PNG copy)>] [60 </home/djura/vakken/s
+ [61 </home/djura/vakken/svn_afstudeerstage/deadline-driven-behavior/hulpscript
+jes/goodresults/linear0to1_100agents.png (PNG copy)>] [62 </home/djura/vakken/s
 vn_afstudeerstage/deadline-driven-behavior/hulpscriptjes/goodresults/linear0to0
 5_100agents.png (PNG copy)> </home/djura/vakken/svn_afstudeerstage/deadline-dri
 ven-behavior/hulpscriptjes/goodresults/linear0to01_100agents.png (PNG copy)>] [
-61 </home/djura/vakken/svn_afstudeerstage/deadline-driven-behavior/hulpscriptje
+63 </home/djura/vakken/svn_afstudeerstage/deadline-driven-behavior/hulpscriptje
 s/goodresults/sigmoid100_0_10_1.png (PNG copy)> </home/djura/vakken/svn_afstude
 erstage/deadline-driven-behavior/hulpscriptjes/goodresults/gaussian_mean200_sig
-ma50_100_max1.png (PNG copy)>] [62]
+ma50_100_max1.png (PNG copy)>] [64]
 Chapter 6.
 
 Package hyperref Warning: Difference (2) between bookmark levels is greater 
-(hyperref)                than one, level fixed on input line 939.
+(hyperref)                than one, level fixed on input line 966.
 
-[63
+[65
 
-] [64]
+] [66]
 Appendix A.
 
-Overfull \hbox (9.90446pt too wide) in paragraph at lines 974--974
+Overfull \hbox (9.90446pt too wide) in paragraph at lines 1001--1001
 []\OT1/cmr/bx/n/14.4 Connecting MA-SON and the Sit-u-a-tions Frame-
  []
 
 
 Underfull \vbox (badness 4699) has occurred while \output is active []
 
- [65
+ [67
 
 ]
-[66]
+[68]
 Appendix B.
-<framework.png, id=880, 597.73312pt x 303.38344pt>
+<framework.png, id=898, 597.73312pt x 303.38344pt>
 File: framework.png Graphic file (type png)
  <use framework.png>
-Package pdftex.def Info: framework.png used on input line 987.
+Package pdftex.def Info: framework.png used on input line 1014.
 (pdftex.def)             Requested size: 250.0pt x 126.8878pt.
 
-(./simobs_thesis_final.bbl [67
+(./simobs_thesis_final.bbl [69
 
- <./framework.png>] [68
+ <./framework.png>] [70
 
-] [69]
+] [71]
 Missing character: There is no ï in font cmti10!
 Missing character: There is no ¿ in font cmti10!
 Missing character: There is no ½ in font cmti10!
@@ -1206,25 +1282,29 @@ Missing character: There is no â in font cmti10!
 Missing character: There is no € in font cmti10!
 Missing character: There is no ™ in font cmti10!
 )
-Package atveryend Info: Empty hook `BeforeClearDocument' on input line 999.
- [70] [71]
-Package atveryend Info: Empty hook `AfterLastShipout' on input line 999.
+Package atveryend Info: Empty hook `BeforeClearDocument' on input line 1026.
+ [72] [73]
+Package atveryend Info: Empty hook `AfterLastShipout' on input line 1026.
  (./simobs_thesis_final.aux)
-Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 999.
-Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 999.
+Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 1026.
+Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 1026.
+
 Package rerunfilecheck Info: File `simobs_thesis_final.out' has not changed.
 (rerunfilecheck)             Checksum: 159D55A47D67F78EC0334E5F6B024687;3431.
 
 
 LaTeX Warning: There were undefined references.
 
-Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 999.
+
+LaTeX Warning: There were multiply-defined labels.
+
+Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 1026.
  ) 
 Here is how much of TeX's memory you used:
- 16175 strings out of 495028
- 298415 string characters out of 6181496
- 356393 words of memory out of 5000000
- 18838 multiletter control sequences out of 15000+600000
+ 16197 strings out of 495028
+ 299947 string characters out of 6181496
+ 356581 words of memory out of 5000000
+ 18852 multiletter control sequences out of 15000+600000
  11264 words of font info for 39 fonts, out of 8000000 for 9000
  14 hyphenation exceptions out of 8191
  63i,10n,78p,2327b,857s stack positions out of 5000i,500n,10000p,200000b,80000s
@@ -1243,10 +1323,10 @@ fb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy6.pfb></us
 r/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy8.pfb></usr/share
 /texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmti10.pfb></usr/share/texli
 ve/texmf-dist/fonts/type1/public/amsfonts/cm/cmtt10.pfb>
-Output written on simobs_thesis_final.pdf (71 pages, 770672 bytes).
+Output written on simobs_thesis_final.pdf (73 pages, 789390 bytes).
 PDF statistics:
- 1010 PDF objects out of 1200 (max. 8388607)
- 881 compressed objects within 9 object streams
- 239 named destinations out of 1000 (max. 500000)
- 555 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 1030 PDF objects out of 1200 (max. 8388607)
+ 893 compressed objects within 9 object streams
+ 244 named destinations out of 1000 (max. 500000)
+ 570 words of extra memory for PDF output out of 10000 (max. 10000000)
 
