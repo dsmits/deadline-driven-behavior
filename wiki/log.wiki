@@ -1,7 +1,7 @@
 DISCLAIMER: The things that I write here are mainly to arrange my own thoughts and might not always be understandable for other people.
 
 =24-11-2014=
-I'll try to finish the example in the method section today and will hopefully get started on the new version of the qualitative experiment.
+I finished the example in the method section today.
 
 =21-11-2014=
 Last tuesday my supervisor suggested I add some tables in which we judge the different combinations of utility functions in the results section of the quantitative experiments. I added the tables and descriptions today.
