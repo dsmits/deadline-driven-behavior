@@ -1,9 +1,12 @@
 DISCLAIMER: The things that I write here are mainly to arrange my own thoughts and might not always be understandable for other people.
 
+=24-11-2014=
+I'll try to finish the example in the method section today and will hopefully get started on the new version of the qualitative experiment.
+
 =21-11-2014=
 Last tuesday my supervisor suggested I add some tables in which we judge the different combinations of utility functions in the results section of the quantitative experiments. I added the tables and descriptions today.
 
-I think the most important things that I can do next is modifying the method section, where an step-by-step example should be added, and modifying the first quantitative experiment. I don't feel like doing the latter so I'll start with the method section.
+I think the most important things that I can do next is modifying the method section, where an step-by-step example should be added, and modifying the first qualitative experiment. I don't feel like doing the latter so I'll start with the method section.
 
 Among other things I added these nice pictures:
 
