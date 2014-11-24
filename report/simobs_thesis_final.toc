@@ -40,8 +40,8 @@
 \contentsline {subsection}{\numberline {6.0.1}Limits of the Deadline Driven Behavior Framework}{65}{subsection.6.0.1}
 \contentsline {subsection}{\numberline {6.0.2}Optimization}{66}{subsection.6.0.2}
 \contentsline {subsection}{\numberline {6.0.3}Future Work}{66}{subsection.6.0.3}
-\contentsline {subsubsection}{Finding the optimal parameters}{66}{section*.92}
-\contentsline {subsubsection}{Needs}{66}{section*.93}
+\contentsline {subsubsection}{Finding the optimal parameters}{66}{section*.93}
+\contentsline {subsubsection}{Needs}{66}{section*.94}
 \contentsline {chapter}{\numberline {A}Appendix A: Implementation}{67}{appendix.A}
 \contentsline {section}{\numberline {A.1}Implementing the Framework}{67}{section.A.1}
 \contentsline {section}{\numberline {A.2}Extending PIPE2}{67}{section.A.2}
