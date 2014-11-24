@@ -1,7 +1,7 @@
 DISCLAIMER: The things that I write here are mainly to arrange my own thoughts and might not always be understandable for other people.
 
 =24-11-2014=
-I finished the example in the method section today.
+I finished the [https://deadline-driven-behavior.googlecode.com/svn-history/r259/trunk/report/simobs_thesis_final.pdf#page=39 example in the method section] today.
 
 =21-11-2014=
 Last tuesday my supervisor suggested I add some tables in which we judge the different combinations of utility functions in the results section of the quantitative experiments. I added the tables and descriptions today.
