@@ -16,6 +16,7 @@ import mason.rotterdam.CheckinMasonAction;
 import mason.rotterdam.GoToCheckinDeskMasonAction;
 import mason.rotterdam.GoToNearestPillarMasonAction;
 import mason.rotterdam.GoToToiletMasonAction;
+import mason.rotterdam.GoToToiletSituationStartMasonAction;
 import mason.rotterdam.WaitForFriendMasonAction;
 import mason.rotterdam.WaitInQueueMasonAction;
 import protobuf.ActionMessage;
@@ -100,6 +101,8 @@ public class PedestrianAgent extends SimplePortrayal2D implements Steppable,
 		actions.put("leanAgainstPillar", new StandStillMasonAction());
 		actions.put("slowWander", new SlowWanderMasonAction());
 		actions.put("fastWander", new FastWanderMasonAction());
+		actions.put("gototoiletwaitingpoint", new GoToToiletSituationStartMasonAction());
+		actions.put("gototoiletwaitingpoint2", new GoToToiletSituationStartMasonAction());
 
 	}
 

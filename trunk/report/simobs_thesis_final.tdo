@@ -22,35 +22,33 @@
 \contentsline {todo}{{\color@box {}{cyan}{\leavevmode {\color {cyan}o}}\ Achterhaal of iedere pedestrian een persoonlijke time heeft of dat er een algemene timer is. Ik ga voorlopig uit van een persoonlijke timer ook beslissen of het volgende detail misschien meer een implementatiedingetje is.}}{34}{section*.28}
 \contentsline {todo}{{\color@box {}{cyan}{\leavevmode {\color {cyan}o}}\ Check if it's the right way around (afteller of opteller)}}{35}{section*.29}
 \contentsline {todo}{{\color@box {}{cyan}{\leavevmode {\color {cyan}o}}\ Improve structure}}{35}{section*.30}
-\contentsline {todo}{{\color@box {}{cyan}{\leavevmode {\color {cyan}o}}\ How often do these behaviors occur?}}{35}{section*.32}
-\contentsline {todo}{{\color@box {}{cyan}{\leavevmode {\color {cyan}o}}\ If I have time I could modify the implementation of this behavior so that the pedestrian actually goes back to his friend after going to the toilet, or at least to the place where he came from}}{36}{section*.33}
-\contentsline {todo}{{\color@box {}{cyan}{\leavevmode {\color {cyan}o}}\ I removed the "checking in" behavior because it was difficult to implement. Maybe if I have some time left I will give it another try because it is quite important behavior for an airport}}{36}{section*.34}
-\contentsline {todo}{{\color@box {}{cyan}{\leavevmode {\color {cyan}o}}\ If I introduce the behavior here I can't talk about them yet in the method. Check if I do this}}{36}{section*.35}
+\contentsline {todo}{{\color@box {}{cyan}{\leavevmode {\color {cyan}o}}\ Give credit to people who I got the footage from}}{35}{section*.32}
+\contentsline {todo}{{\color@box {}{cyan}{\leavevmode {\color {cyan}o}}\ How often do these behaviors occur?}}{35}{section*.33}
+\contentsline {todo}{{\color@box {}{cyan}{\leavevmode {\color {cyan}o}}\ If I have time I could modify the implementation of this behavior so that the pedestrian actually goes back to his friend after going to the toilet, or at least to the place where he came from}}{36}{section*.34}
+\contentsline {todo}{{\color@box {}{cyan}{\leavevmode {\color {cyan}o}}\ I removed the "checking in" behavior because it was difficult to implement. Maybe if I have some time left I will give it another try because it is quite important behavior for an airport}}{36}{section*.35}
 \contentsline {todo}{{\color@box {}{cyan}{\leavevmode {\color {cyan}o}}\ Check gototoilet Petri one last time to see if there aren't any redundant places/transitions}}{36}{section*.36}
 \contentsline {todo}{{\color@box {}{cyan}{\leavevmode {\color {cyan}o}}\ This first paragraph should be removed or placed somewhere else.}}{39}{section*.41}
-\contentsline {todo}{{\color@box {}{cyan}{\leavevmode {\color {cyan}o}}\ Add pictures of the Petri nets}}{43}{section*.47}
-\contentsline {todo}{{\color@box {}{cyan}{\leavevmode {\color {cyan}o}}\ Make sure introduction lines up with research questions}}{43}{section*.48}
-\contentsline {todo}{{\color@box {}{cyan}{\leavevmode {\color {cyan}o}}\ Check whether I still use the manually tracked locations, otherwise I shouldn't mention it.}}{43}{section*.49}
-\contentsline {todo}{{\color@box {}{cyan}{\leavevmode {\color {cyan}o}}\ Specify missing parameters}}{43}{section*.50}
-\contentsline {todo}{{\color@box {}{cyan}{\leavevmode {\color {cyan}o}}\ If I have time I could modify the implementation of this behavior so that the pedestrian actually goes back to his friend after going to the toilet, or at least to the place where he came from}}{44}{section*.51}
-\contentsline {todo}{{\color@box {}{cyan}{\leavevmode {\color {cyan}o}}\ I removed the "checking in" behavior because it was difficult to implement. Maybe if I have some time left I will give it another try because it is quite important behavior for an airport}}{44}{section*.52}
-\contentsline {todo}{{\color@box {}{cyan}{\leavevmode {\color {cyan}o}}\ If I introduce the behavior here I can't talk about them yet in the method. Check if I do this}}{44}{section*.53}
+\contentsline {todo}{{\color@box {}{cyan}{\leavevmode {\color {cyan}o}}\ Make sure introduction lines up with research questions}}{43}{section*.47}
+\contentsline {todo}{{\color@box {}{cyan}{\leavevmode {\color {cyan}o}}\ Specify missing parameters}}{43}{section*.48}
+\contentsline {todo}{{\color@box {}{cyan}{\leavevmode {\color {cyan}o}}\ Check if I interpreted the data right!}}{43}{section*.49}
+\contentsline {todo}{{\color@box {}{cyan}{\leavevmode {\color {cyan}o}}\ add wander behavior}}{44}{section*.50}
 \contentsline {todo}{{\color@box {}{cyan}{\leavevmode {\color {cyan}o}}\ Experiment has to be changed. In experiments, give indication of how often the behaviors take place, how often do they take place in simulation? Also look at trajectories of these behaviors and compare with trajectories of simulation.}}{44}{section*.54}
 \contentsline {todo}{{\color@box {}{cyan}{\leavevmode {\color {cyan}o}}\ Check which parts of the first quantitative experiment are still relevant now the experiments have changed.}}{44}{section*.55}
-\contentsline {todo}{{\color@box {}{cyan}{\leavevmode {\color {cyan}o}}\ Check if the following parameters are still true}}{45}{section*.56}
-\contentsline {todo}{{\color@box {}{cyan}{\leavevmode {\color {cyan}o}}\ Check whether I'm consequent in the indication of the parameters and if it is correct to call the x axis $n$}}{46}{section*.57}
-\contentsline {todo}{{\color@box {}{cyan}{\leavevmode {\color {cyan}o}}\ Part of this text can be moved to the first quantitative experiment, because that experiment now also includes slow and fast wander}}{46}{section*.58}
-\contentsline {todo}{{\color@box {}{cyan}{\leavevmode {\color {cyan}o}}\ I just modified leanagainstpillar so it actually takes a few steps, otherwise it's hardly noticable. Should I rerun the experiments, or maybe just don't mention this behavior because it is not important?}}{47}{section*.59}
-\contentsline {todo}{{\color@box {}{cyan}{\leavevmode {\color {cyan}o}}\ Show the difference between the pictures in \ref {fig:fastWanderPetrinet} and \ref {fig:slowWanderPetrinet}, color the upper transitions red and show they have a different rate.}}{48}{section*.61}
-\contentsline {todo}{{\color@box {}{cyan}{\leavevmode {\color {cyan}o}}\ Rewrite results of qualitative experiment}}{49}{section*.62}
-\contentsline {todo}{{\color@box {}{cyan}{\leavevmode {\color {cyan}o}}\ Show GUI! how do the pedestrians walk?}}{49}{section*.63}
-\contentsline {todo}{{\color@box {}{cyan}{\leavevmode {\color {cyan}o}}\ What happened to lean against pillar?}}{50}{section*.64}
-\contentsline {todo}{{\color@box {}{cyan}{\leavevmode {\color {cyan}o}}\ Make table \ref {tab:judgegoalhurry} and \ref {tab:judgegoaldeadline} prettier.}}{58}{section*.79}
-\contentsline {todo}{{\color@box {}{cyan}{\leavevmode {\color {cyan}o}}\ Include subsections?}}{58}{section*.80}
-\contentsline {todo}{{\color@box {}{cyan}{\leavevmode {\color {cyan}o}}\ Make sure the utility functions are explained better/clarified. Otherwise it is very confusing that their effect in time is more or less the mirrored version of the way they are defined.}}{59}{section*.81}
-\contentsline {todo}{{\color@box {}{cyan}{\leavevmode {\color {cyan}o}}\ At this place there was previously a lot of stuff that I now commented out. Decide what to do with it. I shouldn´t put the missing graphs in my thesis in this form. Check if there is still useful stuff in there.}}{59}{section*.82}
-\contentsline {todo}{{\color@box {}{cyan}{\leavevmode {\color {cyan}o}}\ Put \ref {fig:linear0to0.5_100agents} and \ref {fig:linear0to01_100agents} in appendix instead of here. They don't add anything.}}{61}{section*.84}
-\contentsline {todo}{{\color@box {}{cyan}{\leavevmode {\color {cyan}o}}\ Say something about that changing the probabilities of the places is probably only necessary for the sink transitions}}{65}{section*.91}
-\contentsline {todo}{{\color@box {}{cyan}{\leavevmode {\color {cyan}o}}\ Integrate the text below and make it better}}{65}{section*.92}
-\contentsline {todo}{{\color@box {}{cyan}{\leavevmode {\color {cyan}o}}\ Finish this part about MASON}}{68}{section*.95}
-\contentsline {todo}{{\color@box {}{cyan}{\leavevmode {\color {cyan}o}}\ Check all references (figures, papers, etc.)}}{73}{section*.98}
+\contentsline {todo}{{\color@box {}{cyan}{\leavevmode {\color {cyan}o}}\ Check if the following parameters are still true}}{46}{section*.56}
+\contentsline {todo}{{\color@box {}{cyan}{\leavevmode {\color {cyan}o}}\ Check whether I'm consequent in the indication of the parameters and if it is correct to call the x axis $n$}}{47}{section*.57}
+\contentsline {todo}{{\color@box {}{cyan}{\leavevmode {\color {cyan}o}}\ Part of this text can be moved to the first quantitative experiment, because that experiment now also includes slow and fast wander}}{47}{section*.58}
+\contentsline {todo}{{\color@box {}{cyan}{\leavevmode {\color {cyan}o}}\ I just modified leanagainstpillar so it actually takes a few steps, otherwise it's hardly noticable. Should I rerun the experiments, or maybe just don't mention this behavior because it is not important?}}{48}{section*.59}
+\contentsline {todo}{{\color@box {}{cyan}{\leavevmode {\color {cyan}o}}\ Show the difference between the pictures in \ref {fig:fastWanderPetrinet} and \ref {fig:slowWanderPetrinet}, color the upper transitions red and show they have a different rate.}}{49}{section*.61}
+\contentsline {todo}{{\color@box {}{cyan}{\leavevmode {\color {cyan}o}}\ Rewrite results of qualitative experiment}}{51}{section*.62}
+\contentsline {todo}{{\color@box {}{cyan}{\leavevmode {\color {cyan}o}}\ Show GUI! how do the pedestrians walk?}}{51}{section*.63}
+\contentsline {todo}{{\color@box {}{cyan}{\leavevmode {\color {cyan}o}}\ Say something about how often the behaviors take place in the simulation (will have to see how to compare real life and simulation time)}}{51}{section*.64}
+\contentsline {todo}{{\color@box {}{cyan}{\leavevmode {\color {cyan}o}}\ What happened to lean against pillar?}}{52}{section*.65}
+\contentsline {todo}{{\color@box {}{cyan}{\leavevmode {\color {cyan}o}}\ Make table \ref {tab:judgegoalhurry} and \ref {tab:judgegoaldeadline} prettier.}}{60}{section*.80}
+\contentsline {todo}{{\color@box {}{cyan}{\leavevmode {\color {cyan}o}}\ Include subsections?}}{60}{section*.81}
+\contentsline {todo}{{\color@box {}{cyan}{\leavevmode {\color {cyan}o}}\ Make sure the utility functions are explained better/clarified. Otherwise it is very confusing that their effect in time is more or less the mirrored version of the way they are defined.}}{61}{section*.82}
+\contentsline {todo}{{\color@box {}{cyan}{\leavevmode {\color {cyan}o}}\ At this place there was previously a lot of stuff that I now commented out. Decide what to do with it. I shouldn´t put the missing graphs in my thesis in this form. Check if there is still useful stuff in there.}}{61}{section*.83}
+\contentsline {todo}{{\color@box {}{cyan}{\leavevmode {\color {cyan}o}}\ Put \ref {fig:linear0to0.5_100agents} and \ref {fig:linear0to01_100agents} in appendix instead of here. They don't add anything.}}{63}{section*.85}
+\contentsline {todo}{{\color@box {}{cyan}{\leavevmode {\color {cyan}o}}\ Say something about that changing the probabilities of the places is probably only necessary for the sink transitions}}{67}{section*.92}
+\contentsline {todo}{{\color@box {}{cyan}{\leavevmode {\color {cyan}o}}\ Integrate the text below and make it better}}{67}{section*.93}
+\contentsline {todo}{{\color@box {}{cyan}{\leavevmode {\color {cyan}o}}\ Finish this part about MASON}}{70}{section*.96}
+\contentsline {todo}{{\color@box {}{cyan}{\leavevmode {\color {cyan}o}}\ Check all references (figures, papers, etc.)}}{75}{section*.99}
