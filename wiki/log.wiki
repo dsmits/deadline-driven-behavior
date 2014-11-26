@@ -3,6 +3,17 @@ DISCLAIMER: The things that I write here are mainly to arrange my own thoughts a
 =26-11-2014=
 Today I'm working on the quantitative experiment (and hopefully also the quantitative result). I think I'm going to make the simulation so that only the desired behavior is done, and then make a picture of that.
 
+Here are the pictures:
+
+https://deadline-driven-behavior.googlecode.com/svn/trunk/report/qualitative%20experiment%20pictures/zoomed_in_leanagainstpillar_reallife.png
+
+https://deadline-driven-behavior.googlecode.com/svn/trunk/report/qualitative%20experiment%20pictures/zoomed_in_standstill_reallife.png
+
+https://deadline-driven-behavior.googlecode.com/svn/trunk/report/qualitative%20experiment%20pictures/zoomed_in_toiletsituation_reallife.png
+
+Only I just realized I forgot to do the wander behavior. I think I'm going to do these behaviors first and insert wander later, otherwise I have to switch to windows again and back to use photoshop.
+
+
 =24-11-2014=
 I finished the example in the method section today.
 
