@@ -28,25 +28,25 @@
 \contentsline {chapter}{\numberline {4}Experiments}{43}{chapter.4}
 \contentsline {section}{\numberline {4.1}Qualitative Experiment}{43}{section.4.1}
 \contentsline {section}{\numberline {4.2}Quantitative Experiment}{44}{section.4.2}
-\contentsline {subsection}{\numberline {4.2.1}Sigmoid Function}{45}{subsection.4.2.1}
-\contentsline {subsection}{\numberline {4.2.2}Linear Function}{45}{subsection.4.2.2}
-\contentsline {subsection}{\numberline {4.2.3}Gaussian Function}{46}{subsection.4.2.3}
-\contentsline {section}{\numberline {4.3}New Quantitative Experiment}{46}{section.4.3}
-\contentsline {chapter}{\numberline {5}Results}{49}{chapter.5}
-\contentsline {section}{\numberline {5.1}Results of the Qualitative Experiment}{49}{section.5.1}
-\contentsline {section}{\numberline {5.2}Results of the First Quantitative Experiment}{49}{section.5.2}
-\contentsline {section}{\numberline {5.3}Results of the Second Quantitative Experiment}{60}{section.5.3}
-\contentsline {chapter}{\numberline {6}Conclusion \& Discussion}{65}{chapter.6}
-\contentsline {subsection}{\numberline {6.0.1}Limits of the Deadline Driven Behavior Framework}{65}{subsection.6.0.1}
-\contentsline {subsection}{\numberline {6.0.2}Optimization}{66}{subsection.6.0.2}
-\contentsline {subsection}{\numberline {6.0.3}Future Work}{66}{subsection.6.0.3}
-\contentsline {subsubsection}{Finding the optimal parameters}{66}{section*.93}
-\contentsline {subsubsection}{Needs}{66}{section*.94}
-\contentsline {chapter}{\numberline {A}Appendix A: Implementation}{67}{appendix.A}
-\contentsline {section}{\numberline {A.1}Implementing the Framework}{67}{section.A.1}
-\contentsline {section}{\numberline {A.2}Extending PIPE2}{67}{section.A.2}
-\contentsline {subsection}{\numberline {A.2.1}Sources, Sinks, Slots}{67}{subsection.A.2.1}
-\contentsline {subsection}{\numberline {A.2.2}Additional Modifications}{68}{subsection.A.2.2}
-\contentsline {section}{\numberline {A.3}MASON}{68}{section.A.3}
-\contentsline {section}{\numberline {A.4}Connecting MASON and the Situations Framework}{68}{section.A.4}
-\contentsline {chapter}{\numberline {B}Appendix B: Results}{69}{appendix.B}
+\contentsline {subsection}{\numberline {4.2.1}Sigmoid Function}{46}{subsection.4.2.1}
+\contentsline {subsection}{\numberline {4.2.2}Linear Function}{46}{subsection.4.2.2}
+\contentsline {subsection}{\numberline {4.2.3}Gaussian Function}{47}{subsection.4.2.3}
+\contentsline {section}{\numberline {4.3}New Quantitative Experiment}{47}{section.4.3}
+\contentsline {chapter}{\numberline {5}Results}{51}{chapter.5}
+\contentsline {section}{\numberline {5.1}Results of the Qualitative Experiment}{51}{section.5.1}
+\contentsline {section}{\numberline {5.2}Results of the First Quantitative Experiment}{51}{section.5.2}
+\contentsline {section}{\numberline {5.3}Results of the Second Quantitative Experiment}{62}{section.5.3}
+\contentsline {chapter}{\numberline {6}Conclusion \& Discussion}{67}{chapter.6}
+\contentsline {subsection}{\numberline {6.0.1}Limits of the Deadline Driven Behavior Framework}{67}{subsection.6.0.1}
+\contentsline {subsection}{\numberline {6.0.2}Optimization}{68}{subsection.6.0.2}
+\contentsline {subsection}{\numberline {6.0.3}Future Work}{68}{subsection.6.0.3}
+\contentsline {subsubsection}{Finding the optimal parameters}{68}{section*.94}
+\contentsline {subsubsection}{Needs}{68}{section*.95}
+\contentsline {chapter}{\numberline {A}Appendix A: Implementation}{69}{appendix.A}
+\contentsline {section}{\numberline {A.1}Implementing the Framework}{69}{section.A.1}
+\contentsline {section}{\numberline {A.2}Extending PIPE2}{69}{section.A.2}
+\contentsline {subsection}{\numberline {A.2.1}Sources, Sinks, Slots}{69}{subsection.A.2.1}
+\contentsline {subsection}{\numberline {A.2.2}Additional Modifications}{70}{subsection.A.2.2}
+\contentsline {section}{\numberline {A.3}MASON}{70}{section.A.3}
+\contentsline {section}{\numberline {A.4}Connecting MASON and the Situations Framework}{70}{section.A.4}
+\contentsline {chapter}{\numberline {B}Appendix B: Results}{71}{appendix.B}

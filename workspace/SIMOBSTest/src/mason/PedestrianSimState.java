@@ -19,9 +19,9 @@ public class PedestrianSimState extends SimState {
     public double height;
     public static final double DEFAULT_WIDTH = 500;
     public static final double DEFAULT_HEIGHT = 500;
-    public static final int NUMBER_OF_PEDESTRIANS = 100;
-    public boolean USE_SAMPLE_DATA = false;
-    public String SAMPLE_DIR = "C:/Documents and Settings/smitsds/workspace/matlab/converted tracks";
+    public static final int NUMBER_OF_PEDESTRIANS = 85;
+    public boolean USE_SAMPLE_DATA = true;
+    public String SAMPLE_DIR = "/home/djura/vakken/afstudeerstage/matlab/converted tracks";
     private int maxSteps;
 
     public PedestrianSimState(long seed) {
