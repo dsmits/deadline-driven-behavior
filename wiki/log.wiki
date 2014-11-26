@@ -13,6 +13,8 @@ https://deadline-driven-behavior.googlecode.com/svn/trunk/report/qualitative%20e
 
 Only I just realized I forgot to do the wander behavior. I think I'm going to do these behaviors first and insert wander later, otherwise I have to switch to windows again and back to use photoshop.
 
+I want to give an indication of how often the behaviors I describe are happening. I could use the tracked data for that but I have no idea of what kind of time interval that data is. I'm suspecting 10 minutes but I'm not sure of it. I also made a slight modification to the toiletsituation Petri net so that the two "friends" have a fixed place where one person waits and the other comes back to.
+
 
 =24-11-2014=
 I finished the example in the method section today.
