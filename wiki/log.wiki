@@ -1,5 +1,8 @@
 DISCLAIMER: The things that I write here are mainly to arrange my own thoughts and might not always be understandable for other people.
 
+=26-11-2014=
+Today I'm working on the quantitative experiment (and hopefully also the quantitative result). I think I'm going to make the simulation so that only the desired behavior is done, and then make a picture of that.
+
 =24-11-2014=
 I finished the example in the method section today.
 
