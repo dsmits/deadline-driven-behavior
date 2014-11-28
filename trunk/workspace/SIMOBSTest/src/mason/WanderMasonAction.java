@@ -12,7 +12,7 @@ public class WanderMasonAction extends AbstractBaseMasonAction {
     double speed;
     int steps;
     static final int INITIAL_STEPS = 20;
-    double maxRotation = 0.125 * Math.PI;
+    double maxRotation = 0.18 * Math.PI;
 
     public WanderMasonAction() {
         init();
@@ -21,7 +21,7 @@ public class WanderMasonAction extends AbstractBaseMasonAction {
     @Override
 	public void init() {
     	random = new Random();
-        speed = 0.7;
+        speed = 0.3;
         steps = INITIAL_STEPS;
         finished = false;		
 	}
@@ -29,6 +29,7 @@ public class WanderMasonAction extends AbstractBaseMasonAction {
     public void act(PedestrianSimState state, PedestrianAgent agent) {
     	double previousOrientation = agent.orientation2D();
     	if(steps == INITIAL_STEPS){
+    		finished = false;
         	//Choose initial direction
         	previousOrientation = random.nextDouble() * 2 * Math.PI;
         }
