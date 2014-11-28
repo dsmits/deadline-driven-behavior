@@ -17,8 +17,8 @@
 			<situationArea>
 				<x1>10</x1>
 				<y1>9</y1>
-				<x2>11</x2>
-				<y2>10</y2>
+				<x2>70</x2>
+				<y2>70</y2>
 			</situationArea>
 			<situationType>exclusive</situationType>
 
@@ -28,7 +28,8 @@
 
 		<situation>
 			<id>toiletSituation1</id>
-			<petriNetFile>petrinets/rotterdam/twoPeopleToiletSituation.xml</petriNetFile>
+			<petriNetFile>petrinets/rotterdam/twoPeopleToiletSituation.xml
+			</petriNetFile>
 			<situationArea>
 				<!--<x1>0</x1> <y1>10</y1> <x2>20</x2> <y2>20</y2> -->
 				<x1>0</x1>
@@ -39,10 +40,11 @@
 			<situationType>shared</situationType>
 			<estimatedTime>4</estimatedTime>
 		</situation>
-		
-				<situation>
+
+		<situation>
 			<id>toiletSituation2</id>
-			<petriNetFile>petrinets/rotterdam/twoPeopleToiletSituation.xml</petriNetFile>
+			<petriNetFile>petrinets/rotterdam/twoPeopleToiletSituation.xml
+			</petriNetFile>
 			<situationArea>
 				<!--<x1>0</x1> <y1>10</y1> <x2>20</x2> <y2>20</y2> -->
 				<x1>0</x1>
@@ -53,10 +55,11 @@
 			<situationType>shared</situationType>
 			<estimatedTime>4</estimatedTime>
 		</situation>
-		
-				<situation>
+
+		<situation>
 			<id>toiletSituation3</id>
-			<petriNetFile>petrinets/rotterdam/twoPeopleToiletSituation.xml</petriNetFile>
+			<petriNetFile>petrinets/rotterdam/twoPeopleToiletSituation.xml
+			</petriNetFile>
 			<situationArea>
 				<!--<x1>0</x1> <y1>10</y1> <x2>20</x2> <y2>20</y2> -->
 				<x1>0</x1>
@@ -67,10 +70,11 @@
 			<situationType>shared</situationType>
 			<estimatedTime>4</estimatedTime>
 		</situation>
-		
-				<situation>
+
+		<situation>
 			<id>toiletSituation4</id>
-			<petriNetFile>petrinets/rotterdam/twoPeopleToiletSituation.xml</petriNetFile>
+			<petriNetFile>petrinets/rotterdam/twoPeopleToiletSituation.xml
+			</petriNetFile>
 			<situationArea>
 				<!--<x1>0</x1> <y1>10</y1> <x2>20</x2> <y2>20</y2> -->
 				<x1>0</x1>
@@ -91,56 +95,72 @@
 
 		<situation>
 			<id>StandStill1</id>
-			<petriNetFile>petrinets/rotterdam/standStillSituation.xml</petriNetFile>
+			<petriNetFile>petrinets/rotterdam/standStillSituation.xml
+			</petriNetFile>
 
 			<situationArea>
 				<x1>0</x1>
 				<y1>3</y1>
 				<x2>100</x2>
-				<y2>4</y2>
+				<y2>100</y2>
 			</situationArea>
 
 			<situationType>exclusive</situationType>
 			<estimatedTime>5</estimatedTime>
 		</situation>
+
+<!-- 		<situation> -->
+<!-- 			<id>fastWander</id> -->
+<!-- 			<petriNetFile>petrinets/rotterdam/fastWanderSituation.xml -->
+<!-- 			</petriNetFile> -->
+
+<!-- 			<situationArea> -->
+<!-- 				<x1>0</x1> -->
+<!-- 				<y1>0</y1> -->
+<!-- 				<x2>500</x2> -->
+<!-- 				<y2>500</y2> -->
+<!-- 			</situationArea> -->
+
+<!-- 			<situationType>exclusive</situationType> -->
+<!-- 			<estimatedTime>5</estimatedTime> -->
+<!-- 		</situation> -->
+<!-- 		<situation> -->
+<!-- 			<id>slowWander</id> -->
+<!-- 			<petriNetFile>petrinets/rotterdam/slowWanderSituation.xml -->
+<!-- 			</petriNetFile> -->
+
+<!-- 			<situationArea> -->
+<!-- 				<x1>0</x1> -->
+<!-- 				<y1>0</y1> -->
+<!-- 				<x2>500</x2> -->
+<!-- 				<y2>500</y2> -->
+<!-- 			</situationArea> -->
+
+<!-- 			<situationType>exclusive</situationType> -->
+<!-- 			<estimatedTime>5</estimatedTime> -->
+<!-- 		</situation> -->
 		
-				<situation>
-                        <id>fastWander</id>
-                        <petriNetFile>petrinets/rotterdam/fastWanderSituation.xml</petriNetFile>
+<!-- 				<situation> -->
+<!-- 			<id>wander</id> -->
+<!-- 			<petriNetFile>petrinets/rotterdam/wanderSituation.xml -->
+<!-- 			</petriNetFile> -->
 
-                        <situationArea>
-                                <x1>0</x1>
-                                <y1>0</y1>
-                                <x2>500</x2>
-                                <y2>500</y2>
-                        </situationArea>
+<!-- 			<situationArea> -->
+<!-- 				<x1>0</x1> -->
+<!-- 				<y1>0</y1> -->
+<!-- 				<x2>500</x2> -->
+<!-- 				<y2>500</y2> -->
+<!-- 			</situationArea> -->
 
-                        <situationType>exclusive</situationType>
-                        <estimatedTime>5</estimatedTime>
-                </situation> 
-		<situation>
-                        <id>slowWander</id>
-                        <petriNetFile>petrinets/rotterdam/slowWanderSituation.xml</petriNetFile>
-
-                        <situationArea>
-                                <x1>0</x1>
-                                <y1>0</y1>
-                                <x2>500</x2>
-                                <y2>500</y2>
-                        </situationArea>
-
-                        <situationType>exclusive</situationType>
-                        <estimatedTime>5</estimatedTime>
-                </situation> 
+<!-- 			<situationType>exclusive</situationType> -->
+<!-- 			<estimatedTime>5</estimatedTime> -->
+<!-- 		</situation> -->
 
 
-	<!--	<situation>
-			<id>StandStill2</id>
-			<petriNetFile>petrinets/situationNet.xml</petriNetFile>
-
-<situationArea> <x1>0</x1> <y1>0</y1> <x2>150</x2> <y2>300</y2> </situationArea> 
-				<situationType>multi</situationType> <need> <className>needs</className> 
-				</need> <estimatedTime>5</estimatedTime> </situation> -->
+		<!-- <situation> <id>StandStill2</id> <petriNetFile>petrinets/situationNet.xml</petriNetFile> 
+			<situationArea> <x1>0</x1> <y1>0</y1> <x2>150</x2> <y2>300</y2> </situationArea> 
+			<situationType>multi</situationType> <need> <className>needs</className> 
+			</need> <estimatedTime>5</estimatedTime> </situation> -->
 	</situations>
 	<serverConfig>
 		<port>3333</port>
