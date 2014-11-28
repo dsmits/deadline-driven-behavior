@@ -1,6 +1,6 @@
 DISCLAIMER: The things that I write here are mainly to arrange my own thoughts and might not always be understandable for other people.
 
-TODO:
+== TODO:==
   * For final demonstration:
     * Fix coordinates of situations
     * Make sure that pedestrians stay within simulation area
