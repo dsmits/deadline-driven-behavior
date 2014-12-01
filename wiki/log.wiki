@@ -6,6 +6,8 @@ DISCLAIMER: The things that I write here are mainly to arrange my own thoughts a
     * Make sure that pedestrians stay within simulation area
 
 
+=1-12-2014=
+I added the rest of the pictures of the qualitative experiment.
 
 =28-11-2014=
 I just noticed the pillar situation is totally in the wrong place, that is probably why it barely showed up in the graphs.
