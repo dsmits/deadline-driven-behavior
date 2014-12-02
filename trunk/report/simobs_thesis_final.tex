@@ -616,7 +616,8 @@ This behavior happens almost constantly
 This behavior happens constantly. Although it is sometimes hard to assess whether a pedestrian is randomly wandering around because he has to wait or actually has a goal in mind.
 \end{itemize}
 
-In order to make a fair comparison, we searched for these behaviors in the tracked data, and drew their approximate trajectories, which can be found in figure \ref{fig:reallifetoilettrajectory}, \ref{fig:reallifepillartrajectory} \ref{fig:reallifestandstilltrajectory}, and \todo{add wander behavior}. The trajectories are divided into different steps.
+In order to make a fair comparison, we searched for these behaviors in the tracked data, and drew their approximate trajectories, which can be found in figure \ref{fig:reallifetoilettrajectory}, \ref{fig:reallifepillartrajectory} \ref{fig:reallifestandstilltrajectory}, and \ref{fig:reallifewandertrajectory}. The trajectories are divided into different steps.
+\todo[inline]{Modify toiletsituation so it has 4 steps just like in the results}
 
 \begin{figure}
 \centering
@@ -627,7 +628,7 @@ In order to make a fair comparison, we searched for these behaviors in the track
 \begin{figure}
 \centering
 \includegraphics[width=0.5\textwidth]{"./qualitative experiment pictures/zoomed_in_leanagainstpillar_reallife"}
-\caption{A typical sigmoid function}
+\caption{Approximate trajectory of a person going to a pillar and standing against it.}
 \label{fig:reallifepillartrajectory}
 \end{figure}
 \begin{figure}
@@ -636,6 +637,13 @@ In order to make a fair comparison, we searched for these behaviors in the track
 \caption{Approximate ¨trajectory¨ of a person standing still for a while and then moving on.}
 \label{fig:reallifestandstilltrajectory}
 \end{figure}
+\begin{figure}
+\centering
+\includegraphics[width=0.5\textwidth]{"./qualitative experiment pictures/wander_tracked_cropped"}
+\caption{Approximate trajectory of a person wandering around.}
+\label{fig:reallifewandertrajectory}
+\end{figure}
+
 
 In this qualitative experiment, we will try to imitate these behaviors using our Petri nets. We expect that our Petri nets will be capable of imitating these behaviors.
 
@@ -756,8 +764,37 @@ The last action is the default action when nothing else can be executed. It is e
 \section{Results of the Qualitative Experiment}
 \label{sec:qualitativeresults}
 \todo[inline]{Rewrite results of qualitative experiment}
-\todo[inline]{Show GUI! how do the pedestrians walk?}
 \todo[inline]{Say something about how often the behaviors take place in the simulation (will have to see how to compare real life and simulation time)}
+
+We ran a simulation that included the behaviors that we found in real-life, and observated the trajectories that the simulated behaviors made. The resulting trajectories can be found in figure \ref{fig:simulatedtoilettrajectory}, \ref{fig:simulatedpillartrajectory}, \ref{fig:simulatedstandstilltrajectory} and \ref{fig:simulatedwandertrajectory}. From a qualitative point of view, it seems that the behavior of one person going to the toilet and one person waiting could be mimicked very well. Also leaning against a pillar has a trajectory close to the real-life trajectory. Standing still is such a trivial move that it is hardly surprising that it could be mimicked in our simulation. Lastly, \ref{fig:simulatedwandertrajectory} shows the trajectory of a simulated agent wandering around. One thing that might stand out is that the trajectory in our simulation swerves around more than the real-life trajectory. Part of this behavior is easily modified by changing the parameters of the wandering behavior, but it also illustrates a more high-level difference between real-life "wandering around" and the behavior in our system. it seems that often, the people tracked in real-life have some kind of determination to go to a certain place. The behavior is not as random as our simulated behavior. This is not a weakness of our system though, but merely indicates that more inquiry needs to be done into peoples' intentions in a airport-type scenario. Unfortunately this is outside the scope of our research.
+
+\begin{figure}[h!]
+\centering
+\includegraphics[width=0.7\textwidth]{"./qualitative experiment pictures/simulated_gototoilet_cropped"}
+\caption{Approximate trajectories of one person going to the toilet, other person waiting.}
+\label{fig:simulatedtoilettrajectory}
+\end{figure}
+\begin{figure}[h!]
+\centering
+\includegraphics[width=0.7\textwidth]{"./qualitative experiment pictures/simulated_pillarsituation_cropped"}
+\caption{Approximate trajectory of a person going to a pillar and standing against it.}
+\label{fig:simulatedpillartrajectory}
+\end{figure}
+\begin{figure}[h!]
+\centering
+\includegraphics[width=0.7\textwidth]{"./qualitative experiment pictures/simulated_standstillsituation_cropped"}
+\caption{Approximate ¨trajectory¨ of a person standing still for a while and then moving on.}
+\label{fig:simulatedstandstilltrajectory}
+\end{figure}
+\begin{figure}[h!]
+\centering
+\includegraphics[width=0.7\textwidth]{"./qualitative experiment pictures/simulated_wander_cropped"}
+\caption{Approximate ¨trajectory¨ of a person wandering around.}
+\label{fig:simulatedwandertrajectory}
+\end{figure}
+\clearpage
+
+
 
 %\todo[inline]{The following is only a rough draft}
 %It is very difficult to determine whether one has been successful at modeling lifelike behavior. What we are going to do is %study footage of real-life behavior at Rotterdam Airport, and pick out various behavioral patterns. Then, we are going to %model these patterns with our system.
@@ -1028,25 +1065,40 @@ Gaussian & --\\
 
 \chapter{Conclusion \& Discussion}
 \label{chap:conclusiondiscusssion}
-The results are different from what we expected, but logical nonetheless. We expected the sigmoid function to have the ideal curve to reflect the behavior of the pedestrians in Rotterdam airport but
-\todo[inline]{Say something about that changing the probabilities of the places is probably only necessary for the sink transitions}
+In this research we managed to create a system with which behavior for an airport-type or deadline-driven scenario can be easily designed with Petri-nets and placed in an environment by drawing the areas in which this behavior should take place. In this chapter we will first discuss what answers our research can give to our research question and its subquestions. Secondly we will discuss the limits of our system. Lastly, we will provide a few directions followup research could take.
+
+\section{How Can an Intelligent Virtual Environment for Simulated Pedestrians be Extended to Deal with Time-Restricted Destinations?}
+In this section we are going to answer our research question. This will be done by first answering each of the subquestions. We will list them one by one.
+\subsection{To What Extent Can Pedestrians be Simulated Realistically?}
+In our research we compared a number of key behaviors found at Rotterdam Airport with their simulated counterparts in our system. In terms of the trajectories these agents follow, the simulated pedestrians matched up with the trajectories of actual pedestrians. 
+
+\subsection{How Do We Let the Pedestrians Make Decisions Based on Time Left to Reach the Destination?}
+When deciding on behaviors, the pedestrians are guided by how much time is left after a behavior has been executed (variable $\tau$). This variable is used together with the utility functions to compute the likelihood of a behavior occurring at that moment. From the experiments can be concluded that a Gaussian goal utility function combined with a sigmoid non-goal utility function gives the best result in terms of deadline drivenness and emergent relaxed and hurried behavior.
+
+\subsection{Is it Possible to Have Emergent Behavior Based on Time Restrictions}
+As stated in the answer to the previous question, when using the right combination of utility functions, hurried and relaxed behavior does emerge. The slower, more time-consuming behaviors are preferred when the deadline is still far away, while quick behaviors are preferred when more time has passed. From this we can conclude that emergent behavior based on time restrictions is possible with our system.
+
+\subsection{Is it Possible to Quickly Generate These Virtual Pedestrians Without Much Tweaking for Each Environment?}
+By using Petri-nets combined with the situations framework, behaviors can be designed once and used in many different environments. The behavior of the pedestrians will then emerge from the combination of situations defined in the environment and a predefined goal for every pedestrian. In an airport-type scenario, the goal for almost every pedestrian is the same, namely reaching their plane before it leaves. The goal of those pedestrians can therefore be defined once.
+
+%
+%
+%
+%The results are different from what we expected, but logical nonetheless. We expected the sigmoid function to have the ideal curve to reflect the behavior of the pedestrians in Rotterdam airport but
+%\todo[inline]{Say something about that changing the probabilities of the places is probably only necessary for the sink transitions}
 
 
-\subsection{Limits of the Deadline Driven Behavior Framework}
-Modeling pedestrian behavior with our method does have its limits. First of all, the movements of the agents are designed explicitly through linking together basic movements in the Petri nets. As a consequence, interaction with other agents is quite static, and not directly responsive to surrounding agents. Consequently, our method is not particularly suitable for situations in which the pedestrians have to move very close together, such as when a large amount of pedestrians has to move through a narrow space and have to move closer together or form a queue. When pedestrians move very close together, their behavior will become more uniform, and it would be more sensible to look at the group as a whole, and not as individuals. A more suitable approach would then for example be to look at crowds as particles in a liquid, like Moore, Ali, Mehran and Shah have done \cite{Moore:2011:VCS:2043174.2043192}. Their supposition is that people in crowds seem to move according to the flow, just like particles in a liquid.
-\todo[inline]{Integrate the text below and make it better}
-Our framework is focused on deciding if a behavior will leave enough time to do the goal behavior before the deadline. Because of the way we did this behaviors that don't take long will always have a slight preference over behavior that take a larger amount of time. There are cases in which this approach does not result in realistic behavior. For example, when a pedestrian has so much time to reach the deadline that even the "relaxed" behavior is possible many times in succession without missing the deadline, people in real life will probably have a large preference for many of the time consuming behavior over the quicker behavior. For example, people will prefer walking slow greatly over running. This preference of slow behavior over fast behavior cannot be implemented in our system as such.
+\section{Limits of the Deadline Driven Behavior Framework}
+Modeling pedestrian behavior with our method does have its limits. First of all, the movements of the agents are designed explicitly through linking together basic movements in the Petri nets. As a consequence, interaction with other agents is quite static, and not directly responsive to surrounding agents. Consequently, our method is not particularly suitable for situations in which the pedestrians have to move very close together, such as when a large amount of pedestrians has to move through a narrow space and have to move closer together or form a queue. When pedestrians move very close together, their behavior will become more uniform, and it would be more sensible to look at the group as a whole, and not as individuals. A more suitable approach would then for example be to look at crowds as particles in a liquid, like Moore, Ali, Mehran and Shah have done \cite{Moore:2011:VCS:2043174.2043192}. Their supposition is that people in crowds seem to move according to the flow, just like particles in a liquid. However, in the type of scenarios our system is made to simulate, it is not a problem that crowd behavior isn't easily designed. When observing the footage, we noticed a lot of individual behavior, or behaviors in pairs, and crowding behavior was virtually absent.
 
-\subsection{Optimization}
-It is very well possible that the results found in our research are far from the optimal results we could have gotten with our framework.  Machine learning could be used to attain the optimal deadline driven behavior. However, this is beyond the scope of our research.
+
 
 \subsection{Future Work}
-There are several ways in which the deadline driven behavior framework can be extended. For example, currently, the probabilities for entering situations are only dependent on how close the agent is to the deadline. So, no matter what time of day it is, the pedestrians will always have the same probability to do a certain action. However, in real life, a person's probabilities for certain behavior is also largely dependent on their daily cycle.
+There are a number of directions research regarding our type of framework can take. First of all, the number of behaviors used to simulate the pedestrians on Rotterdam Airport was very limited, so it could be beneficial to add more kinds of behaviors to the scenario. Furthermore, the system could be tested with more complicated Petri-net designs. The choice to use Petri-nets gives the ability to design very complicated behavior, that takes a lot of factors into account. For example, the fact that Petri nets can contain multiple tokens gives the opportunity to work with resources. Some behavior could be executed only when certain resources are available or acquired. For example, a behavior such as having a drink could only be executed when a pedestrian has bought a drink beforehand, and tokens could be used to keep track of how many drinks a pedestrian has available.
 
-\subsubsection{Finding the optimal parameters}
+There are also several ways in which the deadline driven behavior framework can be extended or improved. For example, currently, the probabilities for entering situations are only dependent on how close the agent is to the deadline. So, no matter what time of day it is, the pedestrians will always have the same probability to do a certain action. However, in real life, a person's probabilities for certain behavior is also largely dependent on their daily cycle. Ideally, a pedestrian's propensity to execute certain actions, such as eating, should vary dependent on whether the individual has recently executed that action, and their daily cycle. In other words, it would be beneficial to introduce \emph{needs} to the framework. By adding the concept of needs, we would be better able to model the daily flow of people in a typical public area. We can vary the needs according to the time of day and whether this need has been fulfilled recently. It is not definite though whether the system needs to be changed for this to be possible. It might be possible to design Petri-nets that will be able to deal with the concept of needs.
 
-\subsubsection{Needs}
-Ideally, a pedestrian's propensity to execute certain actions, such as eating, should vary dependent on whether the individual has recently executed that action, and their daily cycle. In other words, we would like to introduce \emph{needs} to the framework. By introducing the concept of needs, we would be better able to model the daily flow of people in a typical public area. We can vary the needs according to the time of day and whether this need has been fulfilled recently.
+Another improvement the system would benefit from would be to change the way the goal utility function is used. In our current setup, the goal utility function sometimes stands in the way of the emergent relaxed and hurried behavior. Cumulatively, the probability of going to the goal becomes high soon in the simulation, unless a goal utility function is used with only very low values. Because there is nothing to be done after the pedestrian reaches its goal, this means they remain idle for a large part of the simulation. It is very likely that this behavior could be improved if the time for a pedestrian to go to its goal is sampled beforehand from a probability distribution function, and then let only the non-goal utility handle the behavior before that sampled point in time.
 
 \appendix
 
