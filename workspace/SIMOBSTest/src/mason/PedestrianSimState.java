@@ -75,8 +75,15 @@ public class PedestrianSimState extends SimState {
     }
 
     private void createPillars() {
-        // TODO: Figure out pillar locations
-        pillars.setObjectLocation(new Pillar(), new Double2D(10.0820, 9.6014));
+        pillars.setObjectLocation(new Pillar(), new Double2D(13.5, 19.39));
+        pillars.setObjectLocation(new Pillar(), new Double2D(17.35, 19.39));
+        pillars.setObjectLocation(new Pillar(), new Double2D(21.70, 19.39));
+        pillars.setObjectLocation(new Pillar(), new Double2D(26.10, 19.39));
+        pillars.setObjectLocation(new Pillar(), new Double2D(30.45, 19.39));
+        pillars.setObjectLocation(new Pillar(), new Double2D(34.85, 19.39));
+        pillars.setObjectLocation(new Pillar(), new Double2D(39.0, 19.39));
+        pillars.setObjectLocation(new Pillar(), new Double2D(43.50, 19.39));
+        pillars.setObjectLocation(new Pillar(), new Double2D(48.14, 19.39));
         //pillars.setObjectLocation(new Pillar(), new Double2D(20.0, 9.6014));
     }
 

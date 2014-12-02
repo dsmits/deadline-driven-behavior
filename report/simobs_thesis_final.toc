@@ -29,24 +29,26 @@
 \contentsline {section}{\numberline {4.1}Qualitative Experiment}{43}{section.4.1}
 \contentsline {section}{\numberline {4.2}Quantitative Experiment}{44}{section.4.2}
 \contentsline {subsection}{\numberline {4.2.1}Sigmoid Function}{46}{subsection.4.2.1}
-\contentsline {subsection}{\numberline {4.2.2}Linear Function}{46}{subsection.4.2.2}
+\contentsline {subsection}{\numberline {4.2.2}Linear Function}{47}{subsection.4.2.2}
 \contentsline {subsection}{\numberline {4.2.3}Gaussian Function}{47}{subsection.4.2.3}
-\contentsline {section}{\numberline {4.3}New Quantitative Experiment}{47}{section.4.3}
+\contentsline {section}{\numberline {4.3}New Quantitative Experiment}{48}{section.4.3}
 \contentsline {chapter}{\numberline {5}Results}{51}{chapter.5}
 \contentsline {section}{\numberline {5.1}Results of the Qualitative Experiment}{51}{section.5.1}
-\contentsline {section}{\numberline {5.2}Results of the First Quantitative Experiment}{51}{section.5.2}
-\contentsline {section}{\numberline {5.3}Results of the Second Quantitative Experiment}{62}{section.5.3}
-\contentsline {chapter}{\numberline {6}Conclusion \& Discussion}{67}{chapter.6}
-\contentsline {subsection}{\numberline {6.0.1}Limits of the Deadline Driven Behavior Framework}{67}{subsection.6.0.1}
-\contentsline {subsection}{\numberline {6.0.2}Optimization}{68}{subsection.6.0.2}
-\contentsline {subsection}{\numberline {6.0.3}Future Work}{68}{subsection.6.0.3}
-\contentsline {subsubsection}{Finding the optimal parameters}{68}{section*.94}
-\contentsline {subsubsection}{Needs}{68}{section*.95}
-\contentsline {chapter}{\numberline {A}Appendix A: Implementation}{69}{appendix.A}
-\contentsline {section}{\numberline {A.1}Implementing the Framework}{69}{section.A.1}
-\contentsline {section}{\numberline {A.2}Extending PIPE2}{69}{section.A.2}
-\contentsline {subsection}{\numberline {A.2.1}Sources, Sinks, Slots}{69}{subsection.A.2.1}
-\contentsline {subsection}{\numberline {A.2.2}Additional Modifications}{70}{subsection.A.2.2}
-\contentsline {section}{\numberline {A.3}MASON}{70}{section.A.3}
-\contentsline {section}{\numberline {A.4}Connecting MASON and the Situations Framework}{70}{section.A.4}
-\contentsline {chapter}{\numberline {B}Appendix B: Results}{71}{appendix.B}
+\contentsline {section}{\numberline {5.2}Results of the First Quantitative Experiment}{54}{section.5.2}
+\contentsline {section}{\numberline {5.3}Results of the Second Quantitative Experiment}{65}{section.5.3}
+\contentsline {chapter}{\numberline {6}Conclusion \& Discussion}{71}{chapter.6}
+\contentsline {section}{\numberline {6.1}How Can an Intelligent Virtual Environment for Simulated Pedestrians be Extended to Deal with Time-Restricted Destinations?}{71}{section.6.1}
+\contentsline {subsection}{\numberline {6.1.1}To What Extent Can Pedestrians be Simulated Realistically?}{71}{subsection.6.1.1}
+\contentsline {subsection}{\numberline {6.1.2}How Do We Let the Pedestrians Make Decisions Based on Time Left to Reach the Destination?}{72}{subsection.6.1.2}
+\contentsline {subsection}{\numberline {6.1.3}Is it Possible to Have Emergent Behavior Based on Time Restrictions}{72}{subsection.6.1.3}
+\contentsline {subsection}{\numberline {6.1.4}Is it Possible to Quickly Generate These Virtual Pedestrians Without Much Tweaking for Each Environment?}{72}{subsection.6.1.4}
+\contentsline {section}{\numberline {6.2}Limits of the Deadline Driven Behavior Framework}{72}{section.6.2}
+\contentsline {subsection}{\numberline {6.2.1}Future Work}{73}{subsection.6.2.1}
+\contentsline {chapter}{\numberline {A}Appendix A: Implementation}{75}{appendix.A}
+\contentsline {section}{\numberline {A.1}Implementing the Framework}{75}{section.A.1}
+\contentsline {section}{\numberline {A.2}Extending PIPE2}{75}{section.A.2}
+\contentsline {subsection}{\numberline {A.2.1}Sources, Sinks, Slots}{75}{subsection.A.2.1}
+\contentsline {subsection}{\numberline {A.2.2}Additional Modifications}{76}{subsection.A.2.2}
+\contentsline {section}{\numberline {A.3}MASON}{76}{section.A.3}
+\contentsline {section}{\numberline {A.4}Connecting MASON and the Situations Framework}{76}{section.A.4}
+\contentsline {chapter}{\numberline {B}Appendix B: Results}{77}{appendix.B}
