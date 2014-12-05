@@ -45,11 +45,3 @@
 \contentsline {subsection}{\numberline {6.1.5}The Benefits of Petri nets}{48}{subsection.6.1.5}
 \contentsline {section}{\numberline {6.2}Limits of the Deadline Driven Behavior Framework}{48}{section.6.2}
 \contentsline {subsection}{\numberline {6.2.1}Future Work}{49}{subsection.6.2.1}
-\contentsline {chapter}{\numberline {A}Appendix A: Implementation}{51}{appendix.A}
-\contentsline {section}{\numberline {A.1}Implementing the Framework}{51}{section.A.1}
-\contentsline {section}{\numberline {A.2}Extending PIPE2}{51}{section.A.2}
-\contentsline {subsection}{\numberline {A.2.1}Sources, Sinks, Slots}{51}{subsection.A.2.1}
-\contentsline {subsection}{\numberline {A.2.2}Additional Modifications}{51}{subsection.A.2.2}
-\contentsline {section}{\numberline {A.3}MASON}{51}{section.A.3}
-\contentsline {section}{\numberline {A.4}Connecting MASON and the Situations Framework}{51}{section.A.4}
-\contentsline {chapter}{\numberline {B}Appendix B: Results}{53}{appendix.B}
