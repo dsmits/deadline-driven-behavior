@@ -5,6 +5,13 @@ DISCLAIMER: The things that I write here are mainly to arrange my own thoughts a
     * Fix coordinates of situations
     * Make sure that pedestrians stay within simulation area
 
+=5-12-2014=
+Today I'm going run through the thesis and check what needs to be done. I also made the margins smaller so there is more space for text and hopefully the pictures will be more in between pieces of text instead of all at the end of the chapter. It worked for some pictures but not all so I still have to play around a bit with the pictures.
+I'm making a list of stuff in decreasing priority of what still needs to be done about the thesis. I hope I'll be able to add a few pages because with the smaller margins my thesis is only 50 pages long.
+What needs to be done:
+  # rearrange/rewrite related work so it's more consistent
+  # rewrite second part of introduction
+  Put finishing touch on research questions
 
 =1-12-2014=
 I added the rest of the pictures of the qualitative experiment.
