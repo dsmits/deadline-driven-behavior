@@ -1103,40 +1103,40 @@ Another improvement the system would benefit from would be to change the way the
 
 \appendix
 
-\chapter{Appendix A: Implementation}
-In the appendix we will go into some of the details of implementation of the deadline driven behavior framework. We will also give some directions about how to use our implementation to simulate your own scenario, or to extend it yourself.
-
-
-\section{Implementing the Framework}
-
-
-\section{Extending PIPE2}
-
-\subsection{Sources, Sinks, Slots}
-In order to facilitate transporting tokens between Petri nets, we created classes of transitions with added functionality to keep track of how these nets are connected. These transitions are called \emph{sinks} and \emph{sources}. A source is a transition that has no incoming connections, only outgoing, with the result that this kind of transition produces new tokens without consuming any, increasing the total amount of tokens in the Petri net. A sink is exactly the opposite: it only consumes tokens and does not produce, effectively decreasing the amount of tokens in the network. Subsequently, we can use these special classes of transitions to transport tokens from one net to another. In order to keep track of how the nets are connected, we pair a sink with every source transition. These pairs are put together in a class called \emph{Slot}.
-
-\subsection{Additional Modifications}
-
-
-\section{MASON}
-
-\section{Connecting MASON and the Situations Framework}
-We deliberately divided our framework into two main modules. Because the situations framework has been implemented with the prospect of interfacing it with other simulations we decided to have the two main units communicate through socket connections. We have the situations side keep track of a thread pool. Every time a pedestrian from the MASON side connects to the situations side, a check is done whether this MASON pedestrian has connected to the Situations before. If this is not the case, another thread will be created to handle the connection to this new pedestrian.  Figure \ref{framework}  shows the global structure. Here you can see how the two interact.
-\todo[inline]{Finish this part about MASON}
-\begin{itemize}
-\item Blabla thread pool
-\item blabla 1 kant is niet multithreaded maar whatever
-\item ...
-\end{itemize}
-
-
-\chapter{Appendix B: Results}
-\begin{figure}
-\centering
-\includegraphics[width=250pt]{framework}
-\caption{The global workings of our framework}
-\label{framework}
-\end{figure}
+%\chapter{Appendix A: Implementation}
+%In the appendix we will go into some of the details of implementation of the deadline driven behavior framework. We will also give some directions about how to use our implementation to simulate your own scenario, or to extend it yourself.
+%
+%
+%\section{Implementing the Framework}
+%
+%
+%\section{Extending PIPE2}
+%
+%\subsection{Sources, Sinks, Slots}
+%In order to facilitate transporting tokens between Petri nets, we created classes of transitions with added functionality to keep track of how these nets are connected. These transitions are called \emph{sinks} and \emph{sources}. A source is a transition that has no incoming connections, only outgoing, with the result that this kind of transition produces new tokens without consuming any, increasing the total amount of tokens in the Petri net. A sink is exactly the opposite: it only consumes tokens and does not produce, effectively decreasing the amount of tokens in the network. Subsequently, we can use these special classes of transitions to transport tokens from one net to another. In order to keep track of how the nets are connected, we pair a sink with every source transition. These pairs are put together in a class called \emph{Slot}.
+%
+%\subsection{Additional Modifications}
+%
+%
+%\section{MASON}
+%
+%\section{Connecting MASON and the Situations Framework}
+%We deliberately divided our framework into two main modules. Because the situations framework has been implemented with the prospect of interfacing it with other simulations we decided to have the two main units communicate through socket connections. We have the situations side keep track of a thread pool. Every time a pedestrian from the MASON side connects to the situations side, a check is done whether this MASON pedestrian has connected to the Situations before. If this is not the case, another thread will be created to handle the connection to this new pedestrian.  Figure \ref{framework}  shows the global structure. Here you can see how the two interact.
+%\todo[inline]{Finish this part about MASON}
+%\begin{itemize}
+%\item Blabla thread pool
+%\item blabla 1 kant is niet multithreaded maar whatever
+%\item ...
+%\end{itemize}
+%
+%
+%\chapter{Appendix B: Results}
+%\begin{figure}
+%\centering
+%\includegraphics[width=250pt]{framework}
+%\caption{The global workings of our framework}
+%\label{framework}
+%\end{figure}
 
 
 
