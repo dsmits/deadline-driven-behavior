@@ -11,7 +11,7 @@ I'm making a list of stuff in decreasing priority of what still needs to be done
 What needs to be done:
   # rearrange/rewrite related work so it's more consistent
   # rewrite second part of introduction
-  Put finishing touch on research questions
+  # Put finishing touch on research questions
 
 =1-12-2014=
 I added the rest of the pictures of the qualitative experiment.
