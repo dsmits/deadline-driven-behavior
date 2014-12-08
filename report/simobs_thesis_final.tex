@@ -8,6 +8,7 @@
 \usepackage{hyperref, comment}
 \usepackage{algpseudocode, algorithm, amsmath}
 \usepackage{amssymb}
+\usepackage[tikz]{bclogo}
 \begin{document}
 \frontmatter
 
@@ -38,7 +39,7 @@ Djura S. Smits
 Master's thesis\\
 % [CHANGE] Whether your Bachelor thesis is 6 ECTS (regular) or 9 ECTS (Honours
 % programme).
-Credits: 48 EC
+Credits: 42 EC
 
 \vspace{0.5cm}
 
@@ -92,6 +93,7 @@ June 24th, 2010
 
 \graphicspath{{.}{../results}}
 
+
 %\begin{document}
 \listoftodos
 \newpage
@@ -120,25 +122,37 @@ Artificial intelligence is the branch of computer science that aims to create or
 \begin{figure}[h]
 \begin{center}
 \includegraphics[width=200pt]{pedestrians.jpg}
-\label{pedestrianpicture}
 \end{center}
 \caption{People going about their everyday business}
+\label{pedestrianpicture}
 \end{figure}
-For the last decade or so, there has been an increased interest in reinforcing security in public environments. The recent advances in technology have increased the feasibility of many different methods. An important approach in this area of interest is the automatic detection of suspicious behavior from camera images. The approaches in this area can vary, but one important aspect that they have in common, is the necessity of camera footage to be able to test the approaches. Since it can be extremely tedious to collect and annotate this data it would be very rewarding to be able to generate testing data on the fly. It is beyond the scope of our research to get into what suspicious behavior looks like, so we like to focus on the behavior of "non-suspicious" people. Assuming that so-called "normal" people greatly outnumber terrorists, these suspicious people could be added in later with ease. In other words, we would like to be able to quickly generate crowds of people doing normal, everyday behavior.\\
-Simulation of pedestrians is a widely studied subject. Many models have been created for the various characteristics that arise when multiple human-like agents move around in the same area. Many uses can be thought of for pedestrian simulation. An important purpose for this could be for example to easily create a large amount of "normal" pedestrians (as opposed to "suspicious" pedestrians).  Suspicious pedestrians whose behavior is scripted by hand can then be placed in the environment to easily create artificial testing data for suspicious behavior detection algorithms and the like. Furthermore, the addition of simulated virtual pedestrians can add realism to otherwise mostly empty battlefield scenarios.\\
-Another way to look at the behavior of groups of pedestrians is to explicitly specify how they behave when they enter a certain type of situation. In our approach, we would like to be able to specify behavior by drawing situations on an environment. For example, when a food stand is present in the area, we would like to be able to indicate that the agents that are placed in the neighborhood of that stand are able to do certain food-buying behavior.
+For the last decade or so, there has been an increased interest in reinforcing security in public environments. The recent advances in technology have increased the feasibility of many different methods. An important approach in this area of interest is the automatic detection of suspicious behavior from camera images. The approaches in this area can vary, but one important aspect that they have in common, is the necessity of camera footage to be able to test the approaches. Since it can be extremely tedious to collect and annotate this data it would be very rewarding to be able to generate annotated testing data automatically. We would like to focus on the behavior of non-suspicious people, because we assume these usually greatly outnumber terrorists or other suspicious individuals. People with suspicious behavior could then later be scripted and added in by hand. In other words, we would like to be able to quickly generate crowds of people doing normal, everyday behavior.\\
+Simulation of pedestrians is a widely studied subject. Many models have been created for the various characteristics that arise when multiple human-like agents move around in the same area. These models approach the problem from different kinds of angles. For some purposes such as simulating panic situations, it is important to view the pedestrians as a large crowd. These types of simulations are mainly concerned with with how people find the exit out of a building and how they move through doors and other openings. Other researches focus more on treating the pedestrians as individuals, and crafting a specific behavior for every indivual. In between these methods there is a whole spectrum of approaches, some of which focus on larger groups of people and general movement, others focus more on smaller groups or individuals and treat more sophisticated behavior.\\
+\begin{bclogo}[logo=\bctrombone]{SIMOBS}
+SIMOBS is a plugin for the military simulation toolkit VR-forces (\url{http://www.mak.com/products/simulate/vr-forces.html} which is a tool for generating and executing battlefield scenarios. SIMOBS is developed by Philip Kerbush at the Modelling, Simulation and Gaming department at TNO to quickly generate inhabitants of scenario to add realism to the otherwise mostly empty simulated areas. SIMOBS allows users to quickly draw residential areas on a map to indicate where the simulated people should live. It is also possible to indicate where these people should go to work. The behavior of these inhabitants is determined by \emph{Daily Motion Patterns}, which specify where certain types of inhabitants need to go at specified times. SIMOBS formed the starting point of our research.
+\end{bclogo}
 
-An additional requirement is that we would like to indicate a certain \emph{deadline} for an agent which is the time at which its goal is not reachable any more. This approach results in roughly two types of behavior, \emph{hurried} and \emph{relaxed}. When the deadline approaches, less and less actions are likely to be done, since actions that take much time would result in not reaching the goal in time.\\
-We validated our model by mimicking certain behaviors found on Rotterdam airport. We chose Rotterdam airport because time restrictions are very prevalent in a departure hall like the one on Rotterdam airport.
+\begin{figure}
+\begin{center}
+\includegraphics[width=.5\textwidth]{rotterdam_airport_pictures/Rotterdamairport.jpg}
 
-So, to summarize, we would like to create a system that enables a user to easily place large amounts of more or less realistically behaving people in an environment. These people should behave in a way appropriate for the environment. Furthermore, the behavior should be guided by the fact that every pedestrian has a fixed deadline for when he has to do his final activity. Ideally, this will lead to a distinction between hurried and relaxed behavior, depending on whether the deadline is near or still far away. In order to facilitate defining the behavior, we will create a tool to easily design these behaviors as Petri-nets. Petri-nets are a mathematical modelling language mainly used for describing distributed processes. In this thesis we will show that they are also suitable for modelling human behavior, especially when it involves interactions with multiple people.
-\todo[inline]{Describe the promise for the utopia of my research}
+\end{center}
+\caption{The main hall of Rotterdam Airport.}
+\label{fig:airportimage}
+\end{figure}
+
+Our research is intended to help inhabit simulated scenarios developed at the \emph{Modelling, Simulation and Gaming} department at TNO and is an extension of their SIMOBS (simulated observables) project. The department \emph{Intelligent Imaging} has been so kind to provide both camera footage and manually tracked locations of pedestrians at the main hall at Rotterdam airport (pictured in figure \ref{fig:airportimage}). This footage has also been used to research how to automatically spot suspicious behavior. That is why we attempt to find an approach to suit an airport type scenario. Our results can then be compared to the available footage. Because of the nature of the footage and the desire of TNO to quickly generate large quantities of non-suspicious people in everyday environments, we chose to tackle the problem of pedestrian simulation with an approach that lies somewhere in the middle of the spectrum of approaches. The behavior of the simulated people should not be designed individually per person, but our approach should result in more varied behavior than only the general movement of crowds through openings. We would like to be able to specify behaviors by indicating them in the environment, instead of specifying them per individual. For example, when a food stand is present in the area, we would like to be able to indicate that the agents that are placed in the neighborhood of that stand are able to do certain food-buying behavior.
+An additional requirement is that we would like to indicate a certain \emph{deadline} for an agent which is the time at which its goal is not reachable any more. This deadline-drivenness should result in roughly two types of behavior, \emph{hurried} and \emph{relaxed}. When the deadline approaches, less and less actions are likely to be done, since actions that take much time would result in not reaching the goal in time.\\
+Keeping these requirements in mind we created a system where we design what we call \emph{situations} in an environment. These are areas where certain behavior is appropriate. The design of the behavior is facilitated by our choice to model them in \emph{Petri-nets}, which is a mathematical modelling language used to model distributed systems. Moreover, the choice of the pedestrians to execute certain behaviors should be weighted by how much time they still have left to reach their goal, which is to check in, in our airport-type scenario.
+We will mimick behaviors that we found at Rotterdam airport, and then validate them using the real-life footage. We will also show that Petri nets are particularly suitable for designing the type of human behavior we need, especially when a situation requires interaction between multiple individuals.
+
+
+%So, to summarize, we would like to create a system that enables a user to easily place large amounts of more or less realistically behaving people in an environment. These people should behave in a way appropriate for the environment. Furthermore, the behavior should be guided by the fact that every pedestrian has a fixed deadline for when he has to do his final activity. Ideally, this will lead to a distinction between hurried and relaxed behavior, depending on whether the deadline is near or still far away. In order to facilitate defining the behavior, we will create a tool to easily design these behaviors as Petri-nets. Petri-nets are a mathematical modelling language mainly used for describing distributed processes. In this thesis we will show that they are also suitable for modelling human behavior, especially when it involves interactions with multiple people.
+%\todo[inline]{Describe the promise for the utopia of my research}
 
 
 %In many fields using simulation, the environments are empty except for the absolutely necessary parts of the simulation. However, the environment would look much more realistic if actual civilians would walk around. That is why SIMOBS was developed. SIMOBS is a plugin for the VR-Forces simulation application that makes it easy to quickly generate residential areas inhabited by families, and factories where these civilians go to work. However, at the moment these virtual pedestrians only walk from their houses to their work and back at fixed points in time. The purpose of this thesis is to extend this SIMOBS plugin to create more realistic behavior.
 
-\section{SIMOBS}
-SIMOBS is a plugin for the military simulation toolkit VR-forces (\url{http://www.mak.com/products/vrforces.php} It is a tool for generating and executing battlefield scenarios. SIMOBS is a plugin developed to quickly generate inhabitants of an area by drawing residential areas and plants on the map in VR-forces. The behavior of these inhabitants is determined by \emph{Daily Motion Patterns}, which specify where certain types of inhabitants need to go at specified times. This is the idea that forms the basis for our research.
 
 
 %\todo[inline]{Tweak research question.}
