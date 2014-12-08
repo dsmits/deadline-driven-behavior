@@ -128,7 +128,8 @@ Artificial intelligence is the branch of computer science that aims to create or
 \end{figure}
 For the last decade or so, there has been an increased interest in reinforcing security in public environments. The recent advances in technology have increased the feasibility of many different methods. An important approach in this area of interest is the automatic detection of suspicious behavior from camera images. The approaches in this area can vary, but one important aspect that they have in common, is the necessity of camera footage to be able to test the approaches. Since it can be extremely tedious to collect and annotate this data it would be very rewarding to be able to generate annotated testing data automatically. We would like to focus on the behavior of non-suspicious people, because we assume these usually greatly outnumber terrorists or other suspicious individuals. People with suspicious behavior could then later be scripted and added in by hand. In other words, we would like to be able to quickly generate crowds of people doing normal, everyday behavior.\\
 Simulation of pedestrians is a widely studied subject. Many models have been created for the various characteristics that arise when multiple human-like agents move around in the same area. These models approach the problem from different kinds of angles. For some purposes such as simulating panic situations, it is important to view the pedestrians as a large crowd. These types of simulations are mainly concerned with with how people find the exit out of a building and how they move through doors and other openings. Other researches focus more on treating the pedestrians as individuals, and crafting a specific behavior for every indivual. In between these methods there is a whole spectrum of approaches, some of which focus on larger groups of people and general movement, others focus more on smaller groups or individuals and treat more sophisticated behavior.\\
-\begin{bclogo}[logo=\bctrombone]{SIMOBS}
+\begin{bclogo}[logo=\bctrombone]{TNO \& SIMOBS}
+This research was done as part of an internship at TNO, the Netherlands Organisation for Applied Scientific Research.  TNO is an independent organization founded to enable business and government to apply knowledge. More information can be found at \url{http://www.tno.nl}.\\\\
 SIMOBS is a plugin for the military simulation toolkit VR-forces (\url{http://www.mak.com/products/simulate/vr-forces.html} which is a tool for generating and executing battlefield scenarios. SIMOBS is developed by Philip Kerbush at the Modelling, Simulation and Gaming department at TNO to quickly generate inhabitants of scenario to add realism to the otherwise mostly empty simulated areas. SIMOBS allows users to quickly draw residential areas on a map to indicate where the simulated people should live. It is also possible to indicate where these people should go to work. The behavior of these inhabitants is determined by \emph{Daily Motion Patterns}, which specify where certain types of inhabitants need to go at specified times. SIMOBS formed the starting point of our research.
 \end{bclogo}
 
@@ -192,6 +193,8 @@ Ideally, our model should lead to behavior that we have not expressly implemente
 
 \end{itemize}
 
+In the following chapters we will first discuss the relevant literature that helped us develop our method that will answer these questions. Consequently, we will describe our system for simulating pedestrians in detail. After that we will test the implementation of our method both qualitatively (by comparing the trajectories of simulated pedestrians to real pedestrians), and quantitatively (by following the frequencies of hurried and relaxed behavior over time). Lastly we will discuss our findings.
+
 %How do we create an \emph{intelligent virtual environment} framework so that \emph{realistic}, real-time acting virtual pedestrians can be generated \emph{quickly}, working with VR-forces and \emph{daily motion patterns}?
 %\end{quote}
 %Some terms will need some clarification about how we interpret them:
@@ -224,13 +227,21 @@ Ideally, our model should lead to behavior that we have not expressly implemente
 \chapter{Related Work}
 % Tried to add tuples, but if I try to describe any more approaches with tuples, it would be like comparing apples and oranges.
 %\todo[inline]{Indicate tuples for every approach (as much as is possible).}
-When studying existing methods for modeling pedestrian behavior, the amount of available literature is quite overwhelming. This is not surprising as a large part of AI research focuses on the imitation of human behavior. However, not all means of simulating pedestrian behavior are developed for the same purpose. What we would like to have in our system, is a method to design behavior in an environment in the same way that other objects in the environment are designed. That is, it should be possible to spatially place the behaviors in the environment. However, this does not limit our search much since it only divides our desired result into two layers; namely the overall structure of different behaviors placed in the environment, and the definition of these different behaviors. When we approach the subject as \emph{designing behavior in an environment}, the search becomes much more narrow and directed.
+When studying existing methods for modeling pedestrian behavior, the amount of available literature is quite overwhelming. This is not surprising as a large part of AI research focuses on the imitation of human behavior, and pedestrian behavior can imply many different kinds of behavior. However, not all means of simulating pedestrian behavior are developed for the same purpose. What we would like to have in our system, is a method to design behavior in an environment in the same way that other objects in the environment are designed. That is, it should be possible to spatially place the behaviors in the environment. As a consequence, we have to divide our search into two categories, namely methods that describe how to design individual behavior and methods for designing behavior in relation to other, or to the environment.
 
-\section{Designing the Situation-Dependent Behaviors}
-In our research, we can divide the subject of "behavior" in two layers.  First of all, we have the layer in which individual behaviors are described. However, this information is embedded in a framework that describes how these individual behaviors vary spatially. Let us start with focussing on these individual behaviors. This field knows many approaches. First of all, the focus can lie on the group as a whole. The different members of the group are then often viewed as particles that influence the other group members near them with attracting and repulsive forces. Other approaches view crowds as a group of individuals, and the members are given some kind of simplified psychological model. The motivation behind this simplified model is that this will lead to complex behavior when many of these simple units are put together in a large crowd. This effect is known as \emph{emergence}.\\
+%\section{Designing the Environment-Dependent Behaviors}
+%In our research, we can divide the subject of "behavior" in two layers.  First of all, we have the layer in which individual behaviors are described. However, this information is embedded in a framework that describes how these individual behaviors vary spatially. Let us start with focussing on these individual behaviors. This field knows many approaches. First of all, the focus can lie on the group as a whole. The different members of the group are then often viewed as particles that influence the other group members near them with attracting and repulsive forces. Other approaches view crowds as a group of individuals, and the members are given some kind of simplified psychological model. The motivation behind this simplified model is that this will lead to complex behavior when many of these simple units are put together in a large crowd. This effect is known as \emph{emergence}.\\
 
 \section{Group Interaction}
-The research of interaction in groups started with Reynolds' boids \cite{Reynolds87flocks} , where members of the group were seen as particles that exert both repulsive and attracting forces on the other members of the flock, depending on the distance to one another, and forces inwards from the outer contour of the flock, in order to remain in a certain shape.  This behavior is driven by three simple rules, namely \emph{separation} (avoiding crowding local flockmates), \emph{cohesion} (move toward center of mass of local flockmates), and \emph{alignment} (steering towards average heading of local flockmates). However, this flocking behavior is more suitable for modelling behavior of animals such as fish, and will not give a very plausible result when it is used to model humans. Because humans usually act in a way more complicated than a flock. However, many researches have built upon this idea of modelling large groups by viewing the members as particles.
+The research of interaction in groups started with Reynolds' \emph{boids} \cite{Reynolds87flocks} , where members of the group were seen as particles that exert both repulsive and attracting forces on the other members of the flock, depending on the distance to one another, and forces inwards from the outer contour of the flock, in order to remain in a certain shape.  This behavior is driven by three simple rules, namely \emph{separation} (avoiding crowding local flockmates), \emph{cohesion} (move toward center of mass of local flockmates), and \emph{alignment} (steering towards average heading of local flockmates). Even though the rules the individual flock members adhere to are simple, it led to emergent group behavior that imitated actual group behavior in nature. However, this flocking behavior is more suitable for modelling behavior of more primitive animals such as fish, and will not give a very plausible result when it is used to model humans. Because humans usually act in a way more complicated than a flock. However, many researches have built upon this idea of modelling large groups by viewing the members as particles.
+
+\begin{figure}[h!]
+\centering
+\includegraphics[width=.8\textwidth]{boids.jpg}
+\caption{An image from an implementation of Reynolds´ boids model. This particular implementation can be found at \url{http://vvvv.org/contribution/boids-3d}}
+\label{fig:boids}
+\end{figure}
+
 
 \subsection{Global approaches}
 Many models that have been proposed focus on crowds in panic situations. An example of a model for panic situations is the one proposed by Pelechano et al. \cite{citeulike1080090} who divided people in three categories: \emph{trained leaders}, who have complete knowledge about the building, \emph{untrained leaders}, who handle stress well, help others and will explore the building, and \emph{untrained non-leaders}, who might panic. \todo[inline]{Maybe sections have to be named differently, or previous reference has to be moved, the approach uses global effects, but also more individual models} Another example of simulating panic situations, can be found in the article of Helbing, Farkas, and Vicsek \cite{citeulike1656038}. In their model, people exert a repulsive interaction force to stay away from each other, an additional \emph{body force} slowing to counteract body compression, and a \emph{sliding friction force} when a pedestrian comes in contact with another pedestrian or the wall. This model can lead to several effects known to occur in real panic situations.\\
@@ -508,7 +519,7 @@ We managed to recreate the behavior in the Petri nets in figure \ref{fig:pillarp
 
 \begin{figure}[h!]
 \centering            
-\includegraphics[width=\textwidth]{/home/djura/vakken/svn_afstudeerstage/deadline-driven-behavior/report/petrinet_pictures/twoPeopleToiletSituation.png}
+\includegraphics[width=\textwidth]{/home/djura/vakken/svn_afstudeerstage/deadline-driven-behavior/report/petrinet_pictures/twoPeopleToiletSituation_new.png}
 \caption{One person going to the toilet and one person waiting for the other.}
 \label{fig:gototoiletpetrinet}
 \end{figure}
@@ -615,6 +626,7 @@ So most likely the agent will wander around or sit on the bench. Let us say the 
 \chapter{Experiments}
 \label{chap:experiments}
 \todo[inline]{Make sure introduction lines up with research questions}
+\todo[inline]{Say something about expectations.}
 Although it can be difficult to decide whether a group of people walks around "realistically", we will certainly give it a try. We will attempt to test our framework in two different ways; first of all, we will assess our framework by doing a qualitative comparison with real-life footage of Rotterdam Airport. We have access to both camera footage and manually tracked locations of the visitors.
 Secondly, we will assess how the the different utility functions we choose for the go-to-goal action will affect the frequency of other actions. In other words, we will attempt to investigate whether our method leads to \emph{emergent} behavior.
 
@@ -1058,6 +1070,7 @@ In figure \ref{fig:sigmoid100_0_10_1} we very clearly the influence of the shape
 We have scored the utility functions again on whether they transition from relaxed to hurried behavior in a realistic manner. The scores can be found in table \ref{tab:secondquantitativetable}. The Gaussian non-goal utility function still results in a poor performance, but with the linear and sigmoid function, the simulation has a better transition from hurried to relaxed behavior than it had when any goal utility function was added.
 
 \begin{table}
+\centering
 \begin{tabular}{|c|c|}
 \hline 
  & Relaxed to Hurried\\ 

@@ -2,20 +2,19 @@
 \contentsline {chapter}{\numberline {1}Introduction}{1}{chapter.1}
 \contentsline {section}{\numberline {1.1}Research Question}{3}{section.1.1}
 \contentsline {chapter}{\numberline {2}Related Work}{5}{chapter.2}
-\contentsline {section}{\numberline {2.1}Designing the Situation-Dependent Behaviors}{5}{section.2.1}
-\contentsline {section}{\numberline {2.2}Group Interaction}{5}{section.2.2}
-\contentsline {subsection}{\numberline {2.2.1}Global approaches}{6}{subsection.2.2.1}
-\contentsline {subsection}{\numberline {2.2.2}Smaller Groups and Individual Approaches}{7}{subsection.2.2.2}
-\contentsline {section}{\numberline {2.3}Interaction with Objects}{7}{section.2.3}
-\contentsline {subsection}{\numberline {2.3.1}Mixed Approaches}{8}{subsection.2.3.1}
-\contentsline {section}{\numberline {2.4}Designing the Behavior Structure in the Environment}{8}{section.2.4}
-\contentsline {section}{\numberline {2.5}General Behavior Modeling}{9}{section.2.5}
-\contentsline {subsubsection}{Finite State Machines}{9}{section*.10}
-\contentsline {subsection}{\numberline {2.5.1}Petri Nets}{9}{subsection.2.5.1}
-\contentsline {subsection}{\numberline {2.5.2}Advantages of Petri Nets over Finite State Automata}{10}{subsection.2.5.2}
-\contentsline {subsection}{\numberline {2.5.3}Are FSMs and Petri Nets interchangable?}{11}{subsection.2.5.3}
-\contentsline {section}{\numberline {2.6}Time Planning}{11}{section.2.6}
-\contentsline {section}{\numberline {2.7}Which Techniques Can We Use?}{13}{section.2.7}
+\contentsline {section}{\numberline {2.1}Group Interaction}{5}{section.2.1}
+\contentsline {subsection}{\numberline {2.1.1}Global approaches}{5}{subsection.2.1.1}
+\contentsline {subsection}{\numberline {2.1.2}Smaller Groups and Individual Approaches}{7}{subsection.2.1.2}
+\contentsline {section}{\numberline {2.2}Interaction with Objects}{7}{section.2.2}
+\contentsline {subsection}{\numberline {2.2.1}Mixed Approaches}{8}{subsection.2.2.1}
+\contentsline {section}{\numberline {2.3}Designing the Behavior Structure in the Environment}{8}{section.2.3}
+\contentsline {section}{\numberline {2.4}General Behavior Modeling}{9}{section.2.4}
+\contentsline {subsubsection}{Finite State Machines}{9}{section*.11}
+\contentsline {subsection}{\numberline {2.4.1}Petri Nets}{10}{subsection.2.4.1}
+\contentsline {subsection}{\numberline {2.4.2}Advantages of Petri Nets over Finite State Automata}{11}{subsection.2.4.2}
+\contentsline {subsection}{\numberline {2.4.3}Are FSMs and Petri Nets interchangable?}{11}{subsection.2.4.3}
+\contentsline {section}{\numberline {2.5}Time Planning}{13}{section.2.5}
+\contentsline {section}{\numberline {2.6}Which Techniques Can We Use?}{13}{section.2.6}
 \contentsline {chapter}{\numberline {3}Method}{15}{chapter.3}
 \contentsline {section}{\numberline {3.1}Petri-nets}{16}{section.3.1}
 \contentsline {section}{\numberline {3.2}Restrictions and Assumptions}{18}{section.3.2}
@@ -26,11 +25,11 @@
 \contentsline {section}{\numberline {3.6}Example}{24}{section.3.6}
 \contentsline {chapter}{\numberline {4}Experiments}{29}{chapter.4}
 \contentsline {section}{\numberline {4.1}Qualitative Experiment}{29}{section.4.1}
-\contentsline {section}{\numberline {4.2}Quantitative Experiment}{31}{section.4.2}
-\contentsline {subsection}{\numberline {4.2.1}Sigmoid Function}{31}{subsection.4.2.1}
+\contentsline {section}{\numberline {4.2}Quantitative Experiment}{30}{section.4.2}
+\contentsline {subsection}{\numberline {4.2.1}Sigmoid Function}{32}{subsection.4.2.1}
 \contentsline {subsection}{\numberline {4.2.2}Linear Function}{32}{subsection.4.2.2}
-\contentsline {subsection}{\numberline {4.2.3}Gaussian Function}{32}{subsection.4.2.3}
-\contentsline {section}{\numberline {4.3}New Quantitative Experiment}{32}{section.4.3}
+\contentsline {subsection}{\numberline {4.2.3}Gaussian Function}{33}{subsection.4.2.3}
+\contentsline {section}{\numberline {4.3}New Quantitative Experiment}{33}{section.4.3}
 \contentsline {chapter}{\numberline {5}Results}{35}{chapter.5}
 \contentsline {section}{\numberline {5.1}Results of the Qualitative Experiment}{35}{section.5.1}
 \contentsline {section}{\numberline {5.2}Results of the First Quantitative Experiment}{38}{section.5.2}
