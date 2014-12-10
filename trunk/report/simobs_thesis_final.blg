@@ -1,48 +1,48 @@
-This is BibTeX, Version 0.99d (TeX Live 2012/Debian)
+This is BibTeX, Version 0.99d (TeX Live 2013/Debian)
 Capacity: max_strings=35307, hash_size=35307, hash_prime=30011
 The top-level auxiliary file: simobs_thesis_final.aux
 The style file: plain.bst
 Database file #1: references.bib
 Warning--empty booktitle in leaderfollower
-You've used 19 entries,
+You've used 21 entries,
             2118 wiz_defined-function locations,
-            630 strings with 7902 characters,
-and the built_in function-call counts, 7126 in all, are:
-= -- 708
-> -- 294
-< -- 10
-+ -- 118
-- -- 96
-* -- 440
-:= -- 1100
-add.period$ -- 59
-call.type$ -- 19
-change.case$ -- 105
+            642 strings with 8192 characters,
+and the built_in function-call counts, 7917 in all, are:
+= -- 793
+> -- 320
+< -- 12
++ -- 128
+- -- 104
+* -- 480
+:= -- 1216
+add.period$ -- 66
+call.type$ -- 21
+change.case$ -- 115
 chr.to.int$ -- 0
-cite$ -- 20
-duplicate$ -- 310
-empty$ -- 604
-format.name$ -- 96
-if$ -- 1576
+cite$ -- 22
+duplicate$ -- 352
+empty$ -- 668
+format.name$ -- 104
+if$ -- 1761
 int.to.chr$ -- 0
-int.to.str$ -- 19
-missing$ -- 17
-newline$ -- 97
-num.names$ -- 38
-pop$ -- 134
+int.to.str$ -- 21
+missing$ -- 19
+newline$ -- 107
+num.names$ -- 42
+pop$ -- 148
 preamble$ -- 1
-purify$ -- 86
+purify$ -- 94
 quote$ -- 0
-skip$ -- 245
+skip$ -- 280
 stack$ -- 0
-substring$ -- 439
-swap$ -- 102
-text.length$ -- 10
+substring$ -- 487
+swap$ -- 120
+text.length$ -- 12
 text.prefix$ -- 0
 top$ -- 0
-type$ -- 76
+type$ -- 84
 warning$ -- 1
-while$ -- 74
-width$ -- 21
-write$ -- 211
+while$ -- 82
+width$ -- 23
+write$ -- 234
 (There was 1 warning)

@@ -23,6 +23,12 @@ Adriana Braun, Soraia~R. Musse, Luiz P.~L. de~Oliveira, and Bardo E.~J.
 \newblock {\em Computer Animation and Social Agents, International Conference
   on}, 0:143, 2003.
 
+\bibitem{desel1998place}
+J{\"o}rg Desel and Wolfgang Reisig.
+\newblock Place/transition petri nets.
+\newblock In {\em Lectures on Petri Nets I: Basic Models}, pages 122--173.
+  Springer, 1998.
+
 \bibitem{dijkstra}
 E.~W. Dijkstra.
 \newblock A note on two problems in connexion with graphs.
@@ -83,6 +89,12 @@ N.~Pelechano, J.~M. Allbeck, and N.~I. Badler.
 \newblock In {\em Proceedings of the 2007 ACM SIGGRAPH/Eurographics symposium
   on Computer animation}, SCA '07, pages 99--108, Aire-la-Ville, Switzerland,
   Switzerland, 2007. Eurographics Association.
+
+\bibitem{pelechano2006modeling}
+Nuria Pelechano and Norman~I Badler.
+\newblock Modeling crowd and trained leader behavior during building
+  evacuation.
+\newblock {\em Departmental Papers (CIS)}, page 272, 2006.
 
 \bibitem{citeulike1080090}
 Nuria Pelechano, Kevin O'brien, Barry Silverman, and Norman Badler.
