@@ -7,14 +7,14 @@
 \contentsline {subsection}{\numberline {2.1.2}Smaller Groups and Individual Approaches}{7}{subsection.2.1.2}
 \contentsline {section}{\numberline {2.2}Interaction with Objects}{8}{section.2.2}
 \contentsline {subsection}{\numberline {2.2.1}Mixed Approaches}{8}{subsection.2.2.1}
-\contentsline {section}{\numberline {2.3}Designing the Behavior Structure in the Environment}{8}{section.2.3}
+\contentsline {section}{\numberline {2.3}Designing the Behavior Structure in the Environment}{9}{section.2.3}
 \contentsline {section}{\numberline {2.4}General Behavior Modeling}{10}{section.2.4}
-\contentsline {subsubsection}{Finite State Machines}{10}{section*.10}
+\contentsline {subsubsection}{Finite State Machines}{10}{section*.11}
 \contentsline {subsection}{\numberline {2.4.1}Petri Nets}{10}{subsection.2.4.1}
 \contentsline {subsection}{\numberline {2.4.2}Advantages of Petri Nets over Finite State Automata}{11}{subsection.2.4.2}
-\contentsline {subsection}{\numberline {2.4.3}Are FSMs and Petri Nets interchangable?}{11}{subsection.2.4.3}
+\contentsline {subsection}{\numberline {2.4.3}Are FSMs and Petri Nets interchangable?}{12}{subsection.2.4.3}
 \contentsline {section}{\numberline {2.5}Time Planning}{12}{section.2.5}
-\contentsline {section}{\numberline {2.6}Which Techniques Can We Use?}{13}{section.2.6}
+\contentsline {section}{\numberline {2.6}Which Techniques Can We Use?}{12}{section.2.6}
 \contentsline {chapter}{\numberline {3}Method}{15}{chapter.3}
 \contentsline {section}{\numberline {3.1}Petri-nets}{16}{section.3.1}
 \contentsline {section}{\numberline {3.2}Restrictions and Assumptions}{18}{section.3.2}
