@@ -3,46 +3,47 @@ Capacity: max_strings=35307, hash_size=35307, hash_prime=30011
 The top-level auxiliary file: simobs_thesis_final.aux
 The style file: plain.bst
 Database file #1: references.bib
+Warning--empty journal in gill1962introduction
 Warning--empty booktitle in leaderfollower
-You've used 21 entries,
+You've used 23 entries,
             2118 wiz_defined-function locations,
-            642 strings with 8192 characters,
-and the built_in function-call counts, 7917 in all, are:
-= -- 793
-> -- 320
+            653 strings with 8535 characters,
+and the built_in function-call counts, 8515 in all, are:
+= -- 851
+> -- 350
 < -- 12
-+ -- 128
-- -- 104
-* -- 480
-:= -- 1216
-add.period$ -- 66
-call.type$ -- 21
-change.case$ -- 115
++ -- 140
+- -- 114
+* -- 523
+:= -- 1321
+add.period$ -- 72
+call.type$ -- 23
+change.case$ -- 126
 chr.to.int$ -- 0
-cite$ -- 22
-duplicate$ -- 352
-empty$ -- 668
-format.name$ -- 104
-if$ -- 1761
+cite$ -- 25
+duplicate$ -- 373
+empty$ -- 712
+format.name$ -- 114
+if$ -- 1879
 int.to.chr$ -- 0
-int.to.str$ -- 21
-missing$ -- 19
-newline$ -- 107
-num.names$ -- 42
-pop$ -- 148
+int.to.str$ -- 23
+missing$ -- 21
+newline$ -- 117
+num.names$ -- 46
+pop$ -- 159
 preamble$ -- 1
-purify$ -- 94
+purify$ -- 103
 quote$ -- 0
-skip$ -- 280
+skip$ -- 294
 stack$ -- 0
-substring$ -- 487
-swap$ -- 120
+substring$ -- 522
+swap$ -- 121
 text.length$ -- 12
 text.prefix$ -- 0
 top$ -- 0
-type$ -- 84
-warning$ -- 1
-while$ -- 82
-width$ -- 23
-write$ -- 234
-(There was 1 warning)
+type$ -- 92
+warning$ -- 2
+while$ -- 88
+width$ -- 25
+write$ -- 254
+(There were 2 warnings)
