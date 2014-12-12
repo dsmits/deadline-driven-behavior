@@ -269,44 +269,69 @@ The previously mentioned approaches focus on movements of large groups of people
 \begin{figure}[h!]
 \centering
 \includegraphics[width=.6\textwidth]{./formations.png}
-\caption{(a) Examples of formations where people walk completely abreast or staggered. (b) Group dynamics. From Peters et al. \cite{10.1109MCG.2009.69}}.
+\caption{(a) Examples of formations where people walk completely abreast or staggered. (b) Group dynamics. From Peters et al. \cite{10.1109MCG.2009.69}.}
 \label{fig:formations}
 \end{figure}
 
 Until now, we have only seen models that deal with crowds in terms of walking behavior. Interpersonal relationships may have been somewhat defined, but were only expressed through spacial positions. Bécheiraz and Thalmann have attempted to express these interpersonal dynamics through a set of animations that express a persons mood through body language \cite{Becheiraz:1996:MNC:791215.791499}.
 %\todo[inline]{Clarify paper some more} Nah is pretty irrelevant I guess
 
-\section{Interaction with Objects}
-As previously mentioned, most researches with the focus on crowds as a group of individuals or viewed globally do not address the problem of how to interact with the environment except for some collision detection. This greatly reduces the realism of the simulation. The obvious solution is to extend the knowledge of the pedestrians with instructions about how to interact with these objects. This has been successfully done for instance by Shao and Terzopoulos \cite{A_autonomouspedestrians}. They used an extensive psychological model to determine the behavior of the individuals. This led to a simulation in which the behavior looks very realistic, even when one individual is followed for a long time. The downside to this method is that the behavioral model for the pedestrians has to be specifically crafted for the environment, which will be very time consuming. \\
-It would be easier to generate the virtual human agents if the environment would automatically decide for the agents what interactions are possible and appropriate. The first step towards this focus was made by Kallmann and Thalmann who introduced the principle of \textit{smart objects} \cite{Kallmann98modelingobjects}.
-
-
 \subsection{Mixed Approaches}
-
 Farenc et al. even devised a hierarchical framework that incorporates a number of different models managing the crowd on different levels (crowd behavior, group specification, group behavior, and individual behavior). A framework such as this is very suitable for incorporating multiple crowd behavior techniques. While a single method of the previously mentioned techniques might not generate a satisfactory result, a hierarchic combination of several methods might be able to do the job.\\
-Several other methods also have the potential to be extended to incorporate several other methods. For instance, it is very likely that the "situations" framework of Sung et al. can be adapted to deal with higher level states, instead of the low-level animation-oriented states that are used now. It will then probably be possible to let situations incorporate certain effects (eg. a repulsive force) instead of simple animations. These effects could be one (or parts) of the previously mentioned other models.
-\todo[inline]{Make sure the text fits better in the rest of the thesis}
+
+%Several other methods also have the potential to be extended to incorporate several other methods. For instance, it is very likely that the "situations" framework of Sung et al. can be adapted to deal with higher level states, instead of the low-level animation-oriented states that are used now. It will then probably be possible to let situations incorporate certain effects (eg. a repulsive force) instead of simple animations. These effects could be one (or parts) of the previously mentioned other models.
+%\todo[inline]{Make sure the text fits better in the rest of the thesis}
 
 
 
-\section{Designing the Behavior Structure in the Environment}
-The approaches that fall under the previously mentioned categories generally focus on the general movement of crowds of pedestrians. However, when we want truly realistic behavior in a regular public environment, these methods do not suffice, because they miss interactions with objects in the environment. There are a few approaches that focus more on environment-dependent behavior, such as interaction with objects or situation-dependent actions.
-The obvious solution is to extend the knowledge of the pedestrians with instructions about how to interact with these objects. This has been succesfully done for instance by Shao and Terzopoulos \cite{A_autonomouspedestrians}. They used an extensive psychological model to determine the behavior of the individuals. This led to a simulation in which the behavior looks very realistic, even when one invidual is followed for a long period of time. The downside to this method is that the behavioral model for the pedestrians have to be specifically crafted for the environment, which will be very time consuming.
-\todo[inline]{Fix duplicate text}
+\section{Interaction with the Environment}
+As previously mentioned, most researches with the focus on crowds as a group of individuals or viewed globally do not address the problem of how to interact with the environment except for some collision detection. While this results in realistic behavior in panic situations, it is less suitable for scenarios when people have more freedom to choose their actions. The methods for crowd simulation we've looked at in the previous sections that don't focus on emergency scenarios are mostly concerned with interactions between people, and less about interaction with the environment. Because it is important for our purposes to have pedestrians with behavior tailored to the specific environment we need to look further. The obvious solution to more interaction with the environment is to extend the knowledge of the pedestrians with instructions about how to deal with the objects that are present in the simulation. This has been successfully done for instance by Shao and Terzopoulos \cite{A_autonomouspedestrians}. They used an extensive psychological model to determine the behavior of the individuals. This led to a simulation in which the behavior looks very realistic, even when one individual is followed for a long time. The downside of this method is that a different behavior needs to be programmed for the pedestrians for every simulation environment. This is unfortunately quite time-consuming. \\
+It would be easier to generate the virtual human agents if the environment would automatically decide for the agents what interactions are possible and appropriate. The first step towards this focus was made by Kallmann and Thalmann who introduced the principle of \textit{smart objects} \cite{Kallmann98modelingobjects}. In their simulations, the information about interaction with objects is stored in the objects themselves, instead of in the human agents. This way, additional behavior can be added to a pedestrian by simply placing a new object in the environment. The object also keeps track about how many agents can interact with it at the same time and if the interaction should be the same for all agents. For instance, an elevator modeled as a smart object will make the first agent interacting with it press the button, but not the next agents that approach this object. By using smart objects, the internal model of the pedestrians can be kept very simple, because they do not need to remember specific information about how to interact with the objects. Furthermore, this means that the pedestrians do not have to be specifically designed for the current simulation environment, because the environment will tell them how to act. In the most basic approach to smart objects, the agents lose all their autonomy when they approach a smart object. When these agents interact with an object , they become "slaves" of these objects, as it were, because these objects provide the animations that the agents need to execute. 
 
-We will now look at the behavior on the meta-level. A few methods have been developed to enable a user to design environment related behavior. The most obvious solution to specifying the behavior of pedestrians environment-dependently, is to craft a new script for the pedestrians for every new environment. However, this method is very inefficient when we make use of a larger set of environments. Therefore, we would like to be able to place the same pedestrians in different environments without creating a new script every time.  One method that deals with this problem uses so-called \emph{smart objects} in order to efficiently create behavior-rich environments. The main feature that makes the smart-objects method so efficient is that the information of how to interact with an object is completely contained within the object itself, and not in the agents. That is why the agents' behavior can easily be enriched by adding new smart objects in the environment.
+\begin{figure}[h]
+\centering
+\includegraphics[width=.6\textwidth]{./thesims.png}
+\caption{An human agent interacting with a tv in the videogame \emph{The Sims 4}.}
+\label{fig:thesims}
+\end{figure}
 
-In the most basic approach, these smart objects take complete control of the agents for a short period of time and let them interact with the object. The big advantage of this method is that the information for interacting with a specific object does not need to be stored in the pedestrians, but is stored in the objects themselves. This way, additional behavior can be added to a pedestrian by simply placing a new object in the environment.  The object also keeps track about how many agents can interact with it at the same time and if the interaction should be the same for all agents. For instance, an elevator modeled as a smart object will make the first agent interacting with it press the button, but not the next agents that approach this object. By using smart objects, the internal model of the pedestrians can be kept very simple, because they do not need to remember specific information about how to interact with the objects. Furthermore, this means that the pedestrians do not have to be specifically designed for the current simulation environment, because the environment will tell them how to act. In the most basic approach to smart objects, the agents lose all their autonomy when they approach a smart object. A lot of research has been built upon the idea of smart objects. For instance, Kallmann, de Sevin and Thalmann have extended this model to have agents that have their own motivations and needs \cite{Kallmann00constructingvirtual}. This model uses five main motivation types: eat, drink, rest, work, and go to toilet. These motivations control the action through a hierarchical decision graph. Information about which objects fulfill these different needs are added to the smart objects.\\
+A lot of research has been built upon the idea of smart objects. For instance, Kallmann, de Sevin and Thalmann have extended this model to have agents that have their own motivations and needs \cite{Kallmann00constructingvirtual}. This model uses five main motivation types: eat, drink, rest, work, and go to toilet. These motivations control the action through a hierarchical decision graph. Information about which objects fullfill these different needs are added to the specification of the objects.
+The fact that the general idea of smart objects has been implemented in the very successful video game series "The Sims" (see a screenshot in figure \ref{fig:thesims}) might be seen as an illustration of its effectiveness. By modelling the in-game human behavior through smart objects, the game developers have been able to add expansion after expansion of new items (with new required behavior) with great ease.The initial implementation of the agents doesn't need to be modified, but their behavior will still be enriched. \\
 
-Another slightly different approach is the use of a situation based control structure (Sung, Gleicher and Chenny \cite{Sung04scalablebehaviors}). A situation is an area in the environment that requires the pedestrians to act in a certain way. The behavior of a pedestrian is described by a finite state machine in which a state is defined as follows:
+Another slightly different approach to modelling interaction in the environment is the use of a situation based control structure (Sung, Gleicher and Chenny \cite{Sung04scalablebehaviors}). A situation is an area in the environment that requires the pedestrians to act in a certain way. The behavior of a pedestrian is described by a finite state machine in which a state is defined as follows:
  \[s = \{t, \bf{p}, \theta, s^- \}\]
-In which $t$ is the time, $\bf{p}$ is the current position in two dimensional space, $\theta$ is the orientation, $a$ is an action, and $s^-$ is a list of previous states. By "action" they mean a particular animation clip that has to be played at this state. Situations extend the pedestrians' finite state machine with situation-specific actions. The probability distribution of the actions the pedestrian can take is multiplied with the probability distribution given by the situation. Situations are divided into two categories: \emph{spatial} situations for stationary objects or areas, and \emph{non-spatial} situations to describe concepts such as friendship with another pedestrian.
+In which $t$ is the time, $\bf{p}$ is the current position in two dimensional space, $\theta$ is the orientation, $a$ is an action, and $s^-$ is a list of previous states. More information about finite state machines can be found in section \ref{sec:finitestatemachines}. By "action" they mean a particular animation clip that has to be played at this state. Situations extend the pedestrians' finite state machine with situation-specific actions. The probability distribution of the actions the pedestrian can take is multiplied with the probability distribution given by the situation. Situations are divided into two categories: \emph{spatial} situations for stationary objects or areas, and \emph{non-spatial} situations to describe concepts such as friendship with another pedestrian. In figure \ref{fig:sungsituations} an example is shown of an area around a crosswalk where the behavior is designed with the situations based control structure. The numbered areas are (1) a "crossing street" situation, (2) a "traffic sign situation and (3) an "in a hurry" situation where the street is crossed without a crosswalk.
+
+\begin{figure}[h!]
+\centering
+\includegraphics[width=.6\textwidth]{./sung_situations_example.png}
+\caption{A screenshot of pedestrian simulation based on the situation based control structure by Sung et al.}
+\label{fig:sungsituations}
+\end{figure}
 
 
 
-\section{General Behavior Modeling}
+\section{Behavior Modeling Languages}
+Now we´ve seen some ways in which 
 \subsubsection{Finite State Machines}
-Finite-state machines (FSMs) are behavioral models that are composed of a number of states associated to transitions. A finite state machine moves from state to state by doing sets of actions associated with certain transitions. They are widely used in a variety of applications such as electronic design automation, but also for parsing. Many variations on FSMs exist for a variety of purposes. Finite states can for example be deterministic, or non-deterministic. The latter can also be seen as a representation of a \emph{Markov chain}.
+\label{sec:finitestatemachines}
+Finite-state machines (FSMs) are behavioral models that are composed of a number of states associated to transitions \cite{gill1962introduction}. They can be used to describe a sequence of actions. A finite state machine moves from state to state by doing sets of actions associated with certain transitions.
+Both \emph{deterministic} and \emph{non-deterministic} finite state machines are defined by a 5-tuple $(Q, \Sigma, \delta, q_o, F)$ consisting of:
+\begin{itemize}
+\item $Q$: a finite set of states
+\item $\Sigma$: a finite input alphabet of symbols
+\item $\delta : Q \times \Sigma \rightarrow Q$: a transition function 
+\item $q_0 \in Q$ a start state 
+\item $F \subseteq Q$a set of accept states 
+\end{itemize}
+The difference between deterministic and non-deterministic FSMs is that in non-deterministic FSM, a transition function can give multiple states for one combination of a state and input symbol.
+Finite state machines are widely used in a variety of applications such as electronic design automation, but also for language parsing. Many variations on FSMs exist for a variety of purposes such as deterministic and non-deterministic. The latter can also be seen as a representation of a \emph{Markov chain}. Finite state machines have been used extensively as tools for behavior modeling. The previously mentioned situations based control structure for example uses finite state machines to describe the behavior of a pedestrians as is illustrated in figure \ref{fig:sungstatemachine}. Here, extensible states are attached and detached in the course of a simulation, depending on where a pedestrian is located.
+\begin{figure}[h]
+\centering
+\includegraphics[width=.6\textwidth]{./statemachine_situations.png}
+\caption{An example of the use of finite state machines.}
+\label{fig:sungstatemachine}
+\end{figure}
 
 
 \subsection{Petri Nets}
@@ -323,10 +348,9 @@ which comprises of
 \item a set of input arcs $I \subset P \times T$,
 \item a set of output arcs $O \subset T \times P$,
 \item an initial marking $M_0 = (m_{01}. m_{02}, \ldots, m_{0m})$.
-
 \end{itemize}
 
-Petri nets have been extended in many ways in order to accomodate many different functionalities. The extention that attracts our attention the most is \emph{Stochastic Petri nets}. In this extension, there are two types of transitions: \emph{immediate} and \emph{timed} transitions.
+Petri nets have been extended in many ways in order to accomodate many different functionalities. An example of this are \emph{stochastic Petri-nets}. In this extension, there are two types of transitions: \emph{immediate} and \emph{timed} transitions.
 The Stochastic Petri net (SPN) model can be described as a six-tuple:
 \begin{equation}
 SPN = (P,T,I,O,M_0,\Lambda)
@@ -338,18 +362,19 @@ K\"{o}hler et al. show us an example of how Petri-nets can be used to model elab
 
 \todo[inline]{Say something about source and sink transitions}
 
-\subsection{Advantages of Petri Nets over Finite State Automata}
-Petri nets hold several advantages over finite state automata. First of all, Petri nets allow for concurrent behavior. This would enable our pedestrians to do several tasks at once. For instance, it could be possible to model our pedestrians' Petri nets so that a token would represent an arm or a leg. That way, a pedestrian could execute multiple basic tasks independently. It would not be possible to achieve this kind of behavior with a finite state machine, unless a state would be described for every possible combination of activities.
+\subsection{Advantages of Petri Nets over Finite State Machines}
+When considering different ways to model behavior for our purposes, Petri-nets hold several advantages over finite state machines. First of all, Petri nets allow for concurrent behavior. This would enable our pedestrians to do several tasks at once. For instance, it could be possible to model our pedestrians' Petri nets so that a token would represent an arm or a leg. That way, a pedestrian could execute multiple basic tasks independently. It would not be possible to achieve this kind of behavior with a finite state machine, unless a state would be described for every possible combination of activities.
 However, this is not the only advantage Petri nets have over finite state automata. Petri nets come with a standardized way to incorporate a time aspect. For finite state automata, several techniques have been developed, but there is no general consensus over what methods are most suitable. The problem becomes even larger when we would like to incorporate both time and non-determinism. Both the aspects of time and non-determinism are easily incorporated in Petri nets with only small modifications, and can even be mixed with traditional Petri nets.
 %A way to incorporate the decision of moving to the goal state or doing something else could be done by using tokens to represent time. These tokens should be used as a second input for every time-related transition. These tokens could be diminished for every unit of time, so certain transitions become inactive after a while because the time tokens that are needed for the input have run out.
 An essential issue which has to be implemented in the method we are going to choose, is non-determinism. Fortunately, this is one of the basic properties of a Petri net. When multiple transitions are enabled at the same time, any of them may fire.\\
 Lastly, availability will not be an issue either, since there are many packages for many languages freely available on the web.
 
-\subsection{Are FSMs and Petri Nets interchangable?}
-While finite state automata and Petri nets look very similar, there are some essential differences which make a direct mapping impossible. First of all, Petri nets enable us to work with concurrency. This means that usually, multiple transitions are enabled in one point in time. This could mean that the pedestrian should be able to do multiple activities at once. For example, a token could be created for certain parts of the pedestrian's body, such as for its hands and feet, or upper part and lower part.\\
-Another issue that has to be dealt with is how the nets are going to be attached and detached from eachother. This could be done largely the same as with finite state automata, but Petri nets have the potential to do this in a much more versatile way. For example, situation petrinets could be designed to have different slots for pedestrians so that when multiple pedestrians use the situation at the same time, the pedestrians' Petri nets could be attached to the same situation Petri net at different places, which could be a convenient way to model several kinds of behavior involving multiple pedestrians such as queueing. An example of how this could be modeled can be found in figure \ref{restaurantnet}.
+\subsection{Note: Are FSMs and Petri Nets interchangable?}
+Because we think the Sungs situations framework is promising, but would benefit from using Petri-nets instead of finite state machines, this raises the question: are FSMs and Petri-nets actually interchangable or are we comparing apples and oranges?
+When looking at images of both modelling languages, they might seem almost exactly the same. However looks can be deceiving. While finite state machines hop from state to state, progress in a Petri-net is indicated with tokens. There can be multiple tokens in a Petri-net, which makes them completely different from FSMs. This property allows Petri-nets to allow for concurrency, because multiple tokens can be placed in different states in the network, which allows for mutliple transitions to be enabled in one point in time. This could mean that the pedestrian should be able to do multiple activities at once. For example, a token could be created for certain parts of the pedestrian's body, such as for its hands and feet, or upper part and lower part. Another important example would be that it allows us to model interaction between multiple people. For example, situation Petri-nets could be designed to have different ¨slots¨ for pedestrians so that when multiple pedestrians use the situation at the same time, the pedestrians' Petri nets could be attached to the same situation Petri-net at different places (similar to how basic states and extensible states are attached to each other in Sung et al.'s situations framework. This could be a convenient way to model several kinds of behavior involving multiple pedestrians such as queueing. An example of how this could be modeled can be found in figure \ref{restaurantnet}.
 Customer 1 and customer 2 could be slots where a pedestrian's personal Petri net could be attached. \\
-When we take an approach similar to this, there will be an important distinction between the Petri nets belonging to the pedestrians and situations. While there will be many identical pedestrian Petri nets in a simulation, there will be only one Petri net per instance of a situation. This might seem a trivial fact, but it is an important distinction between using finite state automata and Petri nets. When using finite state automata, every pedestrian will get a new instance of a situation's FSM attached to it. However, situation Petri nets will not multiply and will accept several pedestrians in their nets. This will make interaction between pedestrians in a situation a natural property of the system, in contrast to the FSM approach, where it will have to be implemented outside of the situations framework.
+If we take an approach similar to this, there will be an important distinction between the Petri nets belonging to the pedestrians and situations. While there will be many identical pedestrian Petri nets in a simulation, there will be only one Petri net per instance of a situation. This might seem a trivial fact, but it is an important distinction between using finite state automata and Petri nets. When using finite state automata, every pedestrian will get a new instance of a situation's FSM attached to it. However, situation Petri nets will not have to multiply and can accept several pedestrians in their nets. This would make interaction between pedestrians in a situation a natural property of the system, in contrast to the FSM approach, where it will have to be implemented outside of the situations framework.
+
 
 \begin{figure}
 \begin{center}
@@ -362,6 +387,7 @@ When we take an approach similar to this, there will be an important distinction
 
 \section{Time Planning}
 The essential extension to the situations framework that is proposed in this thesis adds an element of time to the system. This is needed to enable the system to deal with daily motion patterns. An important element without which the system cannot succeed is knowledge about how long actions are going to take. Only when this information is known to the agent (or system) it can be decided whether taking a certain action will result exceeding the deadline for the goal.
+\todo[inline]{What to do about this?}
 
 
 \section{Which Techniques Can We Use?}

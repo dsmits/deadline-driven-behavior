@@ -44,6 +44,11 @@ J.~Dijkstra, H.~J.~P. Timmermans, and A.~J. Jessurun.
   on Cellular Automata for research and Industry}, pages 29--36. Springer
   Verlag, 2000.
 
+\bibitem{gill1962introduction}
+Arthur Gill.
+\newblock Introduction to the theory of finite-state machines.
+\newblock 1962.
+
 \bibitem{1241047}
 T.~Hamagami and H.~Hirata.
 \newblock Method of crowd simulation by using multiagent on cellular automata.
@@ -111,6 +116,13 @@ Christopher Peters and Cathy Ennis.
 Craig~W. Reynolds.
 \newblock Flocks, herds, and schools: A distributed behavioral model.
 \newblock In {\em Computer Graphics}, pages 25--34, 1987.
+
+\bibitem{silverman2006human}
+Barry~G Silverman, Michael Johns, Jason Cornwell, and Kevin O'Brien.
+\newblock Human behavior models for agents in simulators and games: part i:
+  enabling science with pmfserv.
+\newblock {\em Presence: Teleoperators and Virtual Environments},
+  15(2):139--162, 2006.
 
 \bibitem{Sung04scalablebehaviors}
 Mankyu Sung, Michael Gleicher, and Stephen Chenney.
