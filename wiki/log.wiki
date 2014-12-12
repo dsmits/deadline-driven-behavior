@@ -8,7 +8,7 @@ DISCLAIMER: The things that I write here are mainly to arrange my own thoughts a
   * Further read the book/article that I refer to about finite state machines.
 
 =12-12-2014=
-I'm working on completing the related works chapter. I've gotten to the part about finite state machines and notice it is very short in comparison to the Petri-nets part. Petri-nets are more important for my thesis but still. I'll have to decide what to do about that but I think it won't be a disaster if it stays that short.
+I'm working on completing the related works chapter. I've gotten to the part about finite state machines and notice it is very short in comparison to the Petri-nets part. Petri-nets are more important for my thesis but still. I'll have to decide what to do about that but I think it won't be a disaster if it stays that short. One thing that I also won't be finishing today in this section is the todo about adding the article about petri nets by Jörg Desel et al. I'll read the article tomorrow and decide what to add then.
 
 =10-12-2014=
 Hoped to finish the complete related works section but it takes a lot of time. I did improve it a lot though, and I'm quite satisfied with the way my thesis looks now up to what I've worked on today, but I've still only gotten through half of the chapter. I did manage to resolve all to-do's on my path. Hopefully I can finish this later this week and also mostly finish the method section. I really want to finish my thesis before Christmas.
