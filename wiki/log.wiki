@@ -1,5 +1,8 @@
 DISCLAIMER: The things that I write here are mainly to arrange my own thoughts and might not always be understandable for other people.
 
+[https://deadline-driven-behavior.googlecode.com/svn/trunk/report/simobs_thesis_final.pdf Latest version of thesis]
+
+
 == General TODO:==
   * For final demonstration:
     * Fix coordinates of situations
