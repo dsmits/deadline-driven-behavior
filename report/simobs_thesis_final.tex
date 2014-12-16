@@ -9,12 +9,27 @@
 \usepackage{algpseudocode, algorithm, amsmath}
 \usepackage{amssymb}
 \usepackage[tikz]{bclogo}
+\usepackage{color}
+
+
+\usepackage{eso-pic}
+\newcommand\BackgroundPic{%
+\put(0,0){%
+\parbox[b][\paperheight]{\paperwidth}{%
+\vfill
+\centering
+\includegraphics[width=.8\paperwidth,,%
+keepaspectratio]{scriptiekaft.png}%
+\vfill
+}}}
+
 \begin{document}
+\AddToShipoutPicture*{\BackgroundPic}
 \frontmatter
 
 \begin{center}
 
-\vspace{2.5cm}
+\vspace{2cm}
 
 % [CHANGE] The title of your thesis. If your thesis has a subtitle, then this
 % should appear right below the main title, in a smaller font.
@@ -22,62 +37,59 @@
 Deadline Driven Behavior in Intelligent Virtual Environments
 \end{Huge}
 
-
-\todo[inline]{Plaatje}
 \vspace{1.5cm}
 
 % [CHANGE] Your full name. In case of multiple names, you can include their
 % initials as well, e.g. "Jan G.J. van der Wegge".
-Djura S. Smits
+\colorbox{white}{Djura S. Smits}
 % [CHANGE] Your student ID, as this has been assigned to you by the UvA
 % administration.
-5619807
+\colorbox{white}{5619807}
 
 \vspace{1.5cm}
 
 % [DO NOT CHANGE]
-Master's thesis\\
+\colorbox{white}{Master's thesis}\\
 % [CHANGE] Whether your Bachelor thesis is 6 ECTS (regular) or 9 ECTS (Honours
 % programme).
-Credits: 42 EC
+\colorbox{white}{Credits: 42 EC}
 
 \vspace{0.5cm}
 
 % [DO NOT CHANGE] The name of the educational programme.
-Master's in Artificial Intelligence
+\colorbox{white}{Master's in Artificial Intelligence}
 
 \vspace{0.25cm}
 
 % [DO NOT CHANGE] The addess of the educational programme.
-University of Amsterdam\\
-Faculty of Science\\
-Science Park 904\\
-1098 XH Amsterdam
+\colorbox{white}{University of Amsterdam}\\
+\colorbox{white}{Faculty of Science}\\
+\colorbox{white}{Science Park 904}\\
+\colorbox{white}{1098 XH Amsterdam}
+\vspace{5cm}
 
-\vspace{4cm}
-
-\emph{Supervisor}\\
+\colorbox{white}{\emph{Supervisor}}\\
 % [CHANGE] The name of your supervisor. Include the titles of your supervisor,
 % as well as the initials for *all* of his/her first names.
-Arnoud Visser\\
-Philip Kerbush
+\colorbox{white}{Arnoud Visser}\\
+\colorbox{white}{Philip Kerbusch}
 
 \vspace{0.25cm}
 
 % [CHANGE] The address of the institute at which your supervisor is working.
 % Be sure to include (1) institute (is appropriate), (2) faculty (if
 % appropriate), (3) organisation name, (4) organisation address (2 lines).
-Intelligent Systems Lab\\
-Faculty of Science\\
-University of Amsterdam\\
-Science Park 904\\
-1098 XH  Amsterdam
+\colorbox{white}{Intelligent Systems Lab}\\
+\colorbox{white}{Faculty of Science}\\
+\colorbox{white}{University of Amsterdam}\\
+\colorbox{white}{Science Park 904}\\
+\colorbox{white}{1098 XH  Amsterdam}
 
 \vspace{1.5cm}
 
 % [CHANGE] The date at which you will finalize and submit your thesis.
-\todo{Change}
-June 24th, 2010
+\todo[inline]{Change}
+\colorbox{white}{December 20th, 2014}
 
 \end{center}
 \newpage
@@ -87,7 +99,7 @@ June 24th, 2010
 %\title{Deadline Driven Behavior in Intelligent Virtual Environments}
 %\author{ Djura Smits}
 %\date{\today}
-%\titlepic{\includegraphics[width=\textwidth]{rotterdamairportphoto.jpg}}
+
 
 
 
