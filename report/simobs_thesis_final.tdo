@@ -1,4 +1,4 @@
-\contentsline {todo}{{\color@box {}{cyan}{\leavevmode {\color {cyan}o}}\ Change}}{i}{section*.1}
+\contentsline {todo}{{\color@box {}{cyan}{\leavevmode {\color {cyan}o}}\ Change}}{iii}{section*.1}
 \contentsline {todo}{{\color@box {}{cyan}{\leavevmode {\color {cyan}o}}\ Introduce place/transition Petri nets (use article by Jörg Desel and Wolfgang reisig \cite {desel1998place}}}{11}{section*.13}
 \contentsline {todo}{{\color@box {}{cyan}{\leavevmode {\color {cyan}o}}\ Check whether I understood correctly}}{13}{section*.14}
 \contentsline {todo}{{\color@box {}{cyan}{\leavevmode {\color {cyan}o}}\ Say something about source and sink transitions}}{13}{section*.15}
@@ -42,4 +42,4 @@
 \contentsline {todo}{{\color@box {}{cyan}{\leavevmode {\color {cyan}o}}\ Include subsections?}}{45}{section*.88}
 \contentsline {todo}{{\color@box {}{cyan}{\leavevmode {\color {cyan}o}}\ Make sure the utility functions are explained better/clarified. Otherwise it is very confusing that their effect in time is more or less the mirrored version of the way they are defined.}}{45}{section*.89}
 \contentsline {todo}{{\color@box {}{cyan}{\leavevmode {\color {cyan}o}}\ Put \ref {fig:linear0to0.5_100agents} and \ref {fig:linear0to01_100agents} in appendix instead of here. They don't add anything.}}{46}{section*.91}
-\contentsline {todo}{{\color@box {}{cyan}{\leavevmode {\color {cyan}o}}\ Check all references (figures, papers, etc.)}}{54}{section*.99}
+\contentsline {todo}{{\color@box {}{cyan}{\leavevmode {\color {cyan}o}}\ Check all references (figures, papers, etc.)}}{51}{section*.98}

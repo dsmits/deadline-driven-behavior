@@ -10,8 +10,7 @@
 \usepackage{amssymb}
 \usepackage[tikz]{bclogo}
 \usepackage{color}
-
-
+\usepackage{multibib}
 \usepackage{eso-pic}
 \newcommand\BackgroundPic{%
 \put(0,0){%
@@ -23,7 +22,12 @@ keepaspectratio]{scriptiekaft.png}%
 \vfill
 }}}
 
+\newcites{self}{Publication of this Research}
+
+
 \begin{document}
+
+
 \AddToShipoutPicture*{\BackgroundPic}
 \frontmatter
 
@@ -41,68 +45,67 @@ Deadline Driven Behavior in Intelligent Virtual Environments
 
 % [CHANGE] Your full name. In case of multiple names, you can include their
 % initials as well, e.g. "Jan G.J. van der Wegge".
-\colorbox{white}{Djura S. Smits}
+Djura S. Smits
 % [CHANGE] Your student ID, as this has been assigned to you by the UvA
 % administration.
-\colorbox{white}{5619807}
 
-\vspace{1.5cm}
+\newpage
+Front cover illustration made by Djura Smits.
 
+\newpage
+Djura S. Smits\\
+Student number: 5619807\\
 % [DO NOT CHANGE]
-\colorbox{white}{Master's thesis}\\
+Master's thesis\\
 % [CHANGE] Whether your Bachelor thesis is 6 ECTS (regular) or 9 ECTS (Honours
 % programme).
-\colorbox{white}{Credits: 42 EC}
+Credits: 42 EC
 
 \vspace{0.5cm}
 
 % [DO NOT CHANGE] The name of the educational programme.
-\colorbox{white}{Master's in Artificial Intelligence}
+Master's in Artificial Intelligence
 
-\vspace{0.25cm}
+
 
 % [DO NOT CHANGE] The addess of the educational programme.
-\colorbox{white}{University of Amsterdam}\\
-\colorbox{white}{Faculty of Science}\\
-\colorbox{white}{Science Park 904}\\
-\colorbox{white}{1098 XH Amsterdam}
+University of Amsterdam\\
+Faculty of Science\\
+Science Park 904\\
+1098 XH Amsterdam
 \vspace{5cm}
 
-\colorbox{white}{\emph{Supervisor}}\\
+\emph{Supervisors}\\
 % [CHANGE] The name of your supervisor. Include the titles of your supervisor,
 % as well as the initials for *all* of his/her first names.
-\colorbox{white}{Arnoud Visser}\\
-\colorbox{white}{Philip Kerbusch}
+Arnoud Visser\\
+Philip Kerbusch
 
 \vspace{0.25cm}
 
 % [CHANGE] The address of the institute at which your supervisor is working.
 % Be sure to include (1) institute (is appropriate), (2) faculty (if
 % appropriate), (3) organisation name, (4) organisation address (2 lines).
-\colorbox{white}{Intelligent Systems Lab}\\
-\colorbox{white}{Faculty of Science}\\
-\colorbox{white}{University of Amsterdam}\\
-\colorbox{white}{Science Park 904}\\
-\colorbox{white}{1098 XH  Amsterdam}
+Intelligent Systems Lab\\
+Faculty of Science\\
+University of Amsterdam\\
+Science Park 904\\
+1098 XH  Amsterdam
 
 \vspace{1.5cm}
 
 % [CHANGE] The date at which you will finalize and submit your thesis.
 \todo[inline]{Change}
-\colorbox{white}{December 20th, 2014}
-
+December 20th, 2014
 \end{center}
 \newpage
 
-%\documentclass[11pt]{book}
-
-%\title{Deadline Driven Behavior in Intelligent Virtual Environments}
-%\author{ Djura Smits}
-%\date{\today}
-
-
-
-
+\begingroup
+This research has been published: \nociteself{myownpublication}
+\renewcommand{\chapter}[2]{}
+\bibliographystyleself{plain}
+\bibliographyself{references}
+\endgroup
 \graphicspath{{.}{../results}}
 
 
@@ -130,7 +133,7 @@ I would like to thank my supervisors Philip Kerbush from TNO, and Arnoud Visser 
 \chapter{Introduction}
 %\todo[inline]{introduction}
 %\todo{How to place pedestrian simulation in the whole spectrum of AI related studies?}
-Artificial intelligence is the branch of computer science that aims to create or simulate intelligence in machines. The range of methods to attempt this is endless. One of the many subfields in AI is aimed at reproducing human behavior. The problem of recreating human behavior can be tackled from many different perspectives. For example, one could attempt to get an understanding of the workings of the human mind, and try to imitate this in a computer program. Another approach would be to treat the human brain as a black box, and mainly focus on recreating external behavior. In this approach it does not matter whether the inner workings of this computer program are simular to that of an actual human being. The disadvantage of this approach is that it does not help you learn how the human mind works. However, when used for practical purposes, approaching the problem like this is favorable, since it is more likely to run real-time and take up less resources. In our research, we are attempting to recreate a specific kind of human behavior. Namely, the kind of behavior that one would encounter in a public environment.\\
+Artificial intelligence is the branch of computer science that aims to create or simulate intelligence in machines. The range of methods to attempt this is endless. One of the many subfields in AI is aimed at reproducing human behavior. The problem of recreating human behavior can be tackled from many different perspectives. For example, one could attempt to get an understanding of the workings of the human mind, and try to imitate this in a computer program. Another approach would be to treat the human brain as a black box, and mainly focus on recreating external behavior. In this approach it does not matter whether the inner workings of this computer program are simular to that of an actual human being. The disadvantage of this approach is that it does not help you learn how the human mind works. However, when used for practical purposes, approaching the problem like this is favorable, since it is more likely to run real-time and take up less resources. In our research, we are attempting to recreate a specific kind of human behavior. Namely, the kind of behavior that pedestrians would show in a public environment like an airport,  where it is very important to not lose sight of time.\\
 \begin{figure}[h]
 \begin{center}
 \includegraphics[width=200pt]{pedestrians.jpg}
@@ -139,7 +142,8 @@ Artificial intelligence is the branch of computer science that aims to create or
 \label{pedestrianpicture}
 \end{figure}
 For the last decade or so, there has been an increased interest in reinforcing security in public environments. The recent advances in technology have increased the feasibility of many different methods. An important approach in this area of interest is the automatic detection of suspicious behavior from camera images. The approaches in this area can vary, but one important aspect that they have in common, is the necessity of camera footage to be able to test the approaches. Since it can be extremely tedious to collect and annotate this data it would be very rewarding to be able to generate annotated testing data automatically. We would like to focus on the behavior of non-suspicious people, because we assume these usually greatly outnumber terrorists or other suspicious individuals. People with suspicious behavior could then later be scripted and added in by hand. In other words, we would like to be able to quickly generate crowds of people doing normal, everyday behavior.\\
-Simulation of pedestrians is a widely studied subject. Many models have been created for the various characteristics that arise when multiple human-like agents move around in the same area. These models approach the problem from different kinds of angles. For some purposes such as simulating panic situations, it is important to view the pedestrians as a large crowd. These types of simulations are mainly concerned with with how people find the exit out of a building and how they move through doors and other openings. Other researches focus more on treating the pedestrians as individuals, and crafting a specific behavior for every indivual. In between these methods there is a whole spectrum of approaches, some of which focus on larger groups of people and general movement, others focus more on smaller groups or individuals and treat more sophisticated behavior.\\
+
+Research focussing on simulating pedestrians can tackle the problem from different angles. For some purposes such as simulating panic situations, it is important to view the pedestrians as a large crowd. These types of simulations are mainly concerned with with how people find the exit out of a building and how they move through doors and other openings. Other researches focus more on treating the pedestrians as individuals, and crafting a specific behavior for every indivual. In between these methods there is a whole spectrum of approaches, some of which focus on larger groups of people and general movement, others focus more on smaller groups or individuals and treat more sophisticated behavior.\\
 \begin{bclogo}[logo=\bctrombone]{TNO \& SIMOBS}
 This research was done as part of an internship at TNO, the Netherlands Organisation for Applied Scientific Research.  TNO is an independent organization founded to enable business and government to apply knowledge. More information can be found at \url{http://www.tno.nl}.\\\\
 SIMOBS is a plugin for the military simulation toolkit VR-forces (\url{http://www.mak.com/products/simulate/vr-forces.html} which is a tool for generating and executing battlefield scenarios. SIMOBS is developed by Philip Kerbush at the Modelling, Simulation and Gaming department at TNO to quickly generate inhabitants of scenario to add realism to the otherwise mostly empty simulated areas. SIMOBS allows users to quickly draw residential areas on a map to indicate where the simulated people should live. It is also possible to indicate where these people should go to work. The behavior of these inhabitants is determined by \emph{Daily Motion Patterns}, which specify where certain types of inhabitants need to go at specified times. SIMOBS formed the starting point of our research.
@@ -154,7 +158,7 @@ SIMOBS is a plugin for the military simulation toolkit VR-forces (\url{http://ww
 \label{fig:airportimage}
 \end{figure}
 
-Our research is intended to help inhabit simulated scenarios developed at the \emph{Modelling, Simulation and Gaming} department at TNO and is an extension of their SIMOBS (simulated observables) project. The department \emph{Intelligent Imaging} has been so kind to provide both camera footage and manually tracked locations of pedestrians at the main hall at Rotterdam airport (pictured in figure \ref{fig:airportimage}). This footage has also been used to research how to automatically spot suspicious behavior. That is why we attempt to find an approach to suit an airport type scenario. Our results can then be compared to the available footage. Because of the nature of the footage and the desire of TNO to quickly generate large quantities of non-suspicious people in everyday environments, we chose to tackle the problem of pedestrian simulation with an approach that lies somewhere in the middle of the spectrum of approaches. The behavior of the simulated people should not be designed individually per person, but our approach should result in more varied behavior than only the general movement of crowds through openings. We would like to be able to specify behaviors by indicating them in the environment, instead of specifying them per individual. For example, when a food stand is present in the area, we would like to be able to indicate that the agents that are placed in the neighborhood of that stand are able to do certain food-buying behavior.
+Our research is intended to help inhabit simulated scenarios developed at the \emph{Modelling, Simulation and Gaming} department at TNO and is an extension of their SIMOBS (simulated observables) project. The department \emph{Intelligent Imaging} has been so kind to provide both camera footage and manually tracked locations of pedestrians at the main hall at Rotterdam airport (pictured in figure \ref{fig:airportimage}). This footage has also been used to research how to automatically spot suspicious behavior. That is why we attempt to find an approach to suit an airport type scenario. Our results can then be compared to the available footage. Because of the nature of the footage and the desire of TNO to quickly generate large quantities of non-suspicious people in everyday environments, we chose to tackle the problem of pedestrian simulation with an approach that lies somewhere in the middle of the spectrum of approaches. The behavior of the simulated people should not be designed individually per person, but our approach should result in more varied behavior than only the general movement of crowds through openings. We would like to be able to specify behaviors by indicating them in the environment, instead of specifying them per individual. For example, when a food stand is present in the area, we would like to be able to indicate that the agents that are placed in the neighborhood of that stand are able to do certain food-buying behavior. In our research, we specified a toilet behavior, that causes two agents to go to the area near the toilets, where then one person enters the bathroom and the other one waits untill the first one comes back again.
 An additional requirement is that we would like to indicate a certain \emph{deadline} for an agent which is the time at which its goal is not reachable any more. This deadline-drivenness should result in roughly two types of behavior, \emph{hurried} and \emph{relaxed}. When the deadline approaches, less and less actions are likely to be done, since actions that take much time would result in not reaching the goal in time.\\
 Keeping these requirements in mind we created a system where we design what we call \emph{situations} in an environment. These are areas where certain behavior is appropriate. The design of the behavior is facilitated by our choice to model them in \emph{Petri-nets}, which is a mathematical modelling language used to model distributed systems. Moreover, the choice of the pedestrians to execute certain behaviors should be weighted by how much time they still have left to reach their goal, which is to check in, in our airport-type scenario.
 We will mimick behaviors that we found at Rotterdam airport, and then validate them using the real-life footage. We will also show that Petri nets are particularly suitable for designing the type of human behavior we need, especially when a situation requires interaction between multiple individuals.
@@ -179,7 +183,7 @@ Some of these terms may need some clarification:
 %\item \emph{Distributed}:\\
  %We are using a distributed environment to simulate our pedestrians. This means that various tasks such as path planning can be delegated to other services and are not of our concern. Therefore, we can afford to focus more on higher level behavior.
 \item \emph{Intelligent Virtual Environment}:\\
-IVE is a broad term, but in this particular case we mean that a large portion of the intelligence needed for the pedestrians to walk around is placed in the environment, instead of in the pedestrians walking in it. There are different ways to construct an IVE, which is something we have to look at as well.
+IVE is a broad term, but in this particular case we mean that a large portion of the intelligence needed for the pedestrians to walk around is placed in the environment, instead of in the pedestrians walking in it. For example, the information about interacting with a food stand could be placed in the design of a certain "food stand object" that is placed somewhere in the environment, instead of in the design of the pedestrians. There are different ways to construct an IVE, which is something we have to look at as well. 
 
 \item \emph{Time-restricted destinations}:\\
 We would like to create a framework that is able to deal with departure hall-like situations. That means that pedestrians will have a destination (e.g. a train, or an airplane, etc.) that will be available for a limited amount of time (until it departs). It can also be used to create simulations with a pattern that is more realistic when run for a long period of time (such as a whole day). Furthermore, in many situations, only the time is known when the person has to arrive at his destination. In those cases it is more intuitive to define the time of arrival, instead of determining at what time someone has to leave his starting point. In the rest of the article, we will refer to these time restrictions as \emph{deadlines}.
@@ -194,7 +198,7 @@ If it were feasible to model the complete human brain, we would probably get the
 In situations such as departure halls, people have a destination (e.g. airplane, train) that is only available for a limited amount of time. Some actions might take a very short amount of time, some may need more. How do we let these pedestrians decide between the different options?
 
 \item \emph{Is it possible to have emergent behavior based on time restrictions?}\\
-Ideally, our model should lead to behavior that we have not expressly implemented in our system. In the context of time restrictions, we would like the pedestrians to have hurried or relaxed behavior based on the amount of time they have left to reach their goal.
+Ideally, our model should lead to behavior that we have not expressly implemented in our system. In the context of time restrictions, we would like to see the behavior of the pedestrians to look hurried or relaxed based on the amount of time they have left to reach their goal.
 
 %\item \emph{What kind of freedoms/restrictions do distributed systems give us?}\\
 %As a consequence of using a distributed system we can delegate certain tasks to other units. On the other hand, our model also %needs to be compatible with the other units in the distributed system.
@@ -261,8 +265,8 @@ m_i \frac{d \boldsymbol{v}_i}{dt} = m_i \frac{\boldsymbol{v}_i^0 (\boldsymbol{t}
 +\sum_{j (\neq i)} \boldsymbol{f}_{ij} + \sum_w \boldsymbol{f}_{iw}
 \label{eq:helbingaccelleration}
 \end{equation}
-Where pedestrians $1 \leq i \leq N$ of mass $m_i$ want to move with a certain desired speed $v_i^0$ in a certain direction $\boldsymbol{e}_i^0$. They tend to adapt their instantanious velocity $\boldsymbol{v}_i(t)$ within time interval $\tau_i$. The interaction force $\boldsymbol{f}_{ij}$ is added to simulate the tendency of the pedestrians to want to keep their distance from others. Interaction force $\boldsymbol{f}_{iw}$ makes the pedestrians tend to keep away from the walls. This model can lead to several effects known to occur in real panic situations. Focussing on large crowds though does not always mean one is unconcerned with the individual people. One example of large crowd simulation while taking individuality into account is the research by Pelechano and Badler \cite{pelechano2006modeling}. They successfully show that Helbings model can be combined with a high-level wayfinding model that bases decisions of individuals on their mental map of the building. Individuals are even divided into three categories: \emph{trained leaders}, who have complete knowledge about the building the simulation takes place, \emph{untrained leaders}, who handle stress well, help others and will explore the building, and \emph{untrained non-leaders}. In later research they extend the psychological model even more by using the PMFServ software system \cite{citeulike1080090}. PMFServ is a model based on established psychological principles \cite{silverman2006human}. Braun et al. \cite{10.1109CASA.2003.1199317} also used the model of Helbing as a basis, but introduced additional features for creating group behaviors, such as family members, dependence level, altruism level, and desired speed of the agent.\\
-While these methods give a good insight into the movements in those particular panic situations, they are less suitable for experiments simulation  non-threatening situations. Only in those few moments of panic, or when crowds are very dense, do these models represent a crowd realistically. What we are looking for, is a framework that gives realistic behavior over longer periods of time. Pelechano, Allbeck and Badler \cite{Pelechano:2007:CIA:1272690.1272705} have simulated high-density crowds for normal situations. They base the movement of the crowds on a simple wayfinding algorithm and a number of different psychological (impatience, panic, personality attributes, etc.) and physiological traits(e.g.locomotion and energy level). Furthermore, the agent is given perception and will react to objects and other pedestrians in the nearby space.\\
+Where pedestrians $1 \leq i \leq N$ of mass $m_i$ want to move with a certain desired speed $v_i^0$ in a certain direction $\boldsymbol{e}_i^0$. They tend to adapt their instantanious velocity $\boldsymbol{v}_i(t)$ within time interval $\tau_i$. The interaction force $\boldsymbol{f}_{ij}$ is added to simulate the tendency of the pedestrians to want to keep their distance from others. Interaction force $\boldsymbol{f}_{iw}$ makes the pedestrians tend to keep away from the walls. This model can lead to several effects known to occur in real panic situations. Focussing on large crowds though does not always mean one is unconcerned with the individual agents. One example of large crowd simulation while taking individuality into account is the research by Pelechano and Badler \cite{pelechano2006modeling}. They successfully show that Helbings model can be combined with a high-level wayfinding model that bases decisions of individuals on their mental map of the building. Individuals are even divided into three categories: \emph{trained leaders}, who have complete knowledge about the building the simulation takes place, \emph{untrained leaders}, who handle stress well, help others and will explore the building, and \emph{untrained non-leaders}. In later research they extend the psychological model even more by using the PMFServ software system \cite{citeulike1080090}. PMFServ is a model based on established psychological principles \cite{silverman2006human}. Braun et al. \cite{10.1109CASA.2003.1199317} also used the model of Helbing as a basis, but introduced additional features for creating group behaviors, such as family members, dependence level, altruism level, and desired speed of the agent.\\
+While these methods give a good insight into the movements in those particular panic situations, they are less suitable for experiments simulation  non-threatening situations. Only in those few moments of panic, or when crowds are very dense, do these models represent a crowd realistically. What we are looking for, is a framework that gives realistic behavior over longer periods of time. Pelechano, Allbeck and Badler \cite{Pelechano:2007:CIA:1272690.1272705} have simulated high-density crowds for normal situations. They base the movement of the crowds on a simple wayfinding algorithm and a number of different psychological (impatience, panic, personality attributes, etc.) and physiological traits(e.g. locomotion and energy level). Furthermore, the agent is given perception and will react to objects and other pedestrians in the nearby space.\\
 Bayazit, Lien and Amato approached the subject of crowd simulation in a very different way \cite{Bayazit02bettergroup}. Instead of letting an entity such as one pedestrian or a group do the navigation on the fly, global roadmaps are used. In this method, a map is generated beforehand defining where the pedestrians can walk. During simulation, the pedestrians are given a goal location, and will then explore the paths defined by the map, based on which direction exercises the highest force on the pedestrians. The pedestrians can update this map in real-time indicating if a path is favorable or not when trying to get to the goal. When two paths exert an equal amount of force on the pedestrians, they will split up and both paths will be explored simultaneously.\\
 However, global roadmaps are not the only way an environment can be defined with respect to behavior. Various methods have been developed that use a combination of multi-agent techniques and cellular automata \cite{Dijkstra00amulti-agent}\cite{1241047}. Here, the behavior stems from a combination of basic multi-agent systems, combined with information about how the pedestrians should be distributed over a grid. This grid follows the rules typical to cellular automata, where the value of a single square in the grid at time $t$ depends on the value of the surrounding squares in the grid at $t-1$. Figure \ref{fig:cellularautomata} shows how Hamagami et al. structured their implementation of this idea.
 
@@ -311,8 +315,8 @@ A lot of research has been built upon the idea of smart objects. For instance, K
 The fact that the general idea of smart objects has been implemented in the very successful video game series "The Sims" (see a screenshot in figure \ref{fig:thesims}) might be seen as an illustration of its effectiveness. By modelling the in-game human behavior through smart objects, the game developers have been able to add expansion after expansion of new items (with new required behavior) with great ease.The initial implementation of the agents doesn't need to be modified, but their behavior will still be enriched. \\
 
 Another slightly different approach to modelling interaction in the environment is the use of a situation based control structure (Sung, Gleicher and Chenny \cite{Sung04scalablebehaviors}). A situation is an area in the environment that requires the pedestrians to act in a certain way. The behavior of a pedestrian is described by a finite state machine in which a state is defined as follows:
- \[s = \{t, \bf{p}, \theta, s^- \}\]
-In which $t$ is the time, $\bf{p}$ is the current position in two dimensional space, $\theta$ is the orientation, $a$ is an action, and $s^-$ is a list of previous states. More information about finite state machines can be found in section \ref{sec:finitestatemachines}. By "action" they mean a particular animation clip that has to be played at this state. Situations extend the pedestrians' finite state machine with situation-specific actions. The probability distribution of the actions the pedestrian can take is multiplied with the probability distribution given by the situation. Situations are divided into two categories: \emph{spatial} situations for stationary objects or areas, and \emph{non-spatial} situations to describe concepts such as friendship with another pedestrian. In figure \ref{fig:sungsituations} an example is shown of an area around a crosswalk where the behavior is designed with the situations based control structure. The numbered areas are (1) a "crossing street" situation, (2) a "traffic sign situation and (3) an "in a hurry" situation where the street is crossed without a crosswalk.
+ \[s = \{t, \bf{p}, \theta, a, s^- \}\]
+In which $t$ is the time, $\bf{p}$ is the current position in two dimensional space, $\theta$ is the orientation, $a$ is an action, and $s^-$ is a list of previous states. By "action" they mean a particular animation clip that has to be played at this state. Note that this definition of finite state machines differs from the standard definition. More information about finite state machines can be found in section \ref{sec:finitestatemachines}.  Situations extend the pedestrians' finite state machine with situation-specific actions. The probability distribution of the actions the pedestrian can take is multiplied with the probability distribution given by the situation. Situations are divided into two categories: \emph{spatial} situations for stationary objects or areas, and \emph{non-spatial} situations to describe concepts such as friendship with another pedestrian. In figure \ref{fig:sungsituations} an example is shown of an area around a crosswalk where the behavior is designed with the situations based control structure. The numbered areas are (1) a "crossing street" situation, (2) a "traffic sign situation and (3) an "in a hurry" situation where the street is crossed without a crosswalk.
 
 \begin{figure}[h!]
 \centering
@@ -324,7 +328,8 @@ In which $t$ is the time, $\bf{p}$ is the current position in two dimensional sp
 
 
 \section{Behavior Modeling Languages}
-Now we´ve seen some ways in which 
+For some Pedestrian simulatinos, such as Helbings, it is sufficient to have one mathematical equation that can describe all the movement. However, when one wants to be more specific about how an agent interacts with an environment, it might be advantageous to choose a modeling language to express behavior. In this thesis, two different languages are important: Finite State Machines and Petri-nets. They will be described in detail below.
+
 \subsubsection{Finite State Machines}
 \label{sec:finitestatemachines}
 Finite-state machines (FSMs) are behavioral models that are composed of a number of states associated to transitions \cite{gill1962introduction}. They can be used to describe a sequence of actions. A finite state machine moves from state to state by doing sets of actions associated with certain transitions.
@@ -341,7 +346,7 @@ Finite state machines are widely used in a variety of applications such as elect
 \begin{figure}[h]
 \centering
 \includegraphics[width=.6\textwidth]{./statemachine_situations.png}
-\caption{An example of the use of finite state machines.}
+\caption{An example of the use of finite state machines in Sungs research.}
 \label{fig:sungstatemachine}
 \end{figure}
 
@@ -1224,9 +1229,9 @@ Another improvement the system would benefit from would be to change the way the
 
 
 
-\bibliographystyle{plain}
-\bibliography{references}
 
 \todo[inline]{Check all references (figures, papers, etc.)}
+\bibliographystyle{plain}
+\bibliography{references}
 
 \end{document}
