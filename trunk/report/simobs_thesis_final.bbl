@@ -1,8 +1,9 @@
 \begin{thebibliography}{10}
 
-\bibitem{A_autonomouspedestrians}
-Wei~Shao A and Demetri~Terzopoulos B.
-\newblock Autonomous pedestrians.
+\bibitem{alur1994theory}
+Rajeev Alur and David~L Dill.
+\newblock A theory of timed automata.
+\newblock {\em Theoretical computer science}, 126(2):183--235, 1994.
 
 \bibitem{Bayazit02bettergroup}
 O.~Burchan Bayazit, Jyh ming Lien, and Nancy~M. Amato.
@@ -79,7 +80,7 @@ Marcelo Kallmann and Daniel Thalmann.
   pages 73--86, 1998.
 
 \bibitem{Köhler03modellingsocial}
-Michael Kohler, Marcel Martens, and Heiko Rolke.
+Michael K\"{o}hler, Marcel Martens, and Heiko Rolke.
 \newblock Modelling social behaviour with petri net based multi-agent systems.
 \newblock In {\em IN: PROCEEDINGS OF THE WORKSHOP MASHO’03 AT THE KI}, 2003.
 
@@ -117,6 +118,12 @@ Craig~W. Reynolds.
 \newblock Flocks, herds, and schools: A distributed behavioral model.
 \newblock In {\em Computer Graphics}, pages 25--34, 1987.
 
+\bibitem{A_autonomouspedestrians}
+Wei Shao and Demetri Terzopoulos.
+\newblock Autonomous pedestrians.
+\newblock In {\em Proceedings of the 2005 ACM SIGGRAPH/Eurographics symposium
+  on Computer animation}, pages 19--28. ACM, 2005.
+
 \bibitem{silverman2006human}
 Barry~G Silverman, Michael Johns, Jason Cornwell, and Kevin O'Brien.
 \newblock Human behavior models for agents in simulators and games: part i:
@@ -132,5 +139,11 @@ Mankyu Sung, Michael Gleicher, and Stephen Chenney.
 Shih-I~Chang Tsai-Yen~Li, Ying-Jiun~Jeng.
 \newblock Simulating virtual human crowds with a leader-follower model.
 \newblock IEEE Computer Society, 2001.
+
+\bibitem{zuberek1980timed}
+Wlodzimierz~M Zuberek.
+\newblock Timed petri nets and preliminary performance evaluation.
+\newblock In {\em Proceedings of the 7th annual symposium on Computer
+  Architecture}, pages 88--96. ACM, 1980.
 
 \end{thebibliography}
