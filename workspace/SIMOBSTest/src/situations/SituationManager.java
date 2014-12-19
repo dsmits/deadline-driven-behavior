@@ -1,5 +1,6 @@
 package situations;
 
+import java.io.BufferedWriter;
 import java.io.File;
 import java.io.FileWriter;
 import java.io.IOException;
@@ -44,6 +45,7 @@ import protobuf.ObservationMessage.Observation;
 import time.IClock;
 import time.StepClock;
 import time.TimePlanningTools;
+
 
 /**
  * @author djura SituationManager manages the connections between the Petri nets
@@ -256,7 +258,7 @@ public class SituationManager implements IPedestrianSimManager, Observer {
 
 	public List<ISituation> getSituations(double locationX, double locationY) {
 //		System.out.println("locationX: " + locationX + " locationY: "
-				+ locationY);
+				//+ locationY);
 		List<ISituation> situations = this.situations.get(locationX, locationY);
 		/*
 		 * if(!situations.isEmpty()){ System.out.println("Situations found at ("
@@ -654,8 +656,11 @@ public class SituationManager implements IPedestrianSimManager, Observer {
 				}
 			}
 		}
+		//writeSituationInfo(toBeAdded);		
 		currentSituations.addAll(toBeAdded);
 	}
+	
+
 
 	/**
 	 * Processes a transition, which means that it both fires the transition in

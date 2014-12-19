@@ -1,5 +1,8 @@
 package time;
 
+import java.io.BufferedWriter;
+import java.io.File;
+import java.io.FileWriter;
 import java.util.ArrayList;
 import java.util.Collection;
 import java.util.List;
@@ -39,6 +42,8 @@ public class TimePlanningTools {
 		return rate;
 
 	}
+	
+
 
 	/**
 	 * Computes the shortest path from all places to the sink transition.
@@ -61,7 +66,22 @@ public class TimePlanningTools {
 			}
 
 		}
+		//writeSituationInfo(situations);
 
+	}
+	
+	private void writeSituationInfo(List<ISituation> situations){
+		try{
+		File ratesFile = new File("estimatedTimes.txt");
+		BufferedWriter writer = new BufferedWriter(new FileWriter(ratesFile));
+	    for(ISituation situation : situations){
+	    	writer.write("Situation: " + situation.getSituationId() + "time: " + situation.getEstimatedTime() + "\n");
+	    }
+	    //Close writer
+	    writer.close();
+		} catch(Exception e){
+			e.printStackTrace();
+		}
 	}
 
 	/**
