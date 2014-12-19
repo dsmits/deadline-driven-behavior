@@ -1,0 +1,9 @@
+Situation: pillarSituationtime: 6
+Situation: toiletSituation1time: 23
+Situation: toiletSituation2time: 23
+Situation: toiletSituation3time: 23
+Situation: toiletSituation4time: 23
+Situation: StandStill1time: 4
+Situation: fastWandertime: 10
+Situation: slowWandertime: 20
+Situation: wandertime: 10
