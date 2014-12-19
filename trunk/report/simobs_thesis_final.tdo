@@ -7,15 +7,15 @@
 \contentsline {todo}{{\color@box {}{cyan}{\leavevmode {\color {cyan}o}}\ Modify image \ref {petrinetexample}}}{19}{section*.19}
 \contentsline {todo}{{\color@box {}{cyan}{\leavevmode {\color {cyan}o}}\ Commented out quite some text because PIPE2 did not work as promised. Replace this text by text that does describe how we actually used the Petri nets. Maybe some of the text is still usable? Also, check if this text shouldn't be further down below, or maybe it is already there.}}{19}{section*.21}
 \contentsline {todo}{{\color@box {}{cyan}{\leavevmode {\color {cyan}o}}\ Maybe put more at beginning?( Or at end of method)}}{20}{section*.22}
-\contentsline {todo}{{\color@box {}{cyan}{\leavevmode {\color {cyan}o}}\ Add restriction that one token should go to situation and back}}{21}{section*.23}
+\contentsline {todo}{{\color@box {}{cyan}{\leavevmode {\color {cyan}o}}\ Add restriction that one token should go to situation and back}}{20}{section*.23}
 \contentsline {todo}{{\color@box {}{cyan}{\leavevmode {\color {cyan}o}}\ Write about problems with dijksta and petri nets, such as multiple tokens/slots, and colored tokens etc.}}{21}{section*.24}
-\contentsline {todo}{{\color@box {}{cyan}{\leavevmode {\color {cyan}o}}\ About the most important part of the thesis, so has to be extended}}{22}{section*.25}
-\contentsline {todo}{{\color@box {}{cyan}{\leavevmode {\color {cyan}o}}\ Include Pictures}}{22}{section*.26}
+\contentsline {todo}{{\color@box {}{cyan}{\leavevmode {\color {cyan}o}}\ About the most important part of the thesis, so has to be extended}}{21}{section*.25}
+\contentsline {todo}{{\color@box {}{cyan}{\leavevmode {\color {cyan}o}}\ Include Pictures}}{21}{section*.26}
 \contentsline {todo}{{\color@box {}{cyan}{\leavevmode {\color {cyan}o}}\ Achterhaal of iedere pedestrian een persoonlijke time heeft of dat er een algemene timer is. Ik ga voorlopig uit van een persoonlijke timer ook beslissen of het volgende detail misschien meer een implementatiedingetje is.}}{22}{section*.27}
 \contentsline {todo}{{\color@box {}{cyan}{\leavevmode {\color {cyan}o}}\ Check if it's the right way around (afteller of opteller)}}{22}{section*.28}
 \contentsline {todo}{{\color@box {}{cyan}{\leavevmode {\color {cyan}o}}\ Improve structure}}{22}{section*.29}
 \contentsline {todo}{{\color@box {}{cyan}{\leavevmode {\color {cyan}o}}\ Give credit to people who I got the footage from}}{22}{section*.31}
-\contentsline {todo}{{\color@box {}{cyan}{\leavevmode {\color {cyan}o}}\ How often do these behaviors occur?}}{22}{section*.32}
+\contentsline {todo}{{\color@box {}{cyan}{\leavevmode {\color {cyan}o}}\ How often do these behaviors occur?}}{23}{section*.32}
 \contentsline {todo}{{\color@box {}{cyan}{\leavevmode {\color {cyan}o}}\ If I have time I could modify the implementation of this behavior so that the pedestrian actually goes back to his friend after going to the toilet, or at least to the place where he came from}}{23}{section*.33}
 \contentsline {todo}{{\color@box {}{cyan}{\leavevmode {\color {cyan}o}}\ I removed the "checking in" behavior because it was difficult to implement. Maybe if I have some time left I will give it another try because it is quite important behavior for an airport}}{23}{section*.34}
 \contentsline {todo}{{\color@box {}{cyan}{\leavevmode {\color {cyan}o}}\ Check gototoilet Petri one last time to see if there aren't any redundant places/transitions}}{23}{section*.35}
