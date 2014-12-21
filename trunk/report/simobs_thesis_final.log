@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.1415926-2.5-1.40.14 (TeX Live 2013/Debian) (format=pdflatex 2014.10.19)  19 DEC 2014 15:17
+This is pdfTeX, Version 3.1415926-2.5-1.40.14 (TeX Live 2013/Debian) (format=pdflatex 2014.10.19)  21 DEC 2014 14:24
 entering extended mode
  \write18 enabled.
  %&-line parsing enabled.
@@ -655,6 +655,24 @@ Package: multibib 2008/12/10 v1.4 Multiple bibliographies for one document.
 (/usr/share/texlive/texmf-dist/tex/latex/eso-pic/eso-pic.sty
 Package: eso-pic 2013/10/06 v2.0d eso-pic (RN)
 )
+(/usr/share/texlive/texmf-dist/tex/latex/mh/mathtools.sty
+Package: mathtools 2013/02/12 v1.13 mathematical typesetting tools
+
+(/usr/share/texlive/texmf-dist/tex/latex/mh/mhsetup.sty
+Package: mhsetup 2010/01/21 v1.2a programming setup (MH)
+)
+LaTeX Info: Thecontrolsequence`\['isalreadyrobust on input line 129.
+LaTeX Info: Thecontrolsequence`\]'isalreadyrobust on input line 129.
+\g_MT_multlinerow_int=\count156
+\l_MT_multwidth_dim=\dimen199
+\origjot=\skip65
+\l_MT_shortvdotswithinadjustabove_dim=\dimen200
+\l_MT_shortvdotswithinadjustbelow_dim=\dimen201
+\l_MT_above_intertext_sep=\dimen202
+\l_MT_below_intertext_sep=\dimen203
+\l_MT_above_shortintertext_sep=\dimen204
+\l_MT_below_shortintertext_sep=\dimen205
+)
 \@auxoutself=\write4
  (./self.aux)
 \openout4 = `self.aux'.
@@ -663,20 +681,20 @@ Package: eso-pic 2013/10/06 v2.0d eso-pic (RN)
 (./simobs_thesis_final.aux)
 \openout1 = `simobs_thesis_final.aux'.
 
-LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 29.
-LaTeX Font Info:    ... okay on input line 29.
-LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 29.
-LaTeX Font Info:    ... okay on input line 29.
-LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 29.
-LaTeX Font Info:    ... okay on input line 29.
-LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 29.
-LaTeX Font Info:    ... okay on input line 29.
-LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 29.
-LaTeX Font Info:    ... okay on input line 29.
-LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 29.
-LaTeX Font Info:    ... okay on input line 29.
-LaTeX Font Info:    Checking defaults for PD1/pdf/m/n on input line 29.
-LaTeX Font Info:    ... okay on input line 29.
+LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 30.
+LaTeX Font Info:    ... okay on input line 30.
+LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 30.
+LaTeX Font Info:    ... okay on input line 30.
+LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 30.
+LaTeX Font Info:    ... okay on input line 30.
+LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 30.
+LaTeX Font Info:    ... okay on input line 30.
+LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 30.
+LaTeX Font Info:    ... okay on input line 30.
+LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 30.
+LaTeX Font Info:    ... okay on input line 30.
+LaTeX Font Info:    Checking defaults for PD1/pdf/m/n on input line 30.
+LaTeX Font Info:    ... okay on input line 30.
 Package caption Info: Begin \AtBeginDocument code.
 Package caption Info: hyperref package is loaded.
 Package caption Info: End \AtBeginDocument code.
@@ -717,16 +735,16 @@ Package caption Info: End \AtBeginDocument code.
 
 (/usr/share/texlive/texmf-dist/tex/context/base/supp-pdf.mkii
 [Loading MPS to PDF converter (version 2006.09.02).]
-\scratchcounter=\count156
-\scratchdimen=\dimen199
+\scratchcounter=\count157
+\scratchdimen=\dimen206
 \scratchbox=\box40
-\nofMPsegments=\count157
-\nofMParguments=\count158
+\nofMPsegments=\count158
+\nofMParguments=\count159
 \everyMPshowfont=\toks32
-\MPscratchCnt=\count159
-\MPscratchDim=\dimen200
-\MPnumerator=\count160
-\makeMPintoPDFobject=\count161
+\MPscratchCnt=\count160
+\MPscratchDim=\dimen207
+\MPnumerator=\count161
+\makeMPintoPDFobject=\count162
 \everyMPtoPDFconversion=\toks33
 ) ABD: EveryShipout initializing macros
 (/usr/share/texlive/texmf-dist/tex/latex/oberdiek/epstopdf-base.sty
@@ -745,7 +763,7 @@ File: epstopdf-sys.cfg 2010/07/13 v1.3 Configuration of (r)epstopdf for TeX Liv
 e
 ))
 \AtBeginShipoutBox=\box41
-Package hyperref Info: Link coloring OFF on input line 29.
+Package hyperref Info: Link coloring OFF on input line 30.
 
 (/usr/share/texlive/texmf-dist/tex/latex/hyperref/nameref.sty
 Package: nameref 2012/10/27 v2.43 Cross-referencing by name of section
@@ -753,11 +771,11 @@ Package: nameref 2012/10/27 v2.43 Cross-referencing by name of section
 (/usr/share/texlive/texmf-dist/tex/generic/oberdiek/gettitlestring.sty
 Package: gettitlestring 2010/12/03 v1.4 Cleanup title references (HO)
 )
-\c@section@level=\count162
+\c@section@level=\count163
 )
-LaTeX Info: Redefining \ref on input line 29.
-LaTeX Info: Redefining \pageref on input line 29.
-LaTeX Info: Redefining \nameref on input line 29.
+LaTeX Info: Redefining \ref on input line 30.
+LaTeX Info: Redefining \pageref on input line 30.
+LaTeX Info: Redefining \nameref on input line 30.
 
 (./simobs_thesis_final.out) (./simobs_thesis_final.out)
 \@outlinefile=\write5
@@ -767,7 +785,7 @@ LaTeX Info: Redefining \nameref on input line 29.
 <scriptiekaft.png, id=191, 373.8768pt x 511.1898pt>
 File: scriptiekaft.png Graphic file (type png)
  <use scriptiekaft.png>
-Package pdftex.def Info: scriptiekaft.png used on input line 53.
+Package pdftex.def Info: scriptiekaft.png used on input line 54.
 (pdftex.def)             Requested size: 478.00812pt x 653.5641pt.
 
 [1{/var/lib/texmf/fonts/map/pdftex/updmap/pdftex.map}
@@ -776,7 +794,7 @@ Package pdftex.def Info: scriptiekaft.png used on input line 53.
  <./scriptiekaft.png>]
 [2]
 Package hyperref Info: bookmark level for unknown todo defaults to 0 on input l
-ine 100.
+ine 101.
  [3] (./self.bbl) [4] (./simobs_thesis_final.tdo
 LaTeX Font Info:    Try loading font information for U+msa on input line 1.
 
@@ -788,7 +806,7 @@ LaTeX Font Info:    Try loading font information for U+msb on input line 1.
 (/usr/share/texlive/texmf-dist/tex/latex/amsfonts/umsb.fd
 File: umsb.fd 2013/01/14 v3.01 AMS symbols B
 )
-Overfull \hbox (22.31924pt too wide) in paragraph at lines 19--19
+Overfull \hbox (22.31924pt too wide) in paragraph at lines 17--17
  [][] [][][][][][][] \OT1/cmr/m/n/10.95 Check go-to-toi-let Petri one last time
  to see if there aren't any re-dun-dant places/transitions[] [][]  
  []
@@ -807,13 +825,13 @@ Overfull \hbox (22.31924pt too wide) in paragraph at lines 19--19
 
  [10]
 Chapter 1.
-<pedestrians.jpg, id=395, 602.25pt x 401.5pt>
+<pedestrians.jpg, id=389, 602.25pt x 401.5pt>
 File: pedestrians.jpg Graphic file (type jpg)
  <use pedestrians.jpg>
-Package pdftex.def Info: pedestrians.jpg used on input line 141.
+Package pdftex.def Info: pedestrians.jpg used on input line 142.
 (pdftex.def)             Requested size: 200.0pt x 133.33472pt.
 
-Underfull \hbox (badness 10000) in paragraph at lines 138--147
+Underfull \hbox (badness 10000) in paragraph at lines 139--148
 
  []
 
@@ -821,47 +839,47 @@ Underfull \hbox (badness 10000) in paragraph at lines 138--147
 
 
  <./pedestrians.jpg>]
-Underfull \hbox (badness 10000) in paragraph at lines 150--152
+Underfull \hbox (badness 10000) in paragraph at lines 151--153
 
  []
 
 
-Underfull \hbox (badness 2165) in paragraph at lines 150--152
+Underfull \hbox (badness 2165) in paragraph at lines 151--153
 \OT1/cmr/m/n/10.95 SIMOBS is a plu-gin for the mil-i-tary sim-u-la-tion toolkit
  VR-forces ([]$\OT1/cmtt/m/n/10.95 http :
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 148--152
+Underfull \hbox (badness 10000) in paragraph at lines 149--153
 
  []
 
 Package hyperref Info: bookmark level for unknown bclogo defaults to 0 on input
- line 152.
+ line 153.
 File: bc-trombone.mps Graphic file (type mps)
 [MP to PDF] (/home/djura/texmf/tex/latex/bclogo/latex/bc-trombone.mps)
-<rotterdam_airport_pictures/Rotterdamairport.jpg, id=403, 495.8525pt x 376.4062
+<rotterdam_airport_pictures/Rotterdamairport.jpg, id=397, 495.8525pt x 376.4062
 5pt>
 File: rotterdam_airport_pictures/Rotterdamairport.jpg Graphic file (type jpg)
  <use rotterdam_airport_pictures/Rotterdamairport.jpg>
 Package pdftex.def Info: rotterdam_airport_pictures/Rotterdamairport.jpg used o
-n input line 156.
+n input line 157.
 (pdftex.def)             Requested size: 213.39568pt x 161.98936pt.
  [2 <./rotterdam_airport_pictures/Rotterdamairport.jpg>]
-LaTeX Font Info:    Try loading font information for OMS+cmr on input line 187.
+LaTeX Font Info:    Try loading font information for OMS+cmr on input line 188.
 
 
 (/usr/share/texlive/texmf-dist/tex/latex/base/omscmr.fd
 File: omscmr.fd 1999/05/25 v2.5h Standard LaTeX font definitions
 )
 LaTeX Font Info:    Font shape `OMS/cmr/m/n' in size <10.95> not available
-(Font)              Font shape `OMS/cmsy/m/n' tried instead on input line 187.
+(Font)              Font shape `OMS/cmsy/m/n' tried instead on input line 188.
  [3] [4]
 Chapter 2.
-<boids.jpg, id=423, 642.4pt x 410.53375pt>
+<boids.jpg, id=417, 642.4pt x 410.53375pt>
 File: boids.jpg Graphic file (type jpg)
  <use boids.jpg>
-Package pdftex.def Info: boids.jpg used on input line 255.
+Package pdftex.def Info: boids.jpg used on input line 256.
 (pdftex.def)             Requested size: 256.07741pt x 163.65306pt.
 Missing character: There is no Â in font cmr10!
 Missing character: There is no ´ in font cmr10!
@@ -870,62 +888,62 @@ Missing character: There is no ´ in font cmr10!
  [5
 
  <./boids.jpg>]
-[6] <./cellular_automata_crowd.png, id=461, 552.0625pt x 503.8825pt>
+[6] <./cellular_automata_crowd.png, id=455, 552.0625pt x 503.8825pt>
 File: ./cellular_automata_crowd.png Graphic file (type png)
 
 <use ./cellular_automata_crowd.png>
-Package pdftex.def Info: ./cellular_automata_crowd.png used on input line 277.
+Package pdftex.def Info: ./cellular_automata_crowd.png used on input line 278.
 (pdftex.def)             Requested size: 256.07741pt x 233.73398pt.
  [7 <./cellular_automata_crowd.png>]
-<./formations.png, id=478, 573.14125pt x 603.25375pt>
+<./formations.png, id=472, 573.14125pt x 603.25375pt>
 File: ./formations.png Graphic file (type png)
  <use ./formations.png>
-Package pdftex.def Info: ./formations.png used on input line 289.
+Package pdftex.def Info: ./formations.png used on input line 290.
 (pdftex.def)             Requested size: 256.07741pt x 269.53786pt.
 Missing character: There is no Ã in font cmr10!
 Missing character: There is no © in font cmr10!
 
-Underfull \hbox (badness 10000) in paragraph at lines 298--299
+Underfull \hbox (badness 10000) in paragraph at lines 299--300
 
  []
 
 
 Underfull \vbox (badness 10000) has occurred while \output is active []
 
- [8 <./formations.png>] <./thesims.png, id=493, 2055.68pt x 1156.32pt>
+ [8 <./formations.png>] <./thesims.png, id=487, 2055.68pt x 1156.32pt>
 File: ./thesims.png Graphic file (type png)
 
 <use ./thesims.png>
-Package pdftex.def Info: ./thesims.png used on input line 311.
+Package pdftex.def Info: ./thesims.png used on input line 312.
 (pdftex.def)             Requested size: 256.07741pt x 144.02797pt.
 
 
 LaTeX Warning: `h' float specifier changed to `ht'.
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 316--318
+Underfull \hbox (badness 10000) in paragraph at lines 317--319
 
  []
 
-[9] <./sung_situations_example.png, id=507, 1193.45876pt x 777.90625pt>
+[9] <./sung_situations_example.png, id=501, 1193.45876pt x 777.90625pt>
 File: ./sung_situations_example.png Graphic file (type png)
 
 <use ./sung_situations_example.png>
-Package pdftex.def Info: ./sung_situations_example.png used on input line 325.
+Package pdftex.def Info: ./sung_situations_example.png used on input line 326.
 (pdftex.def)             Requested size: 256.07741pt x 166.91422pt.
 
 
 LaTeX Warning: `!h' float specifier changed to `!ht'.
 
 [10 <./thesims.png (PNG copy)>]
-<./statemachine_situations.png, id=519, 1139.25626pt x 764.8575pt>
+<./statemachine_situations.png, id=513, 1139.25626pt x 764.8575pt>
 File: ./statemachine_situations.png Graphic file (type png)
 
 <use ./statemachine_situations.png>
-Package pdftex.def Info: ./statemachine_situations.png used on input line 350.
+Package pdftex.def Info: ./statemachine_situations.png used on input line 351.
 (pdftex.def)             Requested size: 256.07741pt x 171.91045pt.
 
-Overfull \hbox (11.17879pt too wide) in paragraph at lines 346--354
+Overfull \hbox (11.17879pt too wide) in paragraph at lines 347--355
 \OT1/cmr/m/n/10.95 The dif-fer-ence be-tween de-ter-min-is-tic and non-determin
 istic FSMs is that in non-deterministic
  []
@@ -934,78 +952,95 @@ istic FSMs is that in non-deterministic
 LaTeX Warning: `h' float specifier changed to `ht'.
 
 [11 <./sung_situations_example.png>]
-Overfull \hbox (15.811pt too wide) in paragraph at lines 376--378
+Overfull \hbox (15.811pt too wide) in paragraph at lines 387--389
 \OT1/cmr/m/n/10.95 where $(\OML/cmm/m/it/10.95 P; T; I; O; M[]\OT1/cmr/m/n/10.9
 5 )$ is the marked un-timed PN un-der-ly-ing the SPN, and $^^C = (\OML/cmm/m/it
 /10.95 ^^U[]; ^^U[]; [] ; ^^U[]\OT1/cmr/m/n/10.95 )$
  []
 
-[12 <./statemachine_situations.png>]
-<restaurant.png, id=538, 683.55376pt x 465.74pt>
+[12 <./statemachine_situations.png>] [13]
+<restaurant.png, id=539, 683.55376pt x 465.74pt>
 File: restaurant.png Graphic file (type png)
  <use restaurant.png>
-Package pdftex.def Info: restaurant.png used on input line 390.
+Package pdftex.def Info: restaurant.png used on input line 401.
 (pdftex.def)             Requested size: 450.0pt x 306.61473pt.
 
-Overfull \hbox (23.20865pt too wide) in paragraph at lines 390--391
+Overfull \hbox (23.20865pt too wide) in paragraph at lines 401--402
  [] 
  []
 
-[13] [14 <./restaurant.png (PNG copy)>] [15] [16
+[14 <./restaurant.png (PNG copy)>] [15] [16
 
 ]
 Chapter 3.
 [17] [18]
-<petrinet_pictures/sourceandsink.png, id=576, 175.65625pt x 145.54375pt>
+<petrinet_pictures/sourceandsink.png, id=568, 175.65625pt x 145.54375pt>
 File: petrinet_pictures/sourceandsink.png Graphic file (type png)
 
 <use petrinet_pictures/sourceandsink.png>
 Package pdftex.def Info: petrinet_pictures/sourceandsink.png used on input line
- 459.
-(pdftex.def)             Requested size: 213.39568pt x 176.828pt.
- [19 <./petrinet_pictures/sourceandsink.png (PNG copy)>]
-<petrinet_pictures/example_2_copy.png, id=584, 826.08624pt x 932.48375pt>
+ 460.
+(pdftex.def)             Requested size: 128.0387pt x 106.09724pt.
+
+<petrinet_pictures/example_2_copy.png, id=569, 826.08624pt x 932.48375pt>
 File: petrinet_pictures/example_2_copy.png Graphic file (type png)
 
 <use petrinet_pictures/example_2_copy.png>
 Package pdftex.def Info: petrinet_pictures/example_2_copy.png used on input lin
-e 470.
+e 473.
 (pdftex.def)             Requested size: 256.07741pt x 289.06697pt.
 
+
+LaTeX Warning: Reference `fig:pipegui' on page 19 undefined on input line 479.
+
+[19 <./petrinet_pictures/sourceandsink.png (PNG copy)>]
+<pipe_screenshot.png, id=576, 1104.125pt x 578.16pt>
+File: pipe_screenshot.png Graphic file (type png)
+ <use pipe_screenshot.png>
+Package pdftex.def Info: pipe_screenshot.png used on input line 483.
+(pdftex.def)             Requested size: 256.07741pt x 134.09439pt.
+
 Underfull \vbox (badness 10000) has occurred while \output is active []
 
- [20 <./petrinet_pictures/example_2_copy.png>]
+ [20 <./petrinet_pictures/example_2_copy.png> <./pipe_screenshot.png>]
 Missing character: There is no Â in font cmr10!
 Missing character: There is no ¨ in font cmr10!
 
-Underfull \vbox (badness 10000) has occurred while \output is active []
+Underfull \hbox (badness 10000) in paragraph at lines 513--516
 
- [21]
-[22]
+ []
+
+Missing character: There is no Â in font cmr10!
+Missing character: There is no ´ in font cmr10!
+[21] [22]
 Missing character: There is no Â in font cmr10!
 Missing character: There is no ¨ in font cmr10!
 Missing character: There is no Â in font cmr10!
 Missing character: There is no ¨ in font cmr10!
- [23]
-Underfull \hbox (badness 3635) in paragraph at lines 572--572
+
+Underfull \hbox (badness 3635) in paragraph at lines 574--574
 [][][][]\OT1/cmr/m/n/10.95 Check go-to-toi-let Petri one last time to see if th
 ere aren't any re-dun-dant 
  []
 
 
 </home/djura/vakken/svn_afstudeerstage/deadline-driven-behavior/report/petrinet
-_pictures/pillarSituation.png, id=623, 371.3875pt x 265.99374pt>
+_pictures/pillarSituation.png, id=607, 371.3875pt x 265.99374pt>
 File: /home/djura/vakken/svn_afstudeerstage/deadline-driven-behavior/report/pet
 rinet_pictures/pillarSituation.png Graphic file (type png)
 
 <use /home/djura/vakken/svn_afstudeerstage/deadline-driven-behavior/report/petr
 inet_pictures/pillarSituation.png>
 Package pdftex.def Info: /home/djura/vakken/svn_afstudeerstage/deadline-driven-
-behavior/report/petrinet_pictures/pillarSituation.png used on input line 576.
+behavior/report/petrinet_pictures/pillarSituation.png used on input line 578.
 (pdftex.def)             Requested size: 298.75264pt x 213.97636pt.
 
+
+LaTeX Warning: `!h' float specifier changed to `!ht'.
+
+
 </home/djura/vakken/svn_afstudeerstage/deadline-driven-behavior/report/petrinet
-_pictures/standStillSituation.png, id=624, 235.88126pt x 250.9375pt>
+_pictures/standStillSituation.png, id=608, 235.88126pt x 250.9375pt>
 File: /home/djura/vakken/svn_afstudeerstage/deadline-driven-behavior/report/pet
 rinet_pictures/standStillSituation.png Graphic file (type png)
 
@@ -1013,11 +1048,15 @@ rinet_pictures/standStillSituation.png Graphic file (type png)
 inet_pictures/standStillSituation.png>
 Package pdftex.def Info: /home/djura/vakken/svn_afstudeerstage/deadline-driven-
 behavior/report/petrinet_pictures/standStillSituation.png used on input line 58
-3.
+5.
 (pdftex.def)             Requested size: 170.71393pt x 181.61295pt.
 
+
+LaTeX Warning: `!h' float specifier changed to `!ht'.
+
+
 </home/djura/vakken/svn_afstudeerstage/deadline-driven-behavior/report/petrinet
-_pictures/twoPeopleToiletSituation_new.png, id=625, 762.85pt x 444.66125pt>
+_pictures/twoPeopleToiletSituation_new.png, id=609, 762.85pt x 444.66125pt>
 File: /home/djura/vakken/svn_afstudeerstage/deadline-driven-behavior/report/pet
 rinet_pictures/twoPeopleToiletSituation_new.png Graphic file (type png)
 
@@ -1025,7 +1064,7 @@ rinet_pictures/twoPeopleToiletSituation_new.png Graphic file (type png)
 inet_pictures/twoPeopleToiletSituation_new.png>
 Package pdftex.def Info: /home/djura/vakken/svn_afstudeerstage/deadline-driven-
 behavior/report/petrinet_pictures/twoPeopleToiletSituation_new.png used on inpu
-t line 590.
+t line 592.
 (pdftex.def)             Requested size: 426.79135pt x 248.77112pt.
 
 
@@ -1033,59 +1072,59 @@ LaTeX Warning: `!h' float specifier changed to `!ht'.
 
 
 </home/djura/vakken/svn_afstudeerstage/deadline-driven-behavior/report/petrinet
-_pictures/wanderSituation.png, id=626, 301.125pt x 218.8175pt>
+_pictures/wanderSituation.png, id=610, 301.125pt x 218.8175pt>
 File: /home/djura/vakken/svn_afstudeerstage/deadline-driven-behavior/report/pet
 rinet_pictures/wanderSituation.png Graphic file (type png)
 
 <use /home/djura/vakken/svn_afstudeerstage/deadline-driven-behavior/report/petr
 inet_pictures/wanderSituation.png>
 Package pdftex.def Info: /home/djura/vakken/svn_afstudeerstage/deadline-driven-
-behavior/report/petrinet_pictures/wanderSituation.png used on input line 597.
+behavior/report/petrinet_pictures/wanderSituation.png used on input line 599.
 (pdftex.def)             Requested size: 213.39568pt x 155.07436pt.
 
 
 LaTeX Warning: `!h' float specifier changed to `!ht'.
 
-[24 </home/djura/vakken/svn_afstudeerstage/deadline-driven-behavior/report/petr
-inet_pictures/pillarSituation.png (PNG copy)> </home/djura/vakken/svn_afstudeer
-stage/deadline-driven-behavior/report/petrinet_pictures/standStillSituation.png
- (PNG copy)>] [25 </home/djura/vakken/svn_afstudeerstage/deadline-driven-behavi
-or/report/petrinet_pictures/twoPeopleToiletSituation_new.png (PNG copy)> </home
-/djura/vakken/svn_afstudeerstage/deadline-driven-behavior/report/petrinet_pictu
-res/wanderSituation.png (PNG copy)>]
+[23] [24 </home/djura/vakken/svn_afstudeerstage/deadline-driven-behavior/report
+/petrinet_pictures/pillarSituation.png (PNG copy)> </home/djura/vakken/svn_afst
+udeerstage/deadline-driven-behavior/report/petrinet_pictures/standStillSituatio
+n.png (PNG copy)>] [25 </home/djura/vakken/svn_afstudeerstage/deadline-driven-b
+ehavior/report/petrinet_pictures/twoPeopleToiletSituation_new.png (PNG copy)> <
+/home/djura/vakken/svn_afstudeerstage/deadline-driven-behavior/report/petrinet_
+pictures/wanderSituation.png (PNG copy)>]
 </home/djura/vakken/svn_afstudeerstage/deadline-driven-behavior/report/room_wit
-h_agent.png, id=638, 803.0pt x 803.0pt>
+h_agent.png, id=635, 803.0pt x 803.0pt>
 File: /home/djura/vakken/svn_afstudeerstage/deadline-driven-behavior/report/roo
 m_with_agent.png Graphic file (type png)
 
 <use /home/djura/vakken/svn_afstudeerstage/deadline-driven-behavior/report/room
 _with_agent.png>
 Package pdftex.def Info: /home/djura/vakken/svn_afstudeerstage/deadline-driven-
-behavior/report/room_with_agent.png used on input line 613.
+behavior/report/room_with_agent.png used on input line 615.
 (pdftex.def)             Requested size: 213.39568pt x 213.39436pt.
 
 </home/djura/vakken/svn_afstudeerstage/deadline-driven-behavior/report/room_wit
-h_agent_and_situations.png, id=639, 803.0pt x 803.0pt>
+h_agent_and_situations.png, id=636, 803.0pt x 803.0pt>
 File: /home/djura/vakken/svn_afstudeerstage/deadline-driven-behavior/report/roo
 m_with_agent_and_situations.png Graphic file (type png)
 
 <use /home/djura/vakken/svn_afstudeerstage/deadline-driven-behavior/report/room
 _with_agent_and_situations.png>
 Package pdftex.def Info: /home/djura/vakken/svn_afstudeerstage/deadline-driven-
-behavior/report/room_with_agent_and_situations.png used on input line 619.
+behavior/report/room_with_agent_and_situations.png used on input line 621.
 (pdftex.def)             Requested size: 213.39568pt x 213.39436pt.
  [26
 
  </home/djura/vakken/svn_afstudeerstage/deadline-driven-behavior/report/room_wi
 th_agent.png> </home/djura/vakken/svn_afstudeerstage/deadline-driven-behavior/r
 eport/room_with_agent_and_situations.png>]
-Underfull \hbox (badness 10000) in paragraph at lines 629--629
+Underfull \hbox (badness 10000) in paragraph at lines 631--631
 
  []
 
 
 </home/djura/vakken/svn_afstudeerstage/deadline-driven-behavior/report/petrinet
-_pictures/examplePedestrianNet.png, id=652, 205.76875pt x 160.6pt>
+_pictures/examplePedestrianNet.png, id=651, 205.76875pt x 160.6pt>
 File: /home/djura/vakken/svn_afstudeerstage/deadline-driven-behavior/report/pet
 rinet_pictures/examplePedestrianNet.png Graphic file (type png)
 
@@ -1093,30 +1132,30 @@ rinet_pictures/examplePedestrianNet.png Graphic file (type png)
 inet_pictures/examplePedestrianNet.png>
 Package pdftex.def Info: /home/djura/vakken/svn_afstudeerstage/deadline-driven-
 behavior/report/petrinet_pictures/examplePedestrianNet.png used on input line 6
-54.
+56.
 (pdftex.def)             Requested size: 213.39568pt x 166.55444pt.
 
 </home/djura/vakken/svn_afstudeerstage/deadline-driven-behavior/report/petrinet
-_pictures/sitOnBenchExample.png, id=653, 296.10625pt x 279.0425pt>
+_pictures/sitOnBenchExample.png, id=652, 296.10625pt x 279.0425pt>
 File: /home/djura/vakken/svn_afstudeerstage/deadline-driven-behavior/report/pet
 rinet_pictures/sitOnBenchExample.png Graphic file (type png)
 
 <use /home/djura/vakken/svn_afstudeerstage/deadline-driven-behavior/report/petr
 inet_pictures/sitOnBenchExample.png>
 Package pdftex.def Info: /home/djura/vakken/svn_afstudeerstage/deadline-driven-
-behavior/report/petrinet_pictures/sitOnBenchExample.png used on input line 660.
+behavior/report/petrinet_pictures/sitOnBenchExample.png used on input line 662.
 
 (pdftex.def)             Requested size: 213.39568pt x 201.10204pt.
 
 </home/djura/vakken/svn_afstudeerstage/deadline-driven-behavior/report/petrinet
-_pictures/wanderExample.png, id=654, 296.10625pt x 220.825pt>
+_pictures/wanderExample.png, id=653, 296.10625pt x 220.825pt>
 File: /home/djura/vakken/svn_afstudeerstage/deadline-driven-behavior/report/pet
 rinet_pictures/wanderExample.png Graphic file (type png)
 
 <use /home/djura/vakken/svn_afstudeerstage/deadline-driven-behavior/report/petr
 inet_pictures/wanderExample.png>
 Package pdftex.def Info: /home/djura/vakken/svn_afstudeerstage/deadline-driven-
-behavior/report/petrinet_pictures/wanderExample.png used on input line 667.
+behavior/report/petrinet_pictures/wanderExample.png used on input line 669.
 (pdftex.def)             Requested size: 213.39568pt x 159.1455pt.
 
 
@@ -1124,21 +1163,21 @@ LaTeX Warning: `!h' float specifier changed to `!ht'.
 
 
 </home/djura/vakken/svn_afstudeerstage/deadline-driven-behavior/report/petrinet
-_pictures/connectedExample.png, id=655, 642.4pt x 449.68pt>
+_pictures/connectedExample.png, id=654, 642.4pt x 449.68pt>
 File: /home/djura/vakken/svn_afstudeerstage/deadline-driven-behavior/report/pet
 rinet_pictures/connectedExample.png Graphic file (type png)
 
 <use /home/djura/vakken/svn_afstudeerstage/deadline-driven-behavior/report/petr
 inet_pictures/connectedExample.png>
 Package pdftex.def Info: /home/djura/vakken/svn_afstudeerstage/deadline-driven-
-behavior/report/petrinet_pictures/connectedExample.png used on input line 674.
+behavior/report/petrinet_pictures/connectedExample.png used on input line 676.
 (pdftex.def)             Requested size: 426.79135pt x 298.75897pt.
 
 
 LaTeX Warning: `!h' float specifier changed to `!ht'.
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 679--683
+Underfull \hbox (badness 10000) in paragraph at lines 681--685
 
  []
 
@@ -1153,14 +1192,14 @@ e-driven-behavior/report/petrinet_pictures/connectedExample.png>] [29] [30
 Chapter 4.
 
 <"./qualitative experiment pictures/zoomed_in_toiletsituation_reallife".png, id
-=685, 713.66624pt x 478.78876pt>
+=684, 713.66624pt x 478.78876pt>
 File: "./qualitative experiment pictures/zoomed_in_toiletsituation_reallife".pn
 g Graphic file (type png)
 
 <use "./qualitative experiment pictures/zoomed_in_toiletsituation_reallife".png
 >
 Package pdftex.def Info: "./qualitative experiment pictures/zoomed_in_toiletsit
-uation_reallife".png used on input line 722.
+uation_reallife".png used on input line 724.
 (pdftex.def)             Requested size: 213.39568pt x 143.16286pt.
  [31]
 <"./qualitative experiment pictures/zoomed_in_leanagainstpillar_reallife".png, 
@@ -1171,7 +1210,7 @@ png Graphic file (type png)
 <use "./qualitative experiment pictures/zoomed_in_leanagainstpillar_reallife".p
 ng>
 Package pdftex.def Info: "./qualitative experiment pictures/zoomed_in_leanagain
-stpillar_reallife".png used on input line 728.
+stpillar_reallife".png used on input line 730.
 (pdftex.def)             Requested size: 213.39568pt x 207.02917pt.
 
 <"./qualitative experiment pictures/zoomed_in_standstill_reallife".png, id=695,
@@ -1181,7 +1220,7 @@ phic file (type png)
 
 <use "./qualitative experiment pictures/zoomed_in_standstill_reallife".png>
 Package pdftex.def Info: "./qualitative experiment pictures/zoomed_in_standstil
-l_reallife".png used on input line 734.
+l_reallife".png used on input line 736.
 (pdftex.def)             Requested size: 213.39568pt x 151.99373pt.
 Missing character: There is no Â in font cmr10!
 Missing character: There is no ¨ in font cmr10!
@@ -1199,27 +1238,27 @@ le (type png)
 
 <use "./qualitative experiment pictures/wander_tracked_cropped".png>
 Package pdftex.def Info: "./qualitative experiment pictures/wander_tracked_crop
-ped".png used on input line 740.
+ped".png used on input line 742.
 (pdftex.def)             Requested size: 213.39568pt x 130.22842pt.
  [32 <./qualitative experiment pictures/zoomed_in_toiletsituation_reallife.png>
  <./qualitative experiment pictures/zoomed_in_leanagainstpillar_reallife.png>] 
 [33 <./qualitative experiment pictures/zoomed_in_standstill_reallife.png> <./qu
 alitative experiment pictures/wander_tracked_cropped.png>] [34] [35]
-<fastWanderSituation.png, id=722, 281.05pt x 220.825pt>
+<fastWanderSituation.png, id=724, 281.05pt x 220.825pt>
 File: fastWanderSituation.png Graphic file (type png)
 
 <use fastWanderSituation.png>
-Package pdftex.def Info: fastWanderSituation.png used on input line 843.
+Package pdftex.def Info: fastWanderSituation.png used on input line 845.
 (pdftex.def)             Requested size: 213.39568pt x 167.66699pt.
 
-<slowWanderSituation.png, id=723, 296.10625pt x 220.825pt>
+<slowWanderSituation.png, id=725, 296.10625pt x 220.825pt>
 File: slowWanderSituation.png Graphic file (type png)
 
 <use slowWanderSituation.png>
-Package pdftex.def Info: slowWanderSituation.png used on input line 850.
+Package pdftex.def Info: slowWanderSituation.png used on input line 852.
 (pdftex.def)             Requested size: 213.39568pt x 159.1455pt.
 
-Overfull \hbox (4.86667pt too wide) in paragraph at lines 842--854
+Overfull \hbox (4.86667pt too wide) in paragraph at lines 844--856
  [][]  [] 
  []
 
@@ -1227,14 +1266,14 @@ Overfull \hbox (4.86667pt too wide) in paragraph at lines 842--854
 )>]
 Chapter 5.
 
-<"./qualitative experiment pictures/simulated_gototoilet_cropped".png, id=736, 
+<"./qualitative experiment pictures/simulated_gototoilet_cropped".png, id=739, 
 1475.5125pt x 825.0825pt>
 File: "./qualitative experiment pictures/simulated_gototoilet_cropped".png Grap
 hic file (type png)
 
 <use "./qualitative experiment pictures/simulated_gototoilet_cropped".png>
 Package pdftex.def Info: "./qualitative experiment pictures/simulated_gototoile
-t_cropped".png used on input line 871.
+t_cropped".png used on input line 873.
 (pdftex.def)             Requested size: 298.75264pt x 167.05312pt.
 
 
@@ -1242,27 +1281,27 @@ LaTeX Warning: `!h' float specifier changed to `!ht'.
 
 
 <"./qualitative experiment pictures/simulated_pillarsituation_cropped".png, id=
-737, 1053.9375pt x 761.84625pt>
+740, 1053.9375pt x 761.84625pt>
 File: "./qualitative experiment pictures/simulated_pillarsituation_cropped".png
  Graphic file (type png)
 
 <use "./qualitative experiment pictures/simulated_pillarsituation_cropped".png>
 Package pdftex.def Info: "./qualitative experiment pictures/simulated_pillarsit
-uation_cropped".png used on input line 877.
+uation_cropped".png used on input line 879.
 (pdftex.def)             Requested size: 298.75264pt x 215.95433pt.
 
 LaTeX Warning: `!h' float specifier changed to `!ht'.
 
 
 <"./qualitative experiment pictures/simulated_standstillsituation_cropped".png,
- id=738, 978.65625pt x 716.6775pt>
+ id=741, 978.65625pt x 716.6775pt>
 File: "./qualitative experiment pictures/simulated_standstillsituation_cropped"
 .png Graphic file (type png)
 
 <use "./qualitative experiment pictures/simulated_standstillsituation_cropped".
 png>
 Package pdftex.def Info: "./qualitative experiment pictures/simulated_standstil
-lsituation_cropped".png used on input line 883.
+lsituation_cropped".png used on input line 885.
 (pdftex.def)             Requested size: 298.75264pt x 218.7777pt.
 Missing character: There is no Â in font cmr10!
 Missing character: There is no ¨ in font cmr10!
@@ -1277,14 +1316,14 @@ Missing character: There is no ¨ in font cmr10!
 LaTeX Warning: `!h' float specifier changed to `!ht'.
 
 
-<"./qualitative experiment pictures/simulated_wander_cropped".png, id=739, 1047
+<"./qualitative experiment pictures/simulated_wander_cropped".png, id=742, 1047
 .915pt x 647.41875pt>
 File: "./qualitative experiment pictures/simulated_wander_cropped".png Graphic 
 file (type png)
 
 <use "./qualitative experiment pictures/simulated_wander_cropped".png>
 Package pdftex.def Info: "./qualitative experiment pictures/simulated_wander_cr
-opped".png used on input line 889.
+opped".png used on input line 891.
 (pdftex.def)             Requested size: 298.75264pt x 184.56564pt.
 Missing character: There is no Â in font cmr10!
 Missing character: There is no ¨ in font cmr10!
@@ -1305,7 +1344,7 @@ ualitative experiment pictures/simulated_pillarsituation_cropped.png>]
 [39 <./qualitative experiment pictures/simulated_standstillsituation_cropped.pn
 g> <./qualitative experiment pictures/simulated_wander_cropped.png>]
 </home/djura/vakken/svn_afstudeerstage/deadline-driven-behavior/hulpscriptjes/g
-oodresults/linear0to1goal1to0.png, id=757, 1064.778pt x 645.612pt>
+oodresults/linear0to1goal1to0.png, id=762, 1064.778pt x 645.612pt>
 File: /home/djura/vakken/svn_afstudeerstage/deadline-driven-behavior/hulpscript
 jes/goodresults/linear0to1goal1to0.png Graphic file (type png)
 
@@ -1313,11 +1352,11 @@ jes/goodresults/linear0to1goal1to0.png Graphic file (type png)
 es/goodresults/linear0to1goal1to0.png>
 Package pdftex.def Info: /home/djura/vakken/svn_afstudeerstage/deadline-driven-
 behavior/hulpscriptjes/goodresults/linear0to1goal1to0.png used on input line 91
-1.
+3.
 (pdftex.def)             Requested size: 285.94942pt x 173.3817pt.
 
 </home/djura/vakken/svn_afstudeerstage/deadline-driven-behavior/hulpscriptjes/g
-oodresults/sigmoid100_0_10_1_goal1to0.png, id=758, 1069.596pt x 645.612pt>
+oodresults/sigmoid100_0_10_1_goal1to0.png, id=763, 1069.596pt x 645.612pt>
 File: /home/djura/vakken/svn_afstudeerstage/deadline-driven-behavior/hulpscript
 jes/goodresults/sigmoid100_0_10_1_goal1to0.png Graphic file (type png)
 
@@ -1325,7 +1364,7 @@ jes/goodresults/sigmoid100_0_10_1_goal1to0.png Graphic file (type png)
 es/goodresults/sigmoid100_0_10_1_goal1to0.png>
 Package pdftex.def Info: /home/djura/vakken/svn_afstudeerstage/deadline-driven-
 behavior/hulpscriptjes/goodresults/sigmoid100_0_10_1_goal1to0.png used on input
- line 918.
+ line 920.
 (pdftex.def)             Requested size: 285.94942pt x 172.60345pt.
 
 
@@ -1333,7 +1372,7 @@ LaTeX Warning: `!h' float specifier changed to `!ht'.
 
 
 </home/djura/vakken/svn_afstudeerstage/deadline-driven-behavior/hulpscriptjes/g
-oodresults/gaussian200_50_1_goal1to0.png, id=759, 1069.596pt x 645.612pt>
+oodresults/gaussian200_50_1_goal1to0.png, id=764, 1069.596pt x 645.612pt>
 File: /home/djura/vakken/svn_afstudeerstage/deadline-driven-behavior/hulpscript
 jes/goodresults/gaussian200_50_1_goal1to0.png Graphic file (type png)
 
@@ -1341,7 +1380,7 @@ jes/goodresults/gaussian200_50_1_goal1to0.png Graphic file (type png)
 es/goodresults/gaussian200_50_1_goal1to0.png>
 Package pdftex.def Info: /home/djura/vakken/svn_afstudeerstage/deadline-driven-
 behavior/hulpscriptjes/goodresults/gaussian200_50_1_goal1to0.png used on input 
-line 925.
+line 927.
 (pdftex.def)             Requested size: 285.94942pt x 172.60345pt.
 
 
@@ -1352,7 +1391,7 @@ LaTeX Warning: `!h' float specifier changed to `!ht'.
  </home/djura/vakken/svn_afstudeerstage/deadline-driven-behavior/hulpscriptjes/
 goodresults/linear0to1goal1to0.png (PNG copy)>]
 </home/djura/vakken/svn_afstudeerstage/deadline-driven-behavior/hulpscriptjes/g
-oodresults/linear0to1_goal01to0.png, id=773, 1064.778pt x 645.612pt>
+oodresults/linear0to1_goal01to0.png, id=780, 1064.778pt x 645.612pt>
 File: /home/djura/vakken/svn_afstudeerstage/deadline-driven-behavior/hulpscript
 jes/goodresults/linear0to1_goal01to0.png Graphic file (type png)
 
@@ -1360,7 +1399,7 @@ jes/goodresults/linear0to1_goal01to0.png Graphic file (type png)
 es/goodresults/linear0to1_goal01to0.png>
 Package pdftex.def Info: /home/djura/vakken/svn_afstudeerstage/deadline-driven-
 behavior/hulpscriptjes/goodresults/linear0to1_goal01to0.png used on input line 
-935.
+937.
 (pdftex.def)             Requested size: 285.94942pt x 173.3817pt.
 
 
@@ -1368,7 +1407,7 @@ LaTeX Warning: `!h' float specifier changed to `!ht'.
 
 
 </home/djura/vakken/svn_afstudeerstage/deadline-driven-behavior/hulpscriptjes/g
-oodresults/sigmoid_100_0_10_1goal01to0.png, id=774, 868.846pt x 460.922pt>
+oodresults/sigmoid_100_0_10_1goal01to0.png, id=781, 868.846pt x 460.922pt>
 File: /home/djura/vakken/svn_afstudeerstage/deadline-driven-behavior/hulpscript
 jes/goodresults/sigmoid_100_0_10_1goal01to0.png Graphic file (type png)
 
@@ -1376,7 +1415,7 @@ jes/goodresults/sigmoid_100_0_10_1goal01to0.png Graphic file (type png)
 es/goodresults/sigmoid_100_0_10_1goal01to0.png>
 Package pdftex.def Info: /home/djura/vakken/svn_afstudeerstage/deadline-driven-
 behavior/hulpscriptjes/goodresults/sigmoid_100_0_10_1goal01to0.png used on inpu
-t line 942.
+t line 944.
 (pdftex.def)             Requested size: 285.94942pt x 151.68977pt.
 
 
@@ -1384,7 +1423,7 @@ LaTeX Warning: `!h' float specifier changed to `!ht'.
 
 
 </home/djura/vakken/svn_afstudeerstage/deadline-driven-behavior/hulpscriptjes/g
-oodresults/gaussian200_50_1_goal01to0.png, id=775, 1069.596pt x 645.612pt>
+oodresults/gaussian200_50_1_goal01to0.png, id=782, 1069.596pt x 645.612pt>
 File: /home/djura/vakken/svn_afstudeerstage/deadline-driven-behavior/hulpscript
 jes/goodresults/gaussian200_50_1_goal01to0.png Graphic file (type png)
 
@@ -1392,7 +1431,7 @@ jes/goodresults/gaussian200_50_1_goal01to0.png Graphic file (type png)
 es/goodresults/gaussian200_50_1_goal01to0.png>
 Package pdftex.def Info: /home/djura/vakken/svn_afstudeerstage/deadline-driven-
 behavior/hulpscriptjes/goodresults/gaussian200_50_1_goal01to0.png used on input
- line 949.
+ line 951.
 (pdftex.def)             Requested size: 285.94942pt x 172.60345pt.
 
 
@@ -1400,7 +1439,7 @@ LaTeX Warning: `!h' float specifier changed to `!ht'.
 
 
 </home/djura/vakken/svn_afstudeerstage/deadline-driven-behavior/hulpscriptjes/g
-oodresults/linear0_1_200_goalsigmoid_100_0_-10_1.png, id=779, 1064.778pt x 646.
+oodresults/linear0_1_200_goalsigmoid_100_0_-10_1.png, id=786, 1064.778pt x 646.
 415pt>
 File: /home/djura/vakken/svn_afstudeerstage/deadline-driven-behavior/hulpscript
 jes/goodresults/linear0_1_200_goalsigmoid_100_0_-10_1.png Graphic file (type pn
@@ -1410,7 +1449,7 @@ g)
 es/goodresults/linear0_1_200_goalsigmoid_100_0_-10_1.png>
 Package pdftex.def Info: /home/djura/vakken/svn_afstudeerstage/deadline-driven-
 behavior/hulpscriptjes/goodresults/linear0_1_200_goalsigmoid_100_0_-10_1.png us
-ed on input line 959.
+ed on input line 961.
 (pdftex.def)             Requested size: 285.94942pt x 173.59735pt.
 
 
@@ -1418,7 +1457,7 @@ LaTeX Warning: `!h' float specifier changed to `!ht'.
 
 
 </home/djura/vakken/svn_afstudeerstage/deadline-driven-behavior/hulpscriptjes/g
-oodresults/sigmoid100_0_10_1_goalsigmoid100_0_-10_1.png, id=780, 873.664pt x 46
+oodresults/sigmoid100_0_10_1_goalsigmoid100_0_-10_1.png, id=787, 873.664pt x 46
 1.725pt>
 File: /home/djura/vakken/svn_afstudeerstage/deadline-driven-behavior/hulpscript
 jes/goodresults/sigmoid100_0_10_1_goalsigmoid100_0_-10_1.png Graphic file (type
@@ -1428,7 +1467,7 @@ jes/goodresults/sigmoid100_0_10_1_goalsigmoid100_0_-10_1.png Graphic file (type
 es/goodresults/sigmoid100_0_10_1_goalsigmoid100_0_-10_1.png>
 Package pdftex.def Info: /home/djura/vakken/svn_afstudeerstage/deadline-driven-
 behavior/hulpscriptjes/goodresults/sigmoid100_0_10_1_goalsigmoid100_0_-10_1.png
- used on input line 967.
+ used on input line 969.
 (pdftex.def)             Requested size: 285.94942pt x 151.1227pt.
 
 
@@ -1436,7 +1475,7 @@ LaTeX Warning: `!h' float specifier changed to `!ht'.
 
 
 </home/djura/vakken/svn_afstudeerstage/deadline-driven-behavior/hulpscriptjes/g
-oodresults/gaussian200_50_1_goalsigmoid_100_0_-1_1.png, id=781, 873.664pt x 461
+oodresults/gaussian200_50_1_goalsigmoid_100_0_-1_1.png, id=788, 873.664pt x 461
 .725pt>
 File: /home/djura/vakken/svn_afstudeerstage/deadline-driven-behavior/hulpscript
 jes/goodresults/gaussian200_50_1_goalsigmoid_100_0_-1_1.png Graphic file (type 
@@ -1446,7 +1485,7 @@ png)
 es/goodresults/gaussian200_50_1_goalsigmoid_100_0_-1_1.png>
 Package pdftex.def Info: /home/djura/vakken/svn_afstudeerstage/deadline-driven-
 behavior/hulpscriptjes/goodresults/gaussian200_50_1_goalsigmoid_100_0_-1_1.png 
-used on input line 974.
+used on input line 976.
 (pdftex.def)             Requested size: 285.94942pt x 151.1227pt.
 
 
@@ -1454,7 +1493,7 @@ LaTeX Warning: `!h' float specifier changed to `!ht'.
 
 
 </home/djura/vakken/svn_afstudeerstage/deadline-driven-behavior/hulpscriptjes/g
-oodresults/linear0_1_200_goalgaussian_0_50_1.png, id=785, 873.664pt x 461.725pt
+oodresults/linear0_1_200_goalgaussian_0_50_1.png, id=792, 873.664pt x 461.725pt
 >
 File: /home/djura/vakken/svn_afstudeerstage/deadline-driven-behavior/hulpscript
 jes/goodresults/linear0_1_200_goalgaussian_0_50_1.png Graphic file (type png)
@@ -1463,7 +1502,7 @@ jes/goodresults/linear0_1_200_goalgaussian_0_50_1.png Graphic file (type png)
 es/goodresults/linear0_1_200_goalgaussian_0_50_1.png>
 Package pdftex.def Info: /home/djura/vakken/svn_afstudeerstage/deadline-driven-
 behavior/hulpscriptjes/goodresults/linear0_1_200_goalgaussian_0_50_1.png used o
-n input line 982.
+n input line 984.
 (pdftex.def)             Requested size: 285.94942pt x 151.1227pt.
 
 
@@ -1471,7 +1510,7 @@ LaTeX Warning: `!h' float specifier changed to `!ht'.
 
 
 </home/djura/vakken/svn_afstudeerstage/deadline-driven-behavior/hulpscriptjes/g
-oodresults/sigmoid100_0_10_1_goalgaussian0_50_1.png, id=786, 873.664pt x 461.72
+oodresults/sigmoid100_0_10_1_goalgaussian0_50_1.png, id=793, 873.664pt x 461.72
 5pt>
 File: /home/djura/vakken/svn_afstudeerstage/deadline-driven-behavior/hulpscript
 jes/goodresults/sigmoid100_0_10_1_goalgaussian0_50_1.png Graphic file (type png
@@ -1481,7 +1520,7 @@ jes/goodresults/sigmoid100_0_10_1_goalgaussian0_50_1.png Graphic file (type png
 es/goodresults/sigmoid100_0_10_1_goalgaussian0_50_1.png>
 Package pdftex.def Info: /home/djura/vakken/svn_afstudeerstage/deadline-driven-
 behavior/hulpscriptjes/goodresults/sigmoid100_0_10_1_goalgaussian0_50_1.png use
-d on input line 989.
+d on input line 991.
 (pdftex.def)             Requested size: 285.94942pt x 151.1227pt.
 
 
@@ -1489,7 +1528,7 @@ LaTeX Warning: `!h' float specifier changed to `!ht'.
 
 
 </home/djura/vakken/svn_afstudeerstage/deadline-driven-behavior/hulpscriptjes/g
-oodresults/gaussian200_50_1_goalgaussian0_50_1.png, id=787, 868.846pt x 461.725
+oodresults/gaussian200_50_1_goalgaussian0_50_1.png, id=794, 868.846pt x 461.725
 pt>
 File: /home/djura/vakken/svn_afstudeerstage/deadline-driven-behavior/hulpscript
 jes/goodresults/gaussian200_50_1_goalgaussian0_50_1.png Graphic file (type png)
@@ -1499,7 +1538,7 @@ jes/goodresults/gaussian200_50_1_goalgaussian0_50_1.png Graphic file (type png)
 es/goodresults/gaussian200_50_1_goalgaussian0_50_1.png>
 Package pdftex.def Info: /home/djura/vakken/svn_afstudeerstage/deadline-driven-
 behavior/hulpscriptjes/goodresults/gaussian200_50_1_goalgaussian0_50_1.png used
- on input line 996.
+ on input line 998.
 (pdftex.def)             Requested size: 285.94942pt x 151.95404pt.
 
 
@@ -1528,7 +1567,7 @@ afstudeerstage/deadline-driven-behavior/hulpscriptjes/goodresults/gaussian200_5
 
 ]
 </home/djura/vakken/svn_afstudeerstage/deadline-driven-behavior/hulpscriptjes/g
-oodresults/constant1_cropped.png, id=832, 868.846pt x 460.922pt>
+oodresults/constant1_cropped.png, id=841, 868.846pt x 460.922pt>
 File: /home/djura/vakken/svn_afstudeerstage/deadline-driven-behavior/hulpscript
 jes/goodresults/constant1_cropped.png Graphic file (type png)
 
@@ -1536,11 +1575,11 @@ jes/goodresults/constant1_cropped.png Graphic file (type png)
 es/goodresults/constant1_cropped.png>
 Package pdftex.def Info: /home/djura/vakken/svn_afstudeerstage/deadline-driven-
 behavior/hulpscriptjes/goodresults/constant1_cropped.png used on input line 109
-0.
+2.
 (pdftex.def)             Requested size: 285.94942pt x 151.68977pt.
 
 </home/djura/vakken/svn_afstudeerstage/deadline-driven-behavior/hulpscriptjes/g
-oodresults/linear0to1_100agents.png, id=839, 873.664pt x 460.922pt>
+oodresults/linear0to1_100agents.png, id=848, 873.664pt x 460.922pt>
 File: /home/djura/vakken/svn_afstudeerstage/deadline-driven-behavior/hulpscript
 jes/goodresults/linear0to1_100agents.png Graphic file (type png)
 
@@ -1548,11 +1587,11 @@ jes/goodresults/linear0to1_100agents.png Graphic file (type png)
 es/goodresults/linear0to1_100agents.png>
 Package pdftex.def Info: /home/djura/vakken/svn_afstudeerstage/deadline-driven-
 behavior/hulpscriptjes/goodresults/linear0to1_100agents.png used on input line 
-1104.
+1106.
 (pdftex.def)             Requested size: 285.94942pt x 150.85986pt.
 
 </home/djura/vakken/svn_afstudeerstage/deadline-driven-behavior/hulpscriptjes/g
-oodresults/linear0to05_100agents.png, id=840, 873.664pt x 460.922pt>
+oodresults/linear0to05_100agents.png, id=849, 873.664pt x 460.922pt>
 File: /home/djura/vakken/svn_afstudeerstage/deadline-driven-behavior/hulpscript
 jes/goodresults/linear0to05_100agents.png Graphic file (type png)
 
@@ -1560,11 +1599,11 @@ jes/goodresults/linear0to05_100agents.png Graphic file (type png)
 es/goodresults/linear0to05_100agents.png>
 Package pdftex.def Info: /home/djura/vakken/svn_afstudeerstage/deadline-driven-
 behavior/hulpscriptjes/goodresults/linear0to05_100agents.png used on input line
- 1112.
+ 1114.
 (pdftex.def)             Requested size: 285.94942pt x 150.85986pt.
 
 </home/djura/vakken/svn_afstudeerstage/deadline-driven-behavior/hulpscriptjes/g
-oodresults/linear0to01_100agents.png, id=841, 868.846pt x 460.922pt>
+oodresults/linear0to01_100agents.png, id=850, 868.846pt x 460.922pt>
 File: /home/djura/vakken/svn_afstudeerstage/deadline-driven-behavior/hulpscript
 jes/goodresults/linear0to01_100agents.png Graphic file (type png)
 
@@ -1572,11 +1611,11 @@ jes/goodresults/linear0to01_100agents.png Graphic file (type png)
 es/goodresults/linear0to01_100agents.png>
 Package pdftex.def Info: /home/djura/vakken/svn_afstudeerstage/deadline-driven-
 behavior/hulpscriptjes/goodresults/linear0to01_100agents.png used on input line
- 1119.
+ 1121.
 (pdftex.def)             Requested size: 285.94942pt x 151.68977pt.
 
 </home/djura/vakken/svn_afstudeerstage/deadline-driven-behavior/hulpscriptjes/g
-oodresults/sigmoid100_0_10_1.png, id=842, 868.846pt x 461.725pt>
+oodresults/sigmoid100_0_10_1.png, id=851, 868.846pt x 461.725pt>
 File: /home/djura/vakken/svn_afstudeerstage/deadline-driven-behavior/hulpscript
 jes/goodresults/sigmoid100_0_10_1.png Graphic file (type png)
 
@@ -1584,11 +1623,11 @@ jes/goodresults/sigmoid100_0_10_1.png Graphic file (type png)
 es/goodresults/sigmoid100_0_10_1.png>
 Package pdftex.def Info: /home/djura/vakken/svn_afstudeerstage/deadline-driven-
 behavior/hulpscriptjes/goodresults/sigmoid100_0_10_1.png used on input line 112
-6.
+8.
 (pdftex.def)             Requested size: 285.94942pt x 151.95404pt.
 
 </home/djura/vakken/svn_afstudeerstage/deadline-driven-behavior/hulpscriptjes/g
-oodresults/gaussian_mean200_sigma50_100_max1.png, id=843, 868.846pt x 460.922pt
+oodresults/gaussian_mean200_sigma50_100_max1.png, id=852, 868.846pt x 460.922pt
 >
 File: /home/djura/vakken/svn_afstudeerstage/deadline-driven-behavior/hulpscript
 jes/goodresults/gaussian_mean200_sigma50_100_max1.png Graphic file (type png)
@@ -1597,7 +1636,7 @@ jes/goodresults/gaussian_mean200_sigma50_100_max1.png Graphic file (type png)
 es/goodresults/gaussian_mean200_sigma50_100_max1.png>
 Package pdftex.def Info: /home/djura/vakken/svn_afstudeerstage/deadline-driven-
 behavior/hulpscriptjes/goodresults/gaussian_mean200_sigma50_100_max1.png used o
-n input line 1133.
+n input line 1135.
 (pdftex.def)             Requested size: 285.94942pt x 151.68977pt.
  [46 </home/djura/vakken/svn_afstudeerstage/deadline-driven-behavior/hulpscript
 jes/goodresults/constant1_cropped.png (PNG copy)>] [47 </home/djura/vakken/svn_
@@ -1622,48 +1661,127 @@ Missing character: There is no â in font cmti10!
 Missing character: There is no € in font cmti10!
 Missing character: There is no ™ in font cmti10!
  [53])
-Package atveryend Info: Empty hook `BeforeClearDocument' on input line 1243.
+Package atveryend Info: Empty hook `BeforeClearDocument' on input line 1245.
  [54]
-Package atveryend Info: Empty hook `AfterLastShipout' on input line 1243.
+Package atveryend Info: Empty hook `AfterLastShipout' on input line 1245.
 
 (./simobs_thesis_final.aux)
-Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 1243.
-Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 1243.
+Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 1245.
+Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 1245.
 
-Package rerunfilecheck Info: File `simobs_thesis_final.out' has not changed.
-(rerunfilecheck)             Checksum: 56141E1D190882A363CB2E3CDF08C7A1;3235.
-Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 1243.
+
+
+Package rerunfilecheck Warning: File `simobs_thesis_final.out' has changed.
+(rerunfilecheck)                Rerun to get outlines right
+(rerunfilecheck)                or use package `bookmark'.
+
+Package rerunfilecheck Info: Checksums for `simobs_thesis_final.out':
+(rerunfilecheck)             Before: 56141E1D190882A363CB2E3CDF08C7A1;3235
+(rerunfilecheck)             After:  387E96B4F897E1308028B145F9065AD1;3281.
+
+LaTeX Warning: There were undefined references.
+
+
+LaTeX Warning: Label(s) may have changed. Rerun to get cross-references right.
+
+Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 1245.
  ) 
 Here is how much of TeX's memory you used:
- 18578 strings out of 495028
- 343805 string characters out of 6181496
- 404607 words of memory out of 5000000
- 21116 multiletter control sequences out of 15000+600000
+ 19064 strings out of 495028
+ 352378 string characters out of 6181496
+ 415056 words of memory out of 5000000
+ 21575 multiletter control sequences out of 15000+600000
  15014 words of font info for 54 fonts, out of 8000000 for 9000
  14 hyphenation exceptions out of 8191
  63i,13n,78p,2258b,762s stack positions out of 5000i,500n,10000p,200000b,80000s
-</usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx10.pfb></us
-r/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx12.pfb></usr/shar
-e/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmbxti10.pfb></usr/share/te
-xlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmex10.pfb></usr/share/texlive/
-texmf-dist/fonts/type1/public/amsfonts/cm/cmmi10.pfb></usr/share/texlive/texmf-
-dist/fonts/type1/public/amsfonts/cm/cmmi6.pfb></usr/share/texlive/texmf-dist/fo
-nts/type1/public/amsfonts/cm/cmmi8.pfb></usr/share/texlive/texmf-dist/fonts/typ
-e1/public/amsfonts/cm/cmmib10.pfb></usr/share/texlive/texmf-dist/fonts/type1/pu
-blic/amsfonts/cm/cmr10.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/am
-sfonts/cm/cmr17.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/
-cm/cmr6.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmr8.
-pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmsl10.pfb></
-usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy10.pfb></usr/sh
-are/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy6.pfb></usr/share/tex
-live/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy8.pfb></usr/share/texlive/te
-xmf-dist/fonts/type1/public/amsfonts/cm/cmti10.pfb></usr/share/texlive/texmf-di
-st/fonts/type1/public/amsfonts/cm/cmtt10.pfb></usr/share/texlive/texmf-dist/fon
-ts/type1/public/amsfonts/symbols/msam10.pfb>
-Output written on simobs_thesis_final.pdf (64 pages, 5395886 bytes).
+pdfTeX warning (dest): name{table.caption.91} has been referenced but does no
+t exist, replaced by a fixed one
+
+pdfTeX warning (dest): name{figure.caption.84} has been referenced but does not
+ exist, replaced by a fixed one
+
+pdfTeX warning (dest): name{table.caption.81} has been referenced but does not 
+exist, replaced by a fixed one
+
+pdfTeX warning (dest): name{figure.caption.79} has been referenced but does not
+ exist, replaced by a fixed one
+
+pdfTeX warning (dest): name{figure.caption.66} has been referenced but does not
+ exist, replaced by a fixed one
+
+pdfTeX warning (dest): name{figure.caption.52} has been referenced but does not
+ exist, replaced by a fixed one
+
+pdfTeX warning (dest): name{figure.caption.43} has been referenced but does not
+ exist, replaced by a fixed one
+
+pdfTeX warning (dest): name{figure.caption.37} has been referenced but does not
+ exist, replaced by a fixed one
+
+pdfTeX warning (dest): name{figure.caption.30} has been referenced but does not
+ exist, replaced by a fixed one
+
+pdfTeX warning (dest): name{section*.93} has been referenced but does not exist
+, replaced by a fixed one
+
+pdfTeX warning (dest): name{section*.85} has been referenced but does not exist
+, replaced by a fixed one
+
+pdfTeX warning (dest): name{section*.83} has been referenced but does not exist
+, replaced by a fixed one
+
+pdfTeX warning (dest): name{section*.67} has been referenced but does not exist
+, replaced by a fixed one
+
+pdfTeX warning (dest): name{section*.62} has been referenced but does not exist
+, replaced by a fixed one
+
+pdfTeX warning (dest): name{figure.caption.59} has been referenced but does not
+ exist, replaced by a fixed one
+
+pdfTeX warning (dest): name{section*.58} has been referenced but does not exist
+, replaced by a fixed one
+
+pdfTeX warning (dest): name{section*.48} has been referenced but does not exist
+, replaced by a fixed one
+
+pdfTeX warning (dest): name{section*.38} has been referenced but does not exist
+, replaced by a fixed one
+
+pdfTeX warning (dest): name{section*.33} has been referenced but does not exist
+, replaced by a fixed one
+
+pdfTeX warning (dest): name{section*.29} has been referenced but does not exist
+, replaced by a fixed one
+
+pdfTeX warning (dest): name{section.3.6} has been referenced but does not exist
+, replaced by a fixed one
+
+pdfTeX warning (dest): name{subsection.3.4.1} has been referenced but does not 
+exist, replaced by a fixed one
+
+</usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx10.pfb></usr/
+share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx12.pfb></usr/share/
+texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmbxti10.pfb></usr/share/texl
+ive/texmf-dist/fonts/type1/public/amsfonts/cm/cmex10.pfb></usr/share/texlive/te
+xmf-dist/fonts/type1/public/amsfonts/cm/cmmi10.pfb></usr/share/texlive/texmf-di
+st/fonts/type1/public/amsfonts/cm/cmmi6.pfb></usr/share/texlive/texmf-dist/font
+s/type1/public/amsfonts/cm/cmmi8.pfb></usr/share/texlive/texmf-dist/fonts/type1
+/public/amsfonts/cm/cmmib10.pfb></usr/share/texlive/texmf-dist/fonts/type1/publ
+ic/amsfonts/cm/cmr10.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsf
+onts/cm/cmr17.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm
+/cmr6.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmr8.pf
+b></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmsl10.pfb></us
+r/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy10.pfb></usr/shar
+e/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy6.pfb></usr/share/texli
+ve/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy8.pfb></usr/share/texlive/texm
+f-dist/fonts/type1/public/amsfonts/cm/cmti10.pfb></usr/share/texlive/texmf-dist
+/fonts/type1/public/amsfonts/cm/cmtt10.pfb></usr/share/texlive/texmf-dist/fonts
+/type1/public/amsfonts/symbols/msam10.pfb>
+Output written on simobs_thesis_final.pdf (64 pages, 5469700 bytes).
 PDF statistics:
- 1009 PDF objects out of 1200 (max. 8388607)
- 838 compressed objects within 9 object streams
- 238 named destinations out of 1000 (max. 500000)
- 695 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 1026 PDF objects out of 1200 (max. 8388607)
+ 854 compressed objects within 9 object streams
+ 255 named destinations out of 1000 (max. 500000)
+ 700 words of extra memory for PDF output out of 10000 (max. 10000000)
 

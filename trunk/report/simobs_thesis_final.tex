@@ -12,6 +12,7 @@
 \usepackage{color}
 \usepackage{multibib}
 \usepackage{eso-pic}
+\usepackage{mathtools}
 
 \newcommand\BackgroundPic{%
 \put(0,0){%
@@ -356,23 +357,33 @@ Finite state machines are widely used in a variety of applications such as elect
 \subsection{Petri nets}
 \label{sec:petrinetsrelatedwork}
 Petri nets are a mathematical modeling language used for the description of distributed systems. A petri net is a bipartite graph consisting of two types of nodes: places and transitions. These nodes are connected by directed arcs. An arc can run from either a place to a transition, or from a transistion node to a place, but never from a place to a place, or between two transitions. Activity in a Petri net is expressed by by the movement of tokens from place to place, through transitions. Input arcs (from place to transition) denote which places need to contain tokens in order to enable the transition. When a transition is enabled, it consumes the tokens from the input places, and produces tokens in the place indicated by the output arc. The basic Petri nets that we describe in this thesis are called place-transition nets, or p/t nets \cite{desel1998place}.
-P/t nets can be described by a five-tuple:
-\begin{equation}
-PN = (P,T,I,O,M_0)
-\end{equation}
+P/t nets can be described by a four-tuple:
+\[
+PN = (P,T,F,M_0)
+\]
 which comprises of
 \begin{itemize}
 \item a set of places $P = (p_1, p_2, ..., p_m)$,
 \item a set of transitions $T = (t_1, t_2, ...,t_m)$,
-\item a set of input arcs $I \subset P \times T$,
-\item a set of output arcs $O \subset T \times P$,
+\item a set of directed arcs, $F \subseteq (S \cup T) \times (S \cup T)$, satisfying $F \cap (S \times S) = F \cap (T \times T) = \emptyset$
 \item an initial marking $M_0 = (m_{01}. m_{02}, \ldots, m_{0m})$.
 \end{itemize}
+Graphically, places are indicated with circles, transitions as rectangles and arcs as arrows.
+All places and transitions are elements of $N$. Furthermore, it is important to know the definitions of \emph{pre-sets} and \emph{post-sets}:\\
+For an element $x$ of $N$, its \emph{pre-set} $\prescript{\bullet}{}{x}$ is defined by
+\[
+\prescript{\bullet}{}{x} = \{y \in N \mid (y,x) \in F_N\}
+\]
+and its post-set is defined by
+\[
+x^{\bullet} = \{y \in N \mid (x,y) \in F_N\}
+\]
+
 
 P/t nets have been extended in many ways in order to accommodate many different functionalities. An example of this are \emph{stochastic Petri nets}. In this extension, there are two types of transitions: \emph{immediate} and \emph{timed} transitions.
 The Stochastic Petri net (SPN) model can be described as a six-tuple:
 \begin{equation}
-SPN = (P,T,I,O,M_0,\Lambda)
+SPN = (P,T,F,M_0,\Lambda)
 \end{equation}
 where $(P,T,I,O,M_0)$ is the marked untimed PN underlying the SPN, and $\Lambda = (\lambda_1, \lambda_2, \ldots, \lambda_n)$ is an array of (possibly marking dependent) firing rates associated with transitions.
 
@@ -441,29 +452,21 @@ Stuff I should mention here:
 \todo[inline]{Write this out but check if this is already mentioned in other parts of the method}
 Our Petri nets are based on place/transition Petri nets (p/t-nets)\cite{desel1998place}. However, we did make some changes to the way one transition is selected from a set of enabled transitions. These changes were necessary to be able to incorporate a way of dealing with time pressure. In order to have the selection between enabled transitions change over time we compute a new set of probabilities at every timestep (the time unit used in our multiagent simulation) based on the time a behavior takes, the current time, the deadline and a utility function. The details of how we decided to do this can be found in section \ref{timeplanning}.\\
 Because a pedestrian should only be able to do behavior when he is in the associated situation, we should keep the Petri nets belonging to the pedestrian and the nets that describe the behavior for a situation separate, like in figure \ref{petrinetexample}. In the middle of this figure we can see the base place, to which all Petri nets eventually loop back, except for the gotogoal behavior. More about why we have restricted the Petri nets in this way can be found in section \ref{sec:restrictions}. The large circles in this example actually indicate the situation Petri nets. These have to attach to and detach from the pedestrian Petri net as he walks in and out of the associated situation. We do this through specially labeled \emph{source} and \emph{sink} transitions.
-A source transition can formally described as the following:
-\todo[inline]{Do formal description when I have more concentration}
-\begin{equation}
-t_{source} = \{x \in T \mid | \not \not\in I\}
-\end{equation}
-Where, according to the definition of Petri nets in section \ref{sec:petrinetsrelatedwork}, $T$ is the set of places in a net, and $I$ is the set of input arcs for transitions. 
-While a sink transition can be desribed as 
-\begin{equation}
-description of sink transition
-\end{equation}
-
- When a pedestrian walks into a certain situation, two new transitions are attached to the base place. One of these transitions has an arrow pointed from itself to the base place, this is a source transition. The other transition, which as an arrow pointed the other way around is a sink transition. Because a source transition does not consume any tokens, but only produces one, it is always enabled so can fire at any time. Sink transitions only consume tokens.
+A \emph{source} transition is a transition $t \in T$ of which the pre-set $\prescript{\bullet}{}{t} = \emptyset$, whereas a \emph{sink} transition is a transition $t \in T$ of which the post-set $t^{\bullet} = \emptyset$.\\
+ When a pedestrian walks into a certain situation, two new transitions are attached to the base place. One of these transitions has an arc pointed from itself to the base place, this is a source transition. The other transition, which as an arc pointed the other way around is a sink transition. Because a source transition does not consume any tokens, but only produces them, it is always enabled and can fire at any time. Sink transitions only consume tokens.
 
 \begin{figure}
 \begin{center}
-\includegraphics[width=.5\textwidth]{petrinet_pictures/sourceandsink.png}
+\includegraphics[width=.3\textwidth]{petrinet_pictures/sourceandsink.png}
 \end{center}
-\caption{A place with a source and sink transtions.}
+\caption{A place with a source and sink transition.}
 \label{fig:sourceandsink}
 \end{figure}
 
- In our system, we treat these special source and sink tokens differently from other transitions. These newly generated transitions will be associated to sink and source transitions of the situation Petri net. This way, when a newly attached sink transition is fired in a pedestrian Petri net, the associated source transition of the situation Petri net will be found and fired as well. This way tokens can be "transported" from pedestrian Petri nets to situation Petri nets. Situation Petri nets have a fixed amount of special source and sink transitions, so no new ones are generated through the simulation. These sources and sinks indicate where a pedestrian Petri net should "attach" its sink and source transition when the pedestrian enters the associated situation. Whether a source or sink transition in a situation Petri net is meant to be attached to a pedestrian Petri net can be seen in the name of these transitions. These sources and sinks always come in pairs with the names $source:n$ and $sink:n$.
-There is another way in which these source and sink transitions are treated differently. Regular source transitions are always enabled. Therefore, if these transitions would be treated as other transitions, attaching a situation to a pedestrian would create a transition that releases an endless amount of tokens into the Petri nets, which would upset our system. It is possible implement for example a situation in which a regular source transition is incorporated. Whether the system will work correctly is left to the judgement of the designer of the Petri net. An important rule is that a pedestrian net should always be able to transport only one token to a situation Petri net, and only one should be transported back.
+In our system, we generate source and sink transitions when a pedestrian Petri net is attached to a situation Petri net, and treat these differently from other transitions. These new transitions will be associated to sink and source transitions of the situation Petri net. This way, when a newly attached sink transition is fired in a pedestrian Petri net, the associated source transition of the situation Petri net will be found and fired as well. This way tokens can be "transported" from pedestrian Petri nets to situation Petri nets. Situation Petri nets have a fixed amount of special source and sink transitions, so no new ones are generated through the simulation. These sources and sinks indicate where a pedestrian Petri net should "attach" its sink and source transition when the pedestrian enters the associated situation. Whether a source or sink transition in a situation Petri net is meant to be attached to a pedestrian Petri net can be seen in the name of these transitions. These sources and sinks always come in pairs with the names $source:n$ and $sink:n$.
+There is another way in which these source and sink transitions are treated differently. Regular source transitions are always enabled. Therefore, if these transitions would be treated as other transitions, attaching a situation to a pedestrian would create a transition that releases an endless amount of tokens into the Petri nets, which would upset our system. It is possible implement for example a situation in which a regular source transition is incorporated. Whether the system will work correctly is left to the judgement of the designer of the Petri net. An important rule though that all designs should adhere to is that a pedestrian net should always be restricted to transporting only one token to a situation Petri net, and only one should be transported back.
+Formally, this could be described as
+\todo[inline]{Formal definition, insert pictures that shows new source and sink being generated and token transported}
 
 \begin{figure}
 \centering
@@ -473,9 +476,14 @@ There is another way in which these source and sink transitions are treated diff
 \end{figure}
 
 %\todo[inline]{Is this the place to discuss PIPE2 or should it be placed in the appendix?} Here because having a toolkit to easily create those petri nets is pretty relevant.
-PIPE2 is a tool written in Java to create and analyse petri nets. We chose this toolkit for a number of reasons. First of all, PIPE2 is written in Java, which makes it easier to integrate with VR-Forces, because VR-Forces is made to communicate with Java. Secondly, this toolkit promised a number of Petri net extensions, the most important of which is the capability to create \emph{Generalized Stochastic Petri nets}. Generalized stochastic Petri nets is an extension that adds timed transitions to standard p/t nets. Most importantly, PIPE2 provides a clear and simple GUI with which Petri nets can be designed. This is very important because the design of the behavior in our method should be fast and easy. It should require minimal effort to place large amounts of agents in a environment.
-%\todo{Name other reasons, since we don't use generalized stochastic petri nets any more}
-Unfortunately, at a later time it seemed that the generalized stochastic petrinets that we planned to use did not behave as described in the specifications, so that is one of the reasons we stick to use modified, basic, place/transition Petri nets.  
+PIPE2 is a tool written in Java to create and analyse petri nets. We chose this toolkit for a number of reasons. First of all, PIPE2 is written in Java, which makes it easier to integrate with VR-Forces, because VR-Forces is made to communicate with Java. Secondly, this toolkit promised a number of Petri net extensions, the most important of which is the capability to create \emph{Generalized Stochastic Petri nets}. Generalized stochastic Petri nets is an extension that adds timed transitions to standard p/t nets. Unfortunately, at a later time it seemed that the generalized stochastic petrinets that we planned to use did not behave as described in the specifications, so that is one of the reasons we stick to use modified, basic, place/transition Petri nets. Another reason that extend regular p/t Petri nets is that it allows us to have more control over frequencies of behavior. PIPE2 also provides a clear and simple GUI with which Petri nets can be designed (see figure \ref{fig:pipegui}. This is very important because the design of the behavior in our method should be fast and easy. It should require minimal effort to place large amounts of agents in a environment. 
+
+\begin{figure}
+\centering
+\includegraphics[width=.6\textwidth]{pipe_screenshot}
+\caption{The PIPE2 interface.}
+\label{pipegui}
+\end{figure}
 %\todo[inline]{Name disadvantages? Most disadvantages only become clear after PIPE2 has been used for a while so choosing PIPE was mostly because there was not enough time to extensively study alternatives, but it shouldn't be put like that.}
 
 
@@ -486,7 +494,7 @@ Unfortunately, at a later time it seemed that the generalized stochastic petrine
 %\section{Pedestrian Layer}
 %Some drastic changes will be made in order to adapt the situations framework to our needs. Instead of using regular finite state automata, we use Petri nets so that environments in which time constraints are important (e.g. train stations, airports, etc. ) can be properly dealt with.
 
-\todo[inline]{Commented out quite some text because PIPE2 did not work as promised. Replace this text by text that does describe how we actually used the Petri nets. Maybe some of the text is still usable? Also, check if this text shouldn't be further down below, or maybe it is already there.}
+
 
 %\subsubsection{Probabilistic Timed State Automata}
 %In the approach of Sung et al., regular probabilistic finite state automata are used. However, this is not sufficient when dealing with time-constrained goals. This is why we use a system called probabilistic timed automata. Probabilistic timed automata are an extension to B\"{u}chi automata which in turn are an extension to finite state automata. B\"{u}chi automata extend finite state automata to infinite inputs. Probabilistic timed automata use the acceptance conditions used in B\"{u}chi automata and extend these by using clocks, which can be incremented or reset. These clocks can be incorporated in the acceptance conditions, so that %transitions can be restricted based on time.
@@ -502,31 +510,25 @@ Unfortunately, at a later time it seemed that the generalized stochastic petrine
 \section{Restrictions and Assumptions}
 \label{sec:restrictions}
 \todo[inline]{Maybe put more at beginning?( Or at end of method)}
-The method we propose is based on various restrictions which have to be clarified. An important restriction is that the environment the pedestrians have to walk in are designed in such a way that it helps creating realistic behavior. This means that situations have to be defined in such a way that pedestrians will walk into them and act in the appropriate way. This makes our framework probably limited to certain kinds of environments. If a situation is appropriate in the entirety of the scene though, a situation can be designed with an area that encompasses the whole area of the scene. When an environment does not contain many situation areas or if they are too far apart, it is very likely that the framework does not give a satisfactory result.
+The method we propose is based on various restrictions which have to be clarified. An important restriction is that the environment the pedestrians have to walk in are designed in such a way that it helps creating realistic behavior. This means that situations have to be defined in such a way that pedestrians will walk into them and act in the appropriate way. This might make our framework limited to certain kinds of environments. If a situation is appropriate in the entirety of the scene though, a situation can be designed with an area that encompasses the whole area of the scene. When an environment does not contain many situation areas or if they are too far apart, it is very likely that the framework does not give a satisfactory result.
 An important assumption that we make about the scenes that our system has to model is that the pedestrians have to be at a certain place at a certain time. This makes the system more suitable for daily routine type situations rather than cases in which pedestrians are walking around without a proper goal. However, most situations can be described as having a deadline (e.g. eventually, most people have to go to bed), so this assumption is not necessarily very restrictive.\\
 Furthermore, we assume that it is possible to describe the behavior of the pedestrians in Petri nets, and that these models incorporate \emph{base places} to which all ¨paths" eventually loop back, and from which it is always possible to reach the "goal place" (given enough time is left) We need this assumption in order to create an efficient way of determining which actions can be done before the deadline. \\
-\todo[inline]{Add restriction that one token should go to situation and back}
-
-\section{Preparations}
-In order to save computing time during a simulation, we make a few computations before the simulation has started, to use during the simulation. An important step is the calculation of the distance in time between all the places in a Petri net and a destination place (such as the goal place). This distance can easily be computed using the \emph{Dijkstra shortest path algorithm} \cite{dijkstra}. Dijkstra's algorithm is a graph search algorithm that can produce a shortest path tree for a single source, for a graph with nonnegative edges. In our system we can use this to compute the time from any place to the destination place (the source). This can be very useful when we would like to compute an estimate of how long a pedestrian will be stuck to the behavior of a certain situation. However, it will never be more than an estimate, since it is possible to design Petri nets with (possibly) infinite loops. But since the Petri nets are probabilistic, it will never be possible to give an exact prediction of the time it takes to execute a certain behavior.
-
-The use of Dijkstra's algorithm does limit the use of our Petri nets though. For our simple implementation of Dijkstra's algorithm to be effective, we cannot use the Petri nets' more advanced features such as colored tokens. When a Petri net has colored tokens, a different treatment can be defined for these different tokens. They are able to reach the same places, but 
-
 
 \section{Time Planning \& Decision Mechanism}
 \label{timeplanning}
-\todo[inline]{REWRITE!}
-The fact that we use Petri nets with timed transitions instead of finite state automata does not necessarily mean our pedestrians are able to deal with time constraints. However, these Petri nets have helped making our problem representable. In order to use these stochastic Petri nets efficiently for making decisions based on time constraints, we have made a number of assumptions.\\
+\todo[inline]{REWRITE}
+In this section will be described how the pedestrian agents´ behavior is decided upon using information about their deadlines and time spent doing the various behaviors.
 First of all, we assume there are certain \emph{base places} from which it is always possible to reach the (time constrained) goal. Then, we will compute for every transition that will not take the pedestrian to its goal, how much time it takes to get back to the base state. Then we can check whether the goal place is still accessible from the base state when a certain transition has been taken. We use this information to modify the timed transition rate, so pedestrians are more likely to choose the actions that leave them more time to reach their goal.
 As one may have noticed, this approach does not give a completely watertight solution to the planning problem. However, since we have to be able to model large crowds, we cannot create an overly complex planning system, since we would not be able to run the simulation real-time. Furthermore, we do not aim at finding an optimal solution to the planning problem, but rather the most lifelike behavior. In real life, people make errors in judgement, so creating pedestrians who can look ahead perfectly would not be realistic. It is impossible to make an exact definition of realism for our purposes, but what we try to do, is to copy certain specific behavior found in real-life footage. In our experiments we will try different functions for computing the probability of going to the goal, and attempt to assess which function will be most suitable.
 \todo[inline]{About the most important part of the thesis, so has to be extended}
 \todo[inline]{Include Pictures}
 
-
+\subsection{Estimating the Time Spent Doing a Specific Behavior}
+In order to save computing time during a simulation, we make a few computations before the simulation has started. An important step is the calculation of the distance in time between all the places in a Petri net and a destination place (such as the goal place). This distance can easily be computed using the \emph{Dijkstra shortest path algorithm} \cite{dijkstra}. Dijkstra's algorithm is a graph search algorithm that can produce a shortest path tree for a single source, for a graph with nonnegative edges. In our system we can use this to compute the time from any place to the destination place (the source). This can be very useful when we would like to compute an estimate of how long a pedestrian will be stuck to the behavior of a certain situation. However, it will never be more than an estimate, since it is possible to design Petri nets with (possibly) infinite loops. But since the Petri nets are probabilistic, it will never be possible to give an exact prediction of the time it takes to execute a certain behavior.
 
 \subsection{The Basic Algorithm}
 Though the probabilities of the various behaviours a pedestrian can have is dependent on what kind of distribution we are going to use, the underlying mechanism will always be as described in the algorithm in figure \ref{decisionmechanism}. This algorithm is used to choose one of the various behaviors that are currently available to a pedestrian at a certain timestep. Once it is chosen, this behavior will be executed be executed in the following timesteps. This algorithm is only run for the pedestrians whose token is currently in the base place. When the token is in another place, the decision about which transition to choose follows the basic Petri net rules.\\
-First of all, we subtract the current time from the deadline time of the pedestrian.  Before we go any further, it is important to understand how we keep track of the time. \todo[inline]{Achterhaal of iedere pedestrian een persoonlijke time heeft of dat er een algemene timer is. Ik ga voorlopig uit van een persoonlijke timer ook beslissen of het volgende detail misschien meer een implementatiedingetje is.} Every pedestrian has its own timer which in our system is implemented to increment by one at every timestep of our simulation engine. When we have computed $t_d$, we know how much time the pedestrian has left to reach its goal.\\
+First of all, we subtract the current time from the deadline time of the pedestrian.  Before we go any further, it is important to understand how we keep track of the time. Every pedestrian has its own timer which in our system is implemented to increment by one at every timestep of our simulation engine. When we have computed $t_d$, we know how much time the pedestrian has left to reach its goal.\\
 Next, the algorithm computes for every situation how much time is left would the pedestrian choose and execute this behavior. This remaining time is then used to compute the probability rate of the pedestrian deciding to choose this behavior. The probability rate is computed with the function $\phi$, and can have various distributions. In chapter \ref{chap:experiments} (\emph{Experiments}) we will try out various options for $\phi$ to see which will give the most realistic behavior. When the probability rates for all the behaviors have been computed, they are normalized, and based on the resulting probabilities, one of the behaviors is randomly chosen.
 
 \todo[inline]{Check if it's the right way around (afteller of opteller)} 
