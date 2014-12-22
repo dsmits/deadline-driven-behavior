@@ -13,6 +13,8 @@
 \usepackage{multibib}
 \usepackage{eso-pic}
 \usepackage{mathtools}
+\usepackage{float}
+%\usepackage[caption = false]{subfig}
 
 \newcommand\BackgroundPic{%
 \put(0,0){%
@@ -446,35 +448,9 @@ Now that some of the terminology has been clarified, we can move on to how our s
 
 \section{Petri nets}
 Our method of designing behavior for large groups of pedestrians is largely based on the situation framework by Sung et al., but the finite state machines are replaced by Petri nets.
-Our Petri nets are based on place/transition Petri nets (p/t-nets)\cite{desel1998place}. However, we did make some changes to the way one transition is selected from a set of enabled transitions. These changes were necessary to be able to incorporate a way of dealing with time pressure. 
+Our Petri nets are based on place/transition Petri nets (p/t-nets)\cite{desel1998place}. However, we did make some changes to the way one transition is selected from a set of enabled transitions. These changes were necessary to be able to incorporate a way of dealing with time pressure. In the following subsections we will introduce the tool we use for designing Petri nets, and how we incorporate these Petri nets in the overall structure of our system.
 %In order to have the selection between enabled transitions change over time we compute a new set of probabilities at every timestep (the time unit used in our multiagent simulation) based on the time a behavior takes, the current time, the deadline and a utility function. The details of how we decided to do this can be found in section \ref{timeplanning}.
 
-\subsection{Separating the Petri Nets of Situations and Pedestrians}
-Because a pedestrian should only be able to do behavior when he is in the associated situation, we should keep the Petri nets belonging to the pedestrian and the nets that describe the behavior for a situation separate, like in figure \ref{petrinetexample}. In the middle of this figure we can see the base place, to which all Petri nets eventually loop back, except for the gotogoal behavior. The large circles in this example indicate the situation Petri nets. These have to attach to and detach from the pedestrian Petri net as he walks in and out of the associated situation. We do this through specially labeled \emph{source} and \emph{sink} transitions.
-A \emph{source} transition is a transition $t \in T$ of which the pre-set $\prescript{\bullet}{}{t} = \emptyset$, whereas a \emph{sink} transition is a transition $t \in T$ of which the post-set $t^{\bullet} = \emptyset$.\\
- When a pedestrian walks into a certain situation, two new transitions are attached to the base place. One of these transitions has an arc pointed from itself to the base place, this is a source transition. The other transition, which as an arc pointed the other way around is a sink transition. Because a source transition does not consume any tokens, but only produces them, it is always enabled and can fire at any time. Sink transitions only consume tokens.
-
-\begin{figure}
-\centering
-\includegraphics[width=.6\textwidth]{petrinet_pictures/example_2_copy.png}
-\caption{Our plan for separating pedestrian Petri nets from situation Petri nets.}
-\label{petrinetexample}
-\end{figure}
-
-In our system, we generate source and sink transitions when a pedestrian Petri net is attached to a situation Petri net, and treat these differently from other transitions. These new transitions will be associated to sink and source transitions of the situation Petri net. This way, when a newly attached sink transition is fired in a pedestrian Petri net, the associated source transition of the situation Petri net will be found and fired as well. This way tokens can be "transported" from pedestrian Petri nets to situation Petri nets. Situation Petri nets have a fixed amount of special source and sink transitions, so no new ones are generated through the simulation. These sources and sinks indicate where a pedestrian Petri net should "attach" its sink and source transition when the pedestrian enters the associated situation. Whether a source or sink transition in a situation Petri net is meant to be attached to a pedestrian Petri net can be seen in the name of these transitions. These sources and sinks always come in pairs with the names \textbf{source:n} and \textbf{sink:n}.
-There is another way in which these source and sink transitions are treated differently. Regular source transitions are always enabled. Therefore, if these transitions would be treated as other transitions, attaching a situation to a pedestrian would create a transition that releases an endless amount of tokens into the Petri nets, which would upset our system. It is possible implement for example a situation in which a regular source transition is incorporated. Whether the system will work correctly is left to the judgement of the designer of the Petri net. An important rule though that all designs should adhere to is that a pedestrian net should always be restricted to transporting only one token to a situation Petri net, and only one should be transported back.
-\todo[inline]{Formal definition, insert pictures that shows new source and sink being generated and token transported}
-
-\begin{figure}
-\begin{center}
-\includegraphics[width=.3\textwidth]{petrinet_pictures/sourceandsink.png}
-\end{center}
-\caption{A place with a source and sink transition.}
-\label{fig:sourceandsink}
-\end{figure}
-
-
-%\todo[inline]{Is this the place to discuss PIPE2 or should it be placed in the appendix?} Here because having a toolkit to easily create those petri nets is pretty relevant.
 \subsection{PIPE2}
 PIPE2 is a tool written in Java to create and analyse petri nets. We chose this toolkit for a number of reasons. First of all, PIPE2 is written in Java, which makes it easier to integrate with VR-Forces, because VR-Forces is made to communicate with Java. Secondly, this toolkit promised a number of Petri net extensions, the most important of which is the capability to create \emph{Generalized Stochastic Petri nets}. Generalized stochastic Petri nets is an extension that adds timed transitions to standard p/t nets. Unfortunately, at a later time it seemed that the generalized stochastic petrinets that we planned to use did not behave as described in the specifications, so that is one of the reasons we stick to use modified, basic, place/transition Petri nets. Another reason that extend regular p/t Petri nets is that it allows us to have more control over frequencies of behavior. PIPE2 also provides a clear and simple GUI with which Petri nets can be designed (see figure \ref{fig:pipegui}. This is very important because the design of the behavior in our method should be fast and easy. It should require minimal effort to place large amounts of agents in a environment. 
 
@@ -484,6 +460,65 @@ PIPE2 is a tool written in Java to create and analyse petri nets. We chose this 
 \caption{The PIPE2 interface.}
 \label{pipegui}
 \end{figure}
+
+\subsection{Separating the Petri Nets of Situations and Pedestrians}
+Because a pedestrian should only be able to do behavior when he is in the associated situation, we should keep the Petri nets belonging to the pedestrian and the nets that describe the behavior for a situation separate, like in figure \ref{petrinetexample}. In the middle of this figure we can see the base place, to which all Petri nets eventually loop back, except for the gotogoal behavior. The large circles in this example indicate the situation Petri nets. These have to attach to and detach from the pedestrian Petri net as he walks in and out of the associated situation. We do this through specially labeled \emph{source} and \emph{sink} transitions.
+A \emph{source} transition is a transition $t \in T$ of which the pre-set $\prescript{\bullet}{}{t} = \emptyset$, whereas a \emph{sink} transition is a transition $t \in T$ of which the post-set $t^{\bullet} = \emptyset$. An example of a place with a source and sink transition attached can be found in figure \ref{fig:sourceandsink}\\
+ When a pedestrian walks into a certain situation, two new transitions are attached to the base place. One of these transitions has an arc pointed from itself to the base place, this is a source transition. The other transition, which has an arc pointed the other way around is a sink transition. Because a source transition does not consume any tokens, but only produces them, it is always enabled and can fire at any time. Sink transitions only consume tokens.\\
+\begin{figure}[h!]
+\centering
+\includegraphics[width=.6\textwidth]{petrinet_pictures/example_2_copy.png}
+\caption{Our plan for separating pedestrian Petri nets from situation Petri nets.}
+\label{petrinetexample}
+\end{figure}
+\begin{figure}
+\begin{center}
+\includegraphics[width=.3\textwidth]{petrinet_pictures/sourceandsink.png}
+\end{center}
+\caption{A place with a source and sink transition.}
+\label{fig:sourceandsink}
+\end{figure}
+In our system, we generate source and sink transitions when a pedestrian Petri net is attached to a situation Petri net, and treat these differently from other transitions. These new transitions will be associated to sink and source transitions of the situation Petri net. This way, when a newly attached sink transition is fired in a pedestrian Petri net, the associated source transition of the situation Petri net will be found and fired as well. This way tokens can be "transported" from pedestrian Petri nets to situation Petri nets. Situation Petri nets have a fixed amount of special source and sink transitions, so no new ones are generated through the simulation. These sources and sinks indicate where a pedestrian Petri net should "attach" its sink and source transition when the pedestrian enters the associated situation. Whether a source or sink transition in a situation Petri net is meant to be attached to a pedestrian Petri net can be seen in the name of these transitions. These sources and sinks always come in pairs with the names \textbf{source:n} and \textbf{sink:n}.
+There is another way in which these source and sink transitions are treated differently. Regular source transitions are always enabled. Therefore, if these transitions would be treated as other transitions, attaching a situation to a pedestrian would create a transition that releases an endless amount of tokens into the Petri nets, which would upset our system. It is possible implement for example a situation in which a regular source transition is incorporated. Whether the system will work correctly is left to the judgement of the designer of the Petri net. An important rule though that all designs should adhere to is that a pedestrian net should always be restricted to transporting only one token to a situation Petri net, and only one should be transported back. This is because the system, expects this, and the behavior will become unpredictable otherwise. In figure \ref{fig:petrinetconnect} shows the process of connecting to a situation Petri net and exchanging tokens.
+
+\begin{figure}
+\centering
+\begin{subfigure}[b]{0.25\textwidth}
+\raggedleft
+\includegraphics[width=\textwidth]{petrinet_pictures/rotterdamPedestrianNet_before.png}
+\caption{Pedestrian Petri net with no situations attached.}
+\end{subfigure}
+\hspace{0.1\textwidth}
+\begin{subfigure}[b]{0.4\textwidth}
+\raggedright
+\includegraphics[width =\textwidth]{petrinet_pictures/rotterdamPedestrianNet_sinksource.png}
+\caption{Source and sink transitions are generated to attach to situation Petri net.}
+\end{subfigure}
+\begin{subfigure}[b]{0.4\textwidth}
+\includegraphics[width =\textwidth]{petrinet_pictures/connected.png}
+\caption{Sink of pedestrian net is associated with source of situation net and vice versa.}
+\end{subfigure}
+\hspace{.1\textwidth}
+\begin{subfigure}[b]{0.4\textwidth}
+\includegraphics[width =\textwidth]{petrinet_pictures/fired.png}
+\caption{When the sink transition of the pedestrian net is fired, the source transition of the situation net is fired simultaneously.}
+\end{subfigure}
+\begin{subfigure}[b]{0.4\textwidth}
+\includegraphics[width =\textwidth]{petrinet_pictures/fireback.png}
+\caption{The final place that is attached to the special sink transition in the situation net is reached.}
+\end{subfigure}
+\hspace{.1\textwidth}
+\begin{subfigure}[b]{0.4\textwidth}
+\includegraphics[width =\textwidth]{petrinet_pictures/rotterdamPedestrianNet_sinksource.png}
+\caption{The sink transition of the situation net is fired simultaneously with the source transition of the pedestrian net.}
+\end{subfigure}
+\caption{The process of connecting and exchanging tokens between pedestrian and situation Petri nets.}
+\label{fig:petrinetconnect}
+\end{figure}
+
+
+%\todo[inline]{Is this the place to discuss PIPE2 or should it be placed in the appendix?} Here because having a toolkit to easily create those petri nets is pretty relevant.
+
 %\todo[inline]{Name disadvantages? Most disadvantages only become clear after PIPE2 has been used for a while so choosing PIPE was mostly because there was not enough time to extensively study alternatives, but it shouldn't be put like that.}
 
 
@@ -509,44 +544,90 @@ PIPE2 is a tool written in Java to create and analyse petri nets. We chose this 
 
 \section{Time Planning \& Decision Mechanism}
 \label{timeplanning}
-\todo[inline]{REWRITE}
-In this section will be described how the pedestrian agents´ behavior is decided upon using information about their deadlines and time spent doing the various behaviors.
-First of all, we assume there are certain \emph{base places} from which it is always possible to reach the (time constrained) goal. Then, we will compute for every transition that will not take the pedestrian to its goal, how much time it takes to get back to the base state. Then we can check whether the goal place is still accessible from the base state when a certain transition has been taken. We use this information to modify the timed transition rate, so pedestrians are more likely to choose the actions that leave them more time to reach their goal.
-As one may have noticed, this approach does not give a completely watertight solution to the planning problem. However, since we have to be able to model large crowds, we cannot create an overly complex planning system, since we would not be able to run the simulation real-time. Furthermore, we do not aim at finding an optimal solution to the planning problem, but rather the most lifelike behavior. In real life, people make errors in judgement, so creating pedestrians who can look ahead perfectly would not be realistic. It is impossible to make an exact definition of realism for our purposes, but what we try to do, is to copy certain specific behavior found in real-life footage. In our experiments we will try different functions for computing the probability of going to the goal, and attempt to assess which function will be most suitable.
-\todo[inline]{About the most important part of the thesis, so has to be extended}
-\todo[inline]{Include Pictures}
+In this section will be described how the pedestrian agents' behavior is decided upon using information about their deadlines and time spent doing the various behaviors.
+What is important to remember is that pedestrian Petri nets always have one \emph{base place} from which it is always possible to reach the (time constrained) goal. This place should also be labeled \textbf{base} by the designer so our system can find it. In the following subsections, we will first describe how we estimate how much time a certain behavior costs, then we will show how we use this information together with the deadline time, a utility function and the current time to compute the probabilities of various behaviors, and finally we will propose various utility functions that we think will result in the desired behavior.
 
-\subsection{Estimating the Time Spent Doing a Specific Behavior}
+
+\subsection{Estimating the Time of Behaviors}
 In order to save computing time during a simulation, we make a few computations before the simulation has started. An important step is the calculation of the distance in time between all the places in a Petri net and a destination place (such as the goal place). This distance can easily be computed using the \emph{Dijkstra shortest path algorithm} \cite{dijkstra}. Dijkstra's algorithm is a graph search algorithm that can produce a shortest path tree for a single source, for a graph with nonnegative edges. In our system we can use this to compute the time from any place to the destination place (the source). This can be very useful when we would like to compute an estimate of how long a pedestrian will be stuck to the behavior of a certain situation. However, it will never be more than an estimate, since it is possible to design Petri nets with (possibly) infinite loops. But since the Petri nets are probabilistic, it will never be possible to give an exact prediction of the time it takes to execute a certain behavior.
 
-\subsection{The Basic Algorithm}
-Though the probabilities of the various behaviours a pedestrian can have is dependent on what kind of distribution we are going to use, the underlying mechanism will always be as described in the algorithm in figure \ref{decisionmechanism}. This algorithm is used to choose one of the various behaviors that are currently available to a pedestrian at a certain timestep. Once it is chosen, this behavior will be executed be executed in the following timesteps. This algorithm is only run for the pedestrians whose token is currently in the base place. When the token is in another place, the decision about which transition to choose follows the basic Petri net rules.\\
-First of all, we subtract the current time from the deadline time of the pedestrian.  Before we go any further, it is important to understand how we keep track of the time. Every pedestrian has its own timer which in our system is implemented to increment by one at every timestep of our simulation engine. When we have computed $t_d$, we know how much time the pedestrian has left to reach its goal.\\
-Next, the algorithm computes for every situation how much time is left would the pedestrian choose and execute this behavior. This remaining time is then used to compute the probability rate of the pedestrian deciding to choose this behavior. The probability rate is computed with the function $\phi$, and can have various distributions. In chapter \ref{chap:experiments} (\emph{Experiments}) we will try out various options for $\phi$ to see which will give the most realistic behavior. When the probability rates for all the behaviors have been computed, they are normalized, and based on the resulting probabilities, one of the behaviors is randomly chosen.
+\subsection{Deciding on Behavior}
+Though the probabilities of the various behaviours a pedestrian can have are dependent on what kind of utility function we are going to use, the underlying mechanism will always be as described in the algorithm in figure \ref{decisionmechanism}. This algorithm is used to choose one of the various behaviors that are currently available to a pedestrian at a certain timestep. Once one is chosen, this behavior will be executed from the current timestep until it has finished, and the token has moved back to the base place of the pedestrian. This algorithm is only run for the pedestrians whose token is currently in the base place. When the token is in another place, the decision about which transition to choose follows the basic p/t Petri net rules.\\
+The mechanism works as follows: first of all, we subtract the current simulation time from the deadline time of a specific pedestrian.  When we have computed this $t_d$, we know how much time this pedestrian has left to reach its goal.\\
+Next, the algorithm computes for every situation how much time is left would the pedestrian choose to execute this behavior. This remaining time is then used to compute the \emph{utility} of these behaviors. The utility is computed with the utility function $U$, and can have various distributions. In section \ref{subsec:utility} the various utility functions that we experiment with are described. We will try outbehavior various options for $U$ to see which will give the most realistic behavior. When the utilities for all the behaviors have been computed, they are normalized, and based on the resulting probabilities, one of the behaviors is randomly chosen.
 
-\todo[inline]{Check if it's the right way around (afteller of opteller)} 
-\todo[inline]{Improve structure}
 \begin{figure}
 \begin{algorithm}
-\caption{The behavior decision mechanism}
+
 \label{decisionmechanism}
 \begin{algorithmic}
 \State $t_d \gets $ deadline time - current time 
-\For{Every connected situation}
+\For{Every connected situation numbered $0, 1 \ldots n$}
 \State $t_e \gets $ estimated time for situation
 \State $\tau \gets t_d - t_e$
-\State Probability rate $\gets \phi(\tau))$
+\State $u_x \gets U(\tau))$
 \EndFor
-\State normalize(probability rates)
-\State select one transition according to the computed probabilities
+\State $normalize(u_0 \ldots u_n)$
+\State Select randomly from situations $0 \ldots n$, weighted by $u_0 \ldots n$
 \end{algorithmic}
 \end{algorithm}
+\caption{The behavior decision mechanism}
 \end{figure}
+
+As one may have noticed, this approach does not give a completely watertight solution to the planning problem. However, since we have to be able to model large crowds, we cannot create an overly complex planning system, since we would not be able to run the simulation real-time. Furthermore, we do not aim at finding an optimal solution to the planning problem, but rather the most lifelike behavior. In real life, people make errors in judgement, so creating pedestrians who can look ahead perfectly would not be realistic. It is impossible to make an exact definition of realism for our purposes, but what we try to do, is to copy certain specific behavior found in real-life footage. In our experiments we will try different functions for computing the probability of going to the goal, and attempt to assess which function will be most suitable.
+
+
+\subsection{The Utility Functions}
+\label{subsec:utility}
+Below the various utility functions we use will be described. 
+
+\subsubsection{Sigmoid Function}
+A sigmoid function is an S-shaped curve that has a progression that accelerates and approaches a climax over time. This function can be found in many natural processes, such as learning curves. This function closely resembles how we reason that the behavior will shift when a pedestrian approaches a deadline.
+Our sigmoid function is defined as follows:
+\begin{equation}
+U(\tau) = \eta \frac{1}{1+e^{-\omega(\tau-\tau_0)}} + \beta
+\end{equation}
+\todo[inline]{Check if the following parameters are still true}
+In our experiments, we chose $\tau_0=100$ and $\omega=100$, so that the middle of the curve lies in the middle of the 200-timestep period which the pedestrians have to reach their deadline. We chose $\omega$ to be 100 as well to scale the function to fit in the 200 timestep interval. For $\eta$, we varied this between 0 and 1.
+% When the deadline is far away, it does not matter much whether the pedestrian goes straight to its goal or does something else. Even if time shifts a little, it still does not matter much. However, when the pedestrian moves on
+
+%\begin{figure}
+%\centering
+%\includegraphics[width=200pt]{Logistic-curve}
+%\caption{A typical sigmoid function}
+%\label{sigmoid-example}
+%\end{figure}
+
+\subsubsection{Linear Function}
+We first chose to use a sigmoid function, because intuitively it felt like it would reflect real-life behavior best. However, it could be the case that the sophistication of this function is lost in practice. If this is the case, we might as well use the simpler linear function. We will use this function to check the necessity of the sigmoid function. Our linear function was of the following form:
+\begin{center}
+If $0 \leq \tau \leq n$: $P(\tau) = a\tau + b$\\
+If $\tau<0$: $P(\tau) = P(0)$\\
+If $\tau<n$: $P(\tau) = P(n)$
+\end{center}
+However, we do not specify these parameters directly. What matters the most to us, is the value at the start of the linear utility function, $U$ at $\tau=0$, which we call $U_0$ and the value of $U$ at the end where $\tau=n$, which we call $U_n$. Consequently, we compute $a$ and $b$ as follows:
+\todo[inline]{Check whether I'm consequent in the indication of the parameters and if it is correct to call the x axis $n$}
+\begin{center}
+$a = \frac{U_n - U_0}{n}$\\
+$b = U_0$
+\end{center}
+
+
+
+\subsubsection{Gaussian Function}
+We also used a Gaussian function to model the behavior, defined as follows:
+%\begin{equation}f(x) = ae^{- \frac{(x-b)^2}{2c^2}}\end{equation}
+\begin{equation}f(\tau)\frac{1}{\sigma \sqrt{2 \pi}} e^{- \frac{(\tau - \mu)^2}{2\sigma^2}}
+\end{equation}
+%Where real constants $a, b, c > 0 $. 
+A Gaussian distribution (or normal distribution) is a continuous probability distribution with a bell-shaped probability density function which have a mean ($\mu$ and variance ($\sigma^2$) as parameters.
+We chose to try a Gaussian function as well because of the following reasoning: A pedestrian might not care about going to it's goal until it is approximately the time of the deadline. With this we mean that going to the goal is a priority \emph{around} the time of the deadline, and will also decline when the deadline has passed for a while, and the pedestrian hasn't reached its goal yet. With this reasoning, the "go-to-goal" behavior frequency should increase when approaching the deadline, and should peak \emph{just} before the deadline, and declines thereafter.
+
+
 
 \section{Rotterdam Airport}
 \label{sec:rotterdamAirportMethod}
-\todo[inline]{Give credit to people who I got the footage from}
-In our research, we focus on behavior found at Rotterdam airport. In order to know what the behavior at this location looks like, we have observed footage from the security cameras at Rotterdam airport. From these observations we have established a couple of specific behaviors that are recurrent in Rotterdam airport and managed to recreate the behavior in Petri nets.
+In our research, we focus on behavior found at Rotterdam airport. In order to know what the behavior at this location looks like, we have observed footage from the security cameras at Rotterdam airport that the Intelligent Imaging department at TNO was so kind to provide. From these observations we have established a couple of specific behaviors that are recurrent in Rotterdam airport and managed to recreate the behavior in Petri nets.
 \todo[inline]{How often do these behaviors occur?}
 \begin{itemize}
 \item \emph{Standing still, figure \ref{fig:standstillpetrinet}}.\\
@@ -760,49 +841,8 @@ In this qualitative experiment, we will try to imitate these behaviors using our
 \section{Quantitative Experiment}
 \todo[inline]{Check which parts of the first quantitative experiment are still relevant now the experiments have changed.}
 It is very difficult to quantitatively establish whether lifelike behavior has been modeled. However, it is possible to check whether the mechanics of time planning work as predicted. In order to do this, we log for every step in time, for every pedestrian, which action he is doing at the moment. This information will be plotted in a graph that shows the frequency of every action at every step in time. The deadline of going to the goal will be 200 steps in our simulation. We chose this value because our behavior takes up to roughly 40 steps (but most behavior takes 20 steps or less) and this leaves enough room for the pedestrians to decide on multiple behaviors while "relaxed" before time starts running out and they have to start hurrying.
-We will try different utility functions for the go-to-goal and non-goal behavior to see how this influences the simulation. The parameters for these functions have been decided on beforehand. We based our decision on what parameters would give a significant but gradual increase in the course of this timeframe and give the maximum utility on either $t=0$ or $t=200$, the first when the function is used as utility measure for go-to-goal behavior, the latter when applied to non-goal behavior. The utility functions will be judged on whether they result in behavior that transitions from relaxd to hurried, and whether they help the pedestrians reach their goal in time.
+We will try different utility functions for the go-to-goal and non-goal behavior to see how this influences the simulation. The parameters for these functions have been decided on beforehand. We based our decision on what parameters would give a significant but gradual increase in the course of this timeframe and give the maximum utility on either $t=0$ or $t=200$, the first when the function is used as utility measure for go-to-goal behavior, the latter when applied to non-goal behavior. The utility functions will be judged on whether they result in behavior that transitions from relaxed to hurried, and whether they help the pedestrians reach their goal in time.
 
-\subsection{Sigmoid Function}
-A sigmoid function is an S-shaped curve that has a progression that accellerates and approaches a climax over time. This function can be found in many natural processes, such as learning curves. This function closely resembles how we reason that the behavior will shift when a pedestrian approaches a deadline.
-Our sigmoid function is defined as follows:
-\begin{equation}
-U(\tau) = \eta \frac{1}{1+e^{-\omega(\tau-\tau_0)}} + \beta
-\end{equation}
-\todo[inline]{Check if the following parameters are still true}
-In our experiments, we chose $\tau_0=100$ and $\omega=100$, so that the middle of the curve lies in the middle of the 200-timestep period which the pedestrians have to reach their deadline. We chose $\omega$ to be 100 as well to scale the function to fit in the 200 timestep interval. For $\eta$, we varied this between 0 and 1.
-% When the deadline is far away, it does not matter much whether the pedestrian goes straight to its goal or does something else. Even if time shifts a little, it still does not matter much. However, when the pedestrian moves on
-
-%\begin{figure}
-%\centering
-%\includegraphics[width=200pt]{Logistic-curve}
-%\caption{A typical sigmoid function}
-%\label{sigmoid-example}
-%\end{figure}
-
-\subsection{Linear Function}
-We first chose to use a sigmoid function, because intuitively it felt like it would reflect real-life behavior best. However, it could be the case that the sophistication of this function is lost in practice. If this is the case, we might as well use the simpler linear function. We will use this function to check the necessity of the sigmoid function. Our linear function was of the following form:
-\begin{center}
-If $0 \leq \tau \leq n$: $P(\tau) = a\tau + b$\\
-If $\tau<0$: $P(\tau) = P(0)$\\
-If $\tau<n$: $P(\tau) = P(n)$
-\end{center}
-However, we do not specify these parameters directly. What matters the most to us, is the value at the start of the linear utility function, $U$ at $\tau=0$, which we call $U_0$ and the value of $U$ at the end where $\tau=n$, which we call $U_n$. Consequently, we compute $a$ and $b$ as follows:
-\todo[inline]{Check whether I'm consequent in the indication of the parameters and if it is correct to call the x axis $n$}
-\begin{center}
-$a = \frac{U_n - U_0}{n}$\\
-$b = U_0$
-\end{center}
-
-
-
-\subsection{Gaussian Function}
-We also used a Gaussian function to model the behavior, defined as follows:
-%\begin{equation}f(x) = ae^{- \frac{(x-b)^2}{2c^2}}\end{equation}
-\begin{equation}f(\tau)\frac{1}{\sigma \sqrt{2 \pi}} e^{- \frac{(\tau - \mu)^2}{2\sigma^2}}
-\end{equation}
-%Where real constants $a, b, c > 0 $. 
-A Gaussian distribution (or normal distribution) is a continuous probability distribution with a bell-shaped probability density function which have a mean ($\mu$ and variance ($\sigma^2$) as parameters.
-We chose to try a Gaussian function as well because of the following reasoning: A pedestrian might not care about going to it's goal until it is approximately the time of the deadline. With this we mean that going to the goal is a priority \emph{around} the time of the deadline, and will also decline when the deadline has passed for a while, and the pedestrian hasn't reached its goal yet. With this reasoning, the "go-to-goal" behavior frequency should increase when approaching the deadline, and should peak \emph{just} before the deadline, and declines thereafter.
 
 
 
