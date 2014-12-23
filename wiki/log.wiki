@@ -10,6 +10,11 @@ DISCLAIMER: The things that I write here are mainly to arrange my own thoughts a
   * Read that one article about Petri nets
   * Further read the book/article that I refer to about finite state machines.
 
+=23-12-2014=
+I'm quite proud of the cover picture I made:
+
+https://deadline-driven-behavior.googlecode.com/svn/trunk/report/kaft_bewerkt.png
+
 =13-12-2014=
 I'm reading an article that describes basic pPetri niets in detail and some interesting properties are defined. Maybe can put some of the restrictions I put on Petri nets for my system to work in these terms.
 
