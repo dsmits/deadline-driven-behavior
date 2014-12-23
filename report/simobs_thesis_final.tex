@@ -419,7 +419,6 @@ Of all the possible existing techniques, the "situations" approach of Sung et al
 However, it is not directly usable for our purposes. One downside to the situations approach (at least how it is described in the paper) is that state transitions are mainly low-level animations. However, it should be possible to adapt the state transitions to correspond to higher-level actions, such as change of goal. Path planning should then be delegated to another module. In this way, it is very likely that the state representation can be reduced from $s = \{t, \bf{p}, \theta, s^- \}$ to $s = \{t, \bf{p}, \theta\}$. The $s^-$ was used to remember which actions were taken previously, so that the pedestrian remembers which way it was walking. When the actual walking is delegated to another module, it seems unnecessary to keep $s^-$.
 
 \chapter{Method}
-\todo[inline]{Check whole thesis on occurrence of "probability" function and replace it with "utility function" where necessary}
 In the upcoming sections will be described how we decided to design our system. We decided to base our model around Sungs situations framework \cite{Sung04scalablebehaviors}. We chose this framework because it allows for probabilistic behavior, and puts emphasis on defining behavior through the environment. This framework will have to be extended to deal with time restrictions. However, we won't work with finite state machines, as Sung et al. do, since these offer too little functionality to enable us to work with time restrictions. Furthermore, FSMs are not suitable for describing interactions between multiple agents. That is why we model behavior in a more advanced way in our system. Instead of modelling the system with finite state machines, we describe the behavior of the pedestrians with Petri nets.  The toolkit we will use for this is \emph{Platform Independent Petri net Editor 2} (PIPE2). \url{http://pipe2.sourceforge.net/} Further down below we describe how we decided to use this toolkit.
 
 In short, this chapter will describe how we combined the situations framework with Petri nets instead of finite state machines, and added a mechanism with which we compute a "utility" measure for behavior.
@@ -560,11 +559,16 @@ Next, the algorithm computes for every situation how much time is left would the
 \begin{algorithm}
 
 \begin{algorithmic}
-\State $t_d \gets $ deadline time - current time 
-\For{Every connected situation numbered $0, 1 \ldots n$}
-\State $t_e \gets $ estimated time for situation
-\State $\tau \gets t_d - t_e$
-\State $u_x \gets U(\tau))$
+\State $\delta \gets $ deadline time - current time 
+\For{Every connected transition numbered $t_0, t_1 \ldots t_n$}
+
+\State $\epsilon \gets time\_estimate(t_x)$ \Comment{Estimated time of behavior connected to $t_x$}
+\State $\tau \gets \delta - \epsilon$\Comment{Time left after doing behavior.}
+\If{$name(transition) = $'gotogoal'}
+	\State $u_x \gets U_{goal}(\tau))$
+\Else
+	\State $u_x \gets U_{non-goal}(\tau))$
+\EndIf
 \EndFor
 \State $normalize(u_0 \ldots u_n)$
 \State Select randomly from situations $0 \ldots n$, weighted by $u_0 \ldots n$
@@ -574,7 +578,7 @@ Next, the algorithm computes for every situation how much time is left would the
 \label{fig:decisionmechanism}
 \end{figure}
 
-As one may have noticed, this approach does not give a completely watertight solution to the planning problem. However, since we have to be able to model large crowds, we cannot create an overly complex planning system, since we would not be able to run the simulation real-time. Furthermore, we do not aim at finding an optimal solution to the planning problem, but rather the most lifelike behavior. In real life, people make errors in judgement, so creating pedestrians who can look ahead perfectly would not be realistic. It is impossible to make an exact definition of realism for our purposes, but what we try to do, is to copy certain specific behavior found in real-life footage. In our experiments we will try different functions for computing the probability of going to the goal, and attempt to assess which function will be most suitable.
+As one may have noticed, this approach does not give a completely watertight solution to the planning problem. However, since we have to be able to model large crowds, we cannot create an overly complex planning system, because then we would not be able to run the simulation real-time. Furthermore, we do not aim at finding an optimal solution to the planning problem, but rather the most lifelike behavior. In real life, people make errors in judgement, so creating pedestrians who can look ahead perfectly would not be realistic. It is impossible to make an exact definition of realism for our purposes, but what we try to do, is to copy certain specific behavior found in real-life footage. In our experiments we will try different utility functions to influence the probability of going to the goal or do something else, and attempt to assess which function will be most suitable.
 
 
 \subsection{The Utility Functions}
@@ -825,7 +829,6 @@ In this qualitative experiment, we will try to imitate these behaviors using our
 
 
 \section{Quantitative Experiment}
-\todo[inline]{Check which parts of the first quantitative experiment are still relevant now the experiments have changed.}
 It is quite a challenge to quantitatively establish whether lifelike behavior has been modeled. However, it is possible to check whether the mechanics of time planning work as predicted. If the mechanics work as expected, the simulation should start with a preference of \emph{relaxed} over \emph{hurried} behavior. Then, as time passes and the deadline draws near, the frequency of hurried behavior should increase while relaxed behavior decreases.\\
 In order to test our theory, we run the simulation once with 100 pedestrians and log for every step in time, for every pedestrian, which action he is doing at the moment. This information will be plotted in a graph that shows the frequency of every action at every step in time.\\
 The deadline of going to the goal will be 200 steps in our simulation. We chose this value because our behavior takes up to roughly 40 steps (but most behavior takes 20 steps or less) and this leaves enough room for the pedestrians to decide on multiple behaviors while "relaxed" before time starts running out and they have to start hurrying.\\
@@ -921,9 +924,7 @@ The results will again be judged on its transition from relaxed to hurried. We e
 
 \section{Results of the Qualitative Experiment}
 \label{sec:qualitativeresults}
-\todo[inline]{Rewrite results of qualitative experiment}
-\todo[inline]{Say something about how often the behaviors take place in the simulation (will have to see how to compare real life and simulation time)}
-
+%\todo[inline]{Say something about how often the behaviors take place in the simulation (will have to see how to compare real life and simulation time)}
 We ran a simulation that included the behaviors that we found in real-life, and observed the trajectories that the simulated behaviors made. The resulting trajectories can be found in figure \ref{fig:simulatedtoilettrajectory}, \ref{fig:simulatedpillartrajectory}, \ref{fig:simulatedstandstilltrajectory} and \ref{fig:simulatedwandertrajectory}. From a qualitative point of view, it seems that the behavior of one person going to the toilet and one person waiting could be mimicked very well. Also leaning against a pillar has a trajectory close to the real-life trajectory. Standing still is such a trivial move that it is hardly surprising that it could be mimicked in our simulation. Lastly, \ref{fig:simulatedwandertrajectory} shows the trajectory of a simulated agent wandering around. One thing that might stand out is that the trajectory in our simulation swerves around more than the real-life trajectory. Part of this behavior is easily modified by changing the parameters of the wandering behavior, but it also illustrates a more high-level difference between real-life "wandering around" and the behavior in our system. it seems that often, the people tracked in real-life have some kind of determination to go to a certain place. The behavior is not as random as our simulated behavior. This is not a weakness of our system though, but merely indicates that more inquiry needs to be done into peoples' intentions in a airport-type scenario. Unfortunately this is outside the scope of our research.
 
 \begin{figure}[h!]
@@ -964,7 +965,7 @@ We ran a simulation that included the behaviors that we found in real-life, and 
 Firstly we are going to discuss the results of the first quantitative experiment. One thing that is noticable in all results is that there are periods in which the number of pedestrians, especially in slow and fast wander, is steady, after which the number drops drastically. After a few steps the number goes up again. In sync with this behavior the number of pedestrians remaining idle stays low, and increases when the other behaviors drop. This is easily explained. Slow and fast wander are behaviors that exist of a single action. When this action has been executed, which takes a few steps, the token of the pedestrian moves out of the attached Petri net into its base place. In order to move this token, a slot and sink transition have to be fired. These transitions do not have an associated action. When there is no action available for the pedestrian, it executes the idle behavior. Especially at the start, this effect is very prominent. This is because all pedestrians start the simulation at exactly the same moment. All pedestrians executing the same actions or actions that take the same amount of time stay synchronous. After a few dozens of steps, the behavior has varied more and the pedestrians are not as synchronous any more in going back to the idle "action".
 
 Another thing that we can notice is that there are more or less four actions that dominate simulation, namely \emph{slow wander}, \emph{fast wander}, \emph{go to goal}, and \emph{idle action}.
-\todo[inline]{What happened to lean against pillar?} Behavior like going to the toilet and waiting for their friend (which are both part of the same going to the toilet behavior and Petri net) are only done by one or two pedestrians at a time. This is completely as expected. The go-to-toilet situation is shared, which means that one Petri net is attached to multiple pedestrian Petri nets. The more dominant actions belong to situations that are not shared and are instantiated for every pedestrian that enters it. That means that the shared Petri nets are only instantiated once for every situation, while the ones that aren't shared are instantiated many times.
+Behavior like going to the toilet and waiting for their friend (which are both part of the same going to the toilet behavior and Petri net) are only done by one or two pedestrians at a time. This is completely as expected. The go-to-toilet situation is shared, which means that one Petri net is attached to multiple pedestrian Petri nets. The more dominant actions belong to situations that are not shared and are instantiated for every pedestrian that enters it. That means that the shared Petri nets are only instantiated once for every situation, while the ones that aren't shared are instantiated many times.
 
 \begin{figure}[h!]
 \centering            
@@ -1058,7 +1059,7 @@ In figure \ref{fig:linear0_1_200_goalsigmoid_100_0_-10_1}, \ref{fig:sigmoid100_0
 \label{fig:gaussian200_50_1_goalgaussian0_50_1}
 \end{figure}
 
-The results for a Gaussian goal probability function are shown in figure \ref{fig:sigmoid100_0_10_1_goalgaussian0_50_1}, \ref{fig:linear0_1_200_goalgaussian_0_50_1} and \ref{fig:gaussian200_50_1_goalgaussian0_50_1}. We see that in general, the pedestrians seem to wait longer before they go to their goals. This also causes more pedestrians to be too late, because they still are on their way to the goal when the deadline passes. This is very likely due to the fact that the estimation of going to the goal is too low for some pedestrians, because the area they move in is larger than I took into account when estimating the time needed to go to the goal. 
+The results for a Gaussian goal utility function are shown in figure \ref{fig:sigmoid100_0_10_1_goalgaussian0_50_1}, \ref{fig:linear0_1_200_goalgaussian_0_50_1} and \ref{fig:gaussian200_50_1_goalgaussian0_50_1}. We see that in general, the pedestrians seem to wait longer before they go to their goals. This also causes more pedestrians to be too late, because they still are on their way to the goal when the deadline passes. This is very likely due to the fact that the estimation of going to the goal is too low for some pedestrians, because the area they move in is larger than I took into account when estimating the time needed to go to the goal. 
 \clearpage
 
 From these results we can make a table in which we judge the utility functions on two important aspects: change from relaxed to hurried behavior (table \ref{tab:judgegoalhurry}) and deadline-drivenness in table \ref{tab:judgegoaldeadline} (do they reach the goal in time?). We give the graphs a score in the following way: when it scores sufficiently, we give a checkmark (\checkmark). If they score better, we have + and ++, and for worse, -- and -- --. We also gave a special score in table \ref{tab:judgegoaldeadline}, namely $>>$. It means that the pedestrians reached their goal too early. When we would judge in terms of whether they are on time, we should have given them ++. However, the pedestrians reached their goal so early that they hardly did any other behavior than going to their goal. This is not desirable, so we decided to score them differently.\\
@@ -1108,10 +1109,7 @@ When looking at the tables, there is only one combination of utility functions t
 %\label{fig:linear0to1goal01}
 %\end{figure}
 
-
-\todo[inline]{Include subsections?}
 In short, a number of combinations of utility functions perform well on one of the two criteria, and the combination of a Gaussian goal utility function with a sigmoid non-goal utility performs at least sufficiently on both. We do notice that the goal utility function does start to have a large influence after only a few dozen of steps in most simulations. This way it is possible that the goal utility function "sabotages" the development of a nice transition from hurried to relaxed behavior (we will also talk about this in chapter \ref{chap:conclusiondiscusssion}). This was actually why we decided to do the second quantitative experiment that we described in the previous chapter (\ref{sec:quantitativeexp2}). The results can be found in section \ref{sec:secondquantitativeexperimentresults}.
-\todo[inline]{Make sure the utility functions are explained better/clarified. Otherwise it is very confusing that their effect in time is more or less the mirrored version of the way they are defined.}
 
 
 %%
@@ -1154,31 +1152,14 @@ First of all, we have figure \ref{fig:constant1} where the $U=1$ for all $t$. We
 
 Next, we have the results for the utility functions that do decrease when time runs out. It is very clear that eliminating the goal gives the pedestrians the freedom to do different kinds of behavior. We see that the slow wander action has the preference most of the time, except when time has almost run out. Slow wander then decreases while fast wander increases, until even this less time consuming action takes too much time, and the pedestrians become idle. This preference of relaxed behavior (slow wander) until that takes to long to catch a deadline and transitioning to hurried behavior (fast wander) is exactly what we wanted to show with our framework.
 
-We see that using a linear function with a lower maximum value gives the same effect as a linear function that has 1 as highest value (fig \ref{fig:linear0to1_100agents}, \ref{fig:linear0to0.5_100agents} and \ref{fig:linear0to01_100agents}. This is probably because the final probabilities of the transitions to the behaviors are calculated by normalizing the utility functions of all possible behaviors so that their sum is 1.
 
-In figure \ref{fig:sigmoid100_0_10_1} we very clearly the influence of the shape of the sigmoid curve. At around 100 steps the pedestrians exchange their preference of relaxed behavior (slow wander) for hurried behavior (fast wander). With a Gaussian utility function, the resulting graph resembles the results of the linear function again for the first part, but after about 180 steps, it is quite different. We saw that with linear utility functions, the frequency of slow wander would decrease first, followed by fast wander, while idle behavior increases. The Gaussian curve never reaches 0, and the probabilities of executing non-goal behaviors are derived from the relation between the other non-goal behaviors (i.e. the non-goal utilities are normalized). Consequently when the go-to-goal behavior is eliminated, the frequency of non-goal behavior will not decrease with a Gaussian curve.
-\todo[inline]{Put \ref{fig:linear0to0.5_100agents} and \ref{fig:linear0to01_100agents} in appendix instead of here. They don't add anything.}
+In figure \ref{fig:sigmoid100_0_10_1} we very clearly see the influence of the shape of the sigmoid curve. At around 100 steps the pedestrians exchange their preference of relaxed behavior (slow wander) for hurried behavior (fast wander). With a Gaussian utility function, the resulting graph resembles the results of the linear function again for the first part, but after about 180 steps, it is quite different. We saw that with linear utility functions, the frequency of slow wander would decrease first, followed by fast wander, while idle behavior increases. The Gaussian curve never reaches 0, and the probabilities of executing non-goal behaviors are derived from the relation between the other non-goal behaviors (i.e. the non-goal utilities are normalized). Consequently when the go-to-goal behavior is eliminated, the frequency of non-goal behavior will not decrease with a Gaussian curve.
 
 \begin{figure}
 \centering
 \includegraphics[width=.67\textwidth]{/home/djura/vakken/svn_afstudeerstage/deadline-driven-behavior/hulpscriptjes/goodresults/linear0to1_100agents.png}
 \caption{Non-goal utility linear with $U_0=0$ and $U_n=1$.}
 \label{fig:linear0to1_100agents}
-\end{figure}
-
-
-\begin{figure}
-\centering
-\includegraphics[width=.67\textwidth]{/home/djura/vakken/svn_afstudeerstage/deadline-driven-behavior/hulpscriptjes/goodresults/linear0to05_100agents.png}
-\caption{Non-goal utility linear with $U_0 = 0$ and $U_n=0.5$.}
-\label{fig:linear0to0.5_100agents}
-\end{figure}
-
-\begin{figure}
-\centering
-\includegraphics[width=.67\textwidth]{/home/djura/vakken/svn_afstudeerstage/deadline-driven-behavior/hulpscriptjes/goodresults/linear0to01_100agents.png}
-\caption{Non-goal utility linear with $U_0=0$ and $U_n=0.1$.}
-\label{fig:linear0to01_100agents}
 \end{figure}
 
 \begin{figure}
@@ -1263,12 +1244,26 @@ In section \ref{sec:benefits} a number of benefits were named to using Petri net
 \subsection{Future Work}
 There are a number of directions research regarding our type of framework can take. First of all, the number of behaviors used to simulate the pedestrians on Rotterdam Airport was very limited, so it could be beneficial to add more kinds of behaviors to the scenario. Furthermore, the system could be tested with more complicated Petri net designs. The choice to use Petri nets gives the ability to design very complicated behavior, that takes a lot of factors into account. For example, the fact that Petri nets can contain multiple tokens gives the opportunity to work with resources as mentioned in section \ref{sec:benefits}.\\
 
-There are also several ways in which the deadline driven behavior framework can be extended or improved. For example, currently, the probabilities for entering situations are only dependent on how close the agent is to the deadline. So, no matter what time of day it is, the pedestrians will always have the same probability to do a certain action. However, in real life, a person's probabilities for certain behavior is also largely dependent on their daily cycle. Ideally, a pedestrian's propensity to execute certain actions, such as eating, should vary dependent on whether the individual has recently executed that action, and their daily cycle. In other words, it would be beneficial to introduce \emph{needs} to the framework. By adding the concept of needs, we would be better able to model the daily flow of people in a typical public area. We can vary the needs according to the time of day and whether this need has been fulfilled recently. It is not definite though whether the system needs to be changed for this to be possible. It might be possible to introduce the concept of needs in a way that it can be designed with our existing system.\\
+There are also several ways in which the deadline driven behavior framework can be extended or improved. For example, currently, the probabilities for entering situations are only dependent on how close the agent is to the deadline. So, no matter what time of day it is, the pedestrians will always have the same utility for a certain action. However, in real life, a person's probabilities for certain behavior is also largely dependent on their daily cycle. Ideally, a pedestrian's propensity to execute certain actions, such as eating, should vary dependent on whether the individual has recently executed that action, and their daily cycle. In other words, it would be beneficial to introduce \emph{needs} to the framework. By adding the concept of needs, we would be better able to model the daily flow of people in a typical public area. We can vary the needs according to the time of day and whether this need has been fulfilled recently. It is not definite though whether the system needs to be changed for this to be possible. It might be possible to introduce the concept of needs in a way that it can be designed with our existing system.\\
 
-Another improvement the system would benefit from would be to change the way the goal utility function is used. In our current setup, the goal utility function sometimes stands in the way of the emergent relaxed and hurried behavior. Cumulatively, the probability of going to the goal becomes high soon in the simulation, unless a goal utility function is used with only very low values. Because there is nothing to be done after the pedestrian reaches its goal, this means they remain idle for a large part of the simulation. It is very likely that this behavior could be improved if the time for a pedestrian to go to its goal is sampled beforehand from a probability distribution function, and then let only the non-goal utility handle the behavior before that sampled point in time.
+Another improvement the system would benefit from would be to change the way the goal utility function is used. In our current setup, the goal utility function sometimes stands in the way of the emergent relaxed and hurried behavior. Cumulatively, the probability of going to the goal becomes high soon in the simulation, unless a goal utility function is used with only very low values. Because there is nothing to be done after the pedestrian reaches its goal, this means they remain idle for a large part of the simulation. It is very likely that this behavior could be improved if the time for a pedestrian to go to its goal is sampled beforehand from a probability distribution function, and only the non-goal behavior is handled by a utility function.
 
-\appendix
+%\appendix
 
+%We see that using a linear function with a lower maximum value gives the same effect as a linear function that has 1 as highest value (fig \ref{fig:linear0to1_100agents}, \ref{fig:linear0to0.5_100agents} and \ref{fig:linear0to01_100agents}. This is probably because the final probabilities of the transitions to the behaviors are calculated by normalizing the utility functions of all possible behaviors so that their sum is 1.
+%\begin{figure}
+%\centering
+%\includegraphics[width=.67\textwidth]{/home/djura/vakken/svn_afstudeerstage/deadline-driven-behavior/hulpscriptjes/goodresults/linear0to05_100agents.png}
+%\caption{Non-goal utility linear with $U_0 = 0$ and $U_n=0.5$.}
+%\label{fig:linear0to0.5_100agents}
+%\end{figure}
+%
+%\begin{figure}
+%\centering
+%\includegraphics[width=.67\textwidth]{/home/djura/vakken/svn_afstudeerstage/deadline-driven-behavior/hulpscriptjes/goodresults/linear0to01_100agents.png}
+%\caption{Non-goal utility linear with $U_0=0$ and $U_n=0.1$.}
+%\label{fig:linear0to01_100agents}
+%\end{figure}
 %\chapter{Appendix A: Implementation}
 %In the appendix we will go into some of the details of implementation of the deadline driven behavior framework. We will also give some directions about how to use our implementation to simulate your own scenario, or to extend it yourself.
 %
