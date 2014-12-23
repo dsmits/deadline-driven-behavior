@@ -671,8 +671,6 @@ People also wandered around randomly.
 \clearpage
 
 \section{Example}
-
-
 In order to give a clear insight into how our method is used in practice we will give a small example. Let us say that we need to simulate only one person, who has to wait in a room. At a certain point in time (let us say 100 steps), he has to advance through a door. There are a few objects in this room with which he can interact. In figure  \ref{fig:roomwithagent} we see a schematic representation of this room. The red circle in the middle is the agent, the rectangle on the lower left side is a bench and on the upper left side we can see a door going out of this room. our agent can do a couple of things in this room. First of all, he can wander around the room. In our representation it is possible to decide to do this standing in any position in this room. Another possibility is to sit on the bench. For the purpose of this example it is only possible for the agent to decide to do this when in close proximity of the bench. In figure \ref{fig:roomwithagentsituations} the situation areas for these two behaviors can be seen. Our agent is not planning to stay in this room forever though. He wants to leave the room before 100 (time) steps, so leaving the room will be our go-to-goal"gotogoal" action.
 
 \begin{figure}
@@ -767,8 +765,6 @@ So most likely the agent will wander around or sit on the bench. Let us say the 
 Although it can be difficult to decide whether a group of people walks around "realistically", we will certainly give it a try. We will attempt to test our framework in two different ways; first of all, we will assess our framework by doing a qualitative comparison with real-life footage of Rotterdam Airport. We have access to both camera footage and manually tracked locations of the visitors.
 Secondly, we will assess how the the different utility functions we choose for the go-to-goal action will affect the frequency of other actions. In other words, we will attempt to investigate whether our method leads to \emph{emergent} behavior.
 
-\todo[inline]{Specify missing parameters}
-
 \section{Qualitative Experiment}
 First of all, we will see if it is possible to recreate real-life behavior in Rotterdam airport with our framework. As mentioned before, we have observed footage from the security cameras at Rotterdam airport. From these observations we established a couple of specific behaviors that are recurrent in Rotterdam airport, as mentioned in section \ref{sec:rotterdamAirportMethod}. We will briefly mention them here again:
 \begin{itemize}
@@ -814,8 +810,6 @@ In order to make a fair comparison, we searched for these behaviors in the track
 In this qualitative experiment, we will try to imitate these behaviors using our Petri nets. We expect that our Petri nets will be capable of imitating these behaviors.
 
 
-\todo[inline]{Experiment has to be changed. In experiments, give indication of how often the behaviors take place, how often do they take place in simulation? Also look at trajectories of these behaviors and compare with trajectories of simulation.}
-
 %One crucial behavior is missing. How are the pedestrians going to reach the different situation areas? This is only possible if they already have a move to begin with, otherwise they are only going to stay in place. That is why we added the \emph{fastWander} and \emph{slowWander} behavior. This behavior lets the pedestrian turn a random amount of degrees between $-\frac{1}{4}\pi$ and $\frac{1}{4}\pi$ and walk a few steps in that direction. Of course, fastWander makes the pedestrian move faster than slowWander, and takes less time. Another important reason we have added these two behaviors is that we can use them to see more clearly if relaxed or hurried behavior is favored differently over time.
 
 
@@ -832,26 +826,17 @@ In this qualitative experiment, we will try to imitate these behaviors using our
 
 \section{Quantitative Experiment}
 \todo[inline]{Check which parts of the first quantitative experiment are still relevant now the experiments have changed.}
-It is very difficult to quantitatively establish whether lifelike behavior has been modeled. However, it is possible to check whether the mechanics of time planning work as predicted. In order to do this, we log for every step in time, for every pedestrian, which action he is doing at the moment. This information will be plotted in a graph that shows the frequency of every action at every step in time. The deadline of going to the goal will be 200 steps in our simulation. We chose this value because our behavior takes up to roughly 40 steps (but most behavior takes 20 steps or less) and this leaves enough room for the pedestrians to decide on multiple behaviors while "relaxed" before time starts running out and they have to start hurrying.
-We will try different utility functions for the go-to-goal and non-goal behavior to see how this influences the simulation. The parameters for these functions have been decided on beforehand. We based our decision on what parameters would give a significant but gradual increase in the course of this timeframe and give the maximum utility on either $t=0$ or $t=200$, the first when the function is used as utility measure for go-to-goal behavior, the latter when applied to non-goal behavior. The utility functions will be judged on whether they result in behavior that transitions from relaxed to hurried, and whether they help the pedestrians reach their goal in time.
+It is quite a challenge to quantitatively establish whether lifelike behavior has been modeled. However, it is possible to check whether the mechanics of time planning work as predicted. If the mechanics work as expected, the simulation should start with a preference of \emph{relaxed} over \emph{hurried} behavior. Then, as time passes and the deadline draws near, the frequency of hurried behavior should increase while relaxed behavior decreases.\\
+In order to test our theory, we run the simulation once with 100 pedestrians and log for every step in time, for every pedestrian, which action he is doing at the moment. This information will be plotted in a graph that shows the frequency of every action at every step in time.\\
+The deadline of going to the goal will be 200 steps in our simulation. We chose this value because our behavior takes up to roughly 40 steps (but most behavior takes 20 steps or less) and this leaves enough room for the pedestrians to decide on multiple behaviors while "relaxed" before time starts running out and they have to start hurrying.\\
+To distinguish between hurried and relaxed behavior we replaced the "wander" behavior of the qualitative experiment by two other behaviors, called \emph{fastwander} and {slowwander}. We use these two behaviors to try to get a clear distinction between hurried and relaxed, and see how the number of pedestrians doing one or the other changes over time. The petri nets for these behaviors look exactly the same, as can be seen in figure \ref{fig:newSituations}. The difference between these Petri nets is in the weight of the slowwander:1 and fastwander:1 transitions. These are 20 versus 10 respectively. This weight is used by the Dijkstra algorithm to compute the amount of time that a this behavior will take. The reason that these are 20 and 10 is that we programmed the slowwander behavior in such a way that the pedestrian will walk roughly in one direction for 20 timesteps. Fastwander makes the pedestrian walk faster than slow wander, and for a shorter period of time, namely 10 timesteps. We added slowwander and fastwander situation areas in the simulation that both encompass the entire map.\\
 
-
-
-
-\section{New Quantitative Experiment}
-\label{sec:quantitativeexp2}
-\todo[inline]{Part of this text can be moved to the first quantitative experiment, because that experiment now also includes slow and fast wander}
-Because of newly discovered limits to our system that become clear in our results \ref{chap:results}, we decided to add new quantitative experiments. It turn out that with our previous quantitative experiments, the cumulative probability for going to the goal becomes so high in quite a few steps, that it is difficult to see any effect of our system on hurried and relaxed behavior. Very soon in most of our simulations, the number of pedestrians that have already reached to goal becomes so high that nothing valuable can be said of the other behaviors. That is why we have decided to run experiments where we have removed the behavior of going to the goal. We did this by simply removing the connection from the base place of the pedestrian to the gotogoal transition.
-We also replaced the "wander" behavior by two other behaviors signifying hurried and relaxed behavior, called \emph{fastwander} and {slowwander}. We use these two behaviors to try to get a clear distinction between hurried and relaxed, and see how the number of pedestrians doing one or the other changes over time. The petri nets for these behaviors look exactly the same, as can be seen in figure \ref{fig:newSituations}. The difference between these Petri nets is in the weight of the slowwander:1 and fastwander:1 transitions. These are 20 versus 10 respectively. This weight is used in the system to compute the amount of time that a certain behavior will take. The reason that these are 20 and 10 is that we programmed the slowwander behavior in such a way that the pedestrian will walk roughly in one direction for 20 timesteps. Fastwander makes the pedestrian walk faster than slow wander, and for a shorter period of time, namely 10 timesteps. We added slowwander and fastwander situation areas, both encompassing the entire scene.
-
-The experiment run as follows. At every timestep, every pedestrian logs what action it is currently doing. This log is then rearranged into a table where we have for every timestep, for every action the amount of pedestrians that are currently executing it. The results are then displayed in a graph. The results can be found in the next chapter in section \ref{sec:secondquantitativeexperimentresults}.
-
-For this experiment, the following actions can be executed:
+Because of the structure of our implementation, it was easier to log the actions of the pedestrians instead of the Petri nets that are fired for every pedestrian. Because most Petri-nets only contain one action, it is an \emph{almost} one-on-one mapping from action to  Petri net (or behavior), but for clarity, we will list the various actions that can be executed below:\\
 \begin{itemize}
 \item \emph{fastwander}
 \item \emph{slowwander}
 \item \emph{gototoilet} and \emph{waitforfriend} (these both belong to the gototoilet situation)
-\item \emph{gotonearestpillar} and \emph{leanagainstpillar} that are both part of the leanagainstpillar situation \todo[inline]{I just modified leanagainstpillar so it actually takes a few steps, otherwise it's hardly noticable. Should I rerun the experiments, or maybe just don't mention this behavior because it is not important?}|
+\item \emph{gotonearestpillar} and \emph{leanagainstpillar} that are both part of the leanagainstpillar situation 
 \item \emph{standstill}
 \item \emph{idle}
 \end{itemize}
@@ -867,21 +852,66 @@ The last action is the default action when nothing else can be executed. It is e
 \begin{figure}
         \centering
         \begin{subfigure}[b]{0.5\textwidth}
-                \includegraphics[width=\textwidth]{fastWanderSituation}
+                \includegraphics[width=\textwidth]{fastWanderSituation_new}
                 \caption{"Fast wander" behavior.}
                 \label{fig:fastWanderPetrinet}
         \end{subfigure}%
         ~ %add desired spacing between images, e. g. ~, \quad, \qquad, \hfill etc.
           %(or a blank line to force the subfigure onto a new line)
         \begin{subfigure}[b]{0.5\textwidth}
-                \includegraphics[width=\textwidth]{slowWanderSituation}
+                \includegraphics[width=\textwidth]{slowWanderSituation_new}
                 \caption{"Slow wander" behavior.}
                 \label{fig:slowWanderPetrinet}
         \end{subfigure}
         \caption{Petri nets of the new behaviors}\label{fig:newSituations}
 \end{figure}
 
-\todo[inline]{Show the difference between the pictures in \ref{fig:fastWanderPetrinet} and \ref{fig:slowWanderPetrinet}, color the upper transitions red and show they have a different rate.}
+We will try different utility functions for the go-to-goal and non-goal behavior to see how this influences the simulation. We chose our parameters based on which values would give a significant but gradual increase in the course of this timeframe and give the maximum utility on either $t=0$ or $t=200$, the first when the function is used as utility measure for go-to-goal behavior, the latter when applied to non-goal behavior. The utility functions will be judged on whether they result in behavior that transitions from relaxed to hurried, and whether they help the pedestrians reach their goal in time.\\
+We have used the combination of functions listed in table \ref{tab:parameters}. For more information about the various parameters refer back to section \ref{subsec:utility}.
+\begin{table}[h!]
+\begin{tabular}{|l|l l|}
+\hline
+&\textbf{Goal Utility} & \textbf{Non-goal Utility}\\
+\hline
+1 & Linear: $U_0=1, U_d=0$ & Linear: $U_0=0, U_d=1$\\
+\hline
+2 & Linear: $U_0=1, U_d=0$ & Sigmoid: $\mu=100, \beta=0, \omega=10, \eta=1$\\
+\hline
+3 & Linear: $U_0=1, U_d=0$ & Gaussian: $\mu=200, \sigma=50$\\
+\hline
+4 & Linear: $U_0=0.1, U_d=0$ & Linear: $U_0=0, U_d=1$\\
+\hline
+5 & Linear: $U_0=0.1, U_d=0$ & Sigmoid: $\mu=100, \beta=0, \omega=10 \eta=1$\\
+\hline
+6 & Linear: $U_0=0.1, U_d=0$ & Gaussian: $\mu=200, \sigma=50$\\
+\hline
+7 & Sigmoid: $\mu=100, \beta=0, \omega=-10, \eta=1$ & Linear: $U_0=0, U_d=1$\\
+\hline
+8 & Sigmoid: $\mu=100, \beta=0, \omega=-10, \eta=1$ & Sigmoid: $\mu=100, \beta=0, \omega=10, \eta=1$\\
+\hline
+9 & Sigmoid: $\mu=100, \beta=0, \omega=-10, \eta=1$ & Gaussian: $\mu=200, \sigma=50$\\
+\hline
+10 & Gaussian: $\mu=0, \sigma=50$ & Linear: $U_0=0, U_d=1$\\
+\hline
+11 & Gaussian: $\mu=0, \sigma=50$ & Sigmoid: $\mu=100, \beta=0, \omega=10, \eta=1$\\
+\hline
+12 & Gaussian: $\mu=0, \sigma=50$ & Gaussian: $\mu=200, \sigma=50$\\
+\hline
+\end{tabular}
+\caption{The list of combinations of utility functions used for the first quantitative experiment.}
+\label{tab:parameters}
+\end{table}
+The results can be found in the next chapter in section \ref{sec:firstquantitative}.
+
+
+\section{Second Quantitative Experiment}
+\label{sec:quantitativeexp2}
+It is possible that the goal and non-goal utility functions interfere with eachother. For example, when the goal utility function causes the pedestrians to go to their goal early in the simulation, they might not have time enough to show a transition from hurried to relaxed behavior. That is why we decided to run a second quantitative experiment. The purpose of this experiment is to follow the the hurried and relaxed behavior of the pedestrians with the goal utility being the constant function $U(\tau)=0$. We varied the non-goal utility functions in the same way that we did in the first quantitative experiment. For clarity, the functions and parameters we will use are the following:
+\begin{itemize}
+\item Linear: $U_0=0, U_d=1$
+\item Sigmoid: $\mu=100, \beta=0, \omega=10, \eta=1$
+\item Gaussian: $\mu=200, \sigma=50$
+\end{itemize}
 
 \chapter{Results}
 \label{chap:results}
@@ -891,7 +921,7 @@ The last action is the default action when nothing else can be executed. It is e
 \todo[inline]{Rewrite results of qualitative experiment}
 \todo[inline]{Say something about how often the behaviors take place in the simulation (will have to see how to compare real life and simulation time)}
 
-We ran a simulation that included the behaviors that we found in real-life, and observated the trajectories that the simulated behaviors made. The resulting trajectories can be found in figure \ref{fig:simulatedtoilettrajectory}, \ref{fig:simulatedpillartrajectory}, \ref{fig:simulatedstandstilltrajectory} and \ref{fig:simulatedwandertrajectory}. From a qualitative point of view, it seems that the behavior of one person going to the toilet and one person waiting could be mimicked very well. Also leaning against a pillar has a trajectory close to the real-life trajectory. Standing still is such a trivial move that it is hardly surprising that it could be mimicked in our simulation. Lastly, \ref{fig:simulatedwandertrajectory} shows the trajectory of a simulated agent wandering around. One thing that might stand out is that the trajectory in our simulation swerves around more than the real-life trajectory. Part of this behavior is easily modified by changing the parameters of the wandering behavior, but it also illustrates a more high-level difference between real-life "wandering around" and the behavior in our system. it seems that often, the people tracked in real-life have some kind of determination to go to a certain place. The behavior is not as random as our simulated behavior. This is not a weakness of our system though, but merely indicates that more inquiry needs to be done into peoples' intentions in a airport-type scenario. Unfortunately this is outside the scope of our research.
+We ran a simulation that included the behaviors that we found in real-life, and observed the trajectories that the simulated behaviors made. The resulting trajectories can be found in figure \ref{fig:simulatedtoilettrajectory}, \ref{fig:simulatedpillartrajectory}, \ref{fig:simulatedstandstilltrajectory} and \ref{fig:simulatedwandertrajectory}. From a qualitative point of view, it seems that the behavior of one person going to the toilet and one person waiting could be mimicked very well. Also leaning against a pillar has a trajectory close to the real-life trajectory. Standing still is such a trivial move that it is hardly surprising that it could be mimicked in our simulation. Lastly, \ref{fig:simulatedwandertrajectory} shows the trajectory of a simulated agent wandering around. One thing that might stand out is that the trajectory in our simulation swerves around more than the real-life trajectory. Part of this behavior is easily modified by changing the parameters of the wandering behavior, but it also illustrates a more high-level difference between real-life "wandering around" and the behavior in our system. it seems that often, the people tracked in real-life have some kind of determination to go to a certain place. The behavior is not as random as our simulated behavior. This is not a weakness of our system though, but merely indicates that more inquiry needs to be done into peoples' intentions in a airport-type scenario. Unfortunately this is outside the scope of our research.
 
 \begin{figure}[h!]
 \centering
