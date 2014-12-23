@@ -452,13 +452,13 @@ Our Petri nets are based on place/transition Petri nets (p/t-nets)\cite{desel199
 %In order to have the selection between enabled transitions change over time we compute a new set of probabilities at every timestep (the time unit used in our multiagent simulation) based on the time a behavior takes, the current time, the deadline and a utility function. The details of how we decided to do this can be found in section \ref{timeplanning}.
 
 \subsection{PIPE2}
-PIPE2 is a tool written in Java to create and analyse petri nets. We chose this toolkit for a number of reasons. First of all, PIPE2 is written in Java, which makes it easier to integrate with VR-Forces, because VR-Forces is made to communicate with Java. Secondly, this toolkit promised a number of Petri net extensions, the most important of which is the capability to create \emph{Generalized Stochastic Petri nets}. Generalized stochastic Petri nets is an extension that adds timed transitions to standard p/t nets. Unfortunately, at a later time it seemed that the generalized stochastic petrinets that we planned to use did not behave as described in the specifications, so that is one of the reasons we stick to use modified, basic, place/transition Petri nets. Another reason that extend regular p/t Petri nets is that it allows us to have more control over frequencies of behavior. PIPE2 also provides a clear and simple GUI with which Petri nets can be designed (see figure \ref{fig:pipegui}. This is very important because the design of the behavior in our method should be fast and easy. It should require minimal effort to place large amounts of agents in a environment. 
+PIPE2 is a tool written in Java to create and analyse Petri nets. We chose this toolkit for a number of reasons. First of all, PIPE2 is written in Java, which makes it easier to integrate with VR-Forces, because VR-Forces is made to communicate with Java. Secondly, this toolkit promised a number of Petri net extensions, the most important of which is the capability to create \emph{Generalized Stochastic Petri nets}. Generalized stochastic Petri nets is an extension that adds timed transitions to standard p/t nets. Unfortunately, at a later time it seemed that the generalized stochastic petrinets that we planned to use did not behave as described in the specifications, so that is one of the reasons we stick to use modified, basic, place/transition Petri nets. Another reason that extend regular p/t Petri nets is that it allows us to have more control over frequencies of behavior. PIPE2 also provides a clear and simple GUI with which Petri nets can be designed (see figure \ref{fig:pipegui}). This is very important because the design of the behavior in our method should be fast and easy. It should require minimal effort to place large amounts of agents in a environment. 
 
 \begin{figure}
 \centering
 \includegraphics[width=.8\textwidth]{pipe_screenshot}
 \caption{The PIPE2 interface.}
-\label{pipegui}
+\label{fig:pipegui}
 \end{figure}
 
 
@@ -760,8 +760,8 @@ So most likely the agent will wander around or sit on the bench. Let us say the 
 
 \chapter{Experiments}
 \label{chap:experiments}
-\todo[inline]{Make sure introduction lines up with research questions}
-\todo[inline]{Say something about expectations.}
+%\todo[inline]{Make sure introduction lines up with research questions}
+%\todo[inline]{Say something about expectations.}
 Although it can be difficult to decide whether a group of people walks around "realistically", we will certainly give it a try. We will attempt to test our framework in two different ways; first of all, we will assess our framework by doing a qualitative comparison with real-life footage of Rotterdam Airport. We have access to both camera footage and manually tracked locations of the visitors.
 Secondly, we will assess how the the different utility functions we choose for the go-to-goal action will affect the frequency of other actions. In other words, we will attempt to investigate whether our method leads to \emph{emergent} behavior.
 
@@ -901,6 +901,7 @@ We have used the combination of functions listed in table \ref{tab:parameters}. 
 \caption{The list of combinations of utility functions used for the first quantitative experiment.}
 \label{tab:parameters}
 \end{table}
+We will judge these results on two aspects: \emph{deadline drivenness} and the transition from \emph{hurried} to \emph{relaxed}.
 The results can be found in the next chapter in section \ref{sec:firstquantitative}.
 
 
@@ -912,6 +913,8 @@ It is possible that the goal and non-goal utility functions interfere with eacho
 \item Sigmoid: $\mu=100, \beta=0, \omega=10, \eta=1$
 \item Gaussian: $\mu=200, \sigma=50$
 \end{itemize}
+
+The results will again be judged on its transition from relaxed to hurried. We expect that this transition will be more clear than in the previous experiment.
 
 \chapter{Results}
 \label{chap:results}
@@ -1215,18 +1218,29 @@ Gaussian & --\\
 \label{chap:conclusiondiscusssion}
 In this research we managed to create a system with which behavior for an airport-type or deadline-driven scenario can be easily designed with Petri nets and placed in an environment by drawing the areas in which this behavior should take place. In this chapter we will first discuss what answers our research can give to our research question and its subquestions. Secondly we will discuss the limits of our system. Lastly, we will provide a few directions followup research could take.
 
-\section{How Can an Intelligent Virtual Environment for Simulated Pedestrians be Extended to Deal with Time-Restricted Destinations?}
-In this section we are going to answer our research question. This will be done by first answering each of the subquestions. We will list them one by one.
-\subsection{To What Extent Can Pedestrians be Simulated Realistically?}
+\section{Research Questions}
+In our research we wanted to give an answer on the following question:
+\begin{center}
+\emph{How can an intelligent virtual environment for simulated pedestrians be extended to deal with time-restricted destinations?}
+\end{center}
+This will be done by first answering each of the subquestions. We will go through them one by one:
+\begin{center}
+\emph{To what extent can pedestrians be simulated realistically?}
+\end{center}
 In our research we compared a number of key behaviors found at Rotterdam Airport with their simulated counterparts in our system. In terms of the trajectories these agents follow, the simulated pedestrians matched up with the trajectories of actual pedestrians. 
-
-\subsection{How Do We Let the Pedestrians Make Decisions Based on Time Left to Reach the Destination?}
+\begin{center}
+\emph{How do we let the pedestrians make decisions based on the time left to reach the destination?}
+\end{center}
 When deciding on behaviors, the pedestrians are guided by how much time is left after a behavior has been executed (variable $\tau$). This variable is used together with the utility functions to compute the likelihood of a behavior occurring at that moment. From the experiments can be concluded that a Gaussian goal utility function combined with a sigmoid non-goal utility function gives the best result in terms of deadline drivenness and emergent relaxed and hurried behavior.
 
-\subsection{Is it Possible to Have Emergent Behavior Based on Time Restrictions}
+\begin{center}
+\emph{Is it possible to have emergent behavior based on time restrictions?}
+\end{center}
 As stated in the answer to the previous question, when using the right combination of utility functions, hurried and relaxed behavior does emerge. The slower, more time-consuming behaviors are preferred when the deadline is still far away, while quick behaviors are preferred when more time has passed. From this we can conclude that emergent behavior based on time restrictions is possible with our system.
 
-\subsection{Is it Possible to Quickly Generate These Virtual Pedestrians Without Much Tweaking for Each Environment?}
+\begin{center}
+\emph{Is it possible to quickly generate these virtual pedestrians without much tweaking for each environment?}
+\end{center}
 By using Petri nets combined with the situations framework, behaviors can be designed once and used in many different environments. The behavior of the pedestrians will then emerge from the combination of situations defined in the environment and a predefined goal for every pedestrian. In an airport-type scenario, the goal for almost every pedestrian is the same, namely reaching their plane before it leaves. The goal of those pedestrians can therefore be defined once.
 
 \subsection{The Benefits of Petri nets}
@@ -1241,15 +1255,15 @@ In our research we replaced the finite state machines of the situations framewor
 
 
 \section{Limits of the Deadline Driven Behavior Framework}
-Modeling pedestrian behavior with our method does have its limits. First of all, the movements of the agents are designed explicitly through linking together basic movements in the Petri nets. As a consequence, interaction with other agents is quite static, and not directly responsive to surrounding agents. Consequently, our method is not particularly suitable for situations in which the pedestrians have to move very close together, such as when a large amount of pedestrians has to move through a narrow space and have to move closer together or form a queue. When pedestrians move very close together, their behavior will become more uniform, and it would be more sensible to look at the group as a whole, and not as individuals. A more suitable approach would then for example be to look at crowds as particles in a liquid, like Moore, Ali, Mehran and Shah have done \cite{Moore:2011:VCS:2043174.2043192}. Their supposition is that people in crowds seem to move according to the flow, just like particles in a liquid. However, in the type of scenarios our system is made to simulate, it is not a problem that crowd behavior isn't easily designed. When observing the footage, we noticed a lot of individual behavior, or behaviors in pairs, and crowding behavior was virtually absent.
+Modeling pedestrian behavior with our method does have its limits. First of all, the movements of the agents are designed explicitly through linking together basic movements in the Petri nets. As a consequence, interaction with other agents is quite static, and not directly responsive to surrounding agents. Consequently, our method is not particularly suitable for situations in which the pedestrians have to move very close together, such as when a large amount of pedestrians has to move through a narrow space and have to move closer together or form a queue. When pedestrians move very close together, their behavior will become more uniform, and it would be more sensible to look at the group as a whole, and not as individuals. A more suitable approach would then for example be to look at crowds as particles in a liquid, like Moore, Ali, Mehran and Shah have done \cite{Moore:2011:VCS:2043174.2043192}. Their supposition is that people in crowds seem to move according to the flow, just like particles in a liquid. However, in the type of scenarios our system is made to simulate, it is not a problem that crowd behavior isn't easily designed. When observing the footage, we noticed a lot of individual behavior, or behaviors in pairs, and crowding behavior was virtually absent.\\
 
 In section \ref{sec:benefits} a number of benefits were named to using Petri nets. One of the examples used was the possibility of adding resources to the Petri nets. It is important though to mention the restrictions of this type of use of Petri nets. While it is possible to keep track of the number of items of a specific resource through tokens, it is not possible to have the Petri net react to it in a continuous fashion. Either a place contains the token(s) and a transition can be fired, or the place is empty and the associated behavior is not possible. It is not possible to have an agent react differently depending on how much he has of a resource on a continuous scale. 
 \todo[inline]{Add something about dijkstra's algorithm}
 
 \subsection{Future Work}
-There are a number of directions research regarding our type of framework can take. First of all, the number of behaviors used to simulate the pedestrians on Rotterdam Airport was very limited, so it could be beneficial to add more kinds of behaviors to the scenario. Furthermore, the system could be tested with more complicated Petri net designs. The choice to use Petri nets gives the ability to design very complicated behavior, that takes a lot of factors into account. For example, the fact that Petri nets can contain multiple tokens gives the opportunity to work with resources as mentioned in section \ref{sec:benefits}.
+There are a number of directions research regarding our type of framework can take. First of all, the number of behaviors used to simulate the pedestrians on Rotterdam Airport was very limited, so it could be beneficial to add more kinds of behaviors to the scenario. Furthermore, the system could be tested with more complicated Petri net designs. The choice to use Petri nets gives the ability to design very complicated behavior, that takes a lot of factors into account. For example, the fact that Petri nets can contain multiple tokens gives the opportunity to work with resources as mentioned in section \ref{sec:benefits}.\\
 
-There are also several ways in which the deadline driven behavior framework can be extended or improved. For example, currently, the probabilities for entering situations are only dependent on how close the agent is to the deadline. So, no matter what time of day it is, the pedestrians will always have the same probability to do a certain action. However, in real life, a person's probabilities for certain behavior is also largely dependent on their daily cycle. Ideally, a pedestrian's propensity to execute certain actions, such as eating, should vary dependent on whether the individual has recently executed that action, and their daily cycle. In other words, it would be beneficial to introduce \emph{needs} to the framework. By adding the concept of needs, we would be better able to model the daily flow of people in a typical public area. We can vary the needs according to the time of day and whether this need has been fulfilled recently. It is not definite though whether the system needs to be changed for this to be possible. It might be possible to introduce the concept of needs in a way that it can be designed with our existing system.
+There are also several ways in which the deadline driven behavior framework can be extended or improved. For example, currently, the probabilities for entering situations are only dependent on how close the agent is to the deadline. So, no matter what time of day it is, the pedestrians will always have the same probability to do a certain action. However, in real life, a person's probabilities for certain behavior is also largely dependent on their daily cycle. Ideally, a pedestrian's propensity to execute certain actions, such as eating, should vary dependent on whether the individual has recently executed that action, and their daily cycle. In other words, it would be beneficial to introduce \emph{needs} to the framework. By adding the concept of needs, we would be better able to model the daily flow of people in a typical public area. We can vary the needs according to the time of day and whether this need has been fulfilled recently. It is not definite though whether the system needs to be changed for this to be possible. It might be possible to introduce the concept of needs in a way that it can be designed with our existing system.\\
 
 Another improvement the system would benefit from would be to change the way the goal utility function is used. In our current setup, the goal utility function sometimes stands in the way of the emergent relaxed and hurried behavior. Cumulatively, the probability of going to the goal becomes high soon in the simulation, unless a goal utility function is used with only very low values. Because there is nothing to be done after the pedestrian reaches its goal, this means they remain idle for a large part of the simulation. It is very likely that this behavior could be improved if the time for a pedestrian to go to its goal is sampled beforehand from a probability distribution function, and then let only the non-goal utility handle the behavior before that sampled point in time.
 
