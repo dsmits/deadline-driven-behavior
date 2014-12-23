@@ -28,8 +28,8 @@
 \contentsline {section}{\numberline {3.4}Example}{27}{section.3.4}
 \contentsline {chapter}{\numberline {4}Experiments}{31}{chapter.4}
 \contentsline {section}{\numberline {4.1}Qualitative Experiment}{31}{section.4.1}
-\contentsline {section}{\numberline {4.2}Quantitative Experiment}{32}{section.4.2}
-\contentsline {section}{\numberline {4.3}New Quantitative Experiment}{34}{section.4.3}
+\contentsline {section}{\numberline {4.2}Quantitative Experiment}{33}{section.4.2}
+\contentsline {section}{\numberline {4.3}Second Quantitative Experiment}{34}{section.4.3}
 \contentsline {chapter}{\numberline {5}Results}{37}{chapter.5}
 \contentsline {section}{\numberline {5.1}Results of the Qualitative Experiment}{37}{section.5.1}
 \contentsline {section}{\numberline {5.2}Results of the First Quantitative Experiment}{40}{section.5.2}
