@@ -21,8 +21,8 @@
 \parbox[b][\paperheight]{\paperwidth}{%
 \vfill
 \centering
-\includegraphics[width=.9\paperwidth,,%
-keepaspectratio]{kaft_bewerkt.png}%
+\includegraphics[width=.95\paperwidth,,%
+keepaspectratio]{kaft.png}%
 \vfill
 }}}
 
@@ -30,6 +30,7 @@ keepaspectratio]{kaft_bewerkt.png}%
 
 
 \begin{document}
+\begin{titlepage}
 
 
 \AddToShipoutPicture*{\BackgroundPic}
@@ -52,12 +53,15 @@ Deadline Driven Behavior in Intelligent Virtual Environments
 Djura S. Smits
 % [CHANGE] Your student ID, as this has been assigned to you by the UvA
 % administration.
-
+\end{center}
+\end{titlepage}
 \newpage
+\begin{center}
 \vspace*{\fill}
 \textit{Front cover illustration by Djura Smits.}
-
+\end{center}
 \newpage
+\begin{center}
 Djura S. Smits\\
 Student number: 5619807\\
 % [DO NOT CHANGE]
@@ -78,7 +82,7 @@ University of Amsterdam\\
 Faculty of Science\\
 Science Park 904\\
 1098 XH Amsterdam
-\vspace{5cm}
+\vspace{7cm}
 
 \emph{Supervisors}\\
 % [CHANGE] The name of your supervisor. Include the titles of your supervisor,
@@ -86,7 +90,7 @@ Science Park 904\\
 Arnoud Visser\\
 Philip Kerbusch
 
-\vspace{0.25cm}
+\vspace{1cm}
 
 % [CHANGE] The address of the institute at which your supervisor is working.
 % Be sure to include (1) institute (is appropriate), (2) faculty (if
@@ -95,13 +99,18 @@ Intelligent Systems Lab\\
 Faculty of Science\\
 University of Amsterdam\\
 Science Park 904\\
-1098 XH  Amsterdam
+1098 XH  Amsterdam\\
+\vspace{1cm}
+
+Department Modelling Simulation and Gaming\\
+TNO\\
+Oude Waalsdorperweg 63 \\
+NL-2597 AK The Hague\\
 
 \vspace{1.5cm}
 
 % [CHANGE] The date at which you will finalize and submit your thesis.
-\todo[inline]{Change}
-December 20th, 2014
+December 23rd, 2014
 \end{center}
 \newpage
 
@@ -112,11 +121,11 @@ December 20th, 2014
 \bibliographyself{references}
 \endgroup
 \graphicspath{{.}{../results}}
-
+\newpage
 
 %\begin{document}
-\listoftodos
-\newpage
+%\listoftodos
+%\newpage
 %\maketitle
  %\chapter*{\centering Abstract}
 %\addcontentsline{toc}{chapter}{Abstract}
@@ -129,7 +138,7 @@ December 20th, 2014
 %\abstract
 %\newpage
 \section{Acknowledgements}
-I would like to thank my supervisors Philip Kerbush from TNO, and Arnoud Visser from the UvA. Furthermore, I would like to thank Ernst Bovenkamp for providing the data and videos from Rotterdam airport. I would also like to thank my friends and family for the support, and my classmates, many of whom I've enjoyed working with for many years.
+I would like to thank my supervisors Arnoud Visser from the UvA and Philip Kerbusch from TNO. Furthermore, I would like to thank Ernst Bovenkamp for providing the data and videos from Rotterdam airport. I would also like to thank my friends, family, and boyfriend for all the support, and my classmates, many of whom I've enjoyed working with for many years.
 \newpage
 \tableofcontents
 \newpage
@@ -138,7 +147,9 @@ I would like to thank my supervisors Philip Kerbush from TNO, and Arnoud Visser 
 \chapter{Introduction}
 %\todo[inline]{introduction}
 %\todo{How to place pedestrian simulation in the whole spectrum of AI related studies?}
-Artificial intelligence is the branch of computer science that aims to create or simulate intelligence in machines. The range of methods to attempt this is endless. One of the many sub-fields in AI is aimed at reproducing human behavior. The problem of recreating human behavior can be tackled from many different perspectives. For example, one could attempt to get an understanding of the workings of the human mind, and try to imitate this in a computer program. Another approach would be to treat the human brain as a black box, and mainly focus on recreating external behavior. In this approach it does not matter whether the inner workings of this computer program are simular to that of an actual human being. The disadvantage of this approach is that it does not help you learn how the human mind works. However, when used for practical purposes, approaching the problem like this is favorable, since it is more likely to run real-time and take up less resources. In our research, we are attempting to recreate a specific kind of human behavior. Namely, the kind of behavior that pedestrians would show in a public environment like an airport,  where it is very important to not lose sight of time.\\
+Artificial intelligence is the branch of computer science that aims to create or simulate intelligence in machines. The range of methods to attempt this is endless. One of the many sub-fields in AI is aimed at reproducing human behavior. The problem of recreating human behavior can be tackled from many different perspectives. For example, one could attempt to get an understanding of the workings of the human mind, and try to imitate this in a computer program. \\
+Another approach would be to treat the human brain as a black box, and mainly focus on recreating external behavior. In this approach it does not matter whether the inner workings of this computer program are simular to that of an actual human being. The disadvantage of this approach is that it does not help you learn how the human mind works. However, when used for practical purposes, approaching the problem like this is favorable, since it is more likely to run real-time and take up less resources.\\
+In our research, we are attempting to recreate a specific kind of human behavior. Namely, the kind of behavior that pedestrians would show in a public environment like an airport,  where it is very important to not lose sight of time.\\
 \begin{figure}[h]
 \begin{center}
 \includegraphics[width=200pt]{pedestrians.jpg}
@@ -147,11 +158,10 @@ Artificial intelligence is the branch of computer science that aims to create or
 \label{pedestrianpicture}
 \end{figure}
 For the last decade or so, there has been an increased interest in reinforcing security in public environments. The recent advances in technology have increased the feasibility of many different methods. An important approach in this area of interest is the automatic detection of suspicious behavior from camera images. The approaches in this area can vary, but one important aspect that they have in common, is the necessity of camera footage to be able to test the approaches. Since it can be extremely tedious to collect and annotate this data it would be very rewarding to be able to generate annotated testing data automatically. We would like to focus on the behavior of non-suspicious people, because we assume these usually greatly outnumber terrorists or other suspicious individuals. People with suspicious behavior could then later be scripted and added in by hand. In other words, we would like to be able to quickly generate crowds of people doing normal, everyday behavior.\\
-
 Research focussing on simulating pedestrians can tackle the problem from different angles. For some purposes such as simulating panic situations, it is important to view the pedestrians as a large crowd. These types of simulations are mainly concerned with with how people find the exit out of a building and how they move through doors and other openings. Other researches focus more on treating the pedestrians as individuals, and crafting a specific behavior for every individual. In between these methods there is a whole spectrum of approaches, some of which focus on larger groups of people and general movement, others focus more on smaller groups or individuals and treat more sophisticated behavior.\\
 \begin{bclogo}[logo=\bctrombone]{TNO \& SIMOBS}
 This research was done as part of an internship at TNO, the Netherlands Organisation for Applied Scientific Research.  TNO is an independent organization founded to enable business and government to apply knowledge. More information can be found at \url{http://www.tno.nl}.\\\\
-SIMOBS is a plugin for the military simulation toolkit VR-forces (\url{http://www.mak.com/products/simulate/vr-forces.html} which is a tool for generating and executing battlefield scenarios. SIMOBS is developed by Philip Kerbush at the Modelling, Simulation and Gaming department at TNO to quickly generate inhabitants of scenario to add realism to the otherwise mostly empty simulated areas. SIMOBS allows users to quickly draw residential areas on a map to indicate where the simulated people should live. It is also possible to indicate where these people should go to work. The behavior of these inhabitants is determined by \emph{Daily Motion Patterns}, which specify where certain types of inhabitants need to go at specified times. SIMOBS formed the starting point of our research.
+SIMOBS is a plugin for the military simulation toolkit VR-forces (\url{http://www.mak.com/products/simulate/vr-forces.html} which is a tool for generating and executing battlefield scenarios. SIMOBS is developed by Philip Kerbusch at the Modelling, Simulation and Gaming department at TNO to quickly generate inhabitants of scenario to add realism to the otherwise mostly empty simulated areas. SIMOBS allows users to quickly draw residential areas on a map to indicate where the simulated people should live. It is also possible to indicate where these people should go to work. The behavior of these inhabitants is determined by \emph{Daily Motion Patterns}, which specify where certain types of inhabitants need to go at specified times. SIMOBS formed the starting point of our research.
 \end{bclogo}
 
 \begin{figure}
@@ -163,10 +173,11 @@ SIMOBS is a plugin for the military simulation toolkit VR-forces (\url{http://ww
 \label{fig:airportimage}
 \end{figure}
 
-Our research is intended to help inhabit simulated scenarios developed at the \emph{Modelling, Simulation and Gaming} department at TNO and is an extension of their SIMOBS (simulated observables) project. The department \emph{Intelligent Imaging} has been so kind to provide both camera footage and manually tracked locations of pedestrians at the main hall at Rotterdam airport (pictured in figure \ref{fig:airportimage}). This footage has also been used to research how to automatically spot suspicious behavior. That is why we attempt to find an approach to suit an airport type scenario. Our results can then be compared to the available footage. Because of the nature of the footage and the desire of TNO to quickly generate large quantities of non-suspicious people in everyday environments, we chose to tackle the problem of pedestrian simulation with an approach that lies somewhere in the middle of the spectrum of approaches. The behavior of the simulated people should not be designed individually per person, but our approach should result in more varied behavior than only the general movement of crowds through openings. We would like to be able to specify behaviors by indicating them in the environment, instead of specifying them per individual. For example, when a food stand is present in the area, we would like to be able to indicate that the agents that are placed in the neighborhood of that stand are able to do certain food-buying behavior. In our research, we specified a toilet behavior, that causes two agents to go to the area near the toilets, where then one person enters the bathroom and the other one waits untill the first one comes back again.
+Our research is intended to help inhabit simulated scenarios developed at the \emph{Modelling, Simulation and Gaming} department at TNO and is an extension of their SIMOBS (simulated observables) project. The department \emph{Intelligent Imaging} has been so kind to provide both camera footage and manually tracked locations of pedestrians at the main hall at Rotterdam airport (pictured in figure \ref{fig:airportimage}). This footage has also been used to research how to automatically spot suspicious behavior. That is why we attempt to find an approach to suit an airport type scenario. Our results can then be compared to the available footage.\\
+Because of the nature of this footage and the desire of TNO to quickly generate large quantities of non-suspicious people in everyday environments, we desire to tackle the problem of pedestrian simulation with an approach that lies somewhere in the middle of the spectrum of approaches. The behavior of the simulated people should not be designed individually per person, but our approach should result in more varied behavior than only the general movement of crowds through openings. We would like to be able to specify behaviors by indicating them in the environment, instead of specifying them per individual. For example, when a food stand is present in the area, we would like to be able to indicate that the agents that are placed in the neighborhood of that stand are able to do certain food-buying behavior. In our research, we specified a toilet behavior, that causes two agents to go to the area near the toilets, where then one person enters the bathroom and the other one waits untill the first one comes back again.\\
 An additional requirement is that we would like to indicate a certain \emph{deadline} for an agent which is the time at which its goal is not reachable any more. This deadline-drivenness should result in roughly two types of behavior, \emph{hurried} and \emph{relaxed}. When the deadline approaches, less and less actions are likely to be done, since actions that take much time would result in not reaching the goal in time.\\
-Keeping these requirements in mind we created a system where we design what we call \emph{situations} in an environment. These are areas where certain behavior is appropriate. The design of the behavior is facilitated by our choice to model them in \emph{Petri nets}, which is a mathematical modelling language used to model distributed systems. Moreover, the choice of the pedestrians to execute certain behaviors should be weighted by how much time they still have left to reach their goal, which is to check in, in our airport-type scenario.
-We will mimick behaviors that we found at Rotterdam airport, and then validate them using the real-life footage. We will also show that Petri nets are particularly suitable for designing the type of human behavior we need, especially when a situation requires interaction between multiple individuals.
+Keeping these requirements in mind we created a system where we design what we call \emph{situations} in an environment. These are areas where certain behavior is appropriate. The design of the behavior is facilitated by our choice to model them in \emph{Petri nets}, which is a mathematical modelling language used to model distributed systems. Moreover, the choice of the pedestrians to execute certain behaviors should be weighted by how much time they still have left to reach their goal, which is to check in, in our airport-type scenario.\\
+We will mimic behaviors that we found at Rotterdam airport, and then validate them using the real-life footage. We will also show that Petri nets are particularly suitable for designing the type of human behavior we need, especially when a situation requires interaction between multiple individuals.
 
 
 %So, to summarize, we would like to create a system that enables a user to easily place large amounts of more or less realistically behaving people in an environment. These people should behave in a way appropriate for the environment. Furthermore, the behavior should be guided by the fact that every pedestrian has a fixed deadline for when he has to do his final activity. Ideally, this will lead to a distinction between hurried and relaxed behavior, depending on whether the deadline is near or still far away. In order to facilitate defining the behavior, we will create a tool to easily design these behaviors as Petri nets. Petri nets are a mathematical modelling language mainly used for describing distributed processes. In this thesis we will show that they are also suitable for modelling human behavior, especially when it involves interactions with multiple people.
@@ -306,8 +317,10 @@ Farenc et al. even devised a hierarchical framework that incorporates a number o
 
 
 \section{Interaction with the Environment}
-As previously mentioned, most researches with the focus on crowds as a group of individuals or viewed globally do not address the problem of how to interact with the environment except for some collision detection. While this results in realistic behavior in panic situations, it is less suitable for scenarios when people have more freedom to choose their actions. The methods for crowd simulation we've looked at in the previous sections that don't focus on emergency scenarios are mostly concerned with interactions between people, and less about interaction with the environment. Because it is important for our purposes to have pedestrians with behavior tailored to the specific environment we need to look further. The obvious solution to more interaction with the environment is to extend the knowledge of the pedestrians with instructions about how to deal with the objects that are present in the simulation. This has been successfully done for instance by Shao and Terzopoulos \cite{A_autonomouspedestrians}. They used an extensive psychological model to determine the behavior of the individuals. This led to a simulation in which the behavior looks very realistic, even when one individual is followed for a long time. The downside of this method is that a different behavior needs to be programmed for the pedestrians for every simulation environment. This is unfortunately quite time-consuming. \\
-It would be easier to generate the virtual human agents if the environment would automatically decide for the agents what interactions are possible and appropriate. The first step towards this focus was made by Kallmann and Thalmann who introduced the principle of \textit{smart objects} \cite{Kallmann98modelingobjects}. In their simulations, the information about interaction with objects is stored in the objects themselves, instead of in the human agents. This way, additional behavior can be added to a pedestrian by simply placing a new object in the environment. The object also keeps track about how many agents can interact with it at the same time and if the interaction should be the same for all agents. For instance, an elevator modeled as a smart object will make the first agent interacting with it press the button, but not the next agents that approach this object. By using smart objects, the internal model of the pedestrians can be kept very simple, because they do not need to remember specific information about how to interact with the objects. Furthermore, this means that the pedestrians do not have to be specifically designed for the current simulation environment, because the environment will tell them how to act. In the most basic approach to smart objects, the agents lose all their autonomy when they approach a smart object. When these agents interact with an object , they become "slaves" of these objects, as it were, because these objects provide the animations that the agents need to execute. 
+As previously mentioned, most researches with the focus on crowds as a group of individuals or viewed globally do not address the problem of how to interact with the environment except for some collision detection. While this results in realistic behavior in panic situations, it is less suitable for scenarios when people have more freedom to choose their actions. The methods for crowd simulation we've looked at in the previous sections that don't focus on emergency scenarios are mostly concerned with interactions between people, and less about interaction with the environment. Because it is important for our purposes to have pedestrians with behavior tailored to the specific environment we need to look further.\\
+The obvious solution to more interaction with the environment is to extend the knowledge of the pedestrians with instructions about how to deal with the objects that are present in the simulation. This has been successfully done for instance by Shao and Terzopoulos \cite{A_autonomouspedestrians}. They used an extensive psychological model to determine the behavior of the individuals. This led to a simulation in which the behavior looks very realistic, even when one individual is followed for a long time. The downside of this method is that a different behavior needs to be programmed for the pedestrians for every simulation environment. This is unfortunately quite time-consuming. \\
+It would be easier to generate the virtual human agents if the environment would automatically decide for the agents what interactions are possible and appropriate. The first step towards this focus was made by Kallmann and Thalmann who introduced the principle of \textit{smart objects} \cite{Kallmann98modelingobjects}. In their simulations, the information about interaction with objects is stored in the objects themselves, instead of in the human agents. This way, additional behavior can be added to a pedestrian by simply placing a new object in the environment. The object also keeps track about how many agents can interact with it at the same time and if the interaction should be the same for all agents. For instance, an elevator modeled as a smart object will make the first agent interacting with it press the button, but not the next agents that approach this object.\\
+By using smart objects, the internal model of the pedestrians can be kept very simple, because they do not need to remember specific information about how to interact with the objects. Furthermore, this means that the pedestrians do not have to be specifically designed for the current simulation environment, because the environment will tell them how to act. In the most basic approach to smart objects, the agents lose all their autonomy when they approach a smart object. When these agents interact with an object , they become "slaves" of these objects, as it were, because these objects provide the animations that the agents need to execute. 
 
 \begin{figure}[h]
 \centering
@@ -318,7 +331,6 @@ It would be easier to generate the virtual human agents if the environment would
 
 A lot of research has been built upon the idea of smart objects. For instance, Kallmann, de Sevin and Thalmann have extended this model to have agents that have their own motivations and needs \cite{Kallmann00constructingvirtual}. This model uses five main motivation types: eat, drink, rest, work, and go to toilet. These motivations control the action through a hierarchical decision graph. Information about which objects fullfill these different needs are added to the specification of the objects.
 The fact that the general idea of smart objects has been implemented in the very successful video game series "The Sims" (see a screenshot in figure \ref{fig:thesims}) might be seen as an illustration of its effectiveness. By modelling the in-game human behavior through smart objects, the game developers have been able to add expansion after expansion of new items (with new required behavior) with great ease.The initial implementation of the agents doesn't need to be modified, but their behavior will still be enriched. \\
-
 Another slightly different approach to modelling interaction in the environment is the use of a situation based control structure (Sung, Gleicher and Chenny \cite{Sung04scalablebehaviors}). A situation is an area in the environment that requires the pedestrians to act in a certain way. The behavior of a pedestrian is described by a finite state machine in which a state is defined as follows:
  \[s = \{t, \bf{p}, \theta, a, s^- \}\]
 In which $t$ is the time, $\bf{p}$ is the current position in two dimensional space, $\theta$ is the orientation, $a$ is an action, and $s^-$ is a list of previous states. By "action" they mean a particular animation clip that has to be played at this state. Note that this definition of finite state machines differs from the standard definition. More information about finite state machines can be found in section \ref{sec:finitestatemachines}.  Situations extend the pedestrians' finite state machine with situation-specific actions. The probability distribution of the actions the pedestrian can take is multiplied with the probability distribution given by the situation. Situations are divided into two categories: \emph{spatial} situations for stationary objects or areas, and \emph{non-spatial} situations to describe concepts such as friendship with another pedestrian. In figure \ref{fig:sungsituations} an example is shown of an area around a crosswalk where the behavior is designed with the situations based control structure. The numbered areas are (1) a "crossing street" situation, (2) a "traffic sign situation and (3) an "in a hurry" situation where the street is crossed without a crosswalk.
@@ -394,10 +406,10 @@ Another way an aspect of time is incorporated are \emph{Timed Petri nets}\cite{z
 K\"{o}hler et al. show us an example of how Petri nets can be used to model elaborate social situations \cite{Köhler03modellingsocial}. They use a high level variant of Petri nets called \emph{reference nets} to model the decision making processes in universities. Reference nets are built up of multiple layers of Petri nets that represent both emergent aggegration of processes on a micro level and more high-level rules and structures on a macro level. In their multi-agent system, they make the distinction between \emph{system nets} and \emph{object nets}, where tokens of a system net correspond to Petri nets on a lower level, called object nets. In this structure of \emph{nets within nets} these lower level Petri nets move around in the higher level system nets. They manage to apply this modelling language to the decision problem of recruiting new employees in universities.
 
 \subsection{Finite State Machines vs. Petri nets}
-We think Sungs situations framework, is very promising, but for our purposes it would benefit from using Petri nets instead of finite state machines. There are serveral properties of Petri nets that FSMs lack that would be very beneficial for us. We will discuss those properties below, but first it might be important to ask, is it difficult to substitute FSMs in a system with Petri nets? Petri nets and FSMs don't only look similar, but FSMs can even be considered a subclass of Petri nets. A finite state machine can namely be described as a Petri net that contains only one token. According to Desel et al., a (finite) state machine can be defined as a Petri net that "has no \emph{branching transitions}, and hence does not allow for \emph{synchronization}". The lack of the possibility to describe synchronous behavior is one of the reasons that we prefer Petri nets over FSMs. This means that with Petri nets it would be possible to model behavior that makes an agent do several tasks at once. For instance, it could be possible to model our pedestrians' Petri nets so that a token would represent an arm or a leg. That way, a pedestrian could execute multiple basic tasks independently. More importantly, Petri nets could be used to model complex interactions between several agents. It would never be possible to achieve this kind of behavior with a finite state machine, unless a state would be described for every possible combination of activities.  An example of how interaction between agents could be modeled can be found in \ref{fig:restaurantnet}.\\
+Sungs situations framework looks very promising, but for our purposes it would benefit from using Petri nets instead of finite state machines. There are serveral properties of Petri nets that FSMs lack that would be very beneficial for us. We will discuss those properties below, but first it might be important to ask, is it difficult to substitute FSMs in a system with Petri nets? Petri nets and FSMs don't only look similar, but FSMs can even be considered a subclass of Petri nets. A finite state machine can namely be described as a Petri net that contains only one token. According to Desel et al., a (finite) state machine can be defined as a Petri net that "has no \emph{branching transitions}, and hence does not allow for \emph{synchronization}".\\
+The lack of the possibility to describe synchronous behavior is one of the reasons that we prefer Petri nets over FSMs. This means that with Petri nets it would be possible to model behavior that makes an agent do several tasks at once. For instance, it could be possible to model our pedestrians' Petri nets so that a token would represent an arm or a leg. That way, a pedestrian could execute multiple basic tasks independently. More importantly, Petri nets could be used to model complex interactions between several agents. It would never be possible to achieve this kind of behavior with a finite state machine, unless a state would be described for every possible combination of activities.  An example of how interaction between agents could be modeled can be found in \ref{fig:restaurantnet}.\\
 However, this is not the only advantage Petri nets have over finite state automata. The aspect of time is also very important for our research. There are several ways with which a sense of time can be incorporated into Petri nets, while are harder to find for finite state machines. Timed automata do exist \cite{alur1994theory}, but more approaches exist for Petri nets.\\
-Another essential issue which has to be implemented in the method we are going to choose, is non-determinism, which is one of the basic properties of a Petri net. When multiple transitions are enabled at the same time, any of them may fire. Finite state machines allow for non-determinism as well, so this doesn't have to be the deciding property for choosing between both, but together with the other advantages, it seems that Petri nets suit our needs the best. Especially the issue of synchronicity makes us certain that we should use Petri nets
-
+Seeing the tremendous availability of implementations of Petri nets with various extensions, and the possibility to design synchronous behavior, we are confident that we should choose Petri nets over finite state machines.
 
 \begin{figure}
 \begin{center}
@@ -414,9 +426,9 @@ The essential extension to the situations framework that is proposed in this the
 \section{Which Techniques Can We Use?}
 We have seen many different techniques for many different purposes. We can immediately eliminate most global approaches to  crowds, since for most environments, we do not want the pedestrians to move as one big mass, all pedestrians heading into the same direction. Using purely attracting and repulsive forces will also generally not work when the pedestrians are too far apart, so we have another reason to rule out most global techniques. Of course, the global roadmaps approach does enable the pedestrians to split up and walk in different directions, but using this system on its own will not create very realistic behavior, since it does not have the capability to deal with interpersonal relations, and interaction with objects.\\
 The techniques focusing on smaller groups do show some potential. Ideally, people should interact with each other based on a variety of social relationships such as "parent" and "friend". However, this will require much configuration beforehand, and may increase processing time for each decision the pedestrians have to make. In this case, configuration may not be the issue, since these relationships can be defined and then used for many different simulations, but processing time is a larger problem, increasing with the number of pedestrians present in the simulation.\\
-For our purposes though, we rule out the techniques that don't put more importance in the environment except for collision detection, because with those techniques it will be impossible for a designer of the environment to have any influence on the behavior of the pedestrians, which is an important requirement for us.
+For our purposes though, we rule out the techniques that don't put more importance in the environment except for collision detection, because with those techniques it will be impossible for a designer of the environment to have any influence on the behavior of the pedestrians, which is an important requirement for us.\\
 Of all the possible existing techniques, the "situations" approach of Sung et al. seems the most appealing. 
-However, it is not directly usable for our purposes. One downside to the situations approach (at least how it is described in the paper) is that state transitions are mainly low-level animations. However, it should be possible to adapt the state transitions to correspond to higher-level actions, such as change of goal. Path planning should then be delegated to another module. In this way, it is very likely that the state representation can be reduced from $s = \{t, \bf{p}, \theta, s^- \}$ to $s = \{t, \bf{p}, \theta\}$. The $s^-$ was used to remember which actions were taken previously, so that the pedestrian remembers which way it was walking. When the actual walking is delegated to another module, it seems unnecessary to keep $s^-$.
+However, it is not directly usable for our purposes. One downside to the situations approach , or at least t how it is described in the paper, is that state transitions are mainly low-level animations. However, it should be possible to adapt the state transitions to correspond to higher-level actions, such as change of goal. Path planning should then be delegated to another module. In this way, it is very likely that the state representation can be reduced from $s = \{t, \bf{p}, \theta, s^- \}$ to $s = \{t, \bf{p}, \theta\}$. The $s^-$ was used to remember which actions were taken previously, so that the pedestrian remembers which way it was walking. When the actual walking is delegated to another module, it seems unnecessary to keep $s^-$.
 
 \chapter{Method}
 In the upcoming sections will be described how we decided to design our system. We decided to base our model around Sungs situations framework \cite{Sung04scalablebehaviors}. We chose this framework because it allows for probabilistic behavior, and puts emphasis on defining behavior through the environment. This framework will have to be extended to deal with time restrictions. However, we won't work with finite state machines, as Sung et al. do, since these offer too little functionality to enable us to work with time restrictions. Furthermore, FSMs are not suitable for describing interactions between multiple agents. That is why we model behavior in a more advanced way in our system. Instead of modelling the system with finite state machines, we describe the behavior of the pedestrians with Petri nets.  The toolkit we will use for this is \emph{Platform Independent Petri net Editor 2} (PIPE2). \url{http://pipe2.sourceforge.net/} Further down below we describe how we decided to use this toolkit.
@@ -626,7 +638,7 @@ We chose to try a Gaussian function as well because of the following reasoning: 
 
 \section{Rotterdam Airport}
 \label{sec:rotterdamAirportMethod}
-In our research, we focus on behavior found at Rotterdam airport. In order to know what the behavior at this location looks like, we have observed footage from the security cameras at Rotterdam airport that the Intelligent Imaging department at TNO was so kind to provide. From these observations we have established a couple of specific behaviors that are recurrent in Rotterdam airport and managed to recreate the behavior in Petri nets.
+In our research, we focus on behavior found at the main hall at Rotterdam airport. In order to know what the behavior at this location looks like, we have observed footage from the security cameras at the main hall (see figure \ref{fig:airporttransit}) in Rotterdam airport that the Intelligent Imaging department at TNO was so kind to provide. From these observations we have established a couple of specific behaviors that are recurrent in Rotterdam airport and managed to recreate the behavior in Petri nets.
 %\todo[inline]{How often do these behaviors occur?}
 \begin{itemize}
 \item \emph{Standing still, figure \ref{fig:standstillpetrinet}}.\\
@@ -639,10 +651,18 @@ People also wandered around randomly.
 \\Another recurring behavior we saw is that people lean against the pillars in the hall. 
 
 \item \emph{Going to the toilet, figure \ref{fig:gototoiletpetrinet}.}
-\\In the videos, we observed that a typical behavior that manifests itself multiple times in the video material is that one person goes to the toilet, and another one waits until this person has come back. After that, they move on to do something else. The Petri net can be found in figure
+\\In the videos, we observed that a typical behavior that manifests itself multiple times in the video material is that one person goes to the toilet, and another one waits until this person has come back. After that, they move on to do something else.
 \end{itemize}
 
- As can be seen, the ¨standing still¨ behavior in figure \ref{fig:standstillpetrinet} was easiest to recreate, closely followed by the "wandering" behavior in figure \ref{fig:wanderpetrinet} and "leaning against a pillar" behavior. The exact appearance in the simulation mostly depends on the implementation of the actions indicated in the places of the Petri nets. Whether there will be e.g. collision detection or other lower-level functionality depends on which kind of multiagent simulation is used. The "go-to-toilet" behavior in figure \ref{fig:gototoiletpetrinet} is the most interesting, because this Petri net can actually be shared between two pedestrians. We see that this fairly complicates the structure of the Petri net. In comparison to the other Petri nets, there are relatively more places here that do not map to an actual action. These places are necessary to make sure that one pedestrian does not move forward to its next action too soon. This will cause the pedestrians to have more "idle" actions between their other actions than there would be with the simpler behavior. This is not a problem though, because the pedestrians will not remain idle longer than one or two timesteps.
+\begin{figure}
+\centering            
+\includegraphics[width=.8\textwidth]{PlattegrondRotterdamAirport_indications}
+\caption{The floor plan of the main hall of Rotterdam Airport.}
+\label{fig:airporttransit}
+\end{figure}
+
+ As can be seen, the ¨standing still¨ behavior in figure \ref{fig:standstillpetrinet} was easiest to recreate, closely followed by the "wandering" behavior in figure \ref{fig:wanderpetrinet} and "leaning against a pillar" behavior. The exact appearance in the simulation mostly depends on the implementation of the actions indicated in the places of the Petri nets. Whether there will be e.g. collision detection or other lower-level functionality depends on which kind of multiagent simulation is used.\\
+ The "go-to-toilet" behavior in figure \ref{fig:gototoiletpetrinet} is the most interesting, because this Petri net can actually be shared between two pedestrians. We see that this fairly complicates the structure of the Petri net. In comparison to the other Petri nets, there are relatively more places here that do not map to an actual action. These places are necessary to make sure that one pedestrian does not move forward to its next action too soon. This will cause the pedestrians to have more "idle" actions between their other actions than there would be with the simpler behavior. This is not a problem though, because the pedestrians will not remain idle longer than one or two timesteps.
 
 \begin{figure}[h!]
 \centering            
@@ -675,7 +695,8 @@ People also wandered around randomly.
 \clearpage
 
 \section{Example}
-In order to give a clear insight into how our method is used in practice we will give a small example. Let us say that we need to simulate only one person, who has to wait in a room. At a certain point in time (let us say 100 steps), he has to advance through a door. There are a few objects in this room with which he can interact. In figure  \ref{fig:roomwithagent} we see a schematic representation of this room. The red circle in the middle is the agent, the rectangle on the lower left side is a bench and on the upper left side we can see a door going out of this room. our agent can do a couple of things in this room. First of all, he can wander around the room. In our representation it is possible to decide to do this standing in any position in this room. Another possibility is to sit on the bench. For the purpose of this example it is only possible for the agent to decide to do this when in close proximity of the bench. In figure \ref{fig:roomwithagentsituations} the situation areas for these two behaviors can be seen. Our agent is not planning to stay in this room forever though. He wants to leave the room before 100 (time) steps, so leaving the room will be our go-to-goal"gotogoal" action.
+In order to give a clear insight into how our method is used in practice we will give a small example. Let us say that we need to simulate only one person, who has to wait in a room. At a certain point in time (let us say 100 steps), he has to advance through a door. There are a few objects in this room with which he can interact. In figure  \ref{fig:roomwithagent} we see a schematic representation of this room. The red circle in the middle is the agent, the rectangle on the lower left side is a bench and on the upper left side we can see a door going out of this room.\\
+Our agent can do a couple of things in this room. First of all, he can wander around the room. In our representation it is possible to decide to do this standing in any position in this room. Another option is to sit on the bench. For the purpose of this example it is only possible for the agent to decide to do this when in close proximity of the bench. In figure \ref{fig:roomwithagentsituations} the situation areas for these two behaviors can be seen. Our agent is not planning to stay in this room forever though. He wants to leave the room before 100 (time) steps, so leaving the room will be our go-to-goal"gotogoal" action.
 
 \begin{figure}
 \centering
@@ -695,7 +716,8 @@ In order to give a clear insight into how our method is used in practice we will
 \end{figure}
 
 The high level behavior is described in Petri nets. Our pedestrian comes with only a very basic Petri net, with its only transition being the gotogoal transition as shown in figure \ref{fig:exampleAgentnet}. The bench and wander situation have their associated situation Petri nets, as shown in figure \ref{fig:benchSituationNet} and \ref{fig:wanderpetrinet} respectively. 
-The red numbers indicate how much timesteps the designer of the Petri net thought these transitions would take. When the simulation is run, the time in steps from every place in the situation Petri nets to the sink transition are computed, and the maximum time per situation are registered as heuristic. These heuristics are quite easy to compute for our example Petri nets. For the bench situation it would be $1+3+10+1+1 = 16$. For the wander situation $1+3+1=5$. Of course, our simulation also needs goal and non-goal utility functions. Let us say they are the following:
+The red numbers indicate how much timesteps the designer of the Petri net thought these transitions would take.\\
+When the simulation is run, the time in steps from every place in the situation Petri nets to the sink transition are computed, and the maximum time per situation are registered as heuristic. These heuristics are quite easy to compute for our example Petri nets. For the bench situation it would be $1+3+10+1+1 = 16$. For the wander situation $1+3+1=5$. Of course, our simulation also needs goal and non-goal utility functions. Let us say they are the following:
 \begin{equation}
 U_{gotogoal}=-\frac{1}{100}\tau + 1 $$\\$$
 U_{nongoal}=\frac{1}{100} \tau 
@@ -756,10 +778,7 @@ To compute the probabilities for selecting the transitions, these utilities are 
 $P(choosing\_bench\_transition)\approx 0.46$\\
 $P(choosing\_wander\_transition)\approx 0.51$\\
 $P(choosing\_gotogoal\_transition)\approx 0.03$\\
-So most likely the agent will wander around or sit on the bench. Let us say the sink transition connected to the wander Petri net will be randomly chosen. Now the token gets consumed by sink transition \emph{sink:2} and produced by \emph{source:1} 1 in the Petri net with wander behavior. Every time an action needs to be taken, the active transition in the Petri net will be fired. First it will be \emph{wander:1}, then \emph{source:2}, and the cycle starts anew, until the go-to-goal transition is chosen and the pedestrian moves through the door.
-
- 
-
+So most likely the agent will wander around or sit on the bench. Let us say the sink transition connected to the wander Petri net will be randomly chosen. Now the token gets consumed by sink transition \emph{sink:2} and produced by \emph{source:1} in the Petri net with wander behavior. Every time an action needs to be taken, the active transition in the Petri net will be fired. First it will be \emph{wander:1}, then \emph{source:2}, and the cycle starts anew, until the go-to-goal transition is chosen and the pedestrian moves through the door.
 
 
 \chapter{Experiments}
@@ -783,11 +802,10 @@ This behavior happens constantly. Although it is sometimes hard to assess whethe
 \end{itemize}
 
 In order to make a fair comparison, we searched for these behaviors in the tracked data, and drew their approximate trajectories, which can be found in figure \ref{fig:reallifetoilettrajectory}, \ref{fig:reallifepillartrajectory} \ref{fig:reallifestandstilltrajectory}, and \ref{fig:reallifewandertrajectory}. The trajectories are divided into different steps.
-\todo[inline]{Modify toiletsituation so it has 4 steps just like in the results}
 
 \begin{figure}
 \centering
-\includegraphics[width=0.5\textwidth]{"./qualitative experiment pictures/zoomed_in_toiletsituation_reallife"}
+\includegraphics[width=0.5\textwidth]{reallife_toilet_fixed}
 \caption{Approximate trajectories of one person going to the toilet, other person waiting.}
 \label{fig:reallifetoilettrajectory}
 \end{figure}
@@ -805,12 +823,10 @@ In order to make a fair comparison, we searched for these behaviors in the track
 \end{figure}
 \begin{figure}
 \centering
-\includegraphics[width=0.5\textwidth]{"./qualitative experiment pictures/wander_tracked_cropped"}
+\includegraphics[width=0.5\textwidth]{wanderarrows}
 \caption{Approximate trajectory of a person wandering around.}
 \label{fig:reallifewandertrajectory}
 \end{figure}
-
-
 In this qualitative experiment, we will try to imitate these behaviors using our Petri nets. We expect that our Petri nets will be capable of imitating these behaviors.
 
 
@@ -832,9 +848,9 @@ In this qualitative experiment, we will try to imitate these behaviors using our
 It is quite a challenge to quantitatively establish whether lifelike behavior has been modeled. However, it is possible to check whether the mechanics of time planning work as predicted. If the mechanics work as expected, the simulation should start with a preference of \emph{relaxed} over \emph{hurried} behavior. Then, as time passes and the deadline draws near, the frequency of hurried behavior should increase while relaxed behavior decreases.\\
 In order to test our theory, we run the simulation once with 100 pedestrians and log for every step in time, for every pedestrian, which action he is doing at the moment. This information will be plotted in a graph that shows the frequency of every action at every step in time.\\
 The deadline of going to the goal will be 200 steps in our simulation. We chose this value because our behavior takes up to roughly 40 steps (but most behavior takes 20 steps or less) and this leaves enough room for the pedestrians to decide on multiple behaviors while "relaxed" before time starts running out and they have to start hurrying.\\
-To distinguish between hurried and relaxed behavior we replaced the "wander" behavior of the qualitative experiment by two other behaviors, called \emph{fastwander} and {slowwander}. We use these two behaviors to try to get a clear distinction between hurried and relaxed, and see how the number of pedestrians doing one or the other changes over time. The petri nets for these behaviors look exactly the same, as can be seen in figure \ref{fig:newSituations}. The difference between these Petri nets is in the weight of the slowwander:1 and fastwander:1 transitions. These are 20 versus 10 respectively. This weight is used by the Dijkstra algorithm to compute the amount of time that a this behavior will take. The reason that these are 20 and 10 is that we programmed the slowwander behavior in such a way that the pedestrian will walk roughly in one direction for 20 timesteps. Fastwander makes the pedestrian walk faster than slow wander, and for a shorter period of time, namely 10 timesteps. We added slowwander and fastwander situation areas in the simulation that both encompass the entire map.\\
-
+To distinguish between hurried and relaxed behavior we replaced the "wander" behavior of the qualitative experiment by two other behaviors, called \emph{fastwander} and \emph{slowwander}. We use these two behaviors to try to get a clear distinction between hurried and relaxed, and see how the number of pedestrians doing one or the other changes over time. The petri nets for these behaviors look exactly the same, as can be seen in figure \ref{fig:newSituations}. The difference between these Petri nets is in the weight of the slowwander:1 and fastwander:1 transitions. These are 20 versus 10 respectively. This weight is used by the Dijkstra algorithm to compute the amount of time that a this behavior will take. The reason that these are 20 and 10 is that we programmed the slowwander behavior in such a way that the pedestrian will walk roughly in one direction for 20 timesteps. Fastwander makes the pedestrian walk faster than slow wander, and for a shorter period of time, namely 10 timesteps. We added slowwander and fastwander situation areas in the simulation that both encompass the entire map.\\
 Because of the structure of our implementation, it was easier to log the actions of the pedestrians instead of the Petri nets that are fired for every pedestrian. Because most Petri-nets only contain one action, it is an \emph{almost} one-on-one mapping from action to  Petri net (or behavior), but for clarity, we will list the various actions that can be executed below:\\
+\begin{minipage}{\textwidth}
 \begin{itemize}
 \item \emph{fastwander}
 \item \emph{slowwander}
@@ -843,6 +859,7 @@ Because of the structure of our implementation, it was easier to log the actions
 \item \emph{standstill}
 \item \emph{idle}
 \end{itemize}
+\end{minipage}\\
 The last action is the default action when nothing else can be executed. It is executed when a fired transition does not have an associated action. Another situation in which this idle behavior can happen that will be important in these experiments, is when there are no transitions left anymore to fire. This can be for example when all transitions have gotten a probability of 0 for firing.
 
 %\begin{figure}
@@ -907,7 +924,7 @@ We have used the combination of functions listed in table \ref{tab:parameters}. 
 We will judge these results on two aspects: \emph{deadline drivenness} and the transition from \emph{hurried} to \emph{relaxed}.
 The results can be found in the next chapter in section \ref{sec:firstquantitative}.
 
-
+\begin{minipage}{\textwidth}
 \section{Second Quantitative Experiment}
 \label{sec:quantitativeexp2}
 It is possible that the goal and non-goal utility functions interfere with eachother. For example, when the goal utility function causes the pedestrians to go to their goal early in the simulation, they might not have time enough to show a transition from hurried to relaxed behavior. That is why we decided to run a second quantitative experiment. The purpose of this experiment is to follow the the hurried and relaxed behavior of the pedestrians with the goal utility being the constant function $U(\tau)=0$. We varied the non-goal utility functions in the same way that we did in the first quantitative experiment. For clarity, the functions and parameters we will use are the following:
@@ -918,6 +935,7 @@ It is possible that the goal and non-goal utility functions interfere with eacho
 \end{itemize}
 
 The results will again be judged on its transition from relaxed to hurried. We expect that this transition will be more clear than in the previous experiment.
+\end{minipage}
 
 \chapter{Results}
 \label{chap:results}
@@ -925,8 +943,8 @@ The results will again be judged on its transition from relaxed to hurried. We e
 \section{Results of the Qualitative Experiment}
 \label{sec:qualitativeresults}
 %\todo[inline]{Say something about how often the behaviors take place in the simulation (will have to see how to compare real life and simulation time)}
-We ran a simulation that included the behaviors that we found in real-life, and observed the trajectories that the simulated behaviors made. The resulting trajectories can be found in figure \ref{fig:simulatedtoilettrajectory}, \ref{fig:simulatedpillartrajectory}, \ref{fig:simulatedstandstilltrajectory} and \ref{fig:simulatedwandertrajectory}. From a qualitative point of view, it seems that the behavior of one person going to the toilet and one person waiting could be mimicked very well. Also leaning against a pillar has a trajectory close to the real-life trajectory. Standing still is such a trivial move that it is hardly surprising that it could be mimicked in our simulation. Lastly, \ref{fig:simulatedwandertrajectory} shows the trajectory of a simulated agent wandering around. One thing that might stand out is that the trajectory in our simulation swerves around more than the real-life trajectory. Part of this behavior is easily modified by changing the parameters of the wandering behavior, but it also illustrates a more high-level difference between real-life "wandering around" and the behavior in our system. it seems that often, the people tracked in real-life have some kind of determination to go to a certain place. The behavior is not as random as our simulated behavior. This is not a weakness of our system though, but merely indicates that more inquiry needs to be done into peoples' intentions in a airport-type scenario. Unfortunately this is outside the scope of our research.
-
+We ran a simulation that included the behaviors that we found in real-life, and observed the trajectories that the simulated behaviors made. The resulting trajectories can be found in figure \ref{fig:simulatedtoilettrajectory}, \ref{fig:simulatedpillartrajectory}, \ref{fig:simulatedstandstilltrajectory} and \ref{fig:simulatedwandertrajectory}. From a qualitative point of view, it seems that the behavior of one person going to the toilet and one person waiting could be mimicked very well. Leaning against a pillar has a trajectory close to the real-life trajectory, and standing still was of course also possible.\\
+Lastly, \ref{fig:simulatedwandertrajectory} shows the trajectory of a simulated agent wandering around. We see that the pedestrian that was tracked in real life walks from left to right and back, while our pedestrian walks roughly in one direction. That does not mean that it is not possible for our system to mimic this specific behavior. We use our wandering to make sure that the pedestrians pass over several situations. If we had made the wandering as in the footage, the pedestrians would cross a minimal amount of floor while wandering, and would possibly not engage enough in more diverse behavior. This problem is of course easily solved by making several different wandering behaviors: one with which more floor is crossed and one where the pedestrian stays roughly in the same place.
 \begin{figure}[h!]
 \centering
 \includegraphics[width=0.7\textwidth]{"./qualitative experiment pictures/simulated_gototoilet_cropped"}
@@ -962,8 +980,9 @@ We ran a simulation that included the behaviors that we found in real-life, and 
 
 \section{Results of the First Quantitative Experiment}
 \label{sec:firstquantitative}
-Firstly we are going to discuss the results of the first quantitative experiment. One thing that is noticable in all results is that there are periods in which the number of pedestrians, especially in slow and fast wander, is steady, after which the number drops drastically. After a few steps the number goes up again. In sync with this behavior the number of pedestrians remaining idle stays low, and increases when the other behaviors drop. This is easily explained. Slow and fast wander are behaviors that exist of a single action. When this action has been executed, which takes a few steps, the token of the pedestrian moves out of the attached Petri net into its base place. In order to move this token, a slot and sink transition have to be fired. These transitions do not have an associated action. When there is no action available for the pedestrian, it executes the idle behavior. Especially at the start, this effect is very prominent. This is because all pedestrians start the simulation at exactly the same moment. All pedestrians executing the same actions or actions that take the same amount of time stay synchronous. After a few dozens of steps, the behavior has varied more and the pedestrians are not as synchronous any more in going back to the idle "action".
-
+Firstly we are going to discuss the results of the first quantitative experiment. One thing that is noticable in all results is that there are periods in which the number of pedestrians, especially in slow and fast wander, is steady, after which the number drops drastically. After a few steps the number goes up again. In sync with this behavior the number of pedestrians remaining idle stays low, and increases when the other behaviors drop.\\
+This phenomenon is easily explained. Slow and fast wander are behaviors that exist of a single action. When this action has been executed, which takes a few steps, the token of the pedestrian moves out of the attached Petri net into its base place. In order to move this token, a slot and sink transition have to be fired. These transitions do not have an associated action. When there is no action available for the pedestrian, it executes the idle behavior.\\
+Especially at the start, this effect is very prominent. This is because all pedestrians start the simulation at exactly the same moment. All pedestrians executing the same actions or actions that take the same amount of time stay synchronous. After a few dozens of steps, the behavior has varied more and the pedestrians are not as synchronous any more in going back to the idle "action".\\
 Another thing that we can notice is that there are more or less four actions that dominate simulation, namely \emph{slow wander}, \emph{fast wander}, \emph{go to goal}, and \emph{idle action}.
 Behavior like going to the toilet and waiting for their friend (which are both part of the same going to the toilet behavior and Petri net) are only done by one or two pedestrians at a time. This is completely as expected. The go-to-toilet situation is shared, which means that one Petri net is attached to multiple pedestrian Petri nets. The more dominant actions belong to situations that are not shared and are instantiated for every pedestrian that enters it. That means that the shared Petri nets are only instantiated once for every situation, while the ones that aren't shared are instantiated many times.
 
@@ -1059,10 +1078,11 @@ In figure \ref{fig:linear0_1_200_goalsigmoid_100_0_-10_1}, \ref{fig:sigmoid100_0
 \label{fig:gaussian200_50_1_goalgaussian0_50_1}
 \end{figure}
 
+\begin{minipage}{\textwidth}
 The results for a Gaussian goal utility function are shown in figure \ref{fig:sigmoid100_0_10_1_goalgaussian0_50_1}, \ref{fig:linear0_1_200_goalgaussian_0_50_1} and \ref{fig:gaussian200_50_1_goalgaussian0_50_1}. We see that in general, the pedestrians seem to wait longer before they go to their goals. This also causes more pedestrians to be too late, because they still are on their way to the goal when the deadline passes. This is very likely due to the fact that the estimation of going to the goal is too low for some pedestrians, because the area they move in is larger than I took into account when estimating the time needed to go to the goal. 
+\end{minipage}
 \clearpage
-
-From these results we can make a table in which we judge the utility functions on two important aspects: change from relaxed to hurried behavior (table \ref{tab:judgegoalhurry}) and deadline-drivenness in table \ref{tab:judgegoaldeadline} (do they reach the goal in time?). We give the graphs a score in the following way: when it scores sufficiently, we give a checkmark (\checkmark). If they score better, we have + and ++, and for worse, -- and -- --. We also gave a special score in table \ref{tab:judgegoaldeadline}, namely $>>$. It means that the pedestrians reached their goal too early. When we would judge in terms of whether they are on time, we should have given them ++. However, the pedestrians reached their goal so early that they hardly did any other behavior than going to their goal. This is not desirable, so we decided to score them differently.\\
+From the results of this experiment we can make a table in which we judge the utility functions on two important aspects: change from relaxed to hurried behavior (table \ref{tab:judgegoalhurry}) and deadline-drivenness in table \ref{tab:judgegoaldeadline} (do they reach the goal in time?). We give the graphs a score in the following way: when it scores sufficiently, we give a checkmark (\checkmark). If they score better, we have + and ++, and for worse, -- and -- --. We also gave a special score in table \ref{tab:judgegoaldeadline}, namely $>>$. It means that the pedestrians reached their goal too early. When we would judge in terms of whether they are on time, we should have given them ++. However, the pedestrians reached their goal so early that they hardly did any other behavior than going to their goal. This is not desirable, so we decided to score them differently.\\
 When looking at the tables, there is only one combination of utility functions that scores sufficiently or better on both categories. A Gaussian goal utility function combined with a sigmoid non-goal utility seems to behave the best in our simulation.
 
 \begin{table}[h!]
@@ -1197,36 +1217,36 @@ Gaussian & --\\
 
 \chapter{Conclusion \& Discussion}
 \label{chap:conclusiondiscusssion}
-In this research we managed to create a system with which behavior for an airport-type or deadline-driven scenario can be easily designed with Petri nets and placed in an environment by drawing the areas in which this behavior should take place. In this chapter we will first discuss what answers our research can give to our research question and its subquestions. Secondly we will discuss the limits of our system. Lastly, we will provide a few directions followup research could take.
+In this research we managed to create a system with which behavior for an airport-type or deadline-driven scenario can be easily designed with Petri nets and placed in an environment by drawing the areas in which this behavior should take place. In this final chapter we will first discuss what answers our research can give to our research question and its subquestions. Secondly we will discuss the limits of our system. Lastly, we will provide a few directions followup research could take.
 
 \section{Research Questions}
 In our research we wanted to give an answer on the following question:
 \begin{center}
-\emph{How can an intelligent virtual environment for simulated pedestrians be extended to deal with time-restricted destinations?}
+\textbf{How can an intelligent virtual environment for simulated pedestrians be extended to deal with time-restricted destinations?}
 \end{center}
 This will be done by first answering each of the subquestions. We will go through them one by one:
 \begin{center}
-\emph{To what extent can pedestrians be simulated realistically?}
+\textbf{To what extent can pedestrians be simulated realistically?}
 \end{center}
 In our research we compared a number of key behaviors found at Rotterdam Airport with their simulated counterparts in our system. In terms of the trajectories these agents follow, the simulated pedestrians matched up with the trajectories of actual pedestrians. 
 \begin{center}
-\emph{How do we let the pedestrians make decisions based on the time left to reach the destination?}
+\textbf{How do we let the pedestrians make decisions based on the time left to reach the destination?}
 \end{center}
 When deciding on behaviors, the pedestrians are guided by how much time is left after a behavior has been executed (variable $\tau$). This variable is used together with the utility functions to compute the likelihood of a behavior occurring at that moment. From the experiments can be concluded that a Gaussian goal utility function combined with a sigmoid non-goal utility function gives the best result in terms of deadline drivenness and emergent relaxed and hurried behavior.
 
 \begin{center}
-\emph{Is it possible to have emergent behavior based on time restrictions?}
+\textbf{Is it possible to have emergent behavior based on time restrictions?}
 \end{center}
-As stated in the answer to the previous question, when using the right combination of utility functions, hurried and relaxed behavior does emerge. The slower, more time-consuming behaviors are preferred when the deadline is still far away, while quick behaviors are preferred when more time has passed. From this we can conclude that emergent behavior based on time restrictions is possible with our system.
+As stated in the answer to the previous question, when using the right combination of utility functions, yes, hurried and relaxed behavior does emerge. The slower, more time-consuming behaviors are preferred when the deadline is still far away, while quick behaviors are preferred when more time has passed. From this we can conclude that emergent behavior based on time restrictions is possible with our system.
 
 \begin{center}
-\emph{Is it possible to quickly generate these virtual pedestrians without much tweaking for each environment?}
+\textbf{Is it possible to quickly generate these virtual pedestrians without much tweaking for each environment?}
 \end{center}
 By using Petri nets combined with the situations framework, behaviors can be designed once and used in many different environments. The behavior of the pedestrians will then emerge from the combination of situations defined in the environment and a predefined goal for every pedestrian. In an airport-type scenario, the goal for almost every pedestrian is the same, namely reaching their plane before it leaves. The goal of those pedestrians can therefore be defined once.
 
 \subsection{The Benefits of Petri nets}
 \label{sec:benefits}
-In our research we replaced the finite state machines of the situations framework of Sung et al. with Petri nets, but was it necessary to do so? For our purposes it most certainly was. The way in which a sense of deadline was implemented through the use of goal and non-goal utility functions could probably be approximated with finite state machines, but in doing so the potential complexity of implementable behaviors would be limited severely. The usefulness of Petri nets over finite state machines expecially expresses itself when multiple tokens can move around. This property of Petri nets enables the designers to make behaviors where multiple agents are interacting, or where a single agent can keep track of resources. For example, a token could indicate whether an agent has bought a drink, and only when that token would be present, he could actually execute the behavior of drinking.
+In our research we replaced the finite state machines of the situations framework of Sung et al. \cite{Sung04scalablebehaviors} with Petri nets, but was it necessary to do so? For our purposes it most certainly was. The way in which a sense of deadline was implemented through the use of goal and non-goal utility functions could probably be approximated with finite state machines, but in doing so the potential complexity of implementable behaviors would be limited severely. The usefulness of Petri nets over finite state machines expecially expresses itself when multiple tokens can move around. This property of Petri nets enables the designers to make behaviors where multiple agents are interacting, or where a single agent can keep track of resources. For example, a token could indicate whether an agent has bought a drink, and only when that token would be present, he could actually execute the behavior of drinking.
 
 %
 %
@@ -1239,13 +1259,10 @@ In our research we replaced the finite state machines of the situations framewor
 Modeling pedestrian behavior with our method does have its limits. First of all, the movements of the agents are designed explicitly through linking together basic movements in the Petri nets. As a consequence, interaction with other agents is quite static, and not directly responsive to surrounding agents. Consequently, our method is not particularly suitable for situations in which the pedestrians have to move very close together, such as when a large amount of pedestrians has to move through a narrow space and have to move closer together or form a queue. When pedestrians move very close together, their behavior will become more uniform, and it would be more sensible to look at the group as a whole, and not as individuals. A more suitable approach would then for example be to look at crowds as particles in a liquid, like Moore, Ali, Mehran and Shah have done \cite{Moore:2011:VCS:2043174.2043192}. Their supposition is that people in crowds seem to move according to the flow, just like particles in a liquid. However, in the type of scenarios our system is made to simulate, it is not a problem that crowd behavior isn't easily designed. When observing the footage, we noticed a lot of individual behavior, or behaviors in pairs, and crowding behavior was virtually absent.\\
 
 In section \ref{sec:benefits} a number of benefits were named to using Petri nets. One of the examples used was the possibility of adding resources to the Petri nets. It is important though to mention the restrictions of this type of use of Petri nets. While it is possible to keep track of the number of items of a specific resource through tokens, it is not possible to have the Petri net react to it in a continuous fashion. Either a place contains the token(s) and a transition can be fired, or the place is empty and the associated behavior is not possible. It is not possible to have an agent react differently depending on how much he has of a resource on a continuous scale. 
-\todo[inline]{Add something about dijkstra's algorithm}
 
 \subsection{Future Work}
 There are a number of directions research regarding our type of framework can take. First of all, the number of behaviors used to simulate the pedestrians on Rotterdam Airport was very limited, so it could be beneficial to add more kinds of behaviors to the scenario. Furthermore, the system could be tested with more complicated Petri net designs. The choice to use Petri nets gives the ability to design very complicated behavior, that takes a lot of factors into account. For example, the fact that Petri nets can contain multiple tokens gives the opportunity to work with resources as mentioned in section \ref{sec:benefits}.\\
-
 There are also several ways in which the deadline driven behavior framework can be extended or improved. For example, currently, the probabilities for entering situations are only dependent on how close the agent is to the deadline. So, no matter what time of day it is, the pedestrians will always have the same utility for a certain action. However, in real life, a person's probabilities for certain behavior is also largely dependent on their daily cycle. Ideally, a pedestrian's propensity to execute certain actions, such as eating, should vary dependent on whether the individual has recently executed that action, and their daily cycle. In other words, it would be beneficial to introduce \emph{needs} to the framework. By adding the concept of needs, we would be better able to model the daily flow of people in a typical public area. We can vary the needs according to the time of day and whether this need has been fulfilled recently. It is not definite though whether the system needs to be changed for this to be possible. It might be possible to introduce the concept of needs in a way that it can be designed with our existing system.\\
-
 Another improvement the system would benefit from would be to change the way the goal utility function is used. In our current setup, the goal utility function sometimes stands in the way of the emergent relaxed and hurried behavior. Cumulatively, the probability of going to the goal becomes high soon in the simulation, unless a goal utility function is used with only very low values. Because there is nothing to be done after the pedestrian reaches its goal, this means they remain idle for a large part of the simulation. It is very likely that this behavior could be improved if the time for a pedestrian to go to its goal is sampled beforehand from a probability distribution function, and only the non-goal behavior is handled by a utility function.
 
 %\appendix
@@ -1299,10 +1316,6 @@ Another improvement the system would benefit from would be to change the way the
 %\label{framework}
 %\end{figure}
 
-
-
-
-\todo[inline]{Check all references (figures, papers, etc.)}
 \bibliographystyle{plain}
 \bibliography{references}
 

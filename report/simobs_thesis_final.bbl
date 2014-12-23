@@ -46,9 +46,9 @@ J.~Dijkstra, H.~J.~P. Timmermans, and A.~J. Jessurun.
   Verlag, 2000.
 
 \bibitem{gill1962introduction}
-Arthur Gill.
-\newblock Introduction to the theory of finite-state machines.
-\newblock 1962.
+A.~Gill.
+\newblock {\em Introduction to the theory of finite-state machines}.
+\newblock McGraw-Hill electronic sciences series. McGraw-Hill, 1962.
 
 \bibitem{1241047}
 T.~Hamagami and H.~Hirata.
@@ -83,6 +83,12 @@ Marcelo Kallmann and Daniel Thalmann.
 Michael K\"{o}hler, Marcel Martens, and Heiko Rolke.
 \newblock Modelling social behaviour with petri net based multi-agent systems.
 \newblock In {\em IN: PROCEEDINGS OF THE WORKSHOP MASHO’03 AT THE KI}, 2003.
+
+\bibitem{leaderfollower}
+Tsai-Yen Li, Ying-Jiun Jeng, and Shih-I Chang.
+\newblock Simulating virtual human crowds with a leader-follower model.
+\newblock In {\em Computer Animation, 2001. The Fourteenth Conference on
+  Computer Animation. Proceedings}, pages 93--102. IEEE, 2001.
 
 \bibitem{Moore:2011:VCS:2043174.2043192}
 Brian~E. Moore, Saad Ali, Ramin Mehran, and Mubarak Shah.
@@ -133,12 +139,9 @@ Barry~G Silverman, Michael Johns, Jason Cornwell, and Kevin O'Brien.
 
 \bibitem{Sung04scalablebehaviors}
 Mankyu Sung, Michael Gleicher, and Stephen Chenney.
-\newblock Scalable behaviors for crowd simulation, 2004.
-
-\bibitem{leaderfollower}
-Shih-I~Chang Tsai-Yen~Li, Ying-Jiun~Jeng.
-\newblock Simulating virtual human crowds with a leader-follower model.
-\newblock IEEE Computer Society, 2001.
+\newblock Scalable behaviors for crowd simulation.
+\newblock In {\em Computer Graphics Forum}, volume~23, pages 519--528. Wiley
+  Online Library, 2004.
 
 \bibitem{zuberek1980timed}
 Wlodzimierz~M Zuberek.
