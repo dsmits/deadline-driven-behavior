@@ -21,8 +21,8 @@
 \parbox[b][\paperheight]{\paperwidth}{%
 \vfill
 \centering
-\includegraphics[width=.8\paperwidth,,%
-keepaspectratio]{scriptiekaft.png}%
+\includegraphics[width=.9\paperwidth,,%
+keepaspectratio]{kaft_bewerkt.png}%
 \vfill
 }}}
 
@@ -55,7 +55,7 @@ Djura S. Smits
 
 \newpage
 \vspace*{\fill}
-\textit{Front cover illustration made by Djura Smits.}
+\textit{Front cover illustration by Djura Smits.}
 
 \newpage
 Djura S. Smits\\
@@ -461,6 +461,7 @@ PIPE2 is a tool written in Java to create and analyse petri nets. We chose this 
 \label{pipegui}
 \end{figure}
 
+
 \subsection{Separating the Petri Nets of Situations and Pedestrians}
 Because a pedestrian should only be able to do behavior when he is in the associated situation, we should keep the Petri nets belonging to the pedestrian and the nets that describe the behavior for a situation separate, like in figure \ref{petrinetexample}. In the middle of this figure we can see the base place, to which all Petri nets eventually loop back, except for the gotogoal behavior. The large circles in this example indicate the situation Petri nets. These have to attach to and detach from the pedestrian Petri net as he walks in and out of the associated situation. We do this through specially labeled \emph{source} and \emph{sink} transitions.
 A \emph{source} transition is a transition $t \in T$ of which the pre-set $\prescript{\bullet}{}{t} = \emptyset$, whereas a \emph{sink} transition is a transition $t \in T$ of which the post-set $t^{\bullet} = \emptyset$. An example of a place with a source and sink transition attached can be found in figure \ref{fig:sourceandsink}\\
@@ -547,19 +548,17 @@ There is another way in which these source and sink transitions are treated diff
 In this section will be described how the pedestrian agents' behavior is decided upon using information about their deadlines and time spent doing the various behaviors.
 What is important to remember is that pedestrian Petri nets always have one \emph{base place} from which it is always possible to reach the (time constrained) goal. This place should also be labeled \textbf{base} by the designer so our system can find it. In the following subsections, we will first describe how we estimate how much time a certain behavior costs, then we will show how we use this information together with the deadline time, a utility function and the current time to compute the probabilities of various behaviors, and finally we will propose various utility functions that we think will result in the desired behavior.
 
-
 \subsection{Estimating the Time of Behaviors}
-In order to save computing time during a simulation, we make a few computations before the simulation has started. An important step is the calculation of the distance in time between all the places in a Petri net and a destination place (such as the goal place). This distance can easily be computed using the \emph{Dijkstra shortest path algorithm} \cite{dijkstra}. Dijkstra's algorithm is a graph search algorithm that can produce a shortest path tree for a single source, for a graph with nonnegative edges. In our system we can use this to compute the time from any place to the destination place (the source). This can be very useful when we would like to compute an estimate of how long a pedestrian will be stuck to the behavior of a certain situation. However, it will never be more than an estimate, since it is possible to design Petri nets with (possibly) infinite loops. But since the Petri nets are probabilistic, it will never be possible to give an exact prediction of the time it takes to execute a certain behavior.
+In order to save computing time during a simulation, we make a few computations before the simulation has started. An important step is the calculation of the distance in time between all the places in a Petri net and a destination place. This distance can easily be computed using the \emph{Dijkstra shortest path algorithm} \cite{dijkstra}. Dijkstra's algorithm is a graph search algorithm that can produce a shortest path tree for a single source, for a graph with nonnegative edges. In our system we can use this to compute the time from any place to the destination place (the source). We then pick the place from all the places in the Petri net the one that has the highest distance to the destination. We use this information to make an estimate of how long a pedestrian will be stuck to the behavior of a certain situation. However, it will never be more than an estimate, since it is possible to design Petri nets with (possibly) infinite loops, since the Petri nets are probabilistic, it will never be possible to give an exact prediction of the time it takes to execute a certain behavior. In figure \ref{petrinetexample} the estimates of the behaviors described in section \ref{sec:rotterdamAirportMethod} are shown.
 
 \subsection{Deciding on Behavior}
-Though the probabilities of the various behaviours a pedestrian can have are dependent on what kind of utility function we are going to use, the underlying mechanism will always be as described in the algorithm in figure \ref{decisionmechanism}. This algorithm is used to choose one of the various behaviors that are currently available to a pedestrian at a certain timestep. Once one is chosen, this behavior will be executed from the current timestep until it has finished, and the token has moved back to the base place of the pedestrian. This algorithm is only run for the pedestrians whose token is currently in the base place. When the token is in another place, the decision about which transition to choose follows the basic p/t Petri net rules.\\
+Though the probabilities of the various behaviours a pedestrian can have are dependent on what kind of utility function we are going to use, the underlying mechanism will always be as described in the algorithm in figure \ref{fig:decisionmechanism}. This algorithm is used to choose one of the various behaviors that are currently available to a pedestrian at a certain timestep. Once one is chosen, this behavior will be executed from the current timestep until it has finished, and the token has moved back to the base place of the pedestrian. This algorithm is only run for the pedestrians whose token is currently in the base place. When the token is in another place, the decision about which transition to choose follows the basic p/t Petri net rules.\\
 The mechanism works as follows: first of all, we subtract the current simulation time from the deadline time of a specific pedestrian.  When we have computed this $t_d$, we know how much time this pedestrian has left to reach its goal.\\
-Next, the algorithm computes for every situation how much time is left would the pedestrian choose to execute this behavior. This remaining time is then used to compute the \emph{utility} of these behaviors. The utility is computed with the utility function $U$, and can have various distributions. In section \ref{subsec:utility} the various utility functions that we experiment with are described. We will try outbehavior various options for $U$ to see which will give the most realistic behavior. When the utilities for all the behaviors have been computed, they are normalized, and based on the resulting probabilities, one of the behaviors is randomly chosen.
+Next, the algorithm computes for every situation how much time is left would the pedestrian choose to execute this behavior. This remaining time is then used to compute the \emph{utility} of these behaviors. The utility is computed with the utility function $U$, and can have various distributions. In section \ref{subsec:utility} the various utility functions that we experiment with are described. We will try out behavior various options for $U$ to see which will give the most realistic behavior. When the utilities for all the behaviors have been computed, they are normalized, and based on the resulting probabilities, one of the behaviors is randomly chosen.
 
 \begin{figure}
 \begin{algorithm}
 
-\label{decisionmechanism}
 \begin{algorithmic}
 \State $t_d \gets $ deadline time - current time 
 \For{Every connected situation numbered $0, 1 \ldots n$}
@@ -572,6 +571,7 @@ Next, the algorithm computes for every situation how much time is left would the
 \end{algorithmic}
 \end{algorithm}
 \caption{The behavior decision mechanism}
+\label{fig:decisionmechanism}
 \end{figure}
 
 As one may have noticed, this approach does not give a completely watertight solution to the planning problem. However, since we have to be able to model large crowds, we cannot create an overly complex planning system, since we would not be able to run the simulation real-time. Furthermore, we do not aim at finding an optimal solution to the planning problem, but rather the most lifelike behavior. In real life, people make errors in judgement, so creating pedestrians who can look ahead perfectly would not be realistic. It is impossible to make an exact definition of realism for our purposes, but what we try to do, is to copy certain specific behavior found in real-life footage. In our experiments we will try different functions for computing the probability of going to the goal, and attempt to assess which function will be most suitable.
@@ -583,13 +583,11 @@ Below the various utility functions we use will be described.
 
 \subsubsection{Sigmoid Function}
 A sigmoid function is an S-shaped curve that has a progression that accelerates and approaches a climax over time. This function can be found in many natural processes, such as learning curves. This function closely resembles how we reason that the behavior will shift when a pedestrian approaches a deadline.
-Our sigmoid function is defined as follows:
+Our sigmoid function is defined as follows.
 \begin{equation}
-U(\tau) = \eta \frac{1}{1+e^{-\omega(\tau-\tau_0)}} + \beta
+U(\tau) = \eta \frac{1}{1+e^{-\frac{\tau-\mu}{\omega}}} 
 \end{equation}
-\todo[inline]{Check if the following parameters are still true}
-In our experiments, we chose $\tau_0=100$ and $\omega=100$, so that the middle of the curve lies in the middle of the 200-timestep period which the pedestrians have to reach their deadline. We chose $\omega$ to be 100 as well to scale the function to fit in the 200 timestep interval. For $\eta$, we varied this between 0 and 1.
-% When the deadline is far away, it does not matter much whether the pedestrian goes straight to its goal or does something else. Even if time shifts a little, it still does not matter much. However, when the pedestrian moves on
+Our sigmoid function includes parameters for translation and transformation: $\eta$ to multiply in the $y$ direction, $\omega$ to multiply in the $\tau$ direction and $\mu$ to translate in the $\tau$ direction.
 
 %\begin{figure}
 %\centering
@@ -599,36 +597,33 @@ In our experiments, we chose $\tau_0=100$ and $\omega=100$, so that the middle o
 %\end{figure}
 
 \subsubsection{Linear Function}
-We first chose to use a sigmoid function, because intuitively it felt like it would reflect real-life behavior best. However, it could be the case that the sophistication of this function is lost in practice. If this is the case, we might as well use the simpler linear function. We will use this function to check the necessity of the sigmoid function. Our linear function was of the following form:
+We first chose to use a sigmoid function, because intuitively it felt like it would reflect real-life behavior best. However, it could be the case that the sophistication of this function is lost in practice. If this is the case, we might as well use the simpler linear function. Our linear function was of the following form, where parameter $d$ is the time of the deadline:
+\begin{minipage}{\textwidth}
 \begin{center}
-If $0 \leq \tau \leq n$: $P(\tau) = a\tau + b$\\
+If $0 \leq \tau \leq d$: $P(\tau) = a\tau + b$\\
 If $\tau<0$: $P(\tau) = P(0)$\\
-If $\tau<n$: $P(\tau) = P(n)$
+If $\tau>d$: $P(\tau) = P(d)$
 \end{center}
-However, we do not specify these parameters directly. What matters the most to us, is the value at the start of the linear utility function, $U$ at $\tau=0$, which we call $U_0$ and the value of $U$ at the end where $\tau=n$, which we call $U_n$. Consequently, we compute $a$ and $b$ as follows:
-\todo[inline]{Check whether I'm consequent in the indication of the parameters and if it is correct to call the x axis $n$}
+\end{minipage}
+However, we do not specify parameters $a$ and $b$ directly. What matters the most to us, is the value $U(\tau)$ at $\tau=0$, which we call $U_0$ and the value of $U$ at the end where $\tau=d$, which we call $U_d$. Consequently, we compute $a$ and $b$ as follows:
 \begin{center}
-$a = \frac{U_n - U_0}{n}$\\
+$a = \frac{U_d - U_0}{d}$\\
 $b = U_0$
 \end{center}
 
-
-
 \subsubsection{Gaussian Function}
-We also used a Gaussian function to model the behavior, defined as follows:
-%\begin{equation}f(x) = ae^{- \frac{(x-b)^2}{2c^2}}\end{equation}
-\begin{equation}f(\tau)\frac{1}{\sigma \sqrt{2 \pi}} e^{- \frac{(\tau - \mu)^2}{2\sigma^2}}
-\end{equation}
+We also used a Gaussian function to model the behavior. A Gaussian distribution (or normal distribution) is a continuous probability distribution with a bell-shaped probability density function and has mean ($\mu$ and variance ($\sigma^2$) as parameters.
+\begin{center}\[U(\tau)=\frac{1}{\sigma \sqrt{2 \pi}} e^{- \frac{(\tau - \mu)^2}{2\sigma^2}}\]
+\end{center}
 %Where real constants $a, b, c > 0 $. 
-A Gaussian distribution (or normal distribution) is a continuous probability distribution with a bell-shaped probability density function which have a mean ($\mu$ and variance ($\sigma^2$) as parameters.
-We chose to try a Gaussian function as well because of the following reasoning: A pedestrian might not care about going to it's goal until it is approximately the time of the deadline. With this we mean that going to the goal is a priority \emph{around} the time of the deadline, and will also decline when the deadline has passed for a while, and the pedestrian hasn't reached its goal yet. With this reasoning, the "go-to-goal" behavior frequency should increase when approaching the deadline, and should peak \emph{just} before the deadline, and declines thereafter.
+We chose to try a Gaussian function as well because of the following reasoning: A pedestrian might not care about going to it's goal until it is approximately the time of the deadline. With this we mean that going to the goal is a priority \emph{around} the time of the deadline, and will also decline when the deadline has passed for a while, and the pedestrian hasn't reached its goal yet. With this reasoning, the "go-to-goal" behavior frequency should increase when approaching the deadline, and should peak \emph{just} before the deadline, and decline thereafter.
 
 
 
 \section{Rotterdam Airport}
 \label{sec:rotterdamAirportMethod}
 In our research, we focus on behavior found at Rotterdam airport. In order to know what the behavior at this location looks like, we have observed footage from the security cameras at Rotterdam airport that the Intelligent Imaging department at TNO was so kind to provide. From these observations we have established a couple of specific behaviors that are recurrent in Rotterdam airport and managed to recreate the behavior in Petri nets.
-\todo[inline]{How often do these behaviors occur?}
+%\todo[inline]{How often do these behaviors occur?}
 \begin{itemize}
 \item \emph{Standing still, figure \ref{fig:standstillpetrinet}}.\\
 People stand still and do nothing very often while waiting.
@@ -645,7 +640,19 @@ People also wandered around randomly.
 
  As can be seen, the ¨standing still¨ behavior in figure \ref{fig:standstillpetrinet} was easiest to recreate, closely followed by the "wandering" behavior in figure \ref{fig:wanderpetrinet} and "leaning against a pillar" behavior. The exact appearance in the simulation mostly depends on the implementation of the actions indicated in the places of the Petri nets. Whether there will be e.g. collision detection or other lower-level functionality depends on which kind of multiagent simulation is used. The "go-to-toilet" behavior in figure \ref{fig:gototoiletpetrinet} is the most interesting, because this Petri net can actually be shared between two pedestrians. We see that this fairly complicates the structure of the Petri net. In comparison to the other Petri nets, there are relatively more places here that do not map to an actual action. These places are necessary to make sure that one pedestrian does not move forward to its next action too soon. This will cause the pedestrians to have more "idle" actions between their other actions than there would be with the simpler behavior. This is not a problem though, because the pedestrians will not remain idle longer than one or two timesteps.
 
-\todo[inline]{Check gototoilet Petri one last time to see if there aren't any redundant places/transitions}
+\begin{figure}[h!]
+\centering            
+\includegraphics[width=0.4\textwidth]{/home/djura/vakken/svn_afstudeerstage/deadline-driven-behavior/report/petrinet_pictures/standStillSituation.png}
+\caption{Pedestrian standing still.}
+\label{fig:standstillpetrinet}
+\end{figure}
+
+\begin{figure}[h!]
+\centering            
+\includegraphics[width=0.5\textwidth]{/home/djura/vakken/svn_afstudeerstage/deadline-driven-behavior/report/petrinet_pictures/wanderSituation.png}
+\caption{Random wandering around}
+\label{fig:wanderpetrinet}
+\end{figure}
 
 \begin{figure}[[h!]
 \centering            
@@ -656,29 +663,15 @@ People also wandered around randomly.
 
 \begin{figure}[h!]
 \centering            
-\includegraphics[width=0.4\textwidth]{/home/djura/vakken/svn_afstudeerstage/deadline-driven-behavior/report/petrinet_pictures/standStillSituation.png}
-\caption{Pedestrian standing still.}
-\label{fig:standstillpetrinet}
-\end{figure}
-
-\begin{figure}[h!]
-\centering            
-\includegraphics[width=\textwidth]{/home/djura/vakken/svn_afstudeerstage/deadline-driven-behavior/report/petrinet_pictures/twoPeopleToiletSituation_new.png}
+\includegraphics[width=\textwidth]{/home/djura/vakken/svn_afstudeerstage/deadline-driven-behavior/report/petrinet_pictures/twoPeopleToiletSituation_new2.png}
 \caption{One person going to the toilet and one person waiting for the other.}
 \label{fig:gototoiletpetrinet}
 \end{figure}
 
-\begin{figure}[h!]
-\centering            
-\includegraphics[width=0.5\textwidth]{/home/djura/vakken/svn_afstudeerstage/deadline-driven-behavior/report/petrinet_pictures/wanderSituation.png}
-\caption{Random wandering around}
-\label{fig:wanderpetrinet}
-\end{figure}
 \clearpage
 
 \section{Example}
-\todo[inline]{This first paragraph should be removed or placed somewhere else.}
-Figure \ref{petrinetexample} gives an example of how the pedestrian petrinet is connected to the situations. It also shows the estimation created by the Dijkstra preprocessing algorithm that makes a guess at how much time it takes to complete the situation behavior. This is the value that will be used when computing the time at which the token of a pedestrian will move back to its base place.
+
 
 In order to give a clear insight into how our method is used in practice we will give a small example. Let us say that we need to simulate only one person, who has to wait in a room. At a certain point in time (let us say 100 steps), he has to advance through a door. There are a few objects in this room with which he can interact. In figure  \ref{fig:roomwithagent} we see a schematic representation of this room. The red circle in the middle is the agent, the rectangle on the lower left side is a bench and on the upper left side we can see a door going out of this room. our agent can do a couple of things in this room. First of all, he can wander around the room. In our representation it is possible to decide to do this standing in any position in this room. Another possibility is to sit on the bench. For the purpose of this example it is only possible for the agent to decide to do this when in close proximity of the bench. In figure \ref{fig:roomwithagentsituations} the situation areas for these two behaviors can be seen. Our agent is not planning to stay in this room forever though. He wants to leave the room before 100 (time) steps, so leaving the room will be our go-to-goal"gotogoal" action.
 
@@ -757,7 +750,7 @@ $U_{bench}=\frac{1}{100} * 84 = 0.84$  \\
 $U_{wander}=\frac{1}{100} * 95=0.95 $\\
 $U{gotogoal}=-\frac{1/100} * 95 + 1 =0.05$\\
 
-To compute the probabilities for selecting the transitions, these utilities are divided by the sum of all utilities, which leads to the following values:\\
+To compute the probabilities for selecting the transitions, these utilities are normalized, which leads to the following values:\\
 $P(choosing\_bench\_transition)\approx 0.46$\\
 $P(choosing\_wander\_transition)\approx 0.51$\\
 $P(choosing\_gotogoal\_transition)\approx 0.03$\\
@@ -781,7 +774,6 @@ First of all, we will see if it is possible to recreate real-life behavior in Ro
 \begin{itemize}
 \item \emph{One person going to the toilet, other person waiting.}\\
 We have observed this behavior 2 times in 10 minutes
-\todo[inline]{Check if I interpreted the data right!}
 \item \emph{Leaning against a pillar}
 We have observed this behavior approximately 2 times in 10 minutes.
 \item \emph{Standing still}
