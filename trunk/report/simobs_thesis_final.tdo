@@ -1,14 +1,12 @@
 \contentsline {todo}{{\color@box {}{cyan}{\leavevmode {\color {cyan}o}}\ Change}}{iii}{section*.1}
 \contentsline {todo}{{\color@box {}{cyan}{\leavevmode {\color {cyan}o}}\ Check whole thesis on occurrence of "probability" function and replace it with "utility function" where necessary}}{17}{section*.14}
-\contentsline {todo}{{\color@box {}{cyan}{\leavevmode {\color {cyan}o}}\ Make sure introduction lines up with research questions}}{31}{section*.32}
-\contentsline {todo}{{\color@box {}{cyan}{\leavevmode {\color {cyan}o}}\ Say something about expectations.}}{31}{section*.33}
-\contentsline {todo}{{\color@box {}{cyan}{\leavevmode {\color {cyan}o}}\ Modify toiletsituation so it has 4 steps just like in the results}}{31}{section*.34}
-\contentsline {todo}{{\color@box {}{cyan}{\leavevmode {\color {cyan}o}}\ Check which parts of the first quantitative experiment are still relevant now the experiments have changed.}}{33}{section*.39}
-\contentsline {todo}{{\color@box {}{cyan}{\leavevmode {\color {cyan}o}}\ Rewrite results of qualitative experiment}}{37}{section*.42}
-\contentsline {todo}{{\color@box {}{cyan}{\leavevmode {\color {cyan}o}}\ Say something about how often the behaviors take place in the simulation (will have to see how to compare real life and simulation time)}}{37}{section*.43}
-\contentsline {todo}{{\color@box {}{cyan}{\leavevmode {\color {cyan}o}}\ What happened to lean against pillar?}}{40}{section*.48}
-\contentsline {todo}{{\color@box {}{cyan}{\leavevmode {\color {cyan}o}}\ Include subsections?}}{45}{section*.63}
-\contentsline {todo}{{\color@box {}{cyan}{\leavevmode {\color {cyan}o}}\ Make sure the utility functions are explained better/clarified. Otherwise it is very confusing that their effect in time is more or less the mirrored version of the way they are defined.}}{45}{section*.64}
-\contentsline {todo}{{\color@box {}{cyan}{\leavevmode {\color {cyan}o}}\ Put \ref {fig:linear0to0.5_100agents} and \ref {fig:linear0to01_100agents} in appendix instead of here. They don't add anything.}}{46}{section*.66}
-\contentsline {todo}{{\color@box {}{cyan}{\leavevmode {\color {cyan}o}}\ Add something about dijkstra's algorithm}}{51}{section*.73}
-\contentsline {todo}{{\color@box {}{cyan}{\leavevmode {\color {cyan}o}}\ Check all references (figures, papers, etc.)}}{51}{section*.74}
+\contentsline {todo}{{\color@box {}{cyan}{\leavevmode {\color {cyan}o}}\ Modify toiletsituation so it has 4 steps just like in the results}}{31}{section*.32}
+\contentsline {todo}{{\color@box {}{cyan}{\leavevmode {\color {cyan}o}}\ Check which parts of the first quantitative experiment are still relevant now the experiments have changed.}}{33}{section*.37}
+\contentsline {todo}{{\color@box {}{cyan}{\leavevmode {\color {cyan}o}}\ Rewrite results of qualitative experiment}}{37}{section*.40}
+\contentsline {todo}{{\color@box {}{cyan}{\leavevmode {\color {cyan}o}}\ Say something about how often the behaviors take place in the simulation (will have to see how to compare real life and simulation time)}}{37}{section*.41}
+\contentsline {todo}{{\color@box {}{cyan}{\leavevmode {\color {cyan}o}}\ What happened to lean against pillar?}}{40}{section*.46}
+\contentsline {todo}{{\color@box {}{cyan}{\leavevmode {\color {cyan}o}}\ Include subsections?}}{45}{section*.61}
+\contentsline {todo}{{\color@box {}{cyan}{\leavevmode {\color {cyan}o}}\ Make sure the utility functions are explained better/clarified. Otherwise it is very confusing that their effect in time is more or less the mirrored version of the way they are defined.}}{45}{section*.62}
+\contentsline {todo}{{\color@box {}{cyan}{\leavevmode {\color {cyan}o}}\ Put \ref {fig:linear0to0.5_100agents} and \ref {fig:linear0to01_100agents} in appendix instead of here. They don't add anything.}}{46}{section*.64}
+\contentsline {todo}{{\color@box {}{cyan}{\leavevmode {\color {cyan}o}}\ Add something about dijkstra's algorithm}}{50}{section*.71}
+\contentsline {todo}{{\color@box {}{cyan}{\leavevmode {\color {cyan}o}}\ Check all references (figures, papers, etc.)}}{51}{section*.72}
