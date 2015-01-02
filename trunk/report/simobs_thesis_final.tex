@@ -14,14 +14,17 @@
 \usepackage{eso-pic}
 \usepackage{mathtools}
 \usepackage{float}
+%\usepackage{gfsartemisia}
+%\usepackage[T1]{fontenc}
 %\usepackage[caption = false]{subfig}
+%\DeclareFixedFont{\titlefont}{T1}{ppl}{m}{}{0.5in}
 
 \newcommand\BackgroundPic{%
 \put(0,0){%
 \parbox[b][\paperheight]{\paperwidth}{%
 \vfill
 \centering
-\includegraphics[width=.95\paperwidth,,%
+\includegraphics[height=.9\paperheight,,%
 keepaspectratio]{kaft.png}%
 \vfill
 }}}
@@ -42,15 +45,22 @@ keepaspectratio]{kaft.png}%
 
 % [CHANGE] The title of your thesis. If your thesis has a subtitle, then this
 % should appear right below the main title, in a smaller font.
+\fontfamily{lmdh}{
 \begin{Huge}
-Deadline Driven Behavior in Intelligent Virtual Environments
+Deadline Driven Behavior\\
+in Intelligent Virtual Environments
 \end{Huge}
-
-\vspace{1.5cm}
+}
+%\vspace{1.5cm}
+\vfill
 
 % [CHANGE] Your full name. In case of multiple names, you can include their
 % initials as well, e.g. "Jan G.J. van der Wegge".
+\fontfamily{cmr}{
+\begin{Large}
 Djura S. Smits
+\end{Large}
+}
 % [CHANGE] Your student ID, as this has been assigned to you by the UvA
 % administration.
 \end{center}
@@ -138,7 +148,7 @@ December 23rd, 2014
 %\abstract
 %\newpage
 \section{Acknowledgements}
-First all, I would of course like to thank my supervisors Arnoud Visser from the UvA and Philip Kerbusch from TNO. Furthermore, I would like to thank Ernst Bovenkamp for providing the data and videos from Rotterdam airport. I would also like to thank my friends, family, and boyfriend for all the support, and my classmates, many of whom I've enjoyed working with for many years.
+First all, I would of course like to thank my supervisors Arnoud Visser from the UvA and Philip Kerbusch from TNO. Furthermore, I would like to thank Ernst Bovenkamp for providing the data and videos from Rotterdam airport. I would also like to thank my friends, family, and boyfriend for all the support, and my classmates, whom I've enjoyed working with for many years.
 \newpage
 \tableofcontents
 \newpage
@@ -282,7 +292,7 @@ m_i \frac{d \boldsymbol{v}_i}{dt} = m_i \frac{\boldsymbol{v}_i^0 (\boldsymbol{t}
 \label{eq:helbingaccelleration}
 \end{equation}
 Where pedestrians $1 \leq i \leq N$ of mass $m_i$ want to move with a certain desired speed $v_i^0$ in a certain direction $\boldsymbol{e}_i^0$. They tend to adapt their instantaneous velocity $\boldsymbol{v}_i(t)$ within time interval $\tau_i$. The interaction force $\boldsymbol{f}_{ij}$ is added to simulate the tendency of the pedestrians to want to keep their distance from others. Interaction force $\boldsymbol{f}_{iw}$ makes the pedestrians tend to keep away from the walls. This model can lead to several effects known to occur in real panic situations. Focussing on large crowds though does not always mean one is unconcerned with the individual agents. One example of large crowd simulation while taking individuality into account is the research by Pelechano and Badler \cite{pelechano2006modeling}. They successfully show that Helbings model can be combined with a high-level wayfinding model that bases decisions of individuals on their mental map of the building. Individuals are even divided into three categories: \emph{trained leaders}, who have complete knowledge about the building the simulation takes place, \emph{untrained leaders}, who handle stress well, help others and will explore the building, and \emph{untrained non-leaders}. In later research they extend the psychological model even more by using the PMFServ software system \cite{citeulike1080090}. PMFServ is a model based on established psychological principles \cite{silverman2006human}. Braun et al. \cite{10.1109CASA.2003.1199317} also used the model of Helbing as a basis, but introduced additional features for creating group behaviors, such as family members, dependence level, altruism level, and desired speed of the agent.\\
-While these methods give a good insight into the movements in those particular panic situations, they are less suitable for experiments simulation  non-threatening situations. Only in those few moments of panic, or when crowds are very dense, do these models represent a crowd realistically. What we are looking for, is a framework that gives realistic behavior over longer periods of time. Pelechano, Allbeck and Badler \cite{Pelechano:2007:CIA:1272690.1272705} have simulated high-density crowds for normal situations. They base the movement of the crowds on a simple wayfinding algorithm and a number of different psychological (impatience, panic, personality attributes, etc.) and physiological traits(e.g. locomotion and energy level). Furthermore, the agent is given perception and will react to objects and other pedestrians in the nearby space.\\
+While these methods give a good insight into the movements in those particular panic situations, they are less suitable for experiments simulation  non-threatening situations. Only in those few moments of panic, or when crowds are very dense, do these models represent a crowd realistically. What we are looking for, is a framework that gives realistic behavior over longer periods of time. Pelechano, Allbeck and Badler \cite{Pelechano:2007:CIA:1272690.1272705} have simulated high-density crowds for normal situations. They base the movement of the crowds on a simple wayfinding algorithm and a number of different psychological (impatience, panic, personality attributes, etc.) and physiological traits (e.g. locomotion and energy level). Furthermore, the agent is given perception and will react to objects and other pedestrians in the nearby space.\\
 Bayazit, Lien and Amato approached the subject of crowd simulation in a very different way \cite{Bayazit02bettergroup}. Instead of letting an entity such as one pedestrian or a group do the navigation on the fly, global roadmaps are used. In this method, a map is generated beforehand defining where the pedestrians can walk. During simulation, the pedestrians are given a goal location, and will then explore the paths defined by the map, based on which direction exercises the highest force on the pedestrians. The pedestrians can update this map in real-time indicating if a path is favorable or not when trying to get to the goal. When two paths exert an equal amount of force on the pedestrians, they will split up and both paths will be explored simultaneously.\\
 However, global roadmaps are not the only way an environment can be defined with respect to behavior. Various methods have been developed that use a combination of multi-agent techniques and cellular automata \cite{Dijkstra00amulti-agent}\cite{1241047}. Here, the behavior stems from a combination of basic multi-agent systems, combined with information about how the pedestrians should be distributed over a grid. This grid follows the rules typical to cellular automata, where the value of a single square in the grid at time $t$ depends on the value of the surrounding squares in the grid at $t-1$. Figure \ref{fig:cellularautomata} shows how Hamagami et al. structured their implementation of this idea.
 
@@ -296,7 +306,7 @@ However, global roadmaps are not the only way an environment can be defined with
 %\todo[inline]{Maybe talk some more about cellular automata. But try to find a way that describes both articles.}
 
 \subsection{Smaller Groups and Individual Approaches}
-The previously mentioned approaches focus on movements of large groups of people. This might generate realistic effects when the crowds are very dense, but when the pedestrians are more sparsely scattered in the environment, these models will not suffice. That is why there have been many researches focusing more on crowds as a collection of smaller groups. In an urban environment, a lot of pedestrians move around together with a couple of other pedestrians and very few move around on their own. An important step in this direction has been made by Li, Jeng and Chang \cite{leaderfollower}, who proposed a leader-follower model, in which one person in a group gets the role of \emph{leader}, who has the job to decide on the destination and has to plan the path. This leader will exert an attractive force on the \emph{followers}, who will continuously follow this leader around. Hostetler and Kearny chose an approach in which all members of the group cast an equal vote on which direction to head in \cite{Hostetler02strollingdown}. The walkways have been modelled as ribbons to define the geometry of the surface, and which create a conduit that channels pedestrian traffic into parallel streams. Every member of a group casts a vote on which way to turn and how to adjust the speed based on a discretized action space. The group will then collectively follow the action that has the highest vote. Peters, Ennis and O'Sullivan decided to have a more direct approach to the formation of groups \cite{10.1109MCG.2009.69}. They studied a large video corpus of prototypical walking areas and concluded groups always occur in certain formations. Subsequently, they designed a number of formations in a \emph{formation template} that represent discrete formations that the pedestrian groups may adopt, such as walking completely abreast, or in a staggered formation (see figure \ref{fig:formations}). The distance between the group members is defined by a cohesion matrix, which describes the cohesion between every two members in the group. Another factor contributing to the distance between each member is the minimum frontal aspect the formation can have, which describes the width of the formations.
+The previously mentioned approaches focus on movements of large groups of people. This might generate realistic effects when the crowds are dense, but when the pedestrians are more sparsely scattered in the environment, these models will not suffice. That is why there have been many researches focusing more on crowds as a collection of smaller groups. In an urban environment, a lot of pedestrians move around together with a couple of other pedestrians and very few move around on their own. An important step in this direction has been made by Li, Jeng and Chang \cite{leaderfollower}, who proposed a leader-follower model, in which one person in a group gets the role of \emph{leader}, who has the job to decide on the destination and has to plan the path. This leader will exert an attractive force on the \emph{followers}, who will continuously follow this leader around. Hostetler and Kearny chose an approach in which all members of the group cast an equal vote on which direction to head in \cite{Hostetler02strollingdown}. The walkways have been modelled as ribbons to define the geometry of the surface, and which create a conduit that channels pedestrian traffic into parallel streams. Every member of a group casts a vote on which way to turn and how to adjust the speed based on a discretized action space. The group will then collectively follow the action that has the highest vote. Peters, Ennis and O'Sullivan decided to have a more direct approach to the formation of groups \cite{10.1109MCG.2009.69}. They studied a large video corpus of prototypical walking areas and concluded groups always occur in certain formations. Subsequently, they designed a number of formations in a \emph{formation template} that represent discrete formations that the pedestrian groups may adopt, such as walking completely abreast, or in a staggered formation (see figure \ref{fig:formations}). The distance between the group members is defined by a cohesion matrix, which describes the cohesion between every two members in the group. Another factor contributing to the distance between each member is the minimum frontal aspect the formation can have, which describes the width of the formations.
 
 \begin{figure}[h!]
 \centering
@@ -320,7 +330,7 @@ Farenc et al. even devised a hierarchical framework that incorporates a number o
 As previously mentioned, most researches with the focus on crowds as a group of individuals or viewed globally do not address the problem of how to interact with the environment except for some collision detection. While this results in realistic behavior in panic situations, it is less suitable for scenarios when people have more freedom to choose their actions. The methods for crowd simulation we've looked at in the previous sections that don't focus on emergency scenarios are mostly concerned with interactions between people, and less about interaction with the environment. Because it is important for our purposes to have pedestrians with behavior tailored to the specific environment we need to look further.\\
 The obvious solution to more interaction with the environment is to extend the knowledge of the pedestrians with instructions about how to deal with the objects that are present in the simulation. This has been successfully done for instance by Shao and Terzopoulos \cite{A_autonomouspedestrians}. They used an extensive psychological model to determine the behavior of the individuals. This led to a simulation in which the behavior looks very realistic, even when one individual is followed for a long time. The downside of this method is that a different behavior needs to be programmed for the pedestrians for every simulation environment. This is unfortunately quite time-consuming. \\
 It would be easier to generate the virtual human agents if the environment would automatically decide for the agents what interactions are possible and appropriate. The first step towards this focus was made by Kallmann and Thalmann who introduced the principle of \textit{smart objects} \cite{Kallmann98modelingobjects}. In their simulations, the information about interaction with objects is stored in the objects themselves, instead of in the human agents. This way, additional behavior can be added to a pedestrian by simply placing a new object in the environment. The object also keeps track about how many agents can interact with it at the same time and if the interaction should be the same for all agents. For instance, an elevator modelled as a smart object will make the first agent interacting with it press the button, but not the next agents that approach this object.\\
-By using smart objects, the internal model of the pedestrians can be kept very simple, because they do not need to remember specific information about how to interact with the objects. Furthermore, this means that the pedestrians do not have to be specifically designed for the current simulation environment, because the environment will tell them how to act. In the most basic approach to smart objects, the agents lose all their autonomy when they approach a smart object. When these agents interact with an object , they become "slaves" of these objects, as it were, because these objects provide the animations that the agents need to execute. 
+By using smart objects, the internal model of the pedestrians can be kept very simple, because they do not need to remember specific information about how to interact with the objects. Furthermore, this means that the pedestrians do not have to be specifically designed for the current simulation environment, because the environment will tell them how to act. In the most basic approach to smart objects, the agents lose all their autonomy when they approach a smart object. When these agents interact with an object, they become "slaves" of these objects, as it were, because these objects provide the animations that the agents need to execute. 
 
 \begin{figure}[h]
 \centering
@@ -330,7 +340,7 @@ By using smart objects, the internal model of the pedestrians can be kept very s
 \end{figure}
 
 A lot of research has been built upon the idea of smart objects. For instance, Kallmann, de Sevin and Thalmann have extended this model to have agents that have their own motivations and needs \cite{Kallmann00constructingvirtual}. This model uses five main motivation types: eat, drink, rest, work, and go to toilet. These motivations control the action through a hierarchical decision graph. Information about which objects fulfill these different needs are added to the specification of the objects.
-The fact that the general idea of smart objects has been implemented in the very successful video game series "The Sims" (see a screenshot in figure \ref{fig:thesims}) might be seen as an illustration of its effectiveness. By modelling the in-game human behavior through smart objects, the game developers have been able to add expansion after expansion of new items (with new required behavior) with great ease.The initial implementation of the agents doesn't need to be modified, but their behavior will still be enriched. \\
+The fact that the general idea of smart objects has been implemented in the very successful video game series "The Sims" (see a screenshot in figure \ref{fig:thesims}) might be seen as an illustration of its effectiveness. By modelling the in-game human behavior through smart objects, the game developers have been able to add expansion after expansion of new items (with new required behavior) with great ease. The initial implementation of the agents doesn't need to be modified, but their behavior will still be enriched. \\
 Another slightly different approach to modelling interaction in the environment is the use of a situation based control structure (Sung, Gleicher and Chenny \cite{Sung04scalablebehaviors}). A situation is an area in the environment that requires the pedestrians to act in a certain way. The behavior of a pedestrian is described by a finite state machine in which a state is defined as follows:
  \[s = \{t, \bf{p}, \theta, a, s^- \}\]
 In which $t$ is the time, $\bf{p}$ is the current position in two dimensional space, $\theta$ is the orientation, $a$ is an action, and $s^-$ is a list of previous states. By "action" they mean a particular animation clip that has to be played at this state. Note that this definition of finite state machines differs from the standard definition. More information about finite state machines can be found in section \ref{sec:finitestatemachines}.  Situations extend the pedestrians' finite state machine with situation-specific actions. The probability distribution of the actions the pedestrian can take is multiplied with the probability distribution given by the situation. Situations are divided into two categories: \emph{spatial} situations for stationary objects or areas, and \emph{non-spatial} situations to describe concepts such as friendship with another pedestrian. In figure \ref{fig:sungsituations} an example is shown of an area around a crosswalk where the behavior is designed with the situations based control structure. The numbered areas are (1) a "crossing street" situation, (2) a "traffic sign situation and (3) an "in a hurry" situation where the street is crossed without a crosswalk.
@@ -355,10 +365,10 @@ Both \emph{deterministic} and \emph{non-deterministic} finite state machines are
 \item $Q$: a finite set of states
 \item $\Sigma$: a finite input alphabet of symbols
 \item $\delta : Q \times \Sigma \rightarrow Q$: a transition function 
-\item $q_0 \in Q$ a start state 
-\item $F \subseteq Q$a set of accept states 
+\item $q_0 \in Q$: a start state 
+\item $F \subseteq Q$: a set of accept states 
 \end{itemize}
-The difference between deterministic and non-deterministic FSMs is that in non-deterministic FSM, a transition function can give multiple states for one combination of a state and input symbol.
+The difference between deterministic and non-deterministic FSMs is that in a non-deterministic FSM, a transition function can give multiple states for one combination of a state and input symbol.
 Finite state machines are widely used in a variety of applications such as electronic design automation, but also for language parsing. Many variations on FSMs exist for a variety of purposes such as deterministic and non-deterministic. The latter can also be seen as a representation of a \emph{Markov chain}. Finite state machines have been used extensively as tools for behavior modelling. The previously mentioned situations based control structure for example uses finite state machines to describe the behavior of a pedestrians as is illustrated in figure \ref{fig:sungstatemachine}. Here, extensible states are attached and detached in the course of a simulation, depending on where a pedestrian is located.
 \begin{figure}[h]
 \centering
@@ -395,14 +405,14 @@ x^{\bullet} = \{y \in N \mid (x,y) \in F_N\}
 
 
 P/t nets have been extended in many ways in order to accommodate many different functionalities. An example of this are \emph{stochastic Petri nets}. In this extension, there are two types of transitions: \emph{immediate} and \emph{timed} transitions.
-The Stochastic Petri net (SPN) model can be described as a six-tuple:
+The Stochastic Petri net (SPN) model can be described as a five-tuple:
 \begin{equation}
 SPN = (P,T,F,M_0,\Lambda)
 \end{equation}
 where $(P,T,I,O,M_0)$ is the marked untimed PN underlying the SPN, and $\Lambda = (\lambda_1, \lambda_2, \ldots, \lambda_n)$ is an array of (possibly marking dependent) firing rates associated with transitions.
 
 Immediate transitions always have priority over timed transitions, and  the likelihood of firing a timed transition is dependent on a parameter called the \emph{firing rate} of the transition. This rate indicates the firing delay of the timed transition. This firing rate may be marking-dependent, so it should be written as $\lambda_i(M_j)$.  The average firing delay of a transition $t_i$ in marking $M_j$ is $[\lambda_i(M_j)]_{-1}$. Immediate transitions fire in zero time once they are enabled, while timed transitions fire after a random, exponentially distributed enabling time.\\
-Another way an aspect of time is incorporated are \emph{Timed Petri nets}\cite{zuberek1980timed}. Here, Petri nets are accompanied by a firing time function that assigns a positive rational number to each transition. This number indicates how much time the firing of a transition costs. When a transition is fired, it consumes and holds its input tokens, until this time has past, and the firing is terminated when the tokens have been produced in the transition's output places.\\
+Another way an aspect of time is incorporated are \emph{Timed Petri nets} \cite{zuberek1980timed}. Here, Petri nets are accompanied by a firing time function that assigns a positive rational number to each transition. This number indicates how much time the firing of a transition costs. When a transition is fired, it consumes and holds its input tokens, until this time has past, and the firing is terminated when the tokens have been produced in the transition's output places.\\
 K\"{o}hler et al. show us an example of how Petri nets can be used to model elaborate social situations \cite{Köhler03modellingsocial}. They use a high level variant of Petri nets called \emph{reference nets} to model the decision making processes in universities. Reference nets are built up of multiple layers of Petri nets that represent both emergent aggregation of processes on a micro level and more high-level rules and structures on a macro level. In their multi-agent system, they make the distinction between \emph{system nets} and \emph{object nets}, where tokens of a system net correspond to Petri nets on a lower level, called object nets. In this structure of \emph{nets within nets} these lower level Petri nets move around in the higher level system nets. They manage to apply this modelling language to the decision problem of recruiting new employees in universities.
 
 \subsection{Finite State Machines vs. Petri nets}
@@ -428,10 +438,10 @@ We have seen many different techniques for many different purposes. We can immed
 The techniques focusing on smaller groups do show some potential. Ideally, people should interact with each other based on a variety of social relationships such as "parent" and "friend". However, this will require much configuration beforehand, and may increase processing time for each decision the pedestrians have to make. In this case, configuration may not be the issue, since these relationships can be defined and then used for many different simulations, but processing time is a larger problem, increasing with the number of pedestrians present in the simulation.\\
 For our purposes though, we rule out the techniques that don't put more importance in the environment except for collision detection, because with those techniques it will be impossible for a designer of the environment to have any influence on the behavior of the pedestrians, which is an important requirement for us.\\
 Of all the possible existing techniques, the "situations" approach of Sung et al. seems the most appealing. 
-However, it is not directly usable for our purposes. One downside to the situations approach , or at least t how it is described in the paper, is that state transitions are mainly low-level animations. However, it should be possible to adapt the state transitions to correspond to higher-level actions, such as change of goal. Path planning should then be delegated to another module. In this way, it is very likely that the state representation can be reduced from $s = \{t, \bf{p}, \theta, s^- \}$ to $s = \{t, \bf{p}, \theta\}$. The $s^-$ was used to remember which actions were taken previously, so that the pedestrian remembers which way it was walking. When the actual walking is delegated to another module, it seems unnecessary to keep $s^-$.
+However, it is not directly usable for our purposes. One downside to the situations approach, or at least how it is described in Sungs paper, is that state transitions are mainly low-level animations. However, it should be possible to adapt the state transitions to correspond to higher-level actions, such as change of goal. Path planning should then be delegated to another module. In this way, it is very likely that the state representation can be reduced from $s = \{t, \bf{p}, \theta, s^- \}$ to $s = \{t, \bf{p}, \theta\}$. The $s^-$ was used to remember which actions were taken previously, so that the pedestrian remembers which way it was walking. When the actual walking is delegated to another module, it seems unnecessary to keep $s^-$.
 
 \chapter{Method}
-In the upcoming sections will be described how we decided to design our system. We decided to base our model around Sungs situations framework \cite{Sung04scalablebehaviors}. We chose this framework because it allows for probabilistic behavior, and puts emphasis on defining behavior through the environment. This framework will have to be extended to deal with time restrictions. However, we won't work with finite state machines, as Sung et al. do, since these offer too little functionality to enable us to work with time restrictions. Furthermore, FSMs are not suitable for describing interactions between multiple agents. That is why we model behavior in a more advanced way in our system. Instead of modelling the system with finite state machines, we describe the behavior of the pedestrians with Petri nets.  The toolkit we will use for this is \emph{Platform Independent Petri net Editor 2} (PIPE2). \url{http://pipe2.sourceforge.net/} Further down below we describe how we decided to use this toolkit.
+In the upcoming sections will be described how we decided to design our system. We decided to base our model around Sungs situations framework \cite{Sung04scalablebehaviors}. We chose this framework because it allows for probabilistic behavior, and puts emphasis on defining behavior through the environment. This framework will have to be extended to deal with time restrictions. However, we won't work with finite state machines, as Sung does, since these offer too little functionality to enable us to work with time restrictions. Furthermore, FSMs are not suitable for describing interactions between multiple agents. That is why we model behavior in a more advanced way in our system. Instead of modelling the system with finite state machines, we describe the behavior of the pedestrians with Petri nets.  The toolkit we will use for this is \emph{Platform Independent Petri net Editor 2} (PIPE2). \url{http://pipe2.sourceforge.net/} Further down below we describe how we decided to use this toolkit.
 
 In short, this chapter will describe how we combined the situations framework with Petri nets instead of finite state machines, and added a mechanism with which we compute a "utility" measure for behavior.
 
@@ -454,7 +464,6 @@ Lengths of time are expressed in timesteps. The reason for this is that this is 
 
 It is important to keep in mind the difference between behaviors and actions when covered in our thesis. These two terms are not interchangeable. With \emph{actions} we indicate movement of a pedestrian that is described in a single transition in a Petri net. \emph{Behaviors} on the other hand, indicate the whole set of actions that are encompassed within a whole situation. Another way a behavior can be viewed is the whole sequence of actions that take place when a token of a pedestrians Petri net leaves the base place until it comes back again. \\
 For example, a pedestrian might have entered the region of the toilet situation. A new \emph{behavior}, namely the Petri net corresponding to the toilet situation, is then attached to the pedestrian. A pedestrian might then decide to fire the transition that produces a token in this newly attached Petri net, thus making the pedestrian execute the behavior corresponding to the toilet situation. This Petri net consists of several transitions, corresponding to various \emph{actions}, such as walking to the toilet.\\
-Now that some of the terminology has been clarified, we can move on to how our system has been designed.
 
 
 \section{Petri nets}
@@ -590,7 +599,7 @@ Next, the algorithm computes for every situation how much time is left would the
 \label{fig:decisionmechanism}
 \end{figure}
 
-As one may have noticed, this approach does not give a completely watertight solution to the planning problem. However, since we have to be able to model large crowds, we cannot create an overly complex planning system, because then we would not be able to run the simulation real-time. Furthermore, we do not aim at finding an optimal solution to the planning problem, but rather the most lifelike behavior. In real life, people make errors in judgement, so creating pedestrians who can look ahead perfectly would not be realistic. It is impossible to make an exact definition of realism for our purposes, but what we try to do, is to copy certain specific behavior found in real-life footage. In our experiments we will try different utility functions to influence the probability of going to the goal or do something else, and attempt to assess which function will be most suitable.
+As one may have noticed, this does not give a guaranteed solution to the planning problem. However, since we have to be able to model large crowds, we cannot create an overly complex planning system, because then we would not be able to run the simulation real-time. Furthermore, we do not aim at finding an optimal solution to the planning problem, but rather the most lifelike behavior. In real life, people make errors in judgement, so creating pedestrians who can look ahead perfectly would not be realistic. It is impossible to make an exact definition of realism for our purposes, but what we try to do, is to copy certain specific behavior found in real-life footage. In our experiments we will try different utility functions to influence the probability of going to the goal or do something else, and attempt to assess which function will be most suitable.
 
 
 \subsection{The Utility Functions}
@@ -772,7 +781,7 @@ After this the preprocessing of the actual simulation starts. Our pedestrian sta
 The token of the pedestrian is in the base place. That means transitions connected to Petri nets of the situations can be chosen. He still has 100 timesteps left. The estimated time left (named $\tau$ after doing the wander behavior would be $100 - 5=95$ for the bench situation $100-16=84$. The time left after executing the go-to-goal behavior would be $100-5=95$. The utilities are computed as follows:\\
 $U_{bench}=\frac{1}{100} * 84 = 0.84$  \\
 $U_{wander}=\frac{1}{100} * 95=0.95 $\\
-$U{gotogoal}=-\frac{1/100} * 95 + 1 =0.05$\\
+$U{gotogoal}=-\frac{1}{100} * 95 + 1 =0.05$\\
 
 To compute the probabilities for selecting the transitions, these utilities are normalized, which leads to the following values:\\
 $P(choosing\_bench\_transition)\approx 0.46$\\
@@ -857,7 +866,7 @@ Because of the structure of our implementation, it was easier to log the actions
 \item \emph{gototoilet} and \emph{waitforfriend} (these both belong to the gototoilet situation)
 \item \emph{gotonearestpillar} and \emph{leanagainstpillar} that are both part of the leanagainstpillar situation 
 \item \emph{standstill}
-\item \emph{idle}
+\item \emph{idle}\\
 \end{itemize}
 \end{minipage}\\
 The last action is the default action when nothing else can be executed. It is executed when a fired transition does not have an associated action. Another situation in which this idle behavior can happen that will be important in these experiments, is when there are no transitions left any more to fire. This can be for example when all transitions have gotten a probability of 0 for firing.
@@ -996,7 +1005,7 @@ Behavior like going to the toilet and waiting for their friend (which are both p
 \begin{figure}[h!]
 \centering
 \includegraphics[width=.67\textwidth]{/home/djura/vakken/svn_afstudeerstage/deadline-driven-behavior/hulpscriptjes/goodresults/sigmoid100_0_10_1_goal1to0.png}
-\caption{Goal utility linear with $U_0=1$ and $U_n = 0$. Other behavior utility sigmoid with $t_0=100$ $\beta=0$ $\omega=10$ $\eta=1$}
+\caption{Goal utility linear with $U_0=1$ and $U_n = 0$. Other behavior utility sigmoid with $t_0=100$, $\beta=0$, $\omega=10$ and $\eta=1$}
 \label{fig:sigmoid100_0_10_1_goal1to0}
 \end{figure}
 
@@ -1020,7 +1029,7 @@ In figure \ref{fig:linear0to1goal1to0}, \ref{fig:sigmoid100_0_10_1_goal1to0} and
 \begin{figure}[h!]
 \centering
 \includegraphics[width=.67\textwidth]{/home/djura/vakken/svn_afstudeerstage/deadline-driven-behavior/hulpscriptjes/goodresults/sigmoid_100_0_10_1goal01to0.png}
-\caption{Goal utility linear with $U_0=0.1$ and $U_n=0$. Other utility sigmoid with $t_0=100$ $\beta=0$ $\omega=10$ $\eta=1$.}
+\caption{Goal utility linear with $U_0=0.1$ and $U_n=0$. Other utility sigmoid with $t_0=100$, $\beta=0$, $\omega=10$ and $\eta=1$.}
 \label{fig:sigmoid_100_0_10_1goal01to0}
 \end{figure}
 
@@ -1037,7 +1046,7 @@ In figures \ref{fig:linear0to1_goal01to0}, \ref{fig:sigmoid_100_0_10_1goal01to0}
 \begin{figure}[h!]
 \centering
 \includegraphics[width=.67\textwidth]{/home/djura/vakken/svn_afstudeerstage/deadline-driven-behavior/hulpscriptjes/goodresults/linear0_1_200_goalsigmoid_100_0_-10_1.png}
-\caption{Goal utility sigmoid with $t_0=100$ $\beta=0$ $\omega=-10$ $\eta=1$. Other utility linear with $U_0=0$ and $U_n=1$}
+\caption{Goal utility sigmoid with $t_0=100$, $\beta=0$, $\omega=-10$ and $\eta=1$. Other utility linear with $U_0=0$ and $U_n=1$}
 \label{fig:linear0_1_200_goalsigmoid_100_0_-10_1}
 \end{figure}
 
@@ -1045,14 +1054,14 @@ In figures \ref{fig:linear0to1_goal01to0}, \ref{fig:sigmoid_100_0_10_1goal01to0}
 \begin{figure}[h!]
 \centering
 \includegraphics[width=.67\textwidth]{/home/djura/vakken/svn_afstudeerstage/deadline-driven-behavior/hulpscriptjes/goodresults/sigmoid100_0_10_1_goalsigmoid100_0_-10_1.png}
-\caption{Goal utility sigmoid with $t_0=100$ $\beta=0$ $\omega=-10$ $\eta=1$. Other utility sigmoid with $t_0=100$ $\beta=0$ $\omega=10$ $\eta=1$.}
+\caption{Goal utility sigmoid with $t_0=100$, $\beta=0$, $\omega=-10$ and $\eta=1$. Other utility sigmoid with $t_0=100$, $\beta=0$ and $\omega=10$ $\eta=1$.}
 \label{fig:sigmoid100_0_10_1_goalsigmoid100_0_-10_1}
 \end{figure}
 
 \begin{figure}[h!]
 \centering
 \includegraphics[width=.67\textwidth]{/home/djura/vakken/svn_afstudeerstage/deadline-driven-behavior/hulpscriptjes/goodresults/gaussian200_50_1_goalsigmoid_100_0_-1_1.png}
-\caption{Goal utility sigmoid with $t_0=100$ $\beta=0$ $\omega=-10$ $\eta=1$. Other utility Gaussian with $\mu=200$ and $\sigma=50$.}
+\caption{Goal utility sigmoid with $t_0=100$, $\beta=0$, $\omega=-10$ and $\eta=1$. Other utility Gaussian with $\mu=200$ and $\sigma=50$.}
 \label{fig:gaussian200_50_1_goalsigmoid_100_0_-10_1}
 \end{figure}
 
@@ -1067,7 +1076,7 @@ In figure \ref{fig:linear0_1_200_goalsigmoid_100_0_-10_1}, \ref{fig:sigmoid100_0
 \begin{figure}[h!]
 \centering
 \includegraphics[width=.67\textwidth]{/home/djura/vakken/svn_afstudeerstage/deadline-driven-behavior/hulpscriptjes/goodresults/sigmoid100_0_10_1_goalgaussian0_50_1.png}
-\caption{Goal utility Gaussian with $\mu=0$ and $\sigma=50$. Other utility sigmoid with $t_0=100$ $\beta=0$ $\omega=10$ $\eta=1$.}
+\caption{Goal utility Gaussian with $\mu=0$ and $\sigma=50$. Other utility sigmoid with $t_0=100$, $\beta=0$, $\omega=10$ and $\eta=1$.}
 \label{fig:sigmoid100_0_10_1_goalgaussian0_50_1}
 \end{figure}
 
@@ -1185,7 +1194,7 @@ In figure \ref{fig:sigmoid100_0_10_1} we very clearly see the influence of the s
 \begin{figure}
 \centering
 \includegraphics[width=.67\textwidth]{/home/djura/vakken/svn_afstudeerstage/deadline-driven-behavior/hulpscriptjes/goodresults/sigmoid100_0_10_1.png}
-\caption{Non-goal utility sigmoid with $t_0=100$ $\beta=0$ $\omega=10$ $\eta=1$.}
+\caption{Non-goal utility sigmoid with $t_0=100$, $\beta=0$, $\omega=10$ and $\eta=1$.}
 \label{fig:sigmoid100_0_10_1}
 \end{figure}
 
