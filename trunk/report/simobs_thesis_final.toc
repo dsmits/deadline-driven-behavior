@@ -33,9 +33,9 @@
 \contentsline {chapter}{\numberline {5}Results}{39}{chapter.5}
 \contentsline {section}{\numberline {5.1}Results of the Qualitative Experiment}{39}{section.5.1}
 \contentsline {section}{\numberline {5.2}Results of the First Quantitative Experiment}{42}{section.5.2}
-\contentsline {section}{\numberline {5.3}Results of the Second Quantitative Experiment}{47}{section.5.3}
-\contentsline {chapter}{\numberline {6}Conclusion \& Discussion}{51}{chapter.6}
-\contentsline {section}{\numberline {6.1}Research Questions}{51}{section.6.1}
-\contentsline {subsection}{\numberline {6.1.1}The Benefits of Petri nets}{52}{subsection.6.1.1}
-\contentsline {section}{\numberline {6.2}Limits of the Deadline Driven Behavior Framework}{52}{section.6.2}
-\contentsline {subsection}{\numberline {6.2.1}Future Work}{53}{subsection.6.2.1}
+\contentsline {section}{\numberline {5.3}Results of the Second Quantitative Experiment}{49}{section.5.3}
+\contentsline {chapter}{\numberline {6}Conclusion \& Discussion}{53}{chapter.6}
+\contentsline {section}{\numberline {6.1}Research Questions}{53}{section.6.1}
+\contentsline {subsection}{\numberline {6.1.1}The Benefits of Petri nets}{54}{subsection.6.1.1}
+\contentsline {section}{\numberline {6.2}Limits of the Deadline Driven Behavior Framework}{54}{section.6.2}
+\contentsline {subsection}{\numberline {6.2.1}Future Work}{55}{subsection.6.2.1}
