@@ -1,0 +1,1 @@
+PedestrianSimDatalayer is the superclass of all datalayers used in the pedestrian sim. It extends the basic PIPE2 data with some functionalities needed for the pedestrian simulation. These functionalities include keeping track of sink and source transitions, dealing with slots and dealing with time.
